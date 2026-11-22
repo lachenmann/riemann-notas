@@ -1,0 +1,183 @@
+\section{Sumas sobre primos y transformadas}
+\label{sec:sumas}
+
+\fuente{A, §2, especialmente Prop.~2.1, pp.~3--4; B, §1.2,
+pp.~3--5, y §2, pp.~14--19. Los cálculos de esta nota se desarrollan aquí;
+el criterio completo de ventanas se conserva como resultado por estudiar.}
+
+\subsection{La suma suavizada}
+
+Sea $\chi$ un carácter primitivo de Dirichlet. La función de von Mangoldt es
+\[
+\Lambda(n)=
+\begin{cases}
+\log p,& n=p^a,\quad p\text{ primo},\quad a\ge1,\\
+0,&\text{en otro caso}.
+\end{cases}
+\]
+Para $x\ge1$ definimos
+\begin{equation}
+  S_\chi(x)=\sum_{n\le x}\Lambda(n)\chi(n)\left(\frac{x}{n}-1\right).
+  \label{eq:suma-suave}
+\end{equation}
+La suma es finita. En $x=n$, el término que acaba de incorporarse vale cero:
+por eso el peso suaviza los saltos de una suma de conteo. El soporte de
+$\Lambda$ hace que solo contribuyan potencias de primos.
+
+En el semiplano $\Ree s>1$, la derivación logarítmica del producto de Euler
+proporciona la identidad clásica
+\begin{equation}
+  -\frac{L'(s,\chi)}{L(s,\chi)}
+   =\sum_{n\ge1}\frac{\Lambda(n)\chi(n)}{n^s}.
+  \label{eq:derivada-log}
+\end{equation}
+Allí las series convergen absolutamente. No se está suponiendo información
+sobre ceros dentro de la franja crítica.
+
+\subsection{Cálculo de la transformada de Mellin}
+
+\begin{proposicion}
+Para $\Ree s>1$,
+\begin{equation}
+  \int_1^\infty S_\chi(x)x^{-s-1}\dd x
+   =-\frac{L'(s,\chi)}{s(s-1)L(s,\chi)}.
+  \label{eq:mellin-s}
+\end{equation}
+\end{proposicion}
+
+\begin{proof}
+Escribamos $\sigma=\Ree s>1$. Para un entero $n\ge1$,
+\begin{align*}
+\int_n^\infty\left(\frac{x}{n}-1\right)x^{-s-1}\dd x
+ &=\frac1n\int_n^\infty x^{-s}\dd x
+      -\int_n^\infty x^{-s-1}\dd x\\
+ &=\frac{n^{-s}}{s-1}-\frac{n^{-s}}s
+  =\frac{n^{-s}}{s(s-1)}.
+\end{align*}
+Antes de intercambiar suma e integral comprobamos convergencia absoluta.
+Como $|\chi(n)|\le1$ y $\Lambda(n)\le\log n$,
+\begin{align*}
+&\sum_{n\ge1}\Lambda(n)|\chi(n)|
+  \int_n^\infty\left(\frac{x}{n}-1\right)x^{-\sigma-1}\dd x\\
+&\hspace{2em}\le
+ \frac{1}{\sigma(\sigma-1)}
+ \sum_{n\ge1}\frac{\log n}{n^\sigma}<\infty.
+\end{align*}
+Fubini permite el intercambio. El cálculo del núcleo y
+\eqref{eq:derivada-log} dan \eqref{eq:mellin-s}.
+\end{proof}
+
+La razón para elegir $x/n-1$ ya es visible: su transformada introduce el
+factor explícito $1/[s(s-1)]$. Un cero de $L$ se convierte en un polo de
+$L'/L$, y podremos seguirlo a través de este factor.
+
+\subsection{La corrección en el punto \texorpdfstring{$s=1$}{s=1}}
+
+Supongamos primero que $\chi$ no es principal. Utilizamos el resultado
+clásico $L(1,\chi)\ne0$ y ponemos
+\[
+  \ell_\chi=\frac{L'(1,\chi)}{L(1,\chi)},\qquad
+  G_\chi(x)=S_\chi(x)+x\ell_\chi.
+\]
+Para $\Ree s>1$, la transformada corregida es
+\begin{align}
+F_\chi(s)
+  &:=\int_1^\infty G_\chi(x)x^{-s-1}\dd x\notag\\
+  &=-\frac{L'(s,\chi)}{s(s-1)L(s,\chi)}
+      +\frac{\ell_\chi}{s-1}
+   =\frac{-L'(s,\chi)/L(s,\chi)+s\ell_\chi}{s(s-1)}.
+   \label{eq:mellin-g}
+\end{align}
+El numerador se anula en $s=1$. Como $L'/L$ es holomorfa cerca de ese
+punto, la singularidad es removible. \textbf{El signo positivo de
+$x\ell_\chi$ es indispensable}: con el signo contrario no se produciría
+esta cancelación.
+
+Para el carácter primitivo principal, $L(s,1)=\zeta(s)$ y la corrección cambia:
+\begin{equation}
+ G_1(x)=S_1(x)-x\log x+(1+\gamma)x,
+ \label{eq:g-principal}
+\end{equation}
+donde $\gamma$ es la constante de Euler. Por integración directa,
+\begin{equation}
+ F_1(s)=
+ -\frac{\zeta'(s)}{s(s-1)\zeta(s)}
+ -\frac1{(s-1)^2}+\frac{1+\gamma}{s-1}.
+ \label{eq:mellin-principal}
+\end{equation}
+Para comprobar la cancelación, escribimos $t=s-1$ y usamos
+\[
+ \zeta(1+t)=\frac1t+\gamma+O(t),\qquad
+ -\frac{\zeta'(1+t)}{\zeta(1+t)}=\frac1t-\gamma+O(t).
+\]
+El primer término de \eqref{eq:mellin-principal} es
+$t^{-2}-(1+\gamma)t^{-1}+O(1)$. Los otros dos lo cancelan exactamente
+hasta dejar una función holomorfa en $s=1$.
+
+\subsection{El residuo en un cero}
+
+\begin{proposicion}
+Sea $\rho$ un cero de multiplicidad $q\ge1$ de $L(s,\chi)$, con
+$0<\Ree\rho<1$. La continuación meromorfa de $F_\chi$ tiene en $\rho$
+un polo simple cuyo residuo es
+\begin{equation}
+ \Res_{s=\rho}F_\chi(s)
+ =-\frac{q}{\rho(\rho-1)}
+ =\frac{q}{\rho(1-\rho)}.
+ \label{eq:residuo}
+\end{equation}
+\end{proposicion}
+
+\begin{proof}
+Localmente, $L(s,\chi)=(s-\rho)^q u(s)$, donde $u$ es holomorfa y
+$u(\rho)\ne0$. Por tanto
+\[
+ \frac{L'(s,\chi)}{L(s,\chi)}
+ =\frac{q}{s-\rho}+\frac{u'(s)}{u(s)}.
+\]
+El factor $s(s-1)$ no se anula en $\rho$, y los términos de corrección
+son holomorfos allí. La fórmula del residuo se sigue de
+\eqref{eq:mellin-g} o \eqref{eq:mellin-principal}.
+\end{proof}
+
+Este argumento no sitúa los ceros en la recta crítica. Describe qué huella
+dejaría en la transformada cualquier cero de la franja, incluso uno con
+parte real mayor que $1/2$.
+
+\subsection{Positividad y el objetivo de las ventanas}
+
+Si $\psi$ tiene orden $o$, denotamos por $\psi^{[j]}$ el carácter primitivo
+que induce $\psi^j$ y definimos
+\begin{equation}
+ H_\psi(x)=G_1(x)+\frac1{3o+1}
+    \sum_{j=1}^{o-1}\Ree G_{\psi^{[j]}}(x).
+ \label{eq:hpsi}
+\end{equation}
+Para $o=1$ la suma es vacía. Los caracteres retenidos forman una familia
+estable bajo conjugación, de modo que la suma de sus partes reales coincide
+con la suma de las funciones. En un cero compartido, todos los residuos
+son múltiplos de $1/[\rho(1-\rho)]$ con multiplicidades y coeficientes
+positivos. Su suma no puede cancelarse.
+
+El objetivo aritmético puede formularse así: para cada $\eta>0$ y cada
+cota inicial $A\ge2$, existe $Y\ge A$ tal que
+\begin{equation}
+ H_\psi(x)\le x^{1/2+\eta}
+ \qquad\text{para todo }x\in[Y,Y^{3/2}].
+ \label{eq:ventana}
+\end{equation}
+Es una cota unilateral en intervalos arbitrariamente lejanos. No se afirma
+una cota de valor absoluto ni que los intervalos cubran una semirrecta.
+El criterio analítico de las fuentes está adaptado a esos cuantificadores.
+Su demostración utiliza derivadas de una transformada de Laplace y núcleos
+positivos concentrados en una ventana; reconstruirla es el siguiente paso
+analítico del cuaderno. Véanse A, §2, y B, Props.~2.1--2.3.
+
+\begin{ejercicio}
+Compruebe directamente que
+$\int_1^\infty x^{-s}\dd x=(s-1)^{-1}$ y
+$\int_1^\infty(\log x)x^{-s}\dd x=(s-1)^{-2}$ para $\Ree s>1$.
+Explique por qué estas integrales no se usan como integrales convergentes
+en toda la franja crítica: allí se utiliza la continuación meromorfa de
+las expresiones obtenidas.
+\end{ejercicio}

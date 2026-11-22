@@ -1,0 +1,179 @@
+\section{Proyecciones y denominadores}
+\label{sec:proyecciones}
+
+\fuente{B, §5.1, especialmente Lema~5.1, p.~53, y §§5.2--5.3,
+pp.~54--57; A, Lema~6.3, p.~22, y §8, pp.~35--42. El ejemplo de
+dimensión dos y el lema local se demuestran aquí.}
+
+\subsection{Un operador integral con un proyector no integral}
+
+Sea $p$ primo, sea $V=\Q^2$ y sea $M=\Z^2$ su retículo habitual.
+Consideremos
+\begin{equation}
+ T=\begin{pmatrix}0&1\\0&p\end{pmatrix},
+ \qquad T(x,y)=(y,py).
+ \label{eq:operador-t}
+\end{equation}
+La matriz tiene entradas enteras, así que $T(M)\subseteq M$. Sus dos
+autovalores son $0$ y $p$, con autoespacios
+\[
+ V_0=\Q(1,0),\qquad V_p=\Q(1,p).
+\]
+Todo vector se descompone de manera única como
+\begin{equation}
+ (x,y)=\left(x-\frac yp\right)(1,0)+\frac yp(1,p).
+ \label{eq:descomposicion}
+\end{equation}
+Por tanto, el proyector sobre $V_p$ a lo largo de $V_0$ es
+\begin{equation}
+ P=\frac{T}{p}
+   =\begin{pmatrix}0&1/p\\0&1\end{pmatrix}.
+ \label{eq:proyector-p}
+\end{equation}
+La igualdad $T^2=pT$ comprueba que $P^2=P$. Sin embargo,
+$P(0,1)=(1/p,1)\notin M$. El operador $T$ es integral y diagonalizable
+sobre $\Q$, pero su proyector espectral no preserva $M$.
+
+La diferencia entre los autovalores es $p$, que no es una unidad sobre
+$\Z_p$. La fórmula $P=(T-0I)/(p-0)$ muestra exactamente dónde aparece
+el denominador. Módulo $p$, los autovalores coinciden y
+\[
+ \overline T=\begin{pmatrix}0&1\\0&0\end{pmatrix}
+\]
+es un operador nilpotente no nulo. La separación de autoespacios sobre
+el cuerpo no se conserva como descomposición del retículo.
+
+\subsection{Dos cocientes que conviene distinguir}
+
+Los retículos que están dentro de cada autoespacio son
+\[
+ M\cap V_0=\Z(1,0),\qquad M\cap V_p=\Z(1,p).
+\]
+Su suma es
+\[
+ M'=(M\cap V_0)\oplus(M\cap V_p)
+    =\{(a+b,pb):a,b\in\Z\}=\Z\times p\Z.
+\]
+Así, $[M:M']=p$. Este índice mide el coste de sustituir $M$ por un
+retículo que sí se descompone en los autoespacios.
+
+El proyector, en cambio, produce
+\[
+ PM=\frac1p\Z(1,p),
+ \qquad
+ \frac{PM}{M\cap V_p}
+ =\frac{(1/p)\Z(1,p)}{\Z(1,p)}\simeq\Z/p\Z.
+\]
+Este segundo cociente mide cuánto amplía el proyector el retículo de
+$V_p$. Es el objeto que aparece directamente en el Lema~5.1 de B.
+Ambos índices valen $p$ en el ejemplo, pero sus definiciones son distintas.
+
+\subsection{El lema local de denominadores}
+
+\begin{lema}
+Sea $\mathcal O$ un anillo de valoración discreta con cuerpo de fracciones
+$K$ y valoración $v$ normalizada por $v(\varpi)=1$. Sea $M$ un retículo
+pleno en $V=V_1\oplus V_2$, es decir, un $\mathcal O$-submódulo
+finitamente generado que genera $V$ sobre $K$, y sea $e$ el proyector sobre $V_1$.
+Supongamos que un operador $T$ preserva $M$, actúa por un escalar
+$a\in\mathcal O\setminus\{0\}$ sobre $V_1$ y por cero sobre $V_2$.
+Entonces
+\begin{equation}
+ aeM\subseteq M\cap V_1,
+ \qquad
+ \length_{\mathcal O}\frac{eM}{M\cap V_1}
+ \le (\dim_K V_1)v(a).
+ \label{eq:lema-denominadores}
+\end{equation}
+\end{lema}
+
+\begin{proof}
+Se tiene $T=ae$ en $V$. Para $m\in M$, el vector $aem=Tm$ pertenece
+a $M$ y a $V_1$. Además, $M\cap V_1\subseteq eM$, pues $e$ es la
+identidad en $V_1$. El cociente de \eqref{eq:lema-denominadores} es,
+por tanto, un cociente de $eM/aeM$.
+
+El módulo $eM$ es finitamente generado, libre de torsión y genera $V_1$;
+sobre un anillo de valoración discreta es libre de rango $d_1=\dim_K V_1$.
+Por ello
+\[
+ \length_{\mathcal O}(eM/aeM)
+ =d_1\length_{\mathcal O}(\mathcal O/a\mathcal O)=d_1v(a).
+\]
+La longitud no aumenta al pasar a un cociente, lo que prueba la cota.
+\end{proof}
+
+Para \eqref{eq:operador-t}, después de extender de $\Z$ a $\Z_p$, se
+tiene $a=p$, $d_1=1$ y longitud $1$. La desigualdad es una igualdad.
+En una valoración discreta, \emph{longitud} cuenta factores isomorfos al
+cuerpo residual; sobre $\Z_p$, un módulo finito de longitud $r$ tiene
+orden $p^r$.
+
+\subsection{Del ejemplo a los periodos automorfos}
+
+Los espacios automorfos utilizados por las fuentes admiten descomposiciones
+en sistemas de autovalores de Hecke sobre un cuerpo de coeficientes.
+Los operadores de Hecke preservan estructuras integrales, pero proyectar
+en los autoespacios elegidos puede introducir denominadores. Si dos
+sistemas de autovalores son congruentes módulo un primo de coeficientes,
+un operador que anula uno puede actuar por un escalar divisible por ese
+primo sobre el otro. El lema cuantifica el coste de dividir por tal escalar.
+
+La conexión con la comparación de pendientes puede resumirse sin ocultar
+sus objetos. Para un cuerpo de coeficientes $K$, las fuentes construyen
+un emparejamiento normalizado
+\[
+ P_\alpha:U_\alpha^\circ\times W\longrightarrow K
+\]
+y retículos $M'_\alpha\subset U_\alpha^\circ$, $M_W\subset W$.
+La divisibilidad da un ideal fraccionario $\mathfrak a_\alpha$ con
+\[
+ P_\alpha(M'_\alpha,M_W)\subseteq\mathfrak a_\alpha.
+\]
+Al definir
+\[
+ N_\alpha=\mathfrak a_\alpha^{-1}M'_\alpha,
+ \qquad C=\Hom_{\OK}(M_W,\OK),
+\]
+se obtiene una aplicación integral
+\[
+ b_\alpha:N_\alpha\longrightarrow C,
+ \qquad b_\alpha(f)(g)=P_\alpha(f,g).
+\]
+Ampliar el retículo fuente consume la divisibilidad disponible; estimar
+las normas de $b_\alpha$ permite comparar esa ganancia con el coste
+complejo. Los denominadores de las proyecciones restan parte de la ganancia
+y deben entrar en la estimación. Véanse B, pp.~29 y 49--56, y A,
+Lema~6.3 y §8.
+
+\subsection{Por qué el siguiente paso es cohomológico}
+
+En la construcción profunda de las fuentes, las congruencias entre formas
+automorfas se estudian mediante extensiones de sus representaciones de
+Galois. Las condiciones locales de esas extensiones llevan, entre otros
+objetos, a los grupos
+\begin{equation}
+ S_\ell(E,j)=\ker\left(
+ H^1(G_{E,S_\ell},\Q_\ell/\Z_\ell(-j))
+ \longrightarrow\prod_{w\mid\ell}
+ H^1(E_w,\Q_\ell/\Z_\ell(-j))\right),
+ \label{eq:grupo-selmer}
+\end{equation}
+donde $j\ge1$ y $S_\ell$ es el conjunto de lugares de $E$ sobre $\ell$.
+El signo del twist es parte de la definición. Si el grupo es finito, su
+longitud multiplicada por $\log\ell$ es el logaritmo de su orden.
+
+Para el argumento no basta saber que un grupo aislado es finito. Se
+necesita controlar sumas de estas longitudes sobre primos y twists, con
+uniformidad al variar los campos auxiliares. A, §8, y B, §5, formulan
+esas cotas y la selección de una ventana común. Esta nota explica por
+qué hacen falta; su construcción sigue siendo un resultado de las fuentes
+pendiente de desarrollar en el cuaderno.
+
+\begin{ejercicio}
+Sustituya $p$ por un entero $d\ge2$ en \eqref{eq:operador-t}.
+Calcule $[M:M']$ y $PM/(M\cap V_d)$. Después localice en un primo
+$\ell$: ¿qué longitud obtiene y para qué primos el proyector ya es integral?
+\emph{Comprobación:} el índice es $d$, el cociente es $\Z/d\Z$ y la
+longitud local es $v_\ell(d)$.
+\end{ejercicio}

@@ -1,0 +1,22 @@
+# Resultados intermedios de LaTeX
+/build/
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+# Preparación y archivos temporales
+/staging/
+/tmp/
+*.swp
+*~
+.DS_Store
+
+# El PDF de lectura en pdf/ sí se conserva.

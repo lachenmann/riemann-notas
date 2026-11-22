@@ -1,0 +1,120 @@
+{
+  "date": "2026-11-22",
+  "vault_folder_id": "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC",
+  "vault_folder_url": "https://drive.google.com/drive/folders/16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC",
+  "files": [
+    {
+      "name": "riemann_hypothesis.pdf",
+      "id": "1S2sSmS4aw9B4U4M54esQ--APr37SnxfU",
+      "url": "https://drive.google.com/file/d/1S2sSmS4aw9B4U4M54esQ--APr37SnxfU/view?usp=drivesdk",
+      "mime_type": "application/pdf",
+      "parent_ids": [
+        "1JOOvjCkJkco_6fRznoOYLg-jsOiBQlol"
+      ],
+      "size_bytes": 845543,
+      "sha256": "419e24a4ba07eb9ce98524ad11f568f2bd87d8d70abe288e4ef37632bdd8bb85",
+      "verification": "raw bytes identical; parent and MIME verified"
+    },
+    {
+      "name": "GRH-note.pdf",
+      "id": "1mCZG4ivEIdMHV3jSdWZm2lviuSJixWyc",
+      "url": "https://drive.google.com/file/d/1mCZG4ivEIdMHV3jSdWZm2lviuSJixWyc/view?usp=drivesdk",
+      "mime_type": "application/pdf",
+      "parent_ids": [
+        "1JOOvjCkJkco_6fRznoOYLg-jsOiBQlol"
+      ],
+      "size_bytes": 850937,
+      "sha256": "2cbd7e9b693c753f6afa22251db9669c9652555a91cee0cdfbd37a8465ad2ad9",
+      "verification": "raw bytes identical; parent and MIME verified"
+    },
+    {
+      "name": "00-Mapa-de-estudio.md",
+      "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+      "url": "https://docs.google.com/document/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+      "mime_type": "text/markdown",
+      "parent_ids": [
+        "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+      ],
+      "size_bytes": 7603,
+      "sha256": "1654617262ec31ab220828dcf7df575a02208e775ce09b37128f4903b8f88f1b",
+      "verification": "raw bytes identical; parent and MIME verified"
+    },
+    {
+      "name": "01-Sumas-y-transformadas.md",
+      "id": "1RH6OtQT-_6xr-eNJNaW1RwVVjhXrlg6z",
+      "url": "https://docs.google.com/document/d/1RH6OtQT-_6xr-eNJNaW1RwVVjhXrlg6z/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+      "mime_type": "text/markdown",
+      "parent_ids": [
+        "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+      ],
+      "size_bytes": 10211,
+      "sha256": "2b68ce8f76ede4d5e45c1628d5c3e639349310dbd2b5ec2879d4ebf5a0271c3f",
+      "verification": "raw bytes identical; parent and MIME verified"
+    },
+    {
+      "name": "02-Proyecciones-y-denominadores.md",
+      "id": "1x3FLfjzgABDC9mf_540VWyXM3eIHpEpn",
+      "url": "https://docs.google.com/document/d/1x3FLfjzgABDC9mf_540VWyXM3eIHpEpn/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+      "mime_type": "text/markdown",
+      "parent_ids": [
+        "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+      ],
+      "size_bytes": 7474,
+      "sha256": "d7ddc8c914e53016120c013d599398cfd5c415bc74376c012908db99abe6fd7a",
+      "verification": "raw bytes identical; parent and MIME verified"
+    },
+    {
+      "name": "03-Dudas-y-pendientes.md",
+      "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+      "url": "https://docs.google.com/document/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+      "mime_type": "text/markdown",
+      "parent_ids": [
+        "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+      ],
+      "size_bytes": 4992,
+      "sha256": "f8dd103c2433c0f43c4b5a83aa784dea62b34154a8e18d37e5daf323777ff9db",
+      "verification": "raw bytes identical; parent and MIME verified"
+    }
+  ],
+  "obsidian_rendering_checked": false,
+  "github_status": "repository_created_private",
+  "latex": {
+    "status": "compiled_and_visually_reviewed",
+    "pages": 10,
+    "page_size": "A4",
+    "path": "pdf/notas-hipotesis-riemann.pdf",
+    "size_bytes": 303598,
+    "sha256": "18a869859cd787942ebf22439966c78f0871160dcb304f73076df89c7bc8ce9c",
+    "compilation_exit_code": 0,
+    "warnings": 0,
+    "unresolved_references": 0,
+    "all_pages_visually_reviewed": true,
+    "cross_reading_with_markdown": "no blocking discrepancies in the initial notes"
+  },
+  "events": [
+    {
+      "date": "2026-11-22",
+      "action": "initial_notes_prepared_and_vault_created",
+      "result": "six vault files recovered and matched byte for byte; ten-page LaTeX PDF compiled and reviewed; GitHub creation pending browser sign-in"
+    },
+    {
+      "date": "2026-11-22",
+      "action": "github_repository_created_and_vault_link_added",
+      "result": "Private repository created; one sentence of the study map linked to repository and verified after write",
+      "map_id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+      "before_sha256": "2b1049c18496ba8a3b6b2f8b571d3538158170948738baa73dae10c12d499b02",
+      "after_sha256": "1654617262ec31ab220828dcf7df575a02208e775ce09b37128f4903b8f88f1b",
+      "old_text": "El manuscrito LaTeX del proyecto `riemann-notas` será el destino de las notas revisadas.",
+      "new_text": "El manuscrito LaTeX del repositorio privado [lachenmann/riemann-notas](https://github.com/lachenmann/riemann-notas) es el destino de las notas revisadas.",
+      "obsidian_rendering_checked": false
+    }
+  ],
+  "github": {
+    "repository_id": 1467834142,
+    "full_name": "lachenmann/riemann-notas",
+    "url": "https://github.com/lachenmann/riemann-notas",
+    "visibility": "private",
+    "default_branch": "main",
+    "initialization_commit": "57f20e26fec8d470771cb560a4e3e4582846b17c"
+  }
+}

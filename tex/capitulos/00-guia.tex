@@ -1,0 +1,103 @@
+\section{Guía del cuaderno}
+\label{sec:guia}
+
+\subsection{Fuentes y modo de lectura}
+
+Llamaremos \textbf{A} a \emph{Dirichlet L-functions and the critical line},
+el documento de 55 páginas, y \textbf{B} a la nota preliminar de Robin Zhang,
+de 73 páginas. Las páginas citadas corresponden a los ejemplares suministrados;
+sus números impresos coinciden con las páginas del PDF. Las referencias
+completas se encuentran al final del cuaderno \cite{fuenteA,fuenteB}.
+
+B presenta los objetos de manera más progresiva y explica antecedentes
+matemáticos. A resulta especialmente útil para localizar hipótesis,
+normalizaciones, estimaciones uniformes y nombres de declaraciones Lean.
+Los utilizaremos conjuntamente: primero la motivación y después el detalle
+necesario para reconstruir un paso.
+
+El alcance que estudiamos es la hipótesis de Riemann generalizada para
+\emph{funciones $L$ de Dirichlet}. La función zeta corresponde al carácter
+primitivo de conductor $1$. Las formas automorfas intervienen como objetos
+auxiliares; su presencia no convierte el enunciado en una afirmación sobre
+todas las funciones $L$ automorfas. Véanse A, p.~1, y B, p.~3.
+
+En estas notas distinguimos tres estados de trabajo:
+\begin{description}
+  \item[Desarrollado aquí.] Se incluye el cálculo o la demostración del paso.
+  \item[Resultado de la fuente.] Se identifica el enunciado que utilizamos,
+    sin sustituir su prueba por una explicación informal.
+  \item[Pendiente de estudio.] Falta reconstruir el argumento o cotejarlo
+    con mayor detalle. Esto describe el estado del cuaderno.
+\end{description}
+
+La nota B advierte expresamente, en p.~2, que su elaboración no permite
+afirmar una traducción completamente fiel de todo el código. Nuestros
+cotejos entre A y B tampoco constituyen una auditoría de ese código.
+
+\subsection{La arquitectura en seis bloques}
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{Detectar ceros con una transformada.}
+    La derivada logarítmica de $L$ transforma cada cero en un polo.
+    Una suma suavizada sobre potencias de primos tiene una transformada de
+    Mellin que conserva esos polos. La corrección en $s=1$ elimina un término
+    ajeno a los ceros buscados. Esta es la Nota~\ref{sec:sumas}.
+  \item \textbf{Extraer los caracteres adecuados.}
+    La ortogonalidad de caracteres de un grupo de Galois abeliano expresa
+    condiciones sobre Frobenius como sumas de caracteres. Los pesos y
+    promedios seleccionados conservan una combinación positiva de las
+    funciones corregidas. Referencias: A, §4; B, §3.
+  \item \textbf{Comparar divisibilidad y normas de periodos.}
+    Los periodos automorfos normalizados dan aplicaciones entre retículos.
+    La divisibilidad permite ampliar los dominios sin perder la integridad
+    de sus imágenes; las normas complejas controlan la altura de las
+    aplicaciones. Referencias: A, §6; B, §4.1 y §4.5.
+  \item \textbf{Transferir pendientes medias.}
+    Una familia de mapas debe cubrir suficientes direcciones del espacio
+    destino. Las estimaciones de marcos, junto con la filtración de
+    Harder--Narasimhan, convierten ese control en una desigualdad para
+    pendientes medias. Referencias: A, §5; B, §4.4.
+  \pagebreak
+  \item \textbf{Controlar los denominadores.}
+    La descomposición en autoespacios puede romper la estructura integral.
+    Las congruencias de Hecke y las extensiones de representaciones de Galois
+    permiten medir el coste mediante grupos cohomológicos. La
+    Nota~\ref{sec:proyecciones} desarrolla el ejemplo elemental de entrada.
+  \item \textbf{Elegir escalas y una ventana común.}
+    Después de cancelar los términos principales, aparecen costes del orden
+    de $x/m$ y de $m$, salvo potencias pequeñas de $x$. Una longitud de torre
+    $m$ cercana a $\sqrt{x}$ los equilibra. Las condiciones deben cumplirse
+    en un mismo intervalo. Referencias: A, §§10--11; B, §§5.5--6.
+\end{enumerate}
+
+\subsection{Notación común y primeras metas}
+
+Reservamos $G_\chi$ para la suma corregida de un carácter y $H_\psi$ para la
+combinación positiva de las potencias de $\psi$. En B esta última se llama
+$\mathcal G_\psi$. Usaremos $o$ para el orden del carácter, a fin de no
+confundirlo con rangos de espacios automorfos. Las letras $m$ y $p$ designan,
+respectivamente, una longitud de torre o una multiplicidad según se indique,
+y un primo.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.34\textwidth}YY@{}}
+\toprule
+\textbf{Paso que queremos reconstruir} & \textbf{A} & \textbf{B} \\
+\midrule
+Transformada y corrección & §2, pp.~3--7 & §2, pp.~14--19 \\
+Identidad de caracteres & Prop.~4.2, p.~15 & Prop.~3.1, p.~21 \\
+Marcos y pendientes & Prop.~5.2 y Teo.~5.3, pp.~18--20 & Lema~4.2 y Prop.~4.3, pp.~41--44 \\
+Proyecciones y denominadores & §§6--8 & Lema~5.1, p.~53; pp.~54--56 \\
+Cancelación y raíz cuadrada & Props.~10.1--10.2, pp.~47--49 & (4.5)--(4.10), pp.~48--51; Lema~6.1, pp.~65--66 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+La meta inmediata es poder demostrar los cálculos de las dos notas siguientes
+sin consultar el texto. El siguiente desarrollo será el criterio unilateral
+de ventanas: justificar la concentración del núcleo y explicar cómo se
+excluye un polo a partir de la transformada. Después estudiaremos la identidad
+de caracteres y la desigualdad de marcos. Las construcciones geométricas y cohomológicas
+permanecen identificadas como resultados de las fuentes hasta desarrollar
+sus hipótesis y demostraciones.

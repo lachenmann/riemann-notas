@@ -1,0 +1,78 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+% La vía moderna de babel permite importar los rótulos españoles también
+% en instalaciones que no incluyen el archivo tradicional spanish.ldf.
+\IfFileExists{spanish.ldf}{%
+  \usepackage[spanish,es-nodecimaldot,es-noquoting]{babel}%
+}{%
+  \usepackage{babel}
+  \babelprovide[import,main]{spanish}%
+}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage[margin=25mm,headheight=15pt,headsep=10mm,footskip=12mm]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{booktabs,tabularx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\definecolor{azulnota}{HTML}{203B55}
+\definecolor{grisnota}{HTML}{59636D}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=azulnota,
+  citecolor=azulnota,
+  urlcolor=azulnota,
+  pdftitle={Hipótesis de Riemann — Notas de estudio},
+  pdfauthor={Alevi Peña},
+  pdfsubject={Lectura de dos exposiciones del argumento de Alpöge para las funciones L de Dirichlet},
+  pdfkeywords={Riemann, Dirichlet, Mellin, retículos, notas de estudio}
+}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{grisnota}{Hipótesis de Riemann}}
+\fancyhead[R]{\small\textcolor{grisnota}{Notas de estudio}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlength{\emergencystretch}{2em}
+\setlist{topsep=0.4em,itemsep=0.3em,parsep=0pt}
+\setlist[itemize,enumerate]{leftmargin=*}
+\setlist[description]{style=nextline,leftmargin=1.4em,labelindent=0pt}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\setcounter{tocdepth}{2}
+\numberwithin{equation}{section}
+\allowdisplaybreaks[1]
+\widowpenalty=10000
+\clubpenalty=10000
+
+\theoremstyle{plain}
+\newtheorem{proposicion}{Proposición}[section]
+\newtheorem{lema}[proposicion]{Lema}
+\theoremstyle{definition}
+\newtheorem{definicion}[proposicion]{Definición}
+\newtheorem{ejercicio}{Ejercicio}[section]
+\theoremstyle{remark}
+\newtheorem*{observacion}{Observación}
+\renewcommand{\proofname}{Demostración}
+\renewcommand{\contentsname}{Índice}
+\renewcommand{\refname}{Fuentes de esta entrega}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\OK}{\mathcal{O}_K}
+\newcommand{\dd}{\,\mathrm{d}}
+\DeclareMathOperator{\Ree}{Re}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\length}{length}
+\DeclareMathOperator{\ord}{ord}
+\newcommand{\fuente}[1]{\par\small\textcolor{grisnota}{\textbf{Lectura de referencia.} #1}\par\normalsize}
