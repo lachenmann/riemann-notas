@@ -35,8 +35,8 @@
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 8523,
-      "sha256": "db2143a8adf95d6259942f3dace11f5d28166eea5354695bfd81985684c3dad3",
+      "size_bytes": 8860,
+      "sha256": "65ec821e466a6fe5896c7c57746d744cedadf8d05c3c9f35ff8f410b723768d5",
       "verification": "raw bytes identical; parent and MIME verified"
     },
     {
@@ -71,8 +71,8 @@
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 5704,
-      "sha256": "eb013883801c903463fe42a6ddb053c48e3937b2b5ca962908bad676cd54b418",
+      "size_bytes": 7748,
+      "sha256": "136dd519d8629d1868664cdce7d888dd09d915c8d4b7c283b2b5d34a0e55f12c",
       "verification": "raw bytes identical; parent and MIME verified"
     },
     {
@@ -83,8 +83,20 @@
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 21376,
-      "sha256": "0c8c0ed4810e8c52c1b0b2343116ac13e6617b631511ba7d749dc70cdf19614e",
+      "size_bytes": 21476,
+      "sha256": "2a068ba94ead2d9864dbb1734a7a9a874f9682767a635b9b2279754f9fe745e6",
+      "verification": "raw bytes identical; parent and MIME verified"
+    },
+    {
+      "name": "05-Identidad-de-caracteres-y-termino-principal.md",
+      "id": "14dHgRtCG-Mc0vInMZId0ILPzVYjynEot",
+      "url": "https://docs.google.com/document/d/14dHgRtCG-Mc0vInMZId0ILPzVYjynEot/edit",
+      "mime_type": "text/markdown",
+      "parent_ids": [
+        "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+      ],
+      "size_bytes": 33288,
+      "sha256": "cbc0bc1c7d933afe28a979b91b2b973d067799e94516dc4819bec5dc0191316f",
       "verification": "raw bytes identical; parent and MIME verified"
     }
   ],
@@ -92,20 +104,60 @@
   "github_status": "active_private_repository",
   "latex": {
     "status": "compiled_and_visually_reviewed",
-    "pages": 19,
+    "pages": 31,
     "page_size": "A4",
     "path": "pdf/notas-hipotesis-riemann.pdf",
-    "size_bytes": 360376,
-    "sha256": "b3e1492db94bb1b2e5064af0ab9ed30342924ee4e0bb363f7f0050400e5ff4fb",
+    "size_bytes": 465939,
+    "sha256": "31af0bf3a88f0a2f95cd2118a2eb9d8943ad7694c156ef2d397fdfb8c3170780",
     "compilation_exit_code": 0,
     "warnings": 0,
     "unresolved_references": 0,
+    "overfull_boxes": 0,
+    "underfull_boxes": 0,
+    "missing_characters": 0,
     "all_pages_visually_reviewed": true,
+    "visually_reviewed_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
     "chapter_3_pages": [
       11,
       18
     ],
-    "cross_reading_with_markdown": "Sin discrepancias matemáticas que bloqueen publicar: hipótesis, signos, exponentes, radios, cuantificadores y corolario.",
+    "chapter_4_pages": [
+      19,
+      30
+    ],
+    "cross_reading_with_markdown": "La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a 0<y<1, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal.",
     "lean_compiled_or_executed": false
   },
   "events": [
@@ -252,6 +304,160 @@
           18
         ],
         "cross_reading_with_markdown": "Sin discrepancias matemáticas que bloqueen publicar: hipótesis, signos, exponentes, radios, cuantificadores y corolario.",
+        "lean_compiled_or_executed": false
+      }
+    },
+    {
+      "date": "2026-11-22",
+      "action": "character_identity_and_finite_selection_completed",
+      "result": "Demostración finita reconstruida y revisada; concordancia localizada A/B/Lean; una nueva nota Markdown y tres actualizaciones recuperadas y cotejadas íntegramente.",
+      "previous_github_commit": "3cfc6c6e9885bbe4367f24e311b1e364a7f9142c",
+      "mathematics": {
+        "proof": "Extensión y ortogonalidad de caracteres, inercia y Frobenius, finitud de las sumas, cancelación exacta de MAIN, ejemplo C2 × C3, promedio sobre A0, normalización delta2/2, coeficiente 1/(3o+1) y desigualdad finita con errores explícitos.",
+        "independent_review": "Signos, conjugados, factores y cuantificadores revisados. Se precisaron p no divisor de N en la fórmula ciclotómica de Frobenius, biyección K al dual del cociente y alcance de las interfaces formales.",
+        "markdown_latex_cross_reading": "Lectura completa favorable: se conservan hipótesis, conjugados, signos, normalizaciones, extensión a 0<y<1, biyección K al dual Q, los dos errores de la selección y el alcance de Lean. Separaciones de macros corregidas antes de compilar.",
+        "arithmetic_and_geometric_estimates": "Pendientes: construcción del host y selectores, condiciones de órbitas, cambio de pesos y argumentos, caracteres auxiliares y cota del exceso geométrico. La desigualdad finita no suministra esas entradas.",
+        "lean_execution": false
+      },
+      "source_manifest": "lean_source_review_characters",
+      "created_markdown": {
+        "name": "05-Identidad-de-caracteres-y-termino-principal.md",
+        "id": "14dHgRtCG-Mc0vInMZId0ILPzVYjynEot",
+        "url": "https://docs.google.com/document/d/14dHgRtCG-Mc0vInMZId0ILPzVYjynEot/edit",
+        "mime_type": "text/markdown",
+        "parent_ids": [
+          "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+        ],
+        "size_bytes": 33288,
+        "sha256": "cbc0bc1c7d933afe28a979b91b2b973d067799e94516dc4819bec5dc0191316f",
+        "verification": "raw bytes identical; parent and MIME verified"
+      },
+      "vault_changes": [
+        {
+          "name": "00-Mapa-de-estudio.md",
+          "before_sha256": "db2143a8adf95d6259942f3dace11f5d28166eea5354695bfd81985684c3dad3",
+          "after_sha256": "65ec821e466a6fe5896c7c57746d744cedadf8d05c3c9f35ff8f410b723768d5",
+          "size_bytes": 8860,
+          "replacements": [
+            {
+              "old_text": "El cotejo comprende las definiciones de las sumas corregidas, la demostración del criterio unilateral de ventanas y el lema elemental sobre denominadores de proyecciones. Para el criterio de ventanas se consultaron también interfaces y pasos concretos del código Lean en una revisión fijada.",
+              "new_text": "El cotejo comprende las sumas corregidas, el criterio unilateral de ventanas, el lema elemental sobre denominadores y la identidad de caracteres con su término principal. Para las ventanas y los caracteres se consultaron también interfaces y pasos concretos del código Lean en una revisión fijada."
+            },
+            {
+              "old_text": "Reproducir una identidad de ortogonalidad y la cancelación de su término principal; distinguir los caracteres retenidos de los auxiliares.",
+              "new_text": "Prueba finita, ejemplo con inercia y coeficiente $1/(3o+1)$ en [[05-Identidad-de-caracteres-y-termino-principal]]. La cota del exceso geométrico y el control de los caracteres auxiliares siguen por desarrollar."
+            },
+            {
+              "old_text": "El cuaderno contiene tres desarrollos locales: la transformada de Mellin con su regularización, un ejemplo de proyección racional que no preserva un retículo y el criterio unilateral de ventanas. Sus pruebas están en [[01-Sumas-y-transformadas]], [[02-Proyecciones-y-denominadores]] y [[04-Criterio-unilateral-de-ventanas]]. La nueva nota justifica las derivadas, las colas del núcleo, la selección de polos y la contradicción; conserva los cuantificadores y coteja la interfaz formal `PoleData` + `WindowHypU` con el teorema `landau_window`.\n\nEl código consultado corresponde al espejo `CocoSgt/riemann-hypothesis-lean`, revisión `7cbf7a0c32fca1badf05931879a37c3f8a2b03b4`. Se hizo una lectura localizada y una reconstrucción matemática, sin compilar aquí todo el desarrollo Lean ni comparar todo el espejo con la distribución original. El siguiente paso es la identidad de caracteres y la cancelación de su término principal; la producción aritmética de las ventanas continúa pendiente.\n\n",
+              "new_text": "El cuaderno contiene cuatro desarrollos locales: la transformada de Mellin con su regularización, un ejemplo de proyección racional que no preserva un retículo, el criterio unilateral de ventanas y la identidad de caracteres con su término principal. Las tres primeras pruebas están en [[01-Sumas-y-transformadas]], [[02-Proyecciones-y-denominadores]] y [[04-Criterio-unilateral-de-ventanas]]. La cuarta está en [[05-Identidad-de-caracteres-y-termino-principal]]: demuestra la ortogonalidad, incorpora la inercia, deriva la cancelación y explica los coeficientes de la combinación retenida mediante dos promedios finitos.\n\nEl código consultado corresponde al espejo `CocoSgt/riemann-hypothesis-lean`, revisión `7cbf7a0c32fca1badf05931879a37c3f8a2b03b4`. Se cotejaron la interfaz analítica `PoleData` + `WindowHypU`, el teorema `landau_window` y, en la nota de caracteres, `ch_balance`, las medias locales y el puente a los caracteres primitivos. La lectura es localizada: no se ejecutó Lean ni se comparó todo el espejo con la distribución original. El siguiente desarrollo será la desigualdad de marcos y su paso a pendientes medias. La cota del exceso geométrico y la producción aritmética de las ventanas siguen pendientes.\n\n"
+            },
+            {
+              "old_text": "Orden de lectura sugerido para retomar el tramo analítico: [[01-Sumas-y-transformadas]] → [[04-Criterio-unilateral-de-ventanas]] → [[03-Dudas-y-pendientes]].",
+              "new_text": "Orden de lectura sugerido: [[01-Sumas-y-transformadas]] → [[04-Criterio-unilateral-de-ventanas]] → [[05-Identidad-de-caracteres-y-termino-principal]] → [[03-Dudas-y-pendientes]]."
+            }
+          ],
+          "readback_verified": true,
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt"
+        },
+        {
+          "name": "03-Dudas-y-pendientes.md",
+          "before_sha256": "eb013883801c903463fe42a6ddb053c48e3937b2b5ca962908bad676cd54b418",
+          "after_sha256": "136dd519d8629d1868664cdce7d888dd09d915c8d4b7c283b2b5d34a0e55f12c",
+          "size_bytes": 7748,
+          "replacements": [
+            {
+              "old_text": "## 3. Verificar la identidad de caracteres y el término principal\n\n**Pregunta.** ¿Cómo se identifica la contribución de Frobenius con una combinación de las mismas funciones $G_\\chi$ ya definidas?\n\n**Trabajo concreto.** Reproducir la ortogonalidad en un grupo abeliano finito, incluir el promedio sobre inercia en los primos ramificados y derivar la identidad $\\mathcal A-\\mathcal M$ de B, proposición 3.1. Comprobar los signos de las correcciones y explicar por qué solo sobreviven las correspondientes al carácter trivial y al carácter cuadrático distinguido.\n\n**Criterio de cierre.** Una prueba finita autocontenida de la identidad, seguida de una lista precisa de los datos aritméticos necesarios para aplicarla.\n\n**Fuentes.** B, §§3.1–3.2, pp. 19–21; A, §4, pp. 12–17. La letra $\\mathcal A$ de esta identidad no designa la fuente bibliográfica A.\n\n",
+              "new_text": "## 3. Identidad de caracteres y término principal — núcleo finito desarrollado\n\n**Pregunta resuelta.** ¿Cómo se identifica la contribución de Frobenius con una combinación de las mismas funciones $G_\\chi$ ya definidas?\n\n**Desarrollo.** [[05-Identidad-de-caracteres-y-termino-principal]] demuestra la ortogonalidad desde la extensión de caracteres, incluye el promedio sobre inercia y obtiene la identidad $\\mathcal A-\\mathcal M$ de B, proposición 3.1. Explica el signo $+a\\ell_\\kappa$, comprueba un ejemplo en $C_2\\times C_3$ y demuestra las consecuencias finitas de la selección: sobreviven $4o$ caracteres y la distribución sesgada produce $1/(3o+1)$.\n\n**Cierre local, 22 de noviembre de 2026.** La prueba conserva los conjugados, el factor $2/|I_p|$ y la normalización $b\\delta_2/2$. Se cotejaron `ch_balance`, `prim_read`, `gmA_eq`, `tops_sum` y las interfaces señaladas en la nota, en la revisión fijada. Se distingue la generalidad de B de la aplicación específica del código y de la fuente A.\n\n**Aplicación por desarrollar.** Construir el cuerpo y los conjuntos con las condiciones simultáneas de distribución y órbitas; acotar el cambio de pesos y argumentos, los caracteres auxiliares y el exceso geométrico. La desigualdad finita obtenida no suministra esas estimaciones. El siguiente paso hacia el exceso geométrico es el pendiente 6.\n\n**Fuentes.** B, §§3.1–3.3, pp. 19–23; A, §4, pp. 12–17. La letra $\\mathcal A$ de esta identidad no designa la fuente bibliográfica A.\n\n"
+            },
+            {
+              "old_text": "**Trabajo siguiente.** Al estudiar la identidad de caracteres del pendiente 3, localizar su declaración formal y comprobar las normalizaciones y el tratamiento de los primos ramificados. Registrar la declaración, los objetos definidos y las hipótesis efectivas. Cada cotejo debe responder a una pregunta concreta de las notas.",
+              "new_text": "**Segundo cotejo.** La identidad y la selección de caracteres están documentadas en [[05-Identidad-de-caracteres-y-termino-principal]]. Se comprobó el significado de `AddChar 0`, los conjugados, los signos de `MAIN` y las hipótesis del enlace con los caracteres primitivos. El registro conserva un manifiesto adicional de 23 archivos con sus alcances de lectura.\n\n**Trabajo siguiente.** Al estudiar marcos y pendientes, localizar las declaraciones de la desigualdad de dimensiones y su paso a la filtración de Harder–Narasimhan. Registrar los rangos, las constantes y las hipótesis métricas e integrales que realmente aparecen. Cada cotejo debe responder a una pregunta concreta de las notas."
+            },
+            {
+              "old_text": "## Punto de reanudación\n\nEl siguiente desarrollo es el pendiente 3: la identidad de caracteres y su término principal. Las identidades de Mellin, el cálculo del defecto de un proyector y el criterio unilateral de ventanas ya están desarrollados; basta volver a ellos cuando una dependencia nueva lo requiera. Después se abordará la desigualdad de marcos. Los resultados geométricos y cohomológicos profundos continúan registrados como entradas externas.\n",
+              "new_text": "## 6. Marcos aproximados y pendientes medias\n\n**Pregunta.** ¿Cómo se transforma el hecho de que una familia de mapas cubra suficientemente el espacio receptor en una desigualdad de dimensiones y, después, de pendientes medias?\n\n**Trabajo concreto.** Enunciar primero la desigualdad lineal con sus constantes, reconstruir el argumento de traza y proyecciones ortogonales, y comprobarlo en un ejemplo finito. Separar esa parte de la integración mediante la filtración de Harder–Narasimhan. Identificar después los términos que corresponden a normas, índices y denominadores en la aplicación a periodos.\n\n**Criterio de cierre.** Una prueba completa del paso lineal y del paso a pendientes, con los rangos y errores explícitos; una concordancia A/B/Lean que distinga las hipótesis demostradas de las propiedades de la familia automorfa todavía recibidas como entrada.\n\n**Fuentes.** A, §5, especialmente proposición 5.2 y teorema 5.3, pp. 17–20; B, §4.4, especialmente lema 4.2 y proposición 4.3, pp. 41–44.\n\n## Punto de reanudación\n\nEl siguiente desarrollo es el pendiente 6: marcos aproximados y pendientes medias. Las identidades de Mellin, el defecto de un proyector, el criterio unilateral de ventanas y el núcleo finito de la identidad de caracteres ya están desarrollados. La nueva nota determina el exceso que habrá que acotar; las estimaciones aritméticas, geométricas y cohomológicas que producen esa cota continúan registradas como entradas externas.\n"
+            },
+            {
+              "old_text": "No se compiló aquí el desarrollo Lean completo.",
+              "new_text": "No se compiló ni ejecutó código Lean en este cotejo."
+            }
+          ],
+          "readback_verified": true,
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB"
+        },
+        {
+          "name": "04-Criterio-unilateral-de-ventanas.md",
+          "before_sha256": "0c8c0ed4810e8c52c1b0b2343116ac13e6617b631511ba7d749dc70cdf19614e",
+          "after_sha256": "2a068ba94ead2d9864dbb1734a7a9a874f9682767a635b9b2279754f9fe745e6",
+          "size_bytes": 21476,
+          "replacements": [
+            {
+              "old_text": "La nueva nota cierra el pendiente analítico de [[03-Dudas-y-pendientes]]; el siguiente desarrollo es la identidad de caracteres y la cancelación de su término principal.",
+              "new_text": "Esta nota cierra el pendiente analítico de [[03-Dudas-y-pendientes]]. La identidad de caracteres y la cancelación de su término principal se desarrollan en [[05-Identidad-de-caracteres-y-termino-principal]]; la construcción aritmética de las ventanas sigue pendiente."
+            }
+          ],
+          "readback_verified": true,
+          "id": "1WuWoYDdhJMqq-yp8cXu9S2vUTBZk8T4O"
+        }
+      ],
+      "recovery": "Cada reemplazo conserva los textos anterior y posterior. Su inversión fue comprobada contra el SHA-256 previo. Las versiones previas del manuscrito permanecen en la historia Git.",
+      "obsidian_rendering_checked": false,
+      "latex": {
+        "status": "compiled_and_visually_reviewed",
+        "pages": 31,
+        "page_size": "A4",
+        "path": "pdf/notas-hipotesis-riemann.pdf",
+        "size_bytes": 465939,
+        "sha256": "31af0bf3a88f0a2f95cd2118a2eb9d8943ad7694c156ef2d397fdfb8c3170780",
+        "compilation_exit_code": 0,
+        "warnings": 0,
+        "unresolved_references": 0,
+        "overfull_boxes": 0,
+        "underfull_boxes": 0,
+        "missing_characters": 0,
+        "all_pages_visually_reviewed": true,
+        "visually_reviewed_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "chapter_3_pages": [
+          11,
+          18
+        ],
+        "chapter_4_pages": [
+          19,
+          30
+        ],
+        "cross_reading_with_markdown": "La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a 0<y<1, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal.",
         "lean_compiled_or_executed": false
       }
     }
@@ -794,5 +1000,479 @@
       }
     },
     "scope_limit": "Lectura localizada de fuentes e identidad de archivos. No se compiló código Lean, no se ejecutó el kernel ni se auditó la clausura completa de dependencias; no se comparó el árbol completo con el archivo original de Alpöge. Los archivos recuperados solo para localización se señalan expresamente."
+  },
+  "lean_source_review_characters": {
+    "repository": "CocoSgt/riemann-hypothesis-lean",
+    "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+    "source_base_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/",
+    "identity_verification": {
+      "files": 23,
+      "procedure": "SHA-256 de los bytes UTF-8 completos; SHA-1 del objeto Git calculado como SHA1(blob + espacio + longitud decimal + NUL + contenido), comparado con el SHA informado por GitHub.",
+      "all_git_blob_hashes_match": true,
+      "scope": "Identidad de las fuentes recuperadas de este espejo; no comparación integral con la distribución original de Alpöge."
+    },
+    "review_profiles": {
+      "definiciones": "Lectura de definiciones y cuantificadores de las declaraciones señaladas, sin atribuir al archivo entero una revisión de todas sus pruebas.",
+      "algebra_local": "Lectura y reconstrucción matemática de los pasos finitos señalados; revisión matemática localizada del texto, sin ejecución de Lean.",
+      "interfaces": "Lectura de enunciados y del ensamble de resultados; las hipótesis recibidas de otros módulos no se dan por auditadas.",
+      "puente_aritmetico": "Lectura de las identificaciones señaladas entre grupos, caracteres, primitivas y sumas corregidas; no auditoría de la clausura de dependencias."
+    },
+    "files": [
+      {
+        "path": "src/Development/AutomorphicArithmetic/CharacterBoxes/IsChiField.lean",
+        "git_blob_sha": "181ab535373fb54af925bfdca6af685f6955ddc5",
+        "sha256": "2b38c0083ca9d740508d050aca313960613d588df5ac2a9bd3303eec27f7e421",
+        "bytes": 2083,
+        "declarations": [
+          "UpperTheory.Top.isChiField"
+        ],
+        "review": [
+          "puente_aritmetico",
+          "interfaces"
+        ],
+        "scope": "Lectura de la prueba que, bajo KerChi, identifica el campo mediante el núcleo de Artin dentro de una extensión ciclotómica; no construcción independiente de KerChi ni del host.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/IsChiField.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/CharacterBoxes/TwistAny.lean",
+        "git_blob_sha": "63ec76bee380a02bcd8a57e2c258919dd406f22b",
+        "sha256": "3803fa2f2f2c7ecbde0905864276cc180dc2edbf8489bb99fdc38b6fb51adf19",
+        "bytes": 9131,
+        "declarations": [
+          "UpperTheory.Top.twistAny"
+        ],
+        "review": [
+          "puente_aritmetico",
+          "interfaces"
+        ],
+        "scope": "Lectura del enunciado y de la prueba principal que realiza TwistForm para el host cíclico; los lemas previos del módulo se consultaron como apoyo sin repetir sus dependencias.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/TwistAny.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/CharacterBoxes/TwistForm.lean",
+        "git_blob_sha": "5e8b1a992a393336dffd3603524526dfccfa1981",
+        "sha256": "f6fcb4d6d30327b91dc81247a280070efc3196de2053cad36cbf14ec1daae2c3",
+        "bytes": 1184,
+        "declarations": [
+          "UpperTheory.Top.KerChi",
+          "UpperTheory.Top.TwistForm"
+        ],
+        "review": [
+          "definiciones"
+        ],
+        "scope": "Interfaces exactas del núcleo del mapa de Artin y de la descomposición en potencias del carácter y dos giros cuadráticos.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/TwistForm.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChBalance.lean",
+        "git_blob_sha": "37648715bcf507e086374e8cc476ee746fd274f4",
+        "sha256": "502b43ca1aa951cad0f60719ea17e17912db992ee8371f6d88cdd2d496159911",
+        "bytes": 13626,
+        "declarations": [
+          "Deduction.CharacterBalance.ramifiedPrimeTerm_eq_zero_of_lt_ramifiedPrime",
+          "Deduction.CharacterBalance.cardI",
+          "Deduction.CharacterBalance.ounram",
+          "Deduction.CharacterBalance.lunram",
+          "Deduction.CharacterBalance.lsplit",
+          "Deduction.CharacterBalance.ld",
+          "Deduction.CharacterBalance.askExp",
+          "Deduction.ch_balance"
+        ],
+        "review": [
+          "algebra_local"
+        ],
+        "scope": "Lectura de enunciados y pruebas del archivo: expansión aritmética bajo HostFactsS, coeficientes 2 log p y log d, corte finito y cancelación exacta de MAIN.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChBalance.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChCore.lean",
+        "git_blob_sha": "878f5077bc382426c7da988e5a375b85deeaa7de",
+        "sha256": "80ceae1e3c5728267fe7e7848342ca2d754c5363e9b6d8ae2d628c70f26772e0",
+        "bytes": 25006,
+        "declarations": [
+          "Deduction.CharacterBalanceMoves.Th",
+          "Deduction.CharacterBalanceMoves.mem_psi",
+          "Deduction.CharacterBalanceMoves.sum_A",
+          "Deduction.CharacterBalanceMoves.sum_Th",
+          "Deduction.CharacterBalanceMoves.th_le",
+          "Deduction.CharacterBalanceMoves.move",
+          "Deduction.CharacterBalanceMoves.triv",
+          "Deduction.CharacterBalanceMoves.sum_vv",
+          "Deduction.CharacterBalanceMoves.one_char",
+          "Deduction.CharacterBalanceMoves.core",
+          "Deduction.ch_core"
+        ],
+        "review": [
+          "algebra_local",
+          "interfaces"
+        ],
+        "scope": "Promedio sobre A0, conjugados, factor delta2/2, transferencia a caracteres retenidos y lectura de ch_core. La firma core y los lemas del promedio también fueron leídos por el revisor aritmético. No auditoría completa de la absorción numérica final ni de las hipótesis ThinScales y RestSize.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChCore.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChTop.lean",
+        "git_blob_sha": "ce06a34a9e0b1b332e10d3b7efb04a06e9ab77f5",
+        "sha256": "9be04f7335746cae6bbdf52a813ae6713a90bf2a555eefc56f538bfd96af954f",
+        "bytes": 3793,
+        "declarations": [
+          "Deduction.ch_top_main_eq",
+          "Deduction.ch_top"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Identificación de Main geométrico con la suma de Re MAIN, y transporte de una cota del gap para cada traslado; las entradas de pendientes y periodos quedan fuera del cotejo.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChTop.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/SplitInertia.lean",
+        "git_blob_sha": "b5662cda1f3523fc53b547ee582a46bd3cd826d4",
+        "sha256": "7cba3fb7f7bae39df7e93248dfcf9b4255c37e8c1ebc0cb6a821b506b3839563",
+        "bytes": 5851,
+        "declarations": [
+          "Deduction.CH.HostFactsS",
+          "Deduction.CH.PsiA",
+          "Deduction.CH.wtA",
+          "Deduction.CH.GmA",
+          "Deduction.CH.SigA",
+          "Deduction.CH.SizesA",
+          "Deduction.CH.gapA",
+          "Deduction.CH.CharsA",
+          "Deduction.CH.IdentU",
+          "Deduction.CH.ReadsKept"
+        ],
+        "review": [
+          "definiciones",
+          "interfaces"
+        ],
+        "scope": "Hipótesis locales del host, cuantificadores de traslados y pesos, caracteres retenidos y descartados; lectura de las interfaces, sin construir sus entradas geométricas.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/SplitInertia.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/CardPsiA.lean",
+        "git_blob_sha": "4fe4ded735dd1ba55db3a01fc181ad794a2c4a0a",
+        "sha256": "8c6b5cbf8030859b9cc80323c0ce4942261e00e8de68c2819b03a0a770396fbb",
+        "bytes": 3282,
+        "declarations": [
+          "UpperTheory.Comparison₂.card_PsiA"
+        ],
+        "review": [
+          "algebra_local"
+        ],
+        "scope": "Lectura de la identificación de caracteres triviales en A0 con los del cociente y del recuento |PsiA| = 4o.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/PrimitiveCosets/CardPsiA.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/CoreAtH.lean",
+        "git_blob_sha": "0ba3621036f19146e7e67fa9c0e8a1c38661a097",
+        "sha256": "cb17dfd05546ac3116b0638406cb082913e3370841a8abfab1e6498b6d4ac698",
+        "bytes": 2897,
+        "declarations": [
+          "UpperTheory.Comparison₂.chr",
+          "UpperTheory.Comparison₂.HostAddCharCompatible",
+          "UpperTheory.Comparison₂.keptA",
+          "UpperTheory.Comparison₂.koOf",
+          "UpperTheory.Comparison₂.CoreAtH"
+        ],
+        "review": [
+          "definiciones",
+          "interfaces"
+        ],
+        "scope": "Compatibilidad de ell con L'/L(1) para caracteres primitivos y datos requeridos del puente geométrico. Reutilizado del cotejo anterior del mismo commit y vuelto a identificar por hash.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/PrimitiveCosets/CoreAtH.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/CoreGm.lean",
+        "git_blob_sha": "3ba7a590e84c5993882ea6c5dcf9fdbed5f07d4d",
+        "sha256": "73abeaad38ed40bde0c2f974f53cae9d851e72d23ae389dea129b2bbddc58bc8",
+        "bytes": 4613,
+        "declarations": [
+          "UpperTheory.Comparison₂.core_gm"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Lectura del enunciado y del ensamble ch_core/ch_top/gmA_eq; la conclusión depende de EAtH y CoreAtH, cuyas entradas profundas no se prueban en este cotejo.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/PrimitiveCosets/CoreGm.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/GmAEq.lean",
+        "git_blob_sha": "2f1a763f43d65eea1f6e61018c8b70c02d2dfa03",
+        "sha256": "8443808b37680ed3d10eeafbd3f739a95b0d1e479918834a3065de28e8269f5b",
+        "bytes": 6479,
+        "declarations": [
+          "UpperTheory.Comparison₂.gmA_eq"
+        ],
+        "review": [
+          "puente_aritmetico"
+        ],
+        "scope": "Lectura de la identificación exacta GmA = Level.Gm, del peso excepcional permitido en niveles generales y del transporte de caracteres primitivos.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/PrimitiveCosets/GmAEq.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/PrimRead.lean",
+        "git_blob_sha": "3960cf3e7d166f6664405a0d5fcb995924621ffb",
+        "sha256": "faeb6d27f74da9319a52b8c768b50c591c588b315ebfa0f830c0dcabdb4d1b8a",
+        "bytes": 4793,
+        "declarations": [
+          "UpperTheory.Comparison₂.prim_read"
+        ],
+        "review": [
+          "puente_aritmetico"
+        ],
+        "scope": "Lectura de la prueba que transporta primVal al carácter primitivo del host e identifica GPsi con An.gChi; compatibilidad de ell se asume explícitamente.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/PrimitiveCosets/PrimRead.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/RecH.lean",
+        "git_blob_sha": "b2712cc402765cea3fd406285e05e32a7ce64ec7",
+        "sha256": "61b35d1b52c98edd6829ae968b6d21d8fb754efd6dad97f357838f54477d65d5",
+        "bytes": 948,
+        "declarations": [
+          "UpperTheory.Comparison₂.toE",
+          "UpperTheory.Comparison₂.recH",
+          "UpperTheory.Comparison₂.arith"
+        ],
+        "review": [
+          "definiciones"
+        ],
+        "scope": "Cambio de coordenadas del grupo del host, intercambio de signos y transporte del mapa de Artin a ArithData.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/PrimitiveCosets/RecH.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/TopsSum.lean",
+        "git_blob_sha": "da934dfb2e0eabfccea5df2c4177fcf0c01c3f43",
+        "sha256": "a3ca8a26d2c5eab820d9c162a6e490c6ec7fee51a81572907630727de170a33a",
+        "bytes": 6205,
+        "declarations": [
+          "UpperTheory.Comparison₂.tops_sum"
+        ],
+        "review": [
+          "algebra_local"
+        ],
+        "scope": "Lectura de la deducción de la media 1/(3o+1) a partir de Shares y ortogonalidad del cociente; no construcción probabilística del conjunto TT.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/PrimitiveCosets/TopsSum.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/charsA.lean",
+        "git_blob_sha": "7d6a3faa3f6dcc1923a65473d848d8da0601e7a2",
+        "sha256": "36119af651432954be67b5827f5d6eb66a2fcbe2cdbacae3659638a49942352f",
+        "bytes": 5895,
+        "declarations": [
+          "UpperTheory.Comparison₂.charsA"
+        ],
+        "review": [
+          "puente_aritmetico",
+          "interfaces"
+        ],
+        "scope": "Lectura del ensamble de CharsA desde EAtH: pertenencia de caracteres, signo, promedio y cotas de logaritmos; estas cotas analíticas se reciben de EAtH.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/PrimitiveCosets/charsA.lean"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/hostFactsS.lean",
+        "git_blob_sha": "440a45819936cf0cb7fb8e81156e94b25288459c",
+        "sha256": "60f91d5782860a2feaf87c2754ea62a99f684425f58b274e9c443088886c2590",
+        "bytes": 6554,
+        "declarations": [
+          "UpperTheory.Comparison₂.hostFactsS"
+        ],
+        "review": [
+          "puente_aritmetico"
+        ],
+        "scope": "Lectura de la realización HostFactsS del host con S = insert q small = primeFactors(QS*q), incluida inercia de orden 2 en d; se usan las propiedades de HostAx sin auditar su construcción completa.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/PrimitiveCosets/hostFactsS.lean"
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean",
+        "git_blob_sha": "ed60b4b997cd4703713660b185b9e43fd95559a1",
+        "sha256": "d6b12bcbdc15c1b717c33a712474f9fca18c577a65c41fff2b2937534e5447ba",
+        "bytes": 7338,
+        "declarations": [
+          "Formalism.HC.Level.wt",
+          "Formalism.HC.Level.Gm",
+          "Formalism.HC.Level.ofSub",
+          "Formalism.HC.Level.cyc",
+          "Formalism.HC.Frame.lam",
+          "Formalism.HC.Frame.Shares",
+          "Formalism.HC.EAtH"
+        ],
+        "review": [
+          "definiciones"
+        ],
+        "scope": "Definiciones de los pesos, el nivel cíclico, el conjunto de primitivas y Shares. Reutilizado del cotejo anterior del mismo commit y vuelto a identificar por hash.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean"
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/InertiaGaloisSymmetry/AnyLevel.lean",
+        "git_blob_sha": "3678282a59bf25cbebeb672d0e367c542639d164",
+        "sha256": "4700cb38e3b22056c96b8952dbb8fde5f0286d8473d4d67cf82d0445161fb380",
+        "bytes": 10799,
+        "declarations": [
+          "Formalism.HC.AnyGrp.data",
+          "Formalism.HC.AnyGrp.frame",
+          "Formalism.HC.AnyGrp.theta",
+          "Formalism.HC.AnyGrp.theta_mem",
+          "Formalism.HC.AnyGrp.host",
+          "Formalism.HC.AnyGrp.theta_art",
+          "Formalism.HC.AnyGrp.prim_theta",
+          "Formalism.HC.AnyGrp.keptInXp",
+          "Formalism.HC.AnyGrp.exceptional_character_condition",
+          "Formalism.HC.AnyGrp.o_eq_level"
+        ],
+        "review": [
+          "puente_aritmetico",
+          "interfaces"
+        ],
+        "scope": "Lectura de la corrección de paridad en theta, de theta_art y prim_theta, y de los enunciados que sitúan los caracteres retenidos; no auditoría completa de AnyFrame ni de la construcción del campo.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/InertiaGaloisSymmetry/AnyLevel.lean"
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/ChainSlopeWindows/GaloisMapComplexConjugation.lean",
+        "git_blob_sha": "b08d98f83d661d021b20ccff6c405af78e9afb59",
+        "sha256": "a2103b58ff829b63399edc4126b0cdc842ef18fe2cd3791b4bc07f4fa56bfe01",
+        "bytes": 48214,
+        "declarations": [
+          "Formalism.LFunctionChainParameters.LHost.inertia_conductor",
+          "Formalism.LFunctionChainParameters.LHost.cosetMean_of_trivial",
+          "Formalism.LFunctionChainParameters.LHost.cosetMean_of_nontrivial",
+          "Formalism.LFunctionChainParameters.LHost.primitive_value_ramified",
+          "Formalism.LFunctionChainParameters.LHost.cosetMean_eq_primitive",
+          "Formalism.LFunctionChainParameters.LHost.primitive_value_primitive"
+        ],
+        "review": [
+          "algebra_local",
+          "puente_aritmetico"
+        ],
+        "scope": "Lectura de los lemas señalados que identifican medias de inercia y valores del carácter primitivo. El resto del archivo, incluidas las construcciones locales del campo, no se revisó matemáticamente de forma integral.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/GaloisMapComplexConjugation.lean"
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/ChainSlopeWindows/StronglyIrreducible.lean",
+        "git_blob_sha": "94a385f59f3781ae6b1ab4beddc73850708a2bc6",
+        "sha256": "8871c7b007650900936033e9d830127bdd116de6fe04ce5f567a996714eea5a3",
+        "bytes": 32069,
+        "declarations": [
+          "Formalism.LFunctionChainParameters.characterSumData.PB.sum_partner",
+          "Formalism.LFunctionChainParameters.characterSumData.PB.card_notPhi",
+          "Formalism.LFunctionChainParameters.characterSumData.PB.conj_eq_neg",
+          "Formalism.LFunctionChainParameters.characterSumData.PB.ortho",
+          "Formalism.LFunctionChainParameters.characterSumData.partner_bijection",
+          "Formalism.LFunctionChainParameters.characterSumData.colour_sum",
+          "Formalism.LFunctionChainParameters.characterSumData.primitive_value_trivial",
+          "Formalism.LFunctionChainParameters.characterSumData.primitive_value_pow",
+          "Formalism.LFunctionChainParameters.characterSumData.ortho_coset",
+          "Formalism.LFunctionChainParameters.characterSumData.orthogonality_ramified",
+          "Formalism.LFunctionChainParameters.characterSumData.sum_vonMangoldt_primePow",
+          "Formalism.LFunctionChainParameters.characterSumData.sum_cut",
+          "Formalism.LFunctionChainParameters.characterSumData.inner_eq"
+        ],
+        "review": [
+          "algebra_local"
+        ],
+        "scope": "Lectura de los lemas señalados para ortogonalidad, suma sobre el coset, cambio de índices y correcciones. No revisión integral de todos los lemas del archivo ni de sus imports.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/StronglyIrreducible.lean"
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/FirstPrimeNeSecondPrime.lean",
+        "git_blob_sha": "18deb7cb85d6f650a69f01fda6e0c789b9f04d89",
+        "sha256": "0af06fb5bd926de8235472c1c0482770d70e13b5bc58a0afef86d7d6b512246d",
+        "bytes": 6380,
+        "declarations": [
+          "Formalism.LFunctionChainParameters.characterSumData.sgc0",
+          "Formalism.LFunctionChainParameters.characterSumData.partner",
+          "Formalism.LFunctionChainParameters.characterSumData.chC",
+          "Formalism.LFunctionChainParameters.characterSumData.ArithData",
+          "Formalism.LFunctionChainParameters.characterSumData.cosetMean",
+          "Formalism.LFunctionChainParameters.characterSumData.primVal",
+          "Formalism.LFunctionChainParameters.characterSumData.GPsi",
+          "Formalism.LFunctionChainParameters.characterSumData.IsInert",
+          "Formalism.LFunctionChainParameters.characterSumData.askP",
+          "Formalism.LFunctionChainParameters.characterSumData.askD",
+          "Formalism.LFunctionChainParameters.characterSumData.ASK",
+          "Formalism.LFunctionChainParameters.characterSumData.MAIN",
+          "Formalism.LFunctionChainParameters.characterSumData.De",
+          "Formalism.LFunctionChainParameters.characterSumData.OrthoRam",
+          "Formalism.LFunctionChainParameters.characterSumData.ColourSum"
+        ],
+        "review": [
+          "definiciones"
+        ],
+        "scope": "Definiciones exactas de las medias de inercia, sumas corregidas y balance complejo; definición de la versión con HostFacts, distinta de la interfaz HostFactsS usada en ChBalance.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/FirstPrimeNeSecondPrime.lean"
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/GaloisToProductIsIso.lean",
+        "git_blob_sha": "4f314d4aed9d7969e3f275c9dd03aca3d015ee43",
+        "sha256": "ab8560f83980005685cf57f0fb14215e2f130eda9b884baacf04d1eef28a4bbd",
+        "bytes": 8459,
+        "declarations": [
+          "Formalism.LFunctionChainParameters.LHost.localUnits",
+          "Formalism.LFunctionChainParameters.LHost.IsFrobUnit",
+          "Formalism.LFunctionChainParameters.LHost.frobUnit",
+          "Formalism.LFunctionChainParameters.LHost.cftData",
+          "Formalism.LFunctionChainParameters.LHost.dirChar",
+          "Formalism.LFunctionChainParameters.LHost.InertiaConductor",
+          "Formalism.LFunctionChainParameters.LHost.PrimValRamified",
+          "Formalism.LFunctionChainParameters.LHost.PrimValPrimitive",
+          "Formalism.LFunctionChainParameters.LHost.HostDataField"
+        ],
+        "review": [
+          "definiciones"
+        ],
+        "scope": "Definiciones de la inercia como imagen de unidades locales y Frobenius aritmético mediante congruencias; interfaces exactas de conductor y carácter primitivo. HostDataField se leyó como especificación, no como auditoría de su realización en campos.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/GaloisToProductIsIso.lean"
+      },
+      {
+        "path": "src/Formalism/ThickAverageLoss/PartnersToFactorsAt.lean",
+        "git_blob_sha": "d3c1d8a4d1dcd4b282b14960b5a7b6525115e0af",
+        "sha256": "bebc91c34ad8abca4bdea86738be95217a72884c9fb7397ea73b91d723a5c39e",
+        "bytes": 8176,
+        "declarations": [
+          "Formalism.D5.E0",
+          "Formalism.D5.InPhi",
+          "Formalism.D5.cconj",
+          "Formalism.D5.topPl",
+          "Formalism.D5.thickPl",
+          "Formalism.D5.PhiSet",
+          "Formalism.D5.IsThickAt"
+        ],
+        "review": [
+          "definiciones"
+        ],
+        "scope": "Tipo (ZMod 2 × ZMod 2) × H, tipo CM, conjugación y emplazamientos; no se auditan las estructuras geométricas posteriores del archivo.",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/ThickAverageLoss/PartnersToFactorsAt.lean"
+      }
+    ],
+    "document_comparison": {
+      "A": {
+        "file": "riemann_hypothesis.pdf",
+        "pages": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "central_result": "Proposición 4.2 / ch_balance, p.15",
+        "related_result": "Proposición 4.3 / ch_core, pp.16–17",
+        "source_entrypoints_page": 53
+      },
+      "B": {
+        "file": "GRH note.pdf",
+        "pages": [
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "central_result": "Proposición 3.1, p.21; ecuaciones (3.1)–(3.4), pp.20–21",
+        "code_revision": "No fija revisión Git ni checksum; se compara su texto con el commit fijado por A."
+      }
+    },
+    "scope_limit": "Fuentes y fragmentos seleccionados para el balance de caracteres y su puente a Hψ. No se compiló código Lean, no se ejecutó el kernel ni se auditó la totalidad de las dependencias. Las estimaciones automórficas, ThinScales, cotas de giros y construcción completa del host se mantienen como entradas externas al tramo.",
+    "toolchain": "leanprover/lean4:v4.33.1",
+    "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474"
   }
 }

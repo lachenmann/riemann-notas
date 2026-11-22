@@ -1,0 +1,688 @@
+\section{Identidad de caracteres y cancelación del término principal}
+\label{sec:caracteres}
+
+Esta nota reconstruye el enlace entre una condición de Frobenius y las sumas corregidas de la Nota~\ref{sec:sumas}. La identidad principal expresa una suma aritmética no negativa, después de sustraer su término principal, como combinación de las funciones $G_\chi$. Después estudiamos los promedios finitos que seleccionan caracteres y explican el coeficiente positivo de $H_\psi$.
+
+\fuente{A, §4, especialmente Proposición~4.2 y ecuaciones (4.5)--(4.6), pp.~13--17; B, §3, especialmente Proposición~3.1, pp.~19--23. Las barras de conjugación y los signos se comprobaron también en las páginas renderizadas de ambos PDF. El cotejo con la revisión fijada de Lean se identifica al final.}
+
+La parte finita se demuestra aquí, incluido el fundamento de la ortogonalidad. La interpretación mediante extensiones abelianas y caracteres primitivos se señala como entrada clásica. La comparación con periodos automorfos y la producción de las ventanas permanecen como desarrollos posteriores. El resultado analítico que utilizará esas ventanas está en la Nota~\ref{sec:ventanas}.
+
+\subsection{Caracteres de un grupo abeliano finito}
+
+Sea $\Gamma$ un grupo abeliano finito, escrito aditivamente. Un carácter es un homomorfismo $\chi:\Gamma\to\C^\times$. Para todo $g\in\Gamma$, si $ng=0$, entonces $\chi(g)^n=1$. Por tanto, sus valores tienen módulo uno y
+
+\[
+\chi(-g)=\chi(g)^{-1}=\overline{\chi(g)}.
+\]
+
+El conjunto $\widehat\Gamma$ de todos los caracteres forma un grupo con el producto punto a punto. Su elemento identidad es el carácter constante $1$.
+
+\subsubsection*{Extender un carácter y contar todos los caracteres}
+
+Se puede justificar la ortogonalidad sin presuponer la dualidad de grupos finitos. Sea $H\le\Gamma$, sea $\psi:H\to\C^\times$ un carácter y sea $b\in\Gamma\setminus H$. Denotemos por $n$ el orden de $b+H$ en $\Gamma/H$. Así, $n\ge2$, $nb\in H$ y
+
+\[
+H'=H+\Z b,\qquad [H':H]=n.
+\]
+
+Elijamos una raíz $z$ de $z^n=\psi(nb)$ y definamos
+
+\begin{equation}
+\widetilde\psi(h+jb)=\psi(h)z^j,
+\qquad h\in H,\ j\in\Z.
+\label{car-extension}
+\end{equation}
+
+Para comprobar que la definición es independiente de los representantes, supongamos que $h+jb=h'+j'b$. Entonces $(j-j')b=h'-h\in H$, de modo que $j-j'=kn$ para algún $k\in\Z$. En consecuencia, $h'=h+knb$ y
+
+\[
+\psi(h')z^{j'}
+=\psi(h)\psi(nb)^kz^{j'}
+=\psi(h)z^{kn+j'}
+=\psi(h)z^j.
+\]
+
+La fórmula \eqref{car-extension} respeta la suma y restringe a $\psi$ en $H$, por lo que define un carácter de $H'$. Toda extensión tiene esta forma: su valor en $b$ determina los restantes valores y debe satisfacer $z^n=\psi(nb)$. Como $\psi(nb)\ne0$, esta ecuación tiene exactamente $n$ raíces complejas distintas. Por tanto, \textbf{cada carácter de $H$ tiene exactamente $[H':H]$ extensiones a $H'$}.
+
+Comenzando en $H=\{0\}$ y adjuntando sucesivamente elementos hasta obtener $\Gamma$, el número de caracteres se multiplica en cada paso por el índice del nuevo subgrupo. El producto de estos índices es $|\Gamma|$, de donde
+
+\begin{equation}
+|\widehat\Gamma|=|\Gamma|.
+\label{car-cardinal-dual}
+\end{equation}
+
+Este mismo procedimiento demuestra que los caracteres separan puntos. Si $v\ne0$ tiene orden $d\ge2$, el carácter de $\langle v\rangle$ definido por
+
+\[
+jv\longmapsto e^{2\pi i j/d}
+\]
+
+se extiende a $\Gamma$ y toma en $v$ un valor distinto de uno. Solo se han utilizado aquí la existencia y el número de las raíces complejas de un número no nulo, junto con propiedades elementales de los grupos finitos.
+
+\subsubsection*{Las dos formas de ortogonalidad}
+
+Si $H\le\Gamma$ y $\chi\in\widehat\Gamma$, entonces
+
+\begin{equation}
+\frac1{|H|}\sum_{h\in H}\chi(h)
+=
+\begin{cases}
+1,&\chi|_H=1,\\
+0,&\chi|_H\ne1.
+\end{cases}
+\label{car-ortogonalidad-subgrupo}
+\end{equation}
+
+La primera posibilidad es inmediata. En la segunda, elijamos $h_0\in H$ con $\chi(h_0)\ne1$. La traslación $h\mapsto h+h_0$ permuta $H$; por eso la suma es igual a sí misma multiplicada por $\chi(h_0)$ y debe ser cero. La misma fórmula vale con $\overline{\chi(h)}$.
+
+Por otra parte, para todo $v\in\Gamma$,
+
+\begin{equation}
+\sum_{\chi\in\widehat\Gamma}\chi(v)
+=|\Gamma|\,\mathbf 1_{\{v=0\}}.
+\label{car-ortogonalidad-dual}
+\end{equation}
+
+Si $v=0$, cada sumando es uno y se aplica \eqref{car-cardinal-dual}. Si $v\ne0$, existe $\psi\in\widehat\Gamma$ con $\psi(v)\ne1$. La permutación $\chi\mapsto\psi\chi$ de $\widehat\Gamma$ multiplica la suma por $\psi(v)$, de modo que vuelve a ser cero. En particular,
+
+\begin{equation}
+\sum_{\chi\in\widehat\Gamma}
+\overline{\chi(g)}\chi(v)
+=|\Gamma|\,\mathbf1_{\{v=g\}}.
+\label{car-ortogonalidad-pares}
+\end{equation}
+
+El conjugado convierte el producto del lado izquierdo en $\chi(v-g)$. Si se omite, el producto es $\chi(v+g)$ y se selecciona $v=-g$. Para caracteres no reales, estas condiciones pueden ser distintas.
+
+\subsection{Inercia, Frobenius y los coeficientes primitivos}
+
+Seguimos primero con datos finitos abstractos. Para cada primo racional $p$, fijamos un subgrupo $I_p\le\Gamma$ y una clase $F_p\in\Gamma/I_p$. Si $\widetilde F_p\in\Gamma$ es un representante, definimos, para cada entero $j\ge1$,
+
+\begin{equation}
+a_\chi(p^j)
+:=\frac1{|I_p|}\sum_{h\in I_p}
+\chi(j\widetilde F_p+h).
+\label{car-media-inercia}
+\end{equation}
+
+Cambiar $\widetilde F_p$ por $\widetilde F_p+h_0$ con $h_0\in I_p$ cambia $h$ por $h+jh_0$. Como esta traslación permuta $I_p$, la media es independiente del representante. Además,
+
+\begin{equation}
+a_\chi(p^j)
+=\chi(\widetilde F_p)^j
+\frac1{|I_p|}\sum_{h\in I_p}\chi(h)
+=
+\begin{cases}
+\chi(F_p)^j,&\chi|_{I_p}=1,\\
+0,&\chi|_{I_p}\ne1.
+\end{cases}
+\label{car-coeficiente-local}
+\end{equation}
+
+En la primera línea, $\chi(F_p)$ significa el valor del carácter descendido a $\Gamma/I_p$; ese valor no requiere elegir un representante. Extendemos $a_\chi$ multiplicativamente a los enteros positivos, con $a_\chi(1)=1$. En particular, $a_1(n)=1$ para todo $n\ge1$, incluso en los primos donde $I_p$ sea no trivial. Estas afirmaciones y la independencia del representante quedan demostradas solo con \eqref{car-ortogonalidad-subgrupo}. Corresponden a B, §3.1, pp. 19–20.
+
+\subsubsection*{Interpretación aritmética: entrada externa}
+
+Cuando $E/\Q$ es una extensión finita abeliana, se toma $\Gamma=\operatorname{Gal}(E/\Q)$. Para un primo $\mathfrak p$ de $E$ sobre $p$, su grupo de descomposición $D_{\mathfrak p}$ actúa en el cuerpo residual. La inercia $I_{\mathfrak p}$ es el núcleo de esta acción. El cociente $D_{\mathfrak p}/I_{\mathfrak p}$ es el grupo de Galois de la extensión residual y contiene el Frobenius aritmético, que actúa como $x\mapsto x^p$. Su clase determina $F_p\in\Gamma/I_p$. La conmutatividad de $\Gamma$ hace independientes de $\mathfrak p$ tanto $I_p$ como esta clase de Frobenius.
+
+Usamos la convención de Frobenius aritmético para que en $\Q(\zeta_N)$, cuando $p\nmid N$, $F_p$ corresponda a $\zeta_N\mapsto\zeta_N^p$. Con esta convención se obtiene el valor usual de un carácter de Dirichlet en $p$. La convención inversa cambia también los valores que deben aparecer en las fórmulas.
+
+La identificación aritmética utilizada en B es que a cada $\chi\in\widehat\Gamma$ le corresponde un carácter de Dirichlet \textbf{primitivo} $\chi^*$, de conductor $q_\chi$, tal que
+
+\begin{equation}
+a_\chi(n)=\chi^*(n),\qquad n\ge1.
+\label{car-caracter-primitivo}
+\end{equation}
+
+Los ingredientes clásicos de \eqref{car-caracter-primitivo} son la realización ciclotómica de las extensiones abelianas de $\Q$ y la descripción de sus caracteres y factores de Euler locales. Localmente, la afirmación es
+
+\begin{equation}
+\chi|_{I_p}=1\ \Longleftrightarrow\ p\nmid q_\chi;
+\qquad
+\chi(F_p)=\chi^*(p)\quad\text{si }p\nmid q_\chi.
+\label{car-conductor}
+\end{equation}
+
+Si $\chi$ no es trivial sobre la inercia, $p\mid q_\chi$, y ambos lados de \eqref{car-caracter-primitivo} se anulan en $p^j$. Si sí lo es, \eqref{car-coeficiente-local} y \eqref{car-conductor} identifican los valores en todas las potencias de $p$. La multiplicatividad concluye la igualdad para $n\ge1$. La deducción de \eqref{car-caracter-primitivo} a partir de \eqref{car-conductor} es elemental; \eqref{car-conductor} es la entrada de teoría de números que se cita, sin reconstruir aquí la teoría de las extensiones abelianas.
+
+Esta precisión importa en un primo ramificado en $E$: puede ocurrir que un carácter concreto sea trivial en $I_p$. Su factor local y su coeficiente $a_\chi(p)$ permanecen entonces presentes. La ramificación del campo común no obliga a que todos sus caracteres se anulen en ese primo.
+
+\subsubsection*{Un carácter inducido a un módulo mayor}
+
+Si un carácter primitivo $\chi^*$ de conductor $q$ induce un carácter $\chi_N$ módulo $N$, con $q\mid N$, entonces
+
+\[
+\chi_N(n)=
+\begin{cases}
+\chi^*(n),&\gcd(n,N)=1,\\
+0,&\gcd(n,N)>1.
+\end{cases}
+\]
+
+En un primo $p\mid N$ con $p\nmid q$, el carácter inducido vale cero, aunque $\chi^*(p)$ tiene módulo uno. Por los productos de Euler, inicialmente en $\Ree s>1$,
+
+\begin{equation}
+L(s,\chi_N)
+=L(s,\chi^*)
+\prod_{\substack{p\mid N\\p\nmid q}}
+(1-\chi^*(p)p^{-s}).
+\label{car-euler-inducido}
+\end{equation}
+
+La fórmula se encuentra también al final de B, §2, p. 19. La media de inercia \eqref{car-media-inercia} produce $\chi^*$, por lo que no se puede sustituir $a_\chi(n)$ por el carácter inducido a un módulo común sin llevar la cuenta de estos factores locales. El carácter trivial de $\widehat\Gamma$ corresponde al carácter primitivo de conductor uno y a $\zeta(s)$.
+
+\subsection{Del promedio de inercia a una condición de Frobenius}
+
+Sea $\kappa:\Gamma\to\{\pm1\}$ un carácter cuadrático no trivial y pongamos
+
+\[
+\Phi=\ker\kappa,\qquad f=|\Phi|,
+\qquad |\Gamma|=2f.
+\]
+
+Para cada $g\in\Gamma$, $p$ primo y $j\ge1$, aplicamos \eqref{car-ortogonalidad-pares} a cada término de \eqref{car-media-inercia}:
+
+\begin{equation}
+\begin{aligned}
+\frac1f\sum_{\chi\in\widehat\Gamma}
+\overline{\chi(g)}\,a_\chi(p^j)
+&=\frac1{f|I_p|}\sum_{h\in I_p}
+\sum_{\chi\in\widehat\Gamma}
+\chi(j\widetilde F_p+h-g)\\
+&=\frac{|\Gamma|}{f|I_p|}
+\#\{h\in I_p:j\widetilde F_p+h=g\}\\
+&=\frac2{|I_p|}\,
+\mathbf1_{\{g-j\widetilde F_p\in I_p\}}.
+\end{aligned}
+\label{car-frobenius}
+\end{equation}
+
+La ecuación para $h$ tiene una única solución cuando $g-j\widetilde F_p\in I_p$, y no tiene ninguna en caso contrario. La condición es independiente del representante; equivale a $g+I_p=jF_p$ en $\Gamma/I_p$. Esta es exactamente B, ecuación (3.1), p. 20.
+
+El factor $2$ procede de $|\Gamma|/f=2$. El denominador $|I_p|$ procede de la media sobre la inercia. El resultado es real y no negativo, aunque cada término de la suma de caracteres pueda ser complejo.
+
+\subsection{La suma ponderada y su positividad}
+
+Fijemos $c\in\Gamma\setminus\Phi$ y $t\in\Phi$. La aplicación
+
+\[
+\rho_t:\Gamma\setminus\Phi\longrightarrow\Phi,
+\qquad \rho_t(g)=c+g+t
+\]
+
+es una biyección: es una traslación y $\kappa(c+g+t)=(-1)(-1)(1)=1$. Su inversa en $\Phi$ es $\rho\mapsto\rho-c-t$. No se necesita suponer que $c$ tenga orden dos para esta identidad finita.
+
+Sean $a>0$ y $w_\rho>0$ para todo $\rho\in\Phi$. Escribimos $v_+=\max(v,0)$ para $v\in\R$ y definimos
+
+\begin{equation}
+\mathcal A(a,t,w)
+:=\frac1f\sum_{g\notin\Phi}
+\sum_{\chi\in\widehat\Gamma}\overline{\chi(g)}
+\sum_{n\ge1}\Lambda(n)a_\chi(n)
+\left(\frac an-w_{\rho_t(g)}\right)_+.
+\label{car-suma-ponderada}
+\end{equation}
+
+Aquí $\Lambda(p^j)=\log p$ para $p$ primo y $j\ge1$, y $\Lambda(n)=0$ en los demás casos, incluido $n=1$. Es la ecuación (3.2) de B, p. 20. Como $\Phi$ es finito y los pesos son positivos, $w_{\min}:=\min_{\rho\in\Phi}w_\rho>0$. Todo término no nulo satisface $n<a/w_{\min}$. En el extremo $n=a/w_\rho$ la parte positiva vale cero. Por tanto, todas las sumas escritas son efectivamente finitas y se pueden reordenar sin hipótesis analíticas de convergencia.
+
+Agrupando los $n$ con $\Lambda(n)\ne0$ y aplicando \eqref{car-frobenius}, se obtiene
+
+\begin{equation}
+\mathcal A(a,t,w)
+=\sum_p(\log p)\sum_{j\ge1}
+\frac2{|I_p|}
+\sum_{\substack{g\notin\Phi\\g-j\widetilde F_p\in I_p}}
+\left(\frac a{p^j}-w_{\rho_t(g)}\right)_+.
+\label{car-suma-positiva}
+\end{equation}
+
+Todos los factores de cada sumando son reales y no negativos. En particular, $\mathcal A(a,t,w)\ge0$. La fórmula mantiene tanto la condición de Frobenius como el umbral $p^j<a/w_{\rho_t(g)}$ que interviene después en las estimaciones de divisibilidad de periodos.
+
+\subsection{Términos corregidos y cancelación exacta}
+
+Para cada $\chi\ne1$, fijemos por ahora una constante arbitraria $\ell_\chi\in\C$. Para \textbf{todo} $y>0$, definimos
+
+\begin{equation}
+\begin{aligned}
+G_\chi(y)
+&=\sum_{n\ge1}\Lambda(n)a_\chi(n)(y/n-1)_+
++y\ell_\chi,\qquad \chi\ne1,\\
+G_1(y)
+&=\sum_{n\ge1}\Lambda(n)(y/n-1)_+
+-y\log y+(1+\gamma_E)y.
+\end{aligned}
+\label{car-sumas-corregidas}
+\end{equation}
+
+La constante $\gamma_E$ es la constante de Euler que aparece en la regularización de $\zeta$. Las sumas finitas siguen teniendo sentido cuando $0<y<1$: en ese intervalo se anulan y solo quedan las correcciones indicadas. Esta extensión es necesaria porque en \eqref{car-suma-ponderada} no se exige $a/w_\rho\ge1$. Las definiciones son las de B, §3.2, p. 21; bajo \eqref{car-caracter-primitivo} y con $\ell_\chi=L'(1,\chi^*)/L(1,\chi^*)$, coinciden con las funciones de B, §1.2, p. 4.
+
+\subsubsection*{El promedio en la clase donde $\kappa=-1$}
+
+Para cada $\chi\in\widehat\Gamma$, se tiene
+
+\begin{equation}
+\frac1f\sum_{g\notin\Phi}\overline{\chi(g)}
+=
+\begin{cases}
+1,&\chi=1,\\
+-1,&\chi=\kappa,\\
+0,&\chi\notin\{1,\kappa\}.
+\end{cases}
+\label{car-promedio-clase}
+\end{equation}
+
+En efecto, $\Gamma\setminus\Phi=c+\Phi$, por lo que el promedio es
+
+\[
+\overline{\chi(c)}\,
+\frac1f\sum_{h\in\Phi}\overline{\chi(h)}.
+\]
+
+Por \eqref{car-ortogonalidad-subgrupo}, se anula salvo que $\chi|_\Phi=1$. En ese caso, $\chi$ desciende al grupo de dos elementos $\Gamma/\Phi$ y solo puede ser $1$ o $\kappa$. Sus valores en $c$ son respectivamente $1$ y $-1$, ambos reales. Esto conserva el conjugado y explica el signo negativo de la segunda línea.
+
+\begin{minipage}{\linewidth}
+\subsubsection*{Corrección de cada carácter antes de sumar}
+
+Como $w>0$,
+
+\[
+\left(\frac an-w\right)_+
+=w\left(\frac a{wn}-1\right)_+.
+\]
+\end{minipage}
+
+Así, para $\chi\ne1$,
+
+\begin{equation}
+\sum_{n\ge1}\Lambda(n)a_\chi(n)
+\left(\frac an-w\right)_+
+=wG_\chi(a/w)-a\ell_\chi.
+\label{car-correccion-no-principal}
+\end{equation}
+
+Para el carácter trivial, usando $a_1(n)=1$,
+
+\begin{equation}
+\sum_{n\ge1}\Lambda(n)
+\left(\frac an-w\right)_+
+=wG_1(a/w)+a\log a-a\log w-(1+\gamma_E)a.
+\label{car-correccion-principal}
+\end{equation}
+
+El signo de $-a\ell_\chi$ en \eqref{car-correccion-no-principal} y los tres términos añadidos en \eqref{car-correccion-principal} se obtienen despejando las sumas a partir de \eqref{car-sumas-corregidas}.
+
+\subsubsection*{La identidad principal: demostración completa}
+
+Definamos
+
+\begin{equation}
+\mathcal M(a,w)
+:=a\left(
+\log a-1-\gamma_E+\ell_\kappa
+-\frac1f\sum_{\rho\in\Phi}\log w_\rho
+\right).
+\label{car-termino-principal}
+\end{equation}
+
+Al sustituir \eqref{car-correccion-no-principal} y \eqref{car-correccion-principal} en \eqref{car-suma-ponderada}, los términos que contienen las funciones $G_\chi$ dan
+
+\begin{equation}
+\frac1f\sum_{g\notin\Phi}
+\sum_{\chi\in\widehat\Gamma}
+\overline{\chi(g)}\,w_{\rho_t(g)}
+G_\chi\!\left(\frac a{w_{\rho_t(g)}}\right).
+\label{car-resto}
+\end{equation}
+
+Las correcciones de los caracteres no triviales suman, por \eqref{car-promedio-clase},
+
+\[
+-a\sum_{\chi\ne1}\ell_\chi
+\left(\frac1f\sum_{g\notin\Phi}\overline{\chi(g)}\right)
+=-a\ell_\kappa(-1)
+=a\ell_\kappa.
+\]
+
+Para el carácter trivial, la biyección $\rho_t$ da
+
+\[
+\begin{aligned}
+\frac1f\sum_{g\notin\Phi}
+\bigl[a\log a-a\log w_{\rho_t(g)}-(1+\gamma_E)a\bigr]
+&=a\log a-(1+\gamma_E)a
+-\frac af\sum_{\rho\in\Phi}\log w_\rho.
+\end{aligned}
+\]
+
+La suma de ambas correcciones es exactamente \eqref{car-termino-principal}. Por tanto,
+
+\begin{equation}
+\boxed{
+\mathcal A(a,t,w)-\mathcal M(a,w)
+=\frac1f\sum_{g\notin\Phi}
+\sum_{\chi\in\widehat\Gamma}
+\overline{\chi(g)}\,w_{\rho_t(g)}
+G_\chi\!\left(\frac a{w_{\rho_t(g)}}\right).
+}
+\label{car-balance}
+\end{equation}
+
+Esta es B, proposición 3.1 y ecuación (3.4), p. 21. La corrección principal es independiente de $t$, porque solo depende de la suma de los logaritmos de todos los pesos. La prueba algebraica admite $\ell_\kappa$ complejo. B impone $\ell_\kappa\in\R$ para que $\mathcal M$ sea real; bajo esa hipótesis, el lado derecho de \eqref{car-balance} también es real, aunque no se hayan supuesto relaciones de conjugación entre las otras constantes $\ell_\chi$.
+
+En la aplicación, $\kappa$ corresponde a un carácter primitivo cuadrático real y $\ell_\kappa$ es real. La existencia de $L'(1,\chi^*)/L(1,\chi^*)$ para $\chi\ne1$ utiliza la no anulación clásica de los valores $L(1,\chi^*)$. Ese es el único punto de no anulación necesario para interpretar las constantes de esta identidad; no se requiere una hipótesis sobre los ceros en el interior de la franja crítica. Es la precisión de B, observación 3.2, p. 21.
+
+\subsubsection*{Comprobación cuando todos los pesos son iguales}
+
+Si $w_\rho=w$ para todo $\rho$, el promedio \eqref{car-promedio-clase} permite simplificar \eqref{car-suma-ponderada} a
+
+\begin{equation}
+\mathcal A(a,t,w)
+=\sum_{n\ge1}\Lambda(n)
+\bigl(1-a_\kappa(n)\bigr)(a/n-w)_+.
+\label{car-pesos-iguales}
+\end{equation}
+
+En una potencia de primo, $a_\kappa(p^j)$ pertenece a $\{1,-1,0\}$, por lo que su coeficiente en \eqref{car-pesos-iguales} es respectivamente $0$, $2$ o $1$. Esto concuerda con \eqref{car-suma-positiva}: si $\kappa$ es trivial sobre $I_p$, la clase $jF_p+I_p$ está completamente dentro o completamente fuera de $\Phi$; si no lo es, exactamente la mitad de sus $|I_p|$ elementos queda fuera. Los factores correspondientes son $0$, $2|I_p|/|I_p|$ y $2(|I_p|/2)/|I_p|$.
+
+En este caso, \eqref{car-balance} se reduce a
+
+\[
+\mathcal A(a,t,w)-
+a\bigl(\log(a/w)-1-\gamma_E+\ell_\kappa\bigr)
+=w\bigl(G_1(a/w)-G_\kappa(a/w)\bigr).
+\]
+
+Esta especialización comprueba los signos y muestra por qué la variación de los pesos tiene un papel propio en la selección posterior de otros caracteres.
+
+\subsection{Un ejemplo que muestra el conjugado y los factores de inercia}
+
+Tomemos
+
+\[
+\Gamma=(\Z/2\Z)\times(\Z/3\Z),
+\qquad \kappa(s,r)=(-1)^s,
+\qquad \Phi=\{0\}\times\Z/3\Z.
+\]
+
+Entonces $f=3$. Con $\omega=e^{2\pi i/3}$, los seis caracteres son
+
+\[
+\chi_{a,b}(s,r)=(-1)^{as}\omega^{br},
+\qquad a\in\{0,1\},\quad b\in\{0,1,2\}.
+\]
+
+Para un primo fijado, usemos el representante $\widetilde F=(1,1)$ y consideremos primero el exponente $j=1$. Escribamos
+
+\begin{equation}
+K_I(g)=\frac13\sum_{a=0}^1\sum_{b=0}^2
+\overline{\chi_{a,b}(g)}\,
+\frac1{|I|}\sum_{h\in I}\chi_{a,b}(\widetilde F+h).
+\label{car-nucleo-ejemplo}
+\end{equation}
+
+Los puntos de $\Gamma\setminus\Phi$ son $(1,0),(1,1),(1,2)$. La siguiente tabla se obtiene de la identidad \eqref{car-frobenius}:
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}lYccc@{}}
+\toprule
+Inercia $I$ & Caracteres que sobreviven & $K_I(1,0)$ & $K_I(1,1)$ & $K_I(1,2)$ \\
+\midrule
+$\{0\}$ & Los seis & $0$ & $2$ & $0$ \\
+$\{0\}\times\Z/3\Z$ & Los de $b=0$ & $2/3$ & $2/3$ & $2/3$ \\
+$\Z/2\Z\times\{0\}$ & Los de $a=0$ & $0$ & $1$ & $0$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Podemos comprobarla directamente. Si $I=\{0\}$ y $g=(1,r)$, el producto de los valores de los caracteres es $\omega^{b(1-r)}$, y
+
+\[
+K_{\{0\}}(1,r)
+=\frac23\sum_{b=0}^2\omega^{b(1-r)}
+=2\mathbf1_{\{r=1\}}.
+\]
+
+Si $I=\{0\}\times\Z/3\Z$, la media elimina los caracteres con $b\ne0$. Los dos restantes aportan $1/3$ cada uno, lo que da $2/3$ en los tres puntos. Si $I=\Z/2\Z\times\{0\}$, solo quedan los caracteres con $a=0$ y la suma es $(1/3)\sum_b\omega^{b(1-r)}=\mathbf1_{\{r=1\}}$.
+
+El conjugado es visible en este ejemplo. Si se omite en el primer caso y se toma $g=\widetilde F$, el resultado pasa a ser
+
+\[
+\frac23\sum_{b=0}^2\omega^{2b}=0,
+\]
+
+aunque la condición de Frobenius se cumple y el valor correcto es $2$. Este es un ejemplo algebraico propio para comprobar la normalización; no afirma que las tres inercias sean datos simultáneos de un cuerpo concreto.
+
+También permite comparar los exponentes. En el caso no ramificado, $j\widetilde F=(j\bmod2,j\bmod3)$ queda fuera de $\Phi$ exactamente cuando $j$ es impar, y el coeficiente de la contribución local es $2\log p$. Con $I=\Z/2\Z\times\{0\}$, cada clase contiene un único punto exterior $(1,j\bmod3)$ y su coeficiente es $\log p$ para \textbf{todo entero} $j\ge1$. Esto explica el factor que A utiliza en el primo ramificado distinguido $p=d$, donde la inercia tiene orden dos y sale de $\Phi$; véase A, p. 15.
+
+\subsection{La selección finita que prepara la combinación \texorpdfstring{$H_\psi$}{H psi}}
+
+La identidad principal contiene todos los caracteres de $\Gamma$ y argumentos que dependen de los pesos. Para estudiar la selección posterior, aislamos ahora un cálculo finito en el grupo utilizado por A:
+
+\[
+\Gamma=(\Z/2\Z)^2\times A,
+\qquad \kappa(\alpha,\beta,a)=(-1)^\alpha,
+\qquad c=(1,1,0),
+\]
+
+donde $A$ es un grupo abeliano finito. Aquí $A$ designa un grupo; $\mathcal A$ sigue designando la suma aritmética. Sean $A_0\le A$, $n=|A|$ y $o=[A:A_0]$. Entonces $f=2n$. Identificamos $u\in A$ con $(0,0,u)\in\Gamma$.
+
+Definamos
+
+\[
+\Psi=\{\chi\in\widehat\Gamma:\chi(0,0,u)=1\text{ para todo }u\in A_0\}.
+\]
+
+Estos caracteres descienden exactamente al cociente $\Gamma/A_0$, cuyo orden es $4o$. Por el conteo de caracteres ya demostrado,
+
+\begin{equation}
+|\Psi|=4o.
+\label{car-caracteres-supervivientes}
+\end{equation}
+
+En la aplicación, un subconjunto $K\subset\Psi$ de tamaño $o$ representa las potencias del carácter original $\psi$. Los otros $3o$ caracteres son las tres familias obtenidas al multiplicarlas por los caracteres cuadráticos auxiliares. Esta identificación concreta corresponde a A, p. 13; depende de la construcción del cuerpo y de su corrección de paridad. El promedio por sí mismo retiene $\Psi$ completo.
+
+\subsubsection*{El promedio sobre $A_0$ y el factor $\delta_2/2$}
+
+Sean $T_2\subset A_0$ no vacío, $b>0$ y $t\in A$. La relación
+
+\[
+\rho_t(1,0,s+u-t)=(0,1,s+u)
+\]
+
+identifica los índices que A llama lugares de peso grande. Para cada carácter, la ortogonalidad sobre $A_0$ da
+
+\begin{equation}
+\frac1{|A_0|}\sum_{u\in A_0}\sum_{s\in T_2}
+\overline{\chi(1,0,s+u-t)}
+=
+\begin{cases}
+|T_2|\overline{\chi(1,0,-t)},&\chi\in\Psi,\\
+0,&\chi\notin\Psi.
+\end{cases}
+\label{car-promedio-subgrupo}
+\end{equation}
+
+Para demostrarlo, se factoriza el carácter en las contribuciones de $(1,0,-t)$, $(0,0,s)$ y $(0,0,u)$. La media sobre $u$ se anula fuera de $\Psi$. Dentro de $\Psi$, tanto $s$ como $u$ pertenecen a $A_0$ y sus factores valen uno.
+
+Si $\delta_2=|T_2|/n$, el factor que acompaña a esta media en la identidad de caracteres es
+
+\begin{equation}
+\frac{b|T_2|}{f}=\frac{b\delta_2}{2}.
+\label{car-factor-medio}
+\end{equation}
+
+Esta es la procedencia del $2$ que aparece al despejar el promedio normalizado en A, proposición 4.3. El cálculo supone que lo que multiplica al carácter ya es independiente de $u$ y $s$. En la aplicación, esa independencia se obtiene después de reemplazar los pesos correspondientes por $b$ y acotar el cambio. La ortogonalidad no autoriza a extraer de una suma un factor que todavía depende de la traslación.
+
+\subsubsection*{Por qué aparece $1/(3o+1)$}
+
+Pongamos $Q=A/A_0$, de orden $o$, y definamos una distribución de probabilidad en sus clases:
+
+\begin{equation}
+q(C)=
+\begin{cases}
+4/(3o+1),&C=0,\\
+3/(3o+1),&C\ne0.
+\end{cases}
+\label{car-distribucion}
+\end{equation}
+
+Sus valores suman uno, pues $4+3(o-1)=3o+1$. Para el carácter trivial de $Q$, la media es uno. Para cualquier carácter no trivial $\lambda\in\widehat Q$, la ortogonalidad da
+
+\begin{equation}
+\sum_{C\in Q}q(C)\lambda(C)
+=\frac{3\sum_C\lambda(C)+\lambda(0)}{3o+1}
+=\frac1{3o+1}.
+\label{car-sesgo}
+\end{equation}
+
+Así, un pequeño exceso de masa en la clase cero produce el mismo coeficiente real positivo para todos los caracteres no triviales del cociente. A construye un conjunto $T_1\subset A$ cuya distribución entre las clases aproxima \eqref{car-distribucion}, con una condición adicional sobre órbitas. La existencia simultánea de ambas propiedades se utiliza como entrada de la construcción; el cálculo de Fourier \eqref{car-sesgo} no demuestra la condición de órbitas. Véanse A, (4.4)–(4.5), p. 14.
+
+La estabilidad de \eqref{car-sesgo} es elemental. Si $r=|T_1|>0$, $N_C=|T_1\cap C|$ y $|N_C/r-q(C)|\le\epsilon_T$ para todas las clases, entonces
+
+\begin{equation}
+\left|\frac1r\sum_{t\in T_1}\lambda(t)-\sum_Cq(C)\lambda(C)\right|
+\le\sum_C\left|\frac{N_C}{r}-q(C)\right|
+\le o\epsilon_T.
+\label{car-error-coeficientes}
+\end{equation}
+
+La primera desigualdad usa $|\lambda(C)|=1$. Esta cota explica cómo se controla la diferencia entre el coeficiente objetivo y el coeficiente obtenido de un conjunto finito.
+
+\subsubsection*{Una desigualdad finita para separar los caracteres retenidos}
+
+Supongamos que $K$ contiene al carácter trivial, que $\chi(1,0,0)=1$ para $\chi\in K$, y que la restricción a $A$, descendida a $Q$, define una biyección $K\to\widehat Q$. Estas propiedades están realizadas por las potencias de $\psi$ en el cuerpo construido por A. Fijemos números complejos $Z_\chi$, independientes de $t,u,s$, y escribamos
+
+\begin{equation}
+c_\chi=\overline{\chi(1,0,0)}\,
+\frac1r\sum_{t\in T_1}\chi(0,0,t),
+\qquad
+\mathcal F(Z)=\sum_{\chi\in\Psi}c_\chi Z_\chi.
+\label{car-funcional}
+\end{equation}
+
+La fórmula \eqref{car-promedio-subgrupo} muestra exactamente que
+
+\begin{equation}
+\mathcal F(Z)
+=\frac{2}{b\delta_2 r}\sum_{t\in T_1}
+\frac1{|A_0|}\sum_{u\in A_0}
+\frac b f\sum_{s\in T_2}\sum_{\chi\in\widehat\Gamma}
+\overline{\chi(1,0,s+u-t)}\,Z_\chi.
+\label{car-promedio-completo}
+\end{equation}
+
+Se tiene $c_1=1$ y $|c_\chi|\le1$ para todo $\chi\in\Psi$. Si, además,
+
+\[
+|c_\chi-c_0|\le\rho\quad(\chi\in K\setminus\{1\}),
+\qquad c_0=\frac1{3o+1},\quad\rho\ge0,
+\]
+
+entonces
+
+\begin{equation}
+\Ree Z_1+c_0\sum_{\chi\in K\setminus\{1\}}\Ree Z_\chi
+\le\Ree\mathcal F(Z)
++\rho\sum_{\chi\in K\setminus\{1\}}|Z_\chi|
++\sum_{\chi\in\Psi\setminus K}|Z_\chi|.
+\label{car-extraccion}
+\end{equation}
+
+En efecto, para un carácter retenido se escribe $c_\chi=c_0+e_\chi$ y se usa $\Ree(e_\chi Z_\chi)\ge-\rho|Z_\chi|$. Para los restantes, $\Ree(c_\chi Z_\chi)\ge-|Z_\chi|$. Sumando y trasladando estos errores se obtiene \eqref{car-extraccion}.
+
+Cuando $Z_\chi=G_\chi(x)$ y $K$ se identifica con los caracteres primitivos que inducen las potencias de $\psi$, el lado izquierdo es
+
+\[
+H_\psi(x)=G_1(x)+\frac1{3o+1}
+\sum_{j=1}^{o-1}\Ree G_{\psi^{[j]}}(x).
+\]
+
+Para $o=1$, la suma retenida no trivial es vacía; permanecen el carácter trivial y los tres caracteres auxiliares de $\Psi\setminus K$. La fórmula \eqref{car-extraccion} exhibe los dos errores que la selección finita deja abiertos: la aproximación de coeficientes y los caracteres auxiliares supervivientes.
+
+\subsection{Datos aritméticos y estimaciones que aún deben incorporarse}
+\label{car-entradas}
+
+La prueba anterior tiene un núcleo exacto y una aplicación que requiere datos adicionales. Conviene fijar su relación para continuar el estudio sin atribuir a la ortogonalidad una estimación que no proporciona.
+
+\begingroup
+\raggedright
+\begin{description}
+\item[$I_p$, $F_p$ y carácter primitivo asociado.] Interpretar $a_\chi(n)$ como coeficientes de una función $L$ de Dirichlet. Se explicó el criterio local; la identificación aritmética clásica se utiliza como entrada.
+
+\item[$\ell_\chi=L'(1,\chi^*)/L(1,\chi^*)$.] Recuperar las mismas sumas corregidas de la nota analítica. Se utiliza la no anulación clásica en $1$ para caracteres no principales.
+
+\item[Cuerpo con $\Gamma=(\Z/2\Z)^2\times A$ y familia $K$.] Alojar las potencias de $\psi$, incluidas las impares, y sus twists cuadráticos. Se identificaron las condiciones usadas; la construcción completa se toma de A, pp. 12–13.
+
+\item[Conjuntos $T_1,T_2$ y pesos.] Dar coeficientes próximos a \eqref{car-sesgo} y controlar simultáneamente las órbitas. Se demostraron sus consecuencias de Fourier; su elección aritmética y combinatoria sigue por desarrollar.
+
+\item[Sustitución de pesos y argumentos.] Pasar de $wG_\chi(a_t/w)$ a $bG_\chi(x)$. Requiere las estimaciones de A, (4.7)–(4.9), pp. 15–16.
+
+\item[Cota de $\mathcal A-\mathcal M$.] Acotar el promedio que aparece en \eqref{car-promedio-completo}. Depende de la comparación con periodos, normas y pendientes; continúa pendiente.
+
+\item[Cotas para $\Psi\setminus K$.] Controlar el último término de \eqref{car-extraccion}. Son las estimaciones para los caracteres auxiliares; la ortogonalidad no los elimina.
+
+\end{description}
+\par
+\endgroup
+
+En la sustitución de argumentos hay una precisión cuantitativa útil. Si $a_t/b=x+e_t$ y $w=b+d$ con $0\le d\le h$, entonces
+
+\begin{equation}
+\frac{a_t}{w}-x=\frac{e_t-xd/b}{1+d/b},
+\qquad
+\left|\frac{a_t}{w}-x\right|\le |e_t|+\frac{xh}{b}.
+\label{car-cambio-argumento}
+\end{equation}
+
+Por ello, conocer $h/b$ pequeño exige todavía compararlo con la escala $1/x$ para obtener un error absoluto acotado. A controla primero el cambio de $wG_\chi(a_t/w)$ al sustituir $w$ por $b$, y después usa $|a_t/b-x|\le1$ para cambiar el argumento. B, p. 22, describe las dos escalas de pesos; su expresión «próximo a $x$» debe leerse junto con ese control cuantitativo.
+
+Finalmente, la cota geométrica que A, proposición 4.3, usa como hipótesis vale para \textbf{cada} traslación $u\in A_0$, con los mismos datos de la construcción. Para promediarla hay que conservar este cuantificador o demostrar una cota equivalente para el promedio pertinente. La identidad de caracteres determina qué exceso se debe acotar, pero no produce su cota superior.
+
+\subsection{Concordancia con Lean y alcance de la revisión}
+\begingroup
+\small
+\raggedright
+
+Se consultó el espejo \href{https://github.com/CocoSgt/riemann-hypothesis-lean/tree/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4}{CocoSgt/riemann-hypothesis-lean}, fijado en \texttt{7cbf7a0c32fc}, la misma revisión utilizada en la nota de ventanas. Los archivos de configuración declaran Lean \texttt{4.33.1} y Mathlib \texttt{0df444a360ea}.
+
+La declaración central es \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChBalance.lean}{Deduction.ch\_balance}. Su conclusión es la igualdad compleja \texttt{ASK - MAIN = De}. La función \texttt{ell} puede tomar valores complejos arbitrarios; en particular, \texttt{ch\_balance} no exige que \texttt{ell chC} sea real. La interpretación como derivadas logarítmicas de caracteres primitivos se incorpora mediante \texttt{HostAddCharCompatible} y \texttt{prim\_read}.
+
+\begingroup
+\raggedright
+\begin{description}
+\item[Carácter trivial $1$.] $0:\texttt{AddChar}\,(\texttt{E0}\times H)\,\C$. El cero de esta notación representa el carácter constantemente igual a uno, no la función nula.
+
+\item[Datos de inercia y Frobenius.] \texttt{ArithData}, \texttt{cosetMean}, \texttt{primVal}. El producto sobre factores primos extiende las medias de inercia a los enteros positivos.
+
+\item[$\Phi$, $\kappa$, $\rho_t$.] \texttt{InPhi}, \texttt{PhiSet}, \texttt{chC}, \texttt{partner}. El grupo de la interfaz formal es $(\Z/2\Z)^2\times H$.
+
+\item[Ortogonalidad y promedio de clase.] \texttt{PB.ortho}, \texttt{orthogonality\_ramified}, \texttt{colour\_sum}. Se conserva el conjugado y el factor $2/|I_p|$; en la clase exterior sobreviven $1$ y $\kappa$.
+
+\item[Sumas corregidas y término principal.] \texttt{GPsi}, \texttt{MAIN}, \texttt{De}. Coinciden los signos, la corrección $+a\ell_\kappa$ y los argumentos $a/w$.
+
+\item[Identidad principal.] \texttt{ch\_balance}. Se supone \texttt{HostFactsS} y un corte finito suficiente.
+
+\item[Identificación primitiva y combinación retenida.] \texttt{prim\_read}, \texttt{gmA\_eq}. Enlazan las sumas abstractas con los caracteres primitivos y con la combinación del nivel.
+
+\item[Coeficientes y extracción posterior.] \texttt{tops\_sum}, \texttt{ch\_core}. Se localizaron el coeficiente objetivo y la interfaz cuantitativa con sus hipótesis; el exceso geométrico sigue siendo una entrada.
+
+\end{description}
+\par
+\endgroup
+
+Los nombres de esta concordancia se abrevian por legibilidad. \texttt{InPhi} y \texttt{PhiSet} pertenecen a \texttt{Formalism.D5}; los objetos de sumas y ortogonalidad pertenecen a \texttt{Formalism.LFunctionChainParameters.characterSumData}; \texttt{ch\_balance} y \texttt{ch\_core} pertenecen a \texttt{Deduction}; \texttt{prim\_read}, \texttt{gmA\_eq} y \texttt{tops\_sum} pertenecen a \texttt{UpperTheory.Comparison}$_2$. El manifiesto conserva los nombres completos.
+
+B enuncia la identidad finita para cualquier grupo abeliano finito con un carácter cuadrático no trivial. La entrada \texttt{ch\_balance} consultada utiliza el grupo $(\Z/2\Z)^2\times H$ y \texttt{HostFactsS}. Estas hipótesis identifican \texttt{ASK} con su forma concreta: contribuciones de primos inertes en el subcampo cuadrático distinguido, contribuciones nulas cuando la inercia y Frobenius quedan en $\Phi$, y la contribución del primo ramificado distinguido. La demostración abstracta de esta nota no requiere construir ese cuerpo; el cotejo de Lean corresponde a la interfaz específica descrita.
+
+\texttt{prim\_read} identifica \texttt{GPsi} con la suma corregida del carácter primitivo bajo los datos del host y \texttt{HostAddCharCompatible}. \texttt{gmA\_eq}, bajo \texttt{EAtH} y esa compatibilidad, identifica la suma retenida con \texttt{Level.Gm}. Para \texttt{Level.cyc}\,$\psi$, el campo \texttt{psK} es \texttt{none} y se obtiene exactamente $H_\psi$, con peso $1$ para el principal y $1/(3o+1)$ para las otras primitivas retenidas. Los niveles generales permiten un carácter excepcional de peso $1$. Estas declaraciones establecen identidades entre las sumas; la cota unilateral y la cota del exceso geométrico requieren las entradas adicionales señaladas en §\ref{car-entradas}.
+
+En la interfaz de extracción leída, los pesos tienen la forma $w(u,j,\rho)$, independiente de $t$, y el ancho de la banda es $\eta+1$, con $\eta\ge0$. A, proposición 4.3, permite además dependencia en $t$ y escribe el ancho como $h$; la especialización formal corresponde a $h=\eta+1$. El cotejo identifica los pasos finitos y su ensamble, sin presentar la proposición de A como transcripción literal del enunciado final \texttt{ch\_core}.
+
+Además, Lean lleva un entero de corte $N$ y exige $a/w_\rho\le N$ para $\rho\in\Phi$. Nuestra notación de sumas sobre todos los enteros es equivalente porque los sumandos se anulan fuera de ese rango. Un entero $N\ge a/w_{\min}$ sirve para todas las posiciones. También acota los primos y exponentes relevantes: si $p^j$ contribuye, entonces $p\le p^j<N$ y $j\le p^j<N$.
+
+El registro acumulativo del repositorio conserva las rutas, declaraciones, hashes y el alcance de lectura de los archivos recuperados. Este cotejo no incluyó compilación ni ejecución de Lean, una auditoría de todas las dependencias ni una comparación integral del espejo con la distribución original de Alpöge.
+
+\paragraph{Estado del tramo.} Quedan demostradas la ortogonalidad finita, la identidad con inercia, la cancelación del término principal, el ejemplo local y las consecuencias finitas de los dos promedios. La estimación aritmética completa y la cota geométrica permanecen identificadas como entradas. El siguiente desarrollo será la desigualdad de marcos y su paso a pendientes medias, que participa en el control de ese exceso. Los pendientes se mantienen en el registro de trabajo del cuaderno.
+\par
+\endgroup
