@@ -1,0 +1,611 @@
+\section{Criterio unilateral de ventanas}
+\label{sec:ventanas}
+
+Esta nota completa el paso analítico que quedó abierto en la
+Nota~\ref{sec:sumas}. Demostramos por qué una cota superior sobre intervalos
+completos, disponibles tan lejos como se quiera, basta para excluir polos
+de una transformada. La prueba conserva el signo de la función, controla
+las colas de un núcleo y selecciona un polo mediante distancias en discos
+compactos.
+
+\fuente{A, Teorema~2.2, Lemas~2.3--2.4 y Corolario~2.5, pp.~4--6;
+B, Proposición~2.1, Lema~2.2 y demostración, pp.~14--18. Al final se
+documenta el cotejo con declaraciones Lean en una revisión fijada.
+La demostración se reconstruye en lenguaje matemático; no se presenta
+como una nueva ejecución de Lean.}
+
+\subsection{Enunciado y orden de los cuantificadores}
+
+Sea $g:[0,\infty)\to\R$ medible y supongamos que existe $C_0\ge0$ tal que
+\begin{equation}
+ |g(u)|\le C_0e^{2u}\qquad(u\ge0).
+ \label{vent-crecimiento}
+\end{equation}
+Su transformada de Laplace, definida inicialmente para $\Ree s>2$, es
+\[
+ \Phi(s)=\int_0^\infty g(u)e^{-su}\dd u.
+\]
+Suponemos que admite continuación meromorfa a $\Ree s>0$, que todos sus
+polos son simples y que el residuo de cada polo real es un número real
+positivo. Denotamos por $Z$ su conjunto de polos. La meromorfía implica
+que cada compacto contenido en ese semiplano contiene finitos polos.
+
+Fijemos $0<\theta<1$ y $\delta>0$. La \emph{hipótesis integrada de ventanas}
+significa lo siguiente: para cada $\eta>0$ y cada $U_0\ge1$, existe
+$U\ge U_0$ y una función $R_U$ sobre $W_U=[U,(1+\delta)U]$ tales que
+\[
+ R_U(u)\ge0,\qquad g(u)\le R_U(u)\quad(u\in W_U),
+\]
+el producto $R_U(u)e^{-\theta u}$ es integrable en $W_U$ y
+\begin{equation}
+ \int_U^{(1+\delta)U}R_U(u)e^{-\theta u}\dd u\le e^{\eta U}.
+ \label{vent-hipotesis}
+\end{equation}
+La ventana y su mayorante pueden depender de $\eta$ y del umbral.
+Los parámetros $\theta,\delta$ y la constante $C_0$ permanecen fijos.
+Exigir $U_0\ge1$ es equivalente a permitir cualquier umbral real: basta
+reemplazarlo por $\max\{1,U_0\}$. Las integrales de esta nota son integrales
+de Lebesgue; sus valores no cambian al añadir o quitar extremos de intervalos.
+
+\begin{proposicion}[Criterio unilateral]
+\label{vent-criterio}
+Bajo estas hipótesis, todo polo $\rho\in Z$ satisface
+$\Ree\rho\le\theta$.
+\end{proposicion}
+
+Esta formulación sigue la interfaz general \texttt{PoleData} junto con
+\texttt{WindowHypU} de Lean. A añade la localización de los polos en
+$\Ree s\le1$ y la regularidad en $s=1$, propias de su aplicación.
+Nuestra prueba solo necesita que los polos queden a la izquierda de un
+centro $\sigma>2$; esto se deduce de la propia representación de Laplace.
+B parte directamente de una cota puntual, que obtendremos como corolario.
+
+\subsection{Derivadas normalizadas y la desigualdad unilateral}
+
+Para $a>0$ y todo entero $k\ge0$, integración por partes da
+\begin{equation}
+ \int_0^\infty\frac{u^ke^{-au}}{k!}\dd u=a^{-k-1}.
+ \label{vent-integral-gamma}
+\end{equation}
+En efecto, la integral sin el factorial vale $1/a$ si $k=0$, y la
+recurrencia es $I_k=(k/a)I_{k-1}$. Los términos de borde se anulan
+porque la exponencial decreciente domina cualquier potencia.
+
+Si $\Ree z_0>2$, ponemos $b_0=(\Ree z_0-2)/2>0$.
+En el disco $|z-z_0|<b_0$, cada derivada del integrando de orden $j$
+tiene módulo a lo sumo $C_0u^je^{-b_0u}$, integrable por
+\eqref{vent-integral-gamma}. Esta dominación, también para el orden
+siguiente, justifica diferenciar bajo el signo integral. Por tanto,
+$\Phi$ es holomorfa en $\Ree s>2$ y
+\begin{equation}
+ A_k(z):=\frac{(-1)^k}{k!}\Phi^{(k)}(z)
+ =\int_0^\infty g(u)\frac{u^ke^{-zu}}{k!}\dd u.
+ \label{vent-derivadas}
+\end{equation}
+En particular, no hay polos con parte real mayor que $2$.
+Todo polo queda estrictamente a la izquierda de cualquier $\sigma>2$.
+Las identidades integrales se utilizan en este semiplano; más a la
+izquierda se utiliza la continuación meromorfa.
+
+Como $g$ es real, $A_k(\sigma)$ es real. Escribiendo
+$g_+(u)=\max\{g(u),0\}$, la desigualdad triangular da
+\begin{equation}
+ \begin{aligned}
+ |A_k(\sigma+it)|+A_k(\sigma)
+ &\le\int_0^\infty (|g(u)|+g(u))
+           \frac{u^ke^{-\sigma u}}{k!}\dd u\\
+ &=2\int_0^\infty g_+(u)\frac{u^ke^{-\sigma u}}{k!}\dd u.
+ \end{aligned}
+ \label{vent-unilateral}
+\end{equation}
+La segunda contribución del lado izquierdo conserva su signo. Esta
+identidad permite utilizar un mayorante de $g$ en la ventana sin pedir
+allí una mejora de la cota para $|g|$. Fuera de la ventana sigue disponible
+el crecimiento elemental \eqref{vent-crecimiento}.
+
+{\raggedright
+Véanse A, (2.9)--(2.10), p.~5; B, p.~17; y las declaraciones
+\texttt{iteratedDeriv\_laplace} y \texttt{landau\_window\_ineq}.
+\par}
+
+\subsection{Concentrar el núcleo en una ventana completa}
+
+\begin{lema}[Control uniforme de las colas]
+\label{vent-colas}
+Para cada $\delta>0$ existen $\sigma>2$ y $C_\delta>0$, independientes
+de $U$, tales que, para todo $U\ge1$, se puede elegir un entero $k\ge U$
+con
+\begin{equation}
+ \int_{[0,\infty)\setminus W_U}
+ \frac{u^ke^{-(\sigma-2)u}}{k!}\dd u
+ \le C_\delta\sigma^{-k}.
+ \label{vent-cota-colas}
+\end{equation}
+Además, la elección satisface $k\asymp_\delta U$.
+\end{lema}
+
+\begin{proof}
+Para $s>\ell>0$ y $0<U\le V$, separar una exponencial y aplicar
+\eqref{vent-integral-gamma} proporciona
+\begin{equation}
+ \int_{[0,\infty)\setminus[U,V]}
+ \frac{u^ke^{-su}}{k!}\dd u
+ \le e^{-\ell V}(s-\ell)^{-k-1}
+       +e^{\ell U}(s+\ell)^{-k-1}.
+ \label{vent-colas-elementales}
+\end{equation}
+En la cola superior se usa $e^{-\ell u}\le e^{-\ell V}$; en la inferior,
+$e^{\ell u}\le e^{\ell U}$. Las integrales restantes se amplían a toda
+la semirrecta positiva.
+
+Tomemos las constantes explícitas
+\[
+ \ell=2+\frac6\delta,\qquad b=1+\frac\delta2,\qquad
+ M=\ell(1+\delta),\qquad \sigma=M(\ell+2),
+\]
+y el entero $k=\lceil b\sigma U\rceil$. Entonces $\sigma-2>\ell$ y
+\begin{equation}
+ b(\ell+2)=M-1,\qquad b(\ell-2)=\ell+1,\qquad
+ b\sigma=M(M-1).
+ \label{vent-identidades}
+\end{equation}
+La definición del techo implica
+\begin{equation}
+ \begin{gathered}
+ b\sigma U\le k\le b\sigma U+1,\\
+ U\le k\le(b\sigma+1)U\qquad(U\ge1).
+ \end{gathered}
+ \label{vent-orden-k}
+\end{equation}
+
+Pongamos $a_-=\sigma-2-\ell>0$ y $a_+=\sigma-2+\ell>0$.
+La desigualdad $\log(\sigma/a)\le(\sigma-a)/a$ muestra que, para $a>0$,
+\begin{equation}
+ x+k\frac{\sigma-a}{a}\le c
+ \quad\Longrightarrow\quad
+ e^xa^{-k-1}\le\frac{e^c}{a\sigma^k}.
+ \label{vent-comparacion-exponencial}
+\end{equation}
+Para el primer término de \eqref{vent-colas-elementales}, con
+$s=\sigma-2$ y $V=(1+\delta)U$, las identidades
+\eqref{vent-identidades} dan
+\[
+ -\ell(1+\delta)U+k\frac{\sigma-a_-}{a_-}
+ =-MU+\frac{k}{M-1}\le\frac1{M-1}\le1.
+\]
+Para el segundo, observamos que $\ell a_+\le(\ell+1)\sigma$, pues esta
+desigualdad equivale a $\ell(\ell-2)\le\sigma$, que se sigue de
+$\sigma=\ell(1+\delta)(\ell+2)$. Así,
+\[
+ \ell U+k\frac{\sigma-a_+}{a_+}
+ =\ell U-\frac{k(\ell-2)}{a_+}
+ \le\ell U-\frac{(\ell+1)\sigma U}{a_+}\le0.
+\]
+Aplicar \eqref{vent-comparacion-exponencial} a ambas colas prueba
+\eqref{vent-cota-colas}, con
+\begin{equation}
+ C_\delta=\frac e{\sigma-2-\ell}+\frac1{\sigma-2+\ell}.
+ \label{vent-constante-colas}
+\end{equation}
+Todas las constantes se fijaron a partir de $\delta$, antes de conocer
+la ventana. Esto prueba el lema.
+\end{proof}
+
+El núcleo normalizado
+$(\sigma-2)^{k+1}u^ke^{-(\sigma-2)u}/k!$ tiene integral $1$.
+Por \eqref{vent-cota-colas}, su masa exterior está acotada por
+\[
+ C_\delta(\sigma-2)
+ \left(\frac{\sigma-2}{\sigma}\right)^k.
+\]
+La concentración es exponencial en $k$. Esa tasa, y no solo que la masa
+exterior tienda a cero, permitirá comparar el núcleo con la contribución
+de un polo.
+
+{\raggedright
+Véanse A, Lema~2.3, pp.~4--5, y \texttt{landau\_tails}.
+B, Lema~2.2, p.~16, obtiene el mismo tipo de control mediante momentos
+exponenciales de una densidad gamma.
+\par}
+
+\subsection{La cota superior para las derivadas}
+
+Fijemos $\sigma,C_\delta$ como en el Lema~\ref{vent-colas}
+y escribamos
+\[
+ E=\sigma-\theta,\qquad 0<E<\sigma.
+\]
+Para $v\ge0$, la serie exponencial da $v^k/k!\le e^v$.
+Tomando $v=Eu$, resulta
+\begin{equation}
+ \frac{u^ke^{-\sigma u}}{k!}\le E^{-k}e^{-\theta u}.
+ \label{vent-maximo-nucleo}
+\end{equation}
+En una ventana admisible, $g_+\le R_U$; fuera de ella,
+$g_+\le C_0e^{2u}$. Aplicamos \eqref{vent-maximo-nucleo},
+\eqref{vent-hipotesis} y el lema de colas a \eqref{vent-unilateral}.
+Para el entero $k=\lceil b\sigma U\rceil$ obtenemos
+\begin{equation}
+ |A_k(\sigma+it)|+A_k(\sigma)
+ \le 2e^{\eta U}E^{-k}+2C_0C_\delta\sigma^{-k}
+ \qquad(t\in\R).
+ \label{vent-cota-superior}
+\end{equation}
+La misma cota vale simultáneamente para todos los centros de la recta
+$\Ree z=\sigma$. No hemos fijado todavía $\eta$: lo elegiremos después
+de localizar el polo que contradiga esta estimación.
+
+{\raggedright
+Véanse A, (2.11), p.~5; \texttt{landau\_kernel\_max},
+\texttt{landau\_window\_ineq} y \texttt{landau\_window\_key}.
+\par}
+
+\subsection{Elegir un polo mediante discos compactos}
+
+Supongamos que existe $\rho_0\in Z$ con $\Ree\rho_0>\theta$.
+No suponemos que haya un polo cuya parte real sea máxima.
+
+El disco cerrado $\overline B(\sigma,E)$ queda dentro de $\Ree s>0$,
+porque su extremo izquierdo tiene parte real $\theta>0$.
+Su intersección $F$ con $Z$ es finita. Si $F$ es vacía, ponemos $D=E$.
+Si no, ponemos
+\[
+ D=\min_{\rho\in F}|\sigma-\rho|.
+\]
+En ambos casos $0<D\le E$ y $B(\sigma,D)$ no contiene polos.
+Consideramos dos alternativas.
+
+\paragraph{Alternativa I.}
+Existe un polo $\rho_1$ tal que $\sigma-\Ree\rho_1<D$.
+
+\paragraph{Alternativa II.}
+No existe tal polo. Esta posibilidad requiere $F\ne\varnothing$, pues,
+si $D=E$ y $F$ fuera vacía, el polo $\rho_0$ satisfaría la alternativa I.
+Un elemento que alcance la distancia mínima verifica
+\[
+ D=|\sigma-\rho|\ge\sigma-\Ree\rho\ge D.
+\]
+La igualdad fuerza $\rho=\beta:=\sigma-D\in\R$.
+El punto más cercano es único. Además,
+\[
+ D\le\sigma-\Ree\rho_0<E,
+\]
+de modo que $\beta>\theta$. Como hay finitos polos en el disco cerrado,
+existe $L_\beta$ con $D<L_\beta\le E$ para el cual $\beta$ es el único
+polo de $B(\sigma,L_\beta)$.
+
+Esto demuestra la dicotomía. En la segunda alternativa ya tenemos un
+polo real aislado; falta precisar la elección de centro en la primera.
+
+\subsubsection*{Un desplazamiento vertical elimina los empates}
+
+En la alternativa I, sean $h=\sigma-\Ree\rho_1>0$ y
+$t_0=\operatorname{Im}\rho_1$. Elegimos $\varepsilon>0$ tan pequeño que
+\[
+ h+\varepsilon<D,\qquad D+\varepsilon<\sigma.
+\]
+El conjunto $F_1=Z\cap\overline B(\sigma+it_0,D+\varepsilon)$ es finito.
+Si $|t-t_0|<\varepsilon$ y $z=\sigma+it$, entonces $|z-\rho_1|<D$,
+mientras que cualquier polo fuera de $F_1$ está a distancia mayor que
+$D$ de $z$. Por tanto, el polo más cercano debe pertenecer a $F_1$.
+
+Para dos polos distintos $a,b\in F_1$, la diferencia de cuadrados de sus
+distancias a $\sigma+it$ es una función afín de $t$, con pendiente
+$-2(\operatorname{Im}a-\operatorname{Im}b)$.
+Si sus partes imaginarias son distintas, hay a lo sumo un valor de
+empate. Si coinciden, el empate exigiría
+\[
+ (\sigma-\Ree a)^2=(\sigma-\Ree b)^2.
+\]
+Ambas distancias horizontales son positivas, por lo que tendríamos
+$a=b$, contradicción. Podemos evitar los finitos valores de empate
+dentro de $(t_0-\varepsilon,t_0+\varepsilon)$.
+
+Fijamos uno de esos $t$. Existe entonces un único polo más cercano
+$\rho$, con
+\[
+ 0<d:=|\sigma+it-\rho|<D\le E.
+\]
+La finitud del conjunto relevante permite elegir un radio $L$ con
+$d<L\le D$ tal que $B(\sigma+it,L)$ contenga solo ese polo.
+Tomamos un radio interior $r$ con $d<r<L$. Así, $\Phi$ es holomorfa
+cerca del disco cerrado $\overline B(\sigma,r)$, y, tras quitar la
+parte principal en $\rho$, también lo será cerca de
+$\overline B(\sigma+it,r)$.
+
+En esta alternativa el polo elegido es necesariamente no real: si fuera
+real, su distancia a $\sigma+it$ sería al menos su distancia a $\sigma$,
+que es mayor o igual que $D$, en contradicción con $d<D$.
+Para la estimación posterior bastará que su residuo sea no nulo.
+En toda la selección se minimizó sobre conjuntos finitos dentro de compactos.
+
+{\raggedright
+Véanse A, Lema~2.4 y demostración del Teorema~2.2, pp.~5--6;
+B, pp.~17--18; \texttt{landau\_finite}, \texttt{landau\_dichotomy}
+y \texttt{landau\_nearest}.
+\par}
+
+\subsection{Cauchy hace visible el polo}
+
+En la alternativa I, escribamos $z=\sigma+it$ y sea $c\ne0$
+el residuo de $\Phi$ en $\rho$. La función
+\[
+ h_\rho(w)=\Phi(w)-\frac c{w-\rho}
+\]
+se prolonga holomórficamente en $\rho$ y en todo $B(z,L)$.
+Aplicando Cauchy en la circunferencia de radio interior $r<L$, obtenemos
+constantes $M_z,M_\sigma\ge0$ independientes de $k$ tales que
+\begin{equation}
+ \left|A_k(z)-\frac c{(z-\rho)^{k+1}}\right|\le M_zr^{-k},
+ \qquad |A_k(\sigma)|\le M_\sigma r^{-k}.
+ \label{vent-cauchy}
+\end{equation}
+Por ejemplo, $M_z$ es el máximo de $|h_\rho|$ en $|w-z|=r$;
+ese máximo es finito por continuidad y compacidad.
+El factor del polo procede de
+\[
+ \frac{\mathrm d^k}{\mathrm dw^k}\frac c{w-\rho}
+ =\frac{(-1)^kk!c}{(w-\rho)^{k+1}}.
+\]
+La desigualdad triangular inversa y la realidad de $A_k(\sigma)$ dan
+\begin{equation}
+ |A_k(z)|+A_k(\sigma)
+ \ge\frac{|c|}{d^{k+1}}-(M_z+M_\sigma)r^{-k}.
+ \label{vent-cota-polo}
+\end{equation}
+El valor absoluto elimina la fase compleja de la contribución dominante;
+basta que $c\ne0$.
+
+En la alternativa II ponemos $d=\sigma-\beta$ y elegimos
+$d<r<L_\beta$. El residuo $c_\beta$ es real positivo.
+Al quitar la parte principal y aplicar Cauchy se obtiene
+\begin{equation}
+ A_k(\sigma)\ge\frac{c_\beta}{d^{k+1}}-Mr^{-k}.
+ \label{vent-polo-real}
+\end{equation}
+La expresión de la izquierda de \eqref{vent-cota-superior}, ahora
+con $t=0$, es al menos $A_k(\sigma)$. Por tanto, en ambas alternativas
+existen constantes $a>0$, $M\ge0$ y distancias $0<d<r<E$ tales que
+\begin{equation}
+ |A_k(\sigma+it)|+A_k(\sigma)
+ \ge a\,d^{-k}-Mr^{-k}
+ \qquad(k\ge0).
+ \label{vent-cota-inferior}
+\end{equation}
+En la primera alternativa $a=|c|/d$; en la segunda $a=c_\beta/d$.
+Los centros, radios y constantes ya están fijados antes de elegir
+una ventana. El radio interior garantiza que Cauchy se aplica sobre
+una circunferencia contenida en la región de holomorfía.
+
+{\raggedright
+Véanse A, p.~6; B, pp.~17--18; \texttt{landau\_cauchy}
+y \texttt{landau\_pole\_asym}.
+\par}
+
+\subsection{Contradicción y papel del residuo positivo}
+
+\begin{proof}[Conclusión de la demostración de la Proposición~\ref{vent-criterio}]
+Fijemos ahora
+\[
+ \eta=\frac12\log(E/d)>0.
+\]
+La hipótesis de ventanas proporciona, para este $\eta$, valores de $U$
+arbitrariamente grandes y los correspondientes $k\ge U$.
+Al combinar \eqref{vent-cota-superior} y \eqref{vent-cota-inferior}
+y multiplicar por $d^k$, resulta
+\begin{equation}
+ a\le M\left(\frac dr\right)^k
+ +2e^{\eta U}\left(\frac dE\right)^k
+ +2C_0C_\delta\left(\frac d\sigma\right)^k.
+ \label{vent-contradiccion}
+\end{equation}
+Como $U\le k$,
+\[
+ e^{\eta U}\left(\frac dE\right)^k
+ \le\left(e^\eta\frac dE\right)^k
+ =\left(\frac dE\right)^{k/2}.
+\]
+Las tres bases exponenciales son estrictamente menores que $1$.
+Al tomar ventanas con $U\to\infty$, también $k\to\infty$, y el lado
+derecho de \eqref{vent-contradiccion} tiende a cero.
+Esto contradice $a>0$ y demuestra la proposición.
+\end{proof}
+
+El orden de elección fue: datos $g,\theta,\delta$; constantes del núcleo;
+un polo hipotético, centros, radios y constantes de Cauchy; el margen
+$\eta$; finalmente una ventana suficientemente lejana y su orden $k$.
+No hace falta controlar los huecos entre ventanas ni disponer de la
+estimación para todos los órdenes de derivación.
+Véanse A, p.~6; \texttt{landau\_window} y
+\texttt{landau\_growth\_contra}.
+
+La hipótesis de signo sobre los polos reales es necesaria.
+Si $0<\theta<\beta<1$ y $g(u)=-e^{\beta u}$, entonces $g(u)\le0$
+en toda ventana, pero
+\[
+ \Phi(s)=-\frac1{s-\beta}
+\]
+tiene un polo en $\beta>\theta$ con residuo $-1$.
+En ese ejemplo, $A_k(\sigma)<0$ y
+$|A_k(\sigma)|+A_k(\sigma)=0$. El residuo positivo de la
+alternativa II impide precisamente esta cancelación.
+
+\subsection{La versión puntual y su aplicación a las funciones L}
+
+\begin{proposicion}[Corolario: cota puntual]
+\label{vent-corolario}
+Supongamos las hipótesis analíticas de la Proposición~\ref{vent-criterio}.
+Si hay una constante fija $C\in\R$ y valores arbitrariamente grandes
+de $Y$ tales que
+\begin{equation}
+ H(x)\le Cx^\theta
+ \qquad\text{para todo }x\in[Y,Y^{1+\delta}],
+ \label{vent-cota-puntual}
+\end{equation}
+donde $g(u)=H(e^u)$, entonces $\Phi$ no tiene polos con parte real
+mayor que $\theta$.
+\end{proposicion}
+
+\begin{proof}
+Reemplazamos $C$ por $C_+=\max\{C,0\}$ y ponemos $U=\log Y$.
+La ventana se transforma en $[U,(1+\delta)U]$ y
+$g(u)\le C_+e^{\theta u}$. Tomando $R_U(u)=C_+e^{\theta u}$,
+\[
+ \int_U^{(1+\delta)U}R_U(u)e^{-\theta u}\dd u=C_+\delta U.
+\]
+Para cada $\eta>0$, esta cantidad es a lo sumo $e^{\eta U}$ cuando
+$U$ es suficientemente grande. Por ejemplo, basta
+$U\ge\max\{1,2C_+\delta/\eta^2\}$, pues
+$e^{\eta U}\ge\eta^2U^2/2$.
+Como las ventanas son arbitrariamente lejanas, se puede imponer
+ese umbral. Aplicamos la Proposición~\ref{vent-criterio}.
+\end{proof}
+
+Hay también una ruta directa, utilizada por B: dentro de la ventana,
+\eqref{vent-integral-gamma} proporciona
+\begin{equation}
+ \begin{aligned}
+ |A_k(\sigma+it)|+A_k(\sigma)
+ &\le 2C_+E^{-k-1}+2C_0C_\delta\sigma^{-k}\\
+ &\le\left(\frac{2C_+}{E}+2C_0C_\delta\right)E^{-k}.
+ \end{aligned}
+ \label{vent-ruta-puntual}
+\end{equation}
+La comparación con \eqref{vent-cota-inferior} conduce a la misma
+contradicción sin introducir $\eta$. La versión integrada permite
+cotejar el enunciado formal más general.
+Véanse A, Corolario~2.5, p.~6, y B, Proposición~2.1 y (2.4),
+pp.~14--18.
+
+Para una familia finita de caracteres primitivos y pesos $a_\chi>0$,
+la construcción de la Nota~\ref{sec:sumas} da
+\[
+ H(x)=\sum_\chi a_\chi\Ree G_\chi(x),\qquad
+ \Phi(s)=\frac12\sum_\chi a_\chi
+ \bigl(F_\chi(s)+F_{\bar\chi}(s)\bigr).
+\]
+El crecimiento $|g(u)|\le C_0e^{2u}$ procede de la cota elemental de las
+sumas suavizadas. La continuación meromorfa y la regularidad en $1$
+proceden de sus fórmulas de Mellin. En un cero representado por la
+familia, el residuo es
+\begin{equation}
+ \begin{gathered}
+ \Res_{s=\rho}\Phi(s)=\frac{b_\rho}{\rho(1-\rho)},\\
+ b_\rho=\frac12\sum_\chi a_\chi
+ \bigl(m_\chi(\rho)+m_{\bar\chi}(\rho)\bigr)>0.
+ \end{gathered}
+ \label{vent-residuo-familia}
+\end{equation}
+Los pesos positivos evitan la cancelación de polos. En un polo real
+$\beta\in(0,1)$, también dan el signo positivo del residuo.
+Para situar los polos reales en ese intervalo bastan el producto
+de Euler y la regularidad en $1$; no se supone previamente la
+hipótesis de Riemann.
+
+Aplicamos el corolario a $H_\psi$ y $\delta=1/2$.
+Si existe $\varepsilon_0>0$ tal que la construcción aritmética entrega
+\eqref{vent-cota-puntual} con $\theta=1/2+\varepsilon$ para cada
+$0<\varepsilon<\varepsilon_0$, cualquier cero con parte real
+$\beta>1/2$ queda excluido al elegir
+\[
+ 0<\varepsilon<\min\{\varepsilon_0,\,\beta-1/2,\,1/2\}.
+\]
+La ecuación funcional permite tratar después el lado izquierdo de la
+franja. Para caracteres no primitivos se retiran los factores de Euler
+adicionales, no nulos en $\Ree s>0$. Estas últimas reducciones se
+identifican en A, pp.~6--7, y B, Proposición~2.3, pp.~18--19.
+La construcción aritmética de las ventanas sigue pendiente de desarrollo
+en el cuaderno: haber demostrado el criterio no suministra esa estimación.
+
+\subsection{Concordancia con Lean y alcance del cotejo}
+
+Se consultó el espejo
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/tree/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4}
+{\texttt{CocoSgt/riemann-hypothesis-lean}},
+en la revisión
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/tree/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4}
+{\texttt{7cbf7a0c32fc}},
+que declara Lean \texttt{4.33.1} y Mathlib
+\texttt{0df444a360ea}. Los identificadores completos se conservan en
+el registro del repositorio. Esta referencia fija el código leído;
+no afirma que hayamos comparado todo el espejo con el archivo original
+distribuido por Alpöge.
+
+\begingroup
+\raggedright
+\begin{description}
+ \item[Datos analíticos.]
+ \texttt{PoleData} incluye medibilidad, crecimiento, identidad de Laplace,
+ holomorfía fuera de $Z$, ausencia de acumulación local y una parte
+ principal simple con residuo real positivo cuando el polo es real.
+
+ \item[Hipótesis integrada.]
+ \texttt{WindowHypU} exige la integrabilidad del mayorante ponderado de
+ \eqref{vent-hipotesis} y ventanas arbitrariamente lejanas para cada
+ $\eta>0$.
+
+ \item[Derivadas y núcleo.]
+ \texttt{iteratedDeriv\_laplace} y \texttt{kernel\_integral} identifican
+ las derivadas y la integral del núcleo. La representación integral
+ de las derivadas se utiliza solo en $\Ree z>2$.
+
+ \item[Control uniforme.]
+ \texttt{landau\_tails}, \texttt{landau\_kernel\_max} y
+ \texttt{landau\_window\_ineq} fijan las constantes antes de la ventana
+ y conservan el signo del término real.
+
+ \item[Geometría.]
+ \texttt{landau\_pole\_re\_le}, \texttt{landau\_finite},
+ \texttt{landau\_dichotomy} y \texttt{landau\_nearest} obtienen
+ $\Ree\rho\le2$ y efectúan la selección en conjuntos finitos.
+
+ \item[Estimaciones locales.]
+ \texttt{landau\_cauchy} y \texttt{landau\_pole\_asym} restan la parte
+ principal y aplican Cauchy con un radio estrictamente interior.
+
+ \item[Conclusión.]
+ \texttt{landau\_window\_key}, \texttt{landau\_window\_contra} y
+ \texttt{landau\_window} comparan la cota de derivadas con la contribución
+ de un polo de parte real mayor que $\theta$.
+
+ \item[Puente desde cotas puntuales.]
+ \texttt{windowHyp\_of\_rpow}, \texttt{windowHypU\_of\_windowHyp}
+ y \texttt{zeroFree\_of\_rpow\_window}
+ deducen la condición integrada de la cota puntual y la transportan
+ a \texttt{WindowHypU} mediante el cambio $x=e^u$; el corolario
+ concluye la no anulación.
+\end{description}
+\par
+\endgroup
+
+{\raggedright
+Las definiciones están en
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauZeroFreeCriterion.lean}
+{\texttt{LandauZeroFreeCriterion.lean}};
+el ensamble final está en
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/landauWindow.lean}
+{\texttt{landauWindow.lean}}.
+La definición llamada
+\texttt{Deduction.}\allowbreak\texttt{LandauZeroFreeCriterion},
+al final del primer archivo, expresa otra variante con una cota eventual
+sobre una semirrecta; el teorema de ventanas estudiado aquí es
+\texttt{Deduction.landau\_window}.
+El registro del repositorio conserva las rutas, declaraciones y hashes
+de los archivos recuperados.
+\par}
+
+El criterio general no incluye como hipótesis la ausencia de polos en
+$\Ree s>1$ ni la regularidad en $1$; estas se satisfacen en la aplicación
+a las funciones $L$. \texttt{WindowHypU} exige un mayorante puntual
+no negativo de $g$ y controla su tamaño mediante la integral ponderada;
+no exige una cota puntual de la forma $g(u)\le Ce^{\theta u}$.
+A, B y Lean concuerdan en el mecanismo revisado, con esas diferencias
+de formulación.
+
+\paragraph{Estado del tramo.}
+Se ha reconstruido la demostración matemática y se ha efectuado un
+cotejo localizado con los enunciados y pruebas señalados.
+Este cotejo no incluyó compilación ni ejecución de Lean, ni una auditoría
+de todas sus dependencias. Esta nota cierra el pendiente analítico del
+cuaderno; el siguiente desarrollo es la identidad de caracteres y
+la cancelación de su término principal.

@@ -1,7 +1,7 @@
 \phantomsection
 \addcontentsline{toc}{section}{Fuentes de esta entrega}
 \renewcommand{\refname}{Fuentes de esta entrega}
-\begin{thebibliography}{B}
+\begin{thebibliography}{L}
 
 \bibitem[A]{fuenteA}
 \emph{Dirichlet L-functions and the critical line}.
@@ -21,17 +21,31 @@ Ejemplar suministrado bajo el nombre \texttt{GRH note.pdf}.
 La declaración del autor ocupa las pp.~1--2; la exposición matemática,
 las pp.~3--67; las referencias comienzan en p.~67.
 
+\bibitem[L]{lean}
+Desarrollo Lean de Levent Alpöge. Código consultado mediante el
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/tree/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4}{espejo de CocoSgt}, revisión \texttt{7cbf7a0}.
+El registro del proyecto conserva el identificador completo, las rutas
+y los hashes de los archivos recuperados. La configuración declara
+Lean~4.33.1 y la revisión de Mathlib identificada en ese registro.
+El cotejo de esta entrega se limita a las interfaces y pasos señalados
+en la Nota~\ref{sec:ventanas}. No incluyó compilación ni ejecución de
+Lean, ni una comparación integral con la distribución original.
+
 \end{thebibliography}
 
 \subsection*{Estado de la entrega}
 
 Se han desarrollado la transformada de Mellin de la suma suavizada,
 las correcciones en $s=1$, el cálculo del residuo en un cero, el ejemplo
-de proyección sobre $\Z^2$ y el lema local de denominadores. Se ha
-comprobado la correspondencia de esos pasos con las exposiciones A y B.
+de proyección sobre $\Z^2$ y el lema local de denominadores. Se añadió
+la demostración completa del criterio unilateral de ventanas: derivadas,
+concentración, selección de polos, estimaciones de Cauchy y contradicción.
+Se ha comprobado la correspondencia de estos pasos con A y B; para
+el criterio de ventanas se leyeron además las declaraciones y pruebas
+Lean identificadas en la nota y en el registro del proyecto.
 
-Permanecen por estudiar el criterio analítico completo de ventanas,
-la construcción de la combinación positiva por caracteres, las
+Permanecen por estudiar la construcción de la combinación positiva
+por caracteres, las
 estimaciones de marcos y pendientes, y los resultados automorfos,
 geométricos y cohomológicos que suministran el presupuesto final.
 No se ha efectuado en esta entrega una auditoría del repositorio Lean.

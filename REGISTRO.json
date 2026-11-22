@@ -30,25 +30,25 @@
     {
       "name": "00-Mapa-de-estudio.md",
       "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
-      "url": "https://docs.google.com/document/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+      "url": "https://docs.google.com/document/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/edit",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 7603,
-      "sha256": "1654617262ec31ab220828dcf7df575a02208e775ce09b37128f4903b8f88f1b",
+      "size_bytes": 8523,
+      "sha256": "db2143a8adf95d6259942f3dace11f5d28166eea5354695bfd81985684c3dad3",
       "verification": "raw bytes identical; parent and MIME verified"
     },
     {
       "name": "01-Sumas-y-transformadas.md",
       "id": "1RH6OtQT-_6xr-eNJNaW1RwVVjhXrlg6z",
-      "url": "https://docs.google.com/document/d/1RH6OtQT-_6xr-eNJNaW1RwVVjhXrlg6z/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+      "url": "https://docs.google.com/document/d/1RH6OtQT-_6xr-eNJNaW1RwVVjhXrlg6z/edit",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 10211,
-      "sha256": "2b68ce8f76ede4d5e45c1628d5c3e639349310dbd2b5ec2879d4ebf5a0271c3f",
+      "size_bytes": 10325,
+      "sha256": "7c1d98a9d348426ce09dea4b9e3bdb9b6522e930a2e54d769c082f9b9efe6870",
       "verification": "raw bytes identical; parent and MIME verified"
     },
     {
@@ -66,30 +66,47 @@
     {
       "name": "03-Dudas-y-pendientes.md",
       "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
-      "url": "https://docs.google.com/document/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+      "url": "https://docs.google.com/document/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/edit",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 4992,
-      "sha256": "f8dd103c2433c0f43c4b5a83aa784dea62b34154a8e18d37e5daf323777ff9db",
+      "size_bytes": 5704,
+      "sha256": "eb013883801c903463fe42a6ddb053c48e3937b2b5ca962908bad676cd54b418",
+      "verification": "raw bytes identical; parent and MIME verified"
+    },
+    {
+      "name": "04-Criterio-unilateral-de-ventanas.md",
+      "id": "1WuWoYDdhJMqq-yp8cXu9S2vUTBZk8T4O",
+      "url": "https://docs.google.com/document/d/1WuWoYDdhJMqq-yp8cXu9S2vUTBZk8T4O/edit",
+      "mime_type": "text/markdown",
+      "parent_ids": [
+        "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+      ],
+      "size_bytes": 21376,
+      "sha256": "0c8c0ed4810e8c52c1b0b2343116ac13e6617b631511ba7d749dc70cdf19614e",
       "verification": "raw bytes identical; parent and MIME verified"
     }
   ],
   "obsidian_rendering_checked": false,
-  "github_status": "repository_created_private",
+  "github_status": "active_private_repository",
   "latex": {
     "status": "compiled_and_visually_reviewed",
-    "pages": 10,
+    "pages": 19,
     "page_size": "A4",
     "path": "pdf/notas-hipotesis-riemann.pdf",
-    "size_bytes": 303598,
-    "sha256": "18a869859cd787942ebf22439966c78f0871160dcb304f73076df89c7bc8ce9c",
+    "size_bytes": 360376,
+    "sha256": "b3e1492db94bb1b2e5064af0ab9ed30342924ee4e0bb363f7f0050400e5ff4fb",
     "compilation_exit_code": 0,
     "warnings": 0,
     "unresolved_references": 0,
     "all_pages_visually_reviewed": true,
-    "cross_reading_with_markdown": "no blocking discrepancies in the initial notes"
+    "chapter_3_pages": [
+      11,
+      18
+    ],
+    "cross_reading_with_markdown": "Sin discrepancias matemáticas que bloqueen publicar: hipótesis, signos, exponentes, radios, cuantificadores y corolario.",
+    "lean_compiled_or_executed": false
   },
   "events": [
     {
@@ -107,6 +124,136 @@
       "old_text": "El manuscrito LaTeX del proyecto `riemann-notas` será el destino de las notas revisadas.",
       "new_text": "El manuscrito LaTeX del repositorio privado [lachenmann/riemann-notas](https://github.com/lachenmann/riemann-notas) es el destino de las notas revisadas.",
       "obsidian_rendering_checked": false
+    },
+    {
+      "date": "2026-11-22",
+      "action": "one_sided_window_criterion_completed",
+      "result": "Demostración matemática reconstruida y revisada; concordancia localizada A/B/Lean; nueva nota Markdown creada y tres notas actualizadas, recuperadas y cotejadas íntegramente.",
+      "previous_github_commit": "9cc1de043bc93320238f7aeee82a82585f6f4da8",
+      "mathematics": {
+        "proof": "Derivadas de Laplace, desigualdad unilateral, colas con constantes explícitas, dicotomía y selección de polos, Cauchy, contradicción exponencial y corolario con C real fijo.",
+        "independent_review": "Sin defectos matemáticos pendientes; observación del polo no real y umbral epsilon_0 precisados antes de publicar.",
+        "markdown_latex_cross_reading": "Sin discrepancias matemáticas que bloqueen publicar.",
+        "arithmetic_windows_construction": "Pendiente de desarrollo; no se infiere de haber probado el criterio.",
+        "lean_execution": false
+      },
+      "source_manifest": "lean_source_review",
+      "created_markdown": {
+        "name": "04-Criterio-unilateral-de-ventanas.md",
+        "id": "1WuWoYDdhJMqq-yp8cXu9S2vUTBZk8T4O",
+        "url": "https://docs.google.com/document/d/1WuWoYDdhJMqq-yp8cXu9S2vUTBZk8T4O/edit",
+        "mime_type": "text/markdown",
+        "parent_ids": [
+          "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+        ],
+        "size_bytes": 21376,
+        "sha256": "0c8c0ed4810e8c52c1b0b2343116ac13e6617b631511ba7d749dc70cdf19614e",
+        "verification": "raw bytes identical; parent and MIME verified"
+      },
+      "vault_changes": [
+        {
+          "name": "00-Mapa-de-estudio.md",
+          "before_sha256": "1654617262ec31ab220828dcf7df575a02208e775ce09b37128f4903b8f88f1b",
+          "after_sha256": "db2143a8adf95d6259942f3dace11f5d28166eea5354695bfd81985684c3dad3",
+          "size_bytes": 8523,
+          "replacements": [
+            {
+              "old_text": "Las referencias A y B se conservan en las cuatro notas iniciales.",
+              "new_text": "Las referencias A y B se conservan en las notas del cuaderno."
+            },
+            {
+              "old_text": "El cotejo inicial se concentra en las definiciones de las sumas corregidas, la reducción analítica a la ausencia de polos y el lema elemental sobre denominadores de proyecciones.",
+              "new_text": "El cotejo comprende las definiciones de las sumas corregidas, la demostración del criterio unilateral de ventanas y el lema elemental sobre denominadores de proyecciones. Para el criterio de ventanas se consultaron también interfaces y pasos concretos del código Lean en una revisión fijada."
+            },
+            {
+              "old_text": "Primer desarrollo en [[01-Sumas-y-transformadas]].",
+              "new_text": "Desarrollo en [[01-Sumas-y-transformadas]] y demostración del criterio en [[04-Criterio-unilateral-de-ventanas]]."
+            },
+            {
+              "old_text": "## Estado inicial y continuidad",
+              "new_text": "## Estado actual y continuidad"
+            },
+            {
+              "old_text": "El primer tramo contiene dos desarrollos locales: la transformada de Mellin con su regularización y un ejemplo de proyección racional que no preserva un retículo. Sus pruebas se incluyen completas en [[01-Sumas-y-transformadas]] y [[02-Proyecciones-y-denominadores]]. El criterio de ventanas se enuncia como un resultado de lectura cuya demostración se desarrollará en el tramo siguiente.",
+              "new_text": "El cuaderno contiene tres desarrollos locales: la transformada de Mellin con su regularización, un ejemplo de proyección racional que no preserva un retículo y el criterio unilateral de ventanas. Sus pruebas están en [[01-Sumas-y-transformadas]], [[02-Proyecciones-y-denominadores]] y [[04-Criterio-unilateral-de-ventanas]]. La nueva nota justifica las derivadas, las colas del núcleo, la selección de polos y la contradicción; conserva los cuantificadores y coteja la interfaz formal `PoleData` + `WindowHypU` con el teorema `landau_window`.\n\nEl código consultado corresponde al espejo `CocoSgt/riemann-hypothesis-lean`, revisión `7cbf7a0c32fca1badf05931879a37c3f8a2b03b4`. Se hizo una lectura localizada y una reconstrucción matemática, sin compilar aquí todo el desarrollo Lean ni comparar todo el espejo con la distribución original. El siguiente paso es la identidad de caracteres y la cancelación de su término principal; la producción aritmética de las ventanas continúa pendiente."
+            },
+            {
+              "old_text": "Orden de lectura sugerido para retomar: [[01-Sumas-y-transformadas]] → [[02-Proyecciones-y-denominadores]] → [[03-Dudas-y-pendientes]].",
+              "new_text": "Orden de lectura sugerido para retomar el tramo analítico: [[01-Sumas-y-transformadas]] → [[04-Criterio-unilateral-de-ventanas]] → [[03-Dudas-y-pendientes]]. La nota [[02-Proyecciones-y-denominadores]] sigue siendo una entrada independiente al problema de integridad."
+            }
+          ],
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+          "readback_verified": true
+        },
+        {
+          "name": "01-Sumas-y-transformadas.md",
+          "before_sha256": "2b68ce8f76ede4d5e45c1628d5c3e639349310dbd2b5ec2879d4ebf5a0271c3f",
+          "after_sha256": "7c1d98a9d348426ce09dea4b9e3bdb9b6522e930a2e54d769c082f9b9efe6870",
+          "size_bytes": 10325,
+          "replacements": [
+            {
+              "old_text": "El siguiente resultado se utiliza aquí como **entrada de lectura**; su demostración completa queda para la continuación:",
+              "new_text": "El siguiente resultado se demuestra en [[04-Criterio-unilateral-de-ventanas]]:"
+            },
+            {
+              "old_text": "Este es el mecanismo que falta desarrollar, junto con el tratamiento del polo más cercano.",
+              "new_text": "La continuación desarrolla este mecanismo y el tratamiento del polo más cercano mediante discos compactos, sin suponer un máximo de las partes reales de los polos."
+            },
+            {
+              "old_text": "Continuación: [[03-Dudas-y-pendientes]]. Para un segundo ejemplo elemental del argumento: [[02-Proyecciones-y-denominadores]].",
+              "new_text": "Continuación analítica: [[04-Criterio-unilateral-de-ventanas]]. Los pasos por estudiar están en [[03-Dudas-y-pendientes]]. Para un segundo ejemplo elemental del argumento: [[02-Proyecciones-y-denominadores]]."
+            }
+          ],
+          "id": "1RH6OtQT-_6xr-eNJNaW1RwVVjhXrlg6z",
+          "readback_verified": true
+        },
+        {
+          "name": "03-Dudas-y-pendientes.md",
+          "before_sha256": "f8dd103c2433c0f43c4b5a83aa784dea62b34154a8e18d37e5daf323777ff9db",
+          "after_sha256": "eb013883801c903463fe42a6ddb053c48e3937b2b5ca962908bad676cd54b418",
+          "size_bytes": 5704,
+          "replacements": [
+            {
+              "old_text": "Esta lista recoge continuaciones concretas de las notas iniciales. Un asunto pendiente indica una demostración por desarrollar o una correspondencia por cotejar; no presupone un error en las fuentes.",
+              "new_text": "Esta lista recoge continuaciones concretas del cuaderno y conserva el estado de los tramos ya cerrados. Un asunto pendiente indica una demostración por desarrollar o una correspondencia por cotejar; no presupone un error en las fuentes."
+            },
+            {
+              "old_text": "## 1. Demostrar el criterio unilateral de ventanas\n\n**Pregunta.** ¿Cómo se usa una cota superior en ventanas para excluir polos, sin disponer de una cota para el valor absoluto entre ellas?\n\n**Trabajo concreto.** Partir de la transformada construida en [[01-Sumas-y-transformadas]], escribir las derivadas normalizadas, demostrar\n\n$$\n|A_k(\\sigma+it)|+A_k(\\sigma)\n\\le2\\int_0^\\infty\\max(g(u),0)\\frac{u^ke^{-\\sigma u}}{k!}\\,du,\n$$\n\ny completar las dos alternativas: un polo no real aislado como el más cercano a un centro apropiado, o un polo real con residuo positivo. Debe distinguirse la concentración del núcleo de la elección del polo.\n\n**Criterio de cierre.** Una demostración local completa, con constantes independientes de la ventana elegida y sin suponer que existe un cero con parte real máxima.\n\n**Fuentes.** A, teorema 2.2 y lemas 2.3–2.4, pp. 4–6; B, proposición 2.1, lema 2.2 y demostración, pp. 14–18.\n\n",
+              "new_text": "## 1. Criterio unilateral de ventanas — desarrollado\n\n**Pregunta resuelta.** ¿Cómo se usa una cota superior en ventanas para excluir polos, sin disponer de una cota para el valor absoluto entre ellas?\n\n**Desarrollo.** [[04-Criterio-unilateral-de-ventanas]] demuestra las derivadas normalizadas, la desigualdad que utiliza la parte positiva, la concentración con constantes uniformes, la selección de un polo en discos compactos, las estimaciones de Cauchy y la contradicción exponencial. Trata por separado el polo no real visto desde un centro desplazado y el polo real de residuo positivo. Incluye el corolario puntual con constante real fija.\n\n**Cierre local, 22 de noviembre de 2026.** La prueba conserva el orden de los cuantificadores, no exige que las ventanas cubran una semirrecta y no supone un cero de parte real máxima. Se cotejaron `PoleData`, `WindowHypU`, `landau_window` y los pasos identificados en la nueva nota, en la revisión `7cbf7a0c32fca1badf05931879a37c3f8a2b03b4`. No se compiló aquí el desarrollo Lean completo. La construcción aritmética de las ventanas sigue pendiente.\n\n**Fuentes.** A, teorema 2.2 y lemas 2.3–2.4, pp. 4–6; B, proposición 2.1, lema 2.2 y demostración, pp. 14–18.\n\n"
+            },
+            {
+              "old_text": "**Trabajo concreto.** Empezar por una interfaz analítica pequeña, como la transformada y sus residuos, usando la revisión fijada por A. Registrar la declaración, los objetos definidos y las hipótesis efectivas. El cotejo siguiente debe elegirse a partir de una pregunta concreta de las notas, no a partir del tamaño o del nombre del archivo.",
+              "new_text": "**Avance.** El cotejo de la interfaz analítica de ventanas está documentado en [[04-Criterio-unilateral-de-ventanas]]. Distingue la condición integral `WindowHypU` del corolario puntual, conserva la integrabilidad y registra las declaraciones en una revisión fijada.\n\n**Trabajo siguiente.** Al estudiar la identidad de caracteres del pendiente 3, localizar su declaración formal y comprobar las normalizaciones y el tratamiento de los primos ramificados. Registrar la declaración, los objetos definidos y las hipótesis efectivas. Cada cotejo debe responder a una pregunta concreta de las notas."
+            },
+            {
+              "old_text": "El siguiente desarrollo es el pendiente 1. Las identidades de Mellin y el cálculo del defecto de un proyector ya están escritos en las notas iniciales; basta revisarlos cuando una dependencia nueva lo requiera. Los resultados geométricos y cohomológicos profundos continúan registrados como entradas externas.",
+              "new_text": "El siguiente desarrollo es el pendiente 3: la identidad de caracteres y su término principal. Las identidades de Mellin, el cálculo del defecto de un proyector y el criterio unilateral de ventanas ya están desarrollados; basta volver a ellos cuando una dependencia nueva lo requiera. Después se abordará la desigualdad de marcos. Los resultados geométricos y cohomológicos profundos continúan registrados como entradas externas."
+            }
+          ],
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+          "readback_verified": true
+        }
+      ],
+      "recovery": "Cada reemplazo conserva los textos anterior y posterior. Su inversión fue comprobada contra el SHA-256 previo antes de aplicar las escrituras. Las versiones previas del manuscrito permanecen en la historia Git.",
+      "obsidian_rendering_checked": false,
+      "latex": {
+        "status": "compiled_and_visually_reviewed",
+        "pages": 19,
+        "page_size": "A4",
+        "path": "pdf/notas-hipotesis-riemann.pdf",
+        "size_bytes": 360376,
+        "sha256": "b3e1492db94bb1b2e5064af0ab9ed30342924ee4e0bb363f7f0050400e5ff4fb",
+        "compilation_exit_code": 0,
+        "warnings": 0,
+        "unresolved_references": 0,
+        "all_pages_visually_reviewed": true,
+        "chapter_3_pages": [
+          11,
+          18
+        ],
+        "cross_reading_with_markdown": "Sin discrepancias matemáticas que bloqueen publicar: hipótesis, signos, exponentes, radios, cuantificadores y corolario.",
+        "lean_compiled_or_executed": false
+      }
     }
   ],
   "github": {
@@ -116,5 +263,536 @@
     "visibility": "private",
     "default_branch": "main",
     "initialization_commit": "57f20e26fec8d470771cb560a4e3e4582846b17c"
+  },
+  "lean_source_review": {
+    "repository": "CocoSgt/riemann-hypothesis-lean",
+    "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+    "source_base_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/",
+    "toolchain": "leanprover/lean4:v4.33.1",
+    "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "identity_verification": {
+      "files": 34,
+      "lean_files": 32,
+      "procedure": "Contenido UTF-8 completo recuperado en la revisión fijada. SHA-256 calculado sobre sus bytes; SHA-1 del objeto Git recalculado como SHA1(blob + espacio + longitud decimal + NUL + contenido) y comparado con el SHA informado por GitHub.",
+      "all_git_blob_hashes_match": true,
+      "scope": "Identidad de los archivos recuperados del espejo; no identidad del árbol completo con la distribución original de Alpöge."
+    },
+    "review_profiles": {
+      "interfaces": "Lectura de las declaraciones y pasos indicados en scope; no supone lectura matemática integral del archivo ni de su clausura de dependencias.",
+      "analitico": "Lectura de enunciados y pruebas de los seis módulos analíticos, y reconstrucción matemática por el revisor analítico; cotejo de identidad efectuado separadamente.",
+      "geometrico": "Lectura de enunciados y pruebas de los seis módulos geométricos, y reconstrucción matemática por el revisor geométrico; en LandauZeroFreeCriterion.lean lectura de PoleData y WindowHypU; cotejo de identidad efectuado separadamente.",
+      "exploratorio": "Consulta para localizar interfaces; las declaraciones se enumeran como referencias de localización, sin atribuirles una revisión matemática integral ni usarlas como evidencia adicional del capítulo.",
+      "configuracion": "Lectura de las versiones declaradas en los archivos del commit; no ejecución de la herramienta declarada."
+    },
+    "files": [
+      {
+        "path": "lakefile.toml",
+        "git_blob_sha": "07e85dc8afcf28b4885a8f092154c8b74c8cf800",
+        "sha256": "b831ad8cac0babb7bf713433259bdfe5163e58c90734e86d71536d4e30ddec4c",
+        "bytes": 1619,
+        "declarations": [
+          "package tree",
+          "require mathlib"
+        ],
+        "review": [
+          "configuracion"
+        ],
+        "scope": "Versión Mathlib y opciones del proyecto declaradas en el mismo commit"
+      },
+      {
+        "path": "lean-toolchain",
+        "git_blob_sha": "a8afa7d1b02d96f0671eba854a8dc4b416beb473",
+        "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+        "bytes": 25,
+        "declarations": [
+          "Lean toolchain identifier"
+        ],
+        "review": [
+          "configuracion"
+        ],
+        "scope": "Versión declarada por la revisión recuperada"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/CharFamily.lean",
+        "git_blob_sha": "81c8dfd66d910d083d5bc88c664c7917fdbdfe96",
+        "sha256": "ca0ca8acb80ff4ffc36896204650f9ca16167193a22c36a140402b27cfc8c336",
+        "bytes": 1636,
+        "declarations": [
+          "Deduction.CharFamily",
+          "Deduction.Gchi",
+          "Deduction.Gm",
+          "Deduction.ZeroFree",
+          "Deduction.WindowHyp"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Definiciones y admisibilidad de la familia ponderada"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/CharFamilyLFunctionNeZeroOfOneLeRe.lean",
+        "git_blob_sha": "e3aaad883b956e2d45c50bdf6d58367d6f9ef109",
+        "sha256": "bd25dd6f7b19d2683b3cb937b3cca4edfe798a492e3dcedeade371f0e3ff48b3",
+        "bytes": 784,
+        "declarations": [
+          "Deduction.charFamily_LFunction_ne_zero_of_one_le_re"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "No anulación en Re≥1; valor total de ζ en 1 tratado por su convención Mathlib"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/IteratedDerivLaplace.lean",
+        "git_blob_sha": "c1c05ec801b258064f1e14fb9d7e624eb7345382",
+        "sha256": "3beee9b6dbdb25ae9e3c6fecb83e21cfee34c01e2065b5c5c383ce725f85189b",
+        "bytes": 5641,
+        "declarations": [
+          "Deduction.iteratedDeriv_laplace_int",
+          "Deduction.iteratedDeriv_laplace_meas",
+          "Deduction.iteratedDeriv_laplace_bound",
+          "Deduction.iteratedDeriv_laplace_hasDerivAt",
+          "Deduction.iteratedDeriv_laplace"
+        ],
+        "review": [
+          "analitico"
+        ],
+        "scope": "Integrabilidad, derivación bajo el signo integral e iteración; lectura de enunciados y pruebas por el revisor analítico"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/LandauCauchy.lean",
+        "git_blob_sha": "f415cdd3e7743dda02d46040c0cb1cc4fde5eb5b",
+        "sha256": "fdd3d3cdebfe075a825bd3249713b362daef806e79e4a10341cdc1104a023b39",
+        "bytes": 1731,
+        "declarations": [
+          "Deduction.landau_cauchy"
+        ],
+        "review": [
+          "geometrico"
+        ],
+        "scope": "Cota de derivadas con radios interiores; lectura de enunciado y prueba por el revisor geométrico"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/LandauDichotomy.lean",
+        "git_blob_sha": "947dae363ce629febcba27b1b70355438f8639a0",
+        "sha256": "f358ff8aecbe34019afe20224ae9a5890c99d55f6b6f7d838c1277e3b1d255ad",
+        "bytes": 4357,
+        "declarations": [
+          "Deduction.eq_ofReal_sub_of_dist_le_of_le_sub_re",
+          "Deduction.landau_dichotomy"
+        ],
+        "review": [
+          "geometrico"
+        ],
+        "scope": "Dicotomía de discos y polos; lectura de enunciados y pruebas por el revisor geométrico"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/LandauFinite.lean",
+        "git_blob_sha": "46a0dc63f21009582a2dda61c1267e9aad88bde5",
+        "sha256": "1c24afcda94b779f176b3e46a2cad08e32414bd41aeee9d890e187391479129a",
+        "bytes": 1132,
+        "declarations": [
+          "Deduction.landau_finite"
+        ],
+        "review": [
+          "geometrico"
+        ],
+        "scope": "Finitud de polos en un disco compacto interior; lectura de enunciado y prueba por el revisor geométrico"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/LandauGrowthContra.lean",
+        "git_blob_sha": "bf6f3c703e6ae4f7fa37d4a7fd59eaa2e2aeeeda",
+        "sha256": "2f3e6d7a5d2e7b1cf2b0b92c82f50b2ebb661ab8fb519092795fcade18f88df5",
+        "bytes": 1838,
+        "declarations": [
+          "Deduction.landau_growth_contra"
+        ],
+        "review": [
+          "analitico"
+        ],
+        "scope": "Contradicción entre tasas exponenciales; lectura de enunciado y prueba por el revisor analítico"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/LandauKernelMax.lean",
+        "git_blob_sha": "b230a9e40c3710eac205f32ceb8a44f2d003b647",
+        "sha256": "9fe6836f5bbab547e0b1d154ad4133a0b0d6aaf9ba8cde93b6310a49d5dd5259",
+        "bytes": 807,
+        "declarations": [
+          "Deduction.landau_kernel_max"
+        ],
+        "review": [
+          "analitico"
+        ],
+        "scope": "Máximo del núcleo normalizado; lectura de enunciado y prueba por el revisor analítico"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/LandauNearest.lean",
+        "git_blob_sha": "6a177498987e1ef453727131bf2004bc797a01a2",
+        "sha256": "ae084dbb3f161d2dd369ff224f2117b818243b501ca596d3da2c92d83b65a67c",
+        "bytes": 5357,
+        "declarations": [
+          "Deduction.landau_nearest_equi",
+          "Deduction.landau_nearest"
+        ],
+        "review": [
+          "geometrico"
+        ],
+        "scope": "Selección del polo próximo y evitación de empates; lectura de enunciados y pruebas por el revisor geométrico"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/LandauPoleAsym.lean",
+        "git_blob_sha": "e5ec846b37b8879944576a38c83013814a6f1fe7",
+        "sha256": "c70dba4115698a4ee22654f0aaf213b886afe28a2d1d44a8e4370aec72fc3944",
+        "bytes": 4189,
+        "declarations": [
+          "Deduction.landau_pole_asym_deriv",
+          "Deduction.landau_pole_asym"
+        ],
+        "review": [
+          "geometrico"
+        ],
+        "scope": "Derivadas de la parte principal y cota asintótica del polo; lectura de enunciados y pruebas por el revisor geométrico"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/LandauPoleReLe.lean",
+        "git_blob_sha": "205c7380b79e78b2752ed67aeb069f2a9d12cc77",
+        "sha256": "da3615e42c27329c6b8ba7e948cba526d86b45c423225c8c111946cf409ef2ef",
+        "bytes": 2825,
+        "declarations": [
+          "Deduction.landau_pole_re_le_bound",
+          "Deduction.landau_pole_re_le"
+        ],
+        "review": [
+          "interfaces",
+          "geometrico"
+        ],
+        "scope": "PoleData implica Re(ρ)≤2; no se presupone Re(ρ)≤1"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/WindowHypOfRpow.lean",
+        "git_blob_sha": "dde1c159371538875c28374574ca7e452b0450d9",
+        "sha256": "f9238ed2d6c67f1cbe383a33cc3759c00bed31b97a10253fbee59279290c6a5c",
+        "bytes": 2999,
+        "declarations": [
+          "Deduction.windowHyp_of_rpow_eventually",
+          "Deduction.windowHyp_of_rpow"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Cota puntual con C real arbitrario hacia WindowHyp; absorción logarítmica"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/WindowHypUOfWindowHyp.lean",
+        "git_blob_sha": "701f0502ae106ab89e390105cd9c98e6cf881e1a",
+        "sha256": "2e4ac8197f1fda900ba710cef10627ebd0576d2bc4207d919f0a8a769ba13c98",
+        "bytes": 2647,
+        "declarations": [
+          "Deduction.windowHypU_of_windowHyp_image",
+          "Deduction.windowHypU_of_windowHyp_fun",
+          "Deduction.windowHypU_of_windowHyp"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Cambio x=exp(u) y transporte exacto de integral e integrabilidad"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ZeroFreeOfRpowWindow.lean",
+        "git_blob_sha": "2ed00ad3aa862f3e522686557fb8f559b17fc002",
+        "sha256": "3252473ba2654b05e9d2ea0781ea91b4c7eadcca0def18b0f21d20212c2f0316",
+        "bytes": 668,
+        "declarations": [
+          "Deduction.zeroFree_of_rpow_window"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Corolario formal explícito con C y ventanas [Y,Y^(1+δ)]"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/kernelIntegral.lean",
+        "git_blob_sha": "d785c54e03a55b0ef6c0fcb64bc4f8158e803642",
+        "sha256": "b487d899307a350276d6c5fa1be392104f912a6ccd3e32f426828d7421030502",
+        "bytes": 947,
+        "declarations": [
+          "Deduction.kernel_integral"
+        ],
+        "review": [
+          "analitico"
+        ],
+        "scope": "Integral exacta del núcleo gamma; lectura de enunciado y prueba por el revisor analítico"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/landauTails.lean",
+        "git_blob_sha": "0e55797bac5320acf02d9acc832ca53df716e436",
+        "sha256": "5700277144d95eea3d90d3d4e2efa3743c3d892753ed41ed27f6f38a2e92708c",
+        "bytes": 6721,
+        "declarations": [
+          "Deduction.landau_tails_chernoff",
+          "Deduction.landau_tails_pow",
+          "Deduction.landau_tails"
+        ],
+        "review": [
+          "interfaces",
+          "analitico"
+        ],
+        "scope": "Cota de colas y constantes de la concentración gamma"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/landauWindow.lean",
+        "git_blob_sha": "7915058f10b33a52652290cd887cbccdc00e676a",
+        "sha256": "57f49606e6ffd8cab45672d8d4b9c7ded6c0b6b0d140821cc51b5baeb4f67ab5",
+        "bytes": 9681,
+        "declarations": [
+          "Deduction.landau_window_contra",
+          "Deduction.landau_window_key",
+          "Deduction.landau_window"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Enunciado y arquitectura de exclusión unilateral de polos"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/landauWindowIneq.lean",
+        "git_blob_sha": "cda93b0185260d72395d2ef2c90314e0fa7128ef",
+        "sha256": "e3d5d760bcefe1242d4f5b0ced44fc055f1fa8dfe048a2222cf2c39ae812e59c",
+        "bytes": 6547,
+        "declarations": [
+          "Deduction.landau_window_ineq_int",
+          "Deduction.landau_window_ineq"
+        ],
+        "review": [
+          "analitico"
+        ],
+        "scope": "Desigualdad unilateral sobre la ventana; lectura de enunciados y pruebas por el revisor analítico"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/lemmaL.lean",
+        "git_blob_sha": "6c37aebd05121b6d68e3532d8529f0ce8357386f",
+        "sha256": "4ce94b876b46e0a3b038c4bfe9ade933c7225170bf07421109ee862fd5941e3d",
+        "bytes": 1053,
+        "declarations": [
+          "Deduction.lemmaL"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "WindowHyp implica ZeroFree para la familia"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/mellinGchiModOne.lean",
+        "git_blob_sha": "11776c96437e9a4e53fbc3ff06c5e2e8e3c640bc",
+        "sha256": "57054bee6a57d89958d6a4d862f74083e68afea8ce0af701b49881e2043767c5",
+        "bytes": 9533,
+        "declarations": [
+          "Deduction.mellin_Gchi_modOne"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Confirmación de regularización principal −(ζ'/ζ+1/(s−1)+1−(1+γ)s)/(s(s−1)); signo externo de A concordante"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/mellinGchiOfNeOne.lean",
+        "git_blob_sha": "675a25d278977948c8327f0e1e2e31fb3a990a7d",
+        "sha256": "22192caa33f0e9b840298329573ca3ea15e3e5d9e60624efcda3562f8ddff26a",
+        "bytes": 6556,
+        "declarations": [
+          "Deduction.mellin_Gchi_of_ne_one"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Confirmación de signos del numerador −(L'/L−sℓχ) y rango Re(s)>1; no se detectó discrepancia con la fórmula impresa de A"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/poleData.lean",
+        "git_blob_sha": "1f7fdc4409d2f1185700764c51d5c17a907d76e1",
+        "sha256": "78fb8ae795a01ad687440b035c377a9fde71088c726d1ac862ba0fd8bb1fc3c0",
+        "bytes": 20079,
+        "declarations": [
+          "Deduction.poleData_char",
+          "Deduction.poleData"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Construcción de datos de polos para familias de caracteres; lectura de interfaces y signo del residuo"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauZeroFreeCriterion.lean",
+        "git_blob_sha": "54fd0de979e0dad6ac7709ad8ecbec8a29e21872",
+        "sha256": "d4c5a8ba961bb0e91121212b697217904bf0ba56c2e89c00435fb7ee416a22d7",
+        "bytes": 2678,
+        "declarations": [
+          "Deduction.gm",
+          "Deduction.zeroSet",
+          "Deduction.PoleData",
+          "Deduction.WindowHypU",
+          "Deduction.LandauZeroFreeCriterion"
+        ],
+        "review": [
+          "interfaces",
+          "geometrico"
+        ],
+        "scope": "Hipótesis exactas del criterio general"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/CoreAtH.lean",
+        "git_blob_sha": "0ba3621036f19146e7e67fa9c0e8a1c38661a097",
+        "sha256": "cb17dfd05546ac3116b0638406cb082913e3370841a8abfab1e6498b6d4ac698",
+        "bytes": 2897,
+        "declarations": [
+          "UpperTheory.Comparison₂.CoreAtH",
+          "UpperTheory.Comparison₂.pcEquiv"
+        ],
+        "review": [
+          "exploratorio"
+        ],
+        "scope": "Consulta exploratoria del puente aritmético para localizar declaraciones; no lectura matemática integral"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/GChiEq.lean",
+        "git_blob_sha": "d7abdea8d4ea78d5f4144e8781ab33dc1760069c",
+        "sha256": "223c3201417f68813b5529514fb16302df5436929b8c06c1a6bee543acee2679",
+        "bytes": 1631,
+        "declarations": [
+          "UpperTheory.Comparison₂.gChi_eq"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Identidad entre definiciones de suma corregida"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/GzEq.lean",
+        "git_blob_sha": "ee8161fad71e4610eef5f9a362ec6fbee4a57e01",
+        "sha256": "f9d5098d865f17d235c3b87010fe1037028ddfe2d358809a4782c3a3221f2914",
+        "bytes": 2170,
+        "declarations": [
+          "UpperTheory.Comparison₂.Gz_eq"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Identidad de la suma corregida principal"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/Imports.lean",
+        "git_blob_sha": "2dc9b4e690951c66ffe443e279fcada259bcce13",
+        "sha256": "9d38c47879d3c02199f747433f009ba4cf6eb44d7480f031e5763a2ee271950e",
+        "bytes": 1122,
+        "declarations": [
+          "UpperTheory.Comparison₂.formB"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Puente desde ventanas de Level.Gm; δ=la−1 y C=1"
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/LevelFamily.lean",
+        "git_blob_sha": "d08c25d0cb674297482bec9a235401c14bfb22fa",
+        "sha256": "99ab2af08664a9d1cf3afbe5113894d2b56bb64eb052a378f62d027d0f74354e",
+        "bytes": 3034,
+        "declarations": [
+          "UpperTheory.Comparison₂.level_family"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Equivalencia de la suma de Level y Deduction.Gm y de sus enunciados de no anulación"
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/FamCore.lean",
+        "git_blob_sha": "44cd54c38881086724fdf7f10f32b7d8e80e35b3",
+        "sha256": "b261e12923d7dc47037a7b5b458e61ef59d69545f3b40a904a36e6bf8047ec78",
+        "bytes": 10481,
+        "declarations": [
+          "Formalism.MainNotions.FamCore",
+          "Formalism.MainNotions.FamCore.Windows"
+        ],
+        "review": [
+          "exploratorio"
+        ],
+        "scope": "Consulta exploratoria para localizar interfaces de familias; no lectura matemática integral"
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean",
+        "git_blob_sha": "ed60b4b997cd4703713660b185b9e43fd95559a1",
+        "sha256": "d6b12bcbdc15c1b717c33a712474f9fca18c577a65c41fff2b2937534e5447ba",
+        "bytes": 7338,
+        "declarations": [
+          "Formalism.HC.Level",
+          "Formalism.HC.Level.Nt",
+          "Formalism.HC.Level.wt",
+          "Formalism.HC.Level.Gm",
+          "Formalism.HC.Level.ofSub",
+          "Formalism.HC.Level.cyc",
+          "Formalism.HC.Level.mem_cyc"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Correspondencia de definiciones del nivel cíclico y Hψ; resto del archivo fuera de revisión matemática"
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/Landau.lean",
+        "git_blob_sha": "441c45be16b20bb999a1746b218c32c6fc5ba289",
+        "sha256": "08921efb40c16f3be4290b48c153cc6a6b6be790dd2cdb672202c165cea5ebae",
+        "bytes": 31816,
+        "declarations": [
+          "Formalism.HC.Landau.landau_family",
+          "Formalism.HC.Landau.zero_free_of_Chebyshev_growth"
+        ],
+        "review": [
+          "exploratorio"
+        ],
+        "scope": "Consulta exploratoria de interfaces de Landau para localizar el puente a familias; no lectura matemática integral"
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/Window.lean",
+        "git_blob_sha": "099d96fec932b03a505ea79a81c45bcc3fbf0ea3",
+        "sha256": "882989a78da888b0462d17f285e42e44970a3dee70c1dc8c667fb5a3f985c2f7",
+        "bytes": 1825,
+        "declarations": [
+          "Formalism.HC.HasWindows",
+          "Formalism.HC.Level.FormBAt",
+          "Formalism.HC.Level.FormB"
+        ],
+        "review": [
+          "interfaces"
+        ],
+        "scope": "Cuantificadores de las ventanas y variante de interfaz"
+      }
+    ],
+    "document_comparison": {
+      "A": {
+        "file": "riemann_hypothesis.pdf",
+        "pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "pinned_revision_page": 52,
+        "additional_sign_comparison_page": 3
+      },
+      "B": {
+        "file": "GRH note.pdf",
+        "pages": [
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "code_revision": "No Git revision or checksum fixed in B; citation Alp26 accessed 2026-11-20."
+      }
+    },
+    "scope_limit": "Lectura localizada de fuentes e identidad de archivos. No se compiló código Lean, no se ejecutó el kernel ni se auditó la clausura completa de dependencias; no se comparó el árbol completo con el archivo original de Alpöge. Los archivos recuperados solo para localización se señalan expresamente."
   }
 }

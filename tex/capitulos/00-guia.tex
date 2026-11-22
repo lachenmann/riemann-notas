@@ -42,6 +42,8 @@ cotejos entre A y B tampoco constituyen una auditoría de ese código.
     Una suma suavizada sobre potencias de primos tiene una transformada de
     Mellin que conserva esos polos. La corrección en $s=1$ elimina un término
     ajeno a los ceros buscados. Esta es la Nota~\ref{sec:sumas}.
+    La Nota~\ref{sec:ventanas} demuestra cómo una cota superior en ventanas
+    arbitrariamente lejanas excluye esos polos.
   \item \textbf{Extraer los caracteres adecuados.}
     La ortogonalidad de caracteres de un grupo de Galois abeliano expresa
     condiciones sobre Frobenius como sumas de caracteres. Los pesos y
@@ -86,6 +88,7 @@ y un primo.
 \textbf{Paso que queremos reconstruir} & \textbf{A} & \textbf{B} \\
 \midrule
 Transformada y corrección & §2, pp.~3--7 & §2, pp.~14--19 \\
+Criterio unilateral de ventanas & Teo.~2.2 y Lemas~2.3--2.4, pp.~4--6 & Prop.~2.1 y Lema~2.2, pp.~14--18 \\
 Identidad de caracteres & Prop.~4.2, p.~15 & Prop.~3.1, p.~21 \\
 Marcos y pendientes & Prop.~5.2 y Teo.~5.3, pp.~18--20 & Lema~4.2 y Prop.~4.3, pp.~41--44 \\
 Proyecciones y denominadores & §§6--8 & Lema~5.1, p.~53; pp.~54--56 \\
@@ -94,10 +97,11 @@ Cancelación y raíz cuadrada & Props.~10.1--10.2, pp.~47--49 & (4.5)--(4.10), p
 \end{tabularx}
 \end{center}
 
-La meta inmediata es poder demostrar los cálculos de las dos notas siguientes
-sin consultar el texto. El siguiente desarrollo será el criterio unilateral
-de ventanas: justificar la concentración del núcleo y explicar cómo se
-excluye un polo a partir de la transformada. Después estudiaremos la identidad
-de caracteres y la desigualdad de marcos. Las construcciones geométricas y cohomológicas
+Las tres notas siguientes desarrollan los cálculos de Mellin, el ejemplo
+integral de una proyección y el criterio unilateral de ventanas. Este último
+incluye la concentración del núcleo, la elección de un polo y el cotejo
+localizado con las declaraciones Lean de una revisión fijada.
+El siguiente desarrollo será la identidad de caracteres; después
+estudiaremos la desigualdad de marcos. Las construcciones geométricas y cohomológicas
 permanecen identificadas como resultados de las fuentes hasta desarrollar
 sus hipótesis y demostraciones.
