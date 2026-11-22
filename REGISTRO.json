@@ -35,8 +35,8 @@
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 8860,
-      "sha256": "65ec821e466a6fe5896c7c57746d744cedadf8d05c3c9f35ff8f410b723768d5",
+      "size_bytes": 8861,
+      "sha256": "8b4dcf75c7cc183ca8f20aba614af8d2e651c92f733d3688fe799363e55f9ebd",
       "verification": "raw bytes identical; parent and MIME verified"
     },
     {
@@ -101,7 +101,7 @@
     }
   ],
   "obsidian_rendering_checked": false,
-  "github_status": "active_private_repository",
+  "github_status": "active_public_repository",
   "latex": {
     "status": "compiled_and_visually_reviewed",
     "pages": 31,
@@ -523,16 +523,91 @@
       "pdf_sha256_unchanged": "31af0bf3a88f0a2f95cd2118a2eb9d8943ad7694c156ef2d397fdfb8c3170780",
       "license_changed": false,
       "vault_sharing_changed": false
+    },
+    {
+      "date": "2026-11-22",
+      "action": "repository_made_public",
+      "previous_github_commit": "66fc55e68f22ff83e5f626d39c2a3c069a170c1f",
+      "authorization": "El usuario solicitó hacer público el repositorio y completó la verificación de identidad requerida por GitHub.",
+      "result": "Visibilidad pública confirmada en GitHub; descripción, estado del cuaderno y referencia de la bóveda actualizados.",
+      "visibility_change": {
+        "requested": "public",
+        "observed": "public",
+        "private": false,
+        "status": "completed",
+        "verified_by": [
+          "GitHub repository API",
+          "GitHub visible interface"
+        ]
+      },
+      "repository_description": "Notas de estudio en español y LaTeX sobre las exposiciones de la propuesta de Alpöge para la GRH de las funciones L de Dirichlet. Abierto a contribuciones.",
+      "contribution_channels": {
+        "issues_enabled": true,
+        "pull_requests_enabled": true,
+        "pull_request_creation_policy": "all"
+      },
+      "anonymous_access": {
+        "checked_at_utc": "2026-11-22T22:56:57.170844+00:00",
+        "credentials_sent": false,
+        "cookies_sent": false,
+        "page_verified": true,
+        "pdf_verified": true,
+        "pdf_revision": "66fc55e68f22ff83e5f626d39c2a3c069a170c1f",
+        "requests": [
+          {
+            "kind": "repository_page",
+            "url": "https://github.com/lachenmann/riemann-notas",
+            "http_status": 200,
+            "final_url": "https://github.com/lachenmann/riemann-notas",
+            "bytes": 240936,
+            "content_type": "text/html; charset=utf-8",
+            "repository_identifier_present": true,
+            "public_repository_metadata_present": true,
+            "contains_404_title": false
+          },
+          {
+            "kind": "reading_pdf",
+            "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/66fc55e68f22ff83e5f626d39c2a3c069a170c1f/pdf/notas-hipotesis-riemann.pdf",
+            "http_status": 200,
+            "final_url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/66fc55e68f22ff83e5f626d39c2a3c069a170c1f/pdf/notas-hipotesis-riemann.pdf",
+            "bytes": 465939,
+            "content_type": "application/octet-stream",
+            "pdf_magic": true,
+            "sha256": "31af0bf3a88f0a2f95cd2118a2eb9d8943ad7694c156ef2d397fdfb8c3170780",
+            "expected_sha256": "31af0bf3a88f0a2f95cd2118a2eb9d8943ad7694c156ef2d397fdfb8c3170780",
+            "sha256_matches_expected": true
+          }
+        ]
+      },
+      "vault_update": {
+        "name": "00-Mapa-de-estudio.md",
+        "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+        "before_sha256": "65ec821e466a6fe5896c7c57746d744cedadf8d05c3c9f35ff8f410b723768d5",
+        "after_sha256": "8b4dcf75c7cc183ca8f20aba614af8d2e651c92f733d3688fe799363e55f9ebd",
+        "size_bytes": 8861,
+        "old_text": "El manuscrito LaTeX del repositorio privado [lachenmann/riemann-notas]",
+        "new_text": "El manuscrito LaTeX del repositorio público [lachenmann/riemann-notas]",
+        "readback_verified": true,
+        "mime_type_verified": "text/markdown",
+        "parent_ids_verified": [
+          "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+        ]
+      },
+      "latex_changed": false,
+      "pdf_sha256_unchanged": "31af0bf3a88f0a2f95cd2118a2eb9d8943ad7694c156ef2d397fdfb8c3170780",
+      "license_changed": false,
+      "vault_sharing_changed": false
     }
   ],
   "github": {
     "repository_id": 1467834142,
     "full_name": "lachenmann/riemann-notas",
     "url": "https://github.com/lachenmann/riemann-notas",
-    "visibility": "private",
+    "visibility": "public",
     "default_branch": "main",
     "initialization_commit": "57f20e26fec8d470771cb560a4e3e4582846b17c",
-    "publication_status": "awaiting_github_reauthentication"
+    "publication_status": "published",
+    "public_since": "2026-11-22"
   },
   "lean_source_review": {
     "repository": "CocoSgt/riemann-hypothesis-lean",

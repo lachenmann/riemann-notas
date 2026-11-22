@@ -28,7 +28,7 @@ El cuaderno externo de borradores contiene seis Markdown y los dos PDF de refere
 
 Los cuatro archivos creados o actualizados se recuperaron completos desde el destino y coinciden con los preparados. Se comprobaron `text/markdown`, carpetas padre y enlaces entre notas. El registro conserva hashes y los reemplazos reversibles de las versiones anteriores. La presentación dentro de Obsidian no se inspeccionó.
 
-El manuscrito está en [lachenmann/riemann-notas](https://github.com/lachenmann/riemann-notas), rama `main`. El capítulo nuevo es `tex/capitulos/04-identidad-de-caracteres.tex`. El traspaso desde Markdown continúa siendo manual. La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a $0<y<1$, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal.
+El manuscrito está en el repositorio público [lachenmann/riemann-notas](https://github.com/lachenmann/riemann-notas), rama `main`. El capítulo nuevo es `tex/capitulos/04-identidad-de-caracteres.tex`. El traspaso desde Markdown continúa siendo manual. La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a $0<y<1$, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal.
 
 ## Compilación y composición
 
@@ -36,7 +36,7 @@ El PDF actualizado tiene 31 páginas A4. La Nota 3 ocupa las pp. 11–18 y la nu
 
 ## Contribuciones y versiones de las fuentes
 
-La documentación para abrir el repositorio a contribuciones está preparada. El cambio de visibilidad está pendiente de completar la verificación de identidad que solicita GitHub. La entrada presenta el PDF y las fuentes LaTeX a lectores externos. [CONTRIBUTING.md](CONTRIBUTING.md) explica cómo proponer correcciones, ejemplos y cotejos mediante issues y pull requests. La lectura y la contribución se organizan alrededor de los archivos del repositorio.
+El repositorio es público desde el 22 de noviembre de 2026. La entrada presenta el PDF y las fuentes LaTeX a lectores externos. [CONTRIBUTING.md](CONTRIBUTING.md) explica cómo proponer correcciones, ejemplos y cotejos mediante issues y pull requests. Se comprobó el acceso a la página y al PDF sin iniciar sesión.
 
 El enlace público de B entrega ahora un PDF de 76 páginas, fechado el 22 de noviembre de 2026. Las notas actuales citan el ejemplar de 73 páginas del 21 de noviembre. [fuentes/README.md](fuentes/README.md) registra ambas identidades; el cotejo de esa actualización queda pendiente y las referencias actuales siguen ligadas al ejemplar identificado.
 
