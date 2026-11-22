@@ -54,7 +54,7 @@
     {
       "name": "02-Proyecciones-y-denominadores.md",
       "id": "1x3FLfjzgABDC9mf_540VWyXM3eIHpEpn",
-      "url": "https://docs.google.com/document/d/1x3FLfjzgABDC9mf_540VWyXM3eIHpEpn/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+      "url": "https://docs.google.com/document/d/1x3FLfjzgABDC9mf_540VWyXM3eIHpEpn/edit",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
@@ -460,6 +460,69 @@
         "cross_reading_with_markdown": "La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a 0<y<1, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal.",
         "lean_compiled_or_executed": false
       }
+    },
+    {
+      "date": "2026-11-22",
+      "action": "public_contribution_preparation",
+      "user_request": "Hacer público el repositorio para recibir contribuciones.",
+      "previous_github_commit": "fdf281fc5107da0d50fdb750dfcaf34b6a1b27b7",
+      "result": "README adaptado a lectores externos, CONTRIBUTING añadido, enlaces públicos de fuentes comprobados y estado preparado; la visibilidad sigue privada hasta completar la verificación de identidad de GitHub.",
+      "visibility_change": {
+        "requested": "public",
+        "observed": "private",
+        "status": "awaiting_github_reauthentication"
+      },
+      "contribution_channels": {
+        "issues_enabled": true,
+        "pull_requests_enabled": true,
+        "creation_allowed_by": "All users who can access the repository"
+      },
+      "history_review": {
+        "reviewed_head": "fdf281fc5107da0d50fdb750dfcaf34b6a1b27b7",
+        "reachable_commits": 4,
+        "current_files": 16,
+        "unique_text_blobs": 32,
+        "unique_pdf_blobs": 3,
+        "credentials_or_effective_secrets_detected": false,
+        "actions_runs": 0,
+        "issues": 0,
+        "pull_requests": 0,
+        "releases": 0,
+        "scope": "Lectura de los árboles y blobs alcanzables indicados y examen de los tres PDF. No es una garantía universal frente a cualquier dato oculto.",
+        "retained_history": "Se conserva el historial de trabajo, incluidas referencias técnicas antiguas a Drive. Los identificadores y enlaces no son credenciales y el cambio de visibilidad no modifica permisos de Drive.",
+        "current_documentation_cleanup": "Se sustituyeron los enlaces privados de lectura por destinos del repositorio y enlaces públicos de las fuentes. Se retiró un parámetro de cuenta de una URL vigente del registro; el valor permanece en revisiones históricas."
+      },
+      "public_source_urls_checked": [
+        {
+          "source": "A",
+          "url": "https://www.ulam.ai/research/riemann_hypothesis.pdf",
+          "final_url": "https://www.ulam.ai/research/riemann_hypothesis.pdf",
+          "status": 200,
+          "mime": "application/pdf",
+          "bytes": 845543,
+          "sha256": "419e24a4ba07eb9ce98524ad11f568f2bd87d8d70abe288e4ef37632bdd8bb85",
+          "matches_studied_pdf": true,
+          "is_pdf": true
+        },
+        {
+          "source": "B",
+          "url": "https://www.ihes.fr/~rzhang/files/GRH%20note.pdf",
+          "final_url": "https://www.ihes.fr/~rzhang/files/GRH%20note.pdf",
+          "status": 200,
+          "mime": "application/pdf",
+          "bytes": 872585,
+          "sha256": "3bd82fa3d242fe473cb371cbab0a8d211cb7dd05f72ba2db1b4c4ef8f27478a3",
+          "matches_studied_pdf": false,
+          "is_pdf": true,
+          "pages": 76,
+          "document_date": "2026-11-22",
+          "comparison_status": "Distinto del ejemplar citado de 73 páginas; no se sustituye la fuente estudiada."
+        }
+      ],
+      "latex_changed": false,
+      "pdf_sha256_unchanged": "31af0bf3a88f0a2f95cd2118a2eb9d8943ad7694c156ef2d397fdfb8c3170780",
+      "license_changed": false,
+      "vault_sharing_changed": false
     }
   ],
   "github": {
@@ -468,7 +531,8 @@
     "url": "https://github.com/lachenmann/riemann-notas",
     "visibility": "private",
     "default_branch": "main",
-    "initialization_commit": "57f20e26fec8d470771cb560a4e3e4582846b17c"
+    "initialization_commit": "57f20e26fec8d470771cb560a4e3e4582846b17c",
+    "publication_status": "awaiting_github_reauthentication"
   },
   "lean_source_review": {
     "repository": "CocoSgt/riemann-hypothesis-lean",

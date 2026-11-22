@@ -22,20 +22,26 @@ Se mantiene el espejo `CocoSgt/riemann-hypothesis-lean`, revisión `7cbf7a0c32fc
 
 No se compiló ni ejecutó código Lean. El cotejo no abarca todas las dependencias ni una comparación integral del espejo con la distribución original de Alpöge.
 
-## Destinos y verificación
+## Soportes de trabajo y verificación
 
-La [carpeta de borradores de la bóveda](https://drive.google.com/drive/folders/16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC) contiene seis Markdown y la subcarpeta `Fuentes` con los dos PDF. Se añadió `05-Identidad-de-caracteres-y-termino-principal.md` y se actualizaron el mapa, los pendientes y la continuidad de la nota de ventanas. Se conservaron los identificadores existentes.
+El cuaderno externo de borradores contiene seis Markdown y los dos PDF de referencia. Se añadió `05-Identidad-de-caracteres-y-termino-principal.md` y se actualizaron el mapa, los pendientes y la continuidad de la nota de ventanas. Se conservaron los identificadores existentes.
 
 Los cuatro archivos creados o actualizados se recuperaron completos desde el destino y coinciden con los preparados. Se comprobaron `text/markdown`, carpetas padre y enlaces entre notas. El registro conserva hashes y los reemplazos reversibles de las versiones anteriores. La presentación dentro de Obsidian no se inspeccionó.
 
-El manuscrito está en el repositorio privado [lachenmann/riemann-notas](https://github.com/lachenmann/riemann-notas), rama `main`. El capítulo nuevo es `tex/capitulos/04-identidad-de-caracteres.tex`. El traspaso desde Markdown continúa siendo manual. La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a $0<y<1$, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal.
+El manuscrito está en [lachenmann/riemann-notas](https://github.com/lachenmann/riemann-notas), rama `main`. El capítulo nuevo es `tex/capitulos/04-identidad-de-caracteres.tex`. El traspaso desde Markdown continúa siendo manual. La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a $0<y<1$, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal.
 
 ## Compilación y composición
 
 El PDF actualizado tiene 31 páginas A4. La Nota 3 ocupa las pp. 11–18 y la nueva Nota 4, las pp. 19–30. La compilación terminó sin advertencias, referencias pendientes, caracteres faltantes ni cajas desbordadas. Se inspeccionaron visualmente las 31 páginas y se revisaron de nuevo las pp. 23–31 tras el último ajuste. Se corrigieron el salto forzado de la guía y la distribución final de la concordancia. La copia de lectura coincide byte por byte con el resultado de compilación.
 
+## Contribuciones y versiones de las fuentes
+
+La documentación para abrir el repositorio a contribuciones está preparada. El cambio de visibilidad está pendiente de completar la verificación de identidad que solicita GitHub. La entrada presenta el PDF y las fuentes LaTeX a lectores externos. [CONTRIBUTING.md](CONTRIBUTING.md) explica cómo proponer correcciones, ejemplos y cotejos mediante issues y pull requests. La lectura y la contribución se organizan alrededor de los archivos del repositorio.
+
+El enlace público de B entrega ahora un PDF de 76 páginas, fechado el 22 de noviembre de 2026. Las notas actuales citan el ejemplar de 73 páginas del 21 de noviembre. [fuentes/README.md](fuentes/README.md) registra ambas identidades; el cotejo de esa actualización queda pendiente y las referencias actuales siguen ligadas al ejemplar identificado.
+
 ## Siguiente desarrollo
 
 Reconstruir la desigualdad de marcos y su paso a pendientes medias: primero el argumento lineal de traza y dimensiones, después la integración mediante la filtración de Harder–Narasimhan. Se utilizarán A, proposición 5.2 y teorema 5.3, pp. 17–20, y B, lema 4.2 y proposición 4.3, pp. 41–44.
 
-El objetivo es identificar con precisión qué control de la familia de mapas permite acotar el exceso geométrico y qué hipótesis métricas e integrales se reciben de la construcción automorfa. La lista ampliada permanece en `03-Dudas-y-pendientes.md` de la bóveda.
+El objetivo es identificar con precisión qué control de la familia de mapas permite acotar el exceso geométrico y qué hipótesis métricas e integrales se reciben de la construcción automorfa. Las preguntas pueden concretarse en issues con la proposición, fórmula o declaración formal que deba estudiarse.
