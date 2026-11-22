@@ -4,7 +4,11 @@
 
 ## Desarrollo matemático alcanzado
 
-El manuscrito contiene una guía y cuatro notas de estudio. Están desarrolladas la transformada de Mellin y sus correcciones, el ejemplo de proyección racional y el lema local de denominadores, el criterio unilateral de ventanas y el núcleo finito de la identidad de caracteres.
+El manuscrito contiene una introducción y una guía en la sección 0, seguidas de las cuatro notas de estudio, cuya numeración se conserva. La introducción nueva, `tex/capitulos/00-introduccion.tex`, tiene 12 subsecciones y seis ejercicios con sus soluciones. Prepara el recorrido desde primos, zeta y caracteres de Dirichlet hasta Mellin y polos; presenta también retículos, índices, valoraciones, grado y pendiente, cuerpos de números, inercia y Frobenius.
+
+Se incluyen pruebas breves de la infinitud de los primos, el producto de Euler y su no anulación en $\Re s>1$, la continuación de zeta a $\Re s>0$, la reducción de GRH al lado derecho de la franja, la extracción de clases por caracteres y el paso de ceros a polos. La continuación global, las ecuaciones funcionales y los teoremas clásicos sobre distribución de primos se identifican como resultados citados. La entrada a pendientes explicita el factor de normalización de A/B; la desigualdad de marcos y la filtración de Harder–Narasimhan siguen pendientes de desarrollo.
+
+Las Notas 1–4 desarrollan la transformada de Mellin y sus correcciones, el ejemplo de proyección racional y el lema local de denominadores, el criterio unilateral de ventanas y el núcleo finito de la identidad de caracteres.
 
 La Nota 4 demuestra la extensión y la ortogonalidad de caracteres de grupos abelianos finitos, incorpora el promedio sobre inercia y obtiene la identidad exacta entre la suma aritmética menos su término principal y la combinación de sumas corregidas. Se comprueban el conjugado, el factor $2/|I_p|$ y el signo $+a\ell_\kappa$. Un ejemplo en $C_2\times C_3$ muestra el efecto de tres posibles subgrupos de inercia.
 
@@ -14,7 +18,9 @@ La interpretación de los coeficientes como caracteres primitivos utiliza la ent
 
 ## Cotejo con A, B y Lean
 
-El nuevo tramo sigue A, §4, proposiciones 4.2–4.3, pp. 12–17, y B, §3, proposición 3.1, pp. 19–23. El núcleo finito concuerda en signos y normalizaciones. La nota distingue la identidad abstracta de B de las hipótesis del host que dan la forma específica de la suma aritmética en A y Lean.
+La introducción incorpora bibliografía fundacional de la DLMF, Sutherland, Kedlaya, Vaughan y Milne, con localizadores en `tex/referencias.tex` y [fuentes/README.md](fuentes/README.md). Sus resultados clásicos se distinguen de los pasos de la propuesta estudiados en las notas.
+
+La Nota 4 sigue A, §4, proposiciones 4.2–4.3, pp. 12–17, y B, §3, proposición 3.1, pp. 19–23. El núcleo finito concuerda en signos y normalizaciones. La nota distingue la identidad abstracta de B de las hipótesis del host que dan la forma específica de la suma aritmética en A y Lean.
 
 Se mantiene el espejo `CocoSgt/riemann-hypothesis-lean`, revisión `7cbf7a0c32fca1badf05931879a37c3f8a2b03b4`. Se cotejaron `ch_balance`, la ortogonalidad con inercia, `prim_read`, `gmA_eq`, `tops_sum` y la interfaz de extracción. El enlace con $H_\psi$ se especializa al nivel cíclico; los niveles generales permiten un carácter excepcional. La nota registra también la dependencia de los pesos y la correspondencia del ancho de banda.
 
@@ -24,19 +30,17 @@ No se compiló ni ejecutó código Lean. El cotejo no abarca todas las dependenc
 
 ## Soportes de trabajo y verificación
 
-El cuaderno externo de borradores contiene seis Markdown y los dos PDF de referencia. Se añadió `05-Identidad-de-caracteres-y-termino-principal.md` y se actualizaron el mapa, los pendientes y la continuidad de la nota de ventanas. Se conservaron los identificadores existentes.
+El manuscrito se mantiene en el repositorio público [lachenmann/riemann-notas](https://github.com/lachenmann/riemann-notas), rama `main`. Esta ampliación incorpora la introducción de fundamentos, sus referencias y el PDF actualizado. El registro acumulativo conserva el alcance y las comprobaciones de cada entrega.
 
-Los cuatro archivos creados o actualizados se recuperaron completos desde el destino y coinciden con los preparados. Se comprobaron `text/markdown`, carpetas padre y enlaces entre notas. El registro conserva hashes y los reemplazos reversibles de las versiones anteriores. La presentación dentro de Obsidian no se inspeccionó.
-
-El manuscrito está en el repositorio público [lachenmann/riemann-notas](https://github.com/lachenmann/riemann-notas), rama `main`. El capítulo nuevo es `tex/capitulos/04-identidad-de-caracteres.tex`. El traspaso desde Markdown continúa siendo manual. La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a $0<y<1$, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal.
+El cuaderno externo contiene ahora siete borradores Markdown, los dos PDF de referencia y el diagrama `90-Assets/franja-critica.svg`. Se añadió `00-Introduccion-y-fundamentos.md` y se actualizó el mapa, conservando su identificador. Los tres archivos escritos se recuperaron completos desde el destino: coinciden byte por byte, con tipo y carpeta padre comprobados. La lectura cruzada de la introducción conserva las 495 expresiones matemáticas, las referencias, los enunciados y los seis ejercicios con soluciones. El traspaso editorial continúa siendo manual. Se revisó el SVG mediante renders; la presentación dentro de Obsidian no se inspeccionó.
 
 ## Compilación y composición
 
-El PDF actualizado tiene 31 páginas A4. La Nota 3 ocupa las pp. 11–18 y la nueva Nota 4, las pp. 19–30. La compilación terminó sin advertencias, referencias pendientes, caracteres faltantes ni cajas desbordadas. Se inspeccionaron visualmente las 31 páginas y se revisaron de nuevo las pp. 23–31 tras el último ajuste. Se corrigieron el salto forzado de la guía y la distribución final de la concordancia. La copia de lectura coincide byte por byte con el resultado de compilación.
+El resultado compilado tiene 43 páginas A4. La Nota 3 ocupa las pp. 22–29 y la Nota 4, las pp. 30–41. La compilación terminó sin advertencias, referencias pendientes, caracteres faltantes ni cajas desbordadas. Se inspeccionaron visualmente las 43 páginas, incluidos la figura de la franja crítica, las fórmulas, las tablas, las seis soluciones y la bibliografía. La copia de lectura coincide byte por byte con el resultado de compilación. La revisión de composición no añade una validación del argumento completo ni una ejecución de Lean.
 
 ## Contribuciones y versiones de las fuentes
 
-El repositorio es público desde el 22 de noviembre de 2026. La entrada presenta el PDF y las fuentes LaTeX a lectores externos. [CONTRIBUTING.md](CONTRIBUTING.md) explica cómo proponer correcciones, ejemplos y cotejos mediante issues y pull requests. Se comprobó el acceso a la página y al PDF sin iniciar sesión.
+El repositorio es público desde el 22 de noviembre de 2026. La entrada presenta el PDF y las fuentes LaTeX a lectores externos. [CONTRIBUTING.md](CONTRIBUTING.md) explica cómo proponer correcciones, ejemplos y cotejos mediante issues y pull requests. El acceso a la página y al PDF sin iniciar sesión se comprobó en la entrega anterior.
 
 El enlace público de B entrega ahora un PDF de 76 páginas, fechado el 22 de noviembre de 2026. Las notas actuales citan el ejemplar de 73 páginas del 21 de noviembre. [fuentes/README.md](fuentes/README.md) registra ambas identidades; el cotejo de esa actualización queda pendiente y las referencias actuales siguen ligadas al ejemplar identificado.
 

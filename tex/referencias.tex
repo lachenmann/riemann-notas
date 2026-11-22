@@ -1,7 +1,7 @@
 \phantomsection
 \addcontentsline{toc}{section}{Fuentes de esta entrega}
 \renewcommand{\refname}{Fuentes de esta entrega}
-\begin{thebibliography}{L}
+\begin{thebibliography}{D3}
 
 \bibitem[A]{fuenteA}
 \emph{Dirichlet L-functions and the critical line}.
@@ -31,9 +31,78 @@ El cotejo de esta entrega se limita a las interfaces y pasos señalados
 en las Notas~\ref{sec:ventanas} y~\ref{sec:caracteres}. No incluyó compilación ni ejecución de
 Lean, ni una comparación integral con la distribución original.
 
+\bibitem[D1]{dlmf-zeta}
+NIST. \emph{Digital Library of Mathematical Functions}, versión 1.2.8.
+\href{https://dlmf.nist.gov/25.2}{§25.2} (serie, continuación y producto de Euler),
+\href{https://dlmf.nist.gov/25.4}{§25.4} (ecuación funcional y $\xi$),
+\href{https://dlmf.nist.gov/25.10}{§25.10} (ceros) y
+\href{https://dlmf.nist.gov/25.16}{§25.16(i)} (primos y error bajo RH).
+Consulta: 22 de noviembre de 2026. Las fórmulas de referencia incluyen
+25.2.4, 25.2.11, 25.4.3--25.4.4 y 25.16.3--25.16.4.
+
+\bibitem[D2]{dlmf-dirichlet}
+NIST. \emph{Digital Library of Mathematical Functions}, versión 1.2.8.
+\href{https://dlmf.nist.gov/27.8}{§27.8, Dirichlet Characters}, y
+\href{https://dlmf.nist.gov/25.15}{§25.15, Dirichlet $L$-functions}.
+En particular, 27.8.6 (ortogonalidad), 25.15.4 (inducción),
+25.15.5--25.15.6 (ecuación funcional y suma de Gauss), y 25.15.9
+(no anulación en $1$). Consulta: 22 de noviembre de 2026.
+
+\bibitem[D3]{dlmf-analisis}
+NIST. \emph{Digital Library of Mathematical Functions}, versión 1.2.8.
+\href{https://dlmf.nist.gov/1.9}{§1.9} (cálculo complejo y fórmula de Cauchy),
+\href{https://dlmf.nist.gov/1.10}{§1.10} (Taylor, continuación y Laurent),
+\href{https://dlmf.nist.gov/2.5}{§2.5(i)} (Mellin), y
+\href{https://dlmf.nist.gov/5.2}{§5.2} (gamma y constante de Euler).
+Consulta: 22 de noviembre de 2026.
+
+\bibitem[S1]{sutherland-dirichlet}
+Andrew V. Sutherland. \emph{Dirichlet $L$-functions, primes in arithmetic
+progressions}. MIT 18.785, Lecture 18, 10 de noviembre de 2021.
+Teorema 18.1, definiciones 18.5--18.6, teorema 18.13 y definición 18.14.
+\href{https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/mit18_785f21_lec18.pdf}{PDF del curso}.
+
+\bibitem[S2]{sutherland-algebra}
+Andrew V. Sutherland. MIT 18.785, otoño de 2021.
+\href{https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/mit18_785f21_lec1.pdf}{Lecture 1, Absolute values and discrete valuations},
+§§1.3--1.5, pp.~3--5;
+\href{https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/mit18_785f21_lec7.pdf}{Lecture 7, Galois extensions, Frobenius elements, and the Artin map},
+definiciones 7.7 y 7.10, pp.~3--4, y §7.3, pp.~6--7.
+
+\bibitem[K]{kedlaya-ant}
+Kiran S. Kedlaya. \emph{Notes on analytic number theory}.
+\href{https://kskedlaya.org/ant/chap-lfunc.html}{Capítulo 3},
+§§3.3--3.4 (no anulación en la recta $\Ree s=1$), y
+\href{https://kskedlaya.org/ant/chap-primes-in-ap.html}{capítulo 4},
+teoremas 4.2, 4.11 y 4.12 (primos en progresiones).
+Consulta: 22 de noviembre de 2026.
+
+\bibitem[V]{vaughan-grh}
+Robert C. Vaughan. \emph{Math 571, Chapter 6: The Bombieri--Vinogradov
+Theorem}. Penn State, 13 de enero de 2025.
+Se utiliza únicamente la estimación de las sumas torcidas bajo GRH
+y su promedio por caracteres, pp.~19--20 del PDF.
+\href{https://personal.science.psu.edu/rcv4/571s25/Class571-06.pdf}{Diapositivas del curso}.
+
+\bibitem[M]{milne-ant}
+James S. Milne. \emph{Algebraic Number Theory}, versión 3.08,
+19 de julio de 2020. Capítulo 2, pp.~25--28 (enteros algebraicos);
+capítulo 3 (ideales y ramificación); pp.~73--75 (retículos);
+capítulo 8, pp.~139--143 (descomposición y Frobenius).
+\href{https://www.jmilne.org/math/CourseNotes/ANT.pdf}{Texto en la web del autor}.
+
 \end{thebibliography}
 
 \subsection*{Estado de la entrega}
+
+La introducción define los objetos analíticos y aritméticos necesarios
+para comenzar el cuaderno. Incluye pruebas del producto de Euler, una
+continuación de zeta al semiplano $\Ree s>0$, la extracción de clases
+por caracteres y el paso de ceros a polos, además de seis ejercicios
+resueltos. La continuación global, las ecuaciones funcionales y los
+teoremas clásicos sobre distribución de primos se identifican como
+resultados citados. El vocabulario de retículos y Frobenius prepara las
+notas técnicas y explicita la diferencia de normalización de pendientes.
 
 Se han desarrollado la transformada de Mellin de la suma suavizada,
 las correcciones en $s=1$, el cálculo del residuo en un cero, el ejemplo

@@ -22,6 +22,25 @@ Las páginas citadas corresponden a la numeración impresa de los ejemplares de 
 
 Si una fuente se actualiza, registrar la nueva versión antes de cambiar referencias. No reemplazar silenciosamente un ejemplar por otro con el mismo nombre.
 
+## Bibliografía de fundamentos
+
+La introducción utiliza las referencias siguientes, incorporadas también en [tex/referencias.tex](../tex/referencias.tex). Las claves coinciden con las de la bibliografía del manuscrito. Estas fuentes sustentan las definiciones y los resultados clásicos citados; su uso no acredita los pasos pendientes de la propuesta estudiada.
+
+| Clave y referencia | Localizadores utilizados |
+| --- | --- |
+| **D1.** NIST, *Digital Library of Mathematical Functions*, versión 1.2.8. | [§25.2](https://dlmf.nist.gov/25.2): serie, continuación y producto de Euler, en particular 25.2.4 y 25.2.11. [§25.4](https://dlmf.nist.gov/25.4): ecuación funcional y $\xi$, 25.4.3–25.4.4. [§25.10](https://dlmf.nist.gov/25.10): ceros. [§25.16(i)](https://dlmf.nist.gov/25.16): primos y error bajo RH, 25.16.3–25.16.4. |
+| **D2.** NIST, *Digital Library of Mathematical Functions*, versión 1.2.8. | [§27.8](https://dlmf.nist.gov/27.8): caracteres de Dirichlet y ortogonalidad, 27.8.6. [§25.15](https://dlmf.nist.gov/25.15): funciones $L$; inducción, 25.15.4; ecuación funcional y suma de Gauss, 25.15.5–25.15.6; no anulación en $1$, 25.15.9. |
+| **D3.** NIST, *Digital Library of Mathematical Functions*, versión 1.2.8. | [§1.9](https://dlmf.nist.gov/1.9): cálculo complejo y Cauchy, 1.9.31. [§1.10](https://dlmf.nist.gov/1.10): Taylor, continuación y Laurent. [§2.5(i)](https://dlmf.nist.gov/2.5): Mellin, 2.5.1. [§5.2](https://dlmf.nist.gov/5.2): gamma y constante de Euler. |
+| **S1.** Andrew V. Sutherland, *Dirichlet L-functions, primes in arithmetic progressions*. MIT 18.785, Lecture 18, 10 de noviembre de 2021. | [PDF del curso](https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/mit18_785f21_lec18.pdf): teorema 18.1, definiciones 18.5–18.6, teorema 18.13 y definición 18.14. |
+| **S2.** Andrew V. Sutherland, MIT 18.785, otoño de 2021. | [Lecture 1, *Absolute values and discrete valuations*](https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/mit18_785f21_lec1.pdf), §§1.3–1.5, pp. 3–5. [Lecture 7, *Galois extensions, Frobenius elements, and the Artin map*](https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/mit18_785f21_lec7.pdf), definiciones 7.7 y 7.10, pp. 3–4, y §7.3, pp. 6–7. |
+| **K.** Kiran S. Kedlaya, *Notes on analytic number theory*. | [Capítulo 3](https://kskedlaya.org/ant/chap-lfunc.html), §§3.3–3.4: no anulación en la recta $\Re s=1$. [Capítulo 4](https://kskedlaya.org/ant/chap-primes-in-ap.html), teoremas 4.2, 4.11 y 4.12: primos en progresiones. |
+| **V.** Robert C. Vaughan, *Math 571, Chapter 6: The Bombieri–Vinogradov Theorem*. Penn State, 13 de enero de 2025. | [Diapositivas del curso](https://personal.science.psu.edu/rcv4/571s25/Class571-06.pdf), pp. 19–20 del PDF: únicamente la estimación de las sumas torcidas bajo GRH y su promedio por caracteres. |
+| **M.** James S. Milne, *Algebraic Number Theory*, versión 3.08, 19 de julio de 2020. | [Texto en la web del autor](https://www.jmilne.org/math/CourseNotes/ANT.pdf): capítulo 2, pp. 25–28, enteros algebraicos; capítulo 3, ideales y ramificación; pp. 73–75, retículos; capítulo 8, pp. 139–143, descomposición y Frobenius. |
+
+Las consultas de la DLMF y de Kedlaya están fechadas el 22 de noviembre de 2026 en el manuscrito. La introducción desarrolla sus pruebas breves —producto de Euler, primera continuación de zeta, extracción de clases y paso de ceros a polos— y señala expresamente cuándo utiliza un resultado clásico cuya demostración no se incluye.
+
+La comparación de pendientes conserva la normalización de las fuentes de la propuesta: A, §5, (5.1)–(5.3), pp. 17–18, y B, §4.3, p. 39, utilizan $\mu=2\mu_{\mathrm{Ar}}$. La definición euclídea introductoria emplea la pendiente usual y explicita esa diferencia.
+
 ## Código Lean utilizado en la nota de ventanas
 
 El cotejo selectivo utiliza [CocoSgt/riemann-hypothesis-lean en la revisión fijada](https://github.com/CocoSgt/riemann-hypothesis-lean/tree/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4):
@@ -34,7 +53,7 @@ La [interfaz de datos](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7
 
 `REGISTRO.json` conserva un manifiesto con ruta, URL fijada, declaraciones leídas, SHA Git del blob, SHA-256 de los bytes recuperados y alcance de cada comprobación. Los hashes Git recalculados se cotejaron con los identificadores devueltos por el repositorio. Los PDF A/B siguen siendo los ejemplares identificados arriba.
 
-Se distinguieron la reconstrucción matemática de la prueba, la lectura de las declaraciones y su ejecución. En esta ampliación se realizaron las dos primeras. No se compiló ni ejecutó código Lean, no se ejecutaron verificadores independientes ni se comparó todo el espejo con el archivo original distribuido por Alpöge. La lectura de los módulos de enlace con la familia de caracteres tampoco reconstruye todavía la producción aritmética de las ventanas.
+Se distinguieron la reconstrucción matemática de la prueba, la lectura de las declaraciones y su ejecución. En el estudio de ventanas se realizaron las dos primeras. No se compiló ni ejecutó código Lean, no se ejecutaron verificadores independientes ni se comparó todo el espejo con el archivo original distribuido por Alpöge. La lectura de los módulos de enlace con la familia de caracteres tampoco reconstruye todavía la producción aritmética de las ventanas.
 
 ## Código Lean utilizado en la nota de caracteres
 

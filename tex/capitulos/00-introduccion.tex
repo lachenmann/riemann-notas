@@ -1,0 +1,796 @@
+\label{sec:introduccion}
+
+La hipótesis de Riemann relaciona la distribución de los números primos con
+la posición de los ceros de una función de variable compleja. Su versión
+para funciones $L$ de Dirichlet permite estudiar, además, cómo se reparten
+los primos entre las clases de congruencia. Esta introducción construye los
+objetos que intervienen en esa relación y prepara la lectura de las cuatro
+notas del cuaderno.
+
+Se presupone familiaridad con series, integrales y álgebra lineal elemental.
+Las nociones de análisis complejo y de teoría de números que se utilizan
+por primera vez se explican en el texto. Las demostraciones breves se
+incluyen; los teoremas clásicos cuya prueba requiere otro desarrollo se
+señalan como resultados citados. Estos fundamentos tienen un alcance
+propio, independiente de la propuesta que estudia el cuaderno.
+
+\subsection{Primos y funciones de conteo}
+
+Un entero $p\ge2$ es \emph{primo} si sus únicos divisores positivos son
+$1$ y $p$. El teorema fundamental de la aritmética afirma que todo entero
+$n\ge2$ admite una factorización única en primos, salvo el orden de los
+factores. Por ejemplo, $360=2^3 3^2 5$. Esta unicidad será la razón por la
+que una serie sobre todos los enteros puede escribirse como un producto
+sobre primos.
+
+\begin{proposicion}
+Existen infinitos números primos.
+\end{proposicion}
+\begin{proof}
+Si todos ellos fueran $p_1,\ldots,p_r$, el entero
+$N=p_1\cdots p_r+1>1$ tendría un divisor primo. Ninguno de los $p_j$
+puede dividir $N$, pues entonces dividiría también la diferencia $1$.
+Se obtiene una contradicción. El argumento solo necesita un divisor primo
+de $N$; no afirma que $N$ sea primo.
+\end{proof}
+
+Para medir su distribución definimos, para $x\ge2$,
+\[
+ \pi(x)=\#\{p\le x:p\text{ primo}\},\qquad
+ \vartheta(x)=\sum_{p\le x}\log p.
+\]
+La función de von Mangoldt reúne los primos y sus potencias:
+\[
+ \Lambda(n)=
+ \begin{cases}
+  \log p,&n=p^k,\quad p\text{ primo},\quad k\ge1,\\
+  0,&\text{en otro caso}.
+ \end{cases}
+ \qquad
+ \Psi(x)=\sum_{n\le x}\Lambda(n).
+\]
+Así, $\Lambda(1)=0$, $\Lambda(8)=\log2$ y $\Lambda(12)=0$.
+Usamos $\Psi$ mayúscula para esta función de Chebyshev; la letra $\psi$
+se reserva para un carácter en las notas posteriores.
+
+El teorema de los números primos, que utilizaremos como resultado clásico,
+afirma
+\begin{equation}
+ \pi(x)\sim\frac{x}{\log x}\qquad(x\longrightarrow\infty).
+ \label{eq:intro-pnt}
+\end{equation}
+La notación $f(x)\sim g(x)$ significa que $f(x)/g(x)\to1$.
+Una formulación equivalente de este teorema es $\Psi(x)\sim x$
+\cite[§25.16(i)]{dlmf-zeta}. La hipótesis de Riemann trata del tamaño
+del error de esa aproximación, que precisaremos después de definir sus
+ceros.
+
+Escribiremos $f(x)=O(g(x))$, con $g(x)>0$ para $x$ suficientemente grande,
+si existen $C>0$ y $x_0$ tales que $|f(x)|\le Cg(x)$ para todo $x\ge x_0$.
+En $O_{q,\varepsilon}$, las constantes pueden depender de los parámetros
+indicados. La notación $f(x)=o(g(x))$ expresa $f(x)/g(x)\to0$.
+Estas dependencias importan: una estimación para cada $q$ fijo no proporciona
+por sí sola una estimación uniforme al variar $q$.
+
+\subsection{El vocabulario de análisis complejo}
+
+Escribimos $s=\sigma+it$, con $\sigma,t\in\R$ e $i^2=-1$.
+Su parte real es $\Ree s=\sigma$, su conjugado es $\overline s=\sigma-it$
+y su módulo es $|s|=(\sigma^2+t^2)^{1/2}$. Para $x>0$ fijamos
+\[
+ x^s=e^{s\log x},\qquad |x^s|=x^\sigma.
+\]
+El logaritmo de $x$ es aquí el logaritmo real; esta convención evita
+cualquier elección de rama al escribir $n^{-s}$.
+
+Una función es \emph{holomorfa} en un abierto si admite derivada compleja
+en cada punto. La derivada se define mediante el límite del cociente
+incremental al aproximarse desde cualquier dirección del plano. Un
+resultado básico del análisis complejo garantiza entonces una serie de
+Taylor local. Una función \emph{entera} es holomorfa en todo $\C$.
+
+Si una función holomorfa no es idénticamente nula cerca de $\rho$ y se anula
+allí, puede escribirse
+\[
+ f(s)=(s-\rho)^m u(s),\qquad m\ge1,\quad u(\rho)\ne0,
+\]
+con $u$ holomorfa. El entero $m$ es la \emph{multiplicidad} del cero.
+Un \emph{polo de orden $r$} tiene la forma
+$f(s)=(s-\rho)^{-r}u(s)$ con $r\ge1$ y $u(\rho)\ne0$.
+Una función \emph{meromorfa} es holomorfa salvo polos aislados.
+
+El \emph{residuo} en $\rho$ es el coeficiente de $(s-\rho)^{-1}$ en la
+serie de Laurent. Por ejemplo, $1/(s-1)$ tiene un polo simple en $1$ y
+residuo $1$. Una singularidad \emph{removible} admite un valor que hace
+holomorfa a la función; el cociente $(e^s-1)/s$ se prolonga en $s=0$
+con valor $1$.
+
+Una \emph{continuación analítica} prolonga una función a un dominio mayor
+conservando sus valores donde ya estaba definida. Su unicidad procede del
+teorema de identidad: dos funciones holomorfas en un dominio conexo que
+coinciden en un conjunto con un punto de acumulación interior coinciden
+en todo el dominio. La expresión que continúa una serie puede existir en
+puntos donde la serie original diverge. Usaremos también el hecho clásico
+de que un límite uniforme en compactos de funciones holomorfas es
+holomorfo \cite[§§1.9--1.10]{dlmf-analisis}.
+
+La fórmula de Cauchy proporciona el control de derivadas que necesitará
+la Nota~\ref{sec:ventanas}. Sean $R>0$ y $k\in\Z_{\ge0}$.
+Si $f$ es holomorfa en un entorno del disco
+cerrado $|z-z_0|\le R$ y $M_R=\max_{|z-z_0|=R}|f(z)|$, entonces
+\[
+ \frac{f^{(k)}(z_0)}{k!}
+   =\frac1{2\pi i}\int_{|z-z_0|=R}\frac{f(z)}{(z-z_0)^{k+1}}\dd z,
+ \qquad
+ \frac{|f^{(k)}(z_0)|}{k!}\le\frac{M_R}{R^k}.
+\]
+La integral recorre la circunferencia en sentido antihorario. La fórmula
+se cita de \cite[ecuación 1.9.31]{dlmf-analisis}; la cota se deduce
+tomando valores absolutos y usando que la circunferencia mide $2\pi R$.
+La distancia a una singularidad limita el radio en el que puede aplicarse.
+
+\subsection{La función zeta y el producto de Euler}
+
+Para $\sigma>1$ se define
+\begin{equation}
+ \zeta(s)=\sum_{n=1}^{\infty}\frac1{n^s}.
+ \label{eq:intro-zeta}
+\end{equation}
+La serie converge absolutamente porque $|n^{-s}|=n^{-\sigma}$.
+En un compacto del semiplano $\sigma>1$ existe $\delta>0$ con
+$\sigma\ge1+\delta$, y la serie queda dominada por
+$\sum n^{-1-\delta}$. La convergencia es uniforme en compactos y
+$\zeta$ es holomorfa en ese semiplano.
+
+\begin{proposicion}[Producto de Euler]
+Para $\Ree s>1$,
+\begin{equation}
+ \zeta(s)=\prod_{p\text{ primo}}(1-p^{-s})^{-1},
+ \qquad \zeta(s)\ne0.
+ \label{eq:intro-euler}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Para un conjunto finito de primos, multiplicar las series geométricas
+$1+p^{-s}+p^{-2s}+\cdots$ produce una suma sobre los enteros cuyos
+factores primos pertenecen a ese conjunto. La unicidad de la factorización
+hace que cada entero aparezca una sola vez. Si incluimos todos los primos
+$p\le P$, los términos omitidos corresponden a enteros $n>P$; el valor
+absoluto de su suma no supera $\sum_{n>P}n^{-\sigma}$, que tiende a cero.
+Esto demuestra el producto.
+
+Para justificar que el producto infinito no se anula, consideramos
+\[
+ B(s)=\sum_p\sum_{k\ge1}\frac{p^{-ks}}{k}.
+\]
+La serie converge absolutamente, pues
+\[
+ \sum_p\sum_{k\ge1}\frac{p^{-k\sigma}}{k}
+ \le\frac{1}{1-2^{-\sigma}}\sum_{n\ge2}n^{-\sigma}<\infty.
+\]
+La identidad de la serie $-\log(1-z)$ para $|z|<1$, aplicada primero a
+productos finitos y después al límite, da $\zeta(s)=e^{B(s)}$.
+Una exponencial compleja nunca se anula.
+\end{proof}
+
+El producto permite recuperar la estructura multiplicativa de los enteros
+a partir de una función analítica. Su dominio de convergencia es parte del
+enunciado: esta demostración de no anulación se limita a $\sigma>1$.
+
+\subsection{Continuación, ecuación funcional y RH}
+
+Puede verse una primera continuación de $\zeta$ sin desarrollar todavía
+su ecuación funcional. Escribamos $\lfloor x\rfloor$ para la parte entera
+y $\{x\}=x-\lfloor x\rfloor$ para la parte fraccionaria. Para $\sigma>1$,
+la integración término a término da
+\[
+ \zeta(s)=s\int_1^\infty\lfloor x\rfloor x^{-s-1}\dd x
+ =\frac{s}{s-1}-s\int_1^\infty\{x\}x^{-s-1}\dd x.
+\]
+En efecto, $\lfloor x\rfloor=\sum_{n\ge1}\mathbf1_{[n,\infty)}(x)$,
+y $s\int_n^\infty x^{-s-1}\dd x=n^{-s}$; la convergencia absoluta
+justifica el intercambio. Como $0\le\{x\}<1$, la última integral converge
+y define una función holomorfa en $\sigma>0$. Para derivarla en compactos
+se domina cada derivada por una constante por
+$(\log x)^k x^{-1-\delta}$, que es integrable. La fórmula prolonga
+$\zeta$ a ese semiplano y muestra un polo simple en $s=1$, de residuo $1$.
+
+La expansión local clásica es
+$\zeta(s)=(s-1)^{-1}+\gamma_E+O(s-1)$, donde
+\[
+ \gamma_E=\lim_{N\to\infty}\left(\sum_{n=1}^N\frac1n-\log N\right)
+\]
+es la constante de Euler. Es la constante denotada por $\gamma$ en la
+Nota~\ref{sec:sumas}; no es la función $\Gamma$. La expansión se cita
+de \cite[ecuación 25.2.4]{dlmf-zeta}.
+
+La continuación global y la ecuación funcional se utilizan mediante
+los siguientes resultados clásicos
+\cite[§§25.2, 25.4 y 25.10]{dlmf-zeta}.
+
+\begin{teorema}[Propiedades clásicas de zeta; resultado citado]
+La función $\zeta$ admite continuación meromorfa a $\C$, con un único
+polo, simple, en $s=1$. La función
+\begin{equation}
+ \xi(s)=\frac12 s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)
+ \label{eq:intro-xi}
+\end{equation}
+se prolonga a una función entera y satisface $\xi(s)=\xi(1-s)$.
+Los ceros de $\zeta$ fuera de $0<\Ree s<1$ son los enteros negativos
+pares $-2,-4,-6,\ldots$. Los restantes ceros son los ceros de $\xi$.
+\end{teorema}
+
+El factor gamma se define inicialmente por
+$\Gamma(z)=\int_0^\infty t^{z-1}e^{-t}\dd t$ para $\Ree z>0$.
+La integración por partes da $\Gamma(z+1)=z\Gamma(z)$, y en particular
+$\Gamma(n+1)=n!$. Su continuación es meromorfa, tiene polos en los enteros
+no positivos y no tiene ceros \cite[§5.2]{dlmf-analisis}. En
+\eqref{eq:intro-xi}, los ceros triviales de $\zeta$ cancelan los polos
+de $\Gamma(s/2)$ en los enteros negativos pares. El factor $s(s-1)$
+cancela los polos restantes en $0$ y $1$; los valores prolongados son
+$\xi(0)=\xi(1)=1/2$. La no anulación sobre $\Ree s=1$, utilizada
+al delimitar la franja abierta, es también un teorema clásico; no se deduce
+solo de la convergencia del producto de Euler.
+
+Los ceros $-2,-4,\ldots$ se llaman \emph{triviales}. Un cero de la franja
+$0<\sigma<1$ se llama \emph{no trivial}; $\sigma=1/2$ es la
+\emph{recta crítica}. El enunciado de RH es
+\begin{equation}
+ \boxed{\quad \zeta(\rho)=0,\quad 0<\Ree\rho<1
+       \quad\Longrightarrow\quad \Ree\rho=\tfrac12.\quad}
+ \label{eq:intro-rh}
+\end{equation}
+
+\begin{center}
+\setlength{\unitlength}{1mm}
+\begin{picture}(135,61)
+ \put(30,7){\color{azulnota!9}\rule{60mm}{48mm}}
+ \put(8,26){\vector(1,0){118}}
+ \put(30,4){\vector(0,1){54}}
+ \put(90,7){\color{grisnota}\line(0,1){48}}
+ \put(60,7){\color{azulnota}\linethickness{0.8pt}\line(0,1){48}}
+ \put(125,21){\makebox(0,0)[l]{$\sigma$}}
+ \put(26,58){\makebox(0,0)[r]{$t$}}
+ \put(28,22){\makebox(0,0)[r]{$0$}}
+ \put(60,21){\makebox(0,0){$1/2$}}
+ \put(90,21){\makebox(0,0){$1$}}
+ \put(90,26){\circle*{1.6}}
+ \put(94,30){\makebox(0,0)[l]{\small polo de $\zeta$}}
+ \put(60,59){\makebox(0,0){\small franja crítica}}
+ \put(62,47){\makebox(0,0)[l]{\small recta crítica}}
+ \put(60,1){\makebox(0,0){\small La franja se extiende indefinidamente en ambas direcciones verticales.}}
+\end{picture}
+\end{center}
+
+La conjugación y la ecuación funcional producen las simetrías
+$\rho\mapsto\overline\rho$ y $\rho\mapsto1-\rho$. Una figura simétrica
+puede contener puntos a ambos lados de su eje: la simetría por sí sola no
+demuestra RH. Lo que se debe excluir es cualquier cero no trivial con
+parte real distinta de $1/2$.
+
+\subsection{Congruencias y caracteres de Dirichlet}
+
+La congruencia $a\equiv b\pmod q$ significa $q\mid(a-b)$. Para $q\ge2$,
+las clases coprimas con $q$ forman el grupo multiplicativo
+\[
+ U_q=(\Z/q\Z)^\times,\qquad |U_q|=\varphi(q).
+\]
+La función $\varphi$ de Euler cuenta esas clases. Por ejemplo,
+$U_4=\{1,3\}$ y $\varphi(4)=2$. Un grupo tiene una operación asociativa,
+un elemento neutro e inversos; es abeliano cuando su operación es
+conmutativa. Un homomorfismo conserva la operación y el elemento neutro.
+Un \emph{carácter} de un grupo abeliano
+finito $G$ es un homomorfismo $G\to\C^\times$. Sus valores son raíces
+de la unidad: si $g^r=1$, entonces $\chi(g)^r=1$.
+
+\begin{definicion}
+Un carácter de Dirichlet módulo $q$ es un carácter de $U_q$, extendido
+a los enteros mediante $\chi(n)=0$ cuando $\gcd(n,q)>1$ y mediante
+su valor en la clase de $n$ cuando $\gcd(n,q)=1$. Para $q=1$ adoptamos
+el grupo trivial, $\varphi(1)=1$ y el único carácter $\chi(n)=1$.
+\end{definicion}
+
+La extensión es periódica y completamente multiplicativa:
+$\chi(mn)=\chi(m)\chi(n)$. Su valor absoluto es $1$ en los enteros coprimos con
+$q$ y $0$ en los demás. El \emph{carácter principal} $\chi_{0,q}$ vale
+$1$ en las unidades y $0$ fuera de ellas. No se debe identificar
+$\chi_{0,q}$, para $q>1$, con la función constante $1$.
+
+Los dos caracteres módulo $4$ son
+\[
+\begin{array}{c|rrrr}
+ n\bmod4&0&1&2&3\\ \hline
+ \chi_{0,4}(n)&0&1&0&1\\
+ \chi_4(n)&0&1&0&-1
+\end{array}
+\]
+El segundo distingue las dos clases impares. Su cuadrado es el carácter
+principal módulo $4$. El \emph{orden} de un carácter es su orden en el
+grupo de caracteres: el menor $o\ge1$ con $\chi^o=\chi_{0,q}$.
+La potencia de exponente cero se entiende también como ese carácter
+principal. Estas definiciones y la ortogonalidad se recogen en
+\cite[§27.8]{dlmf-dirichlet}.
+
+\subsection{Conductor, carácter primitivo y función \texorpdfstring{$L$}{L}}
+
+Si $f\mid q$, un carácter módulo $q$ es \emph{inducido} por uno módulo
+$f$ cuando sus valores en las unidades módulo $q$ se obtienen reduciendo
+módulo $f$. Su \emph{conductor} es el menor módulo divisor de $q$ desde
+el que se induce. Cada carácter procede de un único carácter
+\emph{primitivo} $\chi^*$ de ese conductor; un carácter es primitivo cuando
+su módulo coincide con su conductor. La existencia y unicidad de este
+carácter primitivo se citan de \cite[Teo.~18.13 y Def.~18.14]{sutherland-dirichlet}.
+
+El carácter $\chi_4$ es primitivo de conductor $4$. Si se lo considera
+como carácter inducido módulo $8$, conserva los mismos valores en todos
+los enteros, pero su módulo es $8$ y su conductor sigue siendo $4$.
+El carácter principal de cualquier módulo tiene conductor $1$.
+En particular, al elevar un carácter primitivo a una potencia puede
+disminuir el conductor. En las notas, $\psi^{[j]}$ designa el carácter
+primitivo que induce a $\psi^j$.
+
+Para $\Ree s>1$ se define la función $L$ de Dirichlet por
+\begin{equation}
+ L(s,\chi)=\sum_{n\ge1}\frac{\chi(n)}{n^s}
+          =\prod_p(1-\chi(p)p^{-s})^{-1}.
+ \label{eq:intro-l}
+\end{equation}
+La convergencia absoluta se deduce de $|\chi(n)|\le1$. La prueba del
+producto de Euler se repite usando la multiplicatividad de $\chi$;
+la serie de logaritmos converge absolutamente, y por ello
+$L(s,\chi)\ne0$ en $\Ree s>1$.
+
+Al inducir desde un conductor menor se suprimen factores de Euler:
+\begin{equation}
+ L(s,\chi)=L(s,\chi^*)
+   \prod_{\substack{p\mid q\\p\nmid f}}(1-\chi^*(p)p^{-s}).
+ \label{eq:intro-inducido}
+\end{equation}
+Esta igualdad se demuestra en $\Ree s>1$ comparando los productos, y se
+extiende por continuación meromorfa. Para el carácter principal,
+\[
+ L(s,\chi_{0,q})=\zeta(s)\prod_{p\mid q}(1-p^{-s}).
+\]
+Su residuo en $1$ es $\prod_{p\mid q}(1-p^{-1})=\varphi(q)/q$.
+Para $q=1$ el producto es vacío y se recupera $\zeta$.
+
+Inducir $\chi_4$ a módulo $8$ no elimina ningún factor adicional.
+Inducirlo a módulo $12$ elimina el factor de $3$ y da
+$L(s,\chi)=L(s,\chi_4)(1+3^{-s})$. Los posibles ceros de los factores
+añadidos en \eqref{eq:intro-inducido} están sobre $\Ree s=0$, porque
+$|\chi^*(p)|=1$. Por eso los ceros de la franja abierta se estudian
+con los caracteres primitivos.
+
+\begin{teorema}[Propiedades clásicas de las funciones $L$; resultado citado]
+Si $\chi$ no es principal, $L(s,\chi)$ se prolonga a una función entera
+y $L(1,\chi)\ne0$. Para todo carácter, $L(s,\chi)$ no se anula en la
+recta $\Ree s=1$; en el caso principal, $s=1$ es un polo.
+\end{teorema}
+
+La continuación y el valor no nulo en $1$ se citan de
+\cite[§25.15, en particular (25.15.9)]{dlmf-dirichlet}; la no anulación
+en el resto de la recta, de \cite[§§3.3--3.4]{kedlaya-ant}. El valor no nulo
+en $1$ permite definir $L'(1,\chi)/L(1,\chi)$ en la Nota~\ref{sec:sumas}.
+En el carácter primitivo principal aparece el polo de $\zeta$, que exige
+una corrección diferente.
+
+\subsection{Ecuación funcional y enunciado de GRH}
+
+Sea $\chi$ primitivo de conductor $q>1$. Su \emph{paridad} es
+$a_\chi\in\{0,1\}$, determinada por $\chi(-1)=(-1)^{a_\chi}$.
+Definimos la función completada
+\begin{equation}
+ \mathcal L(s,\chi)=
+ \left(\frac q\pi\right)^{(s+a_\chi)/2}
+ \Gamma\!\left(\frac{s+a_\chi}{2}\right)L(s,\chi).
+ \label{eq:intro-completada}
+\end{equation}
+La letra $\mathcal L$ evita confundir esta función con $\Lambda(n)$.
+El teorema clásico de la ecuación funcional afirma que $\mathcal L$ es
+entera y satisface
+\begin{equation}
+ \mathcal L(s,\chi)=\varepsilon_\chi\mathcal L(1-s,\overline\chi),
+ \qquad
+ \varepsilon_\chi=\frac{\tau(\chi)}{i^{a_\chi}\sqrt q},
+ \quad |\varepsilon_\chi|=1,
+ \label{eq:intro-fe-l}
+\end{equation}
+donde $\tau(\chi)=\sum_{r=1}^{q}\chi(r)e^{2\pi ir/q}$ es la suma de
+Gauss. La primitividad es una hipótesis de esta formulación. Citamos la
+ecuación funcional y las propiedades de sus ceros de
+\cite[§25.15]{dlmf-dirichlet}.
+
+Los polos del factor gamma fuerzan ceros triviales de $L$ en
+$0,-2,-4,\ldots$ si el carácter es par y no principal, y en
+$-1,-3,-5,\ldots$ si es impar. Los demás ceros están en
+$0<\Ree s<1$. El caso de conductor $1$ es $\zeta$ y utiliza
+$\xi$ de \eqref{eq:intro-xi}; sus ceros triviales comienzan en $-2$.
+
+\begin{definicion}[GRH para funciones $L$ de Dirichlet]
+Para todo carácter primitivo $\chi$ de conductor $q\ge1$ y todo
+$\rho\in\C$,
+\begin{equation}
+ L(\rho,\chi)=0,\qquad 0<\Ree\rho<1
+ \quad\Longrightarrow\quad \Ree\rho=\frac12.
+ \label{eq:intro-grh}
+\end{equation}
+\end{definicion}
+
+Esta es la acepción de GRH utilizada en el cuaderno. Incluye RH mediante
+el carácter de conductor $1$. Las funciones $L$ automorfas más generales
+requieren otros enunciados.
+
+\begin{proposicion}[Reducción al lado derecho de la franja]
+Para probar \eqref{eq:intro-grh} basta excluir, para todos los caracteres
+primitivos, los ceros con $1/2<\Ree\rho<1$.
+\end{proposicion}
+\begin{proof}
+Si $L(\rho,\chi)=0$ y $0<\Ree\rho<1/2$, los factores que completan
+$L$ son finitos y no nulos en $\rho$. La ecuación funcional produce un
+cero en $1-\rho$ de la función asociada a $\overline\chi$, que también
+es primitivo. Su parte real es mayor que $1/2$. Para conductor $1$ se
+aplica $\xi(s)=\xi(1-s)$. Esto contradice la exclusión supuesta.
+\end{proof}
+
+Para un carácter complejo, la conjugación relaciona dos funciones:
+$L(\overline s,\overline\chi)=\overline{L(s,\chi)}$.
+Por eso se conserva $\overline\chi$ en la ecuación funcional. No se
+presupone simetría respecto del eje real para los ceros de un carácter
+complejo fijo.
+
+\subsection{Ortogonalidad y primos en progresiones}
+
+Los caracteres permiten extraer una clase de congruencia mediante una
+identidad finita. El conjunto de caracteres de $U_q$ se denota
+$\widehat U_q$ y tiene $\varphi(q)$ elementos. El resultado algebraico
+que asegura que los caracteres separan los puntos se demuestra en la
+Nota~\ref{sec:caracteres}.
+
+\begin{proposicion}[Ortogonalidad]
+Si $\gcd(a,q)=1$, entonces, para todo entero $n$,
+\begin{equation}
+ \mathbf1_{n\equiv a\ (\mathrm{mod}\ q)}
+  =\frac1{\varphi(q)}\sum_{\chi\in\widehat U_q}
+       \overline{\chi(a)}\chi(n).
+ \label{eq:intro-ortogonalidad}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Si $n$ no es coprimo con $q$, ambos miembros son cero. Si lo es, ponemos
+$g=na^{-1}\in U_q$. Para $g=1$, todos los sumandos valen $1$.
+Para $g\ne1$ existe un carácter $\lambda$ con $\lambda(g)\ne1$.
+La multiplicación por $\lambda$ permuta $\widehat U_q$, de modo que
+\[
+ \sum_\chi\chi(g)=\sum_\chi(\lambda\chi)(g)
+ =\lambda(g)\sum_\chi\chi(g).
+\]
+La suma es cero. Esto demuestra los dos casos.
+\end{proof}
+
+Definiendo
+\[
+ \Psi(x,\chi)=\sum_{n\le x}\Lambda(n)\chi(n),\qquad
+ \Psi(x;q,a)=\sum_{\substack{n\le x\\n\equiv a\ (\mathrm{mod}\ q)}}\Lambda(n),
+\]
+la identidad anterior implica
+\begin{equation}
+ \Psi(x;q,a)=\frac1{\varphi(q)}
+  \sum_{\chi\in\widehat U_q}\overline{\chi(a)}\Psi(x,\chi).
+ \label{eq:intro-progresiones}
+\end{equation}
+Por ejemplo, para $q=4$, la diferencia entre los conteos ponderados en
+las clases $1$ y $3$ es $\Psi(x,\chi_4)$.
+
+El teorema de Dirichlet afirma que cada progresión $a+kq$ con
+$\gcd(a,q)=1$ contiene infinitos primos
+\cite[Teo.~18.1]{sutherland-dirichlet}. El teorema de los números primos
+en progresiones precisa, para $q$ fijo,
+\[
+ \pi(x;q,a):=\#\{p\le x:p\equiv a\pmod q\}
+ \sim\frac1{\varphi(q)}\frac{x}{\log x},
+ \qquad
+ \Psi(x;q,a)\sim\frac{x}{\varphi(q)}.
+\]
+Son resultados clásicos citados; la identidad finita
+\eqref{eq:intro-progresiones} explica el papel de los caracteres, pero
+la estimación de las sumas exige análisis adicional
+\cite[Teo.~4.12]{kedlaya-ant}.
+
+La relación clásica entre RH y el error de conteo puede expresarse como
+\begin{equation}
+ \mathrm{RH}\quad\Longleftrightarrow\quad
+ \text{para todo }\varepsilon>0,\qquad
+ \Psi(x)=x+O_\varepsilon(x^{1/2+\varepsilon}).
+ \label{eq:intro-error-rh}
+\end{equation}
+Citamos esta equivalencia de \cite[§25.16(i)]{dlmf-zeta}.
+Bajo GRH, para cada $q$ fijo y cada $a$ coprimo con $q$, se obtiene
+\[
+ \Psi(x;q,a)=\frac{x}{\varphi(q)}
+     +O_{q,\varepsilon}(x^{1/2+\varepsilon})
+ \qquad\text{para todo }\varepsilon>0.
+\]
+Esta consecuencia se obtiene de la cota clásica
+$\Psi(x,\chi)-\delta_\chi x=O(\sqrt{x}\log^2(qx))$ bajo GRH, donde
+$\delta_\chi=1$ para el carácter principal y $0$ para los demás
+\cite[pp.~19--20 del PDF]{vaughan-grh}. Se aplica
+\eqref{eq:intro-progresiones} y, para $q$ fijo, se absorbe
+$\log^2(qx)$ en $O_{q,\varepsilon}(x^\varepsilon)$.
+El subíndice conserva la
+dependencia permitida en $q$. Tampoco se ha sustituido el exponente
+$1/2+\varepsilon$ por una afirmación sin margen.
+
+Si $\rho=\beta+i\gamma$, entonces
+$x^\rho=x^\beta e^{i\gamma\log x}$. El primer factor determina una
+escala de tamaño y el segundo una oscilación. Las fórmulas explícitas de
+la teoría relacionan términos de esta forma con los ceros; esta observación
+explica el interés de la escala $x^{1/2}$. Por sí sola no justifica sumar
+una serie sobre todos los ceros ni estimar sus cancelaciones.
+
+\subsection{De los ceros a los polos: derivada logarítmica y Mellin}
+
+El producto de Euler lleva a una identidad que reaparece en todo el
+cuaderno:
+\begin{equation}
+ -\frac{L'(s,\chi)}{L(s,\chi)}
+   =\sum_{n\ge1}\frac{\Lambda(n)\chi(n)}{n^s},
+ \qquad \Ree s>1.
+ \label{eq:intro-logderivada}
+\end{equation}
+Para derivarla, se utiliza la serie convergente
+$\log L(s,\chi)=\sum_p\sum_{k\ge1}\chi(p)^k/(k p^{ks})$,
+entendida como un logaritmo holomorfo definido por esa serie.
+La derivada de $p^{-ks}$ aporta $-k\log p$ y cancela el denominador $k$.
+Quedan los términos $(\log p)\chi(p)^k p^{-ks}$ correspondientes a
+$n=p^k$. La convergencia uniforme de la serie derivada en compactos de
+$\Ree s>1$ se controla con $\sum (\log n)n^{-1-\delta}<\infty$.
+
+\begin{proposicion}
+Si $\rho$ es un cero de multiplicidad $m$ de $L(s,\chi)$, la función
+$-L'/L$ tiene en $\rho$ un polo simple de residuo $-m$.
+\end{proposicion}
+\begin{proof}
+Escribimos $L(s,\chi)=(s-\rho)^m u(s)$, con $u(\rho)\ne0$.
+Entonces
+\[
+ -\frac{L'(s,\chi)}{L(s,\chi)}
+ =-\frac{m}{s-\rho}-\frac{u'(s)}{u(s)},
+\]
+y el segundo sumando es holomorfo cerca de $\rho$.
+\end{proof}
+
+La transformada de Mellin convierte escalas multiplicativas en información
+analítica. En la convención usada aquí se considera
+\[
+ \mathcal M_1 f(s)=\int_1^\infty f(x)x^{-s-1}\dd x.
+\]
+El cambio $x=e^t$ la convierte en
+$\int_0^\infty f(e^t)e^{-st}\dd t$, una transformada de Laplace.
+Su dominio inicial depende del crecimiento de $f$.
+La convención habitual $\int_0^\infty f(x)x^{z-1}\dd x$ se recupera
+extendiendo $f$ por cero por debajo de $1$ y poniendo $z=-s$
+\cite[ecuación 2.5.1]{dlmf-analisis}.
+
+La Nota~\ref{sec:sumas} demuestra, con intercambio justificado de suma
+e integral, que la suma suavizada
+\[
+ S_\chi(x)=\sum_{n\le x}\Lambda(n)\chi(n)(x/n-1)
+\]
+satisface
+\[
+ \mathcal M_1 S_\chi(s)=-\frac{L'(s,\chi)}{s(s-1)L(s,\chi)}
+ \qquad(\Ree s>1).
+\]
+El peso se anula cuando $x=n$ y suaviza la entrada de cada término.
+Tras corregir la singularidad en $1$, un cero no trivial $\rho$ sigue
+produciendo un polo, cuyo residuo es
+$m/[\rho(1-\rho)]$. Este factor suele ser complejo; la positividad
+que se utilizará es la de las multiplicidades y de los coeficientes
+que lo multiplican, no una afirmación de signo sobre cada residuo.
+
+Para un carácter primitivo $\psi$ de orden $o$, se utiliza la combinación
+\[
+ H_\psi(x)=G_1(x)+\frac1{3o+1}
+     \sum_{j=1}^{o-1}\Ree G_{\psi^{[j]}}(x),
+\]
+en la que $G_\chi$ es la suma corregida definida en la Nota~\ref{sec:sumas}.
+El objetivo aritmético de las fuentes exige
+\begin{equation}
+ \forall\eta>0\ \forall A\ge2\ \exists Y\ge A\ \forall x\in[Y,Y^{3/2}],
+ \qquad H_\psi(x)\le x^{1/2+\eta}.
+ \label{eq:intro-ventanas}
+\end{equation}
+La Nota~\ref{sec:ventanas} desarrolla el criterio analítico que utiliza
+esas ventanas para excluir polos. Una cota superior unilateral en algunos
+intervalos y una estimación global en valor absoluto, como la que aparece
+en \eqref{eq:intro-error-rh}, tienen cuantificadores distintos.
+La producción aritmética de las ventanas pertenece a los pasos de las
+fuentes que siguen por estudiar.
+
+\subsection{Retículos, índices y pendientes: una entrada lineal}
+
+Un \emph{retículo pleno} en un espacio vectorial racional $V$ de dimensión
+$r$ es un subgrupo $M$ generado por una base racional:
+$M=\Z v_1\oplus\cdots\oplus\Z v_r$. Su rango es $r$ y
+$M\otimes_\Z\Q=V$. La estructura integral retiene información que se
+pierde al permitir todos los coeficientes racionales.
+
+Si $M'\subset M$ tiene el mismo rango, el \emph{índice}
+$[M:M']$ es el número finito de elementos de $M/M'$. Por ejemplo,
+$\Z\times p\Z\subset\Z^2$ tiene índice $p$. Un operador puede preservar
+$M$ mientras que sus proyectores espectrales solo estén definidos sobre
+$\Q$: la Nota~\ref{sec:proyecciones} muestra el operador
+$T=\left(\begin{smallmatrix}0&1\\0&p\end{smallmatrix}\right)$ y el
+proyector $T/p$. El vector $(0,1)$ se proyecta en $(1/p,1)$.
+
+Una norma euclídea en $V\otimes_\Q\R$ permite medir el volumen del
+paralelepípedo generado por una base de $M$, llamado \emph{covolumen}.
+Un cambio de base integral tiene determinante $\pm1$, por lo que ese
+volumen no depende de la base elegida.
+Como modelo sobre $\Q$, para $r>0$ ponemos
+\[
+ \widehat{\deg}(M)=-\log\operatorname{covol}(M),\qquad
+ \widehat\mu(M)=\frac{\widehat{\deg}(M)}r.
+\]
+La segunda cantidad es la \emph{pendiente media}. Si $M'\subset M$
+tiene índice $d$ y se utiliza la misma métrica, su covolumen se multiplica
+por $d$ y
+\[
+ \widehat\mu(M')=\widehat\mu(M)-\frac{\log d}{r}.
+\]
+Un índice y un denominador pueden así convertirse en un coste logarítmico.
+Las fuentes trabajan con retículos sobre anillos de enteros y normas en
+las distintas inmersiones; esta definición euclídea es una entrada a esas
+normalizaciones. En particular, A y B usan la pendiente duplicada
+$\mu=2\mu_{\mathrm{Ar}}$: sobre $\Q$, con la misma métrica, es el doble
+de la pendiente media definida aquí. El factor debe conservarse al
+comparar sus desigualdades \cite[§5, (5.1)--(5.3), pp.~17--18]{fuenteA}
+\cite[§4.3, p.~39]{fuenteB}.
+
+En el lema local se utiliza un \emph{anillo de valoración discreta}
+$\mathcal O$: sus elementos no nulos del cuerpo de fracciones se escriben
+$u\varpi^k$, con $u$ invertible en $\mathcal O$ y $k\in\Z$ único.
+La \emph{uniformizante} $\varpi$ genera su ideal maximal.
+La valoración es $v(u\varpi^k)=k$ y $\mathcal O$ consta de $0$ y los
+elementos de valoración no negativa. La \emph{longitud} de un módulo
+de longitud finita cuenta los factores simples de una serie de composición.
+Los factores simples son copias del cuerpo residual $\mathcal O/(\varpi)$.
+Por ejemplo, la cadena de potencias de $\varpi$ muestra que
+$\mathcal O/(\varpi^k)$ tiene longitud $k$, para $k\ge1$.
+En $\Z_p$, el anillo de enteros $p$-ádicos, cada factor simple es
+$\mathbf F_p$; un módulo de longitud $k$ tiene entonces $p^k$ elementos.
+La Nota~\ref{sec:proyecciones} desarrolla la cota que necesita este lenguaje.
+Las definiciones de valoración y anillo local se encuentran en
+\cite[Lecture 1, §§1.3--1.5]{sutherland-algebra}.
+
+\subsection{Cuerpos de números, inercia y Frobenius}
+
+Un \emph{cuerpo de números} es una extensión finita $K/\Q$.
+Su grado $[K:\Q]$ es su dimensión como espacio vectorial racional.
+El anillo $\mathcal O_K$ de \emph{enteros algebraicos} reúne los elementos
+de $K$ que satisfacen un polinomio mónico con coeficientes en $\Z$.
+Un ideal de $\mathcal O_K$ es un subgrupo aditivo estable bajo
+multiplicación por elementos de $\mathcal O_K$. Un ideal propio
+$\mathfrak p$ es \emph{primo} si $ab\in\mathfrak p$ implica
+$a\in\mathfrak p$ o $b\in\mathfrak p$. Decimos que está \emph{sobre $p$}
+cuando $\mathfrak p\cap\Z=p\Z$, y escribimos $\mathfrak p\mid p$.
+Para un ideal primo no nulo $\mathfrak p$, el cociente $\mathcal O_K/\mathfrak p$ es un
+cuerpo finito; su cardinal es la norma $N\mathfrak p$.
+
+La factorización de un primo racional se expresa como
+\[
+ p\mathcal O_K=\prod_{j=1}^g\mathfrak p_j^{e_j},\qquad
+ N\mathfrak p_j=p^{f_j},\qquad
+ \sum_{j=1}^g e_jf_j=[K:\Q].
+\]
+El entero $e_j$ es el índice de ramificación y $f_j$ el grado residual.
+Estas propiedades de los anillos de enteros se utilizan como resultados
+clásicos \cite{milne-ant}. En $\Q(i)$, cuyo anillo de enteros es
+$\Z[i]$, el primo $5$ se descompone como $(2+i)(2-i)$, mientras que
+$2=-i(1+i)^2$ se ramifica. La factorización es una factorización de
+ideales en el enunciado general; no se supone factorización única de
+elementos en cualquier $\mathcal O_K$.
+
+Supongamos que $K/\Q$ es de Galois: en característica cero, esto equivale
+a que los polinomios irreducibles de $\Q[X]$ con una raíz en $K$
+se descompongan allí.
+El grupo $G=\operatorname{Gal}(K/\Q)$ consta de los automorfismos de $K$
+que fijan $\Q$. Para $\mathfrak p\mid p$, su grupo de descomposición
+$D_{\mathfrak p}$ es el estabilizador de $\mathfrak p$. El grupo de
+\emph{inercia} $I_{\mathfrak p}$ es el núcleo de la acción de
+$D_{\mathfrak p}$ sobre el cuerpo residual.
+
+El cociente $D_{\mathfrak p}/I_{\mathfrak p}$ se identifica con el grupo
+de Galois del cuerpo residual sobre $\mathbf F_p$. Su generador
+$u\mapsto u^p$ define el \emph{Frobenius aritmético}. Cuando el primo
+no se ramifica, la inercia es trivial y este elemento se identifica con
+un elemento de $D_{\mathfrak p}$. Cambiar el primo de $K$ sobre $p$
+lo conjuga; si $G$ es abeliano y el primo no se ramifica, el elemento
+no depende de esa elección \cite[Lecture 7, §7.3]{sutherland-algebra}.
+
+Para un carácter unidimensional $\chi$ de $D_{\mathfrak p}$ y su
+subgrupo de inercia $I=I_{\mathfrak p}$,
+\[
+ \frac1{|I|}\sum_{u\in I}\chi(u)=
+ \begin{cases}
+  1,&\chi|_I=1,\\
+  0,&\chi|_I\ne1.
+ \end{cases}
+\]
+La demostración vuelve a ser la cancelación de una suma de caracteres
+por traslación. Este promedio selecciona los caracteres que descienden
+a $D_{\mathfrak p}/I_{\mathfrak p}$. En el caso abeliano de la
+Nota~\ref{sec:caracteres} también se aplica a caracteres de $G$ y al
+cociente $G/I_{\mathfrak p}$. Así se incorpora la ramificación en la
+identidad finita de la Nota~\ref{sec:caracteres}.
+
+Los periodos automorfos, los operadores de Hecke y la cohomología que
+aparecen después suministran mapas, condiciones de integridad y cotas.
+Su construcción necesita un estudio adicional. La filtración de
+Harder--Narasimhan organiza subobjetos por pendientes; la desigualdad de
+marcos controla cómo una familia de mapas cubre direcciones del destino.
+La guía que sigue localiza estos resultados en A y B, y las notas
+distinguen sus hipótesis de los pasos ya demostrados.
+
+\subsection{Ejercicios de lectura y soluciones}
+
+\begin{ejercicio}\label{ej:intro-mangoldt}
+Calcule $\pi(10)$, $\vartheta(10)$ y $\Psi(10)$ e indique qué términos
+explican la diferencia entre las dos últimas funciones.
+\end{ejercicio}
+\begin{ejercicio}\label{ej:intro-euler}
+Para $\Ree s>1$, describa los enteros que aparecen al expandir
+$(1-2^{-s})^{-1}(1-3^{-s})^{-1}$. Explique por qué esta expresión aún
+no es $\zeta(s)$.
+\end{ejercicio}
+\begin{ejercicio}\label{ej:intro-conductor}
+Induzca $\chi_4$ a módulo $12$. Calcule su valor en $3$ y en $5$, su
+conductor y el factor que relaciona su función $L$ con $L(s,\chi_4)$.
+\end{ejercicio}
+\begin{ejercicio}\label{ej:intro-polo}
+Si $f(s)=(s-\rho)^3e^s$, calcule $-f'(s)/f(s)$ y su residuo en $\rho$.
+Si $0<\Ree\rho<1$, calcule el residuo después de dividir por $s(s-1)$.
+\end{ejercicio}
+\begin{ejercicio}\label{ej:intro-ortogonalidad}
+Escriba las indicadoras de las clases $1$ y $3$ módulo $4$ usando
+$\chi_{0,4}$ y $\chi_4$, y compruebe sus valores en un entero par.
+\end{ejercicio}
+\begin{ejercicio}\label{ej:intro-reticulo}
+Con la métrica euclídea habitual, calcule índice, covolumen, grado y
+pendiente media de $M'=\Z\times p\Z\subset\Z^2$.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:intro-mangoldt}.}
+Los primos son $2,3,5,7$, por lo que $\pi(10)=4$ y
+$\vartheta(10)=\log2+\log3+\log5+\log7$.
+Se añaden las potencias $4,8,9$, de modo que
+$\Psi(10)=3\log2+2\log3+\log5+\log7$.
+
+\paragraph{Solución del Ejercicio~\ref{ej:intro-euler}.}
+La expansión es $\sum_{a,b\ge0}(2^a3^b)^{-s}$. Cada entero con factores
+primos únicamente $2$ y $3$ aparece una vez. Faltan, por ejemplo, $5$, $7$
+y todos sus múltiplos que contienen factores primos diferentes de $2$ y
+$3$. Para obtener zeta se toma el límite de los productos finitos, en
+el dominio donde la convergencia absoluta permite hacerlo.
+
+\paragraph{Solución del Ejercicio~\ref{ej:intro-conductor}.}
+El carácter inducido vale cero en $3$, porque $\gcd(3,12)>1$, y vale
+$\chi_4(5)=1$ en $5$. Su conductor es $4$. Como $\chi_4(3)=-1$,
+se obtiene $L(s,\chi)=L(s,\chi_4)(1+3^{-s})$.
+
+\paragraph{Solución del Ejercicio~\ref{ej:intro-polo}.}
+Se tiene $-f'/f=-3/(s-\rho)-1$, con residuo $-3$. El factor
+$1/[s(s-1)]$ es holomorfo en $\rho$ bajo la hipótesis indicada, así que
+el nuevo residuo es $-3/[\rho(\rho-1)]=3/[\rho(1-\rho)]$.
+
+\paragraph{Solución del Ejercicio~\ref{ej:intro-ortogonalidad}.}
+Las indicadoras son $(\chi_{0,4}+\chi_4)/2$ y
+$(\chi_{0,4}-\chi_4)/2$, respectivamente. En un entero par ambos
+caracteres valen cero y las dos indicadoras también. Sustituir
+$\chi_{0,4}$ por la función constante $1$ daría un valor incorrecto.
+
+\paragraph{Solución del Ejercicio~\ref{ej:intro-reticulo}.}
+El cociente $\Z^2/M'$ es isomorfo a $\Z/p\Z$, luego el índice es $p$.
+La base $(1,0),(0,p)$ determina un rectángulo de área $p$; ese es su
+covolumen. El grado es $-\log p$ y, como el rango es $2$, la pendiente
+media es $-(\log p)/2$.
