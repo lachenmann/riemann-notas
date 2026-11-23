@@ -14249,7 +14249,7 @@
       "date": "2026-11-23",
       "recorded_at_utc": "2026-11-23T20:40:53.488074+00:00",
       "action": "integrate_note14_finiteness_and_uniform_control",
-      "status": "content_reviewed_vault_verified_ready_for_guarded_github_publication",
+      "status": "published_content_verified_and_vault_readback_verified",
       "event_ordinal": 19,
       "request_scope": "Continuar el siguiente bloque de Riemann explicado, con el flujo establecido de TeX/PDF en GitHub y Markdown en la bóveda.",
       "previous_github_commit": "dcaddedde8da4a25957329ff96ad41a8d9e2542a",
@@ -18386,11 +18386,177 @@
         "total_size_bytes": 4543045
       },
       "obsidian_rendering_checked": false,
-      "github_publication_at_record_time": "Ready for guarded publication; the subsequent registry-only commit records the observed content commit and its full readback.",
+      "github_publication_at_record_time": "Content commit published by guarded ref update and recovered in full; this registry-only closure records the observed evidence.",
       "next_step": "Cota cuantitativa de la capa fija: A93 Proposition9.4 pp67–74, Bockstein, conteo por fibras, cancelación del factor de capa y control de torsión.",
       "publication_authorization": "El usuario pidió continuar el siguiente bloque; persiste la autorización del flujo establecido de actualización de GitHub y Markdown.",
       "ready_at_utc": "2026-11-23T20:40:53.488074+00:00",
-      "source_pdfs_and_asset_untouched": true
+      "source_pdfs_and_asset_untouched": true,
+      "github_publication_verification": {
+        "metadata": {
+          "content_commit": "a6a589580ba83d923e3315e90e3a4902e6fdf8f4",
+          "tree_sha": "0ca7f38605e91ed05397e8bad51e0d305d848bf5",
+          "parent": "dcaddedde8da4a25957329ff96ad41a8d9e2542a",
+          "observed_ref": "a6a589580ba83d923e3315e90e3a4902e6fdf8f4",
+          "changed_files": 12,
+          "all_changed_tree_entries_match": true,
+          "all_unchanged_tree_entries_preserved": true,
+          "total_files": 28,
+          "guarded_update": {
+            "expected_parent": "dcaddedde8da4a25957329ff96ad41a8d9e2542a",
+            "force": false,
+            "success": true
+          }
+        },
+        "full_readback": {
+          "repository": "lachenmann/riemann-notas",
+          "commit": "a6a589580ba83d923e3315e90e3a4902e6fdf8f4",
+          "expected_parent": "dcaddedde8da4a25957329ff96ad41a8d9e2542a",
+          "verified_at_utc": "2026-11-23T20:43:23.453166+00:00",
+          "all_files_verified": true,
+          "files": [
+            {
+              "path": "ESTADO.md",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/a6a589580ba83d923e3315e90e3a4902e6fdf8f4/ESTADO.md",
+              "http_status": 200,
+              "size_bytes": 48780,
+              "sha256": "802ef3e972d358d2abf5d4a5857ddbf7177f1ee7b94de48923c189e852f86239",
+              "git_blob_sha": "bca034d022ecaa063bd412840c6c4e52041086bd",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "README.md",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/a6a589580ba83d923e3315e90e3a4902e6fdf8f4/README.md",
+              "http_status": 200,
+              "size_bytes": 16923,
+              "sha256": "b3efb36f0ef616f7b64416441e6c1b0f2512a8cf7ee551589d89afb6051a1e0c",
+              "git_blob_sha": "6b5712ab4190d201b99f7fa3b29b73bd1b4698d9",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "REGISTRO.json",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/a6a589580ba83d923e3315e90e3a4902e6fdf8f4/REGISTRO.json",
+              "http_status": 200,
+              "size_bytes": 1644011,
+              "sha256": "3e4f9f1d961139902192f30cd8cda0df3d86148e229ee1c65606e74c5cdeb4c8",
+              "git_blob_sha": "b72a7c8ef6017a1092d82cddd8e014c1bcb4ec48",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "fuentes/README.md",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/a6a589580ba83d923e3315e90e3a4902e6fdf8f4/fuentes/README.md",
+              "http_status": 200,
+              "size_bytes": 70188,
+              "sha256": "1c516986cb4099ab0b3420f6c0c33729e3239cf43a138fe209dfec84c7eabb23",
+              "git_blob_sha": "c38f010e468901da1e94356cc754853f04da64cb",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "main.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/a6a589580ba83d923e3315e90e3a4902e6fdf8f4/main.tex",
+              "http_status": 200,
+              "size_bytes": 3974,
+              "sha256": "5055823c9ee84b714bc025ce69728f17b728f7aa2d17dfeeda0c18ae0fadb91e",
+              "git_blob_sha": "e5bc0ac195688316b79153f237b21d53ffe05b9e",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "pdf/notas-hipotesis-riemann.pdf",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/a6a589580ba83d923e3315e90e3a4902e6fdf8f4/pdf/notas-hipotesis-riemann.pdf",
+              "http_status": 200,
+              "size_bytes": 1381067,
+              "sha256": "554517a310d69192809026df533392296b0877fe807c75d48ec1d2ec3bc22a5e",
+              "git_blob_sha": "0aa43e1eef5f3427e8dd6bca71c7966d4e21cbda",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "tex/capitulos/00-guia.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/a6a589580ba83d923e3315e90e3a4902e6fdf8f4/tex/capitulos/00-guia.tex",
+              "http_status": 200,
+              "size_bytes": 12464,
+              "sha256": "9c586f2c457e7c3334be69f9d48c36bcaf2f785e9123d0e9071e2892718dc385",
+              "git_blob_sha": "0a4a01f7dc10111f05e2276e8201b152213429bc",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "tex/capitulos/00-introduccion.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/a6a589580ba83d923e3315e90e3a4902e6fdf8f4/tex/capitulos/00-introduccion.tex",
+              "http_status": 200,
+              "size_bytes": 35299,
+              "sha256": "8bb5fe5d0ee4816b8353c7b4c7f4c354c79e2dea62a568f85fac9e5aca03706d",
+              "git_blob_sha": "dc895d5f7063917a3097f051d2c11356b02427fc",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "tex/capitulos/08-cohomologia-y-denominadores.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/a6a589580ba83d923e3315e90e3a4902e6fdf8f4/tex/capitulos/08-cohomologia-y-denominadores.tex",
+              "http_status": 200,
+              "size_bytes": 72405,
+              "sha256": "f580dcaa1a9a01332ea3424347a5696f013779cd1fc360a5d303126e6632eae0",
+              "git_blob_sha": "a4aea1ddecf69de0ca2f24c3777f466c8f066401",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "tex/capitulos/13-de-congruencias-a-selmer.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/a6a589580ba83d923e3315e90e3a4902e6fdf8f4/tex/capitulos/13-de-congruencias-a-selmer.tex",
+              "http_status": 200,
+              "size_bytes": 33437,
+              "sha256": "fd42674279947283c01bf1c36dd3dfa3f364d777dbcd0aa2190c3a4e37780d54",
+              "git_blob_sha": "58c076ad7394fe8cdef0bd87fbce92d87d56c819",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "tex/capitulos/14-finitud-y-control-uniforme.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/a6a589580ba83d923e3315e90e3a4902e6fdf8f4/tex/capitulos/14-finitud-y-control-uniforme.tex",
+              "http_status": 200,
+              "size_bytes": 35024,
+              "sha256": "ff6e7577080d03ee4718d775aa720a813c5291c04872d98cb8191f32f7977a17",
+              "git_blob_sha": "40a6fcc46b1f14d0e459f7a922bf00fb4ae93b52",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "tex/referencias.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/a6a589580ba83d923e3315e90e3a4902e6fdf8f4/tex/referencias.tex",
+              "http_status": 200,
+              "size_bytes": 23477,
+              "sha256": "902359098e068288374b51f845f0cb87cb3e555cb554da2b09b86263cb790b90",
+              "git_blob_sha": "8c0b97a587a1d1afdea489a9af07f2648bd2ff60",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            }
+          ]
+        }
+      },
+      "registry_closure": {
+        "purpose": "Registrar la publicación observada y su recuperación completa; este cierre solo modifica REGISTRO.json.",
+        "expected_parent": "a6a589580ba83d923e3315e90e3a4902e6fdf8f4",
+        "content_commit_verified": "a6a589580ba83d923e3315e90e3a4902e6fdf8f4",
+        "self_commit_sha_recorded": false,
+        "reason": "El hash del commit que contiene este registro no se incluye en su propio contenido. Su escritura y lectura posterior se verifican por separado.",
+        "prepared_at_utc": "2026-11-23T20:43:37.530957+00:00"
+      }
     }
   ],
   "github": {
@@ -18402,8 +18568,8 @@
     "initialization_commit": "57f20e26fec8d470771cb560a4e3e4582846b17c",
     "publication_status": "published",
     "public_since": "2026-11-22",
-    "latest_content_commit": "c25353c6ad3f6397dfd5a5f163c7e8761cb00d08",
-    "latest_content_publication_verified_at_utc": "2026-11-23T19:50:28.624724+00:00"
+    "latest_content_commit": "a6a589580ba83d923e3315e90e3a4902e6fdf8f4",
+    "latest_content_publication_verified_at_utc": "2026-11-23T20:43:23.453166+00:00"
   },
   "lean_source_review": {
     "repository": "CocoSgt/riemann-hypothesis-lean",
