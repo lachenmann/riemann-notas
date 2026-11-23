@@ -64,6 +64,14 @@ La Nota 7 añade dos fuentes primarias para situar las entradas geométricas y a
 
 La estimación del número de secciones pequeñas no se identifica por sí sola con una cota de pendiente media para el subretículo automorfo de interés. Del mismo modo, la referencia al método de extensión no construye el puente entre el espacio de Bergman y el modelo integral finito de la propuesta. La Nota 7 distingue estas entradas de sus deducciones finitas.
 
+La Nota 8 añade referencias para las propiedades elementales de longitud y para las entradas clásicas de dualidad y teoría de Iwasawa. Las especializaciones cohomológicas de A/B y la uniformidad al variar los primos auxiliares se delimitan por separado.
+
+| Clave y referencia | Localizadores utilizados |
+| --- | --- |
+| **St.** The Stacks Project Authors, *The Stacks Project*. Clave `stacks-longitud`. | [Etiqueta 00IV](https://stacks.math.columbia.edu/tag/00IV), capítulo 10, §10.52, Lema 10.52.3: aditividad de la longitud en sucesiones exactas cortas. |
+| **MD.** James S. Milne, *Arithmetic Duality Theorems*, segunda edición, 2006. Clave `milne-dualidad`. | [Texto en la web del autor](https://www.jmilne.org/math/Books/ADTnot.pdf), I, §4, Teorema 4.10, p. 57 impresa: dualidad global de Poitou–Tate para módulos finitos, bajo sus hipótesis. La especialización a los torcidos y límites de la nota se recibe de A/B. |
+| **FW.** Bruce Ferrero y Lawrence C. Washington, *The Iwasawa invariant $\mu_p$ vanishes for abelian number fields*. Annals of Mathematics 109 (1979), núm. 2, 377–395. Clave `ferrero-washington`. | [DOI: 10.2307/1971116](https://doi.org/10.2307/1971116): anulación clásica del invariante $\mu$ para cuerpos abelianos. Su uso no sustituye la comparación uniforme de las bases auxiliares que exige A, pp. 40–41. |
+
 ## Código Lean utilizado en la nota de ventanas
 
 El cotejo selectivo utiliza [CocoSgt/riemann-hypothesis-lean en la revisión fijada](https://github.com/CocoSgt/riemann-hypothesis-lean/tree/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4):
@@ -129,4 +137,20 @@ La quinta lectura mantiene la revisión `7cbf7a0c32fca1badf05931879a37c3f8a2b03b
 
 La [concordancia de la Nota 7](../tex/capitulos/07-geometria-evaluaciones-y-marcos.tex) precisa los enlaces y las diferencias de formulación. El lema de Gram se demuestra matemáticamente en el cuaderno, sin atribuirlo a una única declaración Lean como transcripción exacta. El cotejo de `ot0` trata valores en ceros simples, no una teoría de jets superiores. Las realizaciones profundas de los modelos geométricos, la evaluación integral y los datos automorfos no se auditaron completamente.
 
-No se ejecutó ni compiló Lean, no se obtuvo un informe de axiomas y no se comparó todo el espejo con la distribución original. Las torres cohomológicas y `SecondBound` quedan fuera de este cotejo; serán parte del siguiente bloque de A, §8, y B, §5. Los manifiestos anteriores permanecen íntegros.
+No se ejecutó ni compiló Lean, no se obtuvo un informe de axiomas y no se comparó todo el espejo con la distribución original. Las torres cohomológicas y `SecondBound` quedaron fuera del cotejo geométrico; se estudian en el bloque siguiente de A, §8, y B, §5, delimitado a continuación. Los manifiestos anteriores permanecen íntegros.
+
+## Código Lean utilizado en la nota de cohomología y denominadores
+
+La lectura cohomológica mantiene la revisión `7cbf7a0c32fca1badf05931879a37c3f8a2b03b4` y los ejemplares A55/B73: A, §8, pp. 35–41, y B, §5, pp. 52–64. El manifiesto `lean_source_review_cohomology` identifica **36 archivos pertinentes, 34 leídos completos y dos selectivamente**, con intervalos de líneas. Se recuperaron los contenidos completos con la revisión fijada, se recalcularon sus SHA-256 y los hashes Git, y estos últimos coinciden con los blobs devueltos. Un archivo homónimo descartado durante la localización queda fuera de ese recuento. Los imports no se cuentan como pruebas revisadas.
+
+| Paso | Declaraciones y alcance |
+| --- | --- |
+| Coeficientes, longitudes y dualidad | [`GaloisCohomology/Statement.lean`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/GaloisCohomology/Statement.lean) distingue `shaLen` de `VLen` y conserva las longitudes en $\mathbf N\cup\{\infty\}$. Las pruebas de comparación leídas reciben las entradas clásicas de dualidad. |
+| Las dos cotas de torre | [`SecondBound.lean`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/SecondBound.lean) define `ABound` y `SecondBound`. Se siguieron las pruebas de crecimiento, centros y descenso: Sha en la capa variable se compara con $H^2$ en la capa fija $j_0$ y el resto $R(m-j_0)_+$. |
+| Capa fija y base diádica uniforme | [`point`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/ImportsAlt.lean) aplica `LemmaK` en grado acotado y prueba finitud antes de `toNat`. `TwoIn` elige $R$ antes de $q,d$; `TwoBase` conserva la comparación con $+1$ y el límite de altura de la capa auxiliar. |
+| Selección de una ventana común | [`window1`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Window1.lean) se leyó completo, junto con el paso logarítmico y el ensamblaje de conjuntos excepcionales. Se mantienen la constante $2^{R+2}B^R$ y el orden de elección de umbrales. |
+| Finitud, sumabilidad y denominadores | [`vvRecord` y `divinN_of_hypV`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/DivinNOfHypV.lean) deducen sumabilidad desde finitud y sumas parciales acotadas, y aplican `LinkN` junto con la igualdad de rangos. `LinkN_at` conserva expresamente `Summable (vvTerm D)` como hipótesis. |
+
+La [concordancia de la Nota 8](../tex/capitulos/08-cohomologia-y-denominadores.tex) distingue las definiciones de proposiciones, las pruebas locales y los ensamblajes condicionados. `lemmaK_litN_alt`, en `KFinal.lean`, mantiene `LiteratureRankNHypothesis`; la ruta numérica leída no equivale a una revisión completa de homología, torsión o automorfía. `ShaFinOdd` cuantifica todos los primos, incluido 2, pese a su nombre. La definición de `etaSum` conserva el peso `lwP*ramIdx*etaJ`, sin un factor 2 adicional en esa suma.
+
+Las dos lecturas selectivas corresponden a `GlobalTheoremInputs.lean`, líneas 1–63, y `ExportBoundOfAdmissible.lean`, líneas 1–83 y 1000–1164. No se revisó completa la prueba de `point_bound`, el presupuesto de primos grandes y excepcionales ni toda la identificación integral de los proyectores y las longitudes normalizadas. No se ejecutó Lean, no se obtuvo un informe de axiomas y no se comparó todo el espejo con la distribución original. Los manifiestos anteriores permanecen íntegros; B76 no se incorpora.

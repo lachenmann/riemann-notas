@@ -29,7 +29,8 @@ y los hashes de los archivos recuperados. La configuración declara
 Lean~4.33.1 y la revisión de Mathlib identificada en ese registro.
 El cotejo de esta entrega se limita a las interfaces y pasos señalados
 en las Notas~\ref{sec:ventanas}, \ref{sec:caracteres},
-\ref{sec:marcos}, \ref{sec:periodos} y~\ref{sec:geometria}.
+\ref{sec:marcos}, \ref{sec:periodos}, \ref{sec:geometria}
+y~\ref{sec:cohomologia}.
 El tramo de marcos comprende la lectura localizada de 14 archivos sobre
 la desigualdad lineal, las pendientes y su transferencia; no verifica las
 entradas de la construcción automorfa. No incluyó compilación ni ejecución
@@ -41,8 +42,13 @@ detallado en la concordancia de la Nota~\ref{sec:periodos}.
 El tramo geométrico coteja otros 23 archivos, 19 completos y
 cuatro selectivos, con las hipótesis de cubiertas, evaluaciones,
 recortes y control colectivo que detalla la
-Nota~\ref{sec:geometria}. Los recuentos de cada tramo pueden
-compartir archivos.
+Nota~\ref{sec:geometria}. El tramo cohomológico añade 36 archivos
+pertinentes, con 34 lecturas completas y dos selectivas: distingue
+las dos cotas de torre, la aplicación del lema K en una capa fija,
+la selección de ventanas y los pasos de finitud y sumabilidad que
+permiten usar \texttt{LinkN}. Los ensamblajes conservan sus entradas
+profundas; no se audita toda la clausura de dualidad, homología,
+torsión o automorfía. Los recuentos de cada tramo pueden compartir archivos.
 
 \bibitem[D1]{dlmf-zeta}
 NIST. \emph{Digital Library of Mathematical Functions}, versión 1.2.8.
@@ -157,6 +163,30 @@ los pesos de la Nota~\ref{sec:geometria} proceden de A.
 \href{https://www-fourier.univ-grenoble-alpes.fr/~demailly/source_files/pdf/ohsawa_tak.pdf}{PDF del autor}.
 Consulta: 22 de noviembre de 2026.
 
+\bibitem[St]{stacks-longitud}
+The Stacks Project Authors. \emph{The Stacks Project}.
+Capítulo~10, §10.52, Lema~10.52.3, etiqueta \texttt{00IV}:
+aditividad de la longitud en sucesiones exactas cortas.
+\href{https://stacks.math.columbia.edu/tag/00IV}{Enunciado y prueba}.
+Consulta: 22 de noviembre de 2026.
+
+\bibitem[MD]{milne-dualidad}
+James S. Milne. \emph{Arithmetic Duality Theorems}, segunda edición,
+2006. Capítulo~I, §4, Teorema~4.10, p.~57:
+dualidad global de Poitou--Tate para módulos finitos, bajo las
+hipótesis allí indicadas. La especialización a los torcidos y límites
+de la Nota~\ref{sec:cohomologia} se recibe como entrada de A/B.
+\href{https://www.jmilne.org/math/Books/ADTnot.pdf}{Texto en la web del autor}.
+
+\bibitem[FW]{ferrero-washington}
+Bruce Ferrero y Lawrence C. Washington.
+\emph{The Iwasawa invariant $\mu_p$ vanishes for abelian number fields}.
+\emph{Annals of Mathematics} 109 (1979), núm.~2, pp.~377--395.
+\href{https://doi.org/10.2307/1971116}{DOI: 10.2307/1971116}.
+Se utiliza como antecedente clásico de la anulación de $\mu$ en
+las torres ciclotómicas de cuerpos abelianos; la uniformidad adicional
+al variar los primos auxiliares se identifica por separado.
+
 \end{thebibliography}
 
 \subsection*{Estado de la entrega}
@@ -212,11 +242,19 @@ entradas especializadas de Hilbert--Samuel aritmético, extensión $L^2$,
 geometría de Shimura y estimación espectral conservan sus hipótesis
 y su condición de resultados citados o interfaces por cerrar.
 
-El siguiente bloque estudia los controles cohomológicos de denominadores
-de A, \S8, y B, \S5: finitud de las longitudes, sumabilidad, comparación
-entre capas de la torre y la relación con el defecto usado por el marco.
-Después queda la elección uniforme de parámetros que suministra la cota
-del exceso y conecta el presupuesto geométrico con las ventanas
-analíticas. No se ha ejecutado Lean ni auditado el cierre de axiomas
-de la revisión fijada; el cotejo de declaraciones y pruebas aquí
-documentado no certifica la demostración completa de la hipótesis.
+La Nota~\ref{sec:cohomologia} desarrolla las longitudes y el coste
+de congruencias, explica los cociclos y torcidos negativos y conserva
+la corrección local y global de dualidad. Distingue la cota fuera
+de las raíces de la comparación con $H^2$ en una capa fija y desarrolla
+la selección finita de una ventana común. El cotejo de 36 archivos Lean
+separa 34 lecturas completas y dos selectivas; identifica el paso
+de finitud a sumabilidad y la aplicación condicionada de \texttt{LinkN}.
+Los resultados profundos que suministran las cotas cohomológicas,
+los datos de Galois y la automorfía no se presentan como demostrados
+por estas deducciones.
+
+Queda reunir los presupuestos en una elección uniforme de parámetros,
+controlar las contribuciones auxiliares y conectar el exceso geométrico
+con las ventanas de $H_\psi$. No se ha ejecutado Lean ni auditado el cierre
+de axiomas de la revisión fijada; el cotejo de declaraciones y pruebas
+aquí documentado no certifica la demostración completa de la hipótesis.

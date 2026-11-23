@@ -76,6 +76,10 @@ cotejos entre A y B tampoco constituyen una auditoría de ese código.
     Las congruencias de Hecke y las extensiones de representaciones de Galois
     permiten medir el coste mediante grupos cohomológicos. La
     Nota~\ref{sec:proyecciones} desarrolla el ejemplo elemental de entrada.
+    La Nota~\ref{sec:cohomologia} estudia las longitudes y los torcidos,
+    distingue las dos cotas de torre y reconstruye la selección finita
+    de una ventana, con las entradas profundas identificadas.
+    Referencias: A, §8, pp.~35--41; B, §5, pp.~52--64.
   \item \textbf{Elegir escalas y una ventana común.}
     Después de cancelar los términos principales, aparecen costes del orden
     de $x/m$ y de $m$, salvo potencias pequeñas de $x$. Una longitud de torre
@@ -105,35 +109,33 @@ Marcos y pendientes & Prop.~5.2 y Teo.~5.3, pp.~18--20 & Lema~4.2 y Prop.~4.3, p
 Periodos y torres theta & §6, pp.~20--28 & §4.1, pp.~24--30; §4.5, pp.~46--51 \\
 Geometría, evaluación y marcos & §7, pp.~28--34 & §4.3, pp.~33--40; §4.4, pp.~41--46 \\
 Proyecciones y denominadores & §§6--8 & Lema~5.1, p.~53; pp.~54--56 \\
+Cohomología y denominadores & §8, pp.~35--41 & §5, pp.~52--64 \\
 Cancelación y raíz cuadrada & Props.~10.1--10.2, pp.~47--49 & (4.5)--(4.10), pp.~48--51; Lema~6.1, pp.~65--66 \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
-Las siete notas siguientes desarrollan los cálculos de Mellin, el ejemplo
-integral de una proyección, el criterio unilateral de ventanas, la identidad
-de caracteres, la transferencia de pendientes mediante marcos aproximados,
-la comparación de divisibilidad y normas de periodos, y las deducciones
-geométricas y de evaluación que controlan el marco.
-La Nota~\ref{sec:caracteres} reconstruye la ortogonalidad, la cancelación del
-término principal y la selección finita que explica el coeficiente
-$1/(3o+1)$. La Nota~\ref{sec:marcos} prueba la desigualdad de codimensión
-y su integración por umbrales de pendiente. La Nota~\ref{sec:periodos}
-demuestra el descenso por el cociente útil, la ampliación integral de
-retículos, estimaciones de Cauchy y gamma, y el balance condicionado a
-las cotas de periodos. La Nota~\ref{sec:geometria} prueba las transferencias
-finitas de pendientes, el paso de interpolación a una cota de Gram y el
-control colectivo del marco a partir de correlaciones. Distingue estas
-deducciones de las construcciones geométricas y analíticas que les
-suministran sus hipótesis. Las notas de ventanas, caracteres, marcos,
-periodos y geometría incluyen cotejos localizados con declaraciones Lean
-de una revisión fijada, sin compilar ni ejecutar el código.
+Las ocho notas desarrollan esta ruta. Las tres primeras preparan
+Mellin, los denominadores y el criterio de ventanas.
+La Nota~\ref{sec:caracteres} prueba la identidad de caracteres,
+la cancelación y la selección que explica $1/(3o+1)$.
+La Nota~\ref{sec:marcos} demuestra la cota de codimensión y su
+integración por umbrales de pendiente.
+La Nota~\ref{sec:periodos} estudia cocientes, retículos, Cauchy,
+gamma y el balance condicionado a las cotas de periodos.
+La Nota~\ref{sec:geometria} pasa de pendientes, interpolación
+y correlaciones al control colectivo del marco.
+La Nota~\ref{sec:cohomologia} distingue finitud y sumabilidad,
+conserva las correcciones de dualidad y compara la capa variable
+con una capa fija de grado acotado.
+Las Notas~\ref{sec:ventanas}--\ref{sec:cohomologia} incluyen
+cotejos localizados con una revisión fijada de Lean,
+sin compilar ni ejecutar el código.
 
-El siguiente desarrollo estudiará los controles cohomológicos de
-denominadores de A, §8, y B, §5. Habrá que distinguir la cota de torre fuera
-de las raíces de la comparación con una capa fija que permite aplicar el
-argumento de grado acotado. Las identidades de periodos, los modelos
-integrales y las cotas especializadas de jets aún se reciben como entradas.
-La cota del exceso geométrico, las estimaciones de los caracteres
-auxiliares y la producción simultánea de las ventanas permanecen como
-resultados de las fuentes hasta desarrollar sus hipótesis y demostraciones.
+El siguiente desarrollo reunirá los presupuestos en una elección
+uniforme de parámetros y estudiará las contribuciones auxiliares
+que conectan el exceso con las ventanas de $H_\psi$.
+Las identidades de periodos, los modelos integrales, las cotas de
+jets y las entradas profundas de cohomología y automorfía
+conservan sus hipótesis. La construcción aritmética completa
+de las ventanas permanece por reconstruir.

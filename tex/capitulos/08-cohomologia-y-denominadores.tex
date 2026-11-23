@@ -1,0 +1,1766 @@
+\section{Cohomología y denominadores}
+\label{sec:cohomologia}
+
+\fuente{A, §8, pp.~35--41, especialmente los Lemas~8.1,
+8.3, 8.5--8.6 y las entradas de las Proposiciones~8.2 y 8.4;
+B, §5, pp.~52--64, en el ejemplar de 73 páginas.
+Se desarrollan los mecanismos de longitudes, congruencias,
+selección de torcidos y elección de ventana. Las cotas
+aritméticas que alimentan esos mecanismos se enuncian con
+su alcance; la concordancia con Lean se delimita al final.}
+
+La Nota~\ref{sec:proyecciones} mostró cómo un proyector racional
+puede introducir denominadores. Las Notas~\ref{sec:periodos}
+y \ref{sec:geometria} incorporaron sus costes a la comparación
+de pendientes. Estudiaremos ahora la cantidad cohomológica
+que acota una parte de esos costes y la selección de un
+intervalo en el que todos ellos se controlan simultáneamente.
+
+Distinguimos dos cuerpos de números: $E$ es el cuerpo
+aritmético de la construcción y $K$ es el cuerpo de
+coeficientes de los periodos. Escribimos $v\mid\ell$ para
+un lugar de $E$ y $w\mid\ell$ para uno de $K$.
+El entero $e\ge1$ será el índice de un torcido de Tate;
+$t$ será su corte superior. Reservamos $a$ para la altura
+de la capa diádica y $\nu$ para un nivel de una torre
+$\Z_\ell$. Así, $m$ puede seguir designando el número de
+levantamientos theta de la Nota~\ref{sec:periodos}.
+
+\subsection{Longitud, orden y cambio del anillo de coeficientes}
+
+Sea $\mathcal O$ un anillo de valoración discreta, con
+uniformizante $\varpi$ y cuerpo residual $\kappa$.
+La longitud $\length_{\mathcal O}M$ cuenta los factores
+simples de una serie de composición de $M$; cada factor
+es isomorfo a $\kappa$. Puede valer infinito.
+En una sucesión exacta corta las longitudes se suman,
+también como cantidades extendidas; véase \cite{stacks-longitud}.
+
+Cuando $\mathcal O$ es el anillo de enteros de una extensión
+finita de $\Q_\ell$, ponemos
+\[
+ e_{\mathcal O}=\ord_{\varpi}(\ell),\qquad
+ |\kappa|=\ell^{f_{\mathcal O}}.
+\]
+Para un módulo de longitud finita, su serie de composición da
+\begin{equation}
+ \log|M|=f_{\mathcal O}\,\length_{\mathcal O}M\,\log\ell.
+ \label{eq:cohom-longitud-orden}
+\end{equation}
+En particular, sobre $\Z_\ell$ la longitud es
+$\log|M|/\log\ell$.
+
+Si $A$ es un $\Z_\ell$-módulo finito, la descomposición
+$A\simeq\bigoplus_i\Z_\ell/\ell^{a_i}\Z_\ell$ muestra que
+\begin{equation}
+ \length_{\mathcal O}(A\otimes_{\Z_\ell}\mathcal O)
+ =e_{\mathcal O}\sum_i a_i
+ =e_{\mathcal O}\,\length_{\Z_\ell}A.
+ \label{eq:cohom-base-cambio}
+\end{equation}
+En efecto, $\ell^{a_i}\mathcal O=\varpi^{e_{\mathcal O}a_i}
+\mathcal O$ hasta una unidad. Esta cuenta explica la
+división por el índice de ramificación en las longitudes
+normalizadas de A y B. El grado residual interviene,
+en cambio, al pasar de longitud a logaritmo del orden.
+
+\begin{lema}[Exponente y torsión de orden \(\ell\)]
+\label{lem:cohom-exponente}
+Sea $M$ un $\Z_\ell$-módulo, sean $r,g\in\N$, y supongamos
+que $\ell^rM=0$ y que
+$\dim_{\mathbb F_\ell}M[\ell]\le g$.
+Entonces $M$ es finito y
+\[
+ \length_{\Z_\ell}M\le rg.
+\]
+\end{lema}
+
+\begin{proof}
+El caso $r=0$ da $M=0$. Para $1\le i\le r$,
+la multiplicación por $\ell^{i-1}$ induce una inyección
+\[
+ M[\ell^i]/M[\ell^{i-1}]\longrightarrow M[\ell].
+\]
+Su núcleo es cero por la definición del denominador.
+Cada cociente es un espacio vectorial sobre $\mathbb F_\ell$
+de dimensión a lo sumo $g$. La filtración
+$0=M[\ell^0]\subseteq\cdots\subseteq M[\ell^r]=M$
+tiene $r$ cocientes finitos, con orden a lo sumo $\ell^g$.
+La multiplicación de sus órdenes prueba finitud y la cota.
+\end{proof}
+
+Así, una cota del exponente y una cota de la torsión
+de orden $\ell$ prueban conjuntamente la finitud.
+Este orden lógico se conserva al utilizar las entradas
+aritméticas de B, p.~60.
+
+\subsection{Ideales de congruencia y coste de una proyección}
+
+Ampliamos el lema de la Nota~\ref{sec:proyecciones} a varios
+sistemas de autovalores. Sea $F$ el cuerpo de fracciones
+de un anillo de valoración discreta $\mathcal O$.
+Sea $X$ un conjunto finito, y consideremos
+\[
+ V=\bigoplus_{\pi\in X}V_\pi,\qquad
+ m_\pi=\dim_FV_\pi.
+\]
+Una $\mathcal O$-subálgebra $\mathbb T\subseteq\mathcal O^X$
+actúa diagonalmente: $u\in\mathbb T$ actúa por $u_\pi$
+en $V_\pi$. Suponemos que contiene los escalares,
+separa los elementos de $X$ y preserva un retículo pleno $M$.
+Separar significa que para $\pi\ne\pi'$ existe $u\in\mathbb T$
+con $u_\pi\ne u_{\pi'}$.
+
+Para $Z\subseteq X$, sean $V_Z=\bigoplus_{\pi\in Z}V_\pi$
+y $e_Z:V\to V_Z$ el proyector. Ponemos
+\begin{equation}
+ \begin{gathered}
+ L=e_ZM,\qquad N=M\cap V_Z,\\
+ \mathfrak J=\{u\in\mathbb T:u_{\pi'}=0
+       \text{ para }\pi'\notin Z\},\qquad
+ \mathfrak c_\pi=\{u_\pi:u\in\mathfrak J\}\quad(\pi\in Z).
+ \end{gathered}
+ \label{eq:cohom-ideales}
+\end{equation}
+Cada $\mathfrak c_\pi$ es un ideal no nulo de $\mathcal O$.
+Para verlo, por cada $\pi'\notin Z$ elegimos un elemento
+que separa $\pi$ de $\pi'$ y le restamos el escalar
+dado por su coordenada $\pi'$. El producto de estos
+elementos pertenece a $\mathfrak J$ y su coordenada $\pi$
+es no nula. Si $Z=X$, sirve el elemento $1$.
+
+\begin{proposicion}[Cota por ideales de congruencia]
+\label{prop:cohom-congruencias}
+Con estos datos,
+\begin{equation}
+ \length_{\mathcal O}(e_ZM/(M\cap V_Z))
+ \le\sum_{\pi\in Z}m_\pi\,
+       \length_{\mathcal O}(\mathcal O/\mathfrak c_\pi).
+ \label{eq:cohom-cota-congruencias}
+\end{equation}
+\end{proposicion}
+
+\begin{proof}
+Si $Z$ es vacío, ambos miembros son cero.
+En otro caso ordenamos $Z=\{\pi_1,\ldots,\pi_s\}$ y ponemos
+\[
+ W_i=\bigoplus_{k\le i}V_{\pi_k},\qquad
+ L_i=L\cap W_i,\qquad N_i=N\cap W_i.
+\]
+Los módulos $L$ y $N$ son retículos plenos de $V_Z$,
+con $N\subseteq L$. Cada $L_i$ es pleno en $W_i$,
+y $L_{i-1}$ es saturado en $L_i$ porque se obtiene
+intersecando con un subespacio. Por tanto
+$U_i=L_i/L_{i-1}$ es libre de rango $m_{\pi_i}$.
+
+Elegimos $u_i\in\mathfrak J$ cuya coordenada
+$a_i=(u_i)_{\pi_i}$ genera $\mathfrak c_{\pi_i}$.
+Como $u_ie_Z=u_i$ y $u_iM\subseteq M$, se tiene
+$u_iL_i\subseteq N_i$. En $U_i$, el operador $u_i$
+actúa por $a_i$: las otras coordenadas de $W_i$
+desaparecen al tomar el cociente. En consecuencia,
+\[
+ a_iU_i\subseteq (N_i+L_{i-1})/L_{i-1}.
+\]
+El cociente $L_i/(N_i+L_{i-1})$ tiene longitud a lo sumo
+$m_{\pi_i}\ord_\varpi(a_i)$.
+
+La filtración $(L_i+N)/N$ de $L/N$ tiene precisamente
+esos cocientes graduados, pues
+$L_i\cap(L_{i-1}+N)=L_{i-1}+N_i$.
+Sumar sus longitudes prueba
+\eqref{eq:cohom-cota-congruencias}.
+\end{proof}
+
+La prueba permite elegir un operador distinto en cada
+graduado. Es válida aunque $u_i$ actúe de manera no nula
+en otros espacios de $Z$.
+B, p.~53, utiliza esta desigualdad para convertir cotas
+de ideales de congruencia en cotas de denominadores.
+La construcción de esos ideales a partir de las
+representaciones automorfas constituye la entrada aritmética.
+
+\subsection{Extensiones, cociclos y torcidos negativos}
+
+Sea $G$ un grupo profinito y $A$ un módulo discreto
+con acción continua de $G$. Un cociclo continuo es
+una aplicación $z:G\to A$ que satisface
+\begin{equation}
+ z(gh)=z(g)+g\,z(h).
+ \label{eq:cohom-cociclo}
+\end{equation}
+Los cociclos de la forma $z(g)=g\,a-a$ son cobordes;
+su cociente define $H^1(G,A)$. El grupo
+$H^0(G,A)=A^G$ está formado por los elementos invariantes.
+Las clases de $H^1$ describen el defecto de compatibilidad
+de una elección de secciones con la acción de $G$.
+
+El origen del cociente de caracteres se ve en una matriz.
+Sobre un anillo de coeficientes, una extensión de dos
+módulos libres de rango uno puede escribirse, después
+de elegir una sección del módulo cociente, como
+\[
+ \rho(g)=
+ \begin{pmatrix}\alpha(g)&b(g)\\0&\beta(g)\end{pmatrix}.
+\]
+La identidad $\rho(gh)=\rho(g)\rho(h)$ implica que
+$z(g)=b(g)\beta(g)^{-1}$ satisface
+\[
+ z(gh)=z(g)+\alpha(g)\beta(g)^{-1}z(h).
+\]
+Cambiar la sección por un múltiplo $a$ del primer vector
+cambia $z(g)$ en
+$z(g)+(\alpha(g)\beta(g)^{-1}-1)a$.
+La acción en el módulo de extensiones es, por tanto,
+la del carácter $\alpha\beta^{-1}$.
+
+En B, §5.2, pp.~54--55, las $h$ líneas añadidas por la torre
+tienen caracteres, para $1\le c\le h$,
+\[
+ \xi_c=\xi_1\chi_\ell^{-(c-1)}.
+\]
+Para $c>d$, la razón $\xi_c\xi_d^{-1}$ es
+$\chi_\ell^{-(c-d)}$. Así aparecen los torcidos negativos
+de índices $1,\ldots,h-1$. La selección de bloques de
+extensiones y sus condiciones locales forman parte de la
+comparación automorfa; el cálculo matricial identifica
+sus coeficientes.
+
+Escribiremos
+\begin{equation}
+ A_{\ell,e}=\Q_\ell/\Z_\ell(-e),\qquad
+ g\cdot a=\chi_\ell(g)^{-e}a,\qquad e\ge1.
+ \label{eq:cohom-torcido}
+\end{equation}
+El grupo aditivo subyacente es $\Q_\ell/\Z_\ell$;
+el torcido especifica su acción de Galois.
+
+\subsection{El núcleo local y la corrección de dualidad}
+
+Sea $S_\ell$ el conjunto de lugares finitos de $E$
+por encima de $\ell$. El grupo $G_{E,S_\ell}$ corresponde
+a la extensión máxima no ramificada fuera de esos lugares
+y los arquimedianos. Definimos
+\begin{equation}
+ \operatorname{Sha}_{\ell,e}(E)=
+ \ker\left(
+ H^1(G_{E,S_\ell},A_{\ell,e})
+ \longrightarrow\prod_{v\mid\ell}H^1(E_v,A_{\ell,e})
+ \right).
+ \label{eq:cohom-sha}
+\end{equation}
+Escribimos $s_{\ell,e}(E)=
+\length_{\Z_\ell}\operatorname{Sha}_{\ell,e}(E)$,
+con valores en $\N\cup\{\infty\}$.
+Todas las cohomologías con estos coeficientes discretos
+son continuas. Para coeficientes $\Z_\ell(e+1)$ se usa
+la interpretación continua correspondiente al límite
+de los coeficientes finitos.
+
+La localización de \eqref{eq:cohom-sha} contiene los
+lugares finitos sobre $\ell$. Para $v\nmid\ell$,
+una clase global es no ramificada. Si $q_v$ es el tamaño
+del cuerpo residual, Frobenius geométrico actúa en
+$A_{\ell,e}$ por $q_v^e$. La descripción de la primera
+cohomología no ramificada como
+$A_{\ell,e}/(q_v^e-1)A_{\ell,e}$ muestra que es cero:
+$q_v^e-1\ne0$ y la multiplicación por cualquier entero
+no nulo es sobreyectiva en $\Q_\ell/\Z_\ell$.
+Cuando $E$ es CM, sus completaciones arquimedianas
+son complejas y su primera cohomología también es cero.
+Esta es la observación de B, Remark~5.2, p.~55.
+
+Recibimos de la dualidad de Poitou--Tate la forma adaptada
+a estos coeficientes, incluidos los pasos a límites
+y las condiciones en los lugares reales.
+Como referencia del teorema para módulos finitos,
+véase \cite{milne-dualidad}, I, §4, Teorema~4.10, p.~57.
+En la situación CM de A/B, el fragmento relevante es
+\begin{equation}
+ \begin{gathered}
+ 0\longrightarrow H^0(G_{E,S_\ell},A_{\ell,e})
+ \longrightarrow\prod_{v\mid\ell}H^0(E_v,A_{\ell,e})\\
+ \longrightarrow
+ H^2(G_{E,S_\ell},\Z_\ell(e+1))^\vee
+ \longrightarrow\operatorname{Sha}_{\ell,e}(E)
+ \longrightarrow0.
+ \end{gathered}
+ \label{eq:cohom-dualidad}
+\end{equation}
+Aquí el superíndice \({}^\vee\) indica el dual
+de Pontryagin, que para un grupo finito conserva su
+orden y su longitud. La teoría de dualidad, y no sólo
+el cálculo de cociclos, proporciona la exactitud
+de este fragmento.
+
+La sobreyección desde el dual de $H^2$ hacia Sha
+ya muestra que $H^2$ finito implica Sha finito.
+Así se obtiene la finitud del núcleo sin presuponerla
+para escribir una identidad de longitudes finitas.
+
+Supongamos ahora que los términos tienen longitud finita.
+Separar \eqref{eq:cohom-dualidad} en dos sucesiones
+exactas cortas da
+\begin{equation}
+ \begin{aligned}
+ &\length_{\Z_\ell}H^2(G_{E,S_\ell},\Z_\ell(e+1))
+   +\length_{\Z_\ell}H^0(G_{E,S_\ell},A_{\ell,e})\\
+ &\hspace{1em}=
+ s_{\ell,e}(E)+
+ \sum_{v\mid\ell}\length_{\Z_\ell}H^0(E_v,A_{\ell,e}).
+ \end{aligned}
+ \label{eq:cohom-longitudes-dualidad}
+\end{equation}
+La primera flecha es inyectiva, por lo que la suma
+de longitudes locales es al menos la longitud global.
+Resulta
+\begin{equation}
+ s_{\ell,e}(E)\le
+ \length_{\Z_\ell}H^2(G_{E,S_\ell},\Z_\ell(e+1)).
+ \label{eq:cohom-sha-le-hdos}
+\end{equation}
+Esta es la dirección que permite utilizar una cota
+superior de $H^2$ para estimar el núcleo local.
+La comparación también se conserva como desigualdad
+de longitudes extendidas antes de probar finitud.
+En la dirección inversa hacen falta las correcciones
+$H^0$. A, (8.8), p.~40, aporta una cota específica de
+ellas al construir la entrada de la capa fija.
+
+\subsection{Un presupuesto simultáneo de longitudes}
+
+Para un entero $t\ge1$ definimos
+\begin{equation}
+ \mathcal V(E,t)=
+ \sup_{\mathcal P\text{ finito}}
+ \sum_{\ell\in\mathcal P}(\log\ell)
+       \sum_{1\le e<t}s_{\ell,e}(E),
+ \label{eq:cohom-presupuesto}
+\end{equation}
+donde $\mathcal P$ recorre conjuntos de primos.
+Si alguna longitud requerida es infinita, el valor es infinito;
+si $t=1$, la suma es vacía y vale cero.
+La notación $\mathcal V(E,t;B)$ de A, (8.2), equivale a
+afirmar finitud de todas las longitudes y
+$\mathcal V(E,t)\le B$.
+Escribimos las sumas primero sobre conjuntos finitos para
+no presuponer su convergencia.
+
+\begin{lema}[Sumas parciales y corte]
+\label{lem:cohom-presupuesto}
+Si todas las longitudes requeridas son finitas y todas las
+sumas parciales de \eqref{eq:cohom-presupuesto} son a lo
+sumo $B<\infty$, entonces $\mathcal V(E,t)\le B$.
+Además, $1\le t'\le t$ implica
+$\mathcal V(E,t')\le\mathcal V(E,t)$.
+Una partición de los primos en un número finito de clases
+con presupuestos $B_1,\ldots,B_u$ da el presupuesto total
+$B_1+\cdots+B_u$.
+Hay a lo sumo $\lfloor B/\log2\rfloor$ pares $(\ell,e)$
+con $1\le e<t$ y $s_{\ell,e}(E)>0$.
+\end{lema}
+
+\begin{proof}
+La primera afirmación es la definición del supremo.
+Para la segunda, cada suma con corte $t'$ es una subsuma
+con sumandos no negativos de la correspondiente con corte $t$.
+Para la tercera, se intersecta cualquier conjunto finito de
+primos con las clases y se suman sus cotas.
+Finalmente, cada longitud positiva es un entero al menos uno,
+así que cada par positivo aporta al menos $\log2$.
+Cualquier colección finita de esos pares queda contenida en
+una suma parcial; su cardinal es, por tanto, a lo sumo
+$B/\log2$. Esto acota también la colección completa.
+\end{proof}
+
+La finitud de cada grupo, por sí sola, no da ese presupuesto.
+La familia artificial $s_{\ell,1}=1$ para todos los primos
+tiene cada término finito y sumas parciales arbitrariamente
+grandes. En el cotejo formal, esta distinción reaparecerá
+como una hipótesis de sumabilidad explícita.
+
+Para $E$ CM abeliano, la conjugación compleja induce una
+involución $c$ en cohomología, mediante un levantamiento
+que normaliza $G_E$ y su acción en los coeficientes.
+No se la considera un elemento de $G_E$ que fijara $E$.
+Cuando $\ell$ es impar, B, p.~58, usa las etiquetas
+\[
+ \operatorname{Sha}_{\ell,e}^{+}
+   =\ker(c-(-1)^e),\qquad
+ \operatorname{Sha}_{\ell,e}^{-}
+   =\ker(c-(-1)^{e+1}).
+\]
+Los operadores
+\[
+ P_+=\frac{1+(-1)^ec}{2},\qquad
+ P_-=\frac{1-(-1)^ec}{2}
+\]
+son idempotentes complementarios: se comprueba expandiendo
+sus productos, con $c^2=1$ y $2$ invertible.
+Sus imágenes dan una suma directa y
+$s_{\ell,e}=s_{\ell,e}^{+}+s_{\ell,e}^{-}$.
+Para $e$ impar, el signo $+$ designa aquí el autoespacio
+$c=-1$. El torcido forma parte de la convención.
+
+En $\ell=2$ no se dispone de esos proyectores integrales.
+Por ejemplo, en $\Z/4\Z$ con $c=-1$, el autoespacio
+$c=+1$ es $2\Z/4\Z$ y el autoespacio $c=-1$ es todo el
+módulo: no constituyen una suma directa.
+Por eso la contribución diádica se trata separadamente.
+Si $B_2$ acota $\sum_{1\le e<t}s_{2,e}(E)$ y
+$B_\pm$ acotan las sumas impares correspondientes,
+ya ponderadas por $\log\ell$, resulta
+\begin{equation}
+ \mathcal V(E,t)\le B_2\log2+B_-+B_+.
+ \label{eq:cohom-particion}
+\end{equation}
+El factor $\log2$ restaura el peso que se omitió al
+definir $B_2$.
+
+\subsection{Del índice local a la pérdida de pendiente}
+
+Volvamos a la etapa theta $j$ de las notas anteriores.
+Escribimos $M^{\rm int}_{j,w}\subseteq M^{\rm pr}_{j,w}$
+para el retículo de intersección y el proyectado, de igual
+rango $d_j>0$ sobre $\mathcal O_w$.
+Con $e_w$ índice de ramificación de $K_w/\Q_\ell$,
+B, pp.~55--56, define
+\begin{equation}
+ \begin{aligned}
+ \eta_{j,w}
+   &=\frac{1}{e_w}\length_{\mathcal O_w}
+       (M^{\rm pr}_{j,w}/M^{\rm int}_{j,w}),\\
+ \eta_j
+   &=\frac{1}{[K:\Q]}
+       \sum_w e_w\eta_{j,w}\log Nw.
+ \end{aligned}
+ \label{eq:cohom-indices}
+\end{equation}
+La construcción proporciona un conjunto finito de lugares
+donde cambia la elección local.
+La primera división normaliza la longitud por ramificación;
+el segundo $e_w$ restituye la longitud integral al calcular
+el índice global. Aquí no aparece un factor dos.
+
+Si $M^{\rm int}_j\subseteq M^{\rm pr}_j$ son los retículos
+globales correspondientes y conservan las mismas métricas,
+la cuenta de cardinalidades por lugares y la normalización
+de pendientes de la Nota~\ref{sec:marcos} dan
+\begin{equation}
+ \frac{\log\#(M^{\rm pr}_j/M^{\rm int}_j)}{[K:\Q]}
+ =\eta_j,\qquad
+ \mu(M^{\rm int}_j)
+ =\mu(M^{\rm pr}_j)-\frac{2\eta_j}{d_j}.
+ \label{eq:cohom-coste-pendiente}
+\end{equation}
+Así se distingue la suma de defectos $\eta_j$ del coste
+de pendiente $2\eta_j/d_j$ y del parámetro espectral
+del marco de la Nota~\ref{sec:geometria}.
+Si se divide posteriormente por un rango retenido menor,
+debe conservarse el cociente entre ambos rangos.
+
+También se comprueba directamente la desaparición del
+cuerpo de coeficientes en una cota uniforme local.
+Si $\eta_{j,w}\le d_jc_\ell$ para todos $w\mid\ell$,
+con $c_\ell\ge0$, entonces
+\[
+ \frac{\eta_j}{d_j}
+ \le\frac{1}{[K:\Q]}
+     \sum_\ell c_\ell\log\ell\sum_{w\mid\ell}e_wf_w
+ =\sum_\ell c_\ell\log\ell,
+\]
+pues $\log Nw=f_w\log\ell$ y
+$\sum_{w\mid\ell}e_wf_w=[K:\Q]$.
+Un subconjunto de lugares se completa usando no negatividad.
+
+\paragraph{La entrada aritmética.}
+La comparación especializada entre congruencias y extensiones
+es lo que permite aplicar esta cuenta.
+B, (5.1), p.~56, afirma, con sus parámetros y suponiendo
+$\mathcal V(E,h)<\infty$,
+\begin{equation}
+ \eta_j\le d_j\left[
+ C_2b x^{2\varepsilon}
+ \left(fm+\frac{|T_2|k(\log x)^2}{n_{\rm sel}^{\,2}}\right)
+ +\mathcal V(E,h)\right].
+ \label{eq:cohom-entrada-indice}
+\end{equation}
+Aquí $h$ es el entero de la torre theta, $m$ su número de
+levantamientos, $f=[E^+:\Q]$ y $n_{\rm sel}$ designa el
+$n=|\mathcal H|$ de B, pp.~54--55.
+No se lo identifica con $[E:\Q]$.
+Los parámetros $b,k,T_2$ conservan el significado de la
+construcción de las Notas~\ref{sec:periodos} y
+\ref{sec:geometria}; $C_2$ se fija antes de hacerlos variar.
+El término de longitudes sí queda definido en esta nota.
+Los otros costes y el puente aritmético siguen siendo
+entradas de la construcción.
+
+La representación recibida en B, pp.~53--55, tiene un
+sumando $\rho_\lambda$ y las líneas
+$\xi_c=\xi_1\chi_\ell^{-(c-1)}$.
+Los grupos de extensiones entre líneas llevan los torcidos
+negativos ya calculados. Para el sumando $\rho_\lambda$
+se utiliza, en cambio, un grupo de Selmer con condición
+finita de Bloch--Kato sobre $\ell$, condición no ramificada
+fuera de $\ell$ y de los lugares adicionales permitidos,
+y sin restricción en esos lugares adicionales.
+No es el mismo núcleo de anulación local de
+\eqref{eq:cohom-sha}.
+
+Si $T_\pi$ es el retículo estable del sumando torcido,
+escribimos $A_\pi=(T_\pi\otimes K_\lambda)/T_\pi$.
+La elección especializada de caracteres proporciona en B
+finitud y la longitud normalizada
+\[
+ s_\pi=
+ \frac{\length_{\mathcal O_\lambda}
+          \operatorname{Sel}(E,A_\pi)}{e_\lambda}
+ \le\nu_\ell+\ell^{-2},\qquad
+ \nu_\ell=\min_{g\in G_E}
+      v_\ell\bigl(\chi_\ell(g)^{hr}-1\bigr),
+\]
+con $r=\dim\rho_\lambda$ y $v_\ell(\ell)=1$, además de
+\[
+ \sum_\ell\nu_\ell\log\ell
+ \le2\log n_{\rm sel}+\log h+\log r.
+\]
+Estas cotas, con su finitud y sus condiciones locales, son
+parte de la entrada.
+El resto $\sum_\ell\ell^{-2}\log\ell$ sí se suma
+elementalmente: lo domina
+$\sum_{n\ge2}(\log n)/n^2<\infty$.
+La finitud de un Selmer cualquiera no implicaría una cota
+uniforme de esta forma.
+
+\subsection{Los cuerpos variables y el orden de las elecciones}
+
+Fijemos un carácter primitivo $\psi$, su cuerpo $F_\psi$,
+su conductor $N_\psi$ y $o=[F_\psi:\Q]$.
+Para primos auxiliares $q,d$ y altura $a\ge2$ se toma
+\begin{equation}
+ \begin{aligned}
+ E_a&=F_\psi\,\Q(\zeta_{2^{a+2}})^+\,
+          \Q(\sqrt{-q})\,\Q(\sqrt{-d}),\\
+ N_a&=\operatorname{lcm}(N_\psi,2^{a+2})qd.
+ \end{aligned}
+ \label{eq:cohom-campos}
+\end{equation}
+El conductor $F_a$ de $E_a$ divide $N_a$.
+Los factores pueden intersectarse; no se multiplican sus
+grados como una igualdad. Sí tenemos
+$[E_a:\Q]\le 4o\,2^a$ y
+$[E_a:F_\psi]$ potencia de dos.
+En consecuencia, todo primo impar que divide $[E_a:\Q]$
+divide $o$, independientemente de $a,q,d$.
+
+Para una escala $Y_0>1$, la admisibilidad de B, pp.~56--57,
+incluye
+\[
+ q\equiv3\pmod8,\qquad d\equiv7\pmod{16},\qquad q\mid d+1,
+\]
+así como $p\mid d+1$ para todo primo impar
+$p\le Y_0^{\varepsilon/5}$, y los intervalos de tamaño
+\begin{equation}
+ \begin{aligned}
+ \tfrac12Y_0^{\varepsilon/5}
+   &<\log q\le Y_0^{\varepsilon/5},\\
+ \tfrac12Y_0^{\varepsilon/5}(\log Y_0)^2
+   &<\log d\le Y_0^{\varepsilon/5}(\log Y_0)^2.
+ \end{aligned}
+ \label{eq:cohom-primos}
+\end{equation}
+La existencia simultánea de estos primos es una entrada
+de la construcción; el argumento de esta nota trabaja con
+cualquier pareja admisible.
+Las cotas inferiores también se usan: para un umbral
+suficientemente grande aseguran $q,d>2X^{401}+1$ cuando
+$Y_0=X^{1/J}$ y $J$ ya está fijado.
+En efecto, $X^{\varepsilon/(5J)}$ acaba dominando
+cualquier múltiplo fijo de $\log X$.
+
+Se fija además $0<\varepsilon<1/52$ y una función entera
+$a(x)$ con
+\begin{equation}
+ x^{2+8\varepsilon}\le2^{a(x)}
+       \le2x^{2+8\varepsilon}.
+ \label{eq:cohom-altura}
+\end{equation}
+La meta es obtener $J\ge1$ y $X_0$ tales que para todo
+$X\ge X_0$ y toda pareja admisible a escala $X^{1/J}$
+exista $W$ con
+\begin{equation}
+ X^{1/J}\le W,\quad W^2\le X,\qquad
+ \mathcal V(E_{a(x)},\lfloor x^{401}\rfloor)
+ \le \exp\!\left(\frac{x^\varepsilon}{2}\right)
+ \quad(W\le x\le W^2).
+ \label{eq:cohom-meta}
+\end{equation}
+La misma pareja $q,d$ se conserva en todo el intervalo.
+La altura puede cambiar con $x$; no se necesita que sea
+monótona. Los parámetros uniformes se eligen antes de
+$X,q,d$, mientras que la posición de la ventana puede
+depender de ellos. Esta es la organización de A,
+Teorema~8.7, p.~41, y B, Proposición~5.3, p.~57.
+
+\subsection{La parte menos y los productos enteros}
+
+El siguiente paso transforma muchas valuaciones locales en
+una sola cantidad arquimediana. Es el Lema~8.1 de A, p.~36.
+
+\begin{lema}[Producto entero]
+\label{lem:cohom-producto}
+Sea $M\ne0$ un entero y supongamos
+$0\le b_\ell\le\ord_\ell(M)$ para los primos considerados.
+Entonces toda suma parcial satisface
+\[
+ \sum_{\ell\in\mathcal P}b_\ell\log\ell\le\log|M|.
+\]
+Si $M$ es el producto de una colección finita, con
+multiplicidades, de enteros algebraicos no nulos estable
+bajo Galois, se obtiene la misma conclusión a partir
+de $b_\ell\le\sum_\alpha v_\ell(\alpha)$, con
+$v_\ell(\ell)=1$.
+\end{lema}
+
+\begin{proof}
+La factorización prima da
+$\log|M|=\sum_\ell\ord_\ell(M)\log\ell$, con sumandos
+no negativos. En el segundo caso, el producto es racional
+por invariancia de Galois, entero por integridad y no nulo
+porque todos los factores lo son.
+La multiplicatividad de la valoración da
+$v_\ell(M)=\sum_\alpha v_\ell(\alpha)$.
+\end{proof}
+
+Si un primer producto $M_1$ permite la comparación salvo
+en un primo $r_1$, y un segundo $M_2$ salvo en otro
+$r_2\ne r_1$, usamos el primero fuera de $r_1$ y el segundo
+en $r_1$. El presupuesto es a lo sumo $\log|M_1M_2|$.
+Esta es una función concreta de los dos primos auxiliares.
+La no anulación, la integridad y la estabilidad de los
+factores deben establecerse antes de usar una cota de
+sus valores absolutos complejos.
+
+\paragraph{La entrada de valores especiales.}
+Sea $E$ CM abeliano de grado $n_E$ y conductor $F$.
+Para $e\ge1$ se consideran los caracteres $\theta$ de
+$\operatorname{Gal}(E/\Q)$ con
+$\theta(c)=(-1)^{e+1}$ y el carácter primitivo
+$\chi_\theta$ de conductor $f_\theta\mid F$ que inducen.
+B, p.~59, utiliza
+\begin{equation}
+ \begin{aligned}
+ B_{e+1,\chi_\theta}
+   &=f_\theta^{\,e}\sum_{u=1}^{f_\theta}
+       \chi_\theta(u)B_{e+1}(u/f_\theta),\\
+ \beta_{e,\theta}
+   &=F\left(\prod_{\substack{p\le e+2\\p\ {\rm primo}}}p\right)
+        B_{e+1,\chi_\theta}.
+ \end{aligned}
+ \label{eq:cohom-bernoulli}
+\end{equation}
+Aquí $B_k(T)$ es el polinomio de Bernoulli.
+La fuente usa los resultados clásicos sobre sus
+denominadores y sobre valores especiales para que
+$\beta_{e,\theta}$ sea entero algebraico no nulo.
+La paridad evita el cero trivial; el valor
+$L(-e,\chi_\theta)=-B_{e+1,\chi_\theta}/(e+1)$ se relaciona
+por la ecuación funcional con un valor de parte real
+$e+1>1$. No se introduce GRH en este paso.
+
+La eliminación de denominadores en
+\eqref{eq:cohom-bernoulli} puede verse expandiendo
+\[
+ f_\theta^{\,e}B_{e+1}(u/f_\theta)
+ =\sum_{r=0}^{e+1}\binom{e+1}{r}
+       B_r u^{e+1-r}f_\theta^{\,r-1}.
+\]
+El único denominador de conductor es $f_\theta$ en
+$r=0$, eliminado por $F$.
+Los denominadores clásicos de los $B_r$ son eliminados
+por el producto de primos hasta $e+2$.
+La colección de factores es estable bajo Galois,
+que permuta los caracteres y conserva su paridad.
+Por tanto $M_e=\prod_\theta\beta_{e,\theta}$ es un
+entero no nulo.
+
+La afirmación aritmética sustantiva de B es, para
+$\ell\nmid2n_E$,
+\begin{equation}
+ s_{\ell,e}^{-}(E)
+ \le\sum_\theta v_\ell(\beta_{e,\theta}).
+ \label{eq:cohom-menos-entrada}
+\end{equation}
+La construcción de anuladores y la comparación con
+cohomología producen esa desigualdad; la cuenta de
+Bernoulli no la demuestra.
+Recibida la entrada, el
+Lema~\ref{lem:cohom-producto} acota la suma sobre todos
+esos primos por $\log|M_e|$.
+
+La estimación arquimediana utilizada en B es
+$|\beta_{e,\theta}|\le16F^{e+2}(e+1)!$.
+Procede de la cota clásica de Fourier para los polinomios
+de Bernoulli y del producto de primos hasta $e+2$.
+Hay a lo sumo $n_E$ caracteres. Para $t\ge2$ y
+$1\le e<t$,
+\[
+ \log|M_e|
+ \le n_E\log\!\bigl(16F^{e+2}(e+1)!\bigr)
+ \le n_E(2t+5)\log(tF).
+\]
+En la última cuenta se usan
+$16\le(tF)^4$, $e+2\le t+1$ y $(e+1)!\le t^t$.
+Como $(t-1)(2t+5)\le3t^2$, se obtiene
+\begin{equation}
+ \sum_{1\le e<t}
+ \sum_{\substack{\ell\ {\rm impar}\\\ell\nmid n_E}}
+   s_{\ell,e}^{-}(E)\log\ell
+ \le3n_Et^2\log(tF).
+ \label{eq:cohom-menos-buenos}
+\end{equation}
+
+\paragraph{Los primos que dividen el grado.}
+Los proyectores de caracteres pueden tener denominadores
+en $\ell\mid n_E$.
+B, p.~60, utiliza entonces un anulador integral en un
+anillo de grupo. La cuenta de adjugata explica cómo
+se extrae un exponente: si la multiplicación por $z$
+en un álgebra finita libre tiene determinante
+$\Delta\ne0$, existe $y$ con $zy=\Delta$.
+Si $z$ anula $bS$, entonces $\Delta b$ anula $S$.
+En efecto, se aplica la identidad matriz por adjugata
+a la coordenada del elemento unidad del álgebra.
+
+La entrada específica proporciona un exponente $r$ y
+una cota de torsión
+\[
+ \ell^r\operatorname{Sha}_{\ell,e}^{-}(E)=0,\quad
+ r\log\ell\le C_0 n_E(e+1)\log(e\ell F),\quad
+ \dim_{\mathbf F_\ell}
+     \operatorname{Sha}_{\ell,e}^{-}(E)[\ell]
+ \le8\ell n_E\log(\ell F).
+\]
+El Lema~\ref{lem:cohom-exponente} prueba primero la finitud
+y después da, al sumar en $e<t$,
+\[
+ \sum_{1\le e<t}s_{\ell,e}^{-}(E)\log\ell
+ \le8C_0\ell n_E^2t^2\log(t\ell F)^2.
+\]
+No bastaría solo el exponente ni solo la dimensión de
+la torsión de orden $\ell$.
+
+Para $E=E_a$ de \eqref{eq:cohom-campos}, los primos impares
+que dividen $n_E$ pertenecen al conjunto fijo de divisores
+de $o$. Así se recupera A, Proposición~8.2, pp.~36--37,
+y B, (5.4), p.~60:
+\begin{equation}
+ B_-\le3n_Et^2\log(tF_a)
+   +C\sum_{\substack{\ell\mid o\\\ell\ne2}}
+       \ell n_E^2t^2\log(t\ell F_a)^2.
+ \label{eq:cohom-menos-total}
+\end{equation}
+Los finitos primos de la segunda suma se pueden absorber
+en una constante dependiente de $\psi$.
+Esa constante ya no se describe como absoluta.
+
+\subsection{La parte más: casos, deformaciones y multiplicidades}
+
+El bloque de B, pp.~60--62, presenta la entrada agregada
+\begin{equation}
+ B_+\le(F_at)^C+C B_{\rm exc},
+ \label{eq:cohom-mas-total}
+\end{equation}
+con $C$ fijo para la familia.
+$B_{\rm exc}$ controla las contribuciones de un número
+fijo de torres excepcionales.
+La construcción aritmética de esta desigualdad usa
+realizaciones automorfas y problemas de deformación
+con condiciones locales precisas.
+Separamos aquí las cuentas elementales que explican su
+forma de esas entradas especializadas.
+
+A, pp.~37--39, fija un conjunto finito de primos impares
+$\mathcal B_\psi$, que contiene $3$ y depende solo de
+$\psi$ y de sus auxiliares fijos.
+Para un carácter $\theta$ se quita primero su componente
+de orden potencia de $\ell$ y después su componente de
+conductor potencia de $\ell$.
+El carácter resultante $\theta_\ell^\circ$ tiene orden
+y conductor primos a $\ell$.
+La separación par/impar siguiente se refiere al
+\emph{orden} de ese carácter.
+Llamamos resonancia a $\ell-1\mid2e$.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.8cm}YY@{}}
+\toprule
+Caso & Condición relevante & Entrada utilizada\\
+\midrule
+I & $\ell\notin\mathcal B_\psi$, sin resonancia
+  & Cota del total sobre primos y caracteres mediante productos.\\
+Z & $\ell\notin\mathcal B_\psi$, resonancia, $\theta=1$
+  & Anulación del carácter trivial.\\
+II & $e\ge2$, orden de $\theta_\ell^\circ$ par;
+       primo excepcional o resonancia
+   & Cota polinómica en $\ell N_ae$.\\
+III & $\ell\notin\mathcal B_\psi$, resonancia;
+       $\theta\ne1$ de orden impar
+    & Cota polinómica en $\ell N_ae$.\\
+IV & $\ell\in\mathcal B_\psi$, $e\ge2$;
+      orden de $\theta_\ell^\circ$ impar
+   & Reducción a una torre de base fija.\\
+V & $\ell\in\mathcal B_\psi$, $e=1$
+  & Dos ramas según el conductor diádico.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+La tabla conserva el reparto de la fuente, sin reemplazar
+sus hipótesis locales.
+Fuera de $\mathcal B_\psi$, en resonancia se tiene
+$\ell\le2e+1<q,d$ y $\ell\nmid N_\psi$; en la familia,
+esto permite usar $\theta_\ell^\circ=\theta$.
+Si además $e=1$, se tendría $\ell=3$, ya incluido en
+el conjunto excepcional.
+Dentro de él, se separa $e=1$ y luego la paridad del orden
+para $e\ge2$. De este modo no se pierde el caso V.
+
+\begin{lema}[Conteo por núcleos]
+\label{lem:cohom-nucleos}
+Si $A$ es un grupo abeliano finito, entonces
+\[
+ \sum_{\substack{H\le A\\A/H\ \text{cíclico}}}
+     \varphi([A:H])=|A|.
+\]
+\end{lema}
+
+\begin{proof}
+Se particionan los caracteres de $A$ según su núcleo.
+La imagen de cada carácter es cíclica. Para un núcleo
+$H$, los caracteres fieles del cociente cíclico $A/H$
+son exactamente $\varphi([A:H])$.
+La Nota~\ref{sec:caracteres} probó que hay $|A|$
+caracteres en total; sumar la partición da la igualdad.
+\end{proof}
+
+La cota por núcleo de A, (8.5), p.~38, lleva ese factor
+$\varphi([A:H])$. El lema controla el coste total de
+agrupar los caracteres después de recibir la estimación
+aritmética por núcleo.
+En el caso I, la construcción de un producto entero no
+nulo es lo que permite sumar primos sin cota superior.
+Solo después, en los casos resonantes restantes,
+$\ell\le2e+1<2t+1$ deja a lo sumo $2t$ primos, $t$
+torcidos y $[E_a:\Q]\le N_a$ caracteres.
+Una cota por término de la forma $(\ell N_ae)^C$, con
+el peso $\log\ell$, se convierte así en otra potencia
+fija de $N_at$.
+
+\paragraph{Qué aporta la cohomología a una deformación.}
+Sea $\bar\rho:G\to\operatorname{GL}_n(k)$ y
+$k[\delta]/(\delta^2)$ el anillo de números duales.
+Una deformación que reduce a $\bar\rho$ se escribe
+$\rho_\delta(g)=(I+\delta c(g))\bar\rho(g)$.
+Al multiplicar matrices se obtiene
+\[
+ c(gh)=c(g)+\bar\rho(g)c(h)\bar\rho(g)^{-1}.
+\]
+Es la ecuación de cociclo para la representación adjunta.
+Conjugar por $I+\delta X$ cambia $c(g)$ por
+$c(g)+X-\bar\rho(g)X\bar\rho(g)^{-1}$, un coborde.
+Así aparece $H^1(G,\operatorname{ad}\bar\rho)$ como
+espacio de deformaciones de primer orden.
+Fijar determinante, polarización o condiciones locales
+restringe ese espacio.
+Este cálculo no demuestra las comparaciones entre
+anillos de deformación y álgebras de Hecke, ni sus
+estimaciones cuantitativas.
+
+Dos cuentas adicionales aclaran las distintas entradas.
+Para $r\ge31$, $e\ge1$ y $|z|=1$,
+\[
+ |zr^e+1+z^{-1}r^{-e}|
+ \ge r^e-1-r^{-e}>3r^{e-1/2}.
+\]
+La segunda desigualdad se sigue de
+$\sqrt r-r^{-1/2}-r^{-3/2}>3$.
+Esa traza no puede coincidir con una traza cuyo valor
+absoluto sea a lo sumo $3r^{e-1/2}$.
+La realización automorfa, la cota de la segunda traza y
+el producto integral que se construye con las diferencias
+siguen siendo entradas.
+
+Por otra parte, los cuatro caracteres
+$\alpha\Psi\oplus\Psi\oplus\alpha\oplus1$ preservan la
+forma alternante
+$x_1y_4-x_4y_1+x_2y_3-x_3y_2$ con multiplicador
+$\alpha\Psi$.
+Para $\alpha=\chi_\ell$ y $\Psi=\theta\chi_\ell^e$,
+los exponentes son $e+1,e,1,0$.
+Son distintos cuando $e\ge2$, mientras que $e=1$
+repite los dos exponentes centrales.
+Esto explica por qué una entrada de peso regular no
+resuelve por sí sola el caso V.
+B, pp.~61--62, recurre a comparaciones adicionales de
+Selmer y a dos torcidos concretos en el argumento de
+anulación racional. Su alcance no se extiende a cualquier
+grupo de Selmer.
+
+\subsection{La entrada de capa fija y el papel de la homología}
+
+A, Proposición~8.4, pp.~39--40, y B, p.~64, utilizan
+la siguiente entrada, denominada \texttt{LemmaK} en el
+código. Existe un exponente absoluto $C_K\ge1$ tal que,
+para un cuerpo totalmente complejo $L$ que contiene
+$\mu_\ell$ si $\ell$ es impar o $\mu_4$ si $\ell=2$,
+y para $e\ge1$, el grupo
+$H^2(G_{L,S_\ell},\Z_\ell(e+1))$ es finito y
+\begin{equation}
+ \begin{split}
+ (\log\ell)\,W_\ell(L,e)
+ &=
+ \log\#H^2(G_{L,S_\ell},\Z_\ell(e+1))\\
+ &\le
+ \exp\!\left((2e[L:\Q])^{C_K}
+                   \log(2|\operatorname{disc}L|)\right),
+ \end{split}
+ \label{eq:cohom-lema-k}
+\end{equation}
+donde $W_\ell(L,e)$ denota la longitud de ese $H^2$
+sobre $\Z_\ell$.
+Lo acotado es el \emph{logaritmo} de la cardinalidad.
+La finitud forma parte de la entrada; no se deduce
+simplemente asignando una expresión real a una longitud
+que todavía pudiera ser infinita.
+
+La ruta que A desarrolla para esta cota tiene varios
+ingredientes. Una entrada de homología impar, llamada
+\texttt{BOdd}, controla el rango de una imagen filtrada
+especificada por operadores de bloques y estabilización.
+No afirma que toda la homología impar tenga ese rango.
+Las etapas \texttt{SClass}, \texttt{SDetect},
+\texttt{SFew} y \texttt{SCount} construyen clases,
+las detectan y comparan su número con caracteres
+equivariantes de grupos de clases.
+La torsión integral, los pasos al límite y el descenso
+a cuerpos auxiliares completan la comparación con
+cohomología.
+Son entradas matemáticas sustantivas; el siguiente
+conteo explica una de sus funciones sin reemplazarlas.
+
+\begin{lema}[Rango y torsión en una imagen finita]
+\label{lem:cohom-rango-torsion}
+Sea $H$ un grupo abeliano cuyo subgrupo de torsión es
+finito, de orden $T$. Sea $J\subset H$ de rango a lo
+sumo $r$ y $f:H\to B$ un homomorfismo, donde $qB=0$
+para un entero $q\ge1$. Entonces
+$\#f(J)\le q^rT$.
+\end{lema}
+
+\begin{proof}
+Elijamos un conjunto finito de valores distintos de
+$f(J)$ y preimágenes en $J$. El subgrupo $J_0$ generado
+por ellas es finitamente generado:
+$J_0\simeq\Z^{r_0}\oplus T_0$, con $r_0\le r$ y
+$|T_0|\le T$.
+La restricción de $f$ factoriza por $J_0/qJ_0$, de
+cardinal a lo sumo $q^rT$.
+Por tanto, ningún conjunto finito de valores de $f(J)$
+tiene más elementos. Esto prueba la finitud de la
+imagen completa y la cota.
+\end{proof}
+
+En la aplicación, la reducción, el homomorfismo de
+Bockstein y la estabilización aportan dos factores
+de torsión de homología integral, además de un factor
+$(\ell^\nu)^{r_2(L)}$.
+El conteo de caracteres de clases contiene ese mismo
+factor, que se cancela. El resultado de A, (8.7),
+ya no depende de $\nu$.
+Esta uniformidad es lo que permite pasar al límite
+con una cota de longitud.
+Saber que cada grupo de clases de cada capa es finito
+no daría la misma conclusión.
+
+La entrada de torsión utilizada debe incluir todos los
+primos. A, p.~40, advierte que una cota clásica formulada
+solo salvo primos pequeños no basta para ese propósito.
+Cuando faltan ciertas condiciones de raíces de unidad
+o de rango, se pasa a un cuerpo auxiliar con controles
+específicos de grado, discriminante y descenso de la
+longitud; no se presupone monotonía para cualquier
+extensión de cuerpos.
+
+Finalmente, la dualidad y el cálculo local dan, en la
+situación de A, (8.8),
+\begin{equation}
+ W_\ell(L,e)
+ \le s_{\ell,e}(L)
+     +n\bigl(2+\lfloor\log_\ell n\rfloor+e\bigr),
+ \qquad n=[L:\Q].
+ \label{eq:cohom-correccion-local}
+\end{equation}
+La hipótesis de raíces implica $\ell\le n+1$.
+La corrección local, multiplicada por $\log\ell$,
+se absorbe aumentando el exponente de
+\eqref{eq:cohom-lema-k}.
+Los controles principales de tamaño proceden de las
+entradas homológicas y de clases anteriores.
+En esta entrega se coteja su ensamblaje y su aplicación;
+no se reconstruye toda esa teoría.
+
+\subsection{Dos cotas de torre y una base diádica uniforme}
+
+Sea $L_\nu/L_0$ la capa de nivel $\nu$ de una torre
+ciclotómica $\Z_\ell$ sobre una base abeliana apropiada.
+La base contiene $\mu_\ell$, y $\mu_4$ en el caso diádico.
+Las entradas de A, p.~40, distinguen dos estimaciones.
+
+La primera proporciona un entero $R$ que acota el
+número de generadores del módulo pertinente,
+$R'\le R$ centros $s_1,\ldots,s_{R'}$ en una extensión
+ultramétrica de $\Q_\ell$ y un entero $c$ que registra
+raíces de unidad en la base. Ponemos
+\[
+ j_0=\lfloor\log_\ell R\rfloor+3\quad(R>0);
+ \qquad j_0=3\quad(R=0).
+\]
+Esta última convención coincide con
+\texttt{Nat.log} en el código.
+Si $B\ge0$ es entero y
+$|s_i-e|_\ell\ge\ell^{-B}$ para todo $i$, se tiene
+\begin{equation}
+ s_{\ell,e}(L_\nu)
+ \le R'\bigl(\max\{\nu,j_0\}+c+B\bigr).
+ \label{eq:cohom-torre-ordinaria}
+\end{equation}
+El valor absoluto en la base se normaliza por
+$|\ell|_\ell=\ell^{-1}$.
+La cota se aplica cuando el torcido está suficientemente
+separado de los centros.
+
+La segunda estimación no exige esa separación:
+\begin{equation}
+ s_{\ell,e}(L_\nu)
+ \le W_\ell(L_{j_0},e)+R(\nu-j_0)_+,
+ \qquad (u)_+=\max\{u,0\}.
+ \label{eq:cohom-segunda-cota}
+\end{equation}
+Esta es la forma de \texttt{SecondBound} leída en Lean:
+el primer término de la derecha es la longitud de
+$H^2$ en una capa fija.
+La prueba cotejada compara primero longitudes de Sha
+entre capas y después usa
+$s_{\ell,e}(L_{j_0})\le W_\ell(L_{j_0},e)$.
+La resta del código es la resta natural truncada.
+
+La desigualdad se formula inicialmente con longitudes
+extendidas. La entrada \eqref{eq:cohom-lema-k} da
+finitud y un número concreto para la capa fija; luego
+\eqref{eq:cohom-segunda-cota} transporta ambos a la
+capa variable.
+Aplicar directamente la cota gruesa a toda la capa
+variable introduciría su grado creciente elevado a
+$C_K$ en el exponente.
+El traslado a grado acotado es esencial para el
+presupuesto final.
+B, pp.~63--64, comprime este paso; A, pp.~40--41, y
+el tipo formal permiten hacerlo explícito.
+
+\begin{lema}[Modelo de crecimiento por capas]
+\label{lem:cohom-crecimiento}
+Sea $M$ un $\Z_\ell$-módulo generado por a lo sumo
+$R$ elementos y $\lambda_\nu=\length(M/\ell^\nu M)$.
+Entonces esos cocientes son finitos y, para $\nu,j\ge0$,
+\[
+ \lambda_\nu\le\lambda_j+R(\nu-j)_+.
+\]
+\end{lema}
+
+\begin{proof}
+El cociente de nivel $\nu$ es cociente de
+$(\Z_\ell/\ell^\nu\Z_\ell)^R$, así que es finito.
+Si $\nu\le j$, es también cociente del de nivel $j$.
+Si $\nu\ge j$, la sucesión
+\[
+ 0\longrightarrow\ell^jM/\ell^\nu M
+ \longrightarrow M/\ell^\nu M
+ \longrightarrow M/\ell^jM\longrightarrow0
+\]
+es exacta. El primer término está generado por a lo
+sumo $R$ elementos y anulado por $\ell^{\nu-j}$;
+es cociente de
+$(\Z_\ell/\ell^{\nu-j}\Z_\ell)^R$ y tiene longitud
+a lo sumo $R(\nu-j)$.
+La aditividad termina la prueba.
+\end{proof}
+
+Este modelo demuestra cómo una cota de generadores
+produce un resto lineal en los niveles añadidos.
+La identificación de los objetos de Iwasawa con los
+cocientes pertinentes y su comparación con Galois
+son entradas adicionales.
+Tampoco se identifica sin más la cota de generadores
+con el rango de un módulo libre.
+
+\paragraph{Uniformidad cuando varían los primos auxiliares.}
+Para los primos impares de $\mathcal B_\psi$, las bases
+usadas en la reducción se fijan por $\psi$ y $\ell$.
+En el caso diádico, una base auxiliar depende de $q,d$.
+La anulación clásica del invariante $\mu$ para un
+cuerpo abeliano fijo, de Ferrero--Washington
+\cite{ferrero-washington}, no proporciona por sí sola
+una cota uniforme al variar esos dos primos.
+La entrada necesaria tiene el orden
+\[
+ \text{fijado }\psi,\quad
+ \exists R\quad\forall(q,d)\text{ admisibles}\quad
+ \text{las estimaciones de torre se cumplen}.
+\]
+Los centros pueden depender de la pareja; su número
+está acotado antes de elegirla.
+
+La interfaz diádica \texttt{TwoBase} añade
+$\mu_4\subset L_0$, $[L_0:\Q]\le8o$ y una inmersión
+ciclotómica de conductor $4N_\psi qd$.
+Para el cuerpo $E_a$ de \eqref{eq:cohom-campos}
+se construye una capa auxiliar con
+\begin{equation}
+ \nu\le a+2,\qquad
+ s_{2,e}(E_a)\le1+s_{2,e}(L_\nu).
+ \label{eq:cohom-puente-diadico}
+\end{equation}
+Se mantiene el término $+1$: al sumar $1\le e<t$
+cuesta a lo sumo $t\log2$.
+La comparación no identifica literalmente $E_a$,
+$L_0$ y $L_\nu$.
+El control de raíces en la base proporciona también
+una cota uniforme para $c$.
+
+El cotejo de \texttt{TwoIn} conserva precisamente
+la elección de $R$ antes de $q,d$.
+En \texttt{towerTwo} se usa
+$R=4(g+6\deg M)$, donde $g$ procede de una base fija,
+y después se aplican pasos específicos de extensiones
+de caracteres y extensiones cuadráticas.
+La existencia de un número finito de generadores para
+cada pareja, sin un control común, no bastaría.
+Una vez fijados $R$ y $j_0$, el grado de $L_{j_0}$
+está acotado; su discriminante todavía depende de $q,d$.
+
+\subsection{Pocos torcidos excepcionales}
+
+El paso siguiente es finito y no requiere teoría de
+Iwasawa. Es el Lema~8.5 de A, p.~40.
+
+\begin{lema}[Separación ultramétrica]
+\label{lem:cohom-excepcionales}
+Sean $s_1,\ldots,s_r$ elementos de una extensión
+ultramétrica de $\Q_\ell$, con el valor absoluto usual
+en la base, y $Z\ge1$ entero.
+Existe $\mathcal E\subseteq\{1,\ldots,Z\}$ con
+$|\mathcal E|\le r$ tal que
+\[
+ e\notin\mathcal E,\quad1\le e\le Z
+ \quad\Longrightarrow\quad
+ |s_i-e|_\ell\ge\ell^{-\lfloor\log_\ell Z\rfloor}
+ \quad\text{para todo }i.
+\]
+\end{lema}
+
+\begin{proof}
+Para cada $i$ elegimos un entero $e_i$ del intervalo
+que minimice $|s_i-e_i|_\ell$ y ponemos
+$\mathcal E=\{e_1,\ldots,e_r\}$.
+Si $e\ne e_i$, la desigualdad ultramétrica y la
+minimalidad dan
+\[
+ |e-e_i|_\ell
+ \le\max\{|s_i-e_i|_\ell,|s_i-e|_\ell\}
+ =|s_i-e|_\ell.
+\]
+El entero no nulo $e-e_i$ tiene valor absoluto
+ordinario a lo sumo $Z$, así que
+$\ord_\ell(e-e_i)\le\lfloor\log_\ell Z\rfloor$.
+Esto prueba la desigualdad, incluso si el mínimo es
+cero. Si $r=0$, sirve el conjunto vacío.
+\end{proof}
+
+Se aplica una sola vez con $Z=\lfloor X^{401}\rfloor$.
+El intervalo cubre todos los torcidos necesarios para
+todos los $x\le X$.
+Reunimos los conjuntos excepcionales de las torres
+impares pertinentes y de la torre diádica.
+Su unión tiene cardinal a lo sumo
+\[
+ R_\psi=R_2+\sum_{\ell\in\mathcal B_\psi}R_\ell,
+\]
+con las cotas de generadores de las torres usadas.
+Los conjuntos y sus posiciones pueden depender de
+$X,q,d$, pero $R_\psi$ ya está fijado.
+Fuera de la unión se aplica
+\eqref{eq:cohom-torre-ordinaria} con
+$B=\lfloor\log_\ell Z\rfloor$.
+
+La selección no controla todavía el tamaño ordinario
+de los enteros excepcionales. El siguiente lema
+elige una escala que proporciona exactamente ese
+control para los que intervienen en las sumas.
+
+\subsection{Una ventana común por un argumento de huecos}
+
+\begin{lema}[Hueco multiplicativo]
+\label{lem:cohom-ventana}
+Sea $\mathcal E\subset\N_{>0}$ con $|\mathcal E|\le R$,
+$0<\beta\le C_0$ y $X>1$.
+Pongamos
+\[
+ J=2^{R+2}(C_0/\beta)^R.
+\]
+Existe $W$ con $X^{1/J}\le W$ y $W^2\le X$ tal que,
+para todo $x\in[W,W^2]$ y $e\in\mathcal E$,
+\[
+ e\le x^{C_0}\quad\Longrightarrow\quad e\le x^\beta.
+\]
+\end{lema}
+
+\begin{proof}
+Escribamos $U=\log X$ y
+\[
+ u_i=\frac U2\left(\frac{\beta}{2C_0}\right)^i,
+ \qquad 0\le i\le R.
+\]
+Los $R+1$ intervalos $(\beta u_i,2C_0u_i]$ son
+disjuntos: el extremo superior del siguiente coincide
+con el extremo inferior, excluido, del anterior.
+Uno no contiene ninguno de los a lo sumo $R$ números
+$\log e$, con $e\in\mathcal E$.
+Elegimos ese índice y ponemos $W=\exp(u_i)$.
+Entonces
+\[
+ \frac{\log X}{J}
+ \le\frac{U}{2^{R+1}(C_0/\beta)^R}
+ \le u_i\le U/2.
+\]
+Esto da las dos condiciones sobre $W$.
+Si $W\le x\le W^2$ y
+$x^\beta<e\le x^{C_0}$, se tendría
+$\beta u_i<\log e\le2C_0u_i$, contradicción.
+\end{proof}
+
+Esta prueba sigue B, Lema~5.5, p.~63.
+A, Lema~8.6, p.~41, prueba la selección equivalente
+por inducción, suprimiendo un punto y reduciendo la
+escala. El cotejo de \texttt{window1} siguió esa
+inducción completa en Lean.
+En ambos casos se conserva la misma constante suficiente
+para la aplicación.
+
+Tomamos ahora
+\begin{equation}
+ C_0=401,\qquad
+ \beta=\frac{\varepsilon}{2C_K},\qquad
+ J=2^{R_\psi+2}
+       \left(\frac{802C_K}{\varepsilon}\right)^{R_\psi}.
+ \label{eq:cohom-eleccion-j}
+\end{equation}
+La condición $C_K\ge1$ y el rango de $\varepsilon$
+aseguran $\beta\le C_0$.
+El resultado es la implicación simultánea
+\begin{equation}
+ e\in\mathcal E,\quad e\le x^{401},\quad W\le x\le W^2
+ \quad\Longrightarrow\quad
+ e\le x^{\varepsilon/(2C_K)}.
+ \label{eq:cohom-torcido-pequeno}
+\end{equation}
+Los torcidos excepcionales no tienen que desaparecer.
+Si están presentes a escala $x$, son suficientemente
+pequeños para la cota de capa fija.
+El intervalo se elige una sola vez para toda la unión
+de excepciones, de modo que sirve simultáneamente
+a todos los primos pertinentes.
+
+\subsection{El discriminante y la cuenta final de exponentes}
+
+Mostramos ahora cómo las entradas anteriores producen
+\eqref{eq:cohom-meta}. Todas las constantes que siguen
+dependen solo de los datos fijados y de $\varepsilon$;
+los umbrales pueden aumentarse un número finito de veces
+sin depender de la pareja admisible.
+
+\paragraph{Conductor y discriminante.}
+Puesto que $x\ge W\ge Y_0=X^{1/J}$,
+\eqref{eq:cohom-primos} y \eqref{eq:cohom-altura} dan
+\begin{equation}
+ \log N_{a(x)}
+ \le C_\psi\left[\log x+
+              x^{\varepsilon/5}(1+\log x)^2\right].
+ \label{eq:cohom-conductor}
+\end{equation}
+En las capas fijas pertinentes el grado está acotado
+en términos de $\psi$.
+El control de la inmersión ciclotómica y del
+discriminante de la capa da una cota del mismo tipo:
+\begin{equation}
+ [L_{j_0}:\Q]\le D_\psi,\qquad
+ \log(2|\operatorname{disc}L_{j_0}|)
+ \le C_\psi\left[\log x+
+              x^{\varepsilon/5}(1+\log x)^2\right].
+ \label{eq:cohom-discriminante}
+\end{equation}
+La comparación de cuerpos y discriminantes es una entrada
+de la torre, cotejada en \texttt{Layerdisc}.
+El término que contiene $\log(qd)$ está conservado
+mediante \eqref{eq:cohom-primos}.
+Un grado acotado no implica que el discriminante
+sea constante.
+
+\paragraph{Los torcidos excepcionales.}
+Por \eqref{eq:cohom-torcido-pequeno},
+$(2e[L_{j_0}:\Q])^{C_K}\le C_\psi x^{\varepsilon/2}$.
+El exponente del lado derecho de
+\eqref{eq:cohom-lema-k} es, por tanto, a lo sumo
+\begin{equation}
+ \begin{split}
+ C_\psi x^{\varepsilon/2}
+       [\log x+x^{\varepsilon/5}(1+\log x)^2]
+ \le C_\psi' x^{3\varepsilon/4}
+ \end{split}
+ \label{eq:cohom-exponente-final}
+\end{equation}
+para $x$ suficientemente grande.
+En efecto,
+$\varepsilon/2+\varepsilon/5=7\varepsilon/10
+ <3\varepsilon/4$.
+Al dividir por $x^{3\varepsilon/4}$ quedan
+$x^{-\varepsilon/4}\log x$ y
+$x^{-\varepsilon/20}(1+\log x)^2$, que tienden a cero.
+La contribución de la capa fija es entonces
+$\exp(C_\psi'x^{3\varepsilon/4})$ para la longitud
+ponderada por $\log\ell$.
+La comparación \eqref{eq:cohom-segunda-cota} añade
+el resto lineal, y \eqref{eq:cohom-puente-diadico}
+conserva el error uno.
+
+\paragraph{Los torcidos ordinarios.}
+En la ventana,
+$\log X\le J\log x$ y
+$\log Z\le401\log X$.
+La altura diádica satisface
+$\nu\le a(x)+2=O_\varepsilon(\log x)$.
+Las otras torres requeridas por la reducción tienen
+sus controles de nivel fijados por las entradas de
+A, p.~40. Aplicando \eqref{eq:cohom-torre-ordinaria},
+el coste por torcido ordinario en estas torres es
+$O_{\psi,\varepsilon}(\log x)$.
+Sumar hasta $t\le x^{401}$ y añadir el error diádico
+de \eqref{eq:cohom-puente-diadico} cuesta a lo sumo
+$C_{\psi,\varepsilon}x^{401}(1+\log x)$.
+
+Hay a lo sumo $R_\psi$ torcidos excepcionales y un
+número fijo de torres. Así, el total de las contribuciones
+diádica y de torre excepcional está acotado por una
+expresión de la forma
+\[
+ C_{\psi,\varepsilon}x^{401}(1+\log x)
+ +C_{\psi,\varepsilon}
+        \exp(C_\psi'x^{3\varepsilon/4}).
+\]
+El margen $3/4<4/5$ absorbe las constantes y el término
+polinómico. Tras aumentar un umbral uniforme, esto
+proporciona las cotas de B, p.~64,
+\begin{equation}
+ B_2\le\exp(x^{4\varepsilon/5}),\qquad
+ B_{\rm exc}\le\exp(x^{4\varepsilon/5}).
+ \label{eq:cohom-cotas-torres}
+\end{equation}
+El peso $\log2$ de $B_2$ se insertará al final;
+pasar entre longitud y longitud ponderada introduce
+solo constantes para estos primos fijos.
+
+\paragraph{Cerrar la suma.}
+La estimación \eqref{eq:cohom-conductor} y
+$t=\lfloor x^{401}\rfloor$ implican, eventualmente,
+\[
+ \log(F_at)\le\log(N_at)\le2x^{\varepsilon/4}.
+\]
+El margen $\varepsilon/4-\varepsilon/5$ absorbe
+los logaritmos y las constantes.
+Como $n_E\le F_a$, la cota
+\eqref{eq:cohom-menos-total} es a lo sumo
+$C_1(F_at)^4$, con $C_1$ dependiente de $\psi$.
+Para comprobar esta simplificación, $n_E^2t^2\le(F_at)^2$
+y cada uno de los finitos factores
+$\log(t\ell F_a)^2$ se domina por una constante por
+$(F_at)^2$; el primer término se absorbe de igual modo.
+Por tanto
+\[
+ B_-\le C_1\exp(8x^{\varepsilon/4}),\qquad
+ B_+\le\exp(2Cx^{\varepsilon/4})
+                  +C\exp(x^{4\varepsilon/5}).
+\]
+Insertando estas expresiones en
+\eqref{eq:cohom-particion} obtenemos
+\begin{equation}
+ \begin{split}
+ \mathcal V(E_{a(x)},t)
+ &\le(\log2+C)\exp(x^{4\varepsilon/5})
+       +C_1\exp(8x^{\varepsilon/4})
+       +\exp(2Cx^{\varepsilon/4})\\
+ &\le\exp(x^\varepsilon/2)
+ \end{split}
+ \label{eq:cohom-cierre}
+\end{equation}
+para un umbral uniforme suficientemente grande.
+La última desigualdad se prueba dividiendo el logaritmo
+de cada término por $x^\varepsilon$:
+todos tienden a cero, y el número de términos es fijo.
+Por ejemplo, se acota cada término por
+$\exp(x^\varepsilon/4)$ y se absorbe su suma en
+$\exp(x^\varepsilon/2)$ al aumentar el umbral.
+
+Una potencia fija de $N_at$ no se ha declarado
+polinómica en $x$; lo demostrado es
+$\log((N_at)^C)=o(x^\varepsilon)$.
+El objetivo es
+$\exp(x^\varepsilon/2)=\sqrt{\exp(x^\varepsilon)}$.
+La expresión $\exp(x^{\varepsilon/2})$ sería una meta
+mucho menor y no se obtiene de esta comparación.
+
+\begin{proposicion}[Ventana aritmética condicionada]
+\label{prop:cohom-ventana-aritmetica}
+Recibidas las entradas de congruencias, caracteres,
+automorfía y compatibilidad local, la cota de capa fija
+y los controles uniformes de torre descritos en esta
+nota, se obtiene \eqref{eq:cohom-meta} con el orden de
+elecciones allí indicado.
+\end{proposicion}
+
+\begin{proof}
+Se fijan las cotas de generadores y $C_K$, luego $J$
+por \eqref{eq:cohom-eleccion-j} y un umbral común
+para las comparaciones anteriores.
+Dado $X$ y una pareja admisible, el
+Lema~\ref{lem:cohom-excepcionales} produce una unión
+de excepciones de tamaño a lo sumo $R_\psi$.
+El Lema~\ref{lem:cohom-ventana} elige una sola ventana.
+La estimación \eqref{eq:cohom-cierre} vale para todos
+sus puntos y para la misma pareja de primos.
+Las entradas de torre y de caracteres proporcionan
+finitud antes de convertir las longitudes en números;
+los productos enteros y las cotas de sumas parciales
+permiten aplicar el Lema~\ref{lem:cohom-presupuesto}.
+Esto da simultáneamente la suma y su cota.
+\end{proof}
+
+Si el corte $h$ de \eqref{eq:cohom-entrada-indice}
+satisface $h\le\lfloor x^{401}\rfloor$, la monotonía
+del corte permite insertar esta estimación en el
+defecto integral de los periodos.
+La elección final de parámetros todavía debe comprobar
+esa desigualdad y los demás rangos de la construcción.
+
+\subsection{Concordancia localizada con Lean y alcance}
+
+\begingroup
+\raggedright
+Se conserva el espejo
+\texttt{CocoSgt/riemann-hypothesis-lean} en la revisión
+\texttt{7cbf7a0c32fca1badf05931879a37c3f8a2b03b4}.
+La concordancia de esta etapa comprende 36 archivos:
+34 lecturas completas y dos selectivas.
+Se recuperaron sus contenidos completos y se
+recalcularon SHA-256 y hashes de blobs Git.
+El manifiesto de \texttt{REGISTRO.json} registra las
+rutas, los intervalos leídos, las declaraciones,
+las pruebas y las hipótesis retenidas.
+Un archivo homónimo descartado durante la búsqueda
+queda fuera de ese recuento.
+
+\begin{enumerate}
+\item \textbf{Coeficientes, longitudes y dualidad.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/GaloisCohomology/Statement.lean}{\texttt{GaloisCohomology/Statement}}
+distingue \texttt{qzTw}, \texttt{Sha}, \texttt{shaLen}
+y \texttt{VLen}.
+Las longitudes permanecen en $\N\cup\{\infty\}$.
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/GaloisCohomologyLength/Formula.lean}{\texttt{Formula}}
+prueba la identidad bajo
+\texttt{PoitouTateDuality}, \texttt{LocalFinitenessK},
+\texttt{LocalTateDualityK} y el caso permitido
+$\ell\ne2$ o ausencia de lugares reales.
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AdditiveValuationNorms/ShaLeV.lean}{\texttt{ShaLeV}}
+deduce la desigualdad de longitudes extendidas.
+Las pruebas de dualidad recibidas por esos archivos
+siguen siendo entradas.
+
+\item \textbf{Las dos estimaciones de torre.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/SecondBound.lean}{\texttt{SecondBound}}
+define proposiciones:
+\texttt{ABound} reúne la cota fuera de centros y
+la segunda cota.
+En esta última, \texttt{VLen} corresponde a la capa
+fija $j_0$, mientras \texttt{shaInv} corresponde a la
+capa variable.
+Se leyeron las pruebas de crecimiento y centros de
+\texttt{Growth} y \texttt{ExistsCentresLevel},
+y los ensamblajes
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AdditiveValuationNorms/ABoundOfDescends.lean}{\texttt{ABoundOfDescends}}
+y \texttt{ABoundOfIsTower}.
+La teoría que suministra la torre, su descenso y
+las comparaciones importadas no se auditó completa.
+El Lema~\ref{lem:cohom-crecimiento} es un modelo
+algebraico demostrado aquí; no se presenta como
+transcripción de todo ese control.
+
+\item \textbf{Cota de capa fija y uniformidad diádica.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/GeneratorCountTuples/LemmaK.lean}{\texttt{LemmaK}}
+incluye la finitud de $H^2$ en su conclusión y presupone
+el cuerpo totalmente complejo, $e\ge1$ y las raíces de
+unidad de \eqref{eq:cohom-lema-k}.
+Se siguió la ruta numérica de
+\texttt{LemmaKOfSteps}, \texttt{NumThree} y
+\texttt{SFinal}, y el paso de entradas importadas de
+\texttt{LemmaKOfLitN}.
+El cierre \texttt{lemmaK\_litN\_alt} de
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/KFinal.lean}{\texttt{KFinal}}
+conserva explícitamente
+\texttt{LiteratureRankNHypothesis}.
+En
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/QuadraticExtensions/IsAlgClosureRat.lean}{\texttt{QuadraticExtensions/IsAlgClosureRat}},
+\texttt{towerTwo}, \texttt{twoBase} y \texttt{twoIn}
+mantienen la elección uniforme de $R$, el control
+de grado y el $+1$ diádico.
+El cotejo distingue esas pruebas de los pasos de
+Iwasawa y extensiones cuadráticas que importan.
+
+\item \textbf{Excepciones, discriminante y una ventana.}
+Se leyó completa la inducción de
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Window1.lean}{\texttt{window1}},
+con la constante $2^{R+2}B^R$.
+\texttt{Exc} construye las excepciones mediante
+vecindades ultramétricas; el
+Lema~\ref{lem:cohom-excepcionales} sigue la versión
+matemática de A con minimizadores.
+\texttt{Layerdisc} conserva el discriminante de
+$q,d$ y \texttt{Kexp} usa
+$\varepsilon/2+\varepsilon/4=3\varepsilon/4$.
+El teorema
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/ImportsAlt.lean}{\texttt{UpperTheory.V.Win.point}}
+aplica \texttt{LemmaK} a la capa fija en la rama
+excepcional y vuelve mediante \texttt{SecondBound}.
+Prueba finitud antes de aplicar \texttt{toNat}.
+\texttt{Point2}, \texttt{PartA}, \texttt{PartB} y
+\texttt{ThmBabOf} mantienen los transportes, los
+umbrales y una misma pareja auxiliar.
+Se leyó ese ensamblaje condicionado, sin cerrar
+todos los casos automorfos que lo alimentan.
+
+\item \textbf{Sumabilidad antes del defecto integral.}
+En
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/GlobalTheoremInputs.lean}{\texttt{GlobalTheoremInputs}},
+\texttt{ShaFinOdd} cuantifica todos los primos,
+incluido dos, pese a su nombre.
+\texttt{LinkN\_at} recibe expresamente
+\texttt{Summable (vvTerm D)}.
+Su suma de defectos es
+$\sum_w\texttt{lwP}(w)\texttt{ramIdx}(w)
+       \texttt{etaJ}(j,w)$, donde $w$ recorre el soporte
+retenido con $\texttt{muAt}(w)\ne\texttt{mu0}$.
+No incluye un factor dos adicional.
+La cota tiene la forma de A, (7.9),
+\[
+ \texttt{etaSum}\le d_j^0
+  \left[C\{fmbL^2+(\log x)^2N_c\}
+                 +\sum_\ell'\texttt{vvTerm}(D,\ell)\right].
+\]
+Los símbolos no cohomológicos conservan los parámetros
+de esa interfaz.
+En
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/DivinNOfHypV.lean}{\texttt{DivinNOfHypV}},
+\texttt{UpperTheory.Top.vvRecord} obtiene de
+\texttt{VVle} la finitud individual, la sumabilidad
+y la cota total.
+Después \texttt{divinN\_of\_hypV} combina
+\texttt{HypV}, \texttt{LinkN} y
+\texttt{SmallLevelRankEq}.
+La igualdad de rangos es una entrada separada.
+No se ha reconstruido en esta lectura toda la
+identificación de \texttt{etaJ} con la longitud
+normalizada por ramificación de B.
+\end{enumerate}
+
+Las lecturas selectivas fueron
+\texttt{GlobalTheoremInputs.lean}, líneas 1--63, y
+\texttt{ExportBoundOfAdmissible.lean}, líneas 1--83
+y 1000--1164. Se examinó el tramo final de exportación,
+sin declarar revisados \texttt{point\_bound} ni el
+desarrollo completo de primos grandes y excepcionales.
+Las construcciones integrales de todos los proyectores,
+la clausura de homología, torsión, dualidad y automorfía,
+y la identidad íntegra del espejo con la distribución
+original de Alpöge quedan fuera del alcance.
+No se ejecutó Lean ni se obtuvo un informe de axiomas.
+
+El avance matemático de la nota consiste en las pruebas
+finitas y en el ensamblaje de la ventana bajo entradas
+explícitas. Permite seguir el coste cohomológico hasta
+el defecto integral de los periodos.
+El siguiente desarrollo reunirá los presupuestos en
+una elección uniforme de parámetros, conservará las
+entradas automorfas y de compatibilidad de A, §9,
+y estudiará el enlace con las ventanas de $H_\psi$
+en A, §§10--11, y B, §6.
+La construcción aritmética completa y la propuesta
+global no quedan certificadas por este cotejo.
+\par
+\endgroup
+
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}\label{ej:cohom-congruencias}
+Sea $\mathcal O=\Z_\ell$, $r,s\ge1$ y
+\[
+ M=\mathbb T
+ =\{(x,y,z)\in\mathcal O^3:
+          x\equiv y\pmod{\ell^r},\
+          y\equiv z\pmod{\ell^s}\},
+\]
+con acción por multiplicación coordenada.
+Retenga las dos primeras coordenadas.
+Calcule $e_ZM$, $M\cap V_Z$, los ideales
+$\mathfrak c_1,\mathfrak c_2$ y la longitud del
+cociente. Compare con la
+Proposición~\ref{prop:cohom-congruencias}.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:cohom-congruencias}.}
+Omitiendo la tercera coordenada, que es cero,
+\[
+ L=\{(x,y):x-y\in\ell^r\mathcal O\},\qquad
+ N=\{(x,y)\in L:y\in\ell^s\mathcal O\}.
+\]
+En $L$ se puede elegir $z=y$ para levantar cualquier
+par a $M$. En $N$ se impone $z=0$.
+La aplicación $(x,y)\mapsto y\bmod\ell^s$ induce
+$L/N\simeq\mathcal O/\ell^s\mathcal O$, así que la
+longitud es $s$.
+
+Los elementos de $\mathfrak J$ son las ternas con $z=0$.
+Su segunda coordenada recorre $\ell^s\mathcal O$;
+la primera recorre
+$\ell^s\mathcal O+\ell^r\mathcal O
+ =\ell^{\min(r,s)}\mathcal O$.
+Por tanto
+\[
+ \mathfrak c_1=\ell^{\min(r,s)}\mathcal O,\qquad
+ \mathfrak c_2=\ell^s\mathcal O.
+\]
+La cota de la proposición es $s\le\min(r,s)+s$, estricta
+cuando $r,s\ge1$.
+El álgebra separa las coordenadas, por ejemplo mediante
+múltiplos suficientemente divisibles de los vectores
+coordenados. El ejemplo muestra que la estimación por
+ideales no tiene por qué ser una igualdad.
+
+\begin{ejercicio}\label{ej:cohom-normalizacion}
+Tome $A=\Z_\ell/\ell^2\Z_\ell\oplus
+\Z_\ell/\ell^5\Z_\ell$ y un anillo de enteros
+$\mathcal O$ con ramificación tres y grado residual dos.
+Calcule la longitud de $A$, la de $A\otimes\mathcal O$,
+su longitud normalizada y el logaritmo de su cardinal.
+Verifique también la exactitud y la cuenta de longitudes de
+\[
+ 0\longrightarrow\Z/\ell\Z
+ \xrightarrow{\ \ell^2\ }\Z/\ell^3\Z
+ \xrightarrow{\ \ell^2\ }\Z/\ell^4\Z
+ \longrightarrow\Z/\ell^2\Z\longrightarrow0,
+\]
+donde el último mapa es reducción.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:cohom-normalizacion}.}
+La longitud inicial es $2+5=7$.
+Tras extender coeficientes se obtiene
+$\mathcal O/\varpi^6\mathcal O\oplus
+\mathcal O/\varpi^{15}\mathcal O$,
+de longitud $21$.
+Su longitud normalizada es $21/3=7$ y su logaritmo
+de cardinal es $2\cdot21\log\ell=42\log\ell$.
+La ramificación y el grado residual desempeñan
+funciones distintas.
+
+En la sucesión, el núcleo del segundo mapa son los
+múltiplos de $\ell^2$ módulo $\ell^3$, imagen del
+primero. Su imagen son los múltiplos de $\ell^2$
+módulo $\ell^4$, núcleo de la reducción final.
+Los extremos son inyectivo y sobreyectivo,
+respectivamente, y los mapas están bien definidos.
+La aditividad da $4+1=2+3$.
+Es un modelo finito de la corrección de dualidad:
+los términos análogos a $H^2$ y Sha tendrían longitudes
+cuatro y dos, no iguales.
+No se afirma que estos grupos concretos provengan
+de un cuerpo de números.
+
+\begin{ejercicio}\label{ej:cohom-crecimiento}
+Para $M=\Z_\ell^2\oplus\Z_\ell/\ell^5\Z_\ell$,
+calcule $\lambda_\nu=\length(M/\ell^\nu M)$ y
+compruebe el Lema~\ref{lem:cohom-crecimiento} con
+$R=3$, $j=2$ y $\nu=8$.
+Explique por qué la familia $M_N=\Z_\ell^N$ tiene
+cada módulo finitamente generado pero no una cota
+uniforme del número de generadores.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:cohom-crecimiento}.}
+Los dos sumandos libres aportan $2\nu$ y el de torsión
+aporta $\min(\nu,5)$. Por tanto
+\[
+ \lambda_\nu=2\nu+\min(\nu,5),\qquad
+ \lambda_2=6,\qquad\lambda_8=21.
+\]
+La estimación es $21\le6+3(8-2)=24$.
+Después del nivel cinco, el sumando de torsión deja
+de crecer, por lo que una cota con tres generadores
+no tiene que ser exacta.
+Por otro lado, $M_N/\ell M_N$ tiene dimensión $N$
+sobre $\mathbf F_\ell$, de modo que $M_N$ necesita
+al menos $N$ generadores.
+La afirmación $\forall N\,\exists R_N$ no implica
+$\exists R\,\forall N$.
+Es el orden de cuantificadores que debe verificarse
+en la entrada diádica; el ejemplo no sustituye su
+construcción aritmética.
+
+\begin{ejercicio}\label{ej:cohom-ventana}
+Aplique la prueba del Lema~\ref{lem:cohom-ventana}
+a $\mathcal E=\{2,2^{16}\}$, $X=2^{16}$,
+$C_0=4$, $\beta=1$ y $R=2$.
+Encuentre una ventana y compruebe la implicación
+para sus dos elementos, incluyendo los extremos.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:cohom-ventana}.}
+Se tiene $U=16\log2$, y los tres valores son
+$u_0=8\log2$, $u_1=\log2$ y
+$u_2=(\log2)/8$.
+El primer intervalo $(8,64]\log2$ contiene
+$\log(2^{16})$.
+El segundo, $(1,8]\log2$, no contiene ninguno de los
+dos logaritmos: $\log2$ es su extremo inferior
+excluido. Elegimos $W=e^{u_1}=2$.
+
+En $2\le x\le4$, el excepcional $2$ está presente
+y satisface $2\le x=x^\beta$.
+En cambio, $2^{16}>4^4=256$, por lo que nunca
+satisface $e\le x^{C_0}$ en esa ventana.
+No es necesario eliminar el primer excepcional.
+La constante del lema es
+$J=2^{2+2}4^2=256$:
+$X^{1/J}=2^{1/16}\le2$ y $W^2=4\le X$.
+Los extremos semiabiertos de los intervalos
+logarítmicos son los que permiten esta elección.
+
