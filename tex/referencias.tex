@@ -28,12 +28,16 @@ El registro del proyecto conserva el identificador completo, las rutas
 y los hashes de los archivos recuperados. La configuración declara
 Lean~4.33.1 y la revisión de Mathlib identificada en ese registro.
 El cotejo de esta entrega se limita a las interfaces y pasos señalados
-en las Notas~\ref{sec:ventanas}, \ref{sec:caracteres} y~\ref{sec:marcos}.
+en las Notas~\ref{sec:ventanas}, \ref{sec:caracteres},
+\ref{sec:marcos} y~\ref{sec:periodos}.
 El tramo de marcos comprende la lectura localizada de 14 archivos sobre
 la desigualdad lineal, las pendientes y su transferencia; no verifica las
 entradas de la construcción automorfa. No incluyó compilación ni ejecución
 de Lean, ni una revisión de todas las dependencias o una comparación
 integral con la distribución original.
+El tramo de periodos añade 23 archivos, con 19 lecturas completas y
+cuatro selectivas de definiciones y pruebas de enlace. Su alcance queda
+detallado en la concordancia de la Nota~\ref{sec:periodos}.
 
 \bibitem[D1]{dlmf-zeta}
 NIST. \emph{Digital Library of Mathematical Functions}, versión 1.2.8.
@@ -110,6 +114,23 @@ pp.~161--221. §4.1.1, Lema~4.2, p.~196: aditividad del grado;
 pp.~199--200: alturas de aplicaciones y desigualdades de pendientes.
 \href{https://www.numdam.org/article/PMIHES_2001__93__161_0.pdf}{PDF en Numdam}.
 
+\bibitem[Ga]{gan-theta}
+Wee Teck Gan. \emph{Automorphic Forms and the Theta Correspondence}.
+27 de marzo de 2023, arXiv:2303.14918v1.
+§§3.1--3.6, pp.~23--26: núcleo theta, representación de Weil global
+y levantamientos.
+\href{https://arxiv.org/pdf/2303.14918v1}{PDF de la versión consultada}.
+
+\bibitem[GQT]{gqt-rallis}
+Wee Teck Gan, Yannan Qiu y Shuichiro Takeda.
+\emph{The Regularized Siegel--Weil Formula (The Second Term Identity)
+and the Rallis Inner Product Formula}.
+\emph{Inventiones Mathematicae} 198 (2014), pp.~739--831.
+Se consultó arXiv:1207.4709v3, 21 de enero de 2014,
+§11: convenciones de levantamiento y producto interno, con los
+rangos e hipótesis de la fórmula de Rallis.
+\href{https://arxiv.org/pdf/1207.4709v3}{PDF de la versión consultada}.
+
 \end{thebibliography}
 
 \subsection*{Estado de la entrega}
@@ -144,11 +165,20 @@ resultado clásico citado. El cotejo localizado de este tramo abarcó
 se distinguen sus interfaces y pasos leídos de las entradas automorfas
 que la aplicación todavía debe proporcionar.
 
+La Nota~\ref{sec:periodos} distingue las cuatro familias de espacios
+unitarios, conserva las conjugaciones del periodo y demuestra el lema
+de cociente con mínimo espectral, el paso de divisibilidad a integridad
+y la cuenta exacta de pendientes, índices y redondeo. Desarrolla
+Cauchy gaussiano, el cálculo gamma entero y la cancelación condicionada
+a las cotas de periodos. Incluye cuatro ejercicios resueltos y un
+cotejo de interfaces y pruebas Lean de compatibilidad. Las construcciones
+especializadas que suministran esas entradas siguen identificadas como tales.
+
 Permanecen por estudiar la construcción aritmética de los datos de la
-selección, los errores de pesos y argumentos y las estimaciones que
-verifican las hipótesis del marco para la familia de periodos. El siguiente
-paso reúne las torres theta, la divisibilidad finita y las normas
-arquimedianas de esos mismos periodos. Los resultados automorfos,
-geométricos y cohomológicos que suministran la cota del exceso y el
-presupuesto final siguen pendientes de reconstrucción.
+selección, los errores de pesos y argumentos, las cotas geométricas y
+de evaluación que verifican las hipótesis del marco y los controles
+cohomológicos de denominadores. El siguiente paso estudia las pendientes
+y la distribución colectiva de las imágenes de los periodos. Las
+estimaciones uniformes que suministran la cota del exceso y el presupuesto
+final siguen pendientes de reconstrucción.
 No se ha efectuado en esta entrega una auditoría del repositorio Lean.

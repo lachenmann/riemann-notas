@@ -30,13 +30,13 @@
     {
       "name": "00-Mapa-de-estudio.md",
       "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
-      "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 10358,
-      "sha256": "d94d3a937272fa3c8556107c5ed62036ec27cd92dd4298d6756f3c38e49248e4",
+      "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
+      "size_bytes": 11021,
+      "sha256": "563ed2a51017ae5b6153894dfd44d55ec0765ec7b06c432639fade8da35182bc",
       "verification": "raw bytes identical; parent and MIME verified"
     },
     {
@@ -66,13 +66,13 @@
     {
       "name": "03-Dudas-y-pendientes.md",
       "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
-      "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 9862,
-      "sha256": "4011b2c66be0bf6c1897aba31820afa6975a7638ec3ef8e1956326bef9f275e0",
+      "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
+      "size_bytes": 11547,
+      "sha256": "78a9ab7d05966b78ceef170e7cfdce4279ae33d9103a1c46fad85889cb38d8c0",
       "verification": "raw bytes identical; parent and MIME verified"
     },
     {
@@ -102,13 +102,13 @@
     {
       "name": "00-Introduccion-y-fundamentos.md",
       "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
-      "url": "https://drive.google.com/file/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/view",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 38646,
-      "sha256": "0177464d07bb0cf5f43280069a848f92f7196806e9c34d9b710d41c235c702a4",
+      "url": "https://drive.google.com/file/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/view",
+      "size_bytes": 38645,
+      "sha256": "48ef2edabe2f8765a5de1cc12db90b79911f064f470f4dda2ff984d817248105",
       "verification": "raw bytes identical; parent and MIME verified"
     },
     {
@@ -127,37 +127,102 @@
     {
       "name": "06-Marcos-y-pendientes.md",
       "id": "18_R_di4gVm5ZZy-OwxTW4gJeK-8ijRza",
-      "url": "https://drive.google.com/file/d/18_R_di4gVm5ZZy-OwxTW4gJeK-8ijRza/view",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 33465,
-      "sha256": "46016b377138703509f7eb60bbff7275f66684921ab3fce74633d5ef93b3cbc0",
+      "url": "https://drive.google.com/file/d/18_R_di4gVm5ZZy-OwxTW4gJeK-8ijRza/view",
+      "size_bytes": 33634,
+      "sha256": "c759ce614e6773533e5a2da88d56857ed7b1713af8e1b6bc636b679ce9b9e7a4",
+      "verification": "raw bytes identical; parent and MIME verified"
+    },
+    {
+      "name": "07-Periodos-y-torres-theta.md",
+      "id": "13iD1CbPWZj1crX8ZCdzUz5-GVhZ8tjC_",
+      "mime_type": "text/markdown",
+      "parent_ids": [
+        "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+      ],
+      "url": "https://drive.google.com/file/d/13iD1CbPWZj1crX8ZCdzUz5-GVhZ8tjC_/view",
+      "size_bytes": 47177,
+      "sha256": "c4a1789106ca0d60c7f487a2515501404017780c54bf5c01785b6f878b3f4032",
       "verification": "raw bytes identical; parent and MIME verified"
     }
   ],
   "obsidian_rendering_checked": false,
   "github_status": "active_public_repository",
   "latex": {
-    "status": "compiled_and_visually_reviewed",
-    "pages": 54,
+    "status": "compiled_and_composition_checked",
+    "pages": 67,
     "page_size": "A4",
     "path": "pdf/notas-hipotesis-riemann.pdf",
-    "size_bytes": 618223,
-    "sha256": "5577e78ba7e7fbdd1f0c478d674b7ec27ae6902f8fdff3201c9d7bb051a3ef88",
+    "size_bytes": 705468,
+    "sha256": "6df0c4a95ead9f119c00e9b10f7026a9c972ed016463ffd1f6dbe80462c32797",
     "compilation_exit_code": 0,
     "warnings": 0,
     "unresolved_references": 0,
     "overfull_boxes": 0,
     "underfull_boxes": 0,
     "missing_characters": 0,
-    "all_pages_visually_reviewed": true,
+    "all_pages_visually_reviewed": false,
     "visually_reviewed_pages": [
       1,
       2,
       3,
       4,
+      15,
+      16,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67
+    ],
+    "chapter_3_pages": [
+      23,
+      30
+    ],
+    "chapter_4_pages": [
+      31,
+      42
+    ],
+    "cross_reading_with_markdown": "La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a 0<y<1, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal. La introducción conserva las 495 expresiones matemáticas cotejadas, 12 subsecciones, nueve enunciados, 15 ecuaciones numeradas y seis ejercicios con soluciones tras expandir las macros y adaptar enlaces al Markdown. La Nota 5 conserva las 345 expresiones matemáticas cotejadas, 13 subsecciones, cinco enunciados, 29 ecuaciones numeradas y tres ejercicios con soluciones; las tablas, hipótesis y referencias se leyeron de forma cruzada. La Nota 6 conserva 431 expresiones matemáticas, 16 subsecciones, 5 enunciados con 5 pruebas, 34 ecuaciones y 4 ejercicios con 4 soluciones. Se leyeron íntegramente ambos textos y se cotejaron tablas, enlaces y alcance de Lean; la única normalización técnica ignora la sangría inicial de una expresión dentro de una lista.",
+    "lean_compiled_or_executed": false,
+    "introduction_pages": [
+      4,
+      14
+    ],
+    "guide_pages": [
+      15,
+      16
+    ],
+    "chapter_1_pages": [
+      17,
+      19
+    ],
+    "chapter_2_pages": [
+      20,
+      22
+    ],
+    "chapter_5_pages": [
+      43,
+      52
+    ],
+    "references_and_status_pages": [
+      65,
+      67
+    ],
+    "previous_visual_review_preserved_by_pixel_identity": [
       5,
       6,
       7,
@@ -168,8 +233,6 @@
       12,
       13,
       14,
-      15,
-      16,
       17,
       18,
       19,
@@ -205,43 +268,13 @@
       49,
       50,
       51,
-      52,
-      53,
-      54
-    ],
-    "chapter_3_pages": [
-      23,
-      30
-    ],
-    "chapter_4_pages": [
-      31,
-      42
-    ],
-    "cross_reading_with_markdown": "La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a 0<y<1, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal. La introducción conserva las 495 expresiones matemáticas cotejadas, 12 subsecciones, nueve enunciados, 15 ecuaciones numeradas y seis ejercicios con soluciones tras expandir las macros y adaptar enlaces al Markdown. La Nota 5 conserva las 345 expresiones matemáticas cotejadas, 13 subsecciones, cinco enunciados, 29 ecuaciones numeradas y tres ejercicios con soluciones; las tablas, hipótesis y referencias se leyeron de forma cruzada.",
-    "lean_compiled_or_executed": false,
-    "introduction_pages": [
-      4,
-      14
-    ],
-    "guide_pages": [
-      15,
-      16
-    ],
-    "chapter_1_pages": [
-      17,
-      19
-    ],
-    "chapter_2_pages": [
-      20,
-      22
-    ],
-    "chapter_5_pages": [
-      43,
       52
     ],
-    "references_and_status_pages": [
+    "all_pages_composition_checked": true,
+    "visual_method": "Inspección real con view_image de las páginas nuevas y modificadas y de p.2; comparación de píxeles de renders Poppler a 110 dpi con el PDF anterior para el resto. Ampliaciones adicionales de pp. 58 y 64 a 180 dpi.",
+    "chapter_6_pages": [
       53,
-      54
+      64
     ]
   },
   "events": [
@@ -1218,6 +1251,370 @@
       "next_step": "Periodos y torres theta: divisibilidad y compatibilidad integral y métrica; A §6, B §§4.1 y4.5.",
       "vault_sharing_changed": false,
       "license_changed": false
+    },
+    {
+      "date": "2026-11-22",
+      "action": "periods_theta_divisibility_and_norms_added",
+      "previous_github_commit": "254dd6c6de5f987f43df5807c4fc4e88c60222d8",
+      "request": "Vamos con el siguiente paso: periodos, torres theta y compatibilidad integral y métrica, conforme al punto de reanudación.",
+      "canonical_file": "tex/capitulos/06-periodos-y-torres-theta.tex",
+      "canonical_sha256": "8f364bc671ec39fa6bd635b6987f8257c6c43dd8359ba5c0838f03394be62ec0",
+      "contents": {
+        "subsections": 16,
+        "numbered_equations": 34,
+        "numbered_statements": 5,
+        "proofs": 5,
+        "exercises": 4,
+        "solutions": 4,
+        "source_tables": 2,
+        "source_table_body_rows": [
+          4,
+          6
+        ],
+        "source_table_columns": [
+          3,
+          2
+        ],
+        "markdown_extra_source_table": 1,
+        "math_expressions": 431,
+        "inline_math": 368,
+        "display_math": 63,
+        "body_link_occurrences": 28,
+        "body_unique_links": 15,
+        "explicit_tex_href_occurrences": 10,
+        "proofs_included": [
+          "cociente útil, anulación y norma mediante el menor autovalor",
+          "divisibilidad local, ideal inverso e integridad global",
+          "cuenta exacta de pendiente, índice, rango y redondeo",
+          "Cauchy gaussiano y factor factorial por concavidad",
+          "cota gamma uniforme para pesos enteros",
+          "cancelación del término principal y balance condicionado a las cinco estimaciones de periodos y al marco"
+        ],
+        "specialized_inputs_kept_external": [
+          "realización automorfa de torres e identidades seesaw",
+          "modelos integrales y cotas locales de jets",
+          "normalizaciones de Rallis, bloques de Schur y periodos CM",
+          "cotas geométricas, dimensiones, masas y elección simultánea del nivel",
+          "defectos colectivos del marco y presupuesto uniforme de errores"
+        ],
+        "normalization": "Pendiente duplicada; altura promediada sobre todas las inmersiones. Suelo de la suma completa, e_p y 2 conservados; coste de índice dividido por rango retenido.",
+        "scope": "Se demuestran las deducciones indicadas bajo entradas explícitas; no se prueba todavía la cota uniforme del exceso ni la producción aritmética de ventanas."
+      },
+      "sources": {
+        "A": "§6, pp.20–28, ejemplar de 55 páginas.",
+        "B": "§4.1, pp.24–30, §4.5, pp.46–51; ejemplar de 73 páginas del 21 de noviembre de 2026.",
+        "newer_B_incorporated": false,
+        "lean_manifest": "lean_source_review_periods",
+        "lean_files": 23,
+        "classical_bibliography": [
+          {
+            "author": "Wee Teck Gan",
+            "title": "Automorphic Forms and the Theta Correspondence",
+            "url": "https://arxiv.org/pdf/2303.14918v1",
+            "locators": "§§3.1–3.6, pp.23–26"
+          },
+          {
+            "authors": "Gan, Qiu, Takeda",
+            "title": "The Regularized Siegel–Weil Formula (The Second Term Identity) and the Rallis Inner Product Formula",
+            "url": "https://arxiv.org/pdf/1207.4709v3",
+            "locators": "§11"
+          }
+        ]
+      },
+      "mathematical_review": {
+        "result": "Revisiones favorables del cuerpo matemático, cuenta aritmética y concordancia Lean; lectura cruzada íntegra TeX/MD.",
+        "corrections_incorporated": [
+          "rangos positivos y familia finita no vacía explícitos",
+          "distinción entre errores comunes y restos de cada columna",
+          "FactQZ exige la inclusión de la imagen del adjunto",
+          "factor rho(mu) conservado, con tupla de referencia explícita",
+          "dimensión previa y rango retenido diferenciados",
+          "localizadores A/B y macros corregidos",
+          "estimaciones B(4.6)–(4.9) identificadas como hipótesis, no como conclusiones"
+        ],
+        "lean_compiled": false,
+        "lean_executed": false,
+        "axiom_report_run": false,
+        "full_proof_audit": false,
+        "original_distribution_compared": false
+      },
+      "technical_notes_preserved": [
+        {
+          "path": "tex/capitulos/01-sumas-y-transformadas.tex",
+          "sha256": "13f178ff0751265b7c135d7d85d7a1311962628cec98ef6e0cbbad2c7c1c6e3b",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/02-proyecciones-y-denominadores.tex",
+          "sha256": "4f2d14516ed3850480e6a2ebce9844e52269527a03641bf0b8b546208aeb49be",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/03-criterio-unilateral-de-ventanas.tex",
+          "sha256": "804f5f7ec2c165356d3f15ce02bc570c8368b7f919cc50c87576ae1c6a5de007",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/04-identidad-de-caracteres.tex",
+          "sha256": "095204f6d6e0ea80af39a862ce34c626b4f2d1b8d27e784d0364797ec5993a9a",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/05-marcos-y-pendientes.tex",
+          "sha256": "36777a13e8ad65369bc39ca2acaaed39b8d6612f568ceb934ac3f6fa4a3ccb89",
+          "unchanged": true
+        }
+      ],
+      "introduction_changes": {
+        "tex": "Solo recuento de cinco a seis notas.",
+        "markdown": "Solo recuento de cinco a seis notas.",
+        "mathematical_content_preserved": true,
+        "svg_changed": false
+      },
+      "pdf": {
+        "path": "pdf/notas-hipotesis-riemann.pdf",
+        "pages": 67,
+        "size_bytes": 705468,
+        "sha256": "6df0c4a95ead9f119c00e9b10f7026a9c972ed016463ffd1f6dbe80462c32797",
+        "git_blob_sha": "8c0afc50499e3a3588afda6028c7c0dd0bc7370c",
+        "compilation_exit_code": 0,
+        "warnings": 0,
+        "unresolved_references": 0,
+        "overfull_boxes": 0,
+        "underfull_boxes": 0,
+        "missing_characters": 0,
+        "all_pages_visually_reviewed_in_this_revision": false,
+        "directly_visually_reviewed_pages": [
+          1,
+          2,
+          3,
+          4,
+          15,
+          16,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67
+        ],
+        "previous_visual_review_preserved_by_pixel_identity": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52
+        ],
+        "all_pages_composition_checked": true,
+        "visual_method": "Inspección real con view_image de las páginas nuevas y modificadas y de p.2; comparación de píxeles de renders Poppler a 110 dpi con el PDF anterior para el resto. Ampliaciones adicionales de pp. 58 y 64 a 180 dpi.",
+        "reading_copy_identical_to_build": true
+      },
+      "markdown_review": {
+        "sha256": "c4a1789106ca0d60c7f487a2515501404017780c54bf5c01785b6f878b3f4032",
+        "complete_cross_reading": true,
+        "math_expressions_compared": 431,
+        "metrics": {
+          "subsections": 16,
+          "numbered_equations": 34,
+          "numbered_statements": 5,
+          "proofs": 5,
+          "exercises": 4,
+          "solutions": 4,
+          "source_tables": 2,
+          "source_table_body_rows": [
+            4,
+            6
+          ],
+          "source_table_columns": [
+            3,
+            2
+          ],
+          "markdown_extra_source_table": 1,
+          "math_expressions": 431,
+          "inline_math": 368,
+          "display_math": 63,
+          "body_link_occurrences": 28,
+          "body_unique_links": 15,
+          "explicit_tex_href_occurrences": 10
+        },
+        "checks": {
+          "equation_tags_match_final_aux": true,
+          "statement_tags_match_final_aux": true,
+          "exercise_solution_numbers_match": true,
+          "prepared_ast_math_to_markdown_ast_equal": true,
+          "math_raw_text_equal": false,
+          "math_line_indentation_changes": 1,
+          "normalization": "Solo sangría al principio de líneas matemáticas: una expresión dentro del punto2 de la lista Lean; símbolos y comandos idénticos.",
+          "body_links_roundtrip_equal": true,
+          "explicit_tex_urls_preserved": true,
+          "relative_link_targets": [
+            {
+              "target": "04-Criterio-unilateral-de-ventanas.md",
+              "exists": true
+            },
+            {
+              "target": "05-Identidad-de-caracteres-y-termino-principal.md",
+              "exists": true
+            },
+            {
+              "target": "06-Marcos-y-pendientes.md",
+              "exists": true
+            }
+          ],
+          "source_and_aux_unchanged_since_conversion": true,
+          "local_readback_hash_matches": true
+        },
+        "result": "Aprobado: lectura cruzada completa TeX→Markdown sin pérdida de contenido, hipótesis, signos, factores, rótulos o enlaces.",
+        "obsidian_rendering_checked": false,
+        "transfer_mode": "Preparación editorial puntual con lectura manual; no sincronización automática."
+      },
+      "vault_files_written_and_readback_verified": [
+        {
+          "name": "07-Periodos-y-torres-theta.md",
+          "id": "13iD1CbPWZj1crX8ZCdzUz5-GVhZ8tjC_",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/13iD1CbPWZj1crX8ZCdzUz5-GVhZ8tjC_/view",
+          "size_bytes": 47177,
+          "sha256": "c4a1789106ca0d60c7f487a2515501404017780c54bf5c01785b6f878b3f4032",
+          "verification": "raw bytes identical; parent and MIME verified"
+        },
+        {
+          "name": "00-Mapa-de-estudio.md",
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
+          "size_bytes": 11021,
+          "sha256": "563ed2a51017ae5b6153894dfd44d55ec0765ec7b06c432639fade8da35182bc",
+          "verification": "raw bytes identical; parent and MIME verified"
+        },
+        {
+          "name": "03-Dudas-y-pendientes.md",
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
+          "size_bytes": 11547,
+          "sha256": "78a9ab7d05966b78ceef170e7cfdce4279ae33d9103a1c46fad85889cb38d8c0",
+          "verification": "raw bytes identical; parent and MIME verified"
+        },
+        {
+          "name": "00-Introduccion-y-fundamentos.md",
+          "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/view",
+          "size_bytes": 38645,
+          "sha256": "48ef2edabe2f8765a5de1cc12db90b79911f064f470f4dda2ff984d817248105",
+          "verification": "raw bytes identical; parent and MIME verified"
+        },
+        {
+          "name": "06-Marcos-y-pendientes.md",
+          "id": "18_R_di4gVm5ZZy-OwxTW4gJeK-8ijRza",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/18_R_di4gVm5ZZy-OwxTW4gJeK-8ijRza/view",
+          "size_bytes": 33634,
+          "sha256": "c759ce614e6773533e5a2da88d56857ed7b1713af8e1b6bc636b679ce9b9e7a4",
+          "verification": "raw bytes identical; parent and MIME verified"
+        }
+      ],
+      "vault_editorial_changes": [
+        {
+          "name": "07-Periodos-y-torres-theta.md",
+          "before_sha256": null,
+          "after_sha256": "c4a1789106ca0d60c7f487a2515501404017780c54bf5c01785b6f878b3f4032",
+          "change": "Nota 6 completa con fuentes, ejercicios y continuidad."
+        },
+        {
+          "name": "00-Mapa-de-estudio.md",
+          "before_sha256": "d94d3a937272fa3c8556107c5ed62036ec27cd92dd4298d6756f3c38e49248e4",
+          "after_sha256": "563ed2a51017ae5b6153894dfd44d55ec0765ec7b06c432639fade8da35182bc",
+          "change": "Estado del bloque de periodos, enlace a Nota 6 y siguiente desarrollo."
+        },
+        {
+          "name": "03-Dudas-y-pendientes.md",
+          "before_sha256": "4011b2c66be0bf6c1897aba31820afa6975a7638ec3ef8e1956326bef9f275e0",
+          "after_sha256": "78a9ab7d05966b78ceef170e7cfdce4279ae33d9103a1c46fad85889cb38d8c0",
+          "change": "Cierre de deducciones del tramo de periodos; entradas especializadas y nuevo pendiente de geometría y marco."
+        },
+        {
+          "name": "00-Introduccion-y-fundamentos.md",
+          "before_sha256": "0177464d07bb0cf5f43280069a848f92f7196806e9c34d9b710d41c235c702a4",
+          "after_sha256": "48ef2edabe2f8765a5de1cc12db90b79911f064f470f4dda2ff984d817248105",
+          "change": "Solo recuento de cinco a seis notas."
+        },
+        {
+          "name": "06-Marcos-y-pendientes.md",
+          "before_sha256": "46016b377138703509f7eb60bbff7275f66684921ab3fce74633d5ef93b3cbc0",
+          "after_sha256": "c759ce614e6773533e5a2da88d56857ed7b1713af8e1b6bc636b679ce9b9e7a4",
+          "change": "Solo párrafo de continuidad hacia Nota 6 y el siguiente tramo."
+        }
+      ],
+      "vault_prewrite_version_guard": "Se recuperaron y compararon íntegramente los 4 archivos existentes con sus respaldos antes de reemplazarlos. El nombre nuevo no existía en la carpeta.",
+      "publication_authorization": "Continuación autorizada del cuaderno en el repositorio público y su bóveda; se conserva la autorización anterior.",
+      "next_step": "Estimaciones geométricas y de evaluación para pendientes y defectos colectivos del marco, A, §§7–8, y B, §§4.3–4.4 y 5."
     }
   ],
   "github": {
@@ -2679,6 +3076,858 @@
       "rank_zero_cases": "La interfaz formal permite fuentes individuales de rango cero si R>0; la exposición desarrolla el caso positivo de A/B. La prueba trata u=0 y mapas nulos.",
       "proof_presentation": "La prueba lineal de la nota sigue A mediante I-P; Lean sigue la varianza como B. El paso de altura usa determinantes en la nota y cambio de métricas en la prueba formal leída.",
       "arithmetic_inputs": "No se construyeron aquí los periodos ni se probaron sus cotas de alturas, pendientes, rangos o marcos."
+    }
+  },
+  "lean_source_review_periods": {
+    "schema_version": 1,
+    "review_key": "lean_source_review_periods",
+    "review_profile": "revisión matemática localizada de definiciones, interfaces y pruebas Lean seleccionadas",
+    "recorded_at_utc": "2026-11-23T01:20:32.567981+00:00",
+    "repository": "CocoSgt/riemann-hypothesis-lean",
+    "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+    "source_correspondence": {
+      "A": {
+        "version": "A55",
+        "pages": "§6, pp.20–28; apéndice de concordancia, pp.53–54",
+        "sha256": "419e24a4ba07eb9ce98524ad11f568f2bd87d8d70abe288e4ef37632bdd8bb85"
+      },
+      "B": {
+        "version": "B73, 21 de noviembre de 2026",
+        "pages": "Pasajes de §4.1, pp.28–29, y §4.5, pp.46–49; el equipo revisó además el contexto de ambas secciones.",
+        "sha256": "2cbd7e9b693c753f6afa22251db9669c9652555a91cee0cdfbd37a8465ad2ad9"
+      },
+      "B76_compared": false
+    },
+    "retrieval": {
+      "source_files": "GitHub fetch_file con ref igual al SHA completo y encoding=base64. Se guardaron los bytes decodificados sin reformatear.",
+      "path_discovery": "Árboles locales de la revisión fijada, dos árboles pequeños y el subárbol Divisibility no truncado, más búsquedas puntuales seguidas siempre de lectura fijada. No se solicitó el árbol recursivo grande en esta tarea.",
+      "http_fallback_used": false,
+      "integrity": "SHA1 del objeto Git blob y SHA256 recalculados sobre todos los bytes. Coinciden 23/23 con fetch_file; en 20 casos se contrastó además el SHA del árbol, y en 3 solo el del contenido fijado."
+    },
+    "summary": {
+      "files": 23,
+      "total_bytes": 310489,
+      "files_read_in_full": 19,
+      "files_read_selectively": 4,
+      "all_git_blob_hashes_match": true,
+      "git_tree_metadata_matches": 20,
+      "lean_executed": false,
+      "lean_compiled": false,
+      "axiom_closure_audited": false
+    },
+    "editorial_points": [
+      "Los puentes de racionalidad, Bessel y transporte de HLatTie usan identificaciones explícitas del mismo mapa; no son por sí solos una auditoría de la existencia simultánea de todos los datos.",
+      "Mantener -floor(e_w*sg), lenMN=longitud/e_w, c_w=2*e_w*log(Nw)/[K:Q] y tFo=2*FoOfR.",
+      "La cota de colongitud usa duS=dim(Mu0), no el rango retenido dim(Mram); al normalizar por el segundo se conserva el cociente de rangos.",
+      "Conservar el mínimo espectral dentro de cada embedding, antes del promedio. adm1 añade rho(mu), normalizado a 1 en mu0.",
+      "El límite de marco en LinkDIV_at es x^CH*b; la cota de altura operatorial se exige para Bk distinto de cero."
+    ],
+    "limits": [
+      "No se ejecutó ni compiló Lean, ni se inspeccionó una clausura completa de axiomas o dependencias.",
+      "La verificación de bytes se refiere a archivos recuperados del espejo en la revisión fijada; no prueba identidad integral con el archivo original de Alpöge.",
+      "No se auditó la construcción automorfa completa, la fórmula de períodos CM, todos los modelos integrales o las estimaciones locales de jets.",
+      "Las definiciones de Prop y los campos de estructuras se distinguen de las pruebas leídas; las hipótesis importadas no se consideran descargadas.",
+      "Las cuatro lecturas selectivas se delimitan por intervalos; el resto de esos archivos no se presenta como revisado."
+    ],
+    "files": [
+      {
+        "path": "src/Development/AutomorphicArithmetic/ThetaCorrespondence/FockModels/RallisDM.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/FockModels/RallisDM.lean",
+        "git_blob_sha": "d8eece2927ee2db61753b4bfe88eae3fd7f47388",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "6f4e8191907038222d6f5e4499a7bb89060f33d341a89437dc23e10d0c564197",
+        "bytes": 7560,
+        "line_count": 115,
+        "declarations": [
+          "UpperTheory.Lit.Rallis.RallisIPProof.rallis_of_dm"
+        ],
+        "scope": "Lectura íntegra de la prueba condicional que combina descenso de residuos, convergencia theta y Siegel-Weil para la fórmula de producto interno de Rallis. Se leyó el ensamble de medidas, integrales y productos internos; no la clausura de las hipótesis publicadas.",
+        "hypotheses_or_external_inputs": [
+          "ResidueKilled.DM",
+          "GlobalTheory.Published.SiegelWeilUnitaryConvergent",
+          "GlobalTheory.Published.WeilThetaConvergence"
+        ],
+        "proofs_reviewed": [
+          "rallis_of_dm"
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/DataSpaces.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataSpaces.lean",
+        "git_blob_sha": "f1d2da346f8996c2527724b50fd6409dc8ab937b",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "4a2a530b7639a10052a905d17d27984a2a2765e2f9742112fa0c6901281ffa1b",
+        "bytes": 6111,
+        "line_count": 168,
+        "declarations": [
+          "CMData",
+          "HSpace",
+          "HSpace.SigOK",
+          "sigYD",
+          "Spaces",
+          "Spaces.FactSigYD"
+        ],
+        "scope": "Lectura íntegra de las cuatro familias de espacios hermitianos y sus datos de retículos, inclusiones e isometrías. Distingue Y_j de W_j; la signatura de todos los Y_j se añade en D7.Y_sigval.",
+        "hypotheses_or_external_inputs": [
+          "Campo CM E/F, forma hermitiana no degenerada, bases y retículos unimodulares; los datos de Spaces son campos de una estructura."
+        ],
+        "proofs_reviewed": [],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/DataKernels.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataKernels.lean",
+        "git_blob_sha": "cc77d4f90296cb1c49f01cfb28444870ca149778",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "3123dccc838fa3cf946698eb1ce3b92963ab2c3a3adc368c42a270d09733246f",
+        "bytes": 8990,
+        "line_count": 247,
+        "declarations": [
+          "ColumnChain",
+          "ColumnChain.wt",
+          "ColumnChain.sharp",
+          "ColumnChain.divDe",
+          "ColumnChain.Kmap",
+          "ColumnChain.K",
+          "ColumnChain.col",
+          "ColumnsAtT",
+          "ColumnsAtT.Nm",
+          "ColumnsAtT.Mram",
+          "ColumnsAtT.du",
+          "PeriodMap.Ptil",
+          "PeriodMap.PtilCol",
+          "FactWtInt",
+          "FactSDivSharp"
+        ],
+        "scope": "Lectura íntegra: pesos inversos del orden del estabilizador, dos exponentes de determinante, composición de núcleos, corte ramificado y período. FactWtInt y FactSDivSharp son definiciones de proposiciones en este archivo.",
+        "hypotheses_or_external_inputs": [
+          "ColumnChain contiene operadores desplegados, normalizaciones, estabilizadores y exponentes integrales; ColumnsAtT contiene las acciones en el espacio completo Mu0."
+        ],
+        "proofs_reviewed": [],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/DataArith.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataArith.lean",
+        "git_blob_sha": "851c12aac84bff1368763793613732f94dd15ff6",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "f9cd7b6481f0f48c1d914de7aa3cdb06e8d3548403e803d7f9a4d0e9a5b8e895",
+        "bytes": 6925,
+        "line_count": 211,
+        "declarations": [
+          "vAdd",
+          "lw",
+          "eWL",
+          "unitRule",
+          "sizeOfVal",
+          "HLat",
+          "HLat.Good",
+          "HLat.rank",
+          "HLat.mu",
+          "HLat.muDual",
+          "sFrame",
+          "DivData",
+          "DivData.OneMapIntoCC",
+          "DivData.HBound"
+        ],
+        "scope": "Lectura íntegra de las convenciones aritméticas: retículo sobre el anillo de enteros, dual, pendientes, rango, mapa bilineal racional y promedio ponderado sFrame. No vuelve a auditar HN ni transference de la Nota 5.",
+        "hypotheses_or_external_inputs": [
+          "HLat.Good exige matrices métricas invertibles, generación finita y rango completo; Bk tiene valores en el dual de RR."
+        ],
+        "proofs_reviewed": [],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/GlobalTheoremInputs.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/GlobalTheoremInputs.lean",
+        "git_blob_sha": "ba31f5120ed089d48968754ae577427912d467c5",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "4d51ccc0586441a159ad6d09ebc0a46b3c462e3c5b296d5a5bd7613266e17bfb",
+        "bytes": 8939,
+        "line_count": 168,
+        "declarations": [
+          "BesselId",
+          "NprimeMuR",
+          "LinkMu",
+          "LinkDIV_at",
+          "LinkDIV",
+          "LinkDIVt",
+          "LinkG_at",
+          "LinkG",
+          "GlobalTheoremInputs"
+        ],
+        "scope": "Lectura íntegra de definiciones de interfaces. BesselId incluye racionalidad y una única isometría de filas V. LinkDIV_at incluye x^CH*b y restringe la cota de altura al caso Bk distinto de cero. LinkG_at usa duS, dimensión de Mu0 anterior al corte ramificado.",
+        "hypotheses_or_external_inputs": [
+          "Estas declaraciones son definiciones de Prop, no pruebas de existencia.",
+          "LinkDIV y LinkMu cuantifican constantes y un umbral común para toda la familia; LinkG incluye b^(delta x) con delta tendiendo a cero."
+        ],
+        "proofs_reviewed": [],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/DataDIVDefs.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataDIVDefs.lean",
+        "git_blob_sha": "2c421632ccc4fb1510a794151d72f75e19abb14e",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "703fca7aec19ec11b05856833b497e27a3a2ee08f0c6df5d606c1ec43b5287c3",
+        "bytes": 4916,
+        "line_count": 102,
+        "declarations": [
+          "DV.MramL",
+          "DV.ur",
+          "DV.Iu",
+          "DV.NprimeDef",
+          "DV.RRDef",
+          "DV.LocLe",
+          "DV.lenLoc",
+          "DV.NuDef",
+          "DV.meanE",
+          "DV.SZbK",
+          "DV.SZbP",
+          "DV.hExpl"
+        ],
+        "scope": "Lectura íntegra: ideal fraccionario con exponente -floor(e_w*sg), corte previo NuLat, retículo de filas definido localmente, longitud del cociente localizado y altura con ínfimo espectral antes del promedio de embeddings.",
+        "hypotheses_or_external_inputs": [
+          "NuDef identifica lenMN con longitud/e_w cuando la longitud es finita; esa finitud no se desprende solo de la igualdad condicional.",
+          "hExpl como mínimo espectral requiere Drows positivo en los resultados que lo usan."
+        ],
+        "proofs_reviewed": [],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/DataDIV.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataDIV.lean",
+        "git_blob_sha": "1668baeeab6e90eea8b98fac6aa94cc83273e295",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "1ec315a1e0a2c4a9996b2f1a2c81cfe024b36863a493a97a52dfdc79b66c0daa",
+        "bytes": 18599,
+        "line_count": 561,
+        "declarations": [
+          "DV.Geo",
+          "DV.ShimX",
+          "DivX",
+          "DivX.logLam",
+          "DivX.kapR",
+          "DV.LogLamConj"
+        ],
+        "scope": "Lectura íntegra de las estructuras, concentrando el cotejo en logLam para cada embedding y en kapR positivo. Los modelos geométricos incluidos se registran como datos, sin auditar su construcción.",
+        "hypotheses_or_external_inputs": [
+          "DivX reúne modelos, operadores y normalizaciones; logLam se identifica con el valor de referencia en el embedding base; kapR tiene positividad y compatibilidad con conjugación."
+        ],
+        "proofs_reviewed": [],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/DataRows.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataRows.lean",
+        "git_blob_sha": "fcb081863d56e321653e278bb345ed8266cca0a5",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "efb2802dd98b6df64e511bb301bb19c7f8353a38565309e936025c095313a4f7",
+        "bytes": 9789,
+        "line_count": 274,
+        "declarations": [
+          "Rows.Data",
+          "Rows.Data.downTo",
+          "Rows.Data.iota",
+          "Rows.Data.thetaUp",
+          "Rows.Data.V0",
+          "Rows.Data.Usp",
+          "Rows.Data.Qsp",
+          "Rows.Data.LamSet",
+          "Rows.Data.RRset",
+          "Rows.BuDef",
+          "Rows.LamPDef",
+          "Rows.FactQZ"
+        ],
+        "scope": "Lectura íntegra de las filas: composición descendente iota, adjunto thetaUp, proyector ortogonal eOp, U=V0 intersección ker(iota), Q=V0 intersección U perpendicular y retículos proyectados. No identifica por sí solo Amb(mu) con las formas sobre Y_m de B.",
+        "hypotheses_or_external_inputs": [
+          "Hilbert finito dimensional; eOp idempotente y autoadjunto; modelos de multiplicidad y extremos dados.",
+          "FactQZ pide range(thetaUp) contenido en V0; BuDef y LamPDef son interfaces."
+        ],
+        "proofs_reviewed": [],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/DataBu.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataBu.lean",
+        "git_blob_sha": "a5376f1d0aba640b6bf197b6a20f7a2dd547b7ba",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "8a91bfe0baa56d29992b4e4e012975433228dfdda466294776f295f266484d26",
+        "bytes": 3713,
+        "line_count": 68,
+        "declarations": [
+          "Rows.Data.iotaQ",
+          "Rows.Data.iotaQ_inj",
+          "Rows.Data.sec",
+          "Rows.Data.sec_iota",
+          "Rows.BuDefQ",
+          "Rows.PerKillsU",
+          "Rows.PeriodIdentityOnDegreeZero",
+          "D7.periodIdentity_iff_period_kills"
+        ],
+        "scope": "Lectura íntegra incluidas pruebas: inyectividad de iota en Q, sección sobre su imagen y equivalencia entre descenso del período y anulación sobre U. La anulación geométrica no se prueba desde cero aquí.",
+        "hypotheses_or_external_inputs": [
+          "D7 y BuDefQ; la equivalencia usa la estructura lineal y descomposición ortogonal."
+        ],
+        "proofs_reviewed": [
+          "Rows.Data.iotaQ_inj",
+          "Rows.Data.sec_iota",
+          "D7.perCol_add",
+          "D7.perCol_zero",
+          "D7.periodIdentity_iff_period_kills"
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/DataLatDefs.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataLatDefs.lean",
+        "git_blob_sha": "fce0e3816ec0d4538df32e2f39a505cbbe045adc",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "d860fd457cabc94abe3ff38e0c19e43c4ba64874ce6971162906ac3178c537e4",
+        "bytes": 5464,
+        "line_count": 122,
+        "declarations": [
+          "LatCmp",
+          "LatCmp.VramDef",
+          "LatCmp.NuServedDef",
+          "LT.Nlam",
+          "LT.UL",
+          "LT.UL_spec",
+          "NuAtTDef",
+          "LatDefs"
+        ],
+        "scope": "Lectura íntegra: comparación semilineal de retículos globales con módulos locales, corte servido y condición específica en el primo de la columna. Se leyó la pequeña prueba de descenso de UL; las identificaciones de LatDefs siguen siendo entradas.",
+        "hypotheses_or_external_inputs": [
+          "LatCmp da comparación de cuerpos, valoración, independencia y compatibilidad del span local.",
+          "El primo T_u tiene la condición separada NuAtTDef; el primer bloque de LinkG_at lo excluye."
+        ],
+        "proofs_reviewed": [
+          "LT.UL_spec"
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/DataRRMetric.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataRRMetric.lean",
+        "git_blob_sha": "22484ff267fb46876318ba3fc4f0d5001eecc9b6",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "256448e1066b98a4da2a3c6b5ec896f690036c113faae329c439bac6da0f4a3c",
+        "bytes": 3113,
+        "line_count": 66,
+        "declarations": [
+          "DV.quotNorm",
+          "EigIdx",
+          "DV.logLamC",
+          "RRMetricDef",
+          "DV.RowsRational"
+        ],
+        "scope": "Lectura íntegra de la norma cociente, agrupación espectral y fórmula métrica de RR en lugares infinitos distintos del base. Incluye racionalidad de V0, U y partes espectrales.",
+        "hypotheses_or_external_inputs": [
+          "RRMetricDef y RowsRational son proposiciones suministradas a pruebas posteriores; no pruebas de existencia."
+        ],
+        "proofs_reviewed": [],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/KernelPlaceMeanBound.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/KernelPlaceMeanBound.lean",
+        "git_blob_sha": "0707e4d096763bfe3d58fae153dc5f0e5475c604",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "22fdce18696511899e2818b3ea8b2868f97cb810b02b8f9b1fc1cbbd98f120af",
+        "bytes": 1251,
+        "line_count": 31,
+        "declarations": [
+          "DV.logHook",
+          "DV.Lprime",
+          "DV.L6lo",
+          "DV.kernelPlaceMeanBound",
+          "DV.hExpl6"
+        ],
+        "scope": "Lectura íntegra de las funciones numéricas: cota uniforme inferior por etapa y versión hExpl6. El archivo define las cotas, sin demostrar que los operadores las satisfacen.",
+        "hypotheses_or_external_inputs": [
+          "Las estimaciones espectrales y de núcleos necesarias se reciben de otros módulos."
+        ],
+        "proofs_reviewed": [],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/DataCoeff.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataCoeff.lean",
+        "git_blob_sha": "1edf6f84deb553e6d959b156c25c4b10111de2d3",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "53e9189f4650543bae21afe6608ba2878f329328227f88bc2f60a02b2fdcc6a5",
+        "bytes": 5937,
+        "line_count": 139,
+        "declarations": [
+          "DomWeight",
+          "DomWeight.detShift",
+          "DomWeight.natW",
+          "nablaSq",
+          "delSq",
+          "normFock",
+          "colCoeff",
+          "FactNormFockUnitary",
+          "FactDelDualNabla"
+        ],
+        "scope": "Lectura íntegra de las convenciones de coeficientes, desplazamiento por determinante, modelos polinómicos y norma Fock normalizada por el vector extremo. Las propiedades Fact... son enunciados.",
+        "hypotheses_or_external_inputs": [
+          "Pesos dominantes integrales; no se auditan las representaciones ni la realización automorfa completa."
+        ],
+        "proofs_reviewed": [],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/Divisibility/ThetaNormsAndLinks.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/Divisibility/ThetaNormsAndLinks.lean",
+        "git_blob_sha": "6a9b13edb75914ab351c8433baa57eea12f0fe37",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "d1f26f6400c689b22ab2790ebff6d8e19e7770c88129d6ee47eb110551744546",
+        "bytes": 46440,
+        "line_count": 821,
+        "declarations": [
+          "Formalism.MainNotions.ThetaNormsAndLinks.MetX",
+          "Formalism.MainNotions.ThetaNormsAndLinks.MetX.I1",
+          "Formalism.MainNotions.ThetaNormsAndLinks.MetX.I2",
+          "Formalism.MainNotions.ThetaNormsAndLinks.MetX.I3",
+          "Formalism.MainNotions.ThetaNormsAndLinks.MetX.I4",
+          "Formalism.MainNotions.ThetaNormsAndLinks.NormDecompositionCond",
+          "Formalism.MainNotions.ThetaNormsAndLinks.IntegralityFromMetric",
+          "Formalism.MainNotions.ThetaNormsAndLinks.MetX.int",
+          "Formalism.MainNotions.ThetaNormsAndLinks.stmt1"
+        ],
+        "scope": "Lectura selectiva de datos métricos, hipótesis de integridad, descomposición de denominadores y prueba MetX.int/stmt1. I4 ya contiene el criterio que convierte la cota puntual en integridad de jets; la prueba transporta esas hipótesis al supremo. No se revisa el resto de la construcción local del archivo.",
+        "hypotheses_or_external_inputs": [
+          "MetX.All combina I1, I2, I3 e I4; normas definidas por supremo y mapas de multiplicación/traslación sobreyectivos.",
+          "I4 es una entrada de integridad, no una conclusión automática de la mera cota de una norma."
+        ],
+        "proofs_reviewed": [
+          "MetX.int",
+          "stmt1"
+        ],
+        "file_read_in_full": false,
+        "selected_line_ranges": [
+          [
+            1,
+            110
+          ],
+          [
+            150,
+            205
+          ],
+          [
+            307,
+            335
+          ],
+          [
+            350,
+            400
+          ]
+        ],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/Divisibility/SlopeExcess/HeightBoundOfComponentBounds.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/Divisibility/SlopeExcess/HeightBoundOfComponentBounds.lean",
+        "git_blob_sha": "1fc92c8e74144bc2b632f1113c4472c49a7c8745",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "bf6d55dfada2a351506e19218a687137472b8e0d553e59c7db471590c9faa033",
+        "bytes": 8917,
+        "line_count": 154,
+        "declarations": [
+          "Formalism.MainNotions.DIV.Proofs.height_bound_of_word_slopes",
+          "Formalism.MainNotions.DIV.Proofs.height_bound_of_slope_fullness",
+          "Formalism.MainNotions.DIV.Proofs.hhRest_of_parts",
+          "Formalism.MainNotions.DIV.Proofs.height_bound_of_component_bounds"
+        ],
+        "scope": "Lectura íntegra de las pruebas de promedio ponderado y ensamble uniforme que acotan sFrame+muMax(RR), el presupuesto H del marco. No confundir con una prueba independiente de la altura operatorial htMap.",
+        "hypotheses_or_external_inputs": [
+          "Plenitud y rangos positivos de fuentes, cotas de pendientes por componente y crecimiento externo; se unifican umbrales."
+        ],
+        "proofs_reviewed": [
+          "height_bound_of_word_slopes",
+          "height_bound_of_slope_fullness",
+          "hhRest_of_parts",
+          "height_bound_of_component_bounds"
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/Divisibility/GoodPartEigenspaceKernelSplitting.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/Divisibility/GoodPartEigenspaceKernelSplitting.lean",
+        "git_blob_sha": "1e1b9997bc7b02d8d33ea753652ffe4985d46f1c",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "3b866a00d0d8566758e9374a01706a465937ed0060fa2dfa93c00fe56b1f57fc",
+        "bytes": 36995,
+        "line_count": 697,
+        "declarations": [
+          "Formalism.MainNotions.PGAL.IsLamS",
+          "Formalism.MainNotions.PGAL.LogLamDef",
+          "Formalism.MainNotions.PGAL.ThetaRationalityOverField",
+          "Formalism.MainNotions.PGAL.EmbeddingIsometryIdentity",
+          "Formalism.MainNotions.PGAL.ConjugateDatumSingularValueBound",
+          "Formalism.MainNotions.PGAL.lamS_of_ident",
+          "Formalism.MainNotions.PGAL.stmtD",
+          "Formalism.MainNotions.PGAL.stmtDlog",
+          "Formalism.MainNotions.PGAL.stmtConj",
+          "Formalism.MainNotions.PGAL.log_singular_value_bound_scaled"
+        ],
+        "scope": "Lectura selectiva de modelos por embedding y pruebas que transportan T compuesto con su adjunto sobre el codominio, preservando un escalar positivo mediante isometrías y una fase de norma uno; luego pasan a logaritmos y cotas inferiores. No se leyó toda la prueba de descomposición de la parte buena.",
+        "hypotheses_or_external_inputs": [
+          "ThetaRationalityOverField, ConjugateDatumSingularValueBound, EmbeddingIsometryIdentity y ConjugationNormInvariance.",
+          "Para la cota reescalada: C>=0, Lp>=0, Lp<=K*La, nV<=N_m y suma de altura real no negativa."
+        ],
+        "proofs_reviewed": [
+          "spS_ne_bot",
+          "sumHkC_eq",
+          "isotypicPart_ne_bot",
+          "logLamC_cOf",
+          "MjPart_ne_bot",
+          "IsLamS_unique",
+          "lamS_of_ident",
+          "conj_conj'",
+          "stmtD",
+          "stmtDlog",
+          "stmtConj",
+          "log_singular_value_bound_scaled"
+        ],
+        "file_read_in_full": false,
+        "selected_line_ranges": [
+          [
+            1,
+            237
+          ],
+          [
+            400,
+            548
+          ]
+        ],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/RhoDetPrimeEqMuTildeMulChiPow.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/RhoDetPrimeEqMuTildeMulChiPow.lean",
+        "git_blob_sha": "6ab57a7f313a9f8c351005051933a60a22a0da08",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "b31bcce565741e65c97db0341916d5fafcf416c19a1b02515143c9537ed11691",
+        "bytes": 17018,
+        "line_count": 393,
+        "declarations": [
+          "D7",
+          "D7.Y_sigval",
+          "D7.eMu",
+          "D7.perCol_base_eq_PtilCol",
+          "D7.perCol_tie",
+          "D7.jN",
+          "D7.jEE",
+          "D7.nuIn",
+          "D7.nuIn_jN",
+          "D7.nuIn_norm",
+          "D7.jEE_norm",
+          "D7.duS",
+          "D7.BuRational",
+          "D7.RRFull",
+          "D7.NuFull"
+        ],
+        "scope": "Lectura íntegra del archivo que contiene D7: se cotejaron las igualdades que unen columnas, períodos, realizaciones racionales, métricas y lugares. duS es dim_C(Mu0), mientras eMu identifica la columna compleja usada con Mram.",
+        "hypotheses_or_external_inputs": [
+          "D7 es un paquete de estructuras y campos de compatibilidad; leer estos campos no demuestra que todos existan simultáneamente.",
+          "jEE_norm fija el embedding base; RRMetricDef cubre la extensión métrica restante."
+        ],
+        "proofs_reviewed": [],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/Params.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/Params.lean",
+        "git_blob_sha": "09d1aeec3049821ed6d190c7970cdca9ec5b34cf",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "1de4e5a1230e9d93b5ace3e4f7e112f65e3d5264d75db227476986d179881e17",
+        "bytes": 3847,
+        "line_count": 125,
+        "declarations": [
+          "Ranks",
+          "Ranks.r",
+          "Ranks.nV",
+          "Ranks.N",
+          "Ranks.rankY",
+          "Ranks.rankX'",
+          "Ranks.sigY0",
+          "Ranks.sigW",
+          "sExp",
+          "sExp'",
+          "FactSShift",
+          "factHCMono"
+        ],
+        "scope": "Lectura íntegra: parámetros, paridades, rangos, signaturas y exponentes. Las declaraciones Fact... que tienen tipo Prop son enunciados; solo factHCMono se presenta aquí con prueba.",
+        "hypotheses_or_external_inputs": [
+          "Restricciones de Ranks sobre k, m y t; HCParam y sus desigualdades."
+        ],
+        "proofs_reviewed": [
+          "factHCMono"
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalRingCardinality/DataParams₂.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataParams%E2%82%82.lean",
+        "git_blob_sha": "50914500995df91e2646d91a6c5c99a7e603a51b",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "39d84d7e7db5196715f955ac44f45e61a23fcf4ebd5065ca41444f836efd3099",
+        "bytes": 10441,
+        "line_count": 274,
+        "declarations": [
+          "SizeData₂",
+          "SizeData₂.sg",
+          "SizeData₂.sz",
+          "SizeData₂.Fo",
+          "SizeData₂.Ga",
+          "SizeData₂.Ee",
+          "SizeData₂.NuH",
+          "SizeData₂.logOm",
+          "SizeData₂.MAIN"
+        ],
+        "scope": "Lectura íntegra: soporte finito, F común, E dependiente de columna, ganancia con primos descartados, c_w=2*e_w*log(Nw)/[K:Q], período logOm y término MAIN.",
+        "hypotheses_or_external_inputs": [
+          "tau e io son funciones reales con soporte y anulaciones; la estructura leída no impone por sí sola no negatividad individual.",
+          "La identidad aritmética de períodos CM no se prueba aquí."
+        ],
+        "proofs_reviewed": [],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/RationalColumns/BuRationalOf.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/RationalColumns/BuRationalOf.lean",
+        "git_blob_sha": "91416d556b416e979e3b2edf7bf94baf9660c259",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "73f89dd2c79e68e17dfcdab10fb4ea8bf1eeb290171c86ba70337c57b30b9c6f",
+        "bytes": 2992,
+        "line_count": 54,
+        "declarations": [
+          "Formalism.L2.DIV.RatFullPt.rrFull_of",
+          "Formalism.L2.DIV.RatFullPt.buRational_of"
+        ],
+        "scope": "Lectura íntegra de dos pruebas de transporte: plenitud del retículo de filas y racionalidad del mismo Bu mediante la identidad de períodos, sección y emparejamiento Bk.",
+        "hypotheses_or_external_inputs": [
+          "RowSideFamily, Ok3, ColFacts, DivRows3, RowsHoldDcPt3 y BuDefQ; no se construyen aquí todos esos datos."
+        ],
+        "proofs_reviewed": [
+          "rrFull_of",
+          "buRational_of"
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/Divisibility/LocalQuadraticParts.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/Divisibility/LocalQuadraticParts.lean",
+        "git_blob_sha": "c89c0cac1fccf0ac28b4129f1d8f1ca5b689a265",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "7b0dcf3680ea9942d350110db269931f859b2276885b417445ecf5629be1dc5c",
+        "bytes": 44191,
+        "line_count": 807,
+        "declarations": [
+          "Formalism.MainNotions.LocalQuadraticParts.adm1",
+          "Formalism.MainNotions.LocalQuadraticParts.PeterssonBoundAtEmbedding",
+          "Formalism.MainNotions.LocalQuadraticParts.all_embeddings_of_bounds",
+          "Formalism.MainNotions.LocalQuadraticParts.valuation_bound_of_unrounded",
+          "Formalism.MainNotions.LocalQuadraticParts.kernel_rationality_iff",
+          "Formalism.MainNotions.LocalQuadraticParts.adm13",
+          "Formalism.MainNotions.LocalQuadraticParts.adm18",
+          "Formalism.MainNotions.LocalQuadraticParts.adm23"
+        ],
+        "scope": "Lectura selectiva de interfaces y pruebas del paso a todos los embeddings, cota de valoración redondeada y racionalidad. adm1 usa iotaQ compuesto con su adjunto sobre el espacio inferior, factor kapR*rho(mu)*producto lambda, con rho(mu0)=1. Se cotejaron además las cláusulas de colongitud y períodos sin auditar sus realizaciones.",
+        "hypotheses_or_external_inputs": [
+          "Racionalidad de filas, fórmula métrica, ortogonalidad espectral y Drows>0; entradas de cotas en el embedding base.",
+          "adm1 incluye rho positivo y normalizado en mu0; no se eliminó rho para todas las tuplas ni se comparó una normalización automorfa global."
+        ],
+        "proofs_reviewed": [
+          "all_embeddings_of_bounds",
+          "valuation_bound_of_unrounded",
+          "kernel_rationality_iff"
+        ],
+        "file_read_in_full": false,
+        "selected_line_ranges": [
+          [
+            1,
+            366
+          ],
+          [
+            517,
+            538
+          ],
+          [
+            589,
+            594
+          ]
+        ],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalToGlobal/Divisibility/RecBridge.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/Divisibility/RecBridge.lean",
+        "git_blob_sha": "7feeab6e0483aeb44a7b36e75af04f8e8a792d94",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "ba20a46a7a5132ecd646b85dfd4ec4df838e818543083930b34d2a11533e962b",
+        "bytes": 40684,
+        "line_count": 710,
+        "declarations": [
+          "Formalism.L2.DIV.oneMap_of_coord",
+          "Formalism.L2.DIV.opNormAt_pos_of",
+          "Formalism.L2.DIV.meanEmb_eq_meanLog",
+          "Formalism.L2.DIV.WordFacts",
+          "Formalism.L2.DIV.wordFacts_of",
+          "Formalism.L2.DIV.htMap_le_of_bound",
+          "Formalism.L2.DIV.wordFacts_of_clauses",
+          "Formalism.L2.DIV.wordFacts_of_face",
+          "Formalism.L2.DIV.wordFacts_of_tied",
+          "Formalism.L2.DIV.linkDIV_at_words",
+          "Formalism.L2.DIV.hTie_of",
+          "Formalism.L2.DIV.DivisionPackage",
+          "Formalism.L2.DIV.DivisionPackage.wordFacts",
+          "Formalism.L2.DIV.BridgeRows",
+          "Formalism.L2.DIV.linkDIVt_of_rows"
+        ],
+        "scope": "Lectura selectiva de las pruebas de transporte del mismo Bk, retículos y métricas mediante HLatTie; positividad de normas para mapas no nulos; promedio de embeddings en campo totalmente complejo; ensamblaje por columna y umbral común de LinkDIVt. No se leyó la sección de reconstrucción numérica NumRecTie ni el cierre final de toda la familia.",
+        "hypotheses_or_external_inputs": [
+          "Igualdad del emparejamiento hBk, HLatTie de fuente y filas, DivClausesR o DivisionCompatible, cambio de ideal exacto y cotas numéricas dadas.",
+          "Normalizaciones tH=hu-meanLog(kappa) y tFo:2*FoOfR=L.Fo; se invocan htMap_tie y muDual_tie sin auditar aquí sus dependencias.",
+          "BridgeRows aporta paquetes y estimaciones eventualmente uniformes; la prueba toma un máximo de sus umbrales."
+        ],
+        "proofs_reviewed": [
+          "mem_dualLat_iff'",
+          "oneMap_of_coord",
+          "ne_zero_of_coord",
+          "opNormAt_pos_of",
+          "meanEmb_eq_meanLog",
+          "wordFacts_of",
+          "htMap_le_of_bound",
+          "wordFacts_of_clauses",
+          "wordFacts_of_face",
+          "wordFacts_of_tied",
+          "slope_bound_of_word_facts",
+          "linkDIV_at_words",
+          "hTie_of",
+          "DivisionPackage.colBr_tied",
+          "DivisionPackage.val2",
+          "DivisionPackage.wordFacts",
+          "WordFacts.mono",
+          "Compl3.mono",
+          "degree_weight_bound_mono",
+          "linkDIVt_of_rows"
+        ],
+        "file_read_in_full": false,
+        "selected_line_ranges": [
+          [
+            1,
+            248
+          ],
+          [
+            315,
+            574
+          ]
+        ],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/KerJoinS.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/KerJoinS.lean",
+        "git_blob_sha": "7cdbf400afaa3828fb518c78277ea1fd55e0948b",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "44e5641847d4e5ab0b29099b980fbbba09b7e4fec6ebe6ec2a6f01374797472e",
+        "bytes": 7657,
+        "line_count": 149,
+        "declarations": [
+          "Formalism.L2.SG.KerJoinS.BesselUnfold",
+          "Formalism.L2.SG.KerJoinS.PoincareSeriesHypotheses",
+          "Formalism.L2.SG.KerJoinS.KerSide",
+          "Formalism.L2.SG.KerJoinS.kerJoinS_of_parts",
+          "Formalism.L2.SG.KerJoinS.exists_Q_iota",
+          "Formalism.L2.SG.KerJoinS.besselId_of_joins"
+        ],
+        "scope": "Lectura íntegra: despliegue de Bessel bajo hipótesis de integrabilidad y series de Poincaré; existencia de representante Q; comparación unitaria con un único cambio V en filas, U_u y escalar no nulo por columna.",
+        "hypotheses_or_external_inputs": [
+          "Modelos de filas y columnas y sus identificaciones, KerJoinS/ColJoinS, BuDefQ y sobreyectividad iota(V0)=EE.",
+          "El resultado besselId_of_joins produce adm13; BesselId añade BuRational por separado."
+        ],
+        "proofs_reviewed": [
+          "besS_conc",
+          "kerJoinS_of_parts",
+          "exists_Q_iota",
+          "colJoinS_of_pin",
+          "besselId_of_joins"
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "dependency_closure_reviewed": false
+      }
+    ],
+    "date": "2026-11-22",
+    "toolchain": "4.33.1",
+    "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "document_comparison": {
+      "A": "§6, pp.20–28, ejemplar A55",
+      "B": "§4.1, pp.24–30 y §4.5, pp.46–51, ejemplar B73",
+      "newer_B_incorporated": false,
+      "scope": "Deducciones lineales y aritméticas, Cauchy, gamma y balance condicional; puentes Lean leídos con sus entradas explícitas."
     }
   }
 }

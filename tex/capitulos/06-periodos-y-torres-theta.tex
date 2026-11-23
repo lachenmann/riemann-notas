@@ -1,0 +1,1057 @@
+\section{Periodos y torres theta: divisibilidad y normas}
+\label{sec:periodos}
+
+\fuente{A, §6, pp.~20--28; B, §4.1, pp.~24--30, y §4.5,
+pp.~46--51. Se desarrollan las deducciones lineales, aritméticas y
+analíticas que conectan los periodos con la Nota~\ref{sec:marcos}.
+La construcción de las torres, las estimaciones locales de jets y las
+comparaciones automorfas especializadas se identifican como entradas.}
+
+La divisibilidad de los valores de un emparejamiento permite ampliar
+su retículo fuente sin perder la integridad de la aplicación resultante.
+Esa ampliación aumenta la pendiente. Para aprovecharla hay que controlar
+también la norma compleja del mismo emparejamiento: una ganancia finita
+puede quedar compensada por su tamaño arquimediano. Esta nota sigue
+ambas contribuciones hasta la cancelación del término principal de la
+Nota~\ref{sec:caracteres}.
+
+Los mapas que queremos estudiar tienen la forma
+\begin{equation}
+ b_\alpha:N_\alpha\longrightarrow C=M_W^\vee,
+ \qquad b_\alpha(x)(y)=P_\alpha(x,y),
+ \label{eq:periodos-mapa}
+\end{equation}
+donde $M_W^\vee=\Hom_{\OK}(M_W,\OK)$ lleva la métrica dual.
+El cuerpo CM de la construcción se denota por $E$, su subcuerpo
+totalmente real por $F$, y el cuerpo de coeficientes por $K$.
+No se identifican estos cuerpos. Escribimos $d_K=[K:\Q]$ y usamos
+la pendiente duplicada y la altura de
+\eqref{eq:marcos-normalizacion}.
+
+\subsection{Los espacios unitarios y las dos presentaciones de las torres}
+
+Un espacio hermitiano sobre $E/F$ es un espacio vectorial sobre $E$
+con una forma no degenerada sesquilineal que satisface
+$\langle y,x\rangle=\overline{\langle x,y\rangle}$.
+Su grupo unitario $U(V)$ conserva esa forma. En cada lugar real de $F$
+la forma tiene una signatura $(a,b)$, con $a+b=\dim_E V$.
+El grupo real correspondiente es compacto cuando la forma es definida.
+El plano hiperbólico $\mathbb H$ tiene una base isotrópica $e,f$ con
+$\langle e,f\rangle=1$; su signatura es $(1,1)$.
+
+Sean $k,m\ge2$ pares, y pongamos
+\[
+ r=k+m-1,\qquad N_j=k+j(t+1),
+\]
+donde $t\ge1$ es impar. B escribe $h$ en lugar de $t$ y toma
+$h\ge r+5$. La siguiente tabla reúne las familias de A, §6, pp.~20--21,
+y B, pp.~25--26; los índices recorren las etapas en que se utilizan.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}l l Y@{}}
+\toprule
+Familia & Dimensión sobre $E$ & Datos arquimedianos \\
+\midrule
+$X_j$ & $N_j$ & Definida en A; positiva definida en la presentación de B. \\
+$Y_j$ & $r+jt$ & En B, signatura
+$(r+jt-\lfloor(m-j)/2\rfloor,\lfloor(m-j)/2\rfloor)$. \\
+$W_j$ & $r$ & En A, signatura $(k+j-1,m-j)$; $W_m$ es definida positiva. \\
+$V_j$ & $r+t$ & Espacios auxiliares definidos de la organización de filas de A. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Se tienen inclusiones $X_j\hookrightarrow Y_j$ para $j<m$ y una
+inclusión $Y_m\hookrightarrow X_m$ de codimensión uno. En particular,
+\[
+ \dim_EY_j-\dim_EX_j=m-1-j.
+\]
+La condición inicial puede escribirse
+\[
+ Y_0=X_0\mathbin\perp Ez_m\mathbin\perp
+                  \mathbb H^{m/2-1},\qquad
+ \langle z_m,z_m\rangle=-T_*.
+\]
+Por ejemplo, $k=m=2$ da $r=3$: las dimensiones de $Y_j$ crecen,
+mientras las de $W_j$ permanecen iguales a $3$.
+
+B explica una sucesión de levantamientos desde $X_0$ hasta $X_m$
+y otra desde $Y_m$ hacia $Y_0$. A organiza parte del análisis de filas
+mediante $W_j$ y $V_j$. Estas son familias distintas: igualar $W_j$
+con $Y_j$ sería incompatible con sus dimensiones y signaturas.
+La identificación de las realizaciones automorfas mediante las
+identidades de periodos es una entrada de la construcción. La tabla
+por sí sola no la demuestra.
+
+\subsection{Levantamiento theta y convenciones del emparejamiento}
+
+El anillo de adeles $\mathbb A_F$ reúne las completaciones de $F$:
+en los lugares finitos se exige que las coordenadas sean enteras salvo
+en un conjunto finito. Escribimos
+$[G]=G(F)\backslash G(\mathbb A_F)$ para el cociente automorfo.
+Las formas automorfas son funciones sobre ese cociente con las
+condiciones de regularidad, crecimiento y finitud de la teoría.
+Un levantamiento theta usa un núcleo
+\[
+ \theta_\varphi(g,h)=\sum_{x\in\mathcal X(F)}
+                          (\omega(g,h)\varphi)(x),
+\]
+donde $\omega$ es la representación de Weil, $\mathcal X$ es un
+subespacio lagrangiano de una polarización y $\varphi$ es una función
+de Schwartz: en los lugares arquimedianos tiene decaimiento rápido,
+y en los finitos se usan funciones localmente constantes de soporte
+compacto. La construcción depende de un carácter aditivo, de los
+caracteres que fijan el desdoblamiento y de las medidas elegidas.
+En la convención lineal en $f$ usada por B,
+\begin{equation}
+ (\Theta_\varphi f)(h)=c_V\int_{[U(V)]}
+                         \theta_\varphi(g,h)f(g)\dd g.
+ \label{eq:periodos-theta}
+\end{equation}
+La convergencia y las propiedades automorfas se reciben aquí de la
+teoría theta, con las hipótesis del caso utilizado; véanse B, pp.~24--25,
+Gan \cite[§§2--3]{gan-theta} y Gan--Qiu--Takeda
+\cite[§11.2]{gqt-rallis}. Escribir una integral formal no justifica
+intercambiar su orden ni aplicar una fórmula de norma fuera de su rango.
+
+Para entender la linealidad, el periodo de Bessel de B, p.~27, tiene
+el esquema
+\begin{equation}
+ \mathcal B_\nu(f,g)=c\int_{[U(X_0)]}\int_{[N]}
+       \overline{f(h)}\,g(nh)\,\overline{\nu(n)}\dd n\dd h,
+ \qquad c>0.
+ \label{eq:periodos-bessel-sesqui}
+\end{equation}
+Aquí $N$ es el grupo unipotente asociado a la bandera elegida y
+$\nu$ su carácter. Este periodo es conjugado lineal en $f$ y lineal
+en $g$. B realiza el espacio de pruebas mediante funciones conjugadas;
+el emparejamiento bilineal correspondiente es
+\begin{equation}
+ (f,g)\longmapsto\overline{\mathcal B_\nu(f,\overline g)}
+   =c\int_{[U(X_0)]}\int_{[N]}f(h)g(nh)\nu(n)\dd n\dd h.
+ \label{eq:periodos-bessel-bilineal}
+\end{equation}
+La segunda igualdad se obtiene conjugando cada factor y usando que
+las medidas y $c$ son reales. Las barras forman parte de la convención.
+Este prototipo complejo todavía necesita las normalizaciones y las
+estructuras sobre $K$ para convertirse en $P_\alpha$.
+
+Las identidades de seesaw comparan los periodos sucesivos con el
+emparejamiento final de restricción. La paridad de $m-1-j$ hace alternar
+periodos de Bessel y de Fourier--Jacobi; los segundos incorporan otro
+factor theta. B, pp.~26--27, atribuye esa comparación a la teoría
+clásica y a sus elecciones de datos. La racionalidad del periodo
+normalizado y la coincidencia de sus realizaciones son resultados
+adicionales, que se conservan como entradas en esta nota.
+
+\subsection{Columnas: sumas finitas y denominadores}
+
+Para un grupo definido a infinito, fijados el peso y el nivel, las
+formas algebraicas se describen por vectores de coeficientes sobre un
+conjunto finito de clases dobles. B, pp.~27--28, utiliza módulos
+integrales de representaciones algebraicas para fijar cuáles de esos
+vectores son integrales. En A, §6, p.~21, los operadores de columna adoptan
+la forma
+\begin{equation}
+ (K_j\phi)(L')=\sum_{L\in\mathcal C_j}
+       \frac{K_j(L,L')\phi(L)}{|\Gamma_{j,L}|},
+ \qquad K_{\rm col}=K_{m-1}\cdots K_0,
+ \label{eq:periodos-kernel}
+\end{equation}
+donde $\Gamma_{j,L}$ es el estabilizador finito de la clase $L$.
+Los factores $1/|\Gamma_{j,L}|$ son parte del operador.
+
+Si los coeficientes sin esos pesos preservan los retículos y un entero
+$D_\Gamma>0$ es múltiplo de todos los órdenes de los estabilizadores,
+cada paso lleva el retículo fuente dentro de $D_\Gamma^{-1}$ veces
+el siguiente. Componer $s$ pasos da la inclusión en
+$D_\Gamma^{-s}$ veces el retículo final. La prueba consiste en
+multiplicar cada suma por $D_\Gamma$ e iterar la inclusión.
+Esta observación aísla un denominador; no afirma que sea el único.
+Los caracteres de determinante tienen módulo complejo uno, pero esa
+propiedad no determina por sí sola sus valoraciones finitas.
+
+Denotemos por $\mathcal U_\alpha$ el espacio de formas de la columna
+que B llama $U_\alpha$, con peso y nivel fijados. Se retiene un subespacio
+$\mathcal U_\alpha^\circ$ mediante condiciones en el primo auxiliar
+$T_\alpha$; aquí se cambia la letra de B para distinguir el espacio
+de los unitarios que aparecerán después. Si $\widetilde M_\alpha$
+es el retículo inicial, se pone
+$M_\alpha=\widetilde M_\alpha\cap\mathcal U_\alpha^\circ$.
+El espacio de pruebas común se denota por $\mathcal W$, con norma
+de Petersson y retículo $M_W$. Los periodos normalizados son
+$K$-bilineales
+$P_\alpha:\mathcal U_\alpha^\circ\times\mathcal W\to K$.
+El cambio posterior a un subretículo de índice finito
+$M'_\alpha\subseteq M_\alpha$ conserva
+$\mathcal U_\alpha^\circ$. Esta distinción separa el recorte del
+espacio racional del ajuste integral posterior.
+
+\subsection{Filas: el cociente útil y el menor autovalor}
+
+El siguiente lema permite separar el núcleo de una torre de filas sin
+perder la información necesaria para acotar la norma del periodo.
+
+\begin{lema}[Descenso por una aplicación sobreyectiva]
+Sean $A_0$ y $R_0\ne0$ espacios de Hilbert complejos de dimensión
+finita, $T:A_0\to R_0$ lineal y $V\subseteq A_0$ un subespacio.
+Supongamos
+\[
+ T(V)=R_0,\qquad T^*(R_0)\subseteq V.
+\]
+Definamos $U=V\cap\ker T$ y $Q=V\cap U^\perp$. Entonces
+$Q=\operatorname{im}T^*$, y $T|_Q$ es un isomorfismo con inversa
+\begin{equation}
+ S=T^*(TT^*)^{-1},\qquad
+ \|S\|^2=\frac1{\lambda_{\min}(TT^*)}.
+ \label{eq:periodos-inversa}
+\end{equation}
+Si $p:V\to\C$ es lineal y se anula en $U$, existe un único
+$\beta:R_0\to\C$ tal que $p=\beta\circ T|_V$, y
+\begin{equation}
+ \|\beta\|^2\le
+       \frac{\|p|_Q\|^2}{\lambda_{\min}(TT^*)}.
+ \label{eq:periodos-descenso-norma}
+\end{equation}
+\label{lem:periodos-cociente}
+\end{lema}
+
+\begin{proof}
+La sobreyectividad de $T$ implica que $T^*$ es inyectiva y que
+$TT^*$ es definida positiva. Además,
+$A_0=\ker T\mathbin\oplus^\perp\operatorname{im}T^*$.
+La segunda hipótesis permite restringir esta descomposición a $V$:
+si $v\in V$, su componente en $\operatorname{im}T^*$ pertenece a
+$V$, y la diferencia pertenece a $V\cap\ker T=U$.
+Por tanto $V=U\mathbin\oplus^\perp\operatorname{im}T^*$ y
+$Q=\operatorname{im}T^*$.
+
+Se tiene $TS=I_{R_0}$ y $S(R_0)\subseteq Q$. Como
+$Q\cap\ker T=0$, $S$ es la inversa de $T|_Q$. El cálculo
+\[
+ S^*S=(TT^*)^{-1}TT^*(TT^*)^{-1}=(TT^*)^{-1}
+\]
+da \eqref{eq:periodos-inversa} por el teorema espectral.
+Si $p|_U=0$, la fórmula $\beta(y)=p(Sy)$ proporciona la
+factorización; su unicidad resulta de $T(V)=R_0$.
+Finalmente $\|\beta\|\le\|p|_Q\|\,\|S\|$.
+\end{proof}
+
+La anulación de $p$ en $U$ es necesaria. La sobreyectividad y una
+identidad para $TT^*$ no la implican. Por ejemplo, para
+$T:\C^2\to\C$, $T(x,y)=x$, el funcional $p(x,y)=y$ no desciende,
+aunque $TT^*=1$. En la construcción formal, esa anulación aparece
+como una entrada específica sobre el periodo.
+
+Si una descomposición ortogonal $R_0=\bigoplus_\pi R_0[\pi]$
+diagonaliza la torre y
+\begin{equation}
+ TT^*|_{R_0[\pi]}=
+          \kappa_R\prod_{j=1}^m\lambda_{j,\pi}\,I,
+ \qquad \kappa_R>0,\quad\lambda_{j,\pi}>0,
+ \label{eq:periodos-espectro}
+\end{equation}
+la norma de la inversa depende del mínimo entre los bloques no nulos.
+La igualdad se considera para una tupla de caracteres y una normalización
+fijadas: $\kappa_R$ conserva todos los factores positivos comunes a
+los bloques, incluidos los que puedan depender de esa tupla.
+En B, p.~29, la identidad de la torre $Y_m\to Y_0$ expresa ese
+escalar mediante valores $L$ y factores locales. Las fórmulas de
+producto interno de Rallis son la entrada especializada correspondiente
+\cite[§11]{gqt-rallis}; todavía hay que comprobar sus hipótesis,
+los vectores locales y las medidas para los datos de la propuesta.
+
+Aplicando el lema al periodo final $P_\alpha^{\rm fin}$, después
+del operador de columnas y con la anulación en $U$ y las
+identificaciones de modelos como hipótesis, se obtiene en cada inmersión $\sigma$
+la desigualdad de A, (6.1), para el emparejamiento no nulo:
+\begin{align}
+ \log\|P_\alpha\|_\sigma^2
+ &\le\log\|P_\alpha^{\rm fin}\|_\sigma^2
+       +\sum_j\log\|K_j\|_\sigma^2-\log\kappa_{R,\sigma}
+       \notag\\
+ &\hspace{1em}-\min_\pi\sum_j\log\lambda_{j,\pi,\sigma}.
+ \label{eq:periodos-cota-arquimediana}
+\end{align}
+En efecto, se usa $P_\alpha(x,y)=
+P_\alpha^{\rm fin}(K_{\rm col}x,Sy)$ y la submultiplicatividad
+de la norma. La norma de un emparejamiento bilineal es la de su mapa
+al dual. El mínimo espectral se toma antes de promediar sobre
+$\sigma$; reemplazarlo por una media de autovalores no controlaría
+$\|S\|$.
+
+\subsection{La compatibilidad que necesita el marco}
+
+A, Proposición~6.2, formula la comparación entre el periodo algebraico
+y el complejo mediante escalares $a_\alpha\ne0$, unitarios de las
+fuentes $U_\alpha$ y un único unitario $V$ del espacio de filas:
+\begin{equation}
+ P_\alpha(x,y)=a_\alpha\,\operatorname{Bes}_\alpha
+                                  (U_\alpha x,Vy).
+ \label{eq:periodos-bessel-id}
+\end{equation}
+El unitario común en el receptor importa cuando se suman operadores.
+En términos de mapas hacia un mismo espacio de Hilbert, si
+$\widetilde B_\alpha=a_\alpha V B_\alpha U_\alpha$ y
+$\widetilde c_\alpha=c_\alpha/|a_\alpha|^2$, entonces
+\[
+ \widetilde c_\alpha\widetilde B_\alpha^*\widetilde B_\alpha
+   =U_\alpha^*(c_\alpha B_\alpha^*B_\alpha)U_\alpha,
+ \qquad
+ \sum_\alpha\widetilde c_\alpha
+       \widetilde B_\alpha\widetilde B_\alpha^*
+   =V\left(\sum_\alpha c_\alpha B_\alpha B_\alpha^*\right)V^*.
+\]
+Así se conservan los defectos del marco de la
+Nota~\ref{sec:marcos}. En el paso de un emparejamiento a un mapa
+al dual aparece el unitario inducido por $V$, que sigue siendo común.
+
+La comparación no prueba que esos defectos sean pequeños. Tampoco
+elimina el escalar de la altura:
+\[
+ h(a_\alpha B_\alpha)=h(B_\alpha)
+       +\frac2{d_K}\sum_\sigma\log|\sigma(a_\alpha)|
+\]
+cuando $a_\alpha\in K^\times$, $B_\alpha\ne0$ y se mantienen los espacios y las
+métricas. Sus valoraciones finitas deben quedar en la misma cuenta.
+El cotejo localizado con Lean, descrito más abajo, hace explícita esa
+necesidad de transportar a la vez mapa, retículos y métricas.
+
+\subsection{De divisibilidad local a mapa integral}
+
+Sean $M$ y $R$ retículos plenos sobre $\OK$ en espacios
+vectoriales sobre $K$, con $\operatorname{rk}M>0$, y sea
+$P:M_K\times R_K\to K$ bilineal.
+Para cada primo finito $\mathfrak p$ normalizamos
+$v_\mathfrak p(\pi_\mathfrak p)=1$. Elegimos enteros
+$n_\mathfrak p$, cero salvo en un conjunto finito, y ponemos
+$\mathfrak a=\prod_\mathfrak p\mathfrak p^{n_\mathfrak p}$.
+
+\begin{proposicion}[Ampliación por un ideal fraccionario]
+Si
+\begin{equation}
+ P(M_\mathfrak p,R_\mathfrak p)
+       \subseteq\pi_\mathfrak p^{n_\mathfrak p}\mathcal O_{K,\mathfrak p}
+       \quad\text{para todo }\mathfrak p,
+ \label{eq:periodos-divisibilidad}
+\end{equation}
+entonces $N=\mathfrak a^{-1}M$ satisface $P(N,R)\subseteq\OK$.
+Con las mismas métricas arquimedianas,
+\begin{equation}
+ \mu(N)=\mu(M)+\frac2{d_K}
+                 \sum_\mathfrak p n_\mathfrak p\log N\mathfrak p.
+ \label{eq:periodos-ganancia-ideal}
+\end{equation}
+\label{prop:periodos-integridad}
+\end{proposicion}
+
+\begin{proof}
+Localmente $N_\mathfrak p=\pi_\mathfrak p^{-n_\mathfrak p}
+M_\mathfrak p$. La bilinealidad y
+\eqref{eq:periodos-divisibilidad} dan valores en
+$\mathcal O_{K,\mathfrak p}$. Como
+$\OK=K\cap\bigcap_\mathfrak p\mathcal O_{K,\mathfrak p}$,
+todos los valores globales son enteros. Si $q=\operatorname{rk}M$,
+\[
+ \det(\mathfrak a^{-1}M)=\mathfrak a^{-q}\det M.
+\]
+La fórmula del grado \eqref{eq:marcos-grado} aumenta por
+$q\log N\mathfrak a/d_K$. Multiplicar por $2/q$ prueba
+\eqref{eq:periodos-ganancia-ideal}.
+\end{proof}
+
+La proposición permite exponentes negativos. Si $n_\mathfrak p>0$,
+se divide por la potencia correspondiente y aumenta la pendiente;
+si es negativo, se contrae el retículo y la pendiente disminuye.
+Los ideales fraccionarios no necesitan ser principales.
+Esta es la deducción de A, Lema~6.3, y B, p.~49.
+
+Para aplicarla hay que construir antes un único $M_W$ global cuyas
+localizaciones sean las utilizadas al medir los periodos. Especificar
+retículos locales en todos los primos exige compatibilidad con un
+retículo fijo fuera de un conjunto finito. La identificación compleja
+\eqref{eq:periodos-bessel-id} no garantiza ese dato integral.
+
+\subsection{El coste del subretículo, el rango y el redondeo}
+
+En la aplicación se parte de $M_\alpha$ y se pasa a un subretículo
+$M'_\alpha\subseteq M_\alpha$ de índice finito, del mismo rango
+$q_\alpha>0$. Pongamos
+\[
+ J_{\alpha,\mathfrak p}=\length_{\mathcal O_{K,\mathfrak p}}
+       (M_{\alpha,\mathfrak p}/M'_{\alpha,\mathfrak p}),
+ \qquad e_\mathfrak p=v_\mathfrak p(p),
+\]
+donde $p$ es el primo racional bajo $\mathfrak p$. Los exponentes
+de la construcción se miden en unidades en que $p$ tiene valoración
+uno. Con soporte finito, escribimos
+\begin{equation}
+ s_{\alpha,\mathfrak p}=\sum_{j=1}^m
+     (g_{j,\mathfrak p}+F_{j,\mathfrak p}-E_{\alpha,j,\mathfrak p}),
+ \quad n_{\alpha,\mathfrak p}=\lfloor e_\mathfrak p
+                                      s_{\alpha,\mathfrak p}\rfloor,
+ \quad N_\alpha=\mathfrak a_\alpha^{-1}M'_\alpha.
+ \label{eq:periodos-ideal-columna}
+\end{equation}
+Aquí $\mathfrak a_\alpha=\prod\mathfrak p^{n_{\alpha,\mathfrak p}}$.
+La divisibilidad se exige sobre $M'_\alpha\times M_W$.
+Combinar \eqref{eq:marcos-coste-indice} y
+\eqref{eq:periodos-ganancia-ideal} da la identidad exacta
+\begin{equation}
+ \mu(N_\alpha)-\mu(M_\alpha)
+ =\frac2{d_K}\sum_\mathfrak p
+       \left(n_{\alpha,\mathfrak p}
+             -\frac{J_{\alpha,\mathfrak p}}{q_\alpha}\right)
+                                       \log N\mathfrak p.
+ \label{eq:periodos-cuenta-exacta}
+\end{equation}
+La parte de índice cuesta pendiente, aunque no elimine dimensiones.
+El recorte previo del espacio de formas y el paso a un subretículo
+de índice finito son operaciones diferentes.
+
+Con $\{x\}=x-\lfloor x\rfloor$, la pérdida exacta por redondeo es
+\[
+ \rho_\alpha=\frac2{d_K}\sum_\mathfrak p
+ \{e_\mathfrak p s_{\alpha,\mathfrak p}\}\log N\mathfrak p\ge0.
+\]
+Si el soporte no vacío está sobre un conjunto finito $S$ de primos
+racionales, entonces
+\begin{equation}
+ 0\le\rho_\alpha<\frac2{d_K}
+     \sum_{\mathfrak p\mid S}\log N\mathfrak p
+ \le2\sum_{p\in S}\log p.
+ \label{eq:periodos-redondeo}
+\end{equation}
+Si el soporte es vacío, $\rho_\alpha=0$. Para la última desigualdad,
+escribimos $N\mathfrak p=p^{f_\mathfrak p}$ y usamos
+$\sum_{\mathfrak p\mid p}e_\mathfrak p f_\mathfrak p=d_K$,
+de donde $\sum f_\mathfrak p\le d_K$. La cota no crece con el
+grado del cuerpo de coeficientes.
+
+Una comparación de rangos sigue siendo necesaria al insertar las cotas
+locales del código. Allí una de las longitudes se divide por
+$e_\mathfrak p$ y se acota mediante una dimensión $d_\alpha$
+anterior al recorte, mientras \eqref{eq:periodos-cuenta-exacta}
+divide por el rango retenido $q_\alpha$. Si se dispone de
+\[
+ \frac{J_{\alpha,\mathfrak p}}{e_\mathfrak p}
+       \le d_\alpha(\tau_\mathfrak p+\iota_\mathfrak p),
+ \qquad \chi_\alpha=\frac{d_\alpha}{q_\alpha},
+\]
+la consecuencia correcta es
+\begin{equation}
+ \frac{J_{\alpha,\mathfrak p}}{e_\mathfrak p q_\alpha}
+       -\tau_\mathfrak p
+ \le\iota_\mathfrak p+
+             (\chi_\alpha-1)(\tau_\mathfrak p+\iota_\mathfrak p).
+ \label{eq:periodos-coste-rango}
+\end{equation}
+La parte positiva del miembro derecho puede incorporarse a una
+pérdida no negativa. No hace falta atribuir signos a
+$\tau_\mathfrak p$ e $\iota_\mathfrak p$ que la interfaz no declare.
+Una cota $q_\alpha\ge(1-\delta_0)d_\alpha>0$ controlaría
+$\chi_\alpha\le(1-\delta_0)^{-1}$, pero debe acreditarse.
+El primo auxiliar distinguido, excluido de esa cota local, se cuenta
+por separado.
+
+\subsection{Por qué aparecen potencias impares de primos}
+
+La parte especializada de la divisibilidad estudia jets de funciones
+theta en coordenadas formales y sus módulos integrales. A,
+Proposición~6.5, exige hipótesis sobre los logaritmos formales, la
+acción de raíces de la unidad, los pesos y la integridad de ciertas
+exponenciales. La invariancia por raíces de la unidad, tomada sola,
+no da una cota de valoración: multiplicar un monomio invariante por
+$p^{-M}$ conserva esa invariancia.
+
+Una identidad elemental explica la forma del término que resulta de
+esa estimación. Para $p>1$, $a\ge0$ y números $w_\nu\ge0$,
+\begin{equation}
+ \frac{p}{p^2-1}a-
+       \sum_{\substack{\nu\ge1\\\nu\ {\rm impar}}}
+                   \min(a/p^\nu,w_\nu)
+ =\sum_{\substack{\nu\ge1\\\nu\ {\rm impar}}}
+                   (a/p^\nu-w_\nu)_+.
+ \label{eq:periodos-rampa}
+\end{equation}
+En efecto, $x-\min(x,w)=(x-w)_+$ y
+$\sum_{\nu\ge1,\ \nu\ {\rm impar}}p^{-\nu}=p/(p^2-1)$.
+Ambas series convergen porque sus términos están entre $0$ y
+$a/p^\nu$. Si $w_\nu\ge1$, el miembro derecho solo tiene términos
+no nulos cuando $p^\nu<a$. Esta es A, (6.7).
+
+La consecuencia que B, pp.~49--50, utiliza como entrada local es,
+con los datos allí construidos,
+\begin{equation}
+ \sum_{j=1}^m g_{j,\mathfrak p}-\tau_\mathfrak p
+ \ge\sum_{j=1}^m\sum_{t\in T_\mathfrak p}
+       \sum_{\substack{\nu\ge1\\\nu\ {\rm impar}}}
+       \left(\frac{a_t}{p^\nu}
+                   -w_{j,c\operatorname{Frob}_p^\nu\tau_t}\right)_+
+       -R_\mathfrak p .
+ \label{eq:periodos-entrada-local}
+\end{equation}
+Aquí $T_\mathfrak p$ es el conjunto de lugares seleccionados en los
+que se aplica la estimación, $c$ es la conjugación compleja,
+$\tau_t$ representa el lugar en el tipo CM y $R_\mathfrak p$ reúne
+las pérdidas locales. Los pesos son al menos uno. La fórmula se
+aplica en los primos y rangos permitidos por la construcción; no
+postula la misma cota en todos los primos.
+
+Para pasar a pendientes, los coeficientes son
+\begin{equation}
+ c_\mathfrak p=\frac{2e_\mathfrak p\log N\mathfrak p}{d_K},
+ \qquad
+ \sum_{\mathfrak p\mid p}c_\mathfrak p=2\log p.
+ \label{eq:periodos-peso-local}
+\end{equation}
+La segunda identidad vuelve a usar $\sum e_\mathfrak p
+f_\mathfrak p=d_K$. Produce el factor $2\log p$ de la suma
+aritmética de la Nota~\ref{sec:caracteres}. La restricción a potencias
+impares y el transporte por Frobenius vienen de la estimación local;
+la identidad \eqref{eq:periodos-rampa} conserva sus pesos, pero no
+prueba esa estimación. Los lugares omitidos de $T_\mathfrak p$ y
+los términos $R_\mathfrak p$ necesitan todavía un presupuesto global.
+
+\subsection{La normalización CM del término arquimediano}
+
+Escribamos $f=[F:\Q]$, $\Phi$ para el tipo CM, y
+\[
+ \operatorname{rd}_E=|\Delta_E|^{1/[E:\Q]},\qquad
+ v=\operatorname{rd}_E/2.
+\]
+En la construcción estudiada, $\kappa$ es el carácter cuadrático
+imaginario que intervino en la Nota~\ref{sec:caracteres}, y
+$\ell_\kappa=L'(1,\kappa)/L(1,\kappa)$ es real. A, (6.9)--(6.10),
+y B, p.~47, fijan
+\begin{equation}
+ \log\Omega=\gamma+\log(\pi/v)-\ell_\kappa,
+ \qquad \Omega>0.
+ \label{eq:periodos-cm}
+\end{equation}
+Aquí $\gamma$ es la constante de Euler. La igualdad procede de
+periodos CM y de sus normalizaciones aritméticas; no es una libertad
+para ajustar después una constante. A identifica además
+$\log\Omega$ con el doble del grado de las líneas CM normalizadas
+que usa en los jets. Esa identificación incorpora los datos de
+polarización y de comparación de retículos.
+
+Una identidad entre valores absolutos complejos no determina los
+denominadores de los factores algebraicos de un periodo. Por eso B,
+pp.~46--47, separa la fórmula de periodos, la reciprocidad CM y la
+integridad de valores $L$ modificados. Estas comparaciones se reciben
+como entradas. Al usarlas habrá que mantener la distinción entre
+vectores de Lie y diferenciales duales, y entre norma y norma al
+cuadrado: cualquiera de esos cambios altera el signo o el factor
+del grado.
+
+\subsection{Cauchy con crecimiento gaussiano}
+
+El origen analítico de las expresiones $a\log a-a$ puede verse en
+una estimación completa y elemental. Definimos
+\[
+ \Phi_0(y)=y\log y-y\quad(y>0),\qquad \Phi_0(0)=0.
+\]
+Se escribe $\Phi_0$ para distinguir esta función del tipo CM $\Phi$.
+
+\begin{lema}[Derivadas de una función de crecimiento gaussiano]
+Sea $G$ entera en $\C^n$ y supongamos
+\[
+ |G(z)|\le S_0\exp\left(\frac12\sum_{i=1}^n r_i^2|z_i|^2\right),
+ \qquad S_0\ge0,\quad r_i>0.
+\]
+Para un multiíndice $\beta\in\Z_{\ge0}^n$,
+\begin{equation}
+ |\partial^\beta G(0)|
+ \le S_0\prod_{\beta_i>0}
+         \beta_i!\left(\frac{e r_i^2}{\beta_i}\right)^{\beta_i/2}.
+ \label{eq:periodos-cauchy}
+\end{equation}
+Si $|c_ir_i|^2=\Omega_i^{-1}$ con $\Omega_i>0$, entonces
+\begin{equation}
+ |c^\beta\partial^\beta G(0)|^2
+ \le S_0^2\prod_i\Omega_i^{-\beta_i}
+       \prod_{\beta_i>0} e^2\beta_i\exp(\Phi_0(\beta_i)).
+ \label{eq:periodos-cauchy-periodo}
+\end{equation}
+Los productos vacíos valen uno.
+\label{lem:periodos-cauchy}
+\end{lema}
+
+\begin{proof}
+Podemos fijar en cero las variables para las que $\beta_i=0$.
+La fórmula de Cauchy en los círculos $|z_i|=R_i$ da
+\[
+ |\partial^\beta G(0)|
+ \le S_0\prod_{\beta_i>0}
+       \beta_i!R_i^{-\beta_i}\exp(r_i^2R_i^2/2).
+\]
+El logaritmo del factor que depende de $R_i$ tiene derivada
+$-\beta_i/R_i+r_i^2R_i$. Su mínimo se alcanza en
+$R_i^2=\beta_i/r_i^2$, lo que prueba
+\eqref{eq:periodos-cauchy}.
+
+Para un entero $b\ge1$, la concavidad de $\log t$ hace que su
+integral en cada intervalo $[j,j+1]$ sea al menos el área del
+trapecio de los valores en los extremos. Sumando,
+\[
+ \log(b!)-\tfrac12\log b
+ \le\int_1^b\log t\dd t=\Phi_0(b)+1.
+\]
+La fórmula también vale para $b=1$. Por tanto
+$b!\le e\,b^{b+1/2}e^{-b}$ y
+\[
+ (b!)^2(e/b)^b\le e^2b\,\exp(\Phi_0(b)).
+\]
+Elevar \eqref{eq:periodos-cauchy} al cuadrado y multiplicar por
+$\prod_i|c_i|^{2\beta_i}$ da
+\eqref{eq:periodos-cauchy-periodo}.
+\end{proof}
+
+Esta es la estimación de A, Lema~6.6. El factor es
+$e^2\beta_i$, con $\beta_i$ multiplicando a $e^2$.
+La derivada es ordinaria: sustituirla por el coeficiente de Taylor
+$\partial^\beta G(0)/\beta!$ cambiaría la cuenta.
+
+El paso desde derivadas escalares hasta la norma de un bloque de
+Schur requiere formas hermitianas y módulos de representaciones
+específicos. A, (6.11), obtiene en ese paso factores de la forma
+\[
+ \Omega_\tau^{-|\nu_\tau|}
+ e(2|\nu_\tau|+2)^{2a_0b_0}
+ \exp\left(\sum_i\Phi_0(\nu_{\tau,i})\right)
+\]
+para los bloques de matrices $b_0\times a_0$, bajo las hipótesis de
+pesos y relleno por ceros que allí se indican. Se registra como una
+entrada especializada. El lema escalar explica el término factorial,
+pero no demuestra por sí solo la norma de todo ese bloque.
+
+\subsection{Un cálculo gamma que conserva el término principal}
+
+La fórmula espectral de filas contiene cocientes gamma y factores
+de dimensión. El siguiente caso entero muestra cómo extraer su
+término principal con una cota uniforme.
+
+\begin{lema}
+Sean $a_0\ge\cdots\ge a_{n-1}\ge0$ enteros, $n\ge1$ y $A=a_0$.
+Definamos
+\[
+ H_n(a)=\sum_{i=0}^{n-1}\log\Gamma(a_i+n-i)
+       -\sum_{0\le i<l<n}\log(a_i-a_l+l-i).
+\]
+Entonces
+\begin{equation}
+ \left|H_n(a)-\sum_{i=0}^{n-1}\Phi_0(a_i)\right|
+ \le n+\frac{n(n+1)}2\log(A+n).
+ \label{eq:periodos-gamma}
+\end{equation}
+\label{lem:periodos-gamma}
+\end{lema}
+
+\begin{proof}
+Los argumentos de los logaritmos son positivos. Como
+$\Gamma(a_i+n-i)=a_i!\prod_{h=1}^{n-i-1}(a_i+h)$,
+la diferencia entre $H_n(a)$ y $\sum_i\log(a_i!)$ consta de
+dos sumas de $n(n-1)/2$ logaritmos, una restada de la otra.
+Cada término está entre $0$ y $\log(A+n)$. El valor absoluto
+de la diferencia es a lo sumo
+$n(n-1)\log(A+n)/2$.
+
+Para $b\ge1$, la monotonía de $\log t$ da
+\[
+ \Phi_0(b)+1\le\log(b!)
+             \le\Phi_0(b)+1+\log b.
+\]
+Para $b=0$, $\log(0!)=\Phi_0(0)=0$. De aquí
+$|\sum_i\log(a_i!)-\sum_i\Phi_0(a_i)|
+\le n+n\log(A+n)$. Sumando las dos cotas se obtiene
+\eqref{eq:periodos-gamma}.
+\end{proof}
+
+El lema es A, Lema~6.7. Las expresiones $\Phi_0$ de las derivadas
+y de los factores gamma pueden cancelarse cuando sus pesos y sus
+desplazamientos han sido identificados. No se puede concluir esa
+cancelación de que ambas estimaciones contengan un término
+$a\log a$: los coeficientes, los índices y las constantes lineales
+también deben coincidir. A, Proposición~6.8, reúne la comparación
+especializada que produce la cota de alturas utilizada a continuación.
+
+\subsection{La cancelación exacta del término principal}
+
+En lo que sigue, con $a_t>0$, $A=\sum_{t\in T}a_t$ y
+$w_{j,\rho}>0$, definamos
+\begin{align}
+ D_{\rm div}
+   &=m\sum_{t\in T}\bigl(\Phi_0(a_t)-a_t\log\Omega\bigr),
+       \label{eq:periodos-ddiv}\\
+ L_w&=\sum_{j=1}^m\frac1f\sum_{\rho\in\Phi}
+                           \log(w_{j,\rho}v/\pi),
+       \label{eq:periodos-lw}\\
+ M_{\rm tot}
+   &=\sum_{j=1}^m\sum_{t\in T}a_t
+       \left(\log a_t-1-\gamma+\ell_\kappa
+                     -\frac1f\sum_{\rho\in\Phi}\log w_{j,\rho}\right).
+       \label{eq:periodos-mtot}
+\end{align}
+El último renglón es la suma de los términos
+$\mathcal M(a_t,w_j)$ de \eqref{car-termino-principal}.
+Puesto que $|\Phi|=f$, la identidad
+\eqref{eq:periodos-cm} implica
+\begin{equation}
+ \boxed{\quad D_{\rm div}-AL_w=M_{\rm tot}.\quad}
+ \label{eq:periodos-cancelacion}
+\end{equation}
+Para comprobarla, en cada par $(j,t)$ la parte constante es
+\[
+ -\log\Omega-\frac1f\sum_{\rho\in\Phi}\log(w_{j,\rho}v/\pi)
+ =-\gamma+\ell_\kappa-\frac1f\sum_{\rho\in\Phi}\log w_{j,\rho}.
+\]
+Los términos $\log v-\log\pi$ se cancelan con signos opuestos.
+Esta es B, (4.5), p.~48. El cálculo conserva la constante $-1$ de
+$\Phi_0(a_t)$ y el signo positivo de $\ell_\kappa$.
+
+\subsection{La desigualdad que enlaza las Notas 4 y 5}
+
+Escribimos $F_{\rm fin}$ y $G_{\rm fin}$ para los números que B
+denota por $F$ y $G$ en su p.~49:
+\[
+ F_{\rm fin}=\sum_\mathfrak p c_\mathfrak p\sum_jF_{j,\mathfrak p},
+ \qquad
+ G_{\rm fin}=\sum_\mathfrak p c_\mathfrak p
+                    \left(\sum_jg_{j,\mathfrak p}-\tau_\mathfrak p\right).
+\]
+Además, $E_\alpha=\sum_\mathfrak p c_\mathfrak p
+\sum_jE_{\alpha,j,\mathfrak p}$.
+El resto $\mathcal L_\alpha$ debe cubrir el redondeo, el exceso
+del coste de índice sobre la cantidad ya restada mediante
+$\tau_\mathfrak p$, y los primos excepcionales. La identidad
+\eqref{eq:periodos-cuenta-exacta} indica cómo verificar ese resto;
+en particular, no permite perder el cociente de rangos de
+\eqref{eq:periodos-coste-rango}.
+
+\begin{proposicion}[Balance condicionado a las estimaciones de periodos]
+Supongamos que \eqref{eq:periodos-mapa} es una familia finita no vacía
+de mapas integrales, con rangos fuente $q_\alpha>0$ y
+$\operatorname{rk}C>0$. Sean $h_\alpha$ números reales con
+$h(b_\alpha)\le h_\alpha$ cuando $b_\alpha\ne0$.
+Supongamos que se satisfacen las siguientes cotas, con
+$E_{\rm div},E_{\rm sl},E_{\rm norm},E_{\rm count}\ge0$
+independientes de $\alpha$, y restos $\mathcal L_\alpha\ge0$:
+\begin{align}
+ \mu(C)+h_\alpha-F_{\rm fin}
+   &\le D_{\rm div}-A\log T_\alpha+E_{\rm div},
+       \label{eq:periodos-balance-norma}\\
+ \mu(N_\alpha)
+   &\ge\mu(M_\alpha)+G_{\rm fin}+F_{\rm fin}
+                                      -E_\alpha-\mathcal L_\alpha,
+       \label{eq:periodos-balance-finito}\\
+ \mu(M_\alpha)&\ge-E_{\rm sl},
+       \label{eq:periodos-balance-base}\\
+ E_\alpha&\le mA\ell_g+E_{\rm norm},
+       \label{eq:periodos-balance-normalizacion}\\
+ \log T_\alpha&\ge L_w+m\ell_g-E_{\rm count}.
+       \label{eq:periodos-balance-conteo}
+\end{align}
+Aquí $\ell_g=\log(g_0g_1)$ registra dos primos auxiliares y
+$T_\alpha$ es el primo de nivel de la columna. Pongamos
+\[
+ s=\sum_\alpha\frac{q_\alpha}{\sum_\beta q_\beta}
+                    \bigl(\mu(N_\alpha)-h_\alpha\bigr),
+ \qquad
+ \mathcal L=\sum_\alpha\frac{q_\alpha}{\sum_\beta q_\beta}
+                    \mathcal L_\alpha.
+\]
+Entonces
+\begin{equation}
+ s-\mu(C)\ge G_{\rm fin}-M_{\rm tot}
+       -(E_{\rm sl}+E_{\rm norm}+E_{\rm div}
+                      +AE_{\rm count})-\mathcal L.
+ \label{eq:periodos-balance-media}
+\end{equation}
+Si se verifican además las hipótesis del
+Teorema~\ref{teo:marcos-transferencia}, con esos mapas y esa media,
+y si $\mathcal A_{\rm tot}-G_{\rm fin}\le E_{\rm loss}$, se obtiene
+\begin{align}
+ \mathcal A_{\rm tot}-M_{\rm tot}
+ &\le E_{\rm sl}+E_{\rm norm}+E_{\rm div}
+                +AE_{\rm count}+\mathcal L+E_{\rm loss}
+                \notag\\
+ &\quad+\frac{4u\log(1+H_0/u)+(\eta+4\sqrt e)H_0}{1-\delta},
+ \label{eq:periodos-exceso}
+\end{align}
+con la convención del teorema cuando $u=0$.
+\label{prop:periodos-balance}
+\end{proposicion}
+
+\begin{proof}
+Despejar $h_\alpha$ en \eqref{eq:periodos-balance-norma} y
+restarlo de \eqref{eq:periodos-balance-finito} cancela
+$F_{\rm fin}$ y da
+\[
+ \mu(N_\alpha)-h_\alpha
+ \ge\mu(C)+\mu(M_\alpha)+G_{\rm fin}-D_{\rm div}
+       +A\log T_\alpha-E_\alpha
+       -E_{\rm div}-\mathcal L_\alpha.
+\]
+Las tres cotas restantes implican
+\[
+ A\log T_\alpha-E_\alpha
+ \ge AL_w
+             -AE_{\rm count}-E_{\rm norm}.
+\]
+Aquí las dos contribuciones $mA\ell_g$ se
+cancelan. Usar \eqref{eq:periodos-cancelacion}, la cota de
+$\mu(M_\alpha)$ y promediar con los pesos $q_\alpha/\sum q_\beta$
+prueba \eqref{eq:periodos-balance-media}.
+
+El Teorema~\ref{teo:marcos-transferencia} acota $s-\mu(C)$ por
+la fracción del segundo renglón de \eqref{eq:periodos-exceso}.
+La identidad
+\[
+ \mathcal A_{\rm tot}-M_{\rm tot}
+   =(\mathcal A_{\rm tot}-G_{\rm fin})+(G_{\rm fin}-M_{\rm tot})
+\]
+y \eqref{eq:periodos-balance-media} prueban la conclusión.
+\end{proof}
+
+Las cinco entradas son B, (4.6)--(4.9); la conclusión es (4.10).
+$\mathcal A_{\rm tot}$ es la suma de las
+$\mathcal A(a_t,t,w_j)$ de \eqref{car-suma-positiva}. Por la
+Nota~\ref{sec:caracteres}, su exceso sobre $M_{\rm tot}$ se expresa
+en términos de las sumas corregidas $G_\chi$. El denominador
+$1-\delta$ afecta a la pérdida del marco; no divide todos los
+errores aritméticos.
+
+La proposición demuestra cómo se combinan las estimaciones. La
+elección de $T_\alpha$ exige fórmulas de dimensión y masa, junto con
+condiciones de descomposición y congruencia; una elección numérica
+que solo satisfaga \eqref{eq:periodos-balance-conteo} no realiza
+todavía esa construcción. Asimismo, los errores de
+\eqref{eq:periodos-exceso} deben ser suficientemente pequeños,
+simultáneamente y con sus dependencias uniformes, para producir
+las ventanas de la Nota~\ref{sec:ventanas}.
+
+\subsection{Qué queda demostrado y qué debe construirse}
+
+Las deducciones desarrolladas permiten comprobar la cuenta una vez
+proporcionados los datos. La aplicación a la propuesta requiere
+verificar conjuntamente las entradas siguientes.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.31\textwidth}Y@{}}
+\toprule
+Entrada & Uso y alcance pendiente \\
+\midrule
+Realización de las torres y descenso del periodo &
+Identificar los modelos sobre $K$, justificar las identidades de
+integrales y la anulación en los núcleos. \\
+Retículos y divisibilidad local &
+Construir $M_W$, $M'_\alpha$ y las cotas de jets, con los índices,
+el rango retenido y los primos excepcionales. \\
+Normas y periodos CM &
+Verificar los escalares de la identidad espectral, las normalizaciones
+CM y las estimaciones de bloques que producen
+\eqref{eq:periodos-balance-norma}. \\
+Geometría, masas y elección del nivel &
+Acotar pendientes, dimensiones y $T_\alpha$ para los mismos pesos
+y niveles, incluyendo las pérdidas por recortes. \\
+Estimación colectiva del marco &
+Probar los defectos $e,\eta$ y la proporción retenida del receptor;
+las normas individuales no bastan. \\
+Presupuesto de errores &
+Controlar simultáneamente el miembro derecho de
+\eqref{eq:periodos-exceso}, con las dependencias necesarias para
+la selección de caracteres y las ventanas. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Las dos primeras operaciones elementales ya tienen pruebas:
+descender el periodo por el cociente útil y convertir su divisibilidad
+en una aplicación integral. También se ha demostrado el balance
+condicional que conecta la identidad de caracteres con la transferencia
+de pendientes. El siguiente tramo natural es estudiar las estimaciones
+geométricas y de evaluación que suministran las cotas de pendientes y
+los defectos colectivos del marco: A, §§7--8, y B, §§4.3--4.4 y~5.
+
+\subsection{Concordancia localizada con Lean}
+\label{subsec:periodos-lean}
+
+El cotejo mantiene el espejo de \cite{lean}, revisión
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/tree/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4}{\texttt{7cbf7a0}}.
+Se leyeron 19 archivos completos y secciones delimitadas de otros
+cuatro. El registro conserva las 23 rutas, URL inmutables, hashes,
+declaraciones e hipótesis, y los intervalos de las lecturas selectivas.
+Los campos de estructuras y las definiciones de proposiciones se
+distinguen de las pruebas que las utilizan.
+
+\begin{enumerate}
+\item \textbf{El cociente y la anulación necesaria.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataRows.lean}{\texttt{DataRows}}
+define \texttt{V0}, \texttt{Usp} y \texttt{Qsp}, y el adjunto
+\texttt{thetaUp} de la composición descendente \texttt{iota}.
+En
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataBu.lean}{\texttt{DataBu}},
+\texttt{iotaQ\_inj} prueba la inyectividad en $Q$ y
+\texttt{periodIdentity\_iff\_period\_kills}, bajo
+\texttt{BuDefQ}, identifica en la tupla de referencia la factorización
+del periodo con su anulación en $U$. El enunciado \texttt{FactQZ}
+exige la inclusión de la imagen del adjunto en $V$ para concluir
+$Q=\operatorname{im}T^*$. Estas declaraciones corresponden
+al Lema~\ref{lem:periodos-cociente}; la equivalencia formal no
+construye por sí sola la anulación del periodo geométrico.
+El espacio superior \texttt{Amb} queda abstracto en
+\texttt{DataRows}: no se lo identifica automáticamente con las
+formas sobre $Y_m$ de B.
+
+\item \textbf{El mínimo espectral y su normalización.}
+La interfaz \texttt{adm1} de
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/Divisibility/LocalQuadraticParts.lean}{\texttt{LocalQuadraticParts}}
+emplea $\iota_{\mu,Q}\iota_{\mu,Q}^*$ sobre el espacio inferior
+y conserva el factor
+\[
+ \kappa_R\,\rho(\mu)\prod_j\lambda_{j,\pi}(\mu),
+ \qquad \rho(\mu)>0,\quad \rho(\mu_0)=1.
+\]
+La altura explícita \texttt{hExpl} utiliza la tupla de referencia
+$\mu_0$; su ínfimo sobre un conjunto finito no vacío de filas es
+el mínimo de \eqref{eq:periodos-cota-arquimediana}, tomado dentro
+de cada inmersión. Se leyó \texttt{all\_embeddings\_of\_bounds},
+que transporta la cota mediante la métrica de filas, la racionalidad
+y la descomposición ortogonal suministradas. No se verificó una
+normalización que elimine $\rho(\mu)$ para todas las tuplas.
+La escritura de B, p.~29, y esta interfaz deben compararse
+conservando ese dato; su diferencia de presentación no se califica
+aquí como un error.
+
+\item \textbf{El ideal y el rango de la cota local.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/DataDIVDefs.lean}{\texttt{DataDIVDefs}}
+usa en \texttt{Iu} el exponente
+$-\lfloor e_\mathfrak p s_{\alpha,\mathfrak p}\rfloor$:
+es el ideal inverso de \eqref{eq:periodos-ideal-columna}.
+\texttt{NuDef} identifica, cuando la longitud es finita,
+$J_{\alpha,\mathfrak p}=e_\mathfrak p
+\operatorname{lenMN}(\alpha,\mathfrak p)$.
+Esa igualdad condicional no demuestra por sí sola la finitud.
+En los
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalRingCardinality/RhoDetPrimeEqMuTildeMulChiPow.lean}{datos \texttt{D7}},
+\texttt{duS} es la dimensión de \texttt{Mu0}, anterior al corte
+\texttt{Mram}. Por eso \texttt{LinkG\_at} lleva al factor
+$d_\alpha/q_\alpha$ de \eqref{eq:periodos-coste-rango}.
+El primo $T_\alpha$ tiene condiciones separadas.
+
+\item \textbf{El mismo emparejamiento sobre los distintos modelos.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/KerJoinS.lean}{\texttt{KerJoinS.besselId\_of\_joins}}
+prueba la comparación unitaria \texttt{adm13} desde las
+identificaciones de modelos, el descenso y la sobreyectividad.
+El orden de cuantificadores produce un solo $V$ para todas las
+columnas. La racionalidad \texttt{BuRational} se añade por separado;
+se leyó su prueba de transporte en
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/RationalColumns/BuRationalOf.lean}{\texttt{BuRationalOf}}.
+En
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/Divisibility/RecBridge.lean}{\texttt{RecBridge}},
+\texttt{wordFacts\_of\_face} transporta simultáneamente los
+retículos y métricas de fuente y filas mediante \texttt{HLatTie},
+y el emparejamiento mediante la igualdad \texttt{hBk}.
+Invoca \texttt{htMap\_tie} y \texttt{muDual\_tie};
+la identificación \texttt{tFo} conserva
+$2\,\operatorname{FoOfR}=F_{\rm fin}$.
+Estos son puentes demostrados bajo las compatibilidades que reciben,
+no una consecuencia de tener dos mapas con nombres parecidos.
+
+\item \textbf{El ensamblaje uniforme y sus entradas.}
+Las
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/GlobalTheoremInputs.lean}{interfaces globales}
+\texttt{LinkDIV}, \texttt{LinkMu} y \texttt{LinkG} cuantifican
+constantes y umbrales comunes. \texttt{LinkDIV\_at} contiene
+\[
+ s_{\rm frame}+\mu_{\max}(M_W)\le x^{C_H}b
+\]
+y exige la cota de altura para los mapas no nulos. El factor $b$
+de la cota del marco se conserva. La prueba
+\texttt{linkDIVt\_of\_rows}, en \texttt{RecBridge}, toma un
+máximo de los umbrales proporcionados por \texttt{BridgeRows} y
+ensambla las conclusiones. No demuestra desde cero todas las
+estimaciones de ese paquete. Del mismo modo,
+\texttt{ThetaNormsAndLinks.MetX.I4} ya contiene un criterio de
+integridad de jets: las pruebas leídas que lo utilizan no autorizan
+a deducir integridad aritmética de una mera norma compleja pequeña.
+\end{enumerate}
+
+Los hashes recalculados coinciden con los blobs recuperados en la
+revisión fijada. No se compiló ni ejecutó Lean, no se auditó la
+clausura de axiomas o dependencias y no se comparó íntegramente el
+espejo con la distribución original de Alpöge. La lectura alcanza
+las identidades y los puentes especificados; la construcción
+automorfa e integral completa, la fórmula de periodos CM y las
+cotas uniformes de jets permanecen fuera de ese alcance.
+
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}\label{ej:periodos-minimo}
+Sea $T=\operatorname{diag}(\varepsilon,1)$ en $\C^2$, con
+$0<\varepsilon<1$. Calcule $\|T^{-1}\|^2$ y la media de los
+autovalores de $TT^*$. Explique por qué esa media no puede reemplazar
+el mínimo en \eqref{eq:periodos-inversa}.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:periodos-minimo}.}
+Los autovalores de $TT^*$ son $\varepsilon^2$ y $1$.
+Por tanto $\|T^{-1}\|^2=\varepsilon^{-2}$, mientras su media es
+$(1+\varepsilon^2)/2\ge1/2$. El recíproco de la media permanece
+menor que $2$, pero $\varepsilon^{-2}$ no está acotado cuando
+$\varepsilon$ tiende a cero. Una sola dirección pequeña basta
+para aumentar la norma de la inversa.
+
+\begin{ejercicio}\label{ej:periodos-ganancia}
+Sobre $\Q$, tome $M=R=\Z^q$, $q\ge1$, con métricas euclídeas y
+$P(x,y)=p\sum_i x_iy_i$, donde $p$ es primo.
+Construya $N=p^{-1}M$, calcule $\mu(N)$ y la altura de
+$b:N\to R^\vee$, y compare $\mu(N)-h(b)$ con $\mu(R^\vee)$.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:periodos-ganancia}.}
+La divisibilidad $P(M,R)\subseteq p\Z$ permite dividir el
+retículo fuente por $p$. Su covolumen es $p^{-q}$ y
+$\mu(N)=2\log p$. El mapa en los espacios euclídeos es
+multiplicar por $p$, de modo que su norma es $p$ y
+$h(b)=2\log p$. En consecuencia
+$\mu(N)-h(b)=0=\mu(R^\vee)$. El ejemplo mantiene las métricas
+ambientales y muestra que la ganancia finita puede compensarse
+exactamente con la altura.
+
+\begin{ejercicio}\label{ej:periodos-indice}
+Sobre $\Q$, sean $M=\Z^2$,
+$M'=p\Z\times\Z$ y $N=p^{-1}M'$, con la métrica euclídea.
+Compruebe \eqref{eq:periodos-cuenta-exacta} y explique la diferencia
+entre índice finito y pérdida de rango.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:periodos-indice}.}
+El cociente $M/M'$ tiene longitud local $J_p=1$ y cardinal $p$;
+los tres retículos tienen rango $2$. Con $n_p=1$, la fórmula da
+$\mu(N)-\mu(M)=2(1-1/2)\log p=\log p$.
+Directamente, $N=\Z\times p^{-1}\Z$ tiene covolumen $p^{-1}$,
+así que $\mu(N)=\log p$. El índice altera el covolumen sin
+disminuir la dimensión del espacio racional.
+
+\begin{ejercicio}\label{ej:periodos-unitario}
+Sean $B_1,B_2:\C\to\C^2$ dados por $B_1(z)=ze_1$ y
+$B_2(z)=ze_2$, con coeficientes $c_1=c_2=1$. Aplique a la
+primera imagen la identidad y a la segunda el unitario que
+intercambia $e_1,e_2$. Compare los operadores colectivos antes
+y después, aunque las normas individuales permanezcan iguales.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:periodos-unitario}.}
+Inicialmente $Q=B_1B_1^*+B_2B_2^*=I_{\C^2}$.
+Después ambas imágenes están en $\C e_1$, y
+$\widetilde Q=2P_{\C e_1}$. Se tiene
+$\operatorname{Tr}Q=\operatorname{Tr}\widetilde Q=2$, pero
+$\operatorname{Tr}(Q^2)=2$ y
+$\operatorname{Tr}(\widetilde Q^2)=4$.
+El defecto $\eta=0$ sirve para la primera familia y la segunda
+requiere $\eta\ge1$. Un unitario común habría conservado las
+trazas de $Q$ y $Q^2$ mediante conjugación.

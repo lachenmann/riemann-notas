@@ -48,6 +48,13 @@ La Nota 5 añade dos referencias clásicas. Sus argumentos propios de marco, cor
 | **Gr.** Daniel R. Grayson, *Reduction theory using semistability*. Commentarii Mathematici Helvetici 59 (1984), 600–634. | [PDF en la web del autor](https://www.graysonfamily.org/dan/Papers/ReductionTheoryI.pdf): §1, Teo. 1.18, Defs. 1.19–1.20 y Cor. 1.30, pp. 609–613. Filtración canónica, polígono y semiestabilidad; su convención por volumen tiene signo opuesto a la pendiente por grado. |
 | **Bo.** Jean-Benoît Bost, *Algebraic leaves of algebraic foliations over number fields*. Publications Mathématiques de l’IHÉS 93 (2001), 161–221. | [PDF en Numdam](https://www.numdam.org/article/PMIHES_2001__93__161_0.pdf): §4.1.1, Lema 4.2, p. 196, aditividad del grado; §4.1.4, (4.10), Prop. 4.5 y (4.12), pp. 199–200, alturas y comparación de pendientes. La nota explicita el factor 2 de su normalización. |
 
+La Nota 6 añade referencias para situar las convenciones theta. Su uso no acredita por sí solo que se hayan comprobado todas las hipótesis de esos resultados para los datos de la propuesta.
+
+| Clave y referencia | Localizadores utilizados |
+| --- | --- |
+| **Ga.** Wee Teck Gan, *Automorphic Forms and the Theta Correspondence*, arXiv:2303.14918v1, 27 de marzo de 2023. | [Versión consultada](https://arxiv.org/pdf/2303.14918v1), §§3.1–3.6, pp. 23–26: núcleo theta, representación global de Weil y levantamiento. |
+| **GQT.** Wee Teck Gan, Yannan Qiu y Shuichiro Takeda, *The Regularized Siegel–Weil Formula (The Second Term Identity) and the Rallis Inner Product Formula*, Invent. Math. 198 (2014), 739–831. | [Prepublicación consultada, v3 del 21 de enero de 2014](https://arxiv.org/pdf/1207.4709v3), §11: convención del levantamiento, producto interno y rangos e hipótesis de la fórmula de Rallis. |
+
 ## Código Lean utilizado en la nota de ventanas
 
 El cotejo selectivo utiliza [CocoSgt/riemann-hypothesis-lean en la revisión fijada](https://github.com/CocoSgt/riemann-hypothesis-lean/tree/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4):
@@ -83,3 +90,18 @@ La tercera lectura mantiene la misma revisión y los ejemplares A55/B73. Se cote
 Los nombres de la tabla pertenecen a `Formalism.HN`. Se distingue `FrameLA1` de `FrameLA`, cuya cota tiene $2\eta$, y `TheoremFSharp` de `TheoremF`, que añade una pérdida de $\log|I|$. La realización euclídea usa rangos sobre $\mathbf Z$, pero los extremos y los cortes siguen recorriendo submódulos sobre $\mathcal O_K$; el factor común $[K:\mathbf Q]$ cancela en las proporciones.
 
 Se leyeron las pruebas seleccionadas de trazas, cortes, comparación de corangos e integración, incluidos los casos de mapas nulos y parámetro $u=0$. La lectura no desplegó toda la construcción de la filtración ni todas las dependencias importadas. No se compiló o ejecutó Lean, no se obtuvo un informe de axiomas y no se comparó íntegramente el espejo con la distribución original. La producción de los datos automorfos que satisfacen las hipótesis sigue pendiente.
+
+
+## Código Lean utilizado en la nota de periodos y torres theta
+
+La cuarta lectura mantiene la revisión `7cbf7a0c32fca1badf05931879a37c3f8a2b03b4` y los ejemplares A55/B73. El manifiesto `lean_source_review_periods` de `REGISTRO.json` registra 23 archivos, 19 leídos completos y cuatro por secciones delimitadas. Los 23 hashes Git recalculados coinciden con los blobs recuperados; en 20 casos se contrastó también el árbol. Se conservan íntegros los tres manifiestos anteriores.
+
+| Paso | Declaraciones y alcance |
+| --- | --- |
+| Cociente útil y descenso | `DataRows`, `DataBu`: `iotaQ_inj`, `sec_iota`, `periodIdentity_iff_period_kills`. La anulación geométrica del periodo se recibe como entrada; `FactQZ` exige la inclusión de la imagen del adjunto. |
+| Mínimo espectral | `LocalQuadraticParts.adm1`, `hExpl` y `all_embeddings_of_bounds`. Se conserva κ_Rρ(μ), con ρ(μ₀)=1, y el mínimo dentro de cada inmersión. |
+| Ideal y longitud | `DataDIVDefs`, `DataParams₂` y `LinkG_at`. Exponente negativo del suelo, longitud dividida por el índice de ramificación y factor dos. La dimensión previa al recorte se distingue del rango retenido. |
+| Racionalidad y Bessel | `BuRationalOf` y `KerJoinS.besselId_of_joins`. Se verifican puentes condicionados a las identificaciones de modelos; el unitario de filas es común a todas las columnas. |
+| Mismo mapa, retículos y métricas | `RecBridge.wordFacts_of_face` usa `hBk` y `HLatTie`; conserva `2*FoOfR=L.Fo`. `linkDIVt_of_rows` ensambla umbrales de las entradas `BridgeRows`. |
+
+La [concordancia de la Nota 6](../tex/capitulos/06-periodos-y-torres-theta.tex) contiene los enlaces inmutables principales. El registro incluye las 23 URL y los límites por archivo. No se ejecutó ni compiló Lean ni se auditó la clausura de axiomas o dependencias. La construcción automorfa e integral completa, la identificación aritmética de periodos CM y las cotas uniformes locales no quedan certificadas por esta lectura.

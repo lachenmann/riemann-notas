@@ -58,7 +58,9 @@ cotejos entre A y B tampoco constituyen una auditoría de ese código.
     Los periodos automorfos normalizados dan aplicaciones entre retículos.
     La divisibilidad permite ampliar los dominios sin perder la integridad
     de sus imágenes; las normas complejas controlan la altura de las
-    aplicaciones. Referencias: A, §6; B, §4.1 y §4.5.
+    aplicaciones. La Nota~\ref{sec:periodos} desarrolla esas deducciones
+    y la cancelación exacta del término principal, con las entradas
+    automorfas identificadas. Referencias: A, §6; B, §4.1 y §4.5.
   \item \textbf{Transferir pendientes medias.}
     Una familia de mapas debe cubrir suficientes direcciones del espacio
     destino. Las estimaciones de marcos, junto con la filtración de
@@ -97,26 +99,31 @@ Transformada y corrección & §2, pp.~3--7 & §2, pp.~14--19 \\
 Criterio unilateral de ventanas & Teo.~2.2 y Lemas~2.3--2.4, pp.~4--6 & Prop.~2.1 y Lema~2.2, pp.~14--18 \\
 Identidad de caracteres & Prop.~4.2, p.~15 & Prop.~3.1, p.~21 \\
 Marcos y pendientes & Prop.~5.2 y Teo.~5.3, pp.~18--20 & Lema~4.2 y Prop.~4.3, pp.~41--44 \\
+Periodos y torres theta & §6, pp.~20--28 & §4.1, pp.~24--30; §4.5, pp.~46--51 \\
 Proyecciones y denominadores & §§6--8 & Lema~5.1, p.~53; pp.~54--56 \\
 Cancelación y raíz cuadrada & Props.~10.1--10.2, pp.~47--49 & (4.5)--(4.10), pp.~48--51; Lema~6.1, pp.~65--66 \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
-Las cinco notas siguientes desarrollan los cálculos de Mellin, el ejemplo
+Las seis notas siguientes desarrollan los cálculos de Mellin, el ejemplo
 integral de una proyección, el criterio unilateral de ventanas, la identidad
-de caracteres y la transferencia de pendientes mediante marcos aproximados.
+de caracteres, la transferencia de pendientes mediante marcos aproximados
+y la comparación de divisibilidad y normas de periodos.
 La Nota~\ref{sec:caracteres} reconstruye la ortogonalidad, la cancelación del
 término principal y la selección finita que explica el coeficiente
 $1/(3o+1)$. La Nota~\ref{sec:marcos} prueba la desigualdad de codimensión
-y su integración por umbrales de pendiente. Las notas de ventanas,
-caracteres y marcos incluyen cotejos localizados con declaraciones Lean
-de una revisión fijada, sin compilar ni ejecutar el código.
+y su integración por umbrales de pendiente. La Nota~\ref{sec:periodos}
+demuestra el descenso por el cociente útil, la ampliación integral de
+retículos, estimaciones de Cauchy y gamma, y el balance condicionado a
+las cotas de periodos. Las notas de ventanas, caracteres, marcos y periodos
+incluyen cotejos localizados con declaraciones Lean de una revisión
+fijada, sin compilar ni ejecutar el código.
 
-El siguiente desarrollo será la construcción de periodos automorfos mediante
-torres theta, su divisibilidad en los lugares finitos y la comparación con
-sus normas arquimedianas. Se trata de obtener, para los mismos mapas y
-retículos, las entradas de la Nota~\ref{sec:marcos}. La cota del exceso
+El siguiente desarrollo estudiará las estimaciones geométricas y de
+evaluación que controlan las pendientes y los defectos colectivos del
+marco. Las identidades de periodos, los modelos integrales y las cotas
+especializadas de jets aún se reciben como entradas. La cota del exceso
 geométrico, las estimaciones de los caracteres auxiliares y los controles
 cohomológicos de denominadores permanecen como resultados de las fuentes
 hasta desarrollar sus hipótesis y demostraciones.
