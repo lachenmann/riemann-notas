@@ -49,7 +49,7 @@ La Nota 12 distingue el retículo estable de una semisimplificación, precisa el
 
 ## Nota 13: De las congruencias a Selmer: construcción y condiciones locales
 
-La [Nota 13](../tex/capitulos/13-de-congruencias-a-selmer.tex), **pp. 150–158 del cuaderno de 163 páginas**, desarrolla una construcción de rango dos con hipótesis explícitas y el mapa local de sus clases. Sus referencias de la propuesta son **A93, §9, pp. 61–67**, y **B76, §§5.1–5.2, pp. 54–56**, con p. 57 para la normalización del índice. A93, p. 63, distingue el cálculo del cociclo de la construcción de una filtración del defecto integral con inyecciones y multiplicidades. Esa comparación simultánea permanece pendiente. La revisión matemática del nuevo capítulo, su cotejo con Markdown y la revisión de composición están cerrados; los recuentos y alcances se conservan en [ESTADO.md](../ESTADO.md).
+La [Nota 13](../tex/capitulos/13-de-congruencias-a-selmer.tex), publicada inicialmente en las **pp. 150–158 del cuaderno de 163 páginas**, desarrolla una construcción de rango dos con hipótesis explícitas y el mapa local de sus clases. Sus referencias de la propuesta son **A93, §9, pp. 61–67**, y **B76, §§5.1–5.2, pp. 54–56**, con p. 57 para la normalización del índice. A93, p. 63, distingue el cálculo del cociclo de la construcción de una filtración del defecto integral con inyecciones y multiplicidades. Esa comparación simultánea permanece pendiente. La revisión matemática del capítulo, su cotejo con Markdown y la revisión de composición están cerrados; los recuentos y alcances se conservan en [ESTADO.md](../ESTADO.md).
 
 La nueva referencia clásica es **Kenneth A. Ribet, *A Modular Construction of Unramified p-Extensions of Q(μₚ)*, Inventiones Mathematicae 34 (1976), 151–162**. El [PDF del archivo del autor](https://math.berkeley.edu/~ribet/Articles/invent_34.pdf), consultado el 23 de noviembre de 2026, tiene **13 páginas incluida la portada**, **1 209 202 bytes** y SHA-256 `6985813b4026bb0fd7098aed3f816262e0922f62a5d2dab22e29bcc2eb323471`. Se identifica como bibliografía adicional; no sustituye ninguno de los ejemplares A/A93/B/B76/C.
 
@@ -60,7 +60,26 @@ La nueva referencia clásica es **Kenneth A. Ribet, *A Modular Construction of U
 | Discusión, p. 153 | Diferencia entre la construcción local de peso 2 y nivel $p$ y el camino de peso $k$ y nivel 1. |
 | Proposición 2.1, pp. 154–155 | Antecedente del cambio de retículo para obtener una reducción no escindida. |
 
-A partir de la entrada del Teorema 1.3, el cuaderno desarrolla el cociclo de torcido $-31$, el cambio de coeficientes y la clase no nula en Selmer para $p=37$. Este ejemplo no identifica un ideal de congruencias theta ni prueba por sí mismo la finitud o la longitud exacta del Selmer total. La cota cohomológica uniforme, la filtración del defecto integral y sus multiplicidades siguen como próximo bloque. Se mantienen los nueve manifiestos Lean y las revisiones C/A93/B76; no se añade ejecución de Lean.
+A partir de la entrada del Teorema 1.3, el cuaderno desarrolla el cociclo de torcido $-31$, el cambio de coeficientes y la clase no nula en Selmer para $p=37$. Este ejemplo no identifica un ideal de congruencias theta ni prueba por sí mismo la finitud o la longitud exacta del Selmer total. La Nota 14 aborda la finitud para cuerpos totalmente imaginarios y torcidos de Tate; la cota cohomológica uniforme, la filtración del defecto integral y sus multiplicidades conservan los pendientes indicados. Se mantienen los nueve manifiestos Lean y las revisiones C/A93/B76; no se añade ejecución de Lean.
+
+## Nota 14: Finitud y control uniforme de las longitudes cohomológicas
+
+La [Nota 14](../tex/capitulos/14-finitud-y-control-uniforme.tex) recibe las entradas clásicas de teoría $K$ para justificar la finitud y el soporte finito de $\mathcal V(E,t)$ cuando $E$ es totalmente imaginario y $t$ está fijo. Demuestra la identidad entre ese presupuesto y el logaritmo del producto de los $K_{2e}(\mathcal O_E)$, descontando una corrección de dualidad que se acota explícitamente en grado y corte. La finitud clásica no se presenta como un cálculo de las cardinalidades ni como una cota uniforme en grado y discriminante.
+
+La referencia adicional es **Charles A. Weibel, *The K-book: An Introduction to Algebraic K-theory*, Graduate Studies in Mathematics 145, American Mathematical Society, 2013**. La [página del autor](https://sites.math.rutgers.edu/~weibel/Kbook.html) distingue la paginación de los capítulos descargables de la edición impresa. Los localizadores siguientes utilizan esos PDF independientes, consultados el 23 de noviembre de 2026.
+
+| Fuente primaria y localizador | Uso delimitado |
+| --- | --- |
+| [Weibel IV](https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf), Teoremas 1.17–1.18, p. 12, y 6.9, p. 59 | Rango cero en grados pares positivos y generación finita de los grupos de enteros; juntos dan finitud. |
+| [Weibel VI](https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.VI.pdf), Teoremas 8.2 y 8.4, pp. 47–48 | Parte $\ell$-primaria de $K_{2e}(\mathcal O_E)$ e identificación con $H^2$ étale; incluye $\ell=2$ si $E$ es totalmente imaginario. |
+| [Milne, *Arithmetic Duality Theorems*](https://www.jmilne.org/math/Books/ADTnot.pdf), II, Proposición 2.9, pp. 170–172, y Teorema 2.13, p. 174 | Comparación con cohomología de $G_{E,S_\ell}$ y finitud con coeficientes finitos; el límite no introduce $\varprojlim{}^1H^1$. |
+| [Stacks, 07Z8](https://stacks.math.columbia.edu/tag/07Z8), Lema 15.8.2; [00DV](https://stacks.math.columbia.edu/tag/00DV), Lema 10.20.1 | Antecedentes para menores de presentaciones y Nakayama; la nota desarrolla sus fórmulas de longitud e imágenes. |
+
+El PDF de Weibel IV examinado tiene **93 páginas**, **882 504 bytes** y SHA-256 `9f1c1b8cccfe19d547c27dd04c61f198fd7a0cddd0018a0b84442b00fa575248`. El de VI tiene **66 páginas**, **673 944 bytes** y SHA-256 `efca16d77ed598735aa4e819be48d10d35bec0cf1b4138548f94f67922d40cd1`. Milne se comprobó en el PDF oficial; las páginas 170–174 impresas corresponden a las 178–182 del archivo. No se atribuye un hash a una descarga local de Milne que no se completó.
+
+La revisión de la propuesta retoma **A93, §9, pp. 61–77**, en particular la **Proposición 9.4 y su desarrollo, pp. 67–74**, y **B76, pp. 54–66**, conservando las versiones fijadas. C, §§2–6, pp. 2–9, aporta la forma detallada de la cota por centros: conservar la suma de valoraciones permite el factor $R$ de la suma factorial. La nota no atribuye esa forma más precisa al tipo `ABound` de la lectura Lean anterior. C, §§7–8, pp. 9–15, proporciona el puente aritmético bajo su generación finita, unipotencia y condiciones de descenso; esas entradas se mantienen explícitas.
+
+El nuevo desarrollo demuestra diez resultados y resuelve cinco ejercicios. Las fórmulas de menores, torsión, crecimiento exacto y suma factorial son deducciones expuestas en la nota. La cota cuantitativa `LemmaK`, la generación uniforme al variar las bases y la filtración theta con sus mapas y errores siguen separadas. Se conservan los nueve manifiestos Lean y las revisiones documentales anteriores, sin nueva lectura ni ejecución de código.
 
 ## A93: versión larga y guía de cotejo
 

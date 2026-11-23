@@ -1,0 +1,906 @@
+\section{Finitud y control uniforme de las longitudes cohomológicas}
+\label{sec:finitud-uniforme}
+
+La Nota~\ref{sec:construccion-selmer} construyó clases de Selmer y
+calculó pérdidas locales. Para insertar sus longitudes en un presupuesto
+de denominadores hace falta controlar los grupos completos. Esta nota
+resuelve primero una cuestión cualitativa: para un cuerpo totalmente
+imaginario fijo y un corte finito de torcidos, el presupuesto
+$\mathcal V(E,t)$ de la Nota~\ref{sec:cohomologia} es finito. La entrada
+clásica es la comparación entre cohomología y los grupos pares de
+teoría $K$. Sus cardinalidades proporcionan, además, una expresión
+exacta del presupuesto una vez descontada la corrección de dualidad.
+
+Después calculamos esa corrección, las longitudes de conúcleos
+presentados por matrices y el crecimiento por capas con torsión.
+Una suma factorial mejora el coste de los torcidos alejados de los
+centros de C. Estos resultados precisan qué se puede controlar
+uniformemente y qué información aritmética sigue haciendo falta
+cuando cambian los cuerpos y el corte.
+
+\fuente{Nota~\ref{sec:cohomologia} y C, §§2--6, pp.~2--9,
+para las dos cotas de torre; C, §§7--8, pp.~9--15, para su puente
+aritmético. A93, Proposición~9.4 y desarrollo, pp.~67--74,
+distingue la finitud de la cota cuantitativa \texttt{LemmaK}.
+Weibel~\cite{weibel-kbook}, IV.1.17--1.18 y IV.6.9,
+VI.8.2 y VI.8.4, aporta las entradas clásicas de teoría $K$.
+Las deducciones de longitudes, invariantes, imágenes y sumas
+se prueban aquí; no se añade una lectura ni una ejecución de Lean.}
+
+\subsection{El presupuesto y la entrada clásica}
+
+Sea $E$ un cuerpo de números totalmente imaginario. Para un primo
+$\ell$ y un entero $e\ge1$, conservamos
+\begin{equation}
+ \begin{aligned}
+ A_{\ell,e}&=(\Q_\ell/\Z_\ell)(-e),\\
+ \operatorname{Sha}_{\ell,e}(E)
+ &=\ker\!\left(H^1(G_{E,S_\ell},A_{\ell,e})
+       \longrightarrow\prod_{v\mid\ell}H^1(E_v,A_{\ell,e})\right),\\
+ s_{\ell,e}(E)&=\length_{\Z_\ell}\operatorname{Sha}_{\ell,e}(E),\qquad
+ W_\ell(E,e)=\length_{\Z_\ell}H^2(G_{E,S_\ell},\Z_\ell(e+1)).
+ \end{aligned}
+ \label{eq:fu-grupos}
+\end{equation}
+$S_\ell$ consta de los lugares sobre $\ell$ y los infinitos;
+los lugares complejos no añaden condiciones.
+Todas las cohomologías son continuas.
+Hasta justificar su finitud, las longitudes admiten el valor infinito.
+Para $t\ge1$ entero, el presupuesto es
+\begin{equation}
+ \mathcal V(E,t)
+ =\sup_{\mathcal P\text{ finito}}
+   \sum_{\ell\in\mathcal P}\sum_{1\le e<t}
+       s_{\ell,e}(E)\log\ell.
+ \label{eq:fu-presupuesto}
+\end{equation}
+Esta definición no presupone convergencia de una serie.
+
+\paragraph{La entrada de teoría $K$.}
+Los grupos abelianos $K_n(\mathcal O_E)$ son finitamente generados
+por el teorema de Quillen; el cálculo de rangos de Borel da rango
+cero para $n=2e\ge2$. Por tanto $K_{2e}(\mathcal O_E)$ es finito.
+La comparación cohomológica proporciona
+\begin{equation}
+ K_{2e}(\mathcal O_E)\{\ell\}
+ \simeq H^2_{\mathrm{\acute et}}
+       (\mathcal O_E[1/\ell],\Z_\ell(e+1))
+ \simeq H^2(G_{E,S_\ell},\Z_\ell(e+1)).
+ \label{eq:fu-k-comparacion}
+\end{equation}
+Aquí $B\{\ell\}$ significa la parte $\ell$-primaria de un grupo
+finito $B$. Son resultados clásicos recibidos, no consecuencias
+de un cálculo de matrices: véase Weibel, IV.1.17--1.18, p.~12,
+IV.6.9, p.~59, y VI.8.2--8.4, pp.~47--48, con la paginación
+de los PDF independientes de esos capítulos.
+
+La última identificación usa Milne~\cite{milne-dualidad},
+II, Proposición~2.9, pp.~170--172, para los coeficientes finitos.
+Sus grupos $H^1$ son finitos por II, Teorema~2.13, p.~174;
+el sistema inverso satisface la condición de Mittag--Leffler y
+no introduce un término $\varprojlim{}^1 H^1$ al pasar a
+$\Z_\ell(e+1)$. La hipótesis de cuerpo totalmente imaginario
+permite incluir $\ell=2$ en \eqref{eq:fu-k-comparacion} sin
+correcciones de lugares reales. No se exige que $E$ contenga
+$\mu_\ell$ ni $\mu_4$, ni que sea abeliano.
+
+\subsection{Finitud y soporte finito para un cuerpo fijo}
+
+Definimos el número real finito
+\begin{equation}
+ \mathcal K(E,t)=\sum_{1\le e<t}\log\#K_{2e}(\mathcal O_E),
+ \qquad \mathcal K(E,1)=0.
+ \label{eq:fu-k-presupuesto}
+\end{equation}
+Es el logaritmo de un producto finito de enteros positivos.
+Esta expresión no presupone que hayamos calculado esos enteros.
+
+\begin{proposicion}[Presupuesto finito]
+\label{prop:fu-finitud}
+Para todo cuerpo totalmente imaginario $E$ y todo entero $t\ge1$,
+los grupos $\operatorname{Sha}_{\ell,e}(E)$ y
+$H^2(G_{E,S_\ell},\Z_\ell(e+1))$ son finitos y
+\begin{equation}
+ 0\le\mathcal V(E,t)\le\mathcal K(E,t)<\infty.
+ \label{eq:fu-v-menor-k}
+\end{equation}
+Para cada $1\le e<t$, si
+$\operatorname{Sha}_{\ell,e}(E)\ne0$, entonces
+$\ell\mid\#K_{2e}(\mathcal O_E)$. En particular, solo hay
+finitos pares $(\ell,e)$ con $1\le e<t$ y longitud positiva.
+\end{proposicion}
+
+\begin{proof}
+La entrada \eqref{eq:fu-k-comparacion} da la finitud de $H^2$ y
+\[
+ W_\ell(E,e)=v_\ell\bigl(\#K_{2e}(\mathcal O_E)\bigr).
+\]
+El fragmento de Poitou--Tate de la Nota~\ref{sec:cohomologia}
+sobreyecta el dual de ese $H^2$ sobre
+$\operatorname{Sha}_{\ell,e}(E)$. Por tanto este último es
+finito y $0\le s_{\ell,e}(E)\le W_\ell(E,e)$.
+Si $s_{\ell,e}(E)>0$, la valoración de la cardinalidad del
+$K$-grupo es positiva. Para cada $e$ solo hay finitos primos
+con esta propiedad. Sumando sobre cualquier conjunto finito
+$\mathcal P$ y usando la factorización prima de cada cardinalidad,
+\[
+ \sum_{\ell\in\mathcal P}\sum_{1\le e<t}s_{\ell,e}(E)\log\ell
+ \le\sum_{1\le e<t}\sum_\ell
+     v_\ell\bigl(\#K_{2e}(\mathcal O_E)\bigr)\log\ell
+ =\mathcal K(E,t).
+\]
+Tomar el supremo prueba la cota. Para $t=1$ ambas sumas son vacías.
+\end{proof}
+
+Se ha resuelto la sumabilidad para $E,t$ fijos mediante un soporte
+aritmético finito. La afirmación es más fuerte que la finitud aislada
+de cada grupo. Todavía no acota $\mathcal K(E,t)$ mediante el grado,
+el discriminante o el corte; cambiar $E$ cambia los enteros que
+soportan la suma.
+
+\subsection{El cálculo de los invariantes locales}
+
+Para una extensión finita $L/\Q_\ell$, escribimos
+$\epsilon_L=e(L/\Q_\ell)$ para su índice de ramificación y ponemos
+\[
+ a_{\ell,e}(L)=\length_{\Z_\ell}H^0(L,A_{\ell,e}).
+\]
+La letra $e$ sigue designando el torcido. El número $\epsilon_L$
+no es el grado residual.
+
+\begin{lema}[Invariantes y ramificación]
+\label{lem:fu-invariantes}
+Los invariantes anteriores son finitos. Si $\ell$ es impar,
+\begin{equation}
+ \begin{gathered}
+ a_{\ell,e}(L)>0\quad\Longrightarrow\quad
+       \ell-1\mid e\epsilon_L,\\
+ a_{\ell,e}(L)\le1+v_\ell(\epsilon_L)+v_\ell(e).
+ \end{gathered}
+ \label{eq:fu-h0-impar}
+\end{equation}
+En el primo diádico,
+\begin{equation}
+ a_{2,e}(L)\le2+v_2(\epsilon_L)+v_2(e).
+ \label{eq:fu-h0-diadico}
+\end{equation}
+\end{lema}
+
+\begin{proof}
+Sea $H=\chi_\ell(G_L)\subseteq\Z_\ell^\times$ la imagen
+ciclotómica. La extensión $\Q_\ell(\mu_{\ell^\infty})/\Q_\ell$
+es totalmente ramificada. Su intersección con $L$ es finita y
+\[
+ d=[\Z_\ell^\times:H]
+   =[L\cap\Q_\ell(\mu_{\ell^\infty}):\Q_\ell]
+   \mid\epsilon_L.
+\]
+La divisibilidad usa la multiplicatividad de los índices de
+ramificación en esa torre de cuerpos. En particular $H$ es abierto.
+
+Un elemento de $\Q_\ell/\Z_\ell$ es invariante si lo anulan todos
+los $u^{-e}-1$, con $u\in H$. Como
+$u^{-e}-1=-u^{-e}(u^e-1)$, sus valoraciones son las mismas.
+Si el ideal generado por los $u^e-1$ es $(\ell^b)$, el grupo
+de invariantes es el subgrupo anulado por $\ell^b$ y tiene longitud
+$b$. El ideal es no nulo porque una imagen abierta contiene
+un elemento principal cuya potencia $e$ no es uno.
+
+Para $\ell$ impar, la descomposición de las unidades y la estructura
+de sus subgrupos cerrados dan
+\[
+ H=\mu_m\times(1+\ell^{b_0}\Z_\ell),\qquad
+ m\mid\ell-1,\quad b_0\ge1,\quad
+ d=\frac{\ell-1}{m}\ell^{b_0-1}.
+\]
+Si $m\nmid e$, algún elemento de $\mu_m$ tiene potencia $e$
+distinta de uno módulo $\ell$; el ideal es la unidad y no hay
+invariantes. Si $m\mid e$, el cálculo binomial
+\[
+ v_\ell\bigl((1+\ell^{b_0})^e-1\bigr)=b_0+v_\ell(e)
+\]
+y la continuidad sobre el grupo principal dan exactamente
+$a_{\ell,e}(L)=b_0+v_\ell(e)$.
+Ahora $b_0-1=v_\ell(d)\le v_\ell(\epsilon_L)$.
+Además $(\ell-1)/m$ divide $\epsilon_L$, y $m\mid e$ implica
+$\ell-1\mid e\epsilon_L$.
+
+Para $\ell=2$ usamos $U=1+4\Z_2$. Su intersección con $H$ tiene
+la forma $1+2^{b_0}\Z_2$, con $b_0\ge2$ y
+\[
+ 2^{b_0-2}=[U:U\cap H]\mid d.
+\]
+El elemento $1+2^{b_0}$ basta para anular los invariantes después
+de multiplicar por $2^{b_0+v_2(e)}$.
+La identidad de valoración vale porque $b_0\ge2$.
+Esto da $a_{2,e}(L)\le b_0+v_2(e)$ y la cota indicada.
+La posible presencia de $-1$ puede reducir esa longitud;
+no la hemos descartado para afirmar una igualdad.
+\end{proof}
+
+La identidad binomial utilizada se obtiene primero para un exponente
+primo a $\ell$, y luego observando que elevar a $\ell$ aumenta la
+valoración en uno. Para $\ell=2$ esa última afirmación exige nivel
+al menos dos. Es la misma precaución que aparece en C, §4,
+pp.~5--6, y A93, p.~71.
+
+\subsection{La corrección de dualidad con una cota uniforme}
+
+Escribimos también
+$a_{\ell,e}(E)=\length H^0(G_{E,S_\ell},A_{\ell,e})$.
+La restricción lo incluye en cada grupo local de invariantes;
+por el lema es finito. El fragmento de dualidad utilizado en la
+Nota~\ref{sec:cohomologia} es
+\begin{equation}
+ \begin{split}
+ 0\longrightarrow H^0(G_{E,S_\ell},A_{\ell,e})
+ &\longrightarrow\prod_{v\mid\ell}H^0(E_v,A_{\ell,e})\\
+ &\longrightarrow H^2(G_{E,S_\ell},\Z_\ell(e+1))^\vee
+ \longrightarrow\operatorname{Sha}_{\ell,e}(E)
+ \longrightarrow0.
+ \end{split}
+ \label{eq:fu-dualidad}
+\end{equation}
+La entrada de dualidad incluye el paso entre coeficientes finitos,
+compactos y divisibles. El torcido dual de $e+1$ es $-e$.
+
+\begin{proposicion}[Presupuesto exacto y error local]
+\label{prop:fu-presupuesto-exacto}
+Sea $E$ totalmente imaginario, $[E:\Q]\le D$, con $D\ge1$ entero,
+y sea $t\ge2$. Pongamos $r=t-1$ y $X=Dr+1$. Entonces
+\begin{equation}
+ \begin{aligned}
+ \mathcal K(E,t)-\mathcal V(E,t)
+ &=\sum_\ell\sum_{e=1}^{r}(\log\ell)
+       \left(\sum_{v\mid\ell}a_{\ell,e}(E_v)-a_{\ell,e}(E)\right),\\
+ 0\le\mathcal K(E,t)-\mathcal V(E,t)
+ &\le DrX\log(2DrX).
+ \end{aligned}
+ \label{eq:fu-correccion-global}
+\end{equation}
+La suma de correcciones se soporta en los primos $\ell\le X$.
+Para cada primo, con $c_\ell=1$ si $\ell$ es impar y $c_2=2$,
+\begin{equation}
+ 0\le W_\ell(E,e)-s_{\ell,e}(E)
+ \le D\bigl(c_\ell+\lfloor\log_\ell D\rfloor+v_\ell(e)\bigr).
+ \label{eq:fu-correccion-primo}
+\end{equation}
+\end{proposicion}
+
+\begin{proof}
+Todos los términos de \eqref{eq:fu-dualidad} son finitos.
+La aditividad de longitudes da
+\begin{equation}
+ W_\ell(E,e)-s_{\ell,e}(E)
+ =\sum_{v\mid\ell}a_{\ell,e}(E_v)-a_{\ell,e}(E)\ge0.
+ \label{eq:fu-defecto-local}
+\end{equation}
+Hay a lo sumo $D$ lugares sobre $\ell$ y cada índice de ramificación
+es a lo sumo $D$. El lema anterior prueba
+\eqref{eq:fu-correccion-primo} al omitir el término global,
+que es no negativo.
+
+Si $\ell$ es impar y algún invariante local es no nulo, entonces
+$\ell-1\mid e\epsilon_{E_v}$, luego
+$\ell\le e\epsilon_{E_v}+1\le Dr+1=X$.
+El primo $2$ también es a lo sumo $X$. Para los términos no nulos,
+\[
+ \ell^{a_{\ell,e}(E_v)}\le
+ \begin{cases}
+  \ell\epsilon_{E_v}e\le DrX,&\ell\ne2,\\
+  4\epsilon_{E_v}e\le4Dr\le2DrX,&\ell=2.
+ \end{cases}
+\]
+Por tanto cada longitud ponderada por $\log\ell$ es a lo sumo
+$\log(2DrX)$. Contamos a lo sumo $r$ torcidos, $X$ primos
+y $D$ lugares para cada uno. Esto prueba la cota superior
+de \eqref{eq:fu-correccion-global}.
+
+Finalmente, \eqref{eq:fu-k-comparacion} da
+$\mathcal K(E,t)=\sum_{\ell,e}W_\ell(E,e)\log\ell$.
+La Proposición~\ref{prop:fu-finitud} ya permite sumar las
+longitudes de Sha. Sumar \eqref{eq:fu-defecto-local}
+prueba la identidad. No se resta una serie infinita de otra.
+\end{proof}
+
+La cota es deliberadamente gruesa y no depende del discriminante.
+Para grado y corte acotados, controlar uniformemente
+$\mathcal V(E,t)$ equivale a controlar
+$\mathcal K(E,t)$, con el error explícito anterior.
+La fórmula \eqref{eq:fu-correccion-primo} desarrolla y precisa
+la corrección de A93, (9.20), p.~73: el coste del torcido aparece
+como $v_\ell(e)$. El tamaño de los $K$-grupos sigue siendo
+la parte aritmética principal.
+
+\subsection{Un ejemplo donde la corrección no desaparece}
+
+Tomemos $E=\Q(i)$, $\ell=5$ y $e=4$. Como
+$5=(2+i)(2-i)$, hay dos lugares $v_1,v_2$ sobre $5$ y
+$E_{v_1}=E_{v_2}=\Q_5$. En ambos lugares la imagen ciclotómica
+es $\Z_5^\times$. Su parte de orden cuatro es anulada por la
+potencia $e=4$ y el nivel principal es uno. Así,
+\[
+ a_{5,4}(E_{v_1})=a_{5,4}(E_{v_2})=1.
+\]
+La imagen ciclotómica global también es $\Z_5^\times$:
+la intersección de $\Q(i)$ con $\Q(\mu_{5^\infty})$ es $\Q$,
+pues la primera extensión cuadrática ramifica en $2$ y la segunda
+solo puede ramificar en $5$. Por tanto $a_{5,4}(E)=1$.
+La fórmula de dualidad da la igualdad concreta
+\begin{equation}
+ W_5(\Q(i),4)=s_{5,4}(\Q(i))+1.
+ \label{eq:fu-ejemplo-gauss}
+\end{equation}
+Los grupos son finitos por la comparación clásica. En particular,
+$5$ divide $\#K_8(\Z[i])$. El cálculo no determina la longitud
+de Sha: demuestra que identificarla directamente con la de $H^2$
+perdería una unidad, aun en un cuerpo cuadrático.
+
+\subsection{La longitud exacta a partir de una presentación}
+
+Las cotas por determinantes de C levantan un endomorfismo a un
+módulo libre. Las relaciones del módulo permiten recuperar la
+longitud exacta, incluso si el determinante de un levantamiento
+particular se anula.
+
+\begin{proposicion}[Menores maximales]
+\label{prop:fu-menores}
+Sea $X$ un $\Z_\ell$-módulo finitamente generado con presentación
+\[
+ \Z_\ell^a\xrightarrow{P}\Z_\ell^g\xrightarrow{\pi}X
+ \longrightarrow0,
+\]
+y sea $f\in\operatorname{End}_{\Z_\ell}(X)$.
+Elijamos una matriz $F\in M_g(\Z_\ell)$ con $\pi F=f\pi$
+y formemos la matriz de bloques $A=[\,P\mid F\,]$.
+El conúcleo de $f$ es finito si y solo si $A$ tiene rango $g$
+sobre $\Q_\ell$. En ese caso,
+\begin{equation}
+ \length_{\Z_\ell}(X/fX)
+ =\min_I v_\ell(\det A_I),
+ \label{eq:fu-menores}
+\end{equation}
+donde $I$ recorre las elecciones de $g$ columnas y
+$v_\ell(0)=\infty$. Para $g=0$ se usa el menor vacío igual a uno.
+\end{proposicion}
+
+\begin{proof}
+La libertad del módulo de presentación permite levantar las
+imágenes de sus $g$ vectores básicos, así que existe $F$.
+Una preimagen de $fX$ en $\Z_\ell^g$ es
+$P\Z_\ell^a+F\Z_\ell^g$. En consecuencia,
+\[
+ X/fX\simeq\Z_\ell^g/A\Z_\ell^{a+g}.
+\]
+La forma normal de Smith sobre el anillo de valoración discreta
+reduce $A$, mediante operaciones invertibles de filas y columnas,
+a una diagonal rectangular con entradas
+$\ell^{b_1},\ldots,\ell^{b_q}$, donde $q$ es su rango.
+Si $q<g$, el conúcleo tiene parte libre no nula y longitud infinita.
+Si $q=g$, su longitud es $b_1+\cdots+b_g$.
+
+El ideal generado por los menores maximales no cambia bajo esas
+operaciones: cada menor transformado es una combinación integral
+de los anteriores, y las operaciones inversas dan la otra inclusión.
+En la diagonal ese ideal es
+$(\ell^{b_1+\cdots+b_g})$. En un anillo de valoración discreta,
+la valoración de un ideal generado por una colección finita
+es el mínimo de las valoraciones de sus generadores.
+Esto prueba \eqref{eq:fu-menores}.
+\end{proof}
+
+El menor formado solo por $F$ da
+$\length(X/fX)\le v_\ell(\det F)$ cuando este último es no nulo.
+El mínimo de todos los menores conserva también las relaciones.
+Por ejemplo, si $X=\Z_\ell/\ell^a\Z_\ell$ y $f$ es
+multiplicación por $\ell^b$, con $a\ge1$, $b\ge0$, la matriz
+$[\ell^a\mid\ell^b]$ da longitud $\min(a,b)$.
+Si $f=0$, puede tomarse $F=0$ y el mismo procedimiento da
+longitud $a$, aunque $\det F=0$.
+
+\subsection{Separar la torsión del cociente libre}
+
+\begin{proposicion}[Dos contribuciones a la longitud]
+\label{prop:fu-torsion}
+Sea $T=X_{\mathrm{tors}}$ y $F_X=X/T$, con $X$ finitamente
+generado sobre $\Z_\ell$. Un endomorfismo $f$ induce
+$f_T$ y $\overline f$ en esos módulos. Si
+$\det(\overline f)\ne0$, entonces
+\begin{equation}
+ \length(X/fX)
+ =\length(T/f_TT)+v_\ell(\det\overline f).
+ \label{eq:fu-torsion-libre}
+\end{equation}
+Si $F_X=0$, el determinante vacío vale uno.
+\end{proposicion}
+
+\begin{proof}
+El módulo $F_X$ es libre. El determinante no nulo implica que
+$\overline f$ es inyectivo. Si $f(x)\in T$, su imagen en $F_X$
+es cero, de modo que $x\in T$. Por tanto
+$fX\cap T=f_TT$ y hay una sucesión exacta
+\[
+ 0\longrightarrow T/f_TT\longrightarrow X/fX
+ \longrightarrow F_X/\overline f F_X\longrightarrow0.
+\]
+La forma normal de Smith calcula la longitud del último término
+como $v_\ell(\det\overline f)$. La aditividad prueba la fórmula.
+\end{proof}
+
+No se exige que una descomposición $X\simeq F_X\oplus T$
+sea compatible con $f$. Las contribuciones se separan mediante
+la sucesión exacta. Si el determinante en $F_X$ se anula,
+$F_X/\overline f F_X$ tiene rango positivo y $X/fX$ no es finito.
+Así se distingue una singularidad del operador libre de la
+anulación accidental del determinante de un levantamiento redundante.
+
+\subsection{Cuándo una familia de presentaciones tiene cota común}
+
+\begin{proposicion}[Compacidad sin especializaciones singulares]
+\label{prop:fu-compacidad}
+Fijemos $\ell$, $g$, $b$ y un espacio compacto $S$.
+Sea $A:S\to M_{g,b}(\Z_\ell)$ una aplicación continua.
+Si $A(s)$ tiene rango $g$ sobre $\Q_\ell$ para todo $s\in S$,
+las longitudes de sus conúcleos admiten una cota común.
+\end{proposicion}
+
+\begin{proof}
+Si $g=0$ todas las longitudes son cero; si $S$ es vacío,
+no hay nada que probar. En los demás casos ponemos
+\[
+ d(s)=\max_I|\det A_I(s)|_\ell.
+\]
+Es una función continua, positiva, porque hay finitos menores
+y en cada punto alguno es no nulo. Su imagen compacta tiene
+mínimo $\delta>0$. La Proposición~\ref{prop:fu-menores} da
+$\length\operatorname{coker}A(s)=-\log_\ell d(s)
+\le-\log_\ell\delta$.
+\end{proof}
+
+La exclusión de puntos singulares es decisiva. Con $X=\Z_\ell$
+y $f_n$ multiplicación por $\ell^n$, todos los conúcleos son
+finitos y de un solo generador, pero sus longitudes son $n$.
+Las matrices convergen a la matriz cero, cuyo conúcleo es infinito.
+En términos de acciones puede tomarse $\gamma_n=1+\ell^n$ y
+$f_n=\gamma_n-1$. La generación acotada, la dimensión fija y
+la finitud en cada punto no proporcionan por sí solas la cota común.
+El criterio de compacidad requiere además una familia continua
+con presentación común y rango completo en todo el compacto.
+
+\subsection{Imágenes exactas y crecimiento por capas}
+
+Pasamos al mecanismo algebraico de C, §5, pp.~7--9.
+Escribimos $w\equiv1\pmod{\ell^2}$ cuando
+$(w-1)X\subseteq\ell^2X$. Esta es una condición sobre imágenes.
+Con torsión no permite dividir automáticamente $w-1$ por
+$\ell^2$ dentro de $\operatorname{End}(X)$.
+
+\begin{lema}[Una igualdad de imágenes]
+\label{lem:fu-imagen}
+Sea $X$ finitamente generado sobre $\Z_\ell$ y sea
+$w\in\operatorname{End}(X)$ con $(w-1)X\subseteq\ell^2X$.
+Si $Y=(w-1)X$, entonces, para todo $m\ge0$,
+\begin{equation}
+ (w^{\ell^m}-1)X=\ell^mY.
+ \label{eq:fu-imagen-exacta}
+\end{equation}
+\end{lema}
+
+\begin{proof}
+Pongamos $N=w-1$. Como $NX\subseteq\ell^2X$,
+$N(Y)=N^2X\subseteq N(\ell^2X)=\ell^2Y$.
+Por tanto cada $w^i-1$ lleva $Y$ a $\ell^2Y$.
+Para $Q_w=1+w+\cdots+w^{\ell-1}$ se sigue
+\[
+ (Q_w-\ell)Y\subseteq\ell^2Y,\qquad
+ Q_wY\subseteq\ell Y,\qquad
+ \ell Y\subseteq Q_wY+\ell^2Y.
+\]
+El módulo $M=\ell Y/Q_wY$ es finitamente generado y satisface
+$M=\ell M$. El lema de Nakayama da $M=0$, de donde
+$Q_wY=\ell Y$. La factorización
+$w^\ell-1=Q_w(w-1)$ prueba el caso $m=1$.
+
+La imagen obtenida sigue contenida en $\ell^2X$.
+Podemos aplicar el mismo paso a $w^\ell$, después a
+$w^{\ell^2}$ y así sucesivamente. Partiendo de $m=0$
+se obtiene \eqref{eq:fu-imagen-exacta} por inducción.
+\end{proof}
+
+\begin{proposicion}[Crecimiento exacto con torsión]
+\label{prop:fu-crecimiento}
+En las hipótesis del lema, supongamos que $X/Y$ es finito y
+escribamos
+\[
+ Y\simeq\Z_\ell^\rho\oplus
+       \bigoplus_{i=1}^{h}\Z_\ell/\ell^{a_i}\Z_\ell,
+ \qquad a_i\ge1.
+\]
+Entonces, para todo $m\ge0$,
+\begin{equation}
+ \length\operatorname{coker}(w^{\ell^m}-1)
+ =\length(X/Y)+m\rho+\sum_{i=1}^{h}\min(m,a_i).
+ \label{eq:fu-crecimiento-exacto}
+\end{equation}
+El aumento al pasar de $m$ a $m+1$ es
+$\rho+\#\{i:a_i>m\}$. Para $m\ge\max_i a_i$, con máximo
+vacío igual a cero, el crecimiento es lineal de pendiente
+$\rho=\operatorname{rank}_{\Z_\ell}X$.
+\end{proposicion}
+
+\begin{proof}
+Por el lema, el conúcleo es $X/\ell^mY$. La sucesión
+\[
+ 0\longrightarrow Y/\ell^mY\longrightarrow X/\ell^mY
+ \longrightarrow X/Y\longrightarrow0
+\]
+es exacta. El primer término tiene longitud
+$m\rho+\sum_i\min(m,a_i)$ por la descomposición de $Y$.
+Esto prueba la fórmula y, restando dos niveles sucesivos,
+el incremento indicado. Como $X/Y$ es finito, $X$ e $Y$
+tienen el mismo rango.
+\end{proof}
+
+Si $X$ admite $R$ generadores, todo submódulo suyo admite
+a lo sumo $R$: la preimagen del submódulo en $\Z_\ell^R$
+es libre de rango a lo sumo $R$ y lo sobreyecta.
+En particular $\rho+h\le R$, y la fórmula exacta recupera
+el resto $Rm$ de C. También muestra qué controla la etapa
+anterior al crecimiento lineal: los exponentes de torsión de $Y$.
+
+Para la acción torcida $g=u^e\gamma$ de C, tomamos
+$w=g^{\ell^{j_0}}$, donde
+$j_0=\lfloor\log_\ell R\rfloor+3$ si $R>0$, y $j_0=3$
+si $R=0$. La unipotencia módulo $\ell$ implica
+$(w-1)X\subseteq\ell^2X$: en $X/\ell X$ basta elevar
+$g-1$ a una potencia $\ell^k\ge R$, y una elevación adicional
+a $\ell$ da la congruencia módulo $\ell^2$.
+La fórmula \eqref{eq:fu-crecimiento-exacto} se aplica a
+$\nu=j_0+m$ cuando el conúcleo en $j_0$ es finito.
+Para $\nu<j_0$, la factorización de potencias da un cociente
+del nivel $j_0$. Se conserva así la misma capa de referencia
+de la Nota~\ref{sec:cohomologia}.
+
+\subsection{Sumar las distancias mediante un factorial}
+
+La separación ultramétrica de la Nota~\ref{sec:cohomologia}
+acotaba cada distancia por $\lfloor\log_\ell Z\rfloor$.
+Cuando se necesita la suma de longitudes, conviene sumar
+las valoraciones antes de reemplazarlas por un máximo.
+
+\begin{lema}[Suma de distancias a un centro]
+\label{lem:fu-factorial}
+Sea $c\in\Z_\ell$ y sea $Z\ge1$ entero.
+Elijamos $e_c\in\{1,\ldots,Z\}$ que maximice $v_\ell(c-e_c)$,
+permitiendo el valor infinito. Entonces
+\begin{equation}
+ \begin{split}
+ \sum_{\substack{1\le e\le Z\\e\ne e_c}}v_\ell(c-e)
+ &\le v_\ell\bigl((e_c-1)!(Z-e_c)!\bigr)\\
+ &\le v_\ell((Z-1)!)
+ =\sum_{k\ge1}\left\lfloor\frac{Z-1}{\ell^k}\right\rfloor
+ \le\frac{Z-1}{\ell-1}.
+ \end{split}
+ \label{eq:fu-factorial}
+\end{equation}
+\end{lema}
+
+\begin{proof}
+Para $e\ne e_c$, la desigualdad ultramétrica y la elección
+del máximo dan
+\[
+ v_\ell(e-e_c)\ge
+ \min\{v_\ell(c-e),v_\ell(c-e_c)\}=v_\ell(c-e).
+\]
+Sumando en todos esos enteros, el producto de las diferencias
+en valor absoluto ordinario es $(e_c-1)!(Z-e_c)!$.
+Este producto divide $(Z-1)!$, porque el cociente es
+$\binom{Z-1}{e_c-1}$.
+Para la igualdad siguiente contamos una vez cada múltiplo
+de $\ell$, otra vez cada múltiplo de $\ell^2$, y así sucesivamente.
+Finalmente omitimos los suelos y sumamos la serie geométrica.
+La prueba incluye $Z=1$, con suma vacía y $0!=1$.
+\end{proof}
+
+La exclusión de un entero evita la posible valoración infinita.
+Si el centro es un entero del intervalo, se excluye precisamente
+ese entero. No se supone que los demás enteros estén a una
+distancia constante del centro.
+
+\subsection{Un presupuesto para todos los torcidos ordinarios}
+
+Usamos las hipótesis de C: $X$ está generado por $R$ elementos,
+$\gamma$ es unipotente módulo $\ell$, y $u\in\Z_\ell^\times$
+tiene nivel $a_u=v_\ell(u-1)\ge1$, con $a_u\ge2$ si $\ell=2$.
+Escribimos
+\[
+ \tau(\gamma,u;e,\nu)
+ =\length\operatorname{coker}\bigl((u^e\gamma)^{\ell^\nu}-1\bigr).
+\]
+Los Teoremas A y B de C dan centros $c_1,\ldots,c_R\in\Z_\ell$,
+comunes a todos los torcidos y capas de este par $(\gamma,u)$,
+y las desigualdades de la Nota~\ref{sec:cohomologia}, §8.17.
+Estas cotas se reciben con las hipótesis indicadas.
+Para la suma utilizamos la forma detallada del Teorema A,
+\[
+ \tau(\gamma,u;e,\nu)
+ \le R\bigl(\max\{\nu,j_0\}+a_u\bigr)
+       +\sum_{i=1}^{R}v_\ell(c_i-e).
+\]
+Conservar la suma de valoraciones es lo que permite el factor
+$R$ del término factorial siguiente.
+
+\begin{proposicion}[Suma ordinaria y término excepcional]
+\label{prop:fu-suma-torre}
+Para $Z\ge1$, elijamos $e_i\in\{1,\ldots,Z\}$ que maximice
+$v_\ell(c_i-e_i)$ para cada centro y pongamos
+$\mathcal E_Z=\{e_1,\ldots,e_R\}$.
+Con $M_\nu=\max\{\nu,j_0\}+a_u$, se tiene
+\begin{equation}
+ \sum_{\substack{1\le e\le Z\\e\notin\mathcal E_Z}}
+      \tau(\gamma,u;e,\nu)
+ \le RZ M_\nu+R\,v_\ell((Z-1)!).
+ \label{eq:fu-suma-ordinaria}
+\end{equation}
+Si los conúcleos en la capa $j_0$ de los torcidos excepcionales
+son finitos, todos los términos de la suma completa son finitos y
+\begin{equation}
+ \begin{split}
+ \sum_{e=1}^{Z}\tau(\gamma,u;e,\nu)
+ \le{}&RZ M_\nu+R\,v_\ell((Z-1)!)\\
+ &+\sum_{e\in\mathcal E_Z}\tau(\gamma,u;e,j_0)
+   +R|\mathcal E_Z|(\nu-j_0)_+.
+ \end{split}
+ \label{eq:fu-suma-completa}
+\end{equation}
+Para $R=0$ las dos sumas son cero y $\mathcal E_Z$ es vacío.
+\end{proposicion}
+
+\begin{proof}
+Fuera de $\mathcal E_Z$, la cota por centros de C es finita.
+Al sumarla aparecen a lo sumo $RZ$ copias de $M_\nu$.
+Para cada centro, las valoraciones restantes son no negativas
+porque $c_i\in\Z_\ell$. Por tanto añadir los enteros
+excluidos distintos de $e_i$ solo aumenta la suma, y
+el Lema~\ref{lem:fu-factorial} la acota por
+$v_\ell((Z-1)!)$. Esto prueba \eqref{eq:fu-suma-ordinaria}.
+Para cada $e\in\mathcal E_Z$, la segunda cota de C da
+\[
+ \tau(\gamma,u;e,\nu)
+ \le\tau(\gamma,u;e,j_0)+R(\nu-j_0)_+.
+\]
+Sumarlas y añadir el presupuesto ordinario prueba la segunda
+desigualdad y la finitud afirmada.
+\end{proof}
+
+La pérdida de proximidad se acota ahora por
+$R(Z-1)/(\ell-1)$, en lugar de
+$RZ\lfloor\log_\ell Z\rfloor$.
+La contribución $RZM_\nu$ conserva el nivel de la torre.
+Cuando $\nu=O(\log x)$, esta mejora de la suma de distancias
+no elimina por sí sola el término de tamaño $Z\log x$
+procedente de la altura.
+
+\subsection{Aplicación a una torre aritmética}
+
+Sea $L_\infty/L_0$ una torre ciclotómica $\Z_\ell$ con
+$L_0$ totalmente imaginario, $\mu_\ell\subset L_0$ para
+$\ell$ impar y $\mu_4\subset L_0$ para $\ell=2$.
+Sea $X_\infty$ el módulo no ramificado y escindido sobre
+$\ell$ descrito en C, §7, pp.~9--11.
+Elegimos un generador topológico $\sigma$ de la torre;
+$\gamma$ es su acción en $X_\infty$ y
+$u=\chi_\ell(\sigma)$ genera la imagen ciclotómica.
+Las hipótesis de raíces dan el nivel requerido para $u$.
+Recibimos la generación de $X_\infty$ por $R$ elementos
+sobre $\Z_\ell$, la unipotencia residual de $\gamma$
+de C, Proposición~7.2 e Input~1, y el puente de descenso,
+con las mismas condiciones locales,
+\begin{equation}
+ s_{\ell,e}(L_\nu)=\tau(\gamma,u;e,\nu),\qquad e\ge1.
+ \label{eq:fu-puente-torre}
+\end{equation}
+Este es el lugar donde se identifica el módulo algebraico con
+cohomología. Las matrices arbitrarias de los ejemplos anteriores
+no proporcionan esa identificación.
+
+La Proposición~\ref{prop:fu-finitud}, aplicada a $L_{j_0}$,
+prueba la finitud de todos los términos de esa capa y da
+\[
+ \tau(\gamma,u;e,j_0)
+ \le v_\ell\bigl(\#K_{2e}(\mathcal O_{L_{j_0}})\bigr).
+\]
+En consecuencia, \eqref{eq:fu-suma-completa} se convierte en
+\begin{equation}
+ \begin{split}
+ \sum_{e=1}^{Z}s_{\ell,e}(L_\nu)\log\ell
+ \le{}&(\log\ell)
+    \left[RZM_\nu+R\,v_\ell((Z-1)!)
+                  +R^2(\nu-j_0)_+\right]\\
+ &+\sum_{e\in\mathcal E_Z}
+       \log\#K_{2e}(\mathcal O_{L_{j_0}}).
+ \end{split}
+ \label{eq:fu-presupuesto-torre}
+\end{equation}
+En el último paso se usó $|\mathcal E_Z|\le R$ y se acotó
+la parte $\ell$-primaria de cada cardinalidad por la cardinalidad
+completa. Para una torre fija y un corte $Z$ fijo, esto es un
+presupuesto finito con crecimiento a lo sumo lineal en $\nu$.
+El término inicial vive en $L_{j_0}$, no en la capa variable.
+
+Cuando se quiere un presupuesto uniforme en cuerpos variables,
+la expresión de teoría $K$ debe ser estimada. A93,
+Proposición~9.4, p.~67, formula precisamente una entrada de
+otra fuerza:
+\begin{equation}
+ (\log\ell)W_\ell(L,e)
+ \le\exp\!\left((2e[L:\Q])^{C_K}
+                       \log(2|\operatorname{disc}L|)\right).
+ \label{eq:fu-lemmak}
+\end{equation}
+Su hipótesis de raíces de unidad y su exponente absoluto se
+conservan. Los pasos homológicos, de torsión integral y de
+caracteres de clases que la fuente utiliza para demostrarla
+se describen en A93, pp.~67--74. La finitud clásica obtenida
+aquí permite separar esa cuestión cualitativa de la estimación
+de tamaño; no demuestra \eqref{eq:fu-lemmak}.
+
+\subsection{El alcance uniforme y el siguiente desarrollo}
+
+La nueva información puede localizarse en el presupuesto de la
+Nota~\ref{sec:cohomologia} sin cambiar sus cuantificadores.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.29\textwidth}YY@{}}
+\toprule
+Cantidad & Control obtenido & Dato que todavía debe acotarse\\
+\midrule
+$\mathcal V(E,t)$, $E,t$ fijos
+ & Finitud y soporte finito mediante $K_{2e}(\mathcal O_E)$.
+ & Tamaño de esos grupos al variar $E,t$.\\
+Corrección de dualidad
+ & Cota explícita en grado y corte; soporte $\ell\le Dr+1$.
+ & Ningún discriminante interviene en esta corrección.\\
+Conúcleo presentado
+ & Igualdad por menores maximales; separación de torsión y rango.
+ & Presentaciones y valoraciones controladas para la familia.\\
+Capas de una torre
+ & Crecimiento exacto desde una capa suficientemente profunda.
+ & Longitud inicial y generación uniforme del módulo.\\
+Torcidos ordinarios
+ & Suma factorial y a lo sumo $R$ excepciones.
+ & Cota de capa fija para los torcidos excepcionales.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+En particular, la generación finita del módulo de cada torre
+y la anulación de su invariante $\mu$ no eligen un mismo $R$
+para todas las bases.
+El orden requerido en la rama diádica sigue siendo
+\[
+ \exists R\ \forall(q,d)\text{ admisibles}\ \exists L_0,
+\]
+con la cota fijada antes de la pareja auxiliar.
+La selección de la ventana de la Nota~\ref{sec:cohomologia}
+usa ese mismo control del número de excepciones.
+La mejora factorial tampoco sustituye las estimaciones de
+los otros primos y caracteres.
+
+El siguiente desarrollo se centrará en el paso cuantitativo de capa
+fija de A93, Proposición~9.4 y desarrollo, pp.~67--74: Bockstein, conteo
+por fibras, cancelación del factor de capa y control de torsión.
+El objetivo será identificar y desarrollar las entradas que
+producen \eqref{eq:fu-lemmak}. En paralelo conceptual permanece
+la comparación theta de la Nota~\ref{sec:construccion-selmer}:
+construir su filtración, sus mapas, sus multiplicidades y el
+control de los núcleos. La finitud del presupuesto de torcidos
+de Tate no identifica los Selmer de otros coeficientes ni
+construye esos mapas.
+
+\subsection{Ejercicios resueltos}
+
+\begin{ejercicio}\label{ej:fu-h0}
+Calcule $a_{\ell,e}(\Q_\ell)$ para $\ell$ impar y para
+$\ell=2$. Aplique el resultado a $e=2$ e identifique todos
+los primos con invariantes locales no nulos.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:fu-h0}.}
+Para $\ell$ impar la imagen es
+$\mu_{\ell-1}\times(1+\ell\Z_\ell)$, de modo que
+\[
+ a_{\ell,e}(\Q_\ell)=
+ \begin{cases}
+  0,&\ell-1\nmid e,\\
+  1+v_\ell(e),&\ell-1\mid e.
+ \end{cases}
+\]
+En $\Q_2$ la imagen es $\{\pm1\}\times(1+4\Z_2)$.
+Si $e$ es impar, $-1$ da valoración uno y todos los elementos
+tienen potencia impar congruente a uno módulo dos; la longitud
+es uno. Si $e$ es par, el signo desaparece y la longitud es
+$2+v_2(e)$. Para $e=2$ solo contribuyen $2$ y $3$, con
+longitudes $3$ y $1$. El producto de las cardinalidades
+locales es $2^3\cdot3=24$.
+Este cálculo local no aplica sin más la dualidad global
+totalmente imaginaria al cuerpo real $\Q$.
+
+\begin{ejercicio}\label{ej:fu-menores}
+Sea $X=\Z_\ell\oplus\Z_\ell/\ell^5\Z_\ell$ y sea
+$f(x,\overline y)=(\ell^2x,\ell^3\overline y)$.
+Calcule la longitud del conúcleo por una presentación y
+por la separación de la torsión.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:fu-menores}.}
+Una matriz de presentación del conúcleo es
+\[
+ \begin{pmatrix}0&\ell^2&0\\\ell^5&0&\ell^3\end{pmatrix}.
+\]
+Los menores de tamaño dos tienen valoraciones $7$, $\infty$
+y $5$. La longitud es $5$. Por otro lado, el cociente libre
+contribuye $2$ y el cociente de la torsión por multiplicación
+por $\ell^3$ contribuye $\min(5,3)=3$.
+Ambos métodos dan $2+3=5$.
+
+\clearpage
+\begin{ejercicio}\label{ej:fu-crecimiento}
+Suponga que $w-1$ es multiplicación por $\ell^2$ en
+$X=\Z_\ell\oplus\Z_\ell/\ell^4\Z_\ell$.
+Calcule la longitud de $\operatorname{coker}(w^{\ell^m}-1)$
+para todo $m\ge0$ y señale cuándo se estabiliza su incremento.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:fu-crecimiento}.}
+Aquí $Y=\ell^2X\simeq\Z_\ell\oplus\Z_\ell/\ell^2\Z_\ell$
+y $\length(X/Y)=4$. La fórmula exacta es
+\[
+ 4+m+\min(m,2).
+\]
+Los primeros valores son $4,6,8,9,10,\ldots$.
+El incremento es dos en los dos primeros pasos y uno
+desde $m=2$. El rango libre determina el crecimiento final;
+la torsión de la imagen determina la transición.
+
+\begin{ejercicio}\label{ej:fu-factorial}
+Tome $\ell=3$, $Z=10$ y el centro $c=4$.
+Calcule la suma de $v_3(4-e)$ para $1\le e\le10$, $e\ne4$,
+y compárela con las dos cotas factoriales.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:fu-factorial}.}
+Se excluye $e_c=4$. Entre las diferencias no nulas, solo
+$e=1,7,10$ aportan valoración positiva, igual a uno en
+cada caso. La suma es $3$ y coincide con
+$v_3(3!6!)=1+2=3$. La cota independiente de la posición es
+$v_3(9!)=3+1=4$, y la geométrica da $9/2$.
+La estimación término a término daría
+$10\lfloor\log_3 10\rfloor=20$.
+
+\begin{ejercicio}\label{ej:fu-uniformidad}
+En una familia de cuerpos totalmente imaginarios con grado
+a lo sumo $D$ y corte fijo $t\ge2$, suponga conocida una
+cota común $B$ para $\mathcal V(E,t)$.
+¿Qué cota se obtiene para
+$\prod_{1\le e<t}\#K_{2e}(\mathcal O_E)$?
+¿Por qué la finitud separada de esos productos no basta
+para obtener la cota cohomológica requerida en una ventana?
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:fu-uniformidad}.}
+Con $r=t-1$ y $X=Dr+1$, la Proposición~\ref{prop:fu-presupuesto-exacto}
+da
+\[
+ \prod_{1\le e<t}\#K_{2e}(\mathcal O_E)
+ \le\exp\bigl(B+DrX\log(2DrX)\bigr).
+\]
+En la dirección contraria, una cota para el logaritmo del
+producto acota $\mathcal V(E,t)$ directamente.
+Una colección de enteros finitos puede ser no acotada;
+además, en la aplicación cambian el grado, el discriminante
+y el corte. Hace falta una estimación con dependencias y
+cuantificadores compatibles con esa variación, como la
+entrada de capa fija junto con los controles uniformes
+de torre y la selección de ventana.

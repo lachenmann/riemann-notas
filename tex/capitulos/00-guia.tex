@@ -88,6 +88,8 @@ cotejos entre A y B tampoco constituyen una auditoría de ese código.
     los cociclos y su cambio de coeficientes, y precisa la comparación
     condicional con Selmer. La Nota~\ref{sec:construccion-selmer}
     construye la clase en rango dos y mide la pérdida local.
+    La Nota~\ref{sec:finitud-uniforme} prueba la finitud del presupuesto
+    para datos fijos y precisa el control de las correcciones y torres.
     Referencias: A, §8, pp.~35--41; B, §5, pp.~52--64.
   \item \textbf{Elegir escalas y una ventana común.}
     Después de cancelar los términos principales, aparecen costes del orden
@@ -129,7 +131,7 @@ Ventana común y realización & Props.~11.1--11.2, pp.~49--52 & Prop.~6.3, pp.~6
 \end{tabularx}
 \end{center}
 
-Las trece notas recorren esta ruta. Las cuatro primeras desarrollan
+Las catorce notas recorren esta ruta. Las cuatro primeras desarrollan
 Mellin, denominadores, ventanas y la identidad de caracteres.
 Las Notas~\ref{sec:marcos}--\ref{sec:geometria} estudian marcos,
 periodos, retículos y normas, con sus entradas geométricas explícitas.
@@ -142,8 +144,11 @@ y realiza el pegado cuadrático con condiciones locales.
 La Nota~\ref{sec:congruencias-selmer} estudia retículos y cambios
 de coeficientes; la Nota~\ref{sec:construccion-selmer} construye
 un mapa a Selmer en rango dos y una clase aritmética con el primo $37$.
+La Nota~\ref{sec:finitud-uniforme} relaciona el presupuesto cohomológico
+con grupos finitos de teoría $K$ y separa la finitud para datos fijos
+de la cota uniforme en familias.
 Las Notas~\ref{sec:ventanas}--\ref{sec:galois} incluyen cotejos
-localizados de Lean, sin ejecutarlo. Las dos últimas añaden pruebas
+localizados de Lean, sin ejecutarlo. Las tres últimas añaden pruebas
 y cotejos documentales, sin nuevas lecturas de código.
 
 \clearpage
@@ -187,8 +192,10 @@ la identidad de la Nota~\ref{sec:caracteres}.
 La segunda cota de torre de A93, (9.21), p.~74, usa la longitud
 del grupo completo $H^2$ en una capa fija y añade el resto lineal
 de crecimiento. La Nota~\ref{sec:cohomologia} ya mantiene ambos
-términos en \eqref{eq:cohom-segunda-cota}; la finitud y la cota
-uniforme de esa capa siguen sujetas a las entradas indicadas.
+términos en \eqref{eq:cohom-segunda-cota}.
+La Nota~\ref{sec:finitud-uniforme} justifica la finitud para cada
+capa mediante teoría $K$; la cota uniforme de tamaño conserva
+las entradas cuantitativas indicadas.
 
 \textbf{Una familia fija puede contener datos variables.}
 A93, pp.~88--89, separa la pareja de primos fija en las ventanas
