@@ -29,6 +29,10 @@ con sus tres entradas y sus lemas de extracción y pegado.
 La Nota~\ref{sec:construccion-selmer} utiliza §9, pp.~61--63,
 y distingue la construcción por bloques de la comparación
 cuantitativa mediante filtraciones y errores.
+La Nota~\ref{sec:capa-fija} desarrolla la Proposición~9.4,
+los Lemas~9.5--9.7 y (9.7)--(9.20), pp.~67--74:
+distingue las deducciones de conteo y absorción de las
+entradas homológicas y aritméticas que las alimentan.
 El Apéndice A de A93, pp.~89--92, conserva la revisión de código de [L]
 y atribuye las comprobaciones formales a informes externos.
 
@@ -214,7 +218,23 @@ James S. Milne. \emph{Algebraic Number Theory}, versión 3.08,
 capítulo 3 (ideales y ramificación); pp.~73--75 (retículos);
 capítulo 8, pp.~139--143 (descomposición y Frobenius),
 y Teorema~8.31, p.~147 (densidad de Chebotarev).
+La Nota~\ref{sec:capa-fija} utiliza también el Teorema~4.3,
+p.~70, para la cota de Minkowski de representantes de clases.
 \href{https://www.jmilne.org/math/CourseNotes/ANT.pdf}{Texto en la web del autor}.
+
+\bibitem[So]{soule-torsion}
+Christophe Soulé.
+\emph{A Bound for the Torsion in the K-Theory of Algebraic Integers}.
+\emph{Documenta Mathematica}, Extra Volume Kato (2003), pp.~761--788.
+\href{https://doi.org/10.4171/DMS/3/21}{DOI};
+\href{https://www.maths.tcd.ie/EMIS/journals/DMJDMV/vol-kato/soule.dm.pdf}{PDF en EMIS}.
+§4.1, definición de $\operatorname{card}_b$ y Teorema~1, p.~778;
+§§4.2--4.3, Teoremas~2--3, p.~779.
+Estos enunciados conservan exclusiones de pequeños primos.
+Se citan como antecedente y para precisar su alcance; no
+proporcionan por sí solos la estimación de toda la torsión
+que recibe la Nota~\ref{sec:capa-fija}.
+Consulta: 23 de noviembre de 2026; ejemplar \texttt{9c319682a1bc}.
 
 \bibitem[Gr]{grayson-hn}
 Daniel R. Grayson. \emph{Reduction theory using semistability}.
@@ -395,6 +415,7 @@ y transporte local, y amplía el pegado a toda la familia.
 Conserva las entradas geométricas, theta y de periodos y las leyes
 locales especializadas.
 
+\clearpage
 La Nota~\ref{sec:congruencias-selmer} demuestra el modelo de
 denominadores, el cálculo del ideal de congruencias y la dependencia
 de la extensión residual respecto del retículo. Comprueba que esa
@@ -420,6 +441,15 @@ longitud por menores y torsión, el crecimiento exacto por capas
 y la suma factorial de los torcidos ordinarios.
 La cota cuantitativa de capa fija, la generación uniforme en
 bases variables y la comparación theta mantienen sus entradas.
+La Nota~\ref{sec:capa-fija} demuestra el levantamiento por
+Bockstein, los conteos por rango y fibras, la distribución
+integral que aísla un peso, la detección y la cancelación de
+la altura. Deduce la cota cuantitativa de capa fija con un
+exponente explícito en función de la entrada de torsión.
+Conserva el rango filtrado, la estabilidad integral, los
+ciclos aritméticos, las comparaciones de clases y Selmer,
+la extensión auxiliar y la torsión en todos los primos
+como entradas precisas; cinco ejercicios comprueban los mecanismos.
 Las entradas analíticas uniformes y las realizaciones
 integrales completas siguen pendientes. No se ejecutó Lean ni
 se auditó su cierre de axiomas; el cotejo localizado no certifica

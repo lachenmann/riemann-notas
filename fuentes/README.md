@@ -81,6 +81,22 @@ La revisión de la propuesta retoma **A93, §9, pp. 61–77**, en particular la 
 
 El nuevo desarrollo demuestra diez resultados y resuelve cinco ejercicios. Las fórmulas de menores, torsión, crecimiento exacto y suma factorial son deducciones expuestas en la nota. La cota cuantitativa `LemmaK`, la generación uniforme al variar las bases y la filtración theta con sus mapas y errores siguen separadas. Se conservan los nueve manifiestos Lean y las revisiones documentales anteriores, sin nueva lectura ni ejecución de código.
 
+## Nota 15: Cota cuantitativa de la capa fija
+
+La [Nota 15](../tex/capitulos/15-cota-cuantitativa-de-la-capa-fija.tex) desarrolla **A93, Proposición 9.4 y su prueba, pp. 67–74**, en el mismo ejemplar `295153115a03` de 93 páginas. Demuestra los pasos de cadenas, Bockstein, conteo por rango y fibras, distribución integral, detección por reducciones, separación finita y cancelación de la altura. La deducción cuantitativa conserva como entradas el rango filtrado y la estabilidad integral, la realización de ciclos, las comparaciones de clases y Selmer, la extensión auxiliar y la torsión en todos los primos.
+
+| Fuente y localizador | Uso y alcance |
+| --- | --- |
+| A93, (9.8)–(9.12), pp. 67–68 | Conteo homológico por fibras; se distingue el rango de la imagen filtrada del rango de toda la homología impar. |
+| A93, Lemas 9.6–9.7 y (9.16), pp. 68–71 | Distribución y detección; la construcción integral de los ciclos y sus evaluaciones comunes se recibe como entrada. |
+| A93, (9.19) y continuación, pp. 71–74 | Comparación con clases y unidades, cancelación de la altura, paso a Selmer y absorción cuantitativa. |
+| [Milne, *Algebraic Number Theory*, v3.08](https://www.jmilne.org/math/CourseNotes/ANT.pdf), Teoremas 4.3 y 8.31, pp. 70 y 147 | Minkowski para acotar el número de clases y Chebotarev para detectar potencias globales; se desarrollan sus consecuencias utilizadas. |
+| [Soulé, *A Bound for the Torsion in the K-Theory of Algebraic Integers*](https://www.maths.tcd.ie/EMIS/journals/DMJDMV/vol-kato/soule.dm.pdf), Documenta Mathematica, Extra Volume Kato (2003), 761–788; [DOI](https://doi.org/10.4171/DMS/3/21) | Cotejo de enunciados y alcance de §4.1, Teorema 1, p. 778, y §§4.2–4.3, Teoremas 2–3, p. 779. |
+
+El PDF de Soulé tiene **28 páginas**, **200 685 bytes** y SHA-256 `9c319682a1bcb43e4440b299a7eb4285f67a276e06aab015bcb3bcabfe2900eb`. Su función `card_b` elimina las partes primarias para primos menores o iguales que el umbral; los teoremas citados conservan exclusiones o restricciones explícitas. No se los identifica con una cota del orden de toda la torsión. El cotejo no reconstruye la prueba completa de ese artículo. Milne se comprobó en su PDF oficial: las páginas impresas 70 y 147 corresponden a las páginas 72 y 149 del archivo. No se atribuye un hash a una descarga local de Milne que no se completó. Consultados el 23 de noviembre de 2026.
+
+La nota calcula exactamente $v_\ell(D_e)=2ec+2v_\ell(e!)$, pero conserva el exponente grueso de A93 en la entrada de comparación de clases: mejorar la separación no mejora automáticamente sus núcleos. Si la torsión se recibe con exponente absoluto $C_T\ge1$, la absorción desarrollada permite $C_K=\max(5C_T+9,29)+2$. La dependencia es explícita; no fija un valor numérico de la constante profunda recibida. Se mantienen íntegros los nueve manifiestos y las revisiones documentales C/A93/B76; no se añaden lecturas ni ejecución de Lean.
+
 ## A93: versión larga y guía de cotejo
 
 El [archivo oficial de ULAM](https://www.ulam.ai/archive) presenta `rh-long.pdf` como «Long version» del mismo registro que enlaza A55. La fecha declarada por ese registro es el **23 de noviembre de 2026**; el PDF no imprime fecha ni firma. Los campos de autor del PDF y del [TeX enlazado](https://www.ulam.ai/research/rh-long.tex) están vacíos. La atribución del desarrollo Lean a Alpöge con Claude no identifica al autor de esta exposición.

@@ -1,0 +1,1103 @@
+\section{Cota cuantitativa de la capa fija: Bockstein, clases y torsión}
+\label{sec:capa-fija}
+
+La Nota~\ref{sec:finitud-uniforme} probó la finitud del presupuesto
+para un cuerpo y un corte fijos. El paso siguiente exige una estimación
+que conserve sus dependencias cuando cambian esos datos. Desarrollamos
+la deducción de la cota de capa fija de A93: un conteo homológico
+controla valores asociados a relaciones de divisores; una comparación
+con clases de ideales cancela el factor que depende de la altura;
+una estimación integral de torsión proporciona el tamaño final.
+
+Las pruebas elementales se dan completas. La realización aritmética de
+los ciclos, el rango de una imagen homológica, la estabilidad integral,
+los mapas de comparación con clases y Selmer y la cota de torsión
+se reciben con sus enunciados precisos. El teorema final demuestra
+la implicación desde esas entradas; permite localizar qué falta
+reconstruir para verificar cada una de ellas.
+
+\fuente{A93, Proposición~9.4, Lemas~9.5--9.7 y desarrollo,
+pp.~67--74, ecuaciones (9.7)--(9.20). Se conserva el ejemplar
+\texttt{295153115a03}. Milne~\cite{milne-ant}, Teoremas~4.3 y~8.31,
+pp.~70 y~147, aporta las entradas clásicas de Minkowski y Chebotarev.
+Soulé~\cite{soule-torsion}, §§4.1--4.3, pp.~778--779, delimita
+el antecedente de torsión fuera de pequeños primos. Las menciones
+de interfaces de A93 se atribuyen a esa fuente; este bloque no añade
+lecturas ni ejecución de Lean.}
+
+\subsection{La estimación que se quiere obtener}
+
+Sea $L$ totalmente imaginario, $n=[L:\Q]$, $D=|\operatorname{disc}L|$
+y $r_2=r_2(L)=n/2$. Para un primo $\ell$ y $e\ge1$, mantenemos
+$s_{\ell,e}(L)$ y $W_\ell(L,e)$ de \eqref{eq:fu-grupos}.
+El conjunto $S_\ell$ sigue constando de los lugares sobre $\ell$
+y los infinitos. El objetivo cuantitativo es
+\begin{equation}
+ \log\#H^2(G_{L,S_\ell},\Z_\ell(e+1))
+ =W_\ell(L,e)\log\ell
+ \le \exp\!\left((2en)^{C_K}\log(2D)\right),
+ \label{eq:cf-objetivo}
+\end{equation}
+con un exponente absoluto $C_K$. En esta ruta se supone
+$\mu_\ell\subset L$ si $\ell$ es impar y $\mu_4\subset L$ si
+$\ell=2$. Estas hipótesis pertenecen al argumento cuantitativo;
+la finitud clásica de la Nota~\ref{sec:finitud-uniforme} no las necesitaba.
+
+Escribiremos
+\[
+ \Gamma_N=\operatorname{GL}_N(\mathcal O_L),\qquad
+ T_{N,j}(L)=\#H_j(\Gamma_N,\Z)_{\mathrm{tors}}.
+\]
+Siempre que usemos esos órdenes recibimos su finitud. La estimación
+de su tamaño se introducirá después del conteo. El entero
+$Q=\ell^\nu$ designa el módulo de los coeficientes; no es el cuerpo
+$\Q$. La altura $\nu$ debe desaparecer de la cota de clases antes
+de tomar el paso aritmético a Selmer.
+
+\subsection{Cadenas y un prisma de conjugación}
+
+Para un grupo $G$ y un anillo conmutativo $A$, el complejo bar
+con coeficientes triviales tiene $C_m(G,A)$ libre sobre los símbolos
+$[g_1|\cdots|g_m]$, con $C_0(G,A)=A$. Para $m\ge1$,
+\begin{equation}
+ \begin{aligned}
+ \partial[g_1|\cdots|g_m]
+ &=[g_2|\cdots|g_m]\\
+ &\quad+\sum_{i=1}^{m-1}(-1)^i
+ [g_1|\cdots|g_ig_{i+1}|\cdots|g_m]\\
+ &\quad+(-1)^m[g_1|\cdots|g_{m-1}].
+ \end{aligned}
+ \label{eq:cf-bar}
+\end{equation}
+En grado cero la frontera es cero. Se usa el complejo no normalizado:
+los símbolos con una entrada igual a la identidad no se eliminan.
+Las identidades entre caras emparejan con signos opuestos los
+términos de $\partial^2$, de modo que $\partial^2=0$.
+Un homomorfismo de grupos actúa sobre cada entrada y conmuta con
+la frontera.
+
+\begin{lema}[Prisma integral]
+\label{lem:cf-prisma}
+Para $h\in G$, sea $c_h(g)=h^{-1}gh$. El operador
+\begin{equation}
+ P_h[g_1|\cdots|g_m]
+ =\sum_{i=0}^{m}(-1)^i
+ [g_1|\cdots|g_i|h|c_h(g_{i+1})|\cdots|c_h(g_m)]
+ \label{eq:cf-prisma}
+\end{equation}
+satisface $\partial P_h+P_h\partial=(c_h)_*-1$.
+Por tanto la conjugación induce la identidad en homología.
+\end{lema}
+
+\begin{proof}
+Denotemos por $H_i$ el sumando de \eqref{eq:cf-prisma} sin signo.
+Una cara estrictamente anterior a la inserción coincide con la
+inserción correspondiente después de aplicar esa cara a la cadena
+original. Una cara posterior cumple la misma identidad porque
+$c_h$ respeta productos. Esos términos de $\partial P_h$ se
+cancelan con los de $P_h\partial$.
+
+Las caras que unen $h$ a una entrada vecina se cancelan entre
+$H_i$ y $H_{i+1}$: la identidad necesaria es
+$h\,c_h(g)=gh$. Quedan la primera cara de $H_0$, que aplica
+$c_h$ a todas las entradas, y la última de $H_m$, cuyo signo es
+$(-1)^m(-1)^{m+1}=-1$. En grado cero,
+$\partial[h]=0$ y ambos extremos actúan igual en $A$.
+Esto prueba la fórmula en todos los grados. Todas las operaciones
+son compatibles con homomorfismos que transporten también $h$.
+\end{proof}
+
+En grado uno se ve el signo directamente:
+$P_h[g]=[h|h^{-1}gh]-[g|h]$ tiene frontera
+$[h^{-1}gh]-[g]$. Esta identidad explica cómo unir prismas.
+Todavía hace falta realizarlos en los estabilizadores de los
+retículos aritméticos pertinentes; esa realización será una entrada
+distinta.
+
+\subsection{Bockstein y levantamiento de un ciclo reducido}
+
+\begin{lema}[Cambio de coeficientes]
+\label{lem:cf-bockstein}
+Sea $C_\bullet$ un complejo no negativo de grupos abelianos libres,
+$Q\ge1$ y $m\ge1$. Existe una sucesión exacta natural
+\begin{equation}
+ 0\longrightarrow H_m(C_\bullet)/QH_m(C_\bullet)
+ \longrightarrow H_m(C_\bullet/QC_\bullet)
+ \xrightarrow{\ \beta\ }H_{m-1}(C_\bullet)[Q]
+ \longrightarrow0.
+ \label{eq:cf-bockstein}
+\end{equation}
+Si el Bockstein de un ciclo reducido es cero, ese mismo ciclo
+tiene un levantamiento integral que es ciclo.
+\end{lema}
+
+\begin{proof}
+Levantemos un ciclo reducido $\bar z$ a $z\in C_m$.
+Existe un único $y\in C_{m-1}$ con $\partial z=Qy$.
+Como $Q\partial y=0$ y $C_{m-2}$ no tiene torsión,
+$y$ es ciclo; para $m=1$ tomamos $C_{-1}=0$.
+Definimos $\beta[\bar z]=[y]$.
+Cambiar el levantamiento por $z+Qv$ cambia $y$ por $y+\partial v$.
+Cambiar $\bar z$ por una frontera añadida permite usar
+$z+\partial u+Qv$ y tampoco altera la clase. La aplicación está
+bien definida y $Q[y]=[\partial z]=0$.
+
+Si $[y]$ está anulado por $Q$, existen representantes con
+$\partial z=Qy$. Su reducción es ciclo y tiene Bockstein $[y]$;
+esto da la sobreyectividad. Si $[y]=0$, escribimos
+$y=\partial w$ y ponemos $x=z-Qw$. Entonces $\partial x=0$
+y $x$ se reduce exactamente a $\bar z$. No es necesario alterar
+el ciclo reducido por una frontera.
+
+Finalmente, si un ciclo integral $x$ se reduce a una frontera,
+podemos escribir $x=\partial u+Qv$. Aplicar $\partial$ y usar
+que $C_{m-1}$ no tiene torsión muestra que $v$ es ciclo.
+Así $[x]=Q[v]$. La inclusión contraria es inmediata y demuestra
+la inyectividad del primer mapa de \eqref{eq:cf-bockstein}.
+Las construcciones conmutan con mapas de complejos.
+\end{proof}
+
+No se supuso generación finita de los grupos de cadenas ni de
+sus homologías. Para $Q=1$ todos los términos de
+\eqref{eq:cf-bockstein} son cero. La obstrucción que aparece a la
+derecha tiene grado $m-1$; será la primera de las dos contribuciones
+de torsión al conteo.
+
+\subsection{Contar imágenes por rango y contar por fibras}
+
+\begin{proposicion}[Dos conteos finitos]
+\label{prop:cf-rango-fibras}
+Sea $H$ abeliano con torsión finita de orden $T$, sea $J\subset H$
+de rango a lo sumo $r$, y sea $f:H\to B$ un homomorfismo con
+$QB=0$. Entonces
+\begin{equation}
+ \#f(J)\le Q^rT.
+ \label{eq:cf-rango}
+\end{equation}
+Además, si $\beta:Y\to A$ y $g:Y\to B$ son homomorfismos,
+$A$ es finito y cada subconjunto finito de $g(\ker\beta)$ tiene
+a lo sumo $C$ elementos, entonces
+\begin{equation}
+ \#g(Y)\le C\,\#\beta(Y)\le C\,\#A.
+ \label{eq:cf-fibras}
+\end{equation}
+No se exige que $H,J,Y$ o $B$ sean finitos o finitamente generados.
+\end{proposicion}
+
+\begin{proof}
+Para un conjunto finito $E\subset f(J)$, elijamos una preimagen
+en $J$ de cada elemento y llamemos $J_0$ al subgrupo que generan.
+Ahora sí $J_0$ es finitamente generado. Su descomposición es
+$\Z^{r_0}\oplus T_0$, con $r_0\le r$ y
+$T_0\subset H_{\mathrm{tors}}$. Como $f$ anula $QJ_0$,
+\[
+ \#E\le\#(J_0/QJ_0)
+ =Q^{r_0}\#(T_0/QT_0)\le Q^rT.
+\]
+Si $f(J)$ tuviera más elementos, un subconjunto de cardinal
+$Q^rT+1$ contradiría esa desigualdad.
+
+Para el segundo conteo basta tomar un conjunto finito de valores
+y elegir preimágenes en $Y$. Separamos esas preimágenes por
+su valor bajo $\beta$. Al restar un representante en cada fibra,
+sus diferencias quedan en $\ker\beta$; los valores de $g$ en
+esa fibra forman una traslación de un subconjunto de
+$g(\ker\beta)$. Hay a lo sumo $C$ valores por fibra y
+$\#\beta(Y)$ fibras. El mismo argumento de subconjuntos finitos
+da \eqref{eq:cf-fibras} para toda la imagen.
+\end{proof}
+
+La torsión usada en \eqref{eq:cf-rango} es la del grupo ambiente
+$H$. La imagen de un grupo libre puede ser un grupo de torsión:
+$\Z\to\Z/Q\Z$ ya lo muestra. El teorema de estructura se
+aplicó antes de tomar la imagen.
+
+\subsection{El operador que selecciona la imagen de rango pequeño}
+
+Fijemos un grado $k+1$ y $Q=\ell^\nu$. Para cada $N$ suponemos
+dada una aplicación $\Z/Q$-lineal
+$\Phi_N:C_{k+1}(\Gamma_N,\Z/Q)\to B$, donde $QB=0$.
+Se exige que anule fronteras, respete la estabilización en ciclos
+y satisfaga
+\begin{equation}
+ \Phi_{dN}(\Psi_d z)=d\Phi_N(z)
+ \quad\text{para ciclos }z,
+ \label{eq:cf-primitividad}
+\end{equation}
+donde $\Psi_d$ repite una matriz en $d$ bloques diagonales.
+Reducir ciclos integrales y evaluar induce
+$\phi_N:H_{k+1}(\Gamma_N,\Z)\to B$.
+
+Para $x\in H_{k+1}(\Gamma_N,\Z)$ definimos
+\begin{equation}
+ z_0=x,\qquad
+ z_{j+1}=(\Psi_\ell)_*z_j-\ell^{j+2}\operatorname{st}_*z_j
+ \in H_{k+1}(\Gamma_{\ell^{j+1}N},\Z).
+ \label{eq:cf-filtrado}
+\end{equation}
+Ambos términos se transportan al mismo tamaño de matrices.
+
+\begin{lema}[Valor del operador filtrado]
+\label{lem:cf-filtrado}
+Para $j\ge0$,
+\begin{equation}
+ \phi_{\ell^jN}(z_j)
+ =\ell^j u_j\phi_N(x),\qquad
+ u_j=\prod_{i=1}^j(1-\ell^i).
+ \label{eq:cf-valor-filtrado}
+\end{equation}
+En particular, cada valor $\ell^k\phi_N(x)$ pertenece a la
+imagen bajo $\phi_{\ell^kN}$ del subgrupo generado por los $z_k$.
+\end{lema}
+
+\begin{proof}
+Para $j=0$ el producto es vacío y vale uno. La primitividad
+\eqref{eq:cf-primitividad} y la estabilización muestran que
+el paso siguiente multiplica el valor por
+$\ell-\ell^{j+2}=\ell(1-\ell^{j+1})$.
+La inducción prueba \eqref{eq:cf-valor-filtrado}.
+Cada factor de $u_k$ es primo a $\ell$. Existe por ello un entero
+$b$ con $bu_k\equiv1\pmod Q$. Como $QB=0$,
+$\phi_{\ell^kN}(bz_k)=\ell^k\phi_N(x)$.
+\end{proof}
+
+\paragraph{Entrada de rango y estabilidad.}
+A93, pp.~67--68, recibe dos afirmaciones integrales. Para $k$ par,
+$k+1<r_2$ y $N\ge2(k+1)+4$, el subgrupo generado por los $z_k$
+tiene rango a lo sumo $r_2$. Además, estabilizar desde tamaño
+$N_0\ge2j+4$ induce un isomorfismo de homología integral en
+grado $j$ hacia cualquier tamaño mayor.
+La primera afirmación concierne a esa imagen filtrada, no a toda
+la homología impar. La segunda preserva la torsión; una
+comparación únicamente racional no bastaría.
+
+\subsection{Por qué aparecen dos grados de torsión}
+
+\begin{proposicion}[Conteo homológico]
+\label{prop:cf-conteo-homologico}
+Recibamos las dos entradas anteriores y la finitud de la torsión.
+Sea $k=2e$, $N_0=4e+6$ y $2e+1<r_2$. Para una familia
+$\Phi_N$ como antes, todo conjunto finito de valores
+$\ell^{2e}\Phi_N(z)$, con $z$ ciclo reducido y tamaños $N$
+posiblemente distintos, tiene cardinal a lo sumo
+\begin{equation}
+ Q^{r_2}T_{N_0,2e}(L)T_{N_0,2e+1}(L).
+ \label{eq:cf-conteo-homologico}
+\end{equation}
+El módulo $B$ puede ser un producto infinito de módulos anulados
+por $Q$.
+\end{proposicion}
+
+\begin{proof}
+Estabilicemos los finitos ciclos elegidos a un mismo tamaño
+$N\ge N_0$. La aplicación de Bockstein toma valores en
+$H_k(\Gamma_N,\Z)[Q]$, un grupo de cardinal a lo sumo
+$T_{N_0,k}(L)$ por estabilidad integral.
+
+Dentro de una fibra, la diferencia de dos ciclos tiene Bockstein
+cero. Por el Lema~\ref{lem:cf-bockstein} se levanta a un ciclo
+integral $x$. La diferencia de los valores contados es
+$\ell^k\phi_N([x])$. El Lema~\ref{lem:cf-filtrado} la sitúa
+en la imagen del subgrupo filtrado en
+$H_{k+1}(\Gamma_{\ell^kN},\Z)$.
+Ese subgrupo tiene rango a lo sumo $r_2$, y la torsión del grupo
+ambiente tiene orden $T_{N_0,k+1}(L)$ por estabilidad.
+La Proposición~\ref{prop:cf-rango-fibras} acota los valores por
+fibra por $Q^{r_2}T_{N_0,k+1}(L)$.
+
+Multiplicar por el número de fibras da
+\eqref{eq:cf-conteo-homologico}. Solo se contó un conjunto finito
+de valores; nunca se usó la finitud del módulo de llegada.
+\end{proof}
+
+El grado $2e$ aporta las fibras de Bockstein y el grado $2e+1$
+aporta la torsión dentro de cada fibra. La potencia $\ell^{2e}$
+proviene del operador filtrado. Son tres contribuciones diferentes.
+
+\subsection{Caracteres equivariantes y norma ponderada}
+
+Sea $c$ máximo tal que $\mu_{\ell^c}\subset L$, con $c\ge1$
+y $c\ge2$ si $\ell=2$. Para $\nu\ge c$, consideremos una
+extensión cíclica $F/L$ de grado $m_\nu=\ell^{\nu-c}$, una raíz
+primitiva $\zeta$ de orden $Q=\ell^\nu$ y un generador
+$\gamma$ con $\gamma(\zeta)=\zeta^{1+\ell^c}$.
+Ponemos $\kappa=1+\ell^c$ y $a=\kappa^e$.
+El grupo de caracteres pertinente es
+\begin{equation}
+ X_\nu=
+ \{\varphi\in\operatorname{Hom}(\operatorname{Cl}(F),\Z/Q):
+   \varphi(\gamma^{-1}\mathfrak a)=a\varphi(\mathfrak a)
+   \text{ para toda clase }\mathfrak a\}.
+ \label{eq:cf-caracteres}
+\end{equation}
+La condición obliga a factorizar por
+$\operatorname{Cl}(F)/(\gamma^{-1}-a)\operatorname{Cl}(F)$;
+el coeficiente $\Z/Q$ obliga además a anular $Q\operatorname{Cl}(F)$.
+Para cualquier grupo abeliano finito $C$,
+\[
+ \#\Hom(C,\Z/Q)=\#(C/QC).
+\]
+En efecto, los factores primarios distintos de $\ell$ no contribuyen,
+y un factor $\Z/\ell^b$ aporta $\ell^{\min(b,\nu)}$ a ambos
+lados. Así \eqref{eq:cf-caracteres} cuenta un cociente torcido
+concreto del grupo de clases.
+
+Escribimos los divisores aditivamente. Una relación admitida consiste
+en $\alpha\in F^\times$ y un divisor $\mathfrak d$ tales que
+\begin{equation}
+ \operatorname{div}(\alpha)=(\gamma^{-1}-a)\mathfrak d,
+ \qquad
+ N_a(\alpha)=\prod_{j=0}^{m_\nu-1}\gamma^j(\alpha)^{a^j}.
+ \label{eq:cf-norma}
+\end{equation}
+El coeficiente de un primo $\mathfrak P$ en $\gamma^{-1}\mathfrak d$
+es $\mathfrak d(\gamma\mathfrak P)$, lo que fija la convención
+del inverso en \eqref{eq:cf-caracteres}.
+La norma ponderada toma valores en $F^\times$; no se la identifica
+con la norma usual hacia $L$.
+
+El telescopado da una identidad útil:
+\begin{equation}
+ \operatorname{div}N_a(\alpha)
+ =(1-a^{m_\nu})\gamma^{-1}\mathfrak d.
+ \label{eq:cf-norma-divisor}
+\end{equation}
+Para comprobarla, se aplica $\sum_{j=0}^{m_\nu-1}a^j\gamma^j$
+a $(\gamma^{-1}-a)\mathfrak d$. Todos los términos intermedios
+se cancelan; quedan $\gamma^{-1}\mathfrak d-a^{m_\nu}\gamma^{m_\nu-1}\mathfrak d$,
+y $\gamma^{m_\nu}=1$. Esta identidad explica la aparición de $a^{m_\nu}-1$
+en las estimaciones de núcleos.
+
+\subsection{El coste exacto del factor de interpolación}
+
+Ponemos $M=2e+1$ y
+\begin{equation}
+ D_e=\prod_{\substack{0\le j<M\\j\ne e}}
+ (\kappa^e-\kappa^j),\qquad
+ B_e=2e+M(c+M).
+ \label{eq:cf-interpolador}
+\end{equation}
+El símbolo $D_e$ designa este entero; el discriminante absoluto
+sigue siendo $D$.
+
+\begin{lema}[Valoraciones del interpolador y de la capa]
+\label{lem:cf-valuaciones}
+Con las condiciones sobre $c$ ya fijadas,
+\begin{equation}
+ \begin{aligned}
+ v_\ell(\kappa^i-\kappa^j)&=c+v_\ell(i-j) &&(i\ne j),\\
+ v_\ell(D_e)&=2ec+2v_\ell(e!),\\
+ v_\ell(a-1)&=c+v_\ell(e),\\
+ v_\ell(a^{m_\nu}-1)&=\nu+v_\ell(e).
+ \end{aligned}
+ \label{eq:cf-valuaciones}
+\end{equation}
+En particular, $D_e$ divide $\ell^{M(c+M)}$ en $\Z_\ell$.
+\end{lema}
+
+\begin{proof}
+Si $b$ es primo a $\ell$, el desarrollo binomial de
+$(1+\ell^c)^b-1$ tiene primer término de valoración $c$ y
+los demás de valoración mayor. Para exponentes positivos,
+elevar a la potencia $\ell$ aumenta esa valoración exactamente
+en uno: los términos intermedios del binomio tienen mayor
+valoración, también para $\ell=2$ gracias a $c\ge2$.
+Escribiendo un exponente como $\ell^rb$ se obtiene
+$v_\ell(\kappa^{\ell^rb}-1)=c+r$.
+Los exponentes negativos se reducen a los positivos porque
+$\kappa$ es una unidad. Esto prueba la primera igualdad.
+
+En $D_e$ aparecen dos veces las distancias $1,\ldots,e$.
+Sumar sus valoraciones da $2ec+2v_\ell(e!)$.
+Las otras dos fórmulas aplican la primera a $e$ y
+$em_\nu=e\ell^{\nu-c}$. Finalmente, cada una de las $M-1$
+distancias del interpolador es menor que $M$, por lo que su
+contribución es menor que $c+M$. La cota más holgada
+$v_\ell(D_e)\le M(c+M)$ implica la divisibilidad en $\Z_\ell$.
+\end{proof}
+
+La valoración exacta permite conocer el coste mínimo de este paso.
+Conservaremos, sin embargo, el $B_e$ de A93 en la entrada posterior
+de clases y unidades: mejorar una pérdida de separación no
+modifica automáticamente el enunciado aritmético que se recibe.
+
+\subsection{Una distribución integral que aísla un peso}
+
+El siguiente mecanismo explica por qué el interpolador aparece
+en la construcción de ciclos. Para un grupo abeliano finito $A$,
+su anillo de grupo $\Z[A]$ tiene base $\delta_x$ y producto
+$\delta_x\delta_y=\delta_{x+y}$. Una aplicación de grupos induce
+el transporte de esa base.
+
+\begin{lema}[Aislamiento por diferencias finitas]
+\label{lem:cf-distribucion}
+Sean $\nu\ge c\ge1$, $Q=\ell^\nu$, $\kappa=1+\ell^c$ y
+$1\le M<\ell^c$. Escribamos
+$P_M(X)=\prod_{j=0}^{M-1}(X-\kappa^j)=\sum_{i=0}^Mp_iX^i$.
+Para cada $t_0\in\{0,\ldots,M\}$ existe
+$\eta\in\Z[(\Z/Q)^2]$ cuyo transporte por
+$p_t(x,y)=x+ty$ es cero si $t\ne t_0$ en ese intervalo, y es
+\begin{equation}
+ (p_{t_0})_*\eta=\sum_{i=0}^Mp_i\delta_{\kappa^i}.
+ \label{eq:cf-distribucion}
+\end{equation}
+\end{lema}
+
+\begin{proof}
+Pongamos $w=\ell^c$ y $E(f)(T)=f(T^{1+w})$ en $\Z[T]$.
+Si $(T^w-1)^j$ divide $f$, entonces $(T^w-1)^{j+1}$ divide
+$E(f)-\kappa^jf$. En efecto, escribimos
+$f=(T^w-1)^jg$. El cociente
+\[
+ \frac{E(T^w-1)}{T^w-1}=\sum_{i=0}^{w}T^{wi}
+ \equiv1+w\pmod{T^w-1},
+\]
+y $E(g)\equiv g$ módulo el mismo polinomio.
+Aplicando sucesivamente $E-\kappa^j$, para $j=0,\ldots,M-1$,
+al polinomio $T$, resulta
+\[
+ (T^w-1)^M\mid P_M(E)T=\sum_{i=0}^Mp_iT^{\kappa^i}.
+\]
+Evaluar $T$ en $\delta_1$ muestra que
+$\lambda=\sum_i p_i\delta_{\kappa^i}$ es múltiplo de
+$(\delta_w-1)^M$ en $\Z[\Z/Q]$.
+
+Para $t\ne t_0$, la congruencia $(t_0-t)b\equiv w\pmod Q$
+tiene solución porque $0<|t_0-t|\le M<\ell^c$.
+Eligiendo $b\ge0$, una suma geométrica muestra que
+$\delta_{t_0-t}-1$ divide $\delta_w-1$.
+Hay exactamente $M$ valores de $t\ne t_0$; por tanto existe $u$
+con $\lambda=\prod_{t\ne t_0}(\delta_{t_0-t}-1)u$.
+No se usó que esas diferencias fueran unidades.
+
+Sea $\iota$ la inclusión del anillo de grupo por la primera
+coordenada. Tomemos
+\[
+ \eta=\prod_{t\ne t_0}(\delta_{(0,1)}-\delta_{(t,0)})\,
+ \iota\!\left(\delta_{-\sum_{t\ne t_0}t}u\right).
+\]
+El transporte por un índice $t\ne t_0$ anula su factor.
+Para $t_0$, cada factor se convierte en
+$\delta_t(\delta_{t_0-t}-1)$. La traslación incluida cancela
+el producto de los $\delta_t$, y queda $\lambda$.
+\end{proof}
+
+La desigualdad estricta $M<\ell^c$ permite resolver las
+congruencias aunque alguna diferencia $t_0-t$ sea divisible por
+$\ell$. La distribución tiene coeficientes enteros y soporte
+finito. Realizar esos coeficientes mediante retículos de ideales,
+sus mapas y sus determinantes pertenece a la entrada aritmética
+de especialización que se enuncia más adelante.
+
+\subsection{Detectar una potencia global por reducciones}
+
+\begin{lema}[Detección por primos de grado uno]
+\label{lem:cf-deteccion}
+Sea $F$ un cuerpo de números con $\mu_Q\subset F$ y
+$\alpha\in F^\times$. Supongamos que, fuera de un conjunto
+finito de primos, su reducción es una potencia $Q$-ésima en
+cada primo de $F$ de grado residual absoluto uno. Entonces
+$\alpha\in(F^\times)^Q$.
+\end{lema}
+
+\begin{proof}
+La extensión $K=F(\alpha^{1/Q})$ es de Galois porque $F$
+contiene $\mu_Q$. Excluyamos además los primos que dividen $Q$,
+el numerador o denominador de $\alpha$, y los ramificados en $K$.
+En un primo restante, una raíz de $X^Q-\alpha$ en el cuerpo
+residual produce todas sus raíces: las raíces de la unidad
+permanecen distintas al reducir. El polinomio se descompone
+completamente y Frobenius actúa trivialmente en $K/F$.
+
+Por Chebotarev, cada clase de conjugación de
+$\operatorname{Gal}(K/F)$ aparece en un conjunto de densidad
+positiva. Los primos de $F$ de grado absoluto al menos dos
+tienen densidad de Dirichlet cero. En efecto, si $m=[F:\Q]$,
+para $s>1$ su serie de normas inversas es a lo sumo
+$m\sum_p p^{-2s}$, que permanece acotada cuando $s$ tiende
+a uno. Retirar esos primos y un conjunto finito de una clase
+de Chebotarev deja algún primo de grado uno.
+La hipótesis fuerza entonces a que cada clase de conjugación
+sea la identidad. Así $K=F$ y $\alpha$ es una potencia $Q$-ésima.
+\end{proof}
+
+Se recibe el teorema clásico de Chebotarev en la forma citada
+por Milne, Teorema~8.31. El grado absoluto uno tiene además
+una función en la especialización: el cuerpo residual es
+$\mathbf F_p$ y la imagen de $\mathcal O_L$ contiene ese cuerpo
+primo, de modo que su reducción es sobreyectiva.
+
+\subsection{De la especialización a un conjunto separado finito}
+
+\paragraph{Entrada de ciclos y evaluación.}
+Se reciben familias aditivas compatibles de evaluaciones, una
+para cada cuerpo finito $k$ que contenga una raíz primitiva
+de orden $Q$ y cada carácter $v:k^\times\to\Z/Q$,
+normalizadas por $v$ y elegidas independientemente de $\alpha$.
+Omitimos $v$ en la notación $\theta_{k,N}$.
+Para cada relación \eqref{eq:cf-norma}, la construcción de A93,
+(9.16), pp.~69--71, proporciona un ciclo
+$y_\alpha\in C_{2e+1}(\Gamma_N,\Z/Q)$ y un
+$b_\alpha\in\mathcal O_F\setminus\{0\}$.
+Si $r:\mathcal O_F\to k$ es una reducción a un cuerpo finito,
+su restricción a $\mathcal O_L$ es sobreyectiva y
+$r(b_\alpha)\ne0$, cada familia así normalizada satisface
+\begin{equation}
+ \theta_{k,N}(r_*y_\alpha)
+ =D_e\,v\!\left(\overline{N_a(\alpha)}\right).
+ \label{eq:cf-especializacion}
+\end{equation}
+La existencia de la reducción del elemento fraccionario forma
+parte de la afirmación. Las evaluaciones anulan fronteras,
+respetan isomorfismos y suman bajo sumas directas de
+representaciones sobre ciclos. Sus transportes a $\Gamma_N$
+satisfacen \eqref{eq:cf-primitividad}.
+
+El prisma y la distribución anteriores explican dos mecanismos
+de esta construcción. Se conservan como entradas la realización
+integral en retículos de ideales, los mapas con determinantes
+prescritos, el paso a un módulo libre añadiendo un complemento
+y las identidades de evaluación sobre cuerpos finitos.
+Un ciclo únicamente racional no proporciona
+\eqref{eq:cf-especializacion} en todos los primos de detección.
+
+\begin{proposicion}[Separación finita]
+\label{prop:cf-separacion}
+Supongamos $M=2e+1<\ell^c,r_2$ y recibamos las entradas
+homológicas y de especialización. Sea $S$ un conjunto finito de
+elementos con relaciones \eqref{eq:cf-norma}, tales que
+\begin{equation}
+ \left(\frac{N_a(\alpha)}{N_a(\alpha')}\right)^{\ell^{B_e}}
+ \in(F^\times)^Q
+ \quad\Longrightarrow\quad\alpha=\alpha'
+ \qquad(\alpha,\alpha'\in S).
+ \label{eq:cf-separacion}
+\end{equation}
+Entonces
+\begin{equation}
+ \#S\le Q^{r_2}T_{4e+6,2e}(L)T_{4e+6,2e+1}(L).
+ \label{eq:cf-separacion-cota}
+\end{equation}
+\end{proposicion}
+
+\begin{proof}
+Excluyamos los primos sobre $\ell$ y los que anulan alguno
+de los finitos $b_\alpha$. En cada primo de grado absoluto uno
+restante, la raíz $\zeta$ conserva orden $Q$.
+El grupo $k^\times$ es cíclico; existe un carácter hacia
+$\Z/Q$ cuyo núcleo es $(k^\times)^Q$.
+Elijamos una familia de evaluación para cada uno y tomemos el
+producto de sus transportes. Aunque haya infinitos primos,
+ese producto sigue siendo un módulo anulado por $Q$ y satisface
+las hipótesis del conteo homológico.
+
+Asignemos a $\alpha$ la tupla de valores
+$\ell^{2e}\theta_{k,N}(r_*y_\alpha)$.
+Si dos tuplas coinciden, \eqref{eq:cf-especializacion} da
+$\ell^{2e}D_e\,v(\overline{N_a(\alpha)/N_a(\alpha')})=0$
+en cada reducción. La divisibilidad del
+Lema~\ref{lem:cf-valuaciones} permite multiplicar por un
+coeficiente de $\Z_\ell$, o por su representante módulo $Q$,
+para obtener el exponente
+$2e+M(c+M)=B_e$.
+La reducción de la potencia en \eqref{eq:cf-separacion} queda
+en el núcleo de cada carácter y es una potencia $Q$-ésima.
+El Lema~\ref{lem:cf-deteccion} la hace una potencia global.
+La separación implica $\alpha=\alpha'$.
+
+La aplicación de $S$ a las tuplas es, por tanto, inyectiva.
+La Proposición~\ref{prop:cf-conteo-homologico} acota su imagen
+por \eqref{eq:cf-separacion-cota}. El conjunto de primos
+excluidos pudo depender de $S$; la cota obtenida no depende de él.
+\end{proof}
+
+Solo para esta separación, la valoración exacta permite sustituir
+$B_e$ por $2e+2ec+2v_\ell(e!)$. La comparación aritmética
+siguiente se mantiene con el $B_e$ que figura en su enunciado.
+
+\subsection{Clases, unidades y cancelación de la altura}
+
+\paragraph{Entrada de clases y unidades.}
+Escribamos $h_L=\#\operatorname{Cl}(L)$ y
+$g_L=2n+\lfloor\log_2 h_L\rfloor+2$.
+A93, (9.19), pp.~71--72, afirma que una cota $B$ válida para
+todo conjunto finito separado como el anterior implica
+\begin{equation}
+ \#X_\nu\,Q^{r_2}
+ \le B\,\ell^{(B_e+v_\ell(e))g_L+c+v_\ell(e)}.
+ \label{eq:cf-clases-entrada}
+\end{equation}
+La afirmación utiliza la sucesión de divisores, las unidades,
+el grupo de clases y el núcleo de la norma ponderada. El factor
+$Q^{r_2}$ de la izquierda procede de esa comparación con unidades.
+No se obtiene de la sola finitud del grupo de clases.
+
+El cálculo finito que controla sus pérdidas puede verificarse
+independientemente. Si un $\ell$-grupo abeliano finito $W$ cumple
+$\#W[\ell]\le\ell^g$, su descomposición en cíclicos tiene a
+lo sumo $g$ factores y, para $b\ge0$,
+\begin{equation}
+ \#W[\ell^b]\le\ell^{bg}.
+ \label{eq:cf-kernel-finito}
+\end{equation}
+En efecto, cada factor $\Z/\ell^{a_i}$ aporta
+$\ell^{\min(b,a_i)}$, y se suman a lo sumo $g$ exponentes.
+Si el núcleo de un mapa desde $W$ está anulado por $\ell^b$
+y su imagen tiene orden a lo sumo $B$, resulta
+$\#W\le B\ell^{bg}$. Lo mismo vale para un anulador
+$m\ell^b$ con $\ell\nmid m$, porque multiplicar por $m$
+es un automorfismo de $W$.
+
+En \eqref{eq:cf-clases-entrada}, identificar los grupos y probar
+sus anuladores sigue siendo parte de la entrada aritmética.
+Las valoraciones $c+v_\ell(e)$ y $\nu+v_\ell(e)$ de
+\eqref{eq:cf-valuaciones} explican por qué ese coste conserva
+$v_\ell(e)$. Una afirmación de núcleo finito sin anulador
+cuantificado no produciría la desigualdad requerida.
+
+\begin{proposicion}[Cota independiente de la altura]
+\label{prop:cf-cancelacion}
+Bajo las entradas anteriores y $2e+1<\ell^c,r_2$,
+\begin{equation}
+ \#X_\nu
+ \le T_{4e+6,2e}(L)T_{4e+6,2e+1}(L)
+ \ell^{(B_e+v_\ell(e))g_L+c+v_\ell(e)}
+ \qquad(\nu\ge c).
+ \label{eq:cf-cancelacion}
+\end{equation}
+Todos los términos de la derecha dependen de $L,\ell,e$,
+pero no de $\nu$.
+\end{proposicion}
+
+\begin{proof}
+La Proposición~\ref{prop:cf-separacion} proporciona
+$B=Q^{r_2}T_{4e+6,2e}(L)T_{4e+6,2e+1}(L)$
+en \eqref{eq:cf-clases-entrada}.
+Como $Q^{r_2}>0$, se cancela ese mismo factor de ambos lados.
+Queda \eqref{eq:cf-cancelacion}.
+\end{proof}
+
+La coincidencia de exponentes es el punto decisivo. El rango
+$r_2$ de la imagen filtrada y la contribución de las unidades
+se necesitan juntos. Una cota de clases que conservase
+$Q^{r_2}=\ell^{\nu r_2}$ en la derecha no daría este control.
+
+\subsection{El paso a Selmer y la extensión auxiliar}
+
+\begin{lema}[Subgrupos anidados de orden acotado]
+\label{lem:cf-limite}
+Sea $A$ un grupo abeliano $\ell$-primario. Si existe una cota
+finita común para $\#A[\ell^\nu]$, entonces $A$ es finito.
+\end{lema}
+
+\begin{proof}
+Cada elemento de $A$ está anulado por alguna potencia de $\ell$,
+así que $A=\bigcup_\nu A[\ell^\nu]$.
+Los subgrupos forman una sucesión creciente y sus cardinalidades
+son enteros acotados. Esos cardinales se estabilizan; una inclusión
+entre dos grupos finitos del mismo orden es igualdad.
+La unión es entonces uno de los subgrupos finitos.
+\end{proof}
+
+\paragraph{Entrada de comparación con Selmer.}
+A93, p.~72, recibe el paso aritmético que convierte una cota
+común para todos los $X_\nu$ de las capas con los datos
+prescritos en
+\begin{equation}
+ \ell^{s_{\ell,e}(L)}
+ \le T_{4e+6,2e}(L)T_{4e+6,2e+1}(L)
+ \ell^{(B_e+v_\ell(e))g_L+c+v_\ell(e)}.
+ \label{eq:cf-selmer-entrada}
+\end{equation}
+El paso conserva las condiciones locales sobre $\ell$.
+El lema anterior explica el mecanismo de finitud; no identifica
+los $X_\nu$ con $\operatorname{Sha}_{\ell,e}(L)[\ell^\nu]$
+ni construye sus mapas de transición. Esa comparación es una
+entrada adicional. La finitud para cada $L,e$ ya está disponible
+por la Nota~\ref{sec:finitud-uniforme}; aquí necesitamos el
+control cuantitativo que transporta la cota.
+
+\paragraph{Entrada de extensión auxiliar.}
+Las desigualdades $2e+1<\ell^c,r_2$ pueden fallar en $L$.
+A93, p.~72, proporciona un cuerpo totalmente imaginario $L'$
+con $n'=[L':\Q]=dn$, $D'=|\operatorname{disc}L'|$ y profundidad
+ciclotómica exacta $c'$, tal que
+\begin{equation}
+ \begin{gathered}
+ 2e+1<\ell^{c'},\ r_2(L'),\qquad
+ d\le(n+1)(4e+4),\qquad \ell^{c'}\le2n',\\
+ D'\le D^d(\ell^{c'})^{n'},\qquad
+ s_{\ell,e}(L)\le s_{\ell,e}(L').
+ \end{gathered}
+ \label{eq:cf-extension}
+\end{equation}
+Se mantiene $c'\ge1$, y $c'\ge2$ para $\ell=2$.
+La última desigualdad no se atribuye a una inyectividad automática
+de restricción para cualquier extensión: forma parte del cuerpo
+auxiliar y de la comparación que la fuente proporciona.
+El factor ciclotómico en la cota de $D'$ debe conservarse.
+
+\subsection{Una cota suficiente para el número de clases}
+
+\begin{proposicion}[Cota elemental a partir de Minkowski]
+\label{prop:cf-clase-numero}
+Para un cuerpo de números $K$ de grado $m$, discriminante
+absoluto $D_K$ y número de clases $h_K$,
+\begin{equation}
+ \log h_K\le m^2\log2+\frac m2\log D_K.
+ \label{eq:cf-clase-numero}
+\end{equation}
+\end{proposicion}
+
+\begin{proof}
+La cota clásica de Minkowski proporciona en cada clase un ideal
+integral de norma a lo sumo $Y_0=2^m\sqrt{D_K}$;
+esta forma holgada se deduce del Teorema~4.3 de Milne.
+Acotemos el número de ideales de norma $a$ por el coeficiente
+correspondiente de $\zeta(s)^m$.
+
+Para un primo racional $p$, hay a lo sumo $m$ ideales primos
+encima de él. Si sus grados residuales son $f_i$, los exponentes
+$b_i$ de un ideal de norma $p^j$ cumplen $\sum_i f_ib_i=j$.
+La aplicación $(b_i)\mapsto(f_ib_i)$, completada con ceros,
+es inyectiva en las $m$-tuplas de enteros no negativos de suma
+$j$. Estas últimas cuentan el coeficiente local de
+$(1-p^{-s})^{-m}$. Multiplicar sobre los primos da la cota.
+
+Sumar hasta $Y_0$ cuenta a lo sumo las $m$-tuplas de enteros
+positivos cuyo producto es menor o igual que $Y_0$.
+Cada coordenada es a lo sumo $\lfloor Y_0\rfloor$, por lo
+que su número es a lo sumo $Y_0^m$.
+Así $h_K\le Y_0^m$; tomar logaritmos prueba
+\eqref{eq:cf-clase-numero}.
+\end{proof}
+
+La estimación conserva dependencia lineal en $\log D_K$.
+Para la absorción final basta esa forma; optimizar la cota de
+clases no sustituiría el control de la torsión homológica.
+
+\subsection{Absorber los costes sin perder sus dependencias}
+
+\begin{lema}[Absorción de una suma]
+\label{lem:cf-absorcion}
+Sean $u\ge2$, $Y\ge\log2$, $b\ge1$ y $A=u^bY$.
+Entonces
+\begin{equation}
+ 2e^A+2A\le e^{4A}\le\exp(u^{b+2}Y).
+ \label{eq:cf-absorcion}
+\end{equation}
+\end{lema}
+
+\begin{proof}
+Tenemos $A\ge1$. La desigualdad $A\le e^A$ da
+$2e^A+2A\le4e^A$. Como $\log4\le3A$,
+$4e^A\le e^{4A}$. Finalmente, $u^2\ge4$.
+\end{proof}
+
+\paragraph{Entrada de torsión integral.}
+La estimación de A93, p.~72, proporciona un exponente absoluto
+$C_T\ge1$ tal que, para los cuerpos que intervienen y
+$j=2e,2e+1$,
+\begin{equation}
+ \log T_{4e+6,j}(K)
+ \le\exp\!\left((2e[K:\Q])^{C_T}
+             \log(2|\operatorname{disc}K|)\right).
+ \label{eq:cf-torsion-entrada}
+\end{equation}
+El orden de torsión incluye todos los primos. La construcción
+del complejo integral y la estimación que producen esta entrada
+son un trabajo adicional al conteo ya demostrado.
+
+\begin{teorema}[Deducción cuantitativa de la capa fija]
+\label{thm:cf-capa-fija}
+Supongamos válidas las entradas de rango filtrado y estabilidad
+integral, especialización de ciclos, comparación de clases y
+unidades, paso cuantitativo a Selmer, extensión auxiliar y
+torsión \eqref{eq:cf-torsion-entrada}, para los campos y capas
+que aparecen en la construcción.
+Entonces \eqref{eq:cf-objetivo} se cumple con
+\begin{equation}
+ C_K=\max(5C_T+9,29)+2.
+ \label{eq:cf-exponente}
+\end{equation}
+Este valor es explícito en función del exponente recibido $C_T$.
+\end{teorema}
+
+\begin{proof}
+Pongamos $u=2en$, $Y=\log(2D)$ y $Y'=\log(2D')$.
+Las desigualdades de \eqref{eq:cf-extension}, con $e,n\ge1$, dan
+\begin{equation}
+ d\le8u,\qquad n'\le4u^2,\qquad
+ 2en'\le u^5,\qquad \ell^{c'}\le u^5.
+ \label{eq:cf-parametros-aux}
+\end{equation}
+En efecto, $(n+1)(4e+4)\le16en=8u$,
+$n'=dn\le8un\le4u^2$ y
+$2en'\le un'\le4u^3\le u^5$.
+La última cota usa $\ell^{c'}\le2n'\le8u^2\le u^5$.
+
+El discriminante conserva el factor ramificado:
+\[
+ \begin{aligned}
+ Y'&\le Y+d\log D+n'\log(\ell^{c'})\\
+   &\le(1+8u)Y+20u^2\log u\\
+   &\le(1+8u+40u^3)Y
+    \le64u^3Y\le u^9Y.
+ \end{aligned}
+\]
+Aquí se usaron $\log u\le u$, $Y>1/2$ y $u\ge2$.
+Reemplazar $D'$ por $D$ directamente no sería válido.
+
+Por la Proposición~\ref{prop:cf-clase-numero},
+$\log h_{L'}\le2(n')^2Y'\le32u^{13}Y$. En consecuencia,
+\begin{equation}
+ \begin{aligned}
+ g_{L'}&=2n'+\lfloor\log_2h_{L'}\rfloor+2\\
+ &\le8u^2+2+64u^{13}Y
+ \le81u^{13}Y\le u^{20}Y.
+ \end{aligned}
+ \label{eq:cf-generadores}
+\end{equation}
+Usamos $1/\log2<2$ y
+$8u^2+2\le17u^2Y$, además de $u^7\ge128$.
+
+Denotemos por $B'_e=2e+(2e+1)(c'+2e+1)$ el exponente en $L'$.
+De \eqref{eq:cf-parametros-aux} se obtiene
+$c'\log\ell\le5\log u$ y $\log\ell\le5\log u$.
+Además, $v_\ell(e)\log\ell\le\log e\le\log u$.
+Como $2e\le u$ y $2e+1\le2u$,
+\[
+ \begin{aligned}
+ (B'_e+v_\ell(e))\log\ell
+ &\le(20u^2+15u+1)\log u
+ \le28u^3\le u^8,\\
+ (c'+v_\ell(e))\log\ell&\le6\log u\le u^4.
+ \end{aligned}
+\]
+El logaritmo del factor adicional de clases queda acotado por
+\begin{equation}
+ H'=\bigl((B'_e+v_\ell(e))g_{L'}+c'+v_\ell(e)\bigr)\log\ell
+ \le u^{28}Y+u^4\le u^{29}Y.
+ \label{eq:cf-resto-clases}
+\end{equation}
+
+La entrada de torsión aplicada a $L'$ y los dos grados da
+$2\exp(u^{5C_T+9}Y)$ para la suma de sus logaritmos.
+La comparación de Selmer \eqref{eq:cf-selmer-entrada} sobre $L'$
+y \eqref{eq:cf-extension} implican
+\begin{equation}
+ s_{\ell,e}(L)\log\ell
+ \le2\exp(u^{5C_T+9}Y)+u^{29}Y.
+ \label{eq:cf-cota-sha}
+\end{equation}
+
+Falta incluir la corrección de dualidad en el cuerpo original.
+La Nota~\ref{sec:finitud-uniforme} da la cota, válida también
+en el primo $2$,
+\[
+ 0\le W_\ell(L,e)-s_{\ell,e}(L)
+ \le n\bigl(2+\lfloor\log_\ell n\rfloor+v_\ell(e)\bigr).
+\]
+Las raíces de la unidad contenidas en $L$ implican
+$\ell\le n+1\le u$. Por tanto
+\[
+ (W_\ell-s_{\ell,e})\log\ell
+ \le n(2\log\ell+\log n+\log e)
+ \le2u\log u\le2u^2\le u^4Y.
+\]
+Tomemos $b=\max(5C_T+9,29)$ y $A=u^bY$.
+Sumar esta corrección a \eqref{eq:cf-cota-sha} da
+$W_\ell(L,e)\log\ell\le2e^A+2A$.
+El Lema~\ref{lem:cf-absorcion} concluye
+\[
+ W_\ell(L,e)\log\ell
+ \le\exp(u^{b+2}Y).
+\]
+La finitud establecida en la Nota~\ref{sec:finitud-uniforme}
+permite identificar el miembro izquierdo con el logaritmo
+de la cardinalidad. Esto prueba el teorema.
+\end{proof}
+
+La fórmula \eqref{eq:cf-exponente} muestra cómo absorben las
+constantes; no asigna un valor numérico a $C_T$. La consecuencia
+es uniforme en los parámetros indicados porque las entradas
+recibidas lo son y el exponente se fija antes de variarlos.
+
+\subsection{Qué aporta el bloque y qué entrada conserva}
+
+Se han demostrado los pasos de cadenas, levantamiento,
+conteo, separación, cancelación y absorción que enlazan las
+entradas con \eqref{eq:cf-objetivo}. La tabla conserva la
+procedencia de los datos que esos pasos utilizan.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.28\textwidth}Yp{0.18\textwidth}@{}}
+\toprule
+Entrada recibida & Función en la deducción & Lugar en A93\\
+\midrule
+Rango filtrado y estabilidad integral
+& Limitar los valores por fibra y conservar los órdenes de torsión.
+& pp.~67--68\\
+Ciclos y evaluación
+& Realizar integralmente las relaciones de divisores y especializarlas.
+& pp.~69--71\\
+Clases y unidades
+& Producir el factor $Q^{r_2}$ que cancela la altura y los anuladores.
+& pp.~71--72\\
+Comparación con Selmer
+& Transportar la cota conservando las condiciones locales.
+& p.~72\\
+Extensión auxiliar
+& Alcanzar el rango y las raíces requeridos con grado y discriminante controlados.
+& pp.~72--73\\
+Torsión en todos los primos
+& Acotar los dos órdenes homológicos que permanecen tras cancelar.
+& pp.~72--74\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{El alcance del antecedente de Soulé.}
+Soulé, §4.1, p.~778, define $\operatorname{card}_b(A)$
+eliminando de $\#A$ las partes primarias para $p\le b$.
+Sus Teoremas~1--3, pp.~778--779, conservan ese recorte o
+restricciones explícitas en los primos. En particular, el
+Teorema~3 para el torcido $e+1$ considera
+$p\ge4e+3$ y $p\ge[K:\Q]+2$.
+Estos enunciados son un antecedente de las estimaciones
+cuantitativas; no suministran por sí solos
+\eqref{eq:cf-torsion-entrada} para toda la torsión.
+El cotejo aquí se limita a sus enunciados y alcance.
+
+\paragraph{Continuidad.}
+El siguiente desarrollo se centrará en las cotas integrales
+de torsión: cómo un complejo de grupos libres con bases
+y fronteras controladas produce una cota mediante determinantes,
+y qué construcción aritmética debe proporcionar ese complejo
+sin excluir pequeños primos. Permanecen también las entradas
+de rango filtrado, realización de ciclos y comparación de clases
+que la tabla identifica.
+La elección de un mismo número de generadores antes de los
+primos auxiliares y la comparación filtrada theta conservan
+los pendientes de las Notas~\ref{sec:cohomologia},
+\ref{sec:construccion-selmer} y~\ref{sec:finitud-uniforme}.
+
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}[Una obstrucción Bockstein no nula]
+Sea $C_1=C_0=\Z$, con frontera multiplicación por $\ell^a$,
+$a\ge1$, y los demás grupos cero. Para $Q=\ell^\nu$, $\nu\ge1$,
+calcular $H_1(C/QC)$ y su Bockstein.
+\end{ejercicio}
+
+\paragraph{Solución.}
+La frontera integral es inyectiva: $H_1(C)=0$ y
+$H_0(C)=\Z/\ell^a$.
+Los ciclos reducidos son el núcleo de multiplicar por
+$\ell^a$ en $\Z/\ell^\nu$, de orden
+$\ell^{\min(a,\nu)}$. Un generador es la clase de
+$z=\ell^{\max(\nu-a,0)}$.
+Como
+\[
+ \partial z
+ =\ell^\nu\,\ell^{\max(a-\nu,0)},
+\]
+su Bockstein es la clase de $\ell^{\max(a-\nu,0)}$
+en $\Z/\ell^a$. Esta clase tiene el mismo orden y genera
+$H_0(C)[\ell^\nu]$.
+Por ello Bockstein es un isomorfismo; ningún ciclo reducido
+no nulo admite levantamiento a un ciclo integral.
+La finitud del grupo reducido no elimina la obstrucción.
+
+\begin{ejercicio}[Conteo sin generación finita]
+Sea $H=\Z[1/2]\oplus\Z/9$, $J=H$ y $Q=27$.
+Construir un mapa $f:H\to(\Z/27)\oplus(\Z/9)$ que alcance
+la cota $Q^{\operatorname{rank}J}\#H_{\mathrm{tors}}$.
+\end{ejercicio}
+
+\paragraph{Solución.}
+Como $2$ es invertible módulo $27$, la fórmula
+\[
+ f(a/2^b,\bar t)=(\bar a\,2^{-b},\bar t)
+\]
+está bien definida y es aditiva. Es sobreyectiva.
+El rango de $H$ es uno y su torsión tiene orden $9$;
+la imagen tiene $27\cdot9=243$ elementos, exactamente
+la cota. El grupo $\Z[1/2]$ no es finitamente generado,
+pero el argumento de la Proposición~\ref{prop:cf-rango-fibras}
+solo necesita generar las preimágenes de un conjunto finito.
+
+\begin{ejercicio}[Pérdida exacta y pérdida recibida]
+Tomar $\ell=3$, $c=2$, $e=3$, de modo que $\kappa=10$
+y $M=7<9$. Calcular $v_3(D_3)$, el exponente exacto
+de filtrado y separación, y el $B_3$ de A93.
+Comprobar además por qué la condición $c\ge2$ importa
+en el primo $2$.
+\end{ejercicio}
+
+\paragraph{Solución.}
+Las distancias a $e=3$ son $1,2,3$ dos veces; sus
+valoraciones suman dos. Por tanto
+\[
+ v_3(D_3)=2\cdot3\cdot2+2v_3(3!)=14.
+\]
+El filtrado añade $2e=6$: el exponente exacto es $20$.
+La versión recibida usa
+$B_3=6+7(2+7)=69$.
+En la comparación de clases, $v_3(e)=1$ y el factor
+conservado es $3^{70g_L+3}$. Reemplazarlo por
+$3^{21g_L+3}$ exigiría revisar la entrada aritmética
+de núcleos, no solo el cálculo de interpolación.
+Para $\ell=2$ y $c=1$,
+$v_2(3^2-1)=3$, mientras que $c+v_2(2)=2$.
+La fórmula general usada en el capítulo requiere
+la profundidad diádica indicada.
+
+\clearpage
+\begin{ejercicio}[Un núcleo y una cancelación]
+En $W=(\Z/\ell^5)\oplus(\Z/\ell^2)\oplus(\Z/\ell)$,
+sea $f$ multiplicación por $\ell^2$.
+Calcular núcleo e imagen y comparar con
+\eqref{eq:cf-kernel-finito}.
+Después, explicar qué se pierde si el conteo homológico
+usa $Q^{r+1}T$ y la comparación de clases solo aporta
+$Q^r$ a la izquierda.
+\end{ejercicio}
+
+\paragraph{Solución.}
+El núcleo tiene orden $\ell^{2+2+1}=\ell^5$.
+La imagen solo conserva $\ell^2(\Z/\ell^5)$, de orden
+$\ell^3$; así $\#W=\ell^8$.
+La cota con tres generadores da
+$\#\ker f\le\ell^6$ y $\#W\le\ell^9$:
+es válida, aunque no exacta.
+En el conteo de clases,
+\[
+ \#X_\nu Q^r\le Q^{r+1}T\ell^A
+ \quad\Longrightarrow\quad
+ \#X_\nu\le Q\,T\ell^A.
+\]
+Permanece $Q=\ell^\nu$. La cancelación uniforme exige
+controlar exactamente la potencia de la altura.
+La familia $\Z/\ell^\nu$ muestra que la finitud por
+separado no produce una cota común; su unión usual es
+el grupo infinito $\Q_\ell/\Z_\ell$.
+
+\begin{ejercicio}[Los primos omitidos]
+Fijar un entero $b\ge2$. ¿Una cota uniforme para
+$\operatorname{card}_b(A)$ acota el orden total de
+un grupo abeliano finito $A$? Relacionar la respuesta
+con la entrada de torsión de este capítulo.
+\end{ejercicio}
+
+\paragraph{Solución.}
+Tomemos $A_m=\Z/2^m$, $m\ge1$.
+Como $2\le b$, se tiene $\operatorname{card}_b(A_m)=1$
+para todo $m$, mientras que $\#A_m=2^m$ no está acotado.
+Incluso basta un generador para toda la familia.
+Por tanto, una estimación fuera de un conjunto de primos
+requiere un control adicional de sus partes primarias
+antes de convertirse en una estimación del orden total.
+La entrada \eqref{eq:cf-torsion-entrada} conserva precisamente
+ese alcance integral.
