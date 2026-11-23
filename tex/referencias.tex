@@ -26,6 +26,9 @@ la Proposición~5.1, el Lema~5.2 y la Proposición~5.3; distingue
 las entradas analíticas uniformes de las deducciones que desarrolla.
 La Nota~\ref{sec:galois} desarrolla §10, pp.~77--85,
 con sus tres entradas y sus lemas de extracción y pegado.
+La Nota~\ref{sec:construccion-selmer} utiliza §9, pp.~61--63,
+y distingue la construcción por bloques de la comparación
+cuantitativa mediante filtraciones y errores.
 El Apéndice A de A93, pp.~89--92, conserva la revisión de código de [L]
 y atribuye las comprobaciones formales a informes externos.
 
@@ -49,6 +52,8 @@ La Nota~\ref{sec:congruencias-selmer} coteja §5.1, Lema~5.1,
 p.~54, y §5.2, pp.~55--56: retículo torcido, coeficientes
 y condiciones locales. Este cotejo es localizado y mantiene
 separado el ejemplar de 73 páginas de [B].
+La Nota~\ref{sec:construccion-selmer} relee pp.~54--57
+para conservar las multiplicidades, los torcidos y la normalización.
 
 \bibitem[C]{fuenteC}
 riemann-rev.
@@ -136,6 +141,20 @@ y de las familias con descomposición prescrita, sin sustituir
 las hipótesis concretas del pegado desarrollado aquí.
 Consulta: 23 de noviembre de 2026.
 
+\bibitem[Ri]{ribet-congruencias}
+Kenneth A. Ribet.
+\emph{A Modular Construction of Unramified $p$-Extensions of
+$\Q(\mu_p)$}. \emph{Inventiones Mathematicae} \textbf{34}
+(1976), pp.~151--162.
+\href{https://math.berkeley.edu/~ribet/Articles/invent_34.pdf}{PDF en la web del autor}.
+Teorema~1.3, p.~152: representación residual no escindida con
+escisión local en $p$; p.~153: distinción entre peso $2$, nivel $p$,
+y peso $k$, nivel $1$; Proposición~2.1, pp.~154--155:
+retículo con reducción no semisimple. La variante cuantitativa
+módulo $\varpi^n$ de la Nota~\ref{sec:construccion-selmer}
+se demuestra en el cuaderno y no se atribuye literalmente a este
+artículo. Consulta: 23 de noviembre de 2026.
+
 \bibitem[D1]{dlmf-zeta}
 NIST. \emph{Digital Library of Mathematical Functions}, versión 1.2.8.
 \href{https://dlmf.nist.gov/25.2}{§25.2} (serie, continuación y producto de Euler),
@@ -193,7 +212,8 @@ y su promedio por caracteres, pp.~19--20 del PDF.
 James S. Milne. \emph{Algebraic Number Theory}, versión 3.08,
 19 de julio de 2020. Capítulo 2, pp.~25--28 (enteros algebraicos);
 capítulo 3 (ideales y ramificación); pp.~73--75 (retículos);
-capítulo 8, pp.~139--143 (descomposición y Frobenius).
+capítulo 8, pp.~139--143 (descomposición y Frobenius),
+y Teorema~8.31, p.~147 (densidad de Chebotarev).
 \href{https://www.jmilne.org/math/CourseNotes/ANT.pdf}{Texto en la web del autor}.
 
 \bibitem[Gr]{grayson-hn}
@@ -360,8 +380,15 @@ una cota condicional de Selmer, con la variante de núcleo controlado.
 Incluye nueve resultados numerados con demostración, una definición
 y cinco ejercicios resueltos. El cotejo de B76 se limita a los
 pasajes indicados y no añade una nueva lectura de Lean.
-La construcción del mapa aritmético, su núcleo, las condiciones
-locales y las cotas uniformes conservan sus entradas pendientes.
+La Nota~\ref{sec:construccion-selmer} construye una clase de
+anulador exacto desde una congruencia de rango dos con caracteres
+residuales distintos. Demuestra su supervivencia en coeficientes
+divisibles y un mapa a Selmer cuyo núcleo se calcula con vectores
+propios locales. El teorema clásico de Ribet proporciona la entrada
+aritmética para el ejemplo con el primo $37$; no se deduce la
+longitud completa del grupo. La comparación filtrada de la familia
+theta, sus multiplicidades y errores y las cotas uniformes conservan
+sus entradas especializadas.
 Las entradas analíticas uniformes y las realizaciones
 integrales completas siguen pendientes. No se ejecutó Lean ni
 se auditó su cierre de axiomas; el cotejo localizado no certifica

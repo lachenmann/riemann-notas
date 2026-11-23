@@ -34,14 +34,14 @@
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "modified_time": "2026-11-23T19:06:20.350Z",
-      "size_bytes": 22274,
-      "sha256": "2df43578d08116cad901cfbe1471df2b0d10d0906d5c36fe0841a7984322a30a",
+      "modified_time": "2026-11-23T19:46:11.533Z",
+      "size_bytes": 23920,
+      "sha256": "cad7ed786e9a59af885cc88dbf5d9b4fc3c607ff880b1326126f25ba60d721c0",
       "full_bytes_verified": true,
       "url": "https://docs.google.com/document/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
       "path_in_vault_project": "00-Mapa-de-estudio.md",
-      "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
-      "current_revision_id": "0B4GzbHwPH-MvdXpLMXFYRldQUkNPUlJSQjZhSXU5VGZRaFhZPQ"
+      "verification": "Full raw download matches approved bytes and SHA256; identity, type, parent, size and revision checked; revision stable after download.",
+      "current_revision_id": "0B4GzbHwPH-MvdHlhYXc5d2pXVitEekxJTWdKN29XSnRJektZPQ"
     },
     {
       "name": "01-Sumas-y-transformadas.md",
@@ -74,14 +74,14 @@
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "modified_time": "2026-11-23T19:06:27.210Z",
-      "size_bytes": 28540,
-      "sha256": "b7f83f67201828545e302d608727d12c13f781eee80b21936e892cbb2792403f",
+      "modified_time": "2026-11-23T19:46:15.875Z",
+      "size_bytes": 31504,
+      "sha256": "e690f69c1b8649984d833b28a853c6af179fa5c297486b4f8cb3a103e128958a",
       "full_bytes_verified": true,
       "url": "https://docs.google.com/document/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
       "path_in_vault_project": "03-Dudas-y-pendientes.md",
-      "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
-      "current_revision_id": "0B4GzbHwPH-MvYjVkeURQYVZiR2QvZDdhb1VuRkN0TTIveXFFPQ"
+      "verification": "Full raw download matches approved bytes and SHA256; identity, type, parent, size and revision checked; revision stable after download.",
+      "current_revision_id": "0B4GzbHwPH-MvejhFTGJNMVFSSGtDQm9zLzN6eHhOVmJpNS9ZPQ"
     },
     {
       "name": "04-Criterio-unilateral-de-ventanas.md",
@@ -114,14 +114,14 @@
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "modified_time": "2026-11-23T19:06:34.309Z",
-      "size_bytes": 38645,
-      "sha256": "a43f679c302a399e7e58baca766cbbf25f255e49f5cf444f312b1217b90804fa",
+      "modified_time": "2026-11-23T19:46:07.274Z",
+      "size_bytes": 38646,
+      "sha256": "ff41a1e08d69e41a062744e61d4c1912493542a45b9ad4024626c1bade221d15",
       "full_bytes_verified": true,
       "url": "https://docs.google.com/document/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
       "path_in_vault_project": "00-Introduccion-y-fundamentos.md",
-      "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
-      "current_revision_id": "0B4GzbHwPH-MvZVhXNW1lZ2syOTNTbGlWeHhCcWlyTm5JbWpnPQ"
+      "verification": "Full raw download matches approved bytes and SHA256; identity, type, parent, size and revision checked; revision stable after download.",
+      "current_revision_id": "0B4GzbHwPH-MvQ0FVUDllMlRoQlh4SVE4Q2NVbzhNTS9QNmp3PQ"
     },
     {
       "name": "franja-critica.svg",
@@ -289,25 +289,41 @@
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "modified_time": "2026-11-23T19:05:59.564Z",
-      "size_bytes": 27717,
-      "sha256": "6b06e1bfa7fca8a6938d22f9aa64d5a52ab859d378f0e6b13de18230a6012fd5",
+      "modified_time": "2026-11-23T19:46:19.883Z",
+      "size_bytes": 28110,
+      "sha256": "43945a5fad7e12743566b651be38b5bcf33c34c46231a879aa5c41d21b239a11",
       "full_bytes_verified": true,
       "url": "https://docs.google.com/document/d/1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
       "path_in_vault_project": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
-      "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
-      "current_revision_id": "0B4GzbHwPH-MvQnpmK0dsQVFMMXZ1SXl6UGFHd3FBK0IrU0tBPQ"
+      "verification": "Full raw download matches approved bytes and SHA256; identity, type, parent, size and revision checked; revision stable after download.",
+      "current_revision_id": "0B4GzbHwPH-MvT2hXekhibVhBUXBLOVB2ek1COElOKy9sRVRNPQ"
+    },
+    {
+      "id": "1cPAu8z3OMfQjc1zsoW0FHQGGLM8Q7IIi",
+      "name": "14-De-congruencias-a-Selmer.md",
+      "mime_type": "text/markdown",
+      "parent_ids": [
+        "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+      ],
+      "modified_time": "2026-11-23T19:45:52.336Z",
+      "size_bytes": 32308,
+      "sha256": "4ec9207ed4cdbcb9126f81fb235d97ab9aa265b89891e6d9871ec70930b1dd03",
+      "full_bytes_verified": true,
+      "url": "https://docs.google.com/document/d/1cPAu8z3OMfQjc1zsoW0FHQGGLM8Q7IIi/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+      "path_in_vault_project": "14-De-congruencias-a-Selmer.md",
+      "verification": "Full raw download matches approved bytes and SHA256; identity, type, parent, size and revision checked; revision stable after download.",
+      "current_revision_id": "0B4GzbHwPH-MveGh6Mkg3SGZhNEJmMmlKUDVQR0ZzV3lNTmI4PQ"
     }
   ],
   "obsidian_rendering_checked": false,
   "github_status": "active_public_repository",
   "latex": {
     "status": "compiled_and_composition_checked",
-    "pages": 153,
+    "pages": 163,
     "page_size": "A4",
     "path": "pdf/notas-hipotesis-riemann.pdf",
-    "size_bytes": 1262920,
-    "sha256": "44abbe3764e98babfe3d1eded266539666af469bb825032f9163903e108fbf37",
+    "size_bytes": 1318915,
+    "sha256": "91f6fbee8934582a43392bad4b13044a34718411d44a711b16d9714842f2fee9",
     "compilation_exit_code": 0,
     "warnings": 0,
     "unresolved_references": 0,
@@ -322,803 +338,589 @@
       4,
       5,
       6,
-      19,
-      20
-    ],
-    "chapter_3_pages": [
-      27,
-      34
-    ],
-    "chapter_4_pages": [
-      35,
-      46
-    ],
-    "introduction_pages": [
       7,
-      17
-    ],
-    "guide_pages": [
-      18,
-      20
-    ],
-    "chapter_1_pages": [
-      21,
-      23
-    ],
-    "chapter_2_pages": [
-      24,
-      26
-    ],
-    "chapter_5_pages": [
-      47,
-      56
-    ],
-    "chapter_6_pages": [
-      57,
-      68
-    ],
-    "chapter_7_pages": [
-      69,
-      81
-    ],
-    "chapter_8_pages": [
-      82,
-      100
-    ],
-    "chapter_9_pages": [
-      101,
-      112
-    ],
-    "complement_8_17_pages": [
-      99,
-      100
-    ],
-    "guide_A93_pages": [
+      8,
+      19,
       20,
-      20
-    ],
-    "chapter_10_pages": [
-      113,
-      125
-    ],
-    "chapter_11_pages": [
-      126,
-      139
-    ],
-    "references_and_status_pages": [
+      21,
+      148,
       149,
-      153
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163
     ],
-    "chapter_12_pages": [
-      140,
-      148
-    ],
-    "cross_reading_with_markdown": "Nota 12: 32 fórmulas en bloque y 343 expresiones en línea ; 14 apartados,21 ecuaciones, 9 resultados/9 pruebas, 1 definición y 5 ejercicios/5 soluciones. Cuerpo Markdown aprobado conservado íntegramente; navegación añadida y recuperación completa desde la bóveda. Sin inspección de Obsidian.",
+    "all_pages_composition_checked": true,
     "lean_compiled_or_executed": false,
-    "previous_visual_review_preserved_by_text_and_geometry": [
+    "previous_pdf_sha256_for_comparison": "44abbe3764e98babfe3d1eded266539666af469bb825032f9163903e108fbf37",
+    "previous_visual_review_preserved_by_text_geometry_and_pixels": [
       {
         "before_page": 8,
-        "after_page": 8
-      },
-      {
-        "before_page": 9,
         "after_page": 9
       },
       {
-        "before_page": 10,
+        "before_page": 9,
         "after_page": 10
       },
       {
-        "before_page": 11,
+        "before_page": 10,
         "after_page": 11
       },
       {
-        "before_page": 12,
+        "before_page": 11,
         "after_page": 12
       },
       {
-        "before_page": 13,
+        "before_page": 12,
         "after_page": 13
       },
       {
-        "before_page": 14,
+        "before_page": 13,
         "after_page": 14
       },
       {
-        "before_page": 15,
+        "before_page": 14,
         "after_page": 15
       },
       {
-        "before_page": 16,
+        "before_page": 15,
         "after_page": 16
       },
       {
-        "before_page": 17,
+        "before_page": 16,
         "after_page": 17
       },
       {
-        "before_page": 20,
-        "after_page": 20
+        "before_page": 17,
+        "after_page": 18
       },
       {
-        "before_page": 21,
+        "before_page": 18,
+        "after_page": 19
+      },
+      {
+        "before_page": 20,
         "after_page": 21
       },
       {
-        "before_page": 22,
+        "before_page": 21,
         "after_page": 22
       },
       {
-        "before_page": 23,
+        "before_page": 22,
         "after_page": 23
       },
       {
-        "before_page": 24,
+        "before_page": 23,
         "after_page": 24
       },
       {
-        "before_page": 25,
+        "before_page": 24,
         "after_page": 25
       },
       {
-        "before_page": 26,
+        "before_page": 25,
         "after_page": 26
       },
       {
-        "before_page": 27,
+        "before_page": 26,
         "after_page": 27
       },
       {
-        "before_page": 28,
+        "before_page": 27,
         "after_page": 28
       },
       {
-        "before_page": 29,
+        "before_page": 28,
         "after_page": 29
       },
       {
-        "before_page": 30,
+        "before_page": 29,
         "after_page": 30
       },
       {
-        "before_page": 31,
+        "before_page": 30,
         "after_page": 31
       },
       {
-        "before_page": 32,
+        "before_page": 31,
         "after_page": 32
       },
       {
-        "before_page": 33,
+        "before_page": 32,
         "after_page": 33
       },
       {
-        "before_page": 34,
+        "before_page": 33,
         "after_page": 34
       },
       {
-        "before_page": 35,
+        "before_page": 34,
         "after_page": 35
       },
       {
-        "before_page": 36,
+        "before_page": 35,
         "after_page": 36
       },
       {
-        "before_page": 37,
+        "before_page": 36,
         "after_page": 37
       },
       {
-        "before_page": 38,
+        "before_page": 37,
         "after_page": 38
       },
       {
-        "before_page": 39,
+        "before_page": 38,
         "after_page": 39
       },
       {
-        "before_page": 40,
+        "before_page": 39,
         "after_page": 40
       },
       {
-        "before_page": 41,
+        "before_page": 40,
         "after_page": 41
       },
       {
-        "before_page": 42,
+        "before_page": 41,
         "after_page": 42
       },
       {
-        "before_page": 43,
+        "before_page": 42,
         "after_page": 43
       },
       {
-        "before_page": 44,
+        "before_page": 43,
         "after_page": 44
       },
       {
-        "before_page": 45,
+        "before_page": 44,
         "after_page": 45
       },
       {
-        "before_page": 46,
+        "before_page": 45,
         "after_page": 46
       },
       {
-        "before_page": 47,
+        "before_page": 46,
         "after_page": 47
       },
       {
-        "before_page": 48,
+        "before_page": 47,
         "after_page": 48
       },
       {
-        "before_page": 49,
+        "before_page": 48,
         "after_page": 49
       },
       {
-        "before_page": 50,
+        "before_page": 49,
         "after_page": 50
       },
       {
-        "before_page": 51,
+        "before_page": 50,
         "after_page": 51
       },
       {
-        "before_page": 52,
+        "before_page": 51,
         "after_page": 52
       },
       {
-        "before_page": 53,
+        "before_page": 52,
         "after_page": 53
       },
       {
-        "before_page": 54,
+        "before_page": 53,
         "after_page": 54
       },
       {
-        "before_page": 55,
+        "before_page": 54,
         "after_page": 55
       },
       {
-        "before_page": 56,
+        "before_page": 55,
         "after_page": 56
       },
       {
-        "before_page": 57,
+        "before_page": 56,
         "after_page": 57
       },
       {
-        "before_page": 58,
+        "before_page": 57,
         "after_page": 58
       },
       {
-        "before_page": 59,
+        "before_page": 58,
         "after_page": 59
       },
       {
-        "before_page": 60,
+        "before_page": 59,
         "after_page": 60
       },
       {
-        "before_page": 61,
+        "before_page": 60,
         "after_page": 61
       },
       {
-        "before_page": 62,
+        "before_page": 61,
         "after_page": 62
       },
       {
-        "before_page": 63,
+        "before_page": 62,
         "after_page": 63
       },
       {
-        "before_page": 64,
+        "before_page": 63,
         "after_page": 64
       },
       {
-        "before_page": 65,
+        "before_page": 64,
         "after_page": 65
       },
       {
-        "before_page": 66,
+        "before_page": 65,
         "after_page": 66
       },
       {
-        "before_page": 67,
+        "before_page": 66,
         "after_page": 67
       },
       {
-        "before_page": 68,
+        "before_page": 67,
         "after_page": 68
       },
       {
-        "before_page": 69,
+        "before_page": 68,
         "after_page": 69
       },
       {
-        "before_page": 70,
+        "before_page": 69,
         "after_page": 70
       },
       {
-        "before_page": 71,
+        "before_page": 70,
         "after_page": 71
       },
       {
-        "before_page": 72,
+        "before_page": 71,
         "after_page": 72
       },
       {
-        "before_page": 73,
+        "before_page": 72,
         "after_page": 73
       },
       {
-        "before_page": 74,
+        "before_page": 73,
         "after_page": 74
       },
       {
-        "before_page": 75,
+        "before_page": 74,
         "after_page": 75
       },
       {
-        "before_page": 76,
+        "before_page": 75,
         "after_page": 76
       },
       {
-        "before_page": 77,
+        "before_page": 76,
         "after_page": 77
       },
       {
-        "before_page": 78,
+        "before_page": 77,
         "after_page": 78
       },
       {
-        "before_page": 79,
+        "before_page": 78,
         "after_page": 79
       },
       {
-        "before_page": 80,
+        "before_page": 79,
         "after_page": 80
       },
       {
-        "before_page": 81,
+        "before_page": 80,
         "after_page": 81
       },
       {
-        "before_page": 82,
+        "before_page": 81,
         "after_page": 82
       },
       {
-        "before_page": 83,
+        "before_page": 82,
         "after_page": 83
       },
       {
-        "before_page": 84,
+        "before_page": 83,
         "after_page": 84
       },
       {
-        "before_page": 85,
+        "before_page": 84,
         "after_page": 85
       },
       {
-        "before_page": 86,
+        "before_page": 85,
         "after_page": 86
       },
       {
-        "before_page": 87,
+        "before_page": 86,
         "after_page": 87
       },
       {
-        "before_page": 88,
+        "before_page": 87,
         "after_page": 88
       },
       {
-        "before_page": 89,
+        "before_page": 88,
         "after_page": 89
       },
       {
-        "before_page": 90,
+        "before_page": 89,
         "after_page": 90
       },
       {
-        "before_page": 91,
+        "before_page": 90,
         "after_page": 91
       },
       {
-        "before_page": 92,
+        "before_page": 91,
         "after_page": 92
       },
       {
-        "before_page": 93,
+        "before_page": 92,
         "after_page": 93
       },
       {
-        "before_page": 94,
+        "before_page": 93,
         "after_page": 94
       },
       {
-        "before_page": 95,
+        "before_page": 94,
         "after_page": 95
       },
       {
-        "before_page": 96,
+        "before_page": 95,
         "after_page": 96
       },
       {
-        "before_page": 97,
+        "before_page": 96,
         "after_page": 97
       },
       {
-        "before_page": 98,
+        "before_page": 97,
         "after_page": 98
       },
       {
-        "before_page": 99,
+        "before_page": 98,
         "after_page": 99
       },
       {
-        "before_page": 100,
+        "before_page": 99,
         "after_page": 100
       },
       {
-        "before_page": 101,
+        "before_page": 100,
         "after_page": 101
       },
       {
-        "before_page": 102,
+        "before_page": 101,
         "after_page": 102
       },
       {
-        "before_page": 103,
+        "before_page": 102,
         "after_page": 103
       },
       {
-        "before_page": 104,
+        "before_page": 103,
         "after_page": 104
       },
       {
-        "before_page": 105,
+        "before_page": 104,
         "after_page": 105
       },
       {
-        "before_page": 106,
+        "before_page": 105,
         "after_page": 106
       },
       {
-        "before_page": 107,
+        "before_page": 106,
         "after_page": 107
       },
       {
-        "before_page": 108,
+        "before_page": 107,
         "after_page": 108
       },
       {
-        "before_page": 109,
+        "before_page": 108,
         "after_page": 109
       },
       {
-        "before_page": 110,
+        "before_page": 109,
         "after_page": 110
       },
       {
-        "before_page": 111,
+        "before_page": 110,
         "after_page": 111
       },
       {
-        "before_page": 112,
+        "before_page": 111,
         "after_page": 112
       },
       {
-        "before_page": 113,
+        "before_page": 112,
         "after_page": 113
       },
       {
-        "before_page": 114,
+        "before_page": 113,
         "after_page": 114
       },
       {
-        "before_page": 115,
+        "before_page": 114,
         "after_page": 115
       },
       {
-        "before_page": 116,
+        "before_page": 115,
         "after_page": 116
       },
       {
-        "before_page": 117,
+        "before_page": 116,
         "after_page": 117
       },
       {
-        "before_page": 118,
+        "before_page": 117,
         "after_page": 118
       },
       {
-        "before_page": 119,
+        "before_page": 118,
         "after_page": 119
       },
       {
-        "before_page": 120,
+        "before_page": 119,
         "after_page": 120
       },
       {
-        "before_page": 121,
+        "before_page": 120,
         "after_page": 121
       },
       {
-        "before_page": 122,
+        "before_page": 121,
         "after_page": 122
       },
       {
-        "before_page": 123,
+        "before_page": 122,
         "after_page": 123
       },
       {
-        "before_page": 124,
+        "before_page": 123,
         "after_page": 124
       },
       {
-        "before_page": 125,
+        "before_page": 124,
         "after_page": 125
       },
       {
-        "before_page": 126,
+        "before_page": 125,
         "after_page": 126
       },
       {
-        "before_page": 127,
+        "before_page": 126,
         "after_page": 127
       },
       {
-        "before_page": 128,
+        "before_page": 127,
         "after_page": 128
       },
       {
-        "before_page": 129,
+        "before_page": 128,
         "after_page": 129
       },
       {
-        "before_page": 130,
+        "before_page": 129,
         "after_page": 130
       },
       {
-        "before_page": 131,
+        "before_page": 130,
         "after_page": 131
       },
       {
-        "before_page": 132,
+        "before_page": 131,
         "after_page": 132
       },
       {
-        "before_page": 133,
+        "before_page": 132,
         "after_page": 133
       },
       {
-        "before_page": 134,
+        "before_page": 133,
         "after_page": 134
       },
       {
-        "before_page": 135,
+        "before_page": 134,
         "after_page": 135
       },
       {
-        "before_page": 136,
+        "before_page": 135,
         "after_page": 136
       },
       {
-        "before_page": 137,
+        "before_page": 136,
         "after_page": 137
       },
       {
-        "before_page": 138,
+        "before_page": 137,
         "after_page": 138
+      },
+      {
+        "before_page": 138,
+        "after_page": 139
+      },
+      {
+        "before_page": 139,
+        "after_page": 140
+      },
+      {
+        "before_page": 140,
+        "after_page": 141
+      },
+      {
+        "before_page": 141,
+        "after_page": 142
+      },
+      {
+        "before_page": 142,
+        "after_page": 143
+      },
+      {
+        "before_page": 143,
+        "after_page": 144
+      },
+      {
+        "before_page": 144,
+        "after_page": 145
+      },
+      {
+        "before_page": 145,
+        "after_page": 146
+      },
+      {
+        "before_page": 146,
+        "after_page": 147
       }
     ],
-    "within_delivery_review_preserved_by_pixel_identity": [
-      {
-        "previous_page": 7,
-        "final_page": 7,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 18,
-        "final_page": 18,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 21,
-        "final_page": 20,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 140,
-        "final_page": 139,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 141,
-        "final_page": 140,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 142,
-        "final_page": 141,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 143,
-        "final_page": 142,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 144,
-        "final_page": 143,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 145,
-        "final_page": 144,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 146,
-        "final_page": 145,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 147,
-        "final_page": 146,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 148,
-        "final_page": 147,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 149,
-        "final_page": 148,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 150,
-        "final_page": 149,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 151,
-        "final_page": 150,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 152,
-        "final_page": 151,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 153,
-        "final_page": 152,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      },
-      {
-        "previous_page": 154,
-        "final_page": 153,
-        "body_pixels_identical": true,
-        "crop_pixels": [
-          0,
-          92,
-          993,
-          1300
-        ]
-      }
-    ],
-    "all_pages_composition_checked": true,
-    "visual_method": "Cotejo de texto y geometría de spans del cuerpo en y=55..780pt frente al PDF anterior; comparación exacta de píxeles RGB a 120 dpi en x0..993,y92..1300 con renders de esta entrega ya inspeccionados; inspección directa final de portada/índice 1–6 y guía 19–20. Cabeceras y pies quedan fuera de las comparaciones de cuerpos; los folios se verificaron por separado.",
-    "visual_review_result": "129 cuerpos con texto y geometría idénticos al PDF anterior ; 18 cuerpos con píxeles idénticos a renders inspeccionados en esta entrega ; 8 páginas finales inspeccionadas directamente. Los alcances se solapan en p. 20. Cobertura total 153; sin incidencias abiertas.",
+    "visual_method": "Inspección directa de 27 páginas finales; identidad de texto, geometría y píxeles RGB de 138 cuerpos frente al PDF anterior en y=55..780 pt, escala1.3. Las páginas19 y21 pertenecen a ambos alcances; unión163. Folios comprobados por separado.",
+    "visual_review_result": "Cobertura completa de composición, sin incidencias abiertas. La identidad de cuerpos traslada la revisión previa y no se presenta como nueva inspección directa.",
     "composition_coverage": {
-      "previous_body_text_and_geometry_identity_pages": [
-        8,
+      "previous_body_identity_pages": [
         9,
         10,
         11,
@@ -1128,7 +930,8 @@
         15,
         16,
         17,
-        20,
+        18,
+        19,
         21,
         22,
         23,
@@ -1246,12 +1049,7 @@
         135,
         136,
         137,
-        138
-      ],
-      "within_delivery_body_pixel_identity_pages": [
-        7,
-        18,
-        20,
+        138,
         139,
         140,
         141,
@@ -1260,13 +1058,7 @@
         144,
         145,
         146,
-        147,
-        148,
-        149,
-        150,
-        151,
-        152,
-        153
+        147
       ],
       "final_direct_visual_inspection_pages": [
         1,
@@ -1275,30 +1067,119 @@
         4,
         5,
         6,
+        7,
+        8,
         19,
-        20
+        20,
+        21,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163
+      ],
+      "overlap_pages": [
+        19,
+        21
       ],
       "counts": {
-        "previous_text_and_geometry": 129,
-        "within_delivery_pixels": 18,
-        "final_direct_visual": 8
+        "body_identity": 138,
+        "direct_visual": 27
       },
-      "overlap_pages": [
-        20
-      ],
-      "partition_is_disjoint": false,
-      "all_final_pages_covered": true,
-      "comment": "Los tres alcances coinciden en p. 20; la unión cubre las 153 páginas. Texto/geometría no se presenta como identidad de píxeles."
+      "all_final_pages_covered": true
     },
     "printed_folios_verified": true,
-    "folio_summary": "Portada sin folio; pies2–153 consecutivos y correctos.",
+    "folio_summary": "Portada sin folio; pies2–163 consecutivos y correctos.",
     "reading_copy_identical_to_compiled_pdf": true,
-    "previous_pdf_sha256_for_comparison": "dd1037db737fe12ee6cb392eac5cd62e5b39930692379e4c5b089696c879704f",
-    "within_delivery_previous_pdf_sha256": "1ebf0d03397766dc8d4e8dbc20ef6ff75bf5e55e349cd59b44f2db1ab081ccf6",
-    "previous_label_count": 420,
-    "new_label_count": 37,
+    "previous_label_count": 457,
+    "new_label_count": 40,
+    "total_label_count": 497,
     "previous_label_numbers_preserved": true,
-    "duplicate_source_labels": []
+    "duplicate_source_labels": [],
+    "cross_reading_with_markdown": "Nota13:31 fórmulas en bloque,386 en línea;3799 palabras de prosa coinciden tras retirar formato y rótulos.14 apartados,24 ecuaciones,9 resultados/9 pruebas y5 ejercicios/5 soluciones.417/417 fórmulas aceptadas por KaTeX0.16.47; una flecha equivalente y macros de presentación normalizadas. Sin inspección visual en Obsidian.",
+    "chapter_3_pages": [
+      28,
+      35
+    ],
+    "chapter_4_pages": [
+      36,
+      47
+    ],
+    "introduction_pages": [
+      8,
+      18
+    ],
+    "guide_pages": [
+      19,
+      21
+    ],
+    "chapter_1_pages": [
+      22,
+      24
+    ],
+    "chapter_2_pages": [
+      25,
+      27
+    ],
+    "chapter_5_pages": [
+      48,
+      57
+    ],
+    "chapter_6_pages": [
+      58,
+      69
+    ],
+    "chapter_7_pages": [
+      70,
+      82
+    ],
+    "chapter_8_pages": [
+      83,
+      101
+    ],
+    "chapter_9_pages": [
+      102,
+      113
+    ],
+    "complement_8_17_pages": [
+      100,
+      101
+    ],
+    "guide_A93_pages": [
+      21,
+      21
+    ],
+    "chapter_10_pages": [
+      114,
+      126
+    ],
+    "chapter_11_pages": [
+      127,
+      140
+    ],
+    "chapter_12_pages": [
+      141,
+      149
+    ],
+    "chapter_13_pages": [
+      150,
+      158
+    ],
+    "references_and_status_pages": [
+      159,
+      163
+    ]
   },
   "events": [
     {
@@ -12746,6 +12627,915 @@
         "scope": "Cierre del registro con evidencia observada del commit de contenido; no modifica el manuscrito, el PDF, la documentación ni la bóveda.",
         "verification_plan": "Comprobar que main sigue en el commit de contenido, publicar solo REGISTRO.json sin force y recuperar íntegramente el registro desde el commit de cierre para comparar sus bytes. El SHA del propio cierre y el resultado de esa última recuperación se comunican fuera de este archivo para evitar autorreferencia."
       }
+    },
+    {
+      "date": "2026-11-23",
+      "recorded_at_utc": "2026-11-23T19:46:37.553313+00:00",
+      "action": "note_13_congruences_to_selmer_arithmetic_construction",
+      "status": "integrated_reviewed_drive_verified_ready_for_guarded_publication",
+      "event_ordinal": 18,
+      "request_scope": "Continuación autorizada: Nota 13, de congruencias a Selmer en situación aritmética.",
+      "previous_github_commit": "dae8d66dc52c8aca9e973ba463dae37f0e59a5ef",
+      "base_tree_sha": "8ef57d3377d6c6b369de1492971f990ff8303fae",
+      "canonical_file": "tex/capitulos/13-de-congruencias-a-selmer.tex",
+      "canonical_sha256": "024b5c1f2325dfbd8ca1976dab256d0a648d19c22d4980f070ffb2070556fa24",
+      "canonical_support_files": [
+        "main.tex",
+        "tex/capitulos/00-introduccion.tex",
+        "tex/capitulos/00-guia.tex",
+        "tex/capitulos/12-congruencias-de-Hecke-reticulos-y-Selmer.tex",
+        "tex/referencias.tex",
+        "README.md",
+        "ESTADO.md",
+        "fuentes/README.md",
+        "pdf/notas-hipotesis-riemann.pdf"
+      ],
+      "contents": {
+        "subsections": 14,
+        "numbered_equations": 24,
+        "equation_range": [
+          "13.1",
+          "13.24"
+        ],
+        "numbered_results": 9,
+        "lemmas": 3,
+        "propositions": 5,
+        "theorems": 1,
+        "proofs": 9,
+        "exercises": 5,
+        "solutions": 5
+      },
+      "mathematical_review": {
+        "status": "completed_for_stated_scope",
+        "source_scope": "A93 §9 pp.61–63 (contexto leído pp.61–67); B76 §§5.1–5.2 pp.54–57; Ribet1976 pp.151–155; MilneANT Teorema8.31 p147.",
+        "intended_development": [
+          "Construcción propia de rango dos bajo irreducibilidad, caracteres residuales distintos y congruencia de traza y determinante.",
+          "Normalización del retículo, cociclo con coeficiente subcarácter/cociente y anulador exacto.",
+          "Supervivencia en coeficientes divisibles mediante la anulación de H0.",
+          "Mapa local explícito y pérdida de longitud por coordenadas de vectores propios módulo pi^n.",
+          "Ejemplo ell=37, k=32 a partir del Teorema 1.3 de Ribet como entrada clásica externa."
+        ],
+        "inputs_retained": [
+          "Teorema 1.3 de Ribet: existencia residual y escisión local del ejemplo.",
+          "Comparación simultánea theta: filtración, inyecciones de graduados, núcleos y multiplicidades.",
+          "Finitud y sumabilidad uniformes de longitudes cohomológicas.",
+          "Entradas automorfas, geométricas y analíticas especializadas."
+        ],
+        "final_review_completed": true,
+        "lean_execution": false,
+        "global_proof_certified": false,
+        "reviewed_tex_sha256": "024b5c1f2325dfbd8ca1976dab256d0a648d19c22d4980f070ffb2070556fa24",
+        "corrections_incorporated": [
+          "Ejercicio del núcleo: cálculo n4/s2 y contraste con acción trivial; eliminado exceso sobre indeterminación de una clase larga.",
+          "Convención de Frobenius aritmético con Nv, y lugares infinitos implícitos en G_E,S.",
+          "A93p63: comparación condicional por inyecciones; núcleos controlados como variante propia.",
+          "B76: casoZ={pi} para el ideal de proyección, multiplicidades explícitas y líneas negativas junto al términoA_pi.",
+          "El ejemplo37 parte del teorema residual de Ribet; no se declara exhibida una representación irreducible de característica cero específica."
+        ],
+        "arithmetic_example": {
+          "prime": 37,
+          "weight_index": 32,
+          "twist": -31,
+          "B32": "-7709321041217/510",
+          "v37_B32": 1,
+          "conclusion": "Inyección F37 en Selmer estricto y Sha1(Q,Q37/Z37(-31)); sin deducir finitud ni longitud completa del grupo."
+        }
+      },
+      "bibliographic_source": {
+        "key": "ribet1976",
+        "author": "Kenneth A. Ribet",
+        "title": "A Modular Construction of Unramified p-Extensions of Q(mu_p)",
+        "journal": "Inventiones Mathematicae 34 (1976), 151–162",
+        "url": "https://math.berkeley.edu/~ribet/Articles/invent_34.pdf",
+        "source_filename": "ribet1976.pdf",
+        "pages_including_cover": 13,
+        "size_bytes": 1209202,
+        "sha256": "6985813b4026bb0fd7098aed3f816262e0922f62a5d2dab22e29bcc2eb323471",
+        "scope_printed_pages": [
+          151,
+          152,
+          153,
+          154,
+          155
+        ],
+        "scope_pdf_pages": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "locators": [
+          "Theorem 1.1, p.151",
+          "Theorem 1.3, p.152",
+          "Discussion, p.153",
+          "Proposition 2.1, pp.154–155"
+        ],
+        "vault_preservation_status": "Bibliografía por URL primaria y hash; no se añade el PDF a los cinco originales conservados en Fuentes."
+      },
+      "lean_manifest": null,
+      "new_lean_files_retrieved_or_read": 0,
+      "previous_lean_manifests_preserved": [
+        "lean_source_review",
+        "lean_source_review_characters",
+        "lean_source_review_frames",
+        "lean_source_review_periods",
+        "lean_source_review_geometry",
+        "lean_source_review_cohomology",
+        "lean_source_review_parameters",
+        "lean_source_review_auxiliary_primes",
+        "lean_source_review_galois"
+      ],
+      "previous_source_reviews_preserved": [
+        "source_C_review",
+        "source_A93_review",
+        "source_B76_review"
+      ],
+      "previous_events_preserved": 17,
+      "preservation_baseline": {
+        "registry_sha256": "e72065b9440e631894deb9d1e4714534ec74a6e67904cea9f95e2eba08fa1b73",
+        "events_json_sha256": "40f0ce724319cbe907ca4b6e5e14428711c130c8061dc4b4a531f62abfe4148d",
+        "lean_manifests_json_sha256": {
+          "lean_source_review": "7fd9c867dca66c22a60ef8b344e62a882c922ed84f20ccff6ac34d9ae8569a53",
+          "lean_source_review_characters": "fc642c7a9e9a1ebcb92c10d1e0295044b3edb055fd53d212159fc936e057fb55",
+          "lean_source_review_frames": "b357a6d360b39fbbfa55c64908305ea3613068c9c9271e4df25368d1b946c4cf",
+          "lean_source_review_periods": "631ebd4891639816411c1640b2f7665b6041cf1557b2c195e3a14e33ee131eb4",
+          "lean_source_review_geometry": "4d6e23a517df4d1233c41f519af4c6890b8c74870e878926f0ab2c9ecaf1ed0b",
+          "lean_source_review_cohomology": "b361af74f4233b74633cb25d05fff740504991151f4d90b036d8ef4594a05763",
+          "lean_source_review_parameters": "482ec32f8e2668aca369c28991788147f23c00ebae66312d8b05d96b62a2cb86",
+          "lean_source_review_auxiliary_primes": "114c6b4b60e152412775d92104fea0284a57ed25b1163ec9634047b58bfc0e8d",
+          "lean_source_review_galois": "b121607f58279f476ec56f506bbaa5b13e2c47128920d588d4fd05fc903c8d41"
+        },
+        "source_reviews_json_sha256": {
+          "source_C_review": "0b6c053dcecdb42f6812620a5f87b5d3a94a179902b004b270218bcefae9e2c1",
+          "source_A93_review": "84bff477213aae6e7188101237e173ad46a4299b1b7b69bc95e9abbab4956dca",
+          "source_B76_review": "b5da10d582c97c7e1f00c36a0a3e310c4468f98dbdc7c82df570109b66226bea"
+        },
+        "digest_serialization": "UTF-8 json.dumps(ensure_ascii=False, sort_keys=True, separators=(comma,colon)); registry digest covers exact bytes."
+      },
+      "pdf": {
+        "status": "compiled_and_composition_checked",
+        "pages": 163,
+        "chapter_13_pages": [
+          150,
+          158
+        ],
+        "sha256": "91f6fbee8934582a43392bad4b13044a34718411d44a711b16d9714842f2fee9",
+        "size_bytes": 1318915,
+        "compilation_warnings": 0,
+        "all_pages_composition_checked": true,
+        "copy_matches_build": true,
+        "previous_body_identity_count": 138,
+        "direct_visual_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          19,
+          20,
+          21,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163
+        ],
+        "composition_overlap_pages": [
+          19,
+          21
+        ],
+        "all_printed_folios_verified": true
+      },
+      "markdown_review": {
+        "source_sha256": "024b5c1f2325dfbd8ca1976dab256d0a648d19c22d4980f070ffb2070556fa24",
+        "conversion_source_matches_current": true,
+        "markdown_sha256": "4ec9207ed4cdbcb9126f81fb235d97ab9aa265b89891e6d9871ec70930b1dd03",
+        "math_counts": {
+          "display": {
+            "tex": 31,
+            "markdown": 31
+          },
+          "inline": {
+            "tex": 386,
+            "markdown": 386
+          }
+        },
+        "math_differences": {
+          "display": [],
+          "inline": []
+        },
+        "prose_equal_after_documented_layout_removal": true,
+        "prose_word_counts": {
+          "tex": 3799,
+          "markdown": 3799
+        },
+        "prose_differences": [],
+        "counts": {
+          "subsections": 14,
+          "results": 9,
+          "proofs": 9,
+          "equations": 24,
+          "exercises": 5,
+          "solutions": 5
+        },
+        "equation_tags_consecutive": true,
+        "display_delimiters_balanced": true,
+        "unresolved_latex_references": [],
+        "unresolved_wikilinks": [],
+        "nota12_source_sha256": "adda3a0d12ad90e69fdb0298af67b41182a80fd4f8ac8b4f59f703b4189056bb",
+        "nota12_original_body_preserved_with_authorized_continuity_paragraph": true,
+        "nota12_continuity_paragraph_matches_tex": true,
+        "introduction_only_note_count_changed": true,
+        "scope": "Static source/content parity, numbering, links and preservation. Not an actual Obsidian UI inspection or mathematical proof audit.",
+        "ok": true,
+        "katex_validation": {
+          "engine": "KaTeX",
+          "version": "0.16.47",
+          "successful": 417,
+          "failures": [],
+          "scope": "All Markdown formula expressions rendered to HTML in a strict parser. Not a visual reader/Obsidian UI review.",
+          "ok": true
+        }
+      },
+      "vault_prewrite_version_guard": {
+        "status": "verified",
+        "metadata": {
+          "checked_at_utc": "2026-11-23 19:45:15 UTC",
+          "canonical_folder_id": "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC",
+          "files": [
+            {
+              "name": "00-Introduccion-y-fundamentos.md",
+              "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+              "metadata": {
+                "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+                "title": "00-Introduccion-y-fundamentos.md",
+                "mime_type": "text/markdown",
+                "size": "38645",
+                "url": "https://docs.google.com/document/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": null,
+                "modified_time": "2026-11-23T19:06:34.309Z",
+                "parent_ids": [
+                  "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+                ],
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": null,
+                "permissions": null,
+                "source_visibility_status": "access_not_verified"
+              },
+              "currentRevisionId": "0B4GzbHwPH-MvZVhXNW1lZ2syOTNTbGlWeHhCcWlyTm5JbWpnPQ",
+              "revisionCount": 9,
+              "unchanged": true
+            },
+            {
+              "name": "00-Mapa-de-estudio.md",
+              "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+              "metadata": {
+                "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+                "title": "00-Mapa-de-estudio.md",
+                "mime_type": "text/markdown",
+                "size": "22274",
+                "url": "https://docs.google.com/document/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": null,
+                "modified_time": "2026-11-23T19:06:20.350Z",
+                "parent_ids": [
+                  "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+                ],
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": null,
+                "permissions": null,
+                "source_visibility_status": "access_not_verified"
+              },
+              "currentRevisionId": "0B4GzbHwPH-MvdXpLMXFYRldQUkNPUlJSQjZhSXU5VGZRaFhZPQ",
+              "revisionCount": 16,
+              "unchanged": true
+            },
+            {
+              "name": "03-Dudas-y-pendientes.md",
+              "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+              "metadata": {
+                "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+                "title": "03-Dudas-y-pendientes.md",
+                "mime_type": "text/markdown",
+                "size": "28540",
+                "url": "https://docs.google.com/document/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": null,
+                "modified_time": "2026-11-23T19:06:27.210Z",
+                "parent_ids": [
+                  "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+                ],
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": null,
+                "permissions": null,
+                "source_visibility_status": "access_not_verified"
+              },
+              "currentRevisionId": "0B4GzbHwPH-MvYjVkeURQYVZiR2QvZDdhb1VuRkN0TTIveXFFPQ",
+              "revisionCount": 14,
+              "unchanged": true
+            },
+            {
+              "name": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+              "id": "1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA",
+              "metadata": {
+                "id": "1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA",
+                "title": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+                "mime_type": "text/markdown",
+                "size": "27717",
+                "url": "https://docs.google.com/document/d/1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": null,
+                "modified_time": "2026-11-23T19:05:59.564Z",
+                "parent_ids": [
+                  "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+                ],
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": null,
+                "permissions": null,
+                "source_visibility_status": "access_not_verified"
+              },
+              "currentRevisionId": "0B4GzbHwPH-MvQnpmK0dsQVFMMXZ1SXl6UGFHd3FBK0IrU0tBPQ",
+              "revisionCount": 1,
+              "unchanged": true
+            }
+          ],
+          "new_filename_absent": true,
+          "inventory": {
+            "files": [
+              {
+                "id": "1NX1d9c0Nby2Y9w8jx7ewzcuxVjElyJRG",
+                "title": "12-Representaciones-de-galois-y-compatibilidad-local.md",
+                "mime_type": "text/markdown",
+                "size": "52444",
+                "url": "https://docs.google.com/document/d/1NX1d9c0Nby2Y9w8jx7ewzcuxVjElyJRG/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-23T18:13:53.105Z",
+                "modified_time": "2026-11-23T19:06:41.027Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+                "title": "00-Introduccion-y-fundamentos.md",
+                "mime_type": "text/markdown",
+                "size": "38645",
+                "url": "https://docs.google.com/document/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-22T23:36:15.539Z",
+                "modified_time": "2026-11-23T19:06:34.309Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+                "title": "03-Dudas-y-pendientes.md",
+                "mime_type": "text/markdown",
+                "size": "28540",
+                "url": "https://docs.google.com/document/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-22T17:49:31.081Z",
+                "modified_time": "2026-11-23T19:06:27.210Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+                "title": "00-Mapa-de-estudio.md",
+                "mime_type": "text/markdown",
+                "size": "22274",
+                "url": "https://docs.google.com/document/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-22T17:49:21.834Z",
+                "modified_time": "2026-11-23T19:06:20.350Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA",
+                "title": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+                "mime_type": "text/markdown",
+                "size": "27717",
+                "url": "https://docs.google.com/document/d/1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-23T19:05:59.564Z",
+                "modified_time": "2026-11-23T19:05:59.564Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "1jtYc-uPM0PcGG6WKg1NwtdFPEQa0P_fS",
+                "title": "11-Primos-auxiliares-y-control-uniforme.md",
+                "mime_type": "text/markdown",
+                "size": "45189",
+                "url": "https://docs.google.com/document/d/1jtYc-uPM0PcGG6WKg1NwtdFPEQa0P_fS/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-23T17:26:55.858Z",
+                "modified_time": "2026-11-23T18:13:47.112Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "1Zwmd8GaRBm4PpSHVflRbhAU211_h24H2",
+                "title": "10-Parametros-y-ventanas-comunes.md",
+                "mime_type": "text/markdown",
+                "size": "44588",
+                "url": "https://docs.google.com/document/d/1Zwmd8GaRBm4PpSHVflRbhAU211_h24H2/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-23T04:02:11.389Z",
+                "modified_time": "2026-11-23T17:25:48.774Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F",
+                "title": "09-Cohomologia-y-denominadores.md",
+                "mime_type": "text/markdown",
+                "size": "74065",
+                "url": "https://docs.google.com/document/d/1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-23T03:00:40.738Z",
+                "modified_time": "2026-11-23T13:04:57.273Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "1G1EpaFzjX7Nnef3VwaV8hRqvhDGrv3-Q",
+                "title": "08-Geometria-evaluaciones-y-marcos.md",
+                "mime_type": "text/markdown",
+                "size": "48759",
+                "url": "https://docs.google.com/document/d/1G1EpaFzjX7Nnef3VwaV8hRqvhDGrv3-Q/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-23T02:04:31.795Z",
+                "modified_time": "2026-11-23T03:01:05.387Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "13iD1CbPWZj1crX8ZCdzUz5-GVhZ8tjC_",
+                "title": "07-Periodos-y-torres-theta.md",
+                "mime_type": "text/markdown",
+                "size": "47364",
+                "url": "https://docs.google.com/document/d/13iD1CbPWZj1crX8ZCdzUz5-GVhZ8tjC_/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-23T01:30:22.507Z",
+                "modified_time": "2026-11-23T02:05:20.479Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "18_R_di4gVm5ZZy-OwxTW4gJeK-8ijRza",
+                "title": "06-Marcos-y-pendientes.md",
+                "mime_type": "text/markdown",
+                "size": "33634",
+                "url": "https://docs.google.com/document/d/18_R_di4gVm5ZZy-OwxTW4gJeK-8ijRza/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-23T00:32:28.770Z",
+                "modified_time": "2026-11-23T01:30:37.213Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "14dHgRtCG-Mc0vInMZId0ILPzVYjynEot",
+                "title": "05-Identidad-de-caracteres-y-termino-principal.md",
+                "mime_type": "text/markdown",
+                "size": "33439",
+                "url": "https://docs.google.com/document/d/14dHgRtCG-Mc0vInMZId0ILPzVYjynEot/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-22T19:55:17.044Z",
+                "modified_time": "2026-11-23T00:32:39.962Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "14IXpzb6vx_b0NxEpfO0gk24nje0QF_k3",
+                "title": "90-Assets",
+                "mime_type": "application/vnd.google-apps.folder",
+                "size": null,
+                "url": "https://drive.google.com/drive/folders/14IXpzb6vx_b0NxEpfO0gk24nje0QF_k3",
+                "display_url": "https://drive.google.com/drive/folders/14IXpzb6vx_b0NxEpfO0gk24nje0QF_k3",
+                "file_or_folder": "folder",
+                "created_time": "2026-11-22T23:35:35.173Z",
+                "modified_time": "2026-11-22T23:35:35.173Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": true
+              },
+              {
+                "id": "1WuWoYDdhJMqq-yp8cXu9S2vUTBZk8T4O",
+                "title": "04-Criterio-unilateral-de-ventanas.md",
+                "mime_type": "text/markdown",
+                "size": "21476",
+                "url": "https://docs.google.com/document/d/1WuWoYDdhJMqq-yp8cXu9S2vUTBZk8T4O/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-22T19:17:46.239Z",
+                "modified_time": "2026-11-22T19:55:30.717Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "1RH6OtQT-_6xr-eNJNaW1RwVVjhXrlg6z",
+                "title": "01-Sumas-y-transformadas.md",
+                "mime_type": "text/markdown",
+                "size": "10325",
+                "url": "https://docs.google.com/document/d/1RH6OtQT-_6xr-eNJNaW1RwVVjhXrlg6z/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-22T17:49:24.858Z",
+                "modified_time": "2026-11-22T19:17:57.833Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "1x3FLfjzgABDC9mf_540VWyXM3eIHpEpn",
+                "title": "02-Proyecciones-y-denominadores.md",
+                "mime_type": "text/markdown",
+                "size": "7474",
+                "url": "https://docs.google.com/document/d/1x3FLfjzgABDC9mf_540VWyXM3eIHpEpn/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+                "file_or_folder": "file",
+                "created_time": "2026-11-22T17:49:28.027Z",
+                "modified_time": "2026-11-22T17:49:28.027Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": false
+              },
+              {
+                "id": "1JOOvjCkJkco_6fRznoOYLg-jsOiBQlol",
+                "title": "Fuentes",
+                "mime_type": "application/vnd.google-apps.folder",
+                "size": null,
+                "url": "https://drive.google.com/drive/folders/1JOOvjCkJkco_6fRznoOYLg-jsOiBQlol",
+                "display_url": "https://drive.google.com/drive/folders/1JOOvjCkJkco_6fRznoOYLg-jsOiBQlol",
+                "file_or_folder": "folder",
+                "created_time": "2026-11-22T17:48:47.418Z",
+                "modified_time": "2026-11-22T17:48:47.418Z",
+                "parent_ids": null,
+                "drive_id": null,
+                "current_user_can_share": null,
+                "has_augmented_permissions": null,
+                "shared": false,
+                "permissions": null,
+                "source_visibility_status": "not_shared",
+                "can_download": true,
+                "can_list_children": true
+              }
+            ]
+          }
+        },
+        "full_bytes": {
+          "files": [
+            {
+              "name": "00-Introduccion-y-fundamentos.md",
+              "path": "/workspace/scratch/1e4c19ae91f6/bloque13/vault/prewrite-readback/00-Introduccion-y-fundamentos.md",
+              "bytes": 38645,
+              "sha256": "a43f679c302a399e7e58baca766cbbf25f255e49f5cf444f312b1217b90804fa",
+              "matches_baseline": true
+            },
+            {
+              "name": "00-Mapa-de-estudio.md",
+              "path": "/workspace/scratch/1e4c19ae91f6/bloque13/vault/prewrite-readback/00-Mapa-de-estudio.md",
+              "bytes": 22274,
+              "sha256": "2df43578d08116cad901cfbe1471df2b0d10d0906d5c36fe0841a7984322a30a",
+              "matches_baseline": true
+            },
+            {
+              "name": "03-Dudas-y-pendientes.md",
+              "path": "/workspace/scratch/1e4c19ae91f6/bloque13/vault/prewrite-readback/03-Dudas-y-pendientes.md",
+              "bytes": 28540,
+              "sha256": "b7f83f67201828545e302d608727d12c13f781eee80b21936e892cbb2792403f",
+              "matches_baseline": true
+            },
+            {
+              "name": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+              "path": "/workspace/scratch/1e4c19ae91f6/bloque13/vault/prewrite-readback/13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+              "bytes": 27717,
+              "sha256": "6b06e1bfa7fca8a6938d22f9aa64d5a52ab859d378f0e6b13de18230a6012fd5",
+              "matches_baseline": true
+            }
+          ],
+          "ok": true
+        }
+      },
+      "vault_files_written_and_readback_verified": [
+        {
+          "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+          "name": "00-Introduccion-y-fundamentos.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://docs.google.com/document/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+          "path_in_vault_project": "00-Introduccion-y-fundamentos.md",
+          "operation": "update",
+          "modified_time": "2026-11-23T19:46:07.274Z",
+          "size_bytes": 38646,
+          "currentRevisionId": "0B4GzbHwPH-MvQ0FVUDllMlRoQlh4SVE4Q2NVbzhNTS9QNmp3PQ",
+          "previousRevisionId": "0B4GzbHwPH-MvZVhXNW1lZ2syOTNTbGlWeHhCcWlyTm5JbWpnPQ",
+          "before": {
+            "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+            "sha256": "a43f679c302a399e7e58baca766cbbf25f255e49f5cf444f312b1217b90804fa",
+            "currentRevisionId": "0B4GzbHwPH-MvZVhXNW1lZ2syOTNTbGlWeHhCcWlyTm5JbWpnPQ",
+            "modified_time": "2026-11-23T19:06:34.309Z"
+          },
+          "metadata_verified": true,
+          "sha256": "ff41a1e08d69e41a062744e61d4c1912493542a45b9ad4024626c1bade221d15",
+          "full_bytes_verified": true,
+          "verification": "Full raw download matches approved bytes and SHA256; identity, type, parent, size and revision checked; revision stable after download."
+        },
+        {
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+          "name": "00-Mapa-de-estudio.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://docs.google.com/document/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+          "path_in_vault_project": "00-Mapa-de-estudio.md",
+          "operation": "update",
+          "modified_time": "2026-11-23T19:46:11.533Z",
+          "size_bytes": 23920,
+          "currentRevisionId": "0B4GzbHwPH-MvdHlhYXc5d2pXVitEekxJTWdKN29XSnRJektZPQ",
+          "previousRevisionId": "0B4GzbHwPH-MvdXpLMXFYRldQUkNPUlJSQjZhSXU5VGZRaFhZPQ",
+          "before": {
+            "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+            "sha256": "2df43578d08116cad901cfbe1471df2b0d10d0906d5c36fe0841a7984322a30a",
+            "currentRevisionId": "0B4GzbHwPH-MvdXpLMXFYRldQUkNPUlJSQjZhSXU5VGZRaFhZPQ",
+            "modified_time": "2026-11-23T19:06:20.350Z"
+          },
+          "metadata_verified": true,
+          "sha256": "cad7ed786e9a59af885cc88dbf5d9b4fc3c607ff880b1326126f25ba60d721c0",
+          "full_bytes_verified": true,
+          "verification": "Full raw download matches approved bytes and SHA256; identity, type, parent, size and revision checked; revision stable after download."
+        },
+        {
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+          "name": "03-Dudas-y-pendientes.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://docs.google.com/document/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+          "path_in_vault_project": "03-Dudas-y-pendientes.md",
+          "operation": "update",
+          "modified_time": "2026-11-23T19:46:15.875Z",
+          "size_bytes": 31504,
+          "currentRevisionId": "0B4GzbHwPH-MvejhFTGJNMVFSSGtDQm9zLzN6eHhOVmJpNS9ZPQ",
+          "previousRevisionId": "0B4GzbHwPH-MvYjVkeURQYVZiR2QvZDdhb1VuRkN0TTIveXFFPQ",
+          "before": {
+            "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+            "sha256": "b7f83f67201828545e302d608727d12c13f781eee80b21936e892cbb2792403f",
+            "currentRevisionId": "0B4GzbHwPH-MvYjVkeURQYVZiR2QvZDdhb1VuRkN0TTIveXFFPQ",
+            "modified_time": "2026-11-23T19:06:27.210Z"
+          },
+          "metadata_verified": true,
+          "sha256": "e690f69c1b8649984d833b28a853c6af179fa5c297486b4f8cb3a103e128958a",
+          "full_bytes_verified": true,
+          "verification": "Full raw download matches approved bytes and SHA256; identity, type, parent, size and revision checked; revision stable after download."
+        },
+        {
+          "id": "1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA",
+          "name": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://docs.google.com/document/d/1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+          "path_in_vault_project": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+          "operation": "update",
+          "modified_time": "2026-11-23T19:46:19.883Z",
+          "size_bytes": 28110,
+          "currentRevisionId": "0B4GzbHwPH-MvT2hXekhibVhBUXBLOVB2ek1COElOKy9sRVRNPQ",
+          "previousRevisionId": "0B4GzbHwPH-MvQnpmK0dsQVFMMXZ1SXl6UGFHd3FBK0IrU0tBPQ",
+          "before": {
+            "id": "1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA",
+            "sha256": "6b06e1bfa7fca8a6938d22f9aa64d5a52ab859d378f0e6b13de18230a6012fd5",
+            "currentRevisionId": "0B4GzbHwPH-MvQnpmK0dsQVFMMXZ1SXl6UGFHd3FBK0IrU0tBPQ",
+            "modified_time": "2026-11-23T19:05:59.564Z"
+          },
+          "metadata_verified": true,
+          "sha256": "43945a5fad7e12743566b651be38b5bcf33c34c46231a879aa5c41d21b239a11",
+          "full_bytes_verified": true,
+          "verification": "Full raw download matches approved bytes and SHA256; identity, type, parent, size and revision checked; revision stable after download."
+        },
+        {
+          "id": "1cPAu8z3OMfQjc1zsoW0FHQGGLM8Q7IIi",
+          "name": "14-De-congruencias-a-Selmer.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://docs.google.com/document/d/1cPAu8z3OMfQjc1zsoW0FHQGGLM8Q7IIi/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+          "path_in_vault_project": "14-De-congruencias-a-Selmer.md",
+          "operation": "upload",
+          "modified_time": "2026-11-23T19:45:52.336Z",
+          "size_bytes": 32308,
+          "currentRevisionId": "0B4GzbHwPH-MveGh6Mkg3SGZhNEJmMmlKUDVQR0ZzV3lNTmI4PQ",
+          "previousRevisionId": null,
+          "before": null,
+          "metadata_verified": true,
+          "sha256": "4ec9207ed4cdbcb9126f81fb235d97ab9aa265b89891e6d9871ec70930b1dd03",
+          "full_bytes_verified": true,
+          "verification": "Full raw download matches approved bytes and SHA256; identity, type, parent, size and revision checked; revision stable after download."
+        }
+      ],
+      "vault_inventory_after": {
+        "total_files": 22,
+        "markdown_files": 16,
+        "source_pdfs": 5,
+        "assets_svg": 1,
+        "project_folders": 2,
+        "all_preexisting_ids_preserved": true,
+        "no_duplicate_names": true
+      },
+      "obsidian_rendering_checked": false,
+      "github_publication_at_record_time": {
+        "status": "ready_for_guarded_publication",
+        "expected_parent": "dae8d66dc52c8aca9e973ba463dae37f0e59a5ef",
+        "readback_verified": false
+      },
+      "next_step": "Cota cohomológica uniforme y comparación cuantitativa theta: filtración del defecto integral, inyecciones, núcleos, multiplicidades, finitud y sumabilidad sobre primos y torcidos.",
+      "publication_authorization": "Continuación autorizada por el usuario: «Muy bien. Vamos con el siguiente bloque», en el flujo vigente de incorporación al manuscrito y a la bóveda.",
+      "ready_at_utc": "2026-11-23T19:48:57.269896+00:00",
+      "additional_primary_locator": {
+        "author": "J.S. Milne",
+        "work": "Algebraic Number Theory v3.08",
+        "locator": "Theorem8.31,printed p147",
+        "url": "https://www.jmilne.org/math/CourseNotes/ANT.pdf",
+        "use": "Entrada clásica Chebotarev para pasar de congruencias de Frobenius a todos los elementos."
+      },
+      "vault_readback_verified_at_utc": "2026-11-23T19:47:56.026109+00:00",
+      "vault_post_readback_revision_guards": [
+        {
+          "name": "00-Introduccion-y-fundamentos.md",
+          "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+          "currentRevisionId": "0B4GzbHwPH-MvQ0FVUDllMlRoQlh4SVE4Q2NVbzhNTS9QNmp3PQ",
+          "unchanged": true
+        },
+        {
+          "name": "00-Mapa-de-estudio.md",
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+          "currentRevisionId": "0B4GzbHwPH-MvdHlhYXc5d2pXVitEekxJTWdKN29XSnRJektZPQ",
+          "unchanged": true
+        },
+        {
+          "name": "03-Dudas-y-pendientes.md",
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+          "currentRevisionId": "0B4GzbHwPH-MvejhFTGJNMVFSSGtDQm9zLzN6eHhOVmJpNS9ZPQ",
+          "unchanged": true
+        },
+        {
+          "name": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+          "id": "1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA",
+          "currentRevisionId": "0B4GzbHwPH-MvT2hXekhibVhBUXBLOVB2ek1COElOKy9sRVRNPQ",
+          "unchanged": true
+        },
+        {
+          "name": "14-De-congruencias-a-Selmer.md",
+          "id": "1cPAu8z3OMfQjc1zsoW0FHQGGLM8Q7IIi",
+          "currentRevisionId": "0B4GzbHwPH-MveGh6Mkg3SGZhNEJmMmlKUDVQR0ZzV3lNTmI4PQ",
+          "unchanged": true
+        }
+      ],
+      "vault_revision_metadata_limit": "get_file_metadata normaliza su salida y no expone version, headRevisionId ni checksums pese al selector fields; las revisiones se recuperan por list_file_revisions.",
+      "vault_editorial_changes": [
+        "Nueva Nota13 con cuerpo cotejado al TeX.",
+        "Mapa y pendientes actualizados con los límites de la comparación theta.",
+        "Introducción: sólo recuento de trece notas.",
+        "Nota12: párrafo de continuidad idéntico al TeX y enlace de navegación."
+      ],
+      "source_pdfs_and_asset_untouched": true
     }
   ],
   "github": {

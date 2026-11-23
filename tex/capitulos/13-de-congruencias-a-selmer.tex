@@ -1,0 +1,803 @@
+\section{De las congruencias a Selmer: construcción y condiciones locales}
+\label{sec:construccion-selmer}
+
+La Nota~\ref{sec:congruencias-selmer} separó el denominador de un
+proyector, una extensión residual y su imagen en cohomología divisible.
+Su comparación final suponía un mapa cuyo núcleo había que controlar.
+En esta nota construimos ese mapa en una situación precisa: una
+representación irreducible de dimensión dos cuyos polinomios
+característicos son congruentes con la suma de dos caracteres
+residualmente distintos. Las entradas de sus matrices producirán
+un cociclo de orden exacto; unos vectores propios locales medirán
+la pérdida necesaria para obtener una clase de Selmer.
+
+El caso aritmético con el primo $37$ realizará una clase de Selmer
+estricta no nula. Su existencia utiliza un teorema clásico de Ribet,
+que recibimos como entrada externa. El cálculo no identifica por sí
+solo el ideal de congruencias de toda una familia theta: al final
+precisaremos qué información adicional requiere esa comparación.
+
+\fuente{A93, §9, pp.~61--63, para la construcción de extensiones y
+la comparación por filtraciones; B76, §§5.1--5.2, pp.~54--57, para
+las multiplicidades, el retículo torcido y las longitudes normalizadas.
+El antecedente clásico es Ribet~\cite{ribet-congruencias},
+Teorema~1.3, p.~152, y Proposición~2.1, pp.~154--155.
+Las pruebas algebraicas siguientes se desarrollan aquí.
+La existencia aritmética del apartado~\ref{subsec:rs-ribet}
+se cita; no se añade una lectura ni una ejecución de Lean.}
+
+\subsection{Los datos y la conclusión que buscamos}
+
+Sean $K/\Q_\ell$ una extensión finita, $\mathcal O$ su anillo de
+enteros, $\varpi$ un uniformizante y $k=\mathcal O/\varpi\mathcal O$.
+Escribimos $R_n=\mathcal O/\varpi^n\mathcal O$, con $n\ge1$.
+La cohomología será continua; los módulos de torsión llevan la
+topología discreta. Fijamos un grupo profinito $G$, una representación
+continua e irreducible sobre $K$
+\[
+ \rho:G\longrightarrow\operatorname{GL}_2(K)
+\]
+y caracteres continuos $\chi_1,\chi_2:G\to\mathcal O^\times$.
+Suponemos que $\overline\chi_1\ne\overline\chi_2$ como caracteres
+y que, para \emph{todo} $g\in G$,
+\begin{equation}
+ \begin{split}
+ \operatorname{tr}\rho(g)&\equiv\chi_1(g)+\chi_2(g)\pmod{\varpi^n},\\
+ \det\rho(g)&\equiv\chi_1(g)\chi_2(g)\pmod{\varpi^n}.
+ \end{split}
+ \label{eq:rs-congruencia}
+\end{equation}
+La traza y el determinante son integrales, como justificará el
+Lema~\ref{lem:rs-reticulo}. La distinción residual exige un elemento
+$g_0$ con $\chi_1(g_0)-\chi_2(g_0)\in\mathcal O^\times$;
+no exige esa separación para cada elemento de $G$.
+
+Pondremos
+\begin{equation}
+ \eta=\chi_1\chi_2^{-1},\qquad A=(K/\mathcal O)(\eta).
+ \label{eq:rs-coeficientes}
+\end{equation}
+El torcido indica que $g$ actúa por multiplicación por $\eta(g)$.
+Construiremos una inyección $R_n\hookrightarrow H^1(G,A)$ y,
+con datos locales adicionales, un mapa a un grupo de Selmer con
+núcleo de longitud calculable. La irreducibilidad se refiere a
+$\rho$ en característica cero: su reducción puede ser una extensión
+no escindida de caracteres.
+
+\subsection{El núcleo del cambio de coeficientes}
+
+Antes de construir una clase, conviene saber qué puede anularla.
+La aplicación
+\begin{equation}
+ j_n:R_n(\eta)\longrightarrow A,\qquad
+ x\longmapsto\varpi^{-n}x+\mathcal O
+ \label{eq:rs-jn}
+\end{equation}
+identifica $R_n(\eta)$ con $A[\varpi^n]$. Aquí se utiliza el
+carácter $\eta$ ya fijado con valores en $\mathcal O^\times$;
+un carácter definido solo módulo $\varpi^n$ no define, sin más,
+una acción sobre todo $K/\mathcal O$.
+
+\begin{lema}[Obstrucción exacta y separación residual]
+\label{lem:rs-coeficientes}
+Para cualquier carácter continuo $\eta:G\to\mathcal O^\times$ se tiene
+una sucesión exacta
+\begin{equation}
+ 0\longrightarrow A^G/\varpi^n A^G
+ \longrightarrow H^1(G,R_n(\eta))
+ \xrightarrow{j_{n,*}}H^1(G,A)[\varpi^n]
+ \longrightarrow0.
+ \label{eq:rs-nucleo-coef}
+\end{equation}
+Si existe $g_0$ con $\eta(g_0)-1$ unidad, entonces $A^G=0$ y
+$j_{n,*}$ es inyectivo. Si $\eta\ne1$ y
+$s=\min_g v_\varpi(\eta(g)-1)$, con $v_\varpi(0)=+\infty$,
+el núcleo tiene longitud $\min(n,s)$. Si $\eta=1$, el núcleo
+es cero.
+\end{lema}
+
+\begin{proof}
+La multiplicación por $\varpi^n$ en $A$ es sobreyectiva. La sucesión
+larga de cohomología de
+$0\to A[\varpi^n]\to A\xrightarrow{\varpi^n}A\to0$
+da \eqref{eq:rs-nucleo-coef}. Si $\eta(g_0)-1$ es unidad,
+todo invariante $a$ satisface $(\eta(g_0)-1)a=0$, de donde $a=0$.
+
+Si $\eta\ne1$, el ideal generado por los $\eta(g)-1$ es
+$(\varpi^s)$, para un entero finito $s\ge0$. Por tanto
+$A^G=A[\varpi^s]\simeq\mathcal O/\varpi^s\mathcal O$ y su
+cociente por $\varpi^n A^G$ tiene longitud $\min(n,s)$.
+Si $\eta=1$, se tiene $A^G=A$, que es divisible, y ese cociente
+es cero.
+\end{proof}
+
+La obstrucción es el cociente de invariantes de
+\eqref{eq:rs-nucleo-coef}. La coincidencia de caracteres residuales
+no basta para declarar que existe un núcleo: la acción trivial
+muestra por qué hay que conservar el cociente completo.
+En nuestra situación $\eta(g_0)-1$ es unidad, de modo que la
+clase que construiremos no sufrirá la anulación observada en
+el modelo de la Nota~\ref{sec:congruencias-selmer}.
+
+\subsection{Un retículo estable por compacidad}
+
+\begin{lema}[Integralidad de una representación compacta]
+\label{lem:rs-reticulo}
+La representación $\rho$ admite un retículo $G$-estable
+$L\subset K^2$. En una base de $L$, todas sus matrices están en
+$\operatorname{GL}_2(\mathcal O)$.
+\end{lema}
+
+\begin{proof}
+Partimos de un retículo $L_0$. La imagen de $G$ es compacta;
+sus entradas matriciales están acotadas. Existe $r\ge0$ tal que
+$\rho(g)L_0\subseteq\varpi^{-r}L_0$ para todo $g$. Definimos
+$L=\sum_{g\in G}\rho(g)L_0$, donde la suma significa el submódulo
+generado por todos esos retículos. Entonces
+$L_0\subseteq L\subseteq\varpi^{-r}L_0$.
+Como $\mathcal O$ es noetheriano, $L$ es finitamente generado;
+es libre de rango dos por ser un módulo sin torsión sobre un DVR.
+Además $\rho(h)L=L$ para todo $h$, pues la multiplicación por $h$
+permuta los índices de la suma. Las matrices y sus inversas son
+integrales, lo que prueba la conclusión.
+\end{proof}
+
+Este primer retículo no tiene todavía por qué mostrar una extensión
+no escindida. Lo modificaremos de una forma que preserve su
+estabilidad y normalice uno de los bloques de las matrices.
+
+\subsection{Separar las diagonales sin introducir denominadores}
+
+\begin{lema}[Un elemento separador y dos trazas]
+\label{lem:rs-separador}
+Puede elegirse una base integral $e_1,e_2$ de $L$ en la que
+$\rho(g_0)=\operatorname{diag}(\lambda_1,\lambda_2)$,
+con $\lambda_i\equiv\chi_i(g_0)\pmod{\varpi^n}$ y
+$\lambda_1-\lambda_2$ unidad. Si escribimos
+\begin{equation}
+ \rho(g)=\begin{pmatrix}a(g)&b(g)\\c(g)&d(g)\end{pmatrix},
+ \label{eq:rs-bloques}
+\end{equation}
+entonces $a(g)\equiv\chi_1(g)$ y
+$d(g)\equiv\chi_2(g)\pmod{\varpi^n}$ para todo $g$.
+\end{lema}
+
+\begin{proof}
+El polinomio característico de $\rho(g_0)$ tiene dos raíces
+simples módulo $\varpi$, las reducciones de $\chi_i(g_0)$.
+La forma de raíces simples del lema de Hensel produce raíces
+$\lambda_i\in\mathcal O^\times$: sucesivamente se corrige una
+raíz módulo $\varpi^r$ mediante la derivada, que es unidad,
+y la completitud permite tomar el límite.
+Al evaluar el polinomio en $\chi_i(g_0)$ obtenemos
+\[
+ (\chi_i(g_0)-\lambda_i)(\chi_i(g_0)-\lambda_j)
+ \in\varpi^n\mathcal O\qquad(j\ne i).
+\]
+El segundo factor es unidad. Así se obtiene la precisión
+$\lambda_i\equiv\chi_i(g_0)\pmod{\varpi^n}$.
+
+Los operadores
+\[
+ P_1=\frac{\rho(g_0)-\lambda_2 I}{\lambda_1-\lambda_2},
+ \qquad P_2=I-P_1
+\]
+son idempotentes complementarios y preservan $L$, porque el
+denominador es unidad. La descomposición $L=P_1L\oplus P_2L$
+tiene dos sumandos libres de rango uno. Elegimos un generador
+en cada uno.
+
+Aplicamos \eqref{eq:rs-congruencia} a $g$ y a $g_0g$. Se obtiene,
+módulo $\varpi^n$,
+\[
+ \begin{split}
+ a(g)+d(g)&=\chi_1(g)+\chi_2(g),\\
+ \lambda_1a(g)+\lambda_2d(g)
+ &=\chi_1(g_0)\chi_1(g)+\chi_2(g_0)\chi_2(g).
+ \end{split}
+\]
+El determinante del sistema es una unidad, y sus soluciones son
+las diagonales afirmadas. No hace falta que $g$ y $g_0$ conmuten:
+solo usamos $\rho(g_0g)=\rho(g_0)\rho(g)$.
+\end{proof}
+
+Las raíces $\lambda_i$ y los valores $\chi_i(g_0)$ son
+\emph{congruentes}, no necesariamente iguales en $K$.
+El argumento no divide por $2$. También sirve en característica
+residual $2$ si el cuerpo residual permite dos caracteres distintos;
+por ejemplo, esto puede ocurrir sobre $\mathbf F_4$. Sobre
+$\mathbf F_2$ todos los caracteres con valores en
+$\mathbf F_2^\times$ coinciden, por lo que nuestra hipótesis no se
+cumple allí.
+
+\subsection{Normalizar el bloque que producirá la extensión}
+
+\begin{proposicion}[Un retículo con bloque superior primitivo]
+\label{prop:rs-normalizar}
+Existe un retículo estable $\Lambda$ con una base en la que
+\eqref{eq:rs-bloques} satisface
+\begin{equation}
+ \begin{gathered}
+ a(g)\equiv\chi_1(g),\quad d(g)\equiv\chi_2(g)
+       \pmod{\varpi^n},\qquad c(g)\in\varpi^n\mathcal O,\\
+ (b(g):g\in G)=\mathcal O,\qquad b(g_0)=c(g_0)=0.
+ \end{gathered}
+ \label{eq:rs-normalizado}
+\end{equation}
+\end{proposicion}
+
+\begin{proof}
+En la base del lema anterior, sean $B=(b(g):g\in G)$ y
+$C=(c(g):g\in G)$. La identidad
+$a(gh)=a(g)a(h)+b(g)c(h)$ y la multiplicatividad de $\chi_1$
+dan $b(g)c(h)\in\varpi^n\mathcal O$ para todo par $g,h$.
+Por tanto $BC\subseteq\varpi^n\mathcal O$.
+Los dos ideales son no nulos: $B=0$ haría estable la recta $Ke_2$;
+$C=0$ haría estable $Ke_1$, contra la irreducibilidad.
+
+Escribimos $B=\varpi^u\mathcal O$, $C=\varpi^v\mathcal O$,
+con $u,v\ge0$ y $u+v\ge n$. Tomamos
+$\Lambda=\mathcal O(\varpi^u e_1)+\mathcal O e_2$.
+En esa base las cuatro entradas pasan a ser
+\[
+ a(g),\quad\varpi^{-u}b(g),\quad\varpi^u c(g),\quad d(g).
+\]
+Son integrales; el bloque inferior pertenece a
+$\varpi^{u+v}\mathcal O\subseteq\varpi^n\mathcal O$ y el
+superior genera $\mathcal O$. Todas las matrices, incluidas las
+correspondientes a $g^{-1}$, son integrales; $\Lambda$ es estable.
+Las diagonales no cambian y $g_0$ sigue diagonal. Omitimos las
+primas para obtener \eqref{eq:rs-normalizado}.
+\end{proof}
+
+La irreducibilidad sobre $K$ impide que desaparezca uno de los dos
+bloques antes de normalizarlo. Después de cambiar el retículo, el
+bloque inferior desaparece módulo $\varpi^n$ y el superior conserva
+al menos una unidad. Esa asimetría es la que hará visible la clase.
+
+\subsection{La inyección construida y su anulador exacto}
+
+\begin{teorema}[De una congruencia separada a una clase de longitud $n$]
+\label{thm:rs-inyeccion}
+Bajo \eqref{eq:rs-congruencia} y las hipótesis del primer apartado,
+el retículo de la Proposición~\ref{prop:rs-normalizar} proporciona
+el cociclo
+\begin{equation}
+ z_n(g)=b(g)\chi_2(g)^{-1}\pmod{\varpi^n}
+       \quad\text{en }R_n(\eta).
+ \label{eq:rs-cociclo}
+\end{equation}
+Las aplicaciones
+\begin{equation}
+ \begin{aligned}
+ R_n&\longrightarrow H^1(G,R_n(\eta)),& u&\longmapsto u[z_n],\\
+ R_n&\longrightarrow H^1(G,A),& u&\longmapsto u j_{n,*}[z_n]
+ \end{aligned}
+ \label{eq:rs-inyecciones}
+\end{equation}
+son inyectivas. Ambas clases tienen anulador exactamente
+$(\varpi^n)$ como módulos sobre $\mathcal O$.
+\end{teorema}
+
+\begin{proof}
+La entrada superior derecha de un producto da
+$b(gh)=a(g)b(h)+b(g)d(h)$. Dividiendo por $\chi_2(gh)$ y
+reduciendo módulo $\varpi^n$ obtenemos
+\[
+ z_n(gh)=z_n(g)+\eta(g)z_n(h).
+\]
+La continuidad procede de la de las entradas y de la reducción
+al módulo finito. Es, por tanto, un cociclo continuo.
+
+Supongamos $u[z_n]=0$. Existe $t\in R_n$ tal que
+$u z_n(g)=(\eta(g)-1)t$ para todo $g$.
+Al evaluar en $g_0$, el lado izquierdo es cero y
+$\eta(g_0)-1$ es unidad; por tanto $t=0$.
+Como las entradas $b(g)$ generan $\mathcal O$, alguna $b(g_1)$
+es unidad. La igualdad en $g_1$ implica $u=0$ en $R_n$.
+Esto prueba la primera inyección y el anulador exacto.
+La segunda sigue del Lema~\ref{lem:rs-coeficientes}, pues
+$\overline\chi_1\ne\overline\chi_2$.
+\end{proof}
+
+La reducción del retículo encaja en
+$0\to R_n(\chi_1)\to\Lambda/\varpi^n\Lambda
+\to R_n(\chi_2)\to0$. El cociclo de esta extensión toma valores
+en $\operatorname{Hom}(R_n(\chi_2),R_n(\chi_1))=R_n(\eta)$.
+El teorema prueba más que la no escisión módulo $\varpi$:
+ningún múltiplo de valoración menor que $n$ anula su clase.
+La aplicación depende de las elecciones de base; su existencia
+y la longitud de su imagen son las conclusiones necesarias.
+
+\subsection{Los datos locales y la pérdida que producen}
+
+Sean $\iota_w:D_w\to G$ una familia finita de homomorfismos
+continuos. Escribimos $\operatorname{res}_w$ para la restricción
+por $\iota_w$, y definimos el grupo con condición local estricta
+\begin{equation}
+ S_{\mathrm{estr}}(G,A;D_w)=
+ \ker\!\left(H^1(G,A)\longrightarrow\prod_w H^1(D_w,A)\right).
+ \label{eq:rs-selmer-estricto}
+\end{equation}
+En una aplicación aritmética $G$ será $G_{E,S_\ell}$ y
+$D_w=G_{E_w}$, para $w\mid\ell$; las acciones locales se
+obtienen por los homomorfismos naturales. Como en la
+Nota~\ref{sec:congruencias-selmer}, la notación $G_{E,S}$
+permite también ramificación en los lugares infinitos, que no
+se enumeran en $S$.
+
+\begin{proposicion}[Un vector propio local controla el núcleo]
+\label{prop:rs-local}
+Para cada $w$, supongamos dado un vector primitivo
+$v_w=(x_w,y_w)\in R_n^2$ tal que
+\begin{equation}
+ \rho(\iota_w(d))v_w=\chi_2(\iota_w(d))v_w
+       \quad\text{en }R_n^2\quad(d\in D_w).
+ \label{eq:rs-vector-local}
+\end{equation}
+Primitivo significa que alguna coordenada es unidad. Sea
+$t_w=v_\varpi(y_w)$ si $y_w\ne0$, con $0\le t_w<n$,
+y $t_w=n$ si $y_w=0$. Pongamos $t=\max_w t_w$;
+para una familia vacía tomamos $t=0$. Si
+$\gamma_n=j_{n,*}[z_n]$, la aplicación
+\begin{equation}
+ R_n\longrightarrow S_{\mathrm{estr}}(G,A;D_w),\qquad
+ u\longmapsto u\varpi^t\gamma_n
+ \label{eq:rs-mapa-selmer}
+\end{equation}
+está bien definida. Su núcleo es
+$\varpi^{n-t}\mathcal O/\varpi^n\mathcal O$, de longitud $t$,
+y su imagen tiene longitud $n-t$. Si el grupo de Selmer tiene
+longitud finita, se obtiene
+\begin{equation}
+ n\le t+\length_{\mathcal O}S_{\mathrm{estr}}(G,A;D_w).
+ \label{eq:rs-cota-local}
+\end{equation}
+\end{proposicion}
+
+\begin{proof}
+La primera coordenada de \eqref{eq:rs-vector-local}, usando
+$a\equiv\chi_1$, da
+$(\chi_1(d)-\chi_2(d))x_w+b(d)y_w=0$ en $R_n$;
+hemos omitido $\iota_w$ en la notación. Al dividir por
+$\chi_2(d)$ resulta
+\begin{equation}
+ y_w z_n(d)=(1-\eta(d))x_w=\delta(-x_w)(d).
+ \label{eq:rs-coborde-local}
+\end{equation}
+Si $y_w=\varpi^{t_w}u_w$ con $u_w$ unidad, esta igualdad
+anula $\varpi^{t_w}\operatorname{res}_w[z_n]$.
+Si $y_w=0$, la multiplicación por $\varpi^n$ la anula de todas
+formas. Así $\varpi^t\operatorname{res}_w[z_n]=0$ para cada $w$.
+El cambio de coeficientes respeta las restricciones, de modo que
+$\varpi^t\gamma_n$ pertenece al grupo indicado.
+
+Por el Teorema~\ref{thm:rs-inyeccion}, $\gamma_n$ tiene anulador
+$(\varpi^n)$. Por ello
+$u\varpi^t\gamma_n=0$ equivale a
+$u\in\varpi^{n-t}R_n$. Las longitudes del núcleo y de la imagen
+se calculan en el módulo cíclico $R_n$. La inclusión de la imagen
+en Selmer prueba \eqref{eq:rs-cota-local}.
+\end{proof}
+
+Si todos los $y_w$ son unidades, las extensiones locales se
+escinden y la aplicación es inyectiva. Una coordenada divisible
+por $\varpi$ mide una pérdida posible: el argumento construye
+un mapa con ese núcleo, sin afirmar que sea el mejor mapa ni que
+$t$ sea la mínima pérdida posible. Con $t=n$ solo obtenemos
+el mapa cero. Los vectores se piden módulo $\varpi^n$; no hace
+falta que se levanten a rectas propias sobre $K$.
+
+Esta proposición prueba la condición local cero. Una condición
+finita de Bloch--Kato puede ser más amplia; sustituirla por cero
+sin justificarlo cambiaría el problema. Para pasar a otra
+condición local hay que identificar el subgrupo correspondiente.
+
+\subsection{Cómo verificar las congruencias mediante Frobenius}
+
+En este apartado y en el ejemplo tomamos Frobenius aritmético;
+por tanto $\chi_{\mathrm{cyc}}(\operatorname{Frob}_v)=Nv$,
+el cardinal del cuerpo residual, cuando $v\nmid\ell$.
+Para $E=\Q$ y un primo $q\ne\ell$, este valor es $q$.
+
+\begin{proposicion}[Criterio de Frobenius]
+\label{prop:rs-frobenius}
+Supongamos $G=G_{E,S}$, donde $E$ es un cuerpo de números y $S$
+un conjunto finito de lugares que contiene los situados sobre
+$\ell$. Sean $\rho$ y $\chi_i$ representaciones de este grupo.
+Si, fuera de un conjunto finito de lugares $v$, sus polinomios
+característicos en Frobenius satisfacen
+\begin{equation}
+ \det(X-\rho(\operatorname{Frob}_v))\equiv
+ (X-\chi_1(\operatorname{Frob}_v))
+ (X-\chi_2(\operatorname{Frob}_v))\pmod{\varpi^n},
+ \label{eq:rs-frobenius}
+\end{equation}
+entonces \eqref{eq:rs-congruencia} se cumple para todo $g\in G$.
+\end{proposicion}
+
+\begin{proof}
+Elegimos un retículo estable. Las reducciones de $\rho$ y de los
+dos caracteres módulo $\varpi^n$ tienen imagen finita y factorizan
+por un mismo cociente finito de $G$. La traza y el determinante
+son funciones de sus clases de conjugación. El teorema de
+Chebotarev asegura que cada clase del cociente aparece como
+Frobenius en lugares fuera de cualquier conjunto finito prefijado.
+La igualdad en esas clases da la igualdad en todo el cociente.
+\end{proof}
+
+Se recibe aquí Chebotarev en su formulación usual para extensiones
+finitas de cuerpos de números; véase la exposición de cuerpos
+globales de Milne~\cite{milne-ant}, Teorema~8.31, p.~147. El argumento requiere congruencias para todos los lugares
+salvo un conjunto finito. Comprobar una lista numérica de primos
+no proporciona esta hipótesis.
+
+Por ejemplo, cuando se dispone de una representación asociada a
+un sistema de Hecke con polinomio
+$X^2-a_qX+q^{k-1}$ y de congruencias
+$a_q\equiv1+q^{k-1}\pmod{\varpi^n}$ en los lugares requeridos,
+los caracteres naturales son $\chi_1=1$ y
+$\chi_2=\chi_{\mathrm{cyc}}^{k-1}$. El cociclo toma entonces valores
+en el torcido negativo $1-k$. Esta descripción presupone la
+existencia e irreducibilidad de la representación y no establece
+su escisión local en $\ell$.
+
+\subsection{La entrada aritmética de Ribet}
+\label{subsec:rs-ribet}
+
+Para disponer de un ejemplo aritmético completo utilizamos el
+siguiente resultado clásico, con sus condiciones locales incluidas.
+Sea $p$ un primo impar y sea $k$ par, con $2\le k\le p-3$.
+Escribimos $\omega:G_\Q\to\mathbf F_p^\times$ para el carácter
+ciclotómico residual. Si $p$ divide el numerador de $B_k$,
+el Teorema~1.3 de Ribet~\cite{ribet-congruencias}, p.~152,
+proporciona un cuerpo finito $F\supseteq\mathbf F_p$ y una
+representación continua
+\begin{equation}
+ \overline\rho:G_\Q\longrightarrow\operatorname{GL}_2(F),
+ \qquad
+ \overline\rho(g)=
+ \begin{pmatrix}1&\beta(g)\\0&\omega(g)^{k-1}\end{pmatrix},
+ \label{eq:rs-ribet}
+\end{equation}
+no ramificada fuera de $p$, no escindida globalmente y
+escindida al restringirla a un grupo de descomposición en $p$.
+En el enunciado original las dos últimas propiedades se expresan
+mediante el orden de las imágenes: el global es divisible por $p$
+y el local en $p$ es primo con $p$.
+
+La fórmula
+\begin{equation}
+ z(g)=\beta(g)\omega(g)^{1-k}
+ \label{eq:rs-ribet-cociclo}
+\end{equation}
+da una clase no nula en
+$H^1(G_{\Q,\{p\}},F(\omega^{1-k}))$.
+La identidad de cociclo se obtiene multiplicando matrices,
+como en \eqref{eq:rs-cociclo}. Una clase cero permitiría cambiar
+el levantamiento de la segunda coordenada para diagonalizar la
+representación; esto contradice la no escisión global.
+La escisión local implica que su restricción en $p$ es un coborde.
+
+La existencia de \eqref{eq:rs-ribet} contiene la parte profunda del
+ejemplo. Ribet explica en p.~153 que su construcción local utiliza
+formas de peso $2$ y nivel $p$. Allí distingue este camino del
+que parte de formas de peso $k$ y nivel $1$: las congruencias de
+ese segundo camino no proporcionan por sí solas la propiedad
+local requerida. Por ello no deducimos la escisión en $p$ de la
+sola congruencia $a_q\equiv1+q^{k-1}$.
+
+Podemos además obtener una clase sobre $\mathbf F_p$.
+Elegimos una base de $F$ sobre $\mathbf F_p$ y sus aplicaciones
+coordenadas $\lambda_i:F\to\mathbf F_p$.
+Como la acción es por escalares de $\mathbf F_p$, todas son
+equivariantes y la cohomología se descompone en esas coordenadas.
+Si todas las clases $[\lambda_i z]$ fueran cero, $[z]$ sería cero.
+Alguna coordenada $\lambda$ produce, por tanto, una clase no nula
+y conserva la condición de coborde en $p$ y la no ramificación
+fuera de $p$.
+
+\subsection{El ejemplo aritmético con el primo 37}
+
+Definimos los números de Bernoulli mediante $B_0=1$ y
+\begin{equation}
+ \sum_{j=0}^{m}\binom{m+1}{j}B_j=0\quad(m\ge1).
+ \label{eq:rs-bernoulli}
+\end{equation}
+Así $B_1=-1/2$. La recurrencia, calculada en aritmética racional
+exacta, da
+\begin{equation}
+ B_{32}=-\frac{7709321041217}{510}
+       =-\frac{37\cdot683\cdot305065927}{510},
+ \qquad v_{37}(B_{32})=1.
+ \label{eq:rs-B32}
+\end{equation}
+El cociente del numerador por $37$ es
+$-208360028141\equiv3\pmod{37}$ y $510\equiv29\pmod{37}$;
+esto verifica que la divisibilidad es exactamente una vez.
+
+\begin{proposicion}[Una clase estricta no nula]
+\label{prop:rs-37}
+Para $A=\Q_{37}/\Z_{37}(-31)$ existe una inyección
+\begin{equation}
+ \mathbf F_{37}\lhook\joinrel\longrightarrow
+ S_{37}(\Q,31):=
+ \ker\!\left(H^1(G_{\Q,\{37\}},A)
+                  \longrightarrow H^1(G_{\Q_{37}},A)\right).
+ \label{eq:rs-37-selmer}
+\end{equation}
+Su imagen es localmente trivial en todos los lugares; en particular
+se inyecta en $\operatorname{Sha}^1(\Q,A)$, el núcleo de la restricción de
+$H^1(G_\Q,A)$ al producto de todas las cohomologías locales.
+\end{proposicion}
+
+\begin{proof}
+Aplicamos la entrada de Ribet con $p=37$ y $k=32$.
+Se cumplen $2\le32\le34$ y la divisibilidad de
+\eqref{eq:rs-B32}. El apartado anterior proporciona una clase no
+nula $[z_0]=[\lambda z]$ con coeficientes
+$\mathbf F_{37}(\omega^{-31})$, no ramificada fuera de $37$
+y localmente cero en $37$.
+
+La acción en $A$ es la del carácter
+$\chi_{\mathrm{cyc}}^{-31}$. En un Frobenius aritmético en $2$,
+su reducción vale
+$2^{-31}=2^5=32\pmod{37}$, usando que
+$-31\equiv5\pmod{36}$. Por tanto
+$\chi_{\mathrm{cyc}}^{-31}(\operatorname{Frob}_2)-1$ es una
+unidad de $\Z_{37}$. El Lema~\ref{lem:rs-coeficientes}, con $n=1$,
+muestra que la imagen
+$\gamma=j_{1,*}[z_0]$ en $H^1(G_{\Q,\{37\}},A)$ es no nula.
+La aplicación explícita $a\mapsto a\gamma$ es inyectiva,
+pues su dominio es el cuerpo $\mathbf F_{37}$. Su restricción
+en $37$ es cero por functorialidad.
+
+Para un primo $q\ne37$, la clase es no ramificada y $A$ también.
+La cohomología no ramificada se calcula por
+\begin{equation}
+ H^1_{\mathrm{ur}}(\Q_q,A)
+       =A/(q^{-31}-1)A=0.
+ \label{eq:rs-local-q}
+\end{equation}
+En efecto, el grupo no ramificado está generado topológicamente
+por Frobenius, lo que da el cociente; el escalar
+$q^{-31}-1$ es un elemento no nulo de $\Z_{37}$ y la
+multiplicación por él es sobreyectiva en el módulo divisible $A$.
+En el lugar real, la cohomología de grado uno es anulada por el
+orden $2$ del grupo de Galois; como $2$ es invertible en $A$,
+también es cero. La inflación de $G_{\Q,\{37\}}$ a $G_\Q$ es
+inyectiva en grado uno, por inflación--restricción, ya que la
+acción en $A$ factoriza por ese cociente. Quedan comprobadas
+todas las condiciones locales de $\operatorname{Sha}^1$.
+\end{proof}
+
+La conclusión es la existencia de un submódulo de longitud uno.
+No hemos demostrado aquí la finitud de todo $S_{37}(\Q,31)$ ni
+que su longitud sea exactamente uno. El valor
+$v_{37}(B_{32})=1$ entra en la elección del ejemplo; una igualdad
+con la longitud completa exigiría otro teorema aritmético.
+
+También se obtiene una clase sobre $\Q(\zeta_{37})$.
+La restricción seguida de corestricción multiplica por
+$[\Q(\zeta_{37}):\Q]=36$, una unidad en $\Z_{37}$.
+La restricción es, por ello, inyectiva y conserva la trivialidad
+local. Este argumento no afirma que cualquier clase residual
+sobre el cuerpo ciclotómico sobreviva al cambio de coeficientes:
+restringimos una clase que ya hemos construido en el módulo
+divisible.
+
+\subsection{Qué ideal mide cada construcción}
+
+La longitud $n$ de \eqref{eq:rs-inyecciones} pertenece a la
+congruencia \eqref{eq:rs-congruencia} para los dos caracteres
+fijados. En la prueba apareció además el ideal $BC$ de los
+bloques. Se tiene $BC\subseteq(\varpi^n)$, pero puede haber
+inclusión estricta; no hemos probado que $n=v_\varpi(BC)$.
+Y ninguno de los dos se identifica automáticamente con el
+ideal $\mathfrak c_\pi$ del proyector de Hecke estudiado en
+las Notas~\ref{sec:cohomologia} y~\ref{sec:congruencias-selmer}.
+
+La diferencia puede verse en un orden de Hecke abstracto
+$\mathbb T\subseteq\mathcal O^X$, con proyecciones de coordenadas
+$\lambda_\pi$. Consideramos el caso de un único sistema retenido,
+$Z=\{\pi\}$; para un conjunto $Z$ mayor la condición de
+anulación del proyector solo afecta al complemento de $Z$.
+Para $\sigma\ne\pi$ definamos
+\begin{equation}
+ \begin{split}
+ I_{\pi,\sigma}
+  &=(\lambda_\pi(T)-\lambda_\sigma(T):T\in\mathbb T),\\
+ \mathfrak c_\pi
+  &=\{\lambda_\pi(T):T\in\mathbb T,
+                      \ \lambda_\tau(T)=0\text{ para }\tau\ne\pi\}.
+ \end{split}
+ \label{eq:rs-ideales-hecke}
+\end{equation}
+Para cada $\sigma\ne\pi$ se cumple
+\begin{equation}
+ \mathfrak c_\pi\subseteq I_{\pi,\sigma},
+ \qquad v_\varpi(\mathfrak c_\pi)\ge v_\varpi(I_{\pi,\sigma})
+ \label{eq:rs-direccion-ideal}
+\end{equation}
+cuando los ideales son no nulos. Basta tomar un operador que
+anule todas las otras coordenadas: su diferencia con la
+coordenada $\sigma$ es precisamente su valor en $\pi$.
+La dirección de la desigualdad importa. Construir una clase
+para una sola pareja no da una cota superior para todo el
+ideal del proyector. El Ejercicio~\ref{ej:rs-tres} exhibe una
+separación arbitrariamente grande.
+
+A93, p.~62, explica la construcción de extensiones a partir de
+bloques. En rango dos,
+normalizar $B=\mathcal O$ hace visible una copia de $R_n$.
+Para una familia con más constituyentes, el módulo de bloques
+puede tener más generadores y la comparación debe conservarlos.
+
+\subsection{Filtraciones, multiplicidades y errores finitos}
+
+El formato que necesita la aplicación general puede expresarse
+mediante un lema de longitudes. Su contenido es elemental;
+la existencia de los mapas es la entrada aritmética que debe
+construirse en cada situación.
+
+\begin{proposicion}[Contabilidad de una comparación filtrada]
+\label{prop:rs-filtracion}
+Sea $D$ un módulo de longitud finita con una filtración finita.
+Supongamos que sus cocientes se dividen en dos tipos. Los del
+primer tipo, $Q_i$, admiten mapas
+\begin{equation}
+ Q_i\longrightarrow\bigoplus_j S_j^{\oplus m_{ij}}
+ \quad\text{con núcleo de longitud a lo sumo }\kappa_i,
+ \label{eq:rs-graduados}
+\end{equation}
+donde los $S_j$ tienen longitud finita. Los del segundo tipo,
+$E_h$, están anulados por $\varpi^{a_h}$ y admiten a lo sumo
+$b_h$ generadores. Entonces
+\begin{equation}
+ \length_{\mathcal O}D
+ \le\sum_i\kappa_i+
+       \sum_{i,j}m_{ij}\length_{\mathcal O}S_j+
+       \sum_h a_h b_h.
+ \label{eq:rs-filtracion}
+\end{equation}
+\end{proposicion}
+
+\begin{proof}
+La sucesión exacta del núcleo y la imagen de cada mapa da
+$\length Q_i\le\kappa_i+\sum_jm_{ij}\length S_j$.
+Para cada error existe una sobreyección
+$(\mathcal O/\varpi^{a_h}\mathcal O)^{b_h}\twoheadrightarrow E_h$,
+por lo que $\length E_h\le a_hb_h$.
+La aditividad de longitudes a lo largo de la filtración suma
+estas desigualdades.
+\end{proof}
+
+A93, p.~63, formula condicionalmente una comparación por graduados
+con inyecciones en varios módulos y errores aniquilados por una
+potencia fija y con un número acotado de generadores.
+La Proposición~\ref{prop:rs-filtracion} incluye además la variante
+de núcleos controlados $\kappa_i$. B76, p.~54, conserva las
+multiplicidades $m_\pi=\dim_{K_\lambda}V_\pi$ en la cota
+del denominador; en p.~55
+sitúa el retículo $T_\pi$ en
+$\rho_\lambda\otimes\xi_1^{-1}$ y distingue la condición
+finita de Selmer. Los grupos de torcido negativo
+aportados por las líneas de caracteres, con condición local cero,
+se definen en p.~56 y contribuyen junto al término asociado a
+$A_\pi$; el balance de índices y sus normalizaciones continúa
+en p.~57.
+
+La aplicación theta exige identificar $D$, construir
+su filtración y los mapas \eqref{eq:rs-graduados}, y acotar los
+$\kappa_i,a_h,b_h,m_{ij}$ con la uniformidad requerida.
+Si $e_\lambda=v_\varpi(\ell)$, el paso de longitud sobre
+$\mathcal O$ a la valoración normalizada usa
+$\length_{\mathcal O}/e_\lambda$, como en las notas anteriores.
+La finitud de cada módulo individual tampoco proporciona por
+sí sola una cota uniforme para una familia variable.
+
+\subsection{Lo demostrado y el siguiente paso}
+
+El Teorema~\ref{thm:rs-inyeccion} construye la clase de anulador
+exacto $(\varpi^n)$ y prueba su supervivencia divisible;
+la Proposición~\ref{prop:rs-local} calcula un núcleo mediante
+datos locales. El ejemplo con $37$ realiza una clase estricta
+no nula, con la existencia residual y la escisión local de Ribet
+como entradas externas.
+
+La comparación filtrada de la familia theta sigue pendiente,
+con sus multiplicidades, torcidos y errores. El siguiente bloque
+estudiará las cotas uniformes de longitudes cohomológicas retomando
+la Nota~\ref{sec:cohomologia}, A93, §9, y el complemento C
+sobre torres. Ese estudio no sustituye la construcción de los
+mapas de la comparación theta.
+
+\subsection{Ejercicios resueltos}
+
+\begin{ejercicio}\label{ej:rs-nucleo}
+Sea $\eta\ne1$ y suponga que el ideal generado por $\eta(g)-1$
+es $(\varpi^2)$. Calcule el núcleo del cambio de coeficientes
+para $n=4$. Compárelo con el caso $\eta=1$ y explique por qué
+la igualdad de caracteres residuales no decide por sí sola
+la inyectividad.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:rs-nucleo}.}
+En el primer caso $A^G=A[\varpi^2]$ y $\varpi^4A^G=0$.
+El núcleo es isomorfo a $\mathcal O/\varpi^2\mathcal O$ y
+tiene longitud $2$. Si $\eta=1$, en cambio, $A^G=A$ es
+divisible y $A^G/\varpi^4A^G=0$; el mapa es inyectivo.
+Ambos caracteres son residualmente triviales, pero sus módulos
+de invariantes tienen comportamientos distintos bajo multiplicación
+por $\varpi^4$.
+
+\begin{ejercicio}\label{ej:rs-local}
+En la Proposición~\ref{prop:rs-local}, tome $n=5$ y dos lugares
+con segundas coordenadas de valoración $1$ y $3$.
+Describa el mapa construido, su núcleo y su imagen.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:rs-local}.}
+Se toma $t=3$ y el mapa es $u\mapsto u\varpi^3\gamma_5$.
+Su núcleo es $\varpi^2\mathcal O/\varpi^5\mathcal O$, de
+longitud $3$, y la imagen tiene longitud $2$.
+La suma $1+3$ no es la pérdida necesaria: una misma multiplicación
+por $\varpi^3$ anula ambas restricciones. No se deduce que el
+Selmer completo tenga longitud $2$.
+
+\begin{ejercicio}\label{ej:rs-tres}
+Para $N>n\ge1$, considere
+\[
+ \mathbb T=\{(a,b,c)\in\mathcal O^3:
+               a\equiv b\pmod{\varpi^n},\
+               a\equiv c\pmod{\varpi^N}\}.
+\]
+Calcule $I_{1,2}$ y $\mathfrak c_1$ de
+\eqref{eq:rs-ideales-hecke}. Explique por qué una clase de
+longitud $n$ no basta para controlar el proyector sobre la
+primera coordenada.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:rs-tres}.}
+Las diferencias $a-b$ generan $(\varpi^n)$: están en ese ideal
+y $(\varpi^n,0,\varpi^n)\in\mathbb T$ lo alcanza.
+Para que $(a,0,0)\in\mathbb T$ hacen falta simultáneamente
+$a\in(\varpi^n)$ y $a\in(\varpi^N)$; así
+$\mathfrak c_1=(\varpi^N)$. El cociente de proyección es
+$\mathcal O/\varpi^N\mathcal O$, pues la primera proyección de
+$\mathbb T$ es todo $\mathcal O$. Su longitud $N$ puede ser
+mucho mayor que $n$.
+
+\begin{ejercicio}\label{ej:rs-signo}
+Para el ejemplo $p=37$, $k=32$, determine el torcido del cociclo,
+su carácter residual y el valor residual en Frobenius en $2$.
+Explique qué parte de la no nulidad se recibe de Ribet y cuál
+se demuestra mediante el cambio de coeficientes.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:rs-signo}.}
+El cociclo pertenece a $\operatorname{Hom}(\omega^{31},1)$;
+el torcido es $-31$, con carácter
+$\omega^{-31}=\omega^5$. En Frobenius en $2$ vale
+$2^5=32\pmod{37}$. Ribet proporciona la representación residual
+no escindida y su escisión local en $37$.
+El Lema~\ref{lem:rs-coeficientes} prueba que su coordenada no nula
+sobre $\mathbf F_{37}$ sobrevive en
+$\Q_{37}/\Z_{37}(-31)$; \eqref{eq:rs-local-q} completa la
+trivialidad en los otros primos.
+
+\begin{ejercicio}\label{ej:rs-multiplicidades}
+Suponga que una filtración tiene un graduado que se inyecta en
+$S^{\oplus3}$, otro que se inyecta en $S'$ y un error anulado
+por $\varpi^2$ y generado por cuatro elementos. Si
+$\length S=2$ y $\length S'=5$, dé una cota para la longitud
+total. ¿Qué dato faltaría para hacerla uniforme en una familia?
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:rs-multiplicidades}.}
+La cota es $3\cdot2+5+2\cdot4=19$.
+Para una familia hay que controlar conjuntamente las longitudes
+de $S,S'$, las multiplicidades y los exponentes y números de
+generadores de los errores; si los mapas dejan de ser inyectivos,
+también sus núcleos. La existencia individual de una filtración
+finita no da esas cotas uniformes.

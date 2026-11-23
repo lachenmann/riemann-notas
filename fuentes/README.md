@@ -1,6 +1,6 @@
 # Ejemplares utilizados
 
-Las notas utilizan dos exposiciones de base, A/B, la versión ampliada A93 y una lectura complementaria, C, identificadas a continuación. **A conserva el significado de A55 y B, el de B73** en todas las citas anteriores. B76 se identifica por separado para el cotejo localizado de la Nota 12. Se conservan sus bytes originales en el archivo de trabajo del proyecto. B recibió el nombre `GRH-note.pdf`; su contenido permanece idéntico al ejemplar estudiado como `GRH note.pdf`. Los enlaces externos sirven para consultar las fuentes; la versión utilizada en cada cotejo se identifica por su fecha, número de páginas y hash.
+Las notas utilizan dos exposiciones de base, A/B, la versión ampliada A93 y una lectura complementaria, C, identificadas a continuación. **A conserva el significado de A55 y B, el de B73** en todas las citas anteriores. B76 se identifica por separado para el cotejo localizado de la Nota 12 y el desarrollo de la Nota 13. Se conservan sus bytes originales en el archivo de trabajo del proyecto. B recibió el nombre `GRH-note.pdf`; su contenido permanece idéntico al ejemplar estudiado como `GRH note.pdf`. Los enlaces externos sirven para consultar las fuentes; la versión utilizada en cada cotejo se identifica por su fecha, número de páginas y hash.
 
 | Clave | Ejemplar utilizado | Enlace de consulta |
 | --- | --- | --- |
@@ -21,10 +21,11 @@ Los hashes siguientes identifican los ejemplares utilizados en las notas. La con
 | `GRH-note.pdf` | 850937 | `2cbd7e9b693c753f6afa22251db9669c9652555a91cee0cdfbd37a8465ad2ad9` |
 | `GRH-note-B76-3bd82fa3d242.pdf` | 872585 | `3bd82fa3d242fe473cb371cbab0a8d211cb7dd05f72ba2db1b4c4ef8f27478a3` |
 | `tower-bound-c054c66c84bc.pdf` | 227407 | `c054c66c84bce37c1bb9c1cdf56a92e06d500b274fa7a28d30f97b802d4e4b87` |
+| `ribet1976.pdf` | 1209202 | `6985813b4026bb0fd7098aed3f816262e0922f62a5d2dab22e29bcc2eb323471` |
 
 **Comprobación de los enlaces públicos, 22 de noviembre de 2026.** El enlace de A entrega exactamente el ejemplar de la tabla. El enlace de B entrega una versión posterior, fechada el 22 de noviembre, de 76 páginas y 872585 bytes, con SHA-256 `3bd82fa3d242fe473cb371cbab0a8d211cb7dd05f72ba2db1b4c4ef8f27478a3`. Las citas anteriores de B siguen referidas al ejemplar de 73 páginas del 21 de noviembre. La Nota 12 añade el cotejo localizado de B76 descrito abajo; la comparación completa de las versiones permanece pendiente.
 
-Las páginas citadas corresponden a la numeración impresa de los ejemplares de la tabla, que coincide con el contador del PDF. El desarrollo de las notas es material de estudio propio. Las declaraciones de alcance de cada fuente deben tenerse en cuenta al cotejar sus enunciados con el código formal.
+Las páginas citadas de A/A93/B/B76/C corresponden a su numeración impresa y al contador del PDF. Para Ribet (1976) se cita la numeración de la revista: el PDF tiene una portada adicional, de modo que las pp. 151–155 ocupan las páginas 2–6 del archivo. El desarrollo de las notas es material de estudio propio. Las declaraciones de alcance de cada fuente deben tenerse en cuenta al cotejar sus enunciados con el código formal.
 
 Si una fuente se actualiza, registrar la nueva versión antes de cambiar referencias. No reemplazar silenciosamente un ejemplar por otro con el mismo nombre.
 
@@ -42,7 +43,24 @@ Se releyeron además la formulación y las convenciones de **A93, §9, pp. 61–
 
 La Nota 12 distingue el retículo estable de una semisimplificación, precisa el giro de $T_\pi$, el signo de los torcidos y la correspondencia entre $S_\ell(E,j)$ y la notación de la Nota 8. Su modelo residual no produce por sí solo una clase no nula con coeficientes divisibles: con la acción levantada de los mismos caracteres, la clase se anula al cambiar de coeficientes. La comparación del cociente de congruencias con Selmer, incluida su variante con núcleo controlado, conserva explícitamente sus hipótesis.
 
-`source_B76_review` registra este cotejo documental. No se compararon completas las versiones B73 y B76, no se leyeron nuevos archivos Lean y no se compiló ni ejecutó Lean. Los nueve manifiestos anteriores y las revisiones C/A93 permanecen íntegros. El siguiente paso es estudiar la construcción aritmética del mapa a Selmer, su núcleo, la supervivencia de las clases, las condiciones locales y la uniformidad de las longitudes.
+`source_B76_review` registra este cotejo documental. No se compararon completas las versiones B73 y B76, no se leyeron nuevos archivos Lean y no se compiló ni ejecutó Lean. Los nueve manifiestos anteriores y las revisiones C/A93 permanecen íntegros. La Nota 13 desarrolla un caso de rango dos con supervivencia y condiciones locales explícitas. La comparación theta, sus núcleos y multiplicidades y la uniformidad de las longitudes permanecen abiertas.
+
+<a name="nota-13-de-congruencias-a-selmer"></a>
+
+## Nota 13: De las congruencias a Selmer: construcción y condiciones locales
+
+La [Nota 13](../tex/capitulos/13-de-congruencias-a-selmer.tex), **pp. 150–158 del cuaderno de 163 páginas**, desarrolla una construcción de rango dos con hipótesis explícitas y el mapa local de sus clases. Sus referencias de la propuesta son **A93, §9, pp. 61–67**, y **B76, §§5.1–5.2, pp. 54–56**, con p. 57 para la normalización del índice. A93, p. 63, distingue el cálculo del cociclo de la construcción de una filtración del defecto integral con inyecciones y multiplicidades. Esa comparación simultánea permanece pendiente. La revisión matemática del nuevo capítulo, su cotejo con Markdown y la revisión de composición están cerrados; los recuentos y alcances se conservan en [ESTADO.md](../ESTADO.md).
+
+La nueva referencia clásica es **Kenneth A. Ribet, *A Modular Construction of Unramified p-Extensions of Q(μₚ)*, Inventiones Mathematicae 34 (1976), 151–162**. El [PDF del archivo del autor](https://math.berkeley.edu/~ribet/Articles/invent_34.pdf), consultado el 23 de noviembre de 2026, tiene **13 páginas incluida la portada**, **1 209 202 bytes** y SHA-256 `6985813b4026bb0fd7098aed3f816262e0922f62a5d2dab22e29bcc2eb323471`. Se identifica como bibliografía adicional; no sustituye ninguno de los ejemplares A/A93/B/B76/C.
+
+| Localizador de Ribet | Uso delimitado |
+| --- | --- |
+| Teorema 1.1, p. 151 | Eigensumando del grupo de clases asociado a la divisibilidad del número de Bernoulli; contexto del ejemplo $37,32$. |
+| Teorema 1.3, p. 152 | Entrada externa: extensión residual globalmente no escindida, no ramificada fuera de $p$ y escindida localmente en $p$. |
+| Discusión, p. 153 | Diferencia entre la construcción local de peso 2 y nivel $p$ y el camino de peso $k$ y nivel 1. |
+| Proposición 2.1, pp. 154–155 | Antecedente del cambio de retículo para obtener una reducción no escindida. |
+
+A partir de la entrada del Teorema 1.3, el cuaderno desarrolla el cociclo de torcido $-31$, el cambio de coeficientes y la clase no nula en Selmer para $p=37$. Este ejemplo no identifica un ideal de congruencias theta ni prueba por sí mismo la finitud o la longitud exacta del Selmer total. La cota cohomológica uniforme, la filtración del defecto integral y sus multiplicidades siguen como próximo bloque. Se mantienen los nueve manifiestos Lean y las revisiones C/A93/B76; no se añade ejecución de Lean.
 
 ## A93: versión larga y guía de cotejo
 
@@ -106,7 +124,7 @@ La introducción utiliza las referencias siguientes, incorporadas también en [t
 | **S2.** Andrew V. Sutherland, MIT 18.785, otoño de 2021. | [Lecture 1, *Absolute values and discrete valuations*](https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/mit18_785f21_lec1.pdf), §§1.3–1.5, pp. 3–5. [Lecture 7, *Galois extensions, Frobenius elements, and the Artin map*](https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/mit18_785f21_lec7.pdf), definiciones 7.7 y 7.10, pp. 3–4, y §7.3, pp. 6–7. |
 | **K.** Kiran S. Kedlaya, *Notes on analytic number theory*. | [Capítulo 3](https://kskedlaya.org/ant/chap-lfunc.html), §§3.3–3.4: no anulación en la recta $\Re s=1$. [Capítulo 4](https://kskedlaya.org/ant/chap-primes-in-ap.html), teoremas 4.2, 4.11 y 4.12: primos en progresiones. |
 | **V.** Robert C. Vaughan, *Math 571, Chapter 6: The Bombieri–Vinogradov Theorem*. Penn State, 13 de enero de 2025. | [Diapositivas del curso](https://personal.science.psu.edu/rcv4/571s25/Class571-06.pdf), pp. 19–20 del PDF: únicamente la estimación de las sumas torcidas bajo GRH y su promedio por caracteres. |
-| **M.** James S. Milne, *Algebraic Number Theory*, versión 3.08, 19 de julio de 2020. | [Texto en la web del autor](https://www.jmilne.org/math/CourseNotes/ANT.pdf): capítulo 2, pp. 25–28, enteros algebraicos; capítulo 3, ideales y ramificación; pp. 73–75, retículos; capítulo 8, pp. 139–143, descomposición y Frobenius. |
+| **M.** James S. Milne, *Algebraic Number Theory*, versión 3.08, 19 de julio de 2020. | [Texto en la web del autor](https://www.jmilne.org/math/CourseNotes/ANT.pdf): capítulo 2, pp. 25–28, enteros algebraicos; capítulo 3, ideales y ramificación; pp. 73–75, retículos; capítulo 8, pp. 139–143, descomposición y Frobenius; Teorema 8.31, p. 147, Chebotarev, utilizado en la Nota 13. |
 
 Las consultas de la DLMF y de Kedlaya están fechadas el 22 de noviembre de 2026 en el manuscrito. La introducción desarrolla sus pruebas breves —producto de Euler, primera continuación de zeta, extracción de clases y paso de ceros a polos— y señala expresamente cuándo utiliza un resultado clásico cuya demostración no se incluye.
 
