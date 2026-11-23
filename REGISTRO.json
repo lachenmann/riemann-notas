@@ -35,10 +35,10 @@
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
       "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
-      "size_bytes": 16437,
-      "sha256": "b74fca85a5a1b33be969bdbe261ebd36ff9a9e7d68cce538249d51c9795d19c0",
+      "size_bytes": 17386,
+      "sha256": "064da22bb0993e70aa55c3d7cc04e64667cf95b656553a86516d1f947954c0b0",
       "verification": "Recuperación íntegra posterior; igualdad byte por byte, nombre, tipo y carpeta padre comprobados.",
-      "modified_time": "2026-11-23T13:04:50.298Z",
+      "modified_time": "2026-11-23T13:37:01.971Z",
       "full_bytes_verified": true
     },
     {
@@ -73,10 +73,10 @@
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
       "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
-      "size_bytes": 20375,
-      "sha256": "29b412c70ea79db45ac6c9adb50369a5ef1dfb6119369501490b3ff95fe7f0c2",
+      "size_bytes": 21607,
+      "sha256": "c5e57169005eb39c83f678e17b6afd369892ebbb0b6f622d37dcdf0c4e3af9b6",
       "verification": "Recuperación íntegra posterior; igualdad byte por byte, nombre, tipo y carpeta padre comprobados.",
-      "modified_time": "2026-11-23T13:04:53.877Z",
+      "modified_time": "2026-11-23T13:37:05.528Z",
       "full_bytes_verified": true
     },
     {
@@ -209,17 +209,34 @@
       "source": "C",
       "pages": 22,
       "verification": "PDF original recuperado íntegramente del destino; bytes idénticos a la edición fijada y a la descarga pública; nombre, tipo y carpeta padre comprobados."
+    },
+    {
+      "id": "13YSIDffeNiFm0gyZxDRHGQ2pZxqdpUH3",
+      "name": "rh-long-295153115a03.pdf",
+      "mime_type": "application/pdf",
+      "parent_ids": [
+        "1JOOvjCkJkco_6fRznoOYLg-jsOiBQlol"
+      ],
+      "modified_time": "2026-11-23T13:33:53.662Z",
+      "size_bytes": 1130005,
+      "sha256": "295153115a035f909faee55ea26e2fbdd9471e4f1d89439a16480bbd74011dfb",
+      "full_bytes_verified": true,
+      "source": "A93",
+      "pages": 93,
+      "url": "https://drive.google.com/file/d/13YSIDffeNiFm0gyZxDRHGQ2pZxqdpUH3/view",
+      "path_in_vault_project": "Fuentes/rh-long-295153115a03.pdf",
+      "verification": "PDF original recuperado íntegramente del destino; bytes, nombre, tipo y carpeta padre comprobados."
     }
   ],
   "obsidian_rendering_checked": false,
   "github_status": "active_public_repository",
   "latex": {
     "status": "compiled_and_composition_checked",
-    "pages": 114,
+    "pages": 115,
     "page_size": "A4",
     "path": "pdf/notas-hipotesis-riemann.pdf",
-    "size_bytes": 1020282,
-    "sha256": "29eb35b259568391b8f9efcccfc0eea17fc1160ffd51947394d443229df4c871",
+    "size_bytes": 1024924,
+    "sha256": "3223bde0c99cdc3a2c7afbe5eca2c88be3c5e8beb81c2279404afac375f15824",
     "compilation_exit_code": 0,
     "warnings": 0,
     "unresolved_references": 0,
@@ -228,32 +245,26 @@
     "missing_characters": 0,
     "all_pages_visually_reviewed": false,
     "visually_reviewed_pages": [
+      2,
+      3,
       4,
       5,
       17,
-      97,
-      98,
-      104,
-      105,
-      106,
-      107,
-      108,
-      109,
-      110,
-      111,
+      19,
       112,
       113,
-      114
+      114,
+      115
     ],
     "chapter_3_pages": [
-      25,
-      32
+      26,
+      33
     ],
     "chapter_4_pages": [
-      33,
-      44
+      34,
+      45
     ],
-    "cross_reading_with_markdown": "Las lecturas históricas se conservan en los doce eventos anteriores. El nuevo complemento de §8.17 conserva 86 expresiones matemáticas (82 en línea y cuatro en bloque), una tabla de tres filas y dos columnas y las referencias (8.28), (8.25), Lema 8.8 y Nota 9. Equivalencia tras expandir macros y normalizar espacios. El cuerpo previo de cohomología permanece idéntico y las fórmulas anteriores de la Nota 9 no cambian. No se inspeccionó la presentación en Obsidian.",
+    "cross_reading_with_markdown": "Incorporación documental a mapa y pendientes: identidad A93, localizadores y alcance de lectura cotejados con la guía. No se traspasó un capítulo matemático nuevo. Se mantienen los cuerpos LaTeX y Markdown de las nueve notas; solo se corrige en los índices MD el inicio de A55§9 a p.42. No se inspeccionó Obsidian.",
     "lean_compiled_or_executed": false,
     "introduction_pages": [
       6,
@@ -261,40 +272,28 @@
     ],
     "guide_pages": [
       17,
-      18
+      19
     ],
     "chapter_1_pages": [
-      19,
-      21
+      20,
+      22
     ],
     "chapter_2_pages": [
-      22,
-      24
+      23,
+      25
     ],
     "chapter_5_pages": [
-      45,
-      54
+      46,
+      55
     ],
     "references_and_status_pages": [
-      111,
-      114
+      112,
+      115
     ],
     "previous_visual_review_preserved_by_pixel_identity": [
       {
         "current_page": 1,
         "previous_page": 1,
-        "all_pixels_identical": true,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 2,
-        "previous_page": 2,
-        "all_pixels_identical": true,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 3,
-        "previous_page": 3,
         "all_pixels_identical": true,
         "identical_except_page_number": true
       },
@@ -371,481 +370,479 @@
         "identical_except_page_number": true
       },
       {
-        "current_page": 19,
-        "previous_page": 19,
-        "all_pixels_identical": true,
-        "identical_except_page_number": true
-      },
-      {
         "current_page": 20,
-        "previous_page": 20,
-        "all_pixels_identical": true,
+        "previous_page": 19,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 21,
-        "previous_page": 21,
-        "all_pixels_identical": true,
+        "previous_page": 20,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 22,
-        "previous_page": 22,
-        "all_pixels_identical": true,
+        "previous_page": 21,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 23,
-        "previous_page": 23,
-        "all_pixels_identical": true,
+        "previous_page": 22,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 24,
-        "previous_page": 24,
-        "all_pixels_identical": true,
+        "previous_page": 23,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 25,
-        "previous_page": 25,
-        "all_pixels_identical": true,
+        "previous_page": 24,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 26,
-        "previous_page": 26,
-        "all_pixels_identical": true,
+        "previous_page": 25,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 27,
-        "previous_page": 27,
-        "all_pixels_identical": true,
+        "previous_page": 26,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 28,
-        "previous_page": 28,
-        "all_pixels_identical": true,
+        "previous_page": 27,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 29,
-        "previous_page": 29,
-        "all_pixels_identical": true,
+        "previous_page": 28,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 30,
-        "previous_page": 30,
-        "all_pixels_identical": true,
+        "previous_page": 29,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 31,
-        "previous_page": 31,
-        "all_pixels_identical": true,
+        "previous_page": 30,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 32,
-        "previous_page": 32,
-        "all_pixels_identical": true,
+        "previous_page": 31,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 33,
-        "previous_page": 33,
-        "all_pixels_identical": true,
+        "previous_page": 32,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 34,
-        "previous_page": 34,
-        "all_pixels_identical": true,
+        "previous_page": 33,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 35,
-        "previous_page": 35,
-        "all_pixels_identical": true,
+        "previous_page": 34,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 36,
-        "previous_page": 36,
-        "all_pixels_identical": true,
+        "previous_page": 35,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 37,
-        "previous_page": 37,
-        "all_pixels_identical": true,
+        "previous_page": 36,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 38,
-        "previous_page": 38,
-        "all_pixels_identical": true,
+        "previous_page": 37,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 39,
-        "previous_page": 39,
-        "all_pixels_identical": true,
+        "previous_page": 38,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 40,
-        "previous_page": 40,
-        "all_pixels_identical": true,
+        "previous_page": 39,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 41,
-        "previous_page": 41,
-        "all_pixels_identical": true,
+        "previous_page": 40,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 42,
-        "previous_page": 42,
-        "all_pixels_identical": true,
+        "previous_page": 41,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 43,
-        "previous_page": 43,
-        "all_pixels_identical": true,
+        "previous_page": 42,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 44,
-        "previous_page": 44,
-        "all_pixels_identical": true,
+        "previous_page": 43,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 45,
-        "previous_page": 45,
-        "all_pixels_identical": true,
+        "previous_page": 44,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 46,
-        "previous_page": 46,
-        "all_pixels_identical": true,
+        "previous_page": 45,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 47,
-        "previous_page": 47,
-        "all_pixels_identical": true,
+        "previous_page": 46,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 48,
-        "previous_page": 48,
-        "all_pixels_identical": true,
+        "previous_page": 47,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 49,
-        "previous_page": 49,
-        "all_pixels_identical": true,
+        "previous_page": 48,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 50,
-        "previous_page": 50,
-        "all_pixels_identical": true,
+        "previous_page": 49,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 51,
-        "previous_page": 51,
-        "all_pixels_identical": true,
+        "previous_page": 50,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 52,
-        "previous_page": 52,
-        "all_pixels_identical": true,
+        "previous_page": 51,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 53,
-        "previous_page": 53,
-        "all_pixels_identical": true,
+        "previous_page": 52,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 54,
-        "previous_page": 54,
-        "all_pixels_identical": true,
+        "previous_page": 53,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 55,
-        "previous_page": 55,
-        "all_pixels_identical": true,
+        "previous_page": 54,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 56,
-        "previous_page": 56,
-        "all_pixels_identical": true,
+        "previous_page": 55,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 57,
-        "previous_page": 57,
-        "all_pixels_identical": true,
+        "previous_page": 56,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 58,
-        "previous_page": 58,
-        "all_pixels_identical": true,
+        "previous_page": 57,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 59,
-        "previous_page": 59,
-        "all_pixels_identical": true,
+        "previous_page": 58,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 60,
-        "previous_page": 60,
-        "all_pixels_identical": true,
+        "previous_page": 59,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 61,
-        "previous_page": 61,
-        "all_pixels_identical": true,
+        "previous_page": 60,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 62,
-        "previous_page": 62,
-        "all_pixels_identical": true,
+        "previous_page": 61,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 63,
-        "previous_page": 63,
-        "all_pixels_identical": true,
+        "previous_page": 62,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 64,
-        "previous_page": 64,
-        "all_pixels_identical": true,
+        "previous_page": 63,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 65,
-        "previous_page": 65,
-        "all_pixels_identical": true,
+        "previous_page": 64,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 66,
-        "previous_page": 66,
-        "all_pixels_identical": true,
+        "previous_page": 65,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 67,
-        "previous_page": 67,
-        "all_pixels_identical": true,
+        "previous_page": 66,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 68,
-        "previous_page": 68,
-        "all_pixels_identical": true,
+        "previous_page": 67,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 69,
-        "previous_page": 69,
-        "all_pixels_identical": true,
+        "previous_page": 68,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 70,
-        "previous_page": 70,
-        "all_pixels_identical": true,
+        "previous_page": 69,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 71,
-        "previous_page": 71,
-        "all_pixels_identical": true,
+        "previous_page": 70,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 72,
-        "previous_page": 72,
-        "all_pixels_identical": true,
+        "previous_page": 71,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 73,
-        "previous_page": 73,
-        "all_pixels_identical": true,
+        "previous_page": 72,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 74,
-        "previous_page": 74,
-        "all_pixels_identical": true,
+        "previous_page": 73,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 75,
-        "previous_page": 75,
-        "all_pixels_identical": true,
+        "previous_page": 74,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 76,
-        "previous_page": 76,
-        "all_pixels_identical": true,
+        "previous_page": 75,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 77,
-        "previous_page": 77,
-        "all_pixels_identical": true,
+        "previous_page": 76,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 78,
-        "previous_page": 78,
-        "all_pixels_identical": true,
+        "previous_page": 77,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 79,
-        "previous_page": 79,
-        "all_pixels_identical": true,
+        "previous_page": 78,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 80,
-        "previous_page": 80,
-        "all_pixels_identical": true,
+        "previous_page": 79,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 81,
-        "previous_page": 81,
-        "all_pixels_identical": true,
+        "previous_page": 80,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 82,
-        "previous_page": 82,
-        "all_pixels_identical": true,
+        "previous_page": 81,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 83,
-        "previous_page": 83,
-        "all_pixels_identical": true,
+        "previous_page": 82,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 84,
-        "previous_page": 84,
-        "all_pixels_identical": true,
+        "previous_page": 83,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 85,
-        "previous_page": 85,
-        "all_pixels_identical": true,
+        "previous_page": 84,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 86,
-        "previous_page": 86,
-        "all_pixels_identical": true,
+        "previous_page": 85,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 87,
-        "previous_page": 87,
-        "all_pixels_identical": true,
+        "previous_page": 86,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 88,
-        "previous_page": 88,
-        "all_pixels_identical": true,
+        "previous_page": 87,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 89,
-        "previous_page": 89,
-        "all_pixels_identical": true,
+        "previous_page": 88,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 90,
-        "previous_page": 90,
-        "all_pixels_identical": true,
+        "previous_page": 89,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 91,
-        "previous_page": 91,
-        "all_pixels_identical": true,
+        "previous_page": 90,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 92,
-        "previous_page": 92,
-        "all_pixels_identical": true,
+        "previous_page": 91,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 93,
-        "previous_page": 93,
-        "all_pixels_identical": true,
+        "previous_page": 92,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 94,
-        "previous_page": 94,
-        "all_pixels_identical": true,
+        "previous_page": 93,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 95,
-        "previous_page": 95,
-        "all_pixels_identical": true,
+        "previous_page": 94,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
         "current_page": 96,
-        "previous_page": 96,
-        "all_pixels_identical": true,
+        "previous_page": 95,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
-      }
-    ],
-    "all_pages_composition_checked": true,
-    "visual_method": "Inspección directa de 16 páginas a 110 dpi; 98 páginas comparadas con el PDF de 112 páginas anterior: 93 idénticas en todos sus píxeles y 5 idénticas salvo folio. Verificados los 114 folios. Revisión independiente de pp. 97–98 y 111–114.",
-    "chapter_6_pages": [
-      55,
-      66
-    ],
-    "previous_visual_review_preserved_except_page_number": [
+      },
+      {
+        "current_page": 97,
+        "previous_page": 96,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 98,
+        "previous_page": 97,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
       {
         "current_page": 99,
         "previous_page": 98,
@@ -875,27 +872,639 @@
         "previous_page": 102,
         "all_pixels_identical": false,
         "identical_except_page_number": true
+      },
+      {
+        "current_page": 104,
+        "previous_page": 103,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 105,
+        "previous_page": 104,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 106,
+        "previous_page": 105,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 107,
+        "previous_page": 106,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 108,
+        "previous_page": 107,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 109,
+        "previous_page": 108,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 110,
+        "previous_page": 109,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 111,
+        "previous_page": 110,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      }
+    ],
+    "all_pages_composition_checked": true,
+    "visual_method": "Renderizado Poppler a 110 dpi. Inspección directa de las diez páginas nuevas o modificadas; comparación exacta de píxeles del resto excluyendo solo el folio (rectángulo 280,790,317,815 pt).",
+    "chapter_6_pages": [
+      56,
+      67
+    ],
+    "previous_visual_review_preserved_except_page_number": [
+      {
+        "current_page": 20,
+        "previous_page": 19,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 21,
+        "previous_page": 20,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 22,
+        "previous_page": 21,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 23,
+        "previous_page": 22,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 24,
+        "previous_page": 23,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 25,
+        "previous_page": 24,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 26,
+        "previous_page": 25,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 27,
+        "previous_page": 26,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 28,
+        "previous_page": 27,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 29,
+        "previous_page": 28,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 30,
+        "previous_page": 29,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 31,
+        "previous_page": 30,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 32,
+        "previous_page": 31,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 33,
+        "previous_page": 32,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 34,
+        "previous_page": 33,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 35,
+        "previous_page": 34,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 36,
+        "previous_page": 35,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 37,
+        "previous_page": 36,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 38,
+        "previous_page": 37,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 39,
+        "previous_page": 38,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 40,
+        "previous_page": 39,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 41,
+        "previous_page": 40,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 42,
+        "previous_page": 41,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 43,
+        "previous_page": 42,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 44,
+        "previous_page": 43,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 45,
+        "previous_page": 44,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 46,
+        "previous_page": 45,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 47,
+        "previous_page": 46,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 48,
+        "previous_page": 47,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 49,
+        "previous_page": 48,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 50,
+        "previous_page": 49,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 51,
+        "previous_page": 50,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 52,
+        "previous_page": 51,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 53,
+        "previous_page": 52,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 54,
+        "previous_page": 53,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 55,
+        "previous_page": 54,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 56,
+        "previous_page": 55,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 57,
+        "previous_page": 56,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 58,
+        "previous_page": 57,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 59,
+        "previous_page": 58,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 60,
+        "previous_page": 59,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 61,
+        "previous_page": 60,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 62,
+        "previous_page": 61,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 63,
+        "previous_page": 62,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 64,
+        "previous_page": 63,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 65,
+        "previous_page": 64,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 66,
+        "previous_page": 65,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 67,
+        "previous_page": 66,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 68,
+        "previous_page": 67,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 69,
+        "previous_page": 68,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 70,
+        "previous_page": 69,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 71,
+        "previous_page": 70,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 72,
+        "previous_page": 71,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 73,
+        "previous_page": 72,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 74,
+        "previous_page": 73,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 75,
+        "previous_page": 74,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 76,
+        "previous_page": 75,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 77,
+        "previous_page": 76,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 78,
+        "previous_page": 77,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 79,
+        "previous_page": 78,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 80,
+        "previous_page": 79,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 81,
+        "previous_page": 80,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 82,
+        "previous_page": 81,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 83,
+        "previous_page": 82,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 84,
+        "previous_page": 83,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 85,
+        "previous_page": 84,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 86,
+        "previous_page": 85,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 87,
+        "previous_page": 86,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 88,
+        "previous_page": 87,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 89,
+        "previous_page": 88,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 90,
+        "previous_page": 89,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 91,
+        "previous_page": 90,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 92,
+        "previous_page": 91,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 93,
+        "previous_page": 92,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 94,
+        "previous_page": 93,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 95,
+        "previous_page": 94,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 96,
+        "previous_page": 95,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 97,
+        "previous_page": 96,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 98,
+        "previous_page": 97,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 99,
+        "previous_page": 98,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 100,
+        "previous_page": 99,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 101,
+        "previous_page": 100,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 102,
+        "previous_page": 101,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 103,
+        "previous_page": 102,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 104,
+        "previous_page": 103,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 105,
+        "previous_page": 104,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 106,
+        "previous_page": 105,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 107,
+        "previous_page": 106,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 108,
+        "previous_page": 107,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 109,
+        "previous_page": 108,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 110,
+        "previous_page": 109,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 111,
+        "previous_page": 110,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
       }
     ],
     "chapter_7_pages": [
-      67,
-      79
+      68,
+      80
     ],
     "chapter_8_pages": [
-      80,
-      98
+      81,
+      99
     ],
     "chapter_9_pages": [
-      99,
-      110
+      100,
+      111
     ],
-    "visual_review_result": "Sin problemas de legibilidad, fórmulas, tablas, referencias o desbordes. Saltos de página normales.",
-    "printed_folios_verified": 114,
+    "visual_review_result": "Diez páginas nuevas o modificadas inspeccionadas directamente, sin problemas de legibilidad, tablas, fórmulas, referencias o desbordes; las restantes 105 conservan el cuerpo renderizado anterior.",
+    "printed_folios_verified": 115,
     "reading_copy_identical_to_compiled_pdf": true,
-    "previous_pdf_sha256_for_comparison": "fbca9c3177f6df68129dfd1f845bcfceefd1b74940d657ba53b7c9d7f0ea2e4d",
+    "previous_pdf_sha256_for_comparison": "29eb35b259568391b8f9efcccfc0eea17fc1160ffd51947394d443229df4c871",
     "complement_8_17_pages": [
-      97,
-      98
+      98,
+      99
+    ],
+    "guide_A93_pages": [
+      19,
+      19
     ]
   },
   "events": [
@@ -5149,6 +5758,917 @@
         "note": "Este registro se prepara antes del commit final. Las comprobaciones de Drive anteriores están completadas; no se afirma una publicación o lectura posterior de GitHub todavía no realizada."
       },
       "next_step": "Estudiar las entradas de selección analítica de primos auxiliares de A§3 y de compatibilidad automórfica de Galois de A§9, con sus condiciones locales, rangos y cuantificadores para los mismos datos."
+    },
+    {
+      "date": "2026-11-23",
+      "action": "source_A93_long_edition_incorporated",
+      "previous_github_commit": "c7524dbc07f010e5334a5db66c2c56187f6316f2",
+      "request": "Otra fuente para considerar: https://www.ulam.ai/research/rh-long.pdf",
+      "canonical_file": "tex/capitulos/00-guia.tex",
+      "canonical_sha256": "427da22f05172bc9a2ddca9bffa72666e3689be0bc13a393b8563675b5610cae",
+      "canonical_support_files": [
+        {
+          "path": "tex/referencias.tex",
+          "size_bytes": 16149,
+          "sha256": "f54800af85729a1064939f2ff4d4437ae8f157eb1f4fa3abe79a709d25d0f7ff"
+        },
+        {
+          "path": "fuentes/README.md",
+          "size_bytes": 40481,
+          "sha256": "fd571a3a84f69af05b5b792e7da66eba6d6aa0f2881126864ca602e3be42296e"
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 12315,
+          "sha256": "79d1b8d863d03c5eb5dd51607037d83c10d88be6ffa712b7961a03976bab0274"
+        },
+        {
+          "path": "ESTADO.md",
+          "size_bytes": 24563,
+          "sha256": "d2fdab03cf2df9aa4abbfd6f13bfa999323f6a230cc23a6725e13459226e8a16"
+        }
+      ],
+      "contents": {
+        "new_subsection": "0.16",
+        "title": "La versión larga A93: guía de cotejo",
+        "pages": [
+          19,
+          19
+        ],
+        "source_table_body_rows": 6,
+        "source_table_columns": 3,
+        "new_numbered_equations": 0,
+        "new_numbered_statements": 0,
+        "introduction_and_notes_1_to_9_tex_byte_identical": true,
+        "new_note_created": false,
+        "scope": "Identidad documental, tabla de correspondencias y precisiones de lectura; no se modifica el contenido matemático de las nueve notas."
+      },
+      "source_review": "source_A93_review",
+      "previous_lean_manifests_preserved": [
+        "lean_source_review",
+        "lean_source_review_characters",
+        "lean_source_review_frames",
+        "lean_source_review_periods",
+        "lean_source_review_geometry",
+        "lean_source_review_cohomology",
+        "lean_source_review_parameters"
+      ],
+      "previous_source_C_review_preserved": true,
+      "previous_events_preserved": 13,
+      "pdf": {
+        "path": "pdf/notas-hipotesis-riemann.pdf",
+        "size_bytes": 1024924,
+        "sha256": "3223bde0c99cdc3a2c7afbe5eca2c88be3c5e8beb81c2279404afac375f15824",
+        "pages": 115,
+        "page_size": "A4",
+        "compilation_exit_code": 0,
+        "warnings": 0,
+        "unresolved_references": 0,
+        "overfull_boxes": 0,
+        "underfull_boxes": 0,
+        "missing_characters": 0,
+        "reading_copy_identical_to_compiled_pdf": true,
+        "all_pages_visually_reviewed_in_this_revision": false,
+        "directly_visually_reviewed_pages": [
+          2,
+          3,
+          4,
+          5,
+          17,
+          19,
+          112,
+          113,
+          114,
+          115
+        ],
+        "independently_reviewed_pages": [
+          19,
+          112,
+          113,
+          114,
+          115
+        ],
+        "all_pages_composition_checked": true,
+        "printed_folios_verified": 115,
+        "current_ranges": {
+          "introduction": [
+            6,
+            16
+          ],
+          "guide": [
+            17,
+            19
+          ],
+          "guide_A93": [
+            19,
+            19
+          ],
+          "chapter_1": [
+            20,
+            22
+          ],
+          "chapter_2": [
+            23,
+            25
+          ],
+          "chapter_3": [
+            26,
+            33
+          ],
+          "chapter_4": [
+            34,
+            45
+          ],
+          "chapter_5": [
+            46,
+            55
+          ],
+          "chapter_6": [
+            56,
+            67
+          ],
+          "chapter_7": [
+            68,
+            80
+          ],
+          "chapter_8": [
+            81,
+            99
+          ],
+          "complement_8_17": [
+            98,
+            99
+          ],
+          "chapter_9": [
+            100,
+            111
+          ],
+          "references_and_status": [
+            112,
+            115
+          ]
+        },
+        "comparison": {
+          "previous_pdf_sha256": "29eb35b259568391b8f9efcccfc0eea17fc1160ffd51947394d443229df4c871",
+          "dpi": 110,
+          "all_pixels_identical_page_count": 13,
+          "body_identical_except_folio_page_count": 92,
+          "previous_visual_review_preserved_by_pixel_identity": [
+            {
+              "current_page": 1,
+              "previous_page": 1,
+              "all_pixels_identical": true,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 6,
+              "previous_page": 6,
+              "all_pixels_identical": true,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 7,
+              "previous_page": 7,
+              "all_pixels_identical": true,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 8,
+              "previous_page": 8,
+              "all_pixels_identical": true,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 9,
+              "previous_page": 9,
+              "all_pixels_identical": true,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 10,
+              "previous_page": 10,
+              "all_pixels_identical": true,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 11,
+              "previous_page": 11,
+              "all_pixels_identical": true,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 12,
+              "previous_page": 12,
+              "all_pixels_identical": true,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 13,
+              "previous_page": 13,
+              "all_pixels_identical": true,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 14,
+              "previous_page": 14,
+              "all_pixels_identical": true,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 15,
+              "previous_page": 15,
+              "all_pixels_identical": true,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 16,
+              "previous_page": 16,
+              "all_pixels_identical": true,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 18,
+              "previous_page": 18,
+              "all_pixels_identical": true,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 20,
+              "previous_page": 19,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 21,
+              "previous_page": 20,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 22,
+              "previous_page": 21,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 23,
+              "previous_page": 22,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 24,
+              "previous_page": 23,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 25,
+              "previous_page": 24,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 26,
+              "previous_page": 25,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 27,
+              "previous_page": 26,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 28,
+              "previous_page": 27,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 29,
+              "previous_page": 28,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 30,
+              "previous_page": 29,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 31,
+              "previous_page": 30,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 32,
+              "previous_page": 31,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 33,
+              "previous_page": 32,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 34,
+              "previous_page": 33,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 35,
+              "previous_page": 34,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 36,
+              "previous_page": 35,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 37,
+              "previous_page": 36,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 38,
+              "previous_page": 37,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 39,
+              "previous_page": 38,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 40,
+              "previous_page": 39,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 41,
+              "previous_page": 40,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 42,
+              "previous_page": 41,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 43,
+              "previous_page": 42,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 44,
+              "previous_page": 43,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 45,
+              "previous_page": 44,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 46,
+              "previous_page": 45,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 47,
+              "previous_page": 46,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 48,
+              "previous_page": 47,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 49,
+              "previous_page": 48,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 50,
+              "previous_page": 49,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 51,
+              "previous_page": 50,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 52,
+              "previous_page": 51,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 53,
+              "previous_page": 52,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 54,
+              "previous_page": 53,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 55,
+              "previous_page": 54,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 56,
+              "previous_page": 55,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 57,
+              "previous_page": 56,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 58,
+              "previous_page": 57,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 59,
+              "previous_page": 58,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 60,
+              "previous_page": 59,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 61,
+              "previous_page": 60,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 62,
+              "previous_page": 61,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 63,
+              "previous_page": 62,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 64,
+              "previous_page": 63,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 65,
+              "previous_page": 64,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 66,
+              "previous_page": 65,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 67,
+              "previous_page": 66,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 68,
+              "previous_page": 67,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 69,
+              "previous_page": 68,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 70,
+              "previous_page": 69,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 71,
+              "previous_page": 70,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 72,
+              "previous_page": 71,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 73,
+              "previous_page": 72,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 74,
+              "previous_page": 73,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 75,
+              "previous_page": 74,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 76,
+              "previous_page": 75,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 77,
+              "previous_page": 76,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 78,
+              "previous_page": 77,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 79,
+              "previous_page": 78,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 80,
+              "previous_page": 79,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 81,
+              "previous_page": 80,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 82,
+              "previous_page": 81,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 83,
+              "previous_page": 82,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 84,
+              "previous_page": 83,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 85,
+              "previous_page": 84,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 86,
+              "previous_page": 85,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 87,
+              "previous_page": 86,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 88,
+              "previous_page": 87,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 89,
+              "previous_page": 88,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 90,
+              "previous_page": 89,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 91,
+              "previous_page": 90,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 92,
+              "previous_page": 91,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 93,
+              "previous_page": 92,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 94,
+              "previous_page": 93,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 95,
+              "previous_page": 94,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 96,
+              "previous_page": 95,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 97,
+              "previous_page": 96,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 98,
+              "previous_page": 97,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 99,
+              "previous_page": 98,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 100,
+              "previous_page": 99,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 101,
+              "previous_page": 100,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 102,
+              "previous_page": 101,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 103,
+              "previous_page": 102,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 104,
+              "previous_page": 103,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 105,
+              "previous_page": 104,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 106,
+              "previous_page": 105,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 107,
+              "previous_page": 106,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 108,
+              "previous_page": 107,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 109,
+              "previous_page": 108,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 110,
+              "previous_page": 109,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            },
+            {
+              "current_page": 111,
+              "previous_page": 110,
+              "all_pixels_identical": false,
+              "identical_except_page_number": true
+            }
+          ]
+        },
+        "review_result": "Diez páginas nuevas o modificadas inspeccionadas directamente, sin problemas de legibilidad, tablas, fórmulas, referencias o desbordes; las restantes 105 conservan el cuerpo renderizado anterior."
+      },
+      "markdown_review": {
+        "files_updated": [
+          "00-Mapa-de-estudio.md",
+          "03-Dudas-y-pendientes.md"
+        ],
+        "mode": "Añadidos documentales y rutas de lectura; localizador de A55§9 corregido41→42. Sin capítulo matemático nuevo.",
+        "existing_equations_and_headings_preserved": true,
+        "obsidian_rendering_checked": false
+      },
+      "vault_prewrite_version_guard": {
+        "method": "Recuperación íntegra de ambos Markdown inmediatamente antes de reemplazo; bytes, identificadores, nombres, MIME y carpeta padre cotejados.",
+        "files": [
+          {
+            "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+            "name": "00-Mapa-de-estudio.md",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "modified_time": "2026-11-23T13:04:50.298Z",
+            "size_bytes": 16437,
+            "sha256": "b74fca85a5a1b33be969bdbe261ebd36ff9a9e7d68cce538249d51c9795d19c0",
+            "full_bytes_verified": true,
+            "identical_to_baseline": true
+          },
+          {
+            "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+            "name": "03-Dudas-y-pendientes.md",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "modified_time": "2026-11-23T13:04:53.877Z",
+            "size_bytes": 20375,
+            "sha256": "29b412c70ea79db45ac6c9adb50369a5ef1dfb6119369501490b3ff95fe7f0c2",
+            "full_bytes_verified": true,
+            "identical_to_baseline": true
+          }
+        ]
+      },
+      "vault_files_written_and_readback_verified": [
+        {
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+          "name": "00-Mapa-de-estudio.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "modified_time": "2026-11-23T13:37:01.971Z",
+          "size_bytes": 17386,
+          "sha256": "064da22bb0993e70aa55c3d7cc04e64667cf95b656553a86516d1f947954c0b0",
+          "full_bytes_verified": true,
+          "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
+          "verification": "Recuperación íntegra posterior; igualdad byte por byte, nombre, tipo y carpeta padre comprobados."
+        },
+        {
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+          "name": "03-Dudas-y-pendientes.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "modified_time": "2026-11-23T13:37:05.528Z",
+          "size_bytes": 21607,
+          "sha256": "c5e57169005eb39c83f678e17b6afd369892ebbb0b6f622d37dcdf0c4e3af9b6",
+          "full_bytes_verified": true,
+          "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
+          "verification": "Recuperación íntegra posterior; igualdad byte por byte, nombre, tipo y carpeta padre comprobados."
+        },
+        {
+          "id": "13YSIDffeNiFm0gyZxDRHGQ2pZxqdpUH3",
+          "name": "rh-long-295153115a03.pdf",
+          "mime_type": "application/pdf",
+          "parent_ids": [
+            "1JOOvjCkJkco_6fRznoOYLg-jsOiBQlol"
+          ],
+          "modified_time": "2026-11-23T13:33:53.662Z",
+          "size_bytes": 1130005,
+          "sha256": "295153115a035f909faee55ea26e2fbdd9471e4f1d89439a16480bbd74011dfb",
+          "full_bytes_verified": true,
+          "source": "A93",
+          "pages": 93,
+          "url": "https://drive.google.com/file/d/13YSIDffeNiFm0gyZxDRHGQ2pZxqdpUH3/view",
+          "path_in_vault_project": "Fuentes/rh-long-295153115a03.pdf",
+          "verification": "PDF original recuperado íntegramente del destino; bytes, nombre, tipo y carpeta padre comprobados."
+        }
+      ],
+      "vault_editorial_changes": [
+        {
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+          "name": "00-Mapa-de-estudio.md",
+          "before_sha256": "b74fca85a5a1b33be969bdbe261ebd36ff9a9e7d68cce538249d51c9795d19c0",
+          "after_sha256": "064da22bb0993e70aa55c3d7cc04e64667cf95b656553a86516d1f947954c0b0",
+          "change": "Añadida A93, sus localizadores y delimitación de alcance; inicio de A55§9 corregido a p.42."
+        },
+        {
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+          "name": "03-Dudas-y-pendientes.md",
+          "before_sha256": "29b412c70ea79db45ac6c9adb50369a5ef1dfb6119369501490b3ff95fe7f0c2",
+          "after_sha256": "c5e57169005eb39c83f678e17b6afd369892ebbb0b6f622d37dcdf0c4e3af9b6",
+          "change": "Añadida A93, sus localizadores y delimitación de alcance; inicio de A55§9 corregido a p.42."
+        }
+      ],
+      "vault_inventory_after": {
+        "markdown_files": 12,
+        "original_pdf_sources": 4,
+        "svg_files": 1,
+        "total_files": 17,
+        "previous_16_file_ids_preserved": true,
+        "previous_files_modified": 2,
+        "new_files": 1
+      },
+      "publication_authorization": "Se mantiene la autorización para continuar el estudio, actualizar los borradores y publicar en el repositorio público; incorporación de la fuente enviada por el usuario.",
+      "github_publication_at_record_time": {
+        "status": "prepared_pending_commit_and_readback",
+        "baseline_commit": "c7524dbc07f010e5334a5db66c2c56187f6316f2",
+        "new_commit": null,
+        "remote_files_readback_completed": false,
+        "note": "Registro preparado antes del commit final; las verificaciones de Drive y PDF están terminadas. La comprobación posterior de GitHub se comunica al concluir, sin inventar un hash autorreferente."
+      },
+      "next_step": "Primos auxiliares: A55§3/A93§5, desigualdad maximal, progresión dependiente y umbrales uniformes; después compatibilidad de Galois A55§9/A93§10."
     }
   ],
   "github": {
@@ -13852,5 +15372,523 @@
     "all_108_source_declarations_independently_audited": false,
     "original_distribution_compared": false,
     "global_RH_or_GRH_proof_certified": false
+  },
+  "source_A93_review": {
+    "schema_version": 1,
+    "review_key": "A93_initial_documentary_comparison",
+    "date": "2026-11-23",
+    "label": "A93",
+    "existing_label_A_preserved_for_A55": true,
+    "title": "Dirichlet L-functions and the critical line",
+    "public_url": "https://www.ulam.ai/research/rh-long.pdf",
+    "original_pdf": {
+      "id": "13YSIDffeNiFm0gyZxDRHGQ2pZxqdpUH3",
+      "name": "rh-long-295153115a03.pdf",
+      "mime_type": "application/pdf",
+      "parent_ids": [
+        "1JOOvjCkJkco_6fRznoOYLg-jsOiBQlol"
+      ],
+      "modified_time": "2026-11-23T13:33:53.662Z",
+      "size_bytes": 1130005,
+      "sha256": "295153115a035f909faee55ea26e2fbdd9471e4f1d89439a16480bbd74011dfb",
+      "full_bytes_verified": true,
+      "source": "A93",
+      "pages": 93,
+      "url": "https://drive.google.com/file/d/13YSIDffeNiFm0gyZxDRHGQ2pZxqdpUH3/view",
+      "path_in_vault_project": "Fuentes/rh-long-295153115a03.pdf",
+      "verification": "PDF original recuperado íntegramente del destino; bytes, nombre, tipo y carpeta padre comprobados."
+    },
+    "author_identified": null,
+    "author_evidence": "Portada sin firma; campo Author del PDF vacío; pdfauthor vacío y sin declaración de autor en el TeX público enlazado. La atribución del desarrollo formal a Alpöge con Claude no firma la prosa.",
+    "date_evidence": {
+      "printed_in_pdf": null,
+      "ulam_record_published": "2026-11-23",
+      "pdf_creation_and_modification_utc": "2026-11-23T09:27:06Z",
+      "http_last_modified_utc": "2026-11-23T12:25:39Z",
+      "retrieved_utc": "2026-11-23T13:27:35.137363Z",
+      "distinction": "Fecha del registro editorial, metadatos técnicos y fecha de consulta se conservan por separado."
+    },
+    "editorial_record": {
+      "url": "https://www.ulam.ai/archive",
+      "title": "The Riemann Hypothesis: Dirichlet L-functions and the Critical Line",
+      "published": "2026-11-23",
+      "attachment_label": "Long version (PDF)",
+      "main_url": "https://www.ulam.ai/research/riemann_hypothesis.pdf",
+      "tex_url": "https://www.ulam.ai/research/rh-long.tex",
+      "relationship": "Mismo registro editorial que A55; ampliación y reorganización, sin afirmar equivalencia íntegra."
+    },
+    "source_relations": {
+      "recorded_utc": "2026-11-23T13:31:04.467976+00:00",
+      "observed": [
+        {
+          "role": "A55_historical",
+          "bytes": 845543,
+          "sha256": "419e24a4ba07eb9ce98524ad11f568f2bd87d8d70abe288e4ef37632bdd8bb85",
+          "physical_pages": 55,
+          "identical_bytes_to_roles": [
+            "main_live"
+          ]
+        },
+        {
+          "role": "long_fixed",
+          "bytes": 1130005,
+          "sha256": "295153115a035f909faee55ea26e2fbdd9471e4f1d89439a16480bbd74011dfb",
+          "physical_pages": 93,
+          "identical_bytes_to_roles": []
+        },
+        {
+          "role": "main_live",
+          "bytes": 845543,
+          "sha256": "419e24a4ba07eb9ce98524ad11f568f2bd87d8d70abe288e4ef37632bdd8bb85",
+          "physical_pages": 55,
+          "identical_bytes_to_roles": [
+            "A55_historical"
+          ]
+        },
+        {
+          "role": "short_live",
+          "bytes": 643001,
+          "sha256": "9fb2e8afe44c597914297b5b176a2a20600e6e69c04fd9875377547f10fea568",
+          "physical_pages": 23,
+          "identical_bytes_to_roles": []
+        }
+      ],
+      "conclusion": "En la descarga de 2026-11-23 13:31 UTC, el principal vivo riemann_hypothesis.pdf coincide byte por byte con A55 histórico. El adjunto editorial Short version corresponde a rh-short.pdf, de 23 páginas, distinto de A55 y del largo de 93 páginas. No se reemplazó ningún archivo histórico."
+    },
+    "short_version_status": "rh-short.pdf tiene 23 páginas; se descargó solo para identificarlo. No es A55 ni se incorpora como fuente estudiada.",
+    "lean_archive_cited": {
+      "repository": "https://github.com/CocoSgt/riemann-hypothesis-lean",
+      "pinned_commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+      "commit_declaration_pages": [
+        89,
+        90
+      ],
+      "lean_version_declared": "4.33.1",
+      "mathlib_commit_declared": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "toolchain_declaration_page": 90,
+      "pinned_link_annotations": 191,
+      "unique_pinned_link_uris": 146,
+      "pinned_revisions_observed": [
+        "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4"
+      ],
+      "main": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Main.lean",
+      "statements": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Statements.lean",
+      "source_links_checked_for_reachability": false,
+      "source_built_or_checked": false,
+      "same_revision_as_seven_previous_lean_manifests": true,
+      "new_lean_files_retrieved_or_read": 0,
+      "lean_executed": false
+    },
+    "architecture_correspondence": [
+      {
+        "topic": "Planteamiento",
+        "A55": {
+          "section": "1",
+          "pages": [
+            1,
+            3
+          ]
+        },
+        "A93": {
+          "section": "1",
+          "pages": [
+            1,
+            5
+          ]
+        },
+        "comment": "Amplía la guía de dependencias y añade informes externos de verificación, atribuidos a su fuente."
+      },
+      {
+        "topic": "Ventanas unilaterales y polos",
+        "A55": {
+          "section": "2",
+          "pages": [
+            3,
+            7
+          ]
+        },
+        "A93": {
+          "section": "2",
+          "pages": [
+            5,
+            10
+          ]
+        },
+        "comment": "Conserva los resultados 2.1–2.5 y añade Corolario 2.6 (p. 9)."
+      },
+      {
+        "topic": "Primos auxiliares",
+        "A55": {
+          "section": "3",
+          "pages": [
+            7,
+            12
+          ]
+        },
+        "A93": {
+          "section": "5",
+          "pages": [
+            21,
+            28
+          ]
+        },
+        "comment": "3.1→5.1; 3.2→5.3; se intercala Lema 5.2 maximal (p. 25)."
+      },
+      {
+        "topic": "Cuerpo anfitrión y extracción",
+        "A55": {
+          "section": "4",
+          "pages": [
+            12,
+            17
+          ]
+        },
+        "A93": {
+          "section": "6",
+          "pages": [
+            28,
+            37
+          ]
+        },
+        "comment": "4.1→6.2; 4.2→6.3; 4.3→6.4; añade Lema 6.1 (p. 29)."
+      },
+      {
+        "topic": "Marcos y pendientes",
+        "A55": {
+          "section": "5",
+          "pages": [
+            17,
+            20
+          ]
+        },
+        "A93": {
+          "section": "3",
+          "pages": [
+            10,
+            16
+          ]
+        },
+        "comment": "5.1→3.2; 5.2→3.3; 5.3→3.5; 5.4→3.6. Añade lemas 3.1 y 3.4."
+      },
+      {
+        "topic": "Torres theta",
+        "A55": {
+          "section": "6",
+          "pages": [
+            20,
+            28
+          ]
+        },
+        "A93": {
+          "section": "7",
+          "pages": [
+            37,
+            49
+          ]
+        },
+        "comment": "6.3→7.4; 6.5→7.7; 6.8→7.11. Añade lemas 7.2, 7.5 y 7.8."
+      },
+      {
+        "topic": "Geometría y marco",
+        "A55": {
+          "section": "7",
+          "pages": [
+            28,
+            34
+          ]
+        },
+        "A93": {
+          "section": "8",
+          "pages": [
+            50,
+            61
+          ]
+        },
+        "comment": "7.1→8.2; 7.2→8.4; 7.3→8.5; 7.4→8.6; 7.5→8.7; 7.6→8.9; 7.7→8.10."
+      },
+      {
+        "topic": "Cohomología y ventana",
+        "A55": {
+          "section": "8",
+          "pages": [
+            35,
+            42
+          ]
+        },
+        "A93": {
+          "section": "9",
+          "pages": [
+            61,
+            77
+          ]
+        },
+        "comment": "8.4→9.4 (LemmaK); 8.5→9.8; 8.6→9.9; 8.7→9.10. Añade lemas 9.5–9.7."
+      },
+      {
+        "topic": "Entrada de Galois",
+        "A55": {
+          "section": "9",
+          "pages": [
+            42,
+            46
+          ]
+        },
+        "A93": {
+          "section": "10",
+          "pages": [
+            77,
+            85
+          ]
+        },
+        "comment": "9.1→10.1; 9.4→10.5; 9.5→10.6; nuevo Lema 10.3."
+      },
+      {
+        "topic": "Cancelación y presupuesto",
+        "A55": {
+          "section": "10",
+          "pages": [
+            46,
+            49
+          ]
+        },
+        "A93": {
+          "section": "4",
+          "pages": [
+            17,
+            21
+          ]
+        },
+        "comment": "10.1→4.1; 10.2→4.3; añade Corolario 4.2 para datos fijos."
+      },
+      {
+        "topic": "Ventana común y conclusión",
+        "A55": {
+          "section": "11",
+          "pages": [
+            49,
+            52
+          ]
+        },
+        "A93": {
+          "section": "11",
+          "pages": [
+            85,
+            89
+          ]
+        },
+        "comment": "Conserva 11.1 y 11.2; añade Lema 11.3, pp. 88–89."
+      },
+      {
+        "topic": "Concordancia Lean",
+        "A55": {
+          "section": "Apéndice A",
+          "pages": [
+            52,
+            54
+          ]
+        },
+        "A93": {
+          "section": "Apéndice A",
+          "pages": [
+            89,
+            92
+          ]
+        },
+        "comment": "Mismo espejo y commit fijado; amplía informes externos de comprobación."
+      },
+      {
+        "topic": "Bibliografía",
+        "A55": {
+          "section": "Referencias",
+          "pages": [
+            54,
+            55
+          ]
+        },
+        "A93": {
+          "section": "Referencias",
+          "pages": [
+            92,
+            93
+          ]
+        },
+        "comment": "Numeración bibliográfica diferente; no trasladar números de referencias."
+      }
+    ],
+    "mathematical_reading": {
+      "full_section_readings": [
+        {
+          "source": "A55",
+          "section": "3",
+          "pages": [
+            7,
+            12
+          ],
+          "end": "Antes del encabezado de §4 en p.12"
+        },
+        {
+          "source": "A93",
+          "section": "5",
+          "pages": [
+            21,
+            28
+          ],
+          "end": "Antes de §6 en p.28"
+        },
+        {
+          "source": "A93",
+          "section": "9",
+          "pages": [
+            61,
+            77
+          ],
+          "end": "Dos párrafos de cierre de §9 en p.77"
+        },
+        {
+          "source": "A93",
+          "section": "11",
+          "pages": [
+            85,
+            89
+          ],
+          "end": "Hasta el inicio del Apéndice A en p.89"
+        }
+      ],
+      "other_targeted_reading": "A93 §§1 y 4, pp.1–4 y17–21; Apéndice A y referencias pp.89–93; pasajes y resultados de otros capítulos para correspondencias. A55 §§8 y11 en pasajes críticos; C22 pp.3–4,11–12,17; Notas8/9 en los apartados pertinentes. No se releyeron íntegramente las nueve notas ni B73.",
+      "source_pages_visually_checked": [
+        1,
+        22,
+        25,
+        27,
+        28,
+        67,
+        74,
+        75,
+        76,
+        86,
+        89
+      ],
+      "all_source_page_folios_match_pdf_counter": {
+        "A55": 55,
+        "A93": 93
+      },
+      "complete_A93_reading": false,
+      "complete_A55_A93_equivalence_audit": false,
+      "prime_selection_comparison": [
+        {
+          "item": "Segundo momento y clase excepcional",
+          "A55": "pp. 9–10, (3.3)–(3.4)",
+          "A93": "pp. 23–24, (5.3)–(5.4)",
+          "finding": "Se mantienen las cotas básicas; A93 añade ejemplos de las clases exteriores de ℓ³,r² y de dos potencias impares, y explicita por qué una sola clase excepcional cuesta como máximo 2B₀R+2B₀².",
+          "status": "Ampliación expositiva; no es una nueva eliminación del cero excepcional."
+        },
+        {
+          "item": "Máximo simultáneo en todo el intervalo",
+          "A55": "p. 10, argumento no numerado por intervalos diádicos",
+          "A93": "Lema 5.2, p. 25, (5.5)",
+          "finding": "A93 reemplaza esa presentación por la integral de la derivada de t^{-1-2τ}|F_p(t)|² y da el número explícito Ch^{-2}|P|Y^{-2τ}[(1+1/τ)log(2Y)+1/(2τ²)], independiente de X.",
+          "status": "Deducción elemental desarrollada bajo dos hipótesis de segundo momento."
+        },
+        {
+          "item": "Uniformidad respecto de q",
+          "A55": "p. 10, descrita con un techo común F",
+          "A93": "pp. 25–27",
+          "finding": "Se explicita que a cada q solo le corresponden como máximo 2φ(8M) funciones base, todas acotadas por 1; el coste de unión no crece con su conductor. El techo F=8Me^z es uniforme en q y se toma el máximo de umbrales antes de elegir ambos primos.",
+          "status": "Explicación de cuantificadores; requiere las estimaciones analíticas uniformes declaradas."
+        },
+        {
+          "item": "Inyección para exclusión por densidad de ceros",
+          "A55": "p. 10",
+          "A93": "p. 26",
+          "finding": "Se prueba que el primo nuevo es el único divisor del conductor fp mayor que F; la inyección sigue siendo válida aunque el carácter base varíe. Se explicita la proporción O(U^{-21/40}).",
+          "status": "Reducción finita a la entrada CountBad."
+        },
+        {
+          "item": "Selección en fibras dependientes",
+          "A55": "p. 10, selección sucesiva",
+          "A93": "p. 26 y comienzo de p. 27",
+          "finding": "Se añade el principio finito Q, D_q: las proporciones 1−η en ambas etapas dan una pareja compatible y probabilidad al menos (1−η)² para el muestreo condicional; no exige independencia ni fibras del mismo tamaño.",
+          "status": "Deducción finita que clarifica PairShare; no prueba por sí sola sus hipótesis."
+        },
+        {
+          "item": "Escala delgada",
+          "A55": "Prop. 3.2, pp. 11–12",
+          "A93": "Prop. 5.3, pp. 27–28; (5.10), p. 28",
+          "finding": "Se conserva la proposición y se añade la regla general: si log conductor≤Dx^a(log x)^b y log y≥c₀x^d, entonces toda r<min(d−a,d/2) permite error relativo≤e^{−x^r}, a partir de la fórmula explícita uniforme. Aquí a=ε/5,d=ε/3 y ε/8<2ε/15.",
+          "status": "Comparación de exponentes demostrada bajo PsiThin."
+        }
+      ],
+      "inputs_still_required": [
+        "MSqCount",
+        "twistK",
+        "CountBad",
+        "TailKExp",
+        "BoxOfS",
+        "Kappa4Loglog",
+        "PsiThin"
+      ],
+      "important_precisions": [
+        {
+          "topic": "Promedio de extracción",
+          "A93_pages": [
+            18,
+            36
+          ],
+          "finding": "La extracción consume un promedio uniforme compatible; la cota por traslación de Prop.6.4 y de la Nota9 sigue siendo suficiente. Conservar pesos y errores uniformes."
+        },
+        {
+          "topic": "Segunda cota",
+          "A93_pages": [
+            74,
+            75
+          ],
+          "equation": "9.21",
+          "finding": "H² de capa fija explícito, con corrección local H⁰ si se compara con Sha. La Nota8 ya conserva esa interfaz en (8.28); C no causó una corrección de esa ecuación."
+        },
+        {
+          "topic": "Dos órdenes de elección",
+          "A93_pages": [
+            85,
+            89
+          ],
+          "finding": "La pareja fija de la ventana de entrada no exige que la familia final tenga datos constantes en x. Familia, constantes y umbral se fijan antes de elegir la ventana final; Nota9 ya lo conserva."
+        },
+        {
+          "topic": "Cohomología",
+          "A93_pages": [
+            67,
+            74
+          ],
+          "finding": "Lemas9.5–9.7 desarrollan Bockstein, diferencias finitas y detección; homología integral, realización de ciclos, evaluación y comparación aritmética siguen como entradas."
+        },
+        {
+          "topic": "Presupuesto",
+          "A93_pages": [
+            20,
+            21
+          ],
+          "finding": "Las cotas numéricas de Prop.4.3 concuerdan con Lema9.2. El recuento exacto 3o auxiliares coincide con Notas4/9; A55p49 daba la cota más holgada4o."
+        }
+      ],
+      "current_note8_or_note9_equation_corrections_required_by_review": false
+    },
+    "external_verification_report": {
+      "url": "https://math.mit.edu/~drew/grh/",
+      "author": "Andrew V. Sutherland",
+      "report_last_updated_utc": "2026-11-22T16:20:00Z",
+      "consulted": "2026-11-23",
+      "read_directly": true,
+      "source_A93_pages": [
+        91,
+        92
+      ],
+      "scope": "Se leyó el informe externo; no se reprodujeron sus compilaciones, comprobadores ni exportaciones. A93 distingue verificación del desarrollo formal y revisión de su prosa."
+    },
+    "lean_compiled": false,
+    "lean_executed": false,
+    "axiom_report_run": false,
+    "full_dependency_audit": false,
+    "global_RH_or_GRH_proof_certified": false,
+    "editorial_decision": "Añadir bibliografía, identidad documental y guía §0.16; conservar A55, B73, C22, nueve notas y siete manifiestos. Próxima lectura A93§5 con A55§3."
   }
 }

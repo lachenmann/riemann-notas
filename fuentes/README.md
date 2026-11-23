@@ -1,10 +1,11 @@
 # Ejemplares utilizados
 
-Las notas utilizan dos exposiciones de base, A/B, y una lectura complementaria, C, identificadas a continuación. Se conservan sus bytes originales en el archivo de trabajo del proyecto. El segundo recibió el nombre `GRH-note.pdf`; su contenido permanece idéntico al ejemplar estudiado como `GRH note.pdf`. Los enlaces externos sirven para consultar las fuentes; la versión utilizada en cada cotejo se identifica por su fecha, número de páginas y hash.
+Las notas utilizan dos exposiciones de base, A/B, la versión ampliada A93 y una lectura complementaria, C, identificadas a continuación. **A conserva el significado de A55** en todas las citas anteriores. Se conservan sus bytes originales en el archivo de trabajo del proyecto. B recibió el nombre `GRH-note.pdf`; su contenido permanece idéntico al ejemplar estudiado como `GRH note.pdf`. Los enlaces externos sirven para consultar las fuentes; la versión utilizada en cada cotejo se identifica por su fecha, número de páginas y hash.
 
 | Clave | Ejemplar utilizado | Enlace de consulta |
 | --- | --- | --- |
 | A | *Dirichlet L-functions and the critical line*. La portada no identifica autor. 55 páginas. | [PDF en ULAM](https://www.ulam.ai/research/riemann_hypothesis.pdf) |
+| A93 | *Dirichlet L-functions and the critical line*, versión larga. Sin autor individual ni fecha en la portada. 93 páginas; consulta: 23 de noviembre de 2026. | [PDF largo en ULAM](https://www.ulam.ai/research/rh-long.pdf) |
 | B | Robin Zhang, *A preliminary note on Alpöge’s proposed proof of the generalized Riemann hypothesis*. 21 de noviembre de 2026. 73 páginas. | [PDF en la web de Robin Zhang](https://www.ihes.fr/~rzhang/files/GRH%20note.pdf) |
 | C | riemann-rev, *Twisted cokernels in a cyclotomic tower*, «Deformalization 1». 22 páginas; consulta: 23 de noviembre de 2026. | [PDF público](https://nasqret.github.io/riemann-rev/digests/tower-bound.pdf) · [Edición fijada](https://github.com/nasqret/riemann-rev/blob/198e87ac146b38a2b31e15faa3ba81c4bc4dd497/digests/tower-bound/editions/tower-bound-c054c66c84bc.pdf) |
 
@@ -15,6 +16,7 @@ Los hashes siguientes identifican los ejemplares utilizados en las notas. La con
 | Archivo | Bytes | SHA-256 |
 | --- | ---: | --- |
 | `riemann_hypothesis.pdf` | 845543 | `419e24a4ba07eb9ce98524ad11f568f2bd87d8d70abe288e4ef37632bdd8bb85` |
+| `rh-long-295153115a03.pdf` | 1130005 | `295153115a035f909faee55ea26e2fbdd9471e4f1d89439a16480bbd74011dfb` |
 | `GRH-note.pdf` | 850937 | `2cbd7e9b693c753f6afa22251db9669c9652555a91cee0cdfbd37a8465ad2ad9` |
 | `tower-bound-c054c66c84bc.pdf` | 227407 | `c054c66c84bce37c1bb9c1cdf56a92e06d500b274fa7a28d30f97b802d4e4b87` |
 
@@ -23,6 +25,39 @@ Los hashes siguientes identifican los ejemplares utilizados en las notas. La con
 Las páginas citadas corresponden a la numeración impresa de los ejemplares de la tabla, que coincide con el contador del PDF. El desarrollo de las notas es material de estudio propio. Las declaraciones de alcance de cada fuente deben tenerse en cuenta al cotejar sus enunciados con el código formal.
 
 Si una fuente se actualiza, registrar la nueva versión antes de cambiar referencias. No reemplazar silenciosamente un ejemplar por otro con el mismo nombre.
+
+## A93: versión larga y guía de cotejo
+
+El [archivo oficial de ULAM](https://www.ulam.ai/archive) presenta `rh-long.pdf` como «Long version» del mismo registro que enlaza A55. La fecha declarada por ese registro es el **23 de noviembre de 2026**; el PDF no imprime fecha ni firma. Los campos de autor del PDF y del [TeX enlazado](https://www.ulam.ai/research/rh-long.tex) están vacíos. La atribución del desarrollo Lean a Alpöge con Claude no identifica al autor de esta exposición.
+
+El 23 de noviembre, a las 13:31 UTC, el enlace principal `riemann_hypothesis.pdf` seguía entregando exactamente A55. El adjunto editorial «Short version», `rh-short.pdf`, es un documento distinto de **23 páginas**, 643001 bytes y SHA-256 `9fb2e8afe44c597914297b5b176a2a20600e6e69c04fd9875377547f10fea568`. Se descargó para distinguir las versiones; no se incorpora como fuente estudiada. A55 no recibe aquí la etiqueta «Short version».
+
+La nueva guía §0.16 presenta los puntos de cotejo. La tabla siguiente registra correspondencias temáticas, no equivalencia íntegra entre las exposiciones. Los intervalos incluyen los fragmentos que comparten página con la sección siguiente.
+
+| Tema | A = A55 | A93 |
+| --- | --- | --- |
+| Planteamiento | §1, pp. 1–3 | §1, pp. 1–5 |
+| Ventanas unilaterales y polos | §2, pp. 3–7 | §2, pp. 5–10 |
+| Primos auxiliares | §3, pp. 7–12 | §5, pp. 21–28 |
+| Cuerpo anfitrión y extracción | §4, pp. 12–17 | §6, pp. 28–37 |
+| Marcos y pendientes | §5, pp. 17–20 | §3, pp. 10–16 |
+| Torres theta | §6, pp. 20–28 | §7, pp. 37–49 |
+| Geometría y marco | §7, pp. 28–34 | §8, pp. 50–61 |
+| Cohomología y ventana | §8, pp. 35–42 | §9, pp. 61–77 |
+| Entrada de Galois | §9, pp. 42–46 | §10, pp. 77–85 |
+| Cancelación y presupuesto | §10, pp. 46–49 | §4, pp. 17–21 |
+| Ventana común | §11, pp. 49–52 | §11, pp. 85–89 |
+| Apéndice Lean | pp. 52–54 | pp. 89–92 |
+
+La lectura inicial se concentró en la selección de primos (§5), la cohomología (§9), las ventanas (§11) y la comparación aritmética (§4), con localizaciones dirigidas en los demás capítulos. No es una revisión completa de las 93 páginas. Los aportes más útiles para continuar son:
+
+- **Selección uniforme:** el Lema 5.2, p. 25, aísla una desigualdad maximal independiente del extremo superior del intervalo. Las pp. 25–27 explicitan los umbrales uniformes y la elección del segundo primo en una progresión dependiente del primero. La regla de exponentes (5.10), p. 28, desarrolla el paso a la escala delgada. Las entradas de progresiones, densidad de ceros, cola y fórmula explícita siguen identificadas.
+- **Cohomología:** los lemas 9.5–9.7, pp. 67–71, desarrollan Bockstein, diferencias finitas y detección mediante Chebotarev dentro de la exposición de `LemmaK`. Las construcciones integrales y comparaciones aritméticas profundas conservan su condición de entradas. La segunda cota (9.21), pp. 74–75, explicita el $H^2$ de la capa fija, ya conservado en (8.28) del cuaderno. C sigue aportando el argumento algebraico para módulos con torsión.
+- **Promedios y ventanas:** p. 18 explica que la extracción consume un promedio uniforme compatible; la cota para cada traslación de la Nota 9 sigue siendo una hipótesis suficiente. El Lema 11.3, pp. 88–89, explicita la absorción de prefactores tras fijar la familia. La pareja fija de la ventana de entrada y los datos variables de la familia final siguen distinguidos en la Nota 9.
+
+Los **191 enlaces Lean fijados**, que representan **146 URL distintas**, apuntan a `CocoSgt/riemann-hypothesis-lean@7cbf7a0c32fca1badf05931879a37c3f8a2b03b4`. El Apéndice A, pp. 89–90, declara Lean 4.33.1 y Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`, coincidentes con la revisión de los siete manifiestos del cuaderno. Esta incorporación no añade lecturas de archivos Lean ni ejecución formal.
+
+A93, pp. 91–92, remite al [informe externo de Andrew V. Sutherland](https://math.mit.edu/~drew/grh/), consultado en su estado de 22 de noviembre de 2026, 16:20 UTC. Se verificó la existencia y el contenido de ese informe; sus compilaciones y comprobadores no se reprodujeron aquí. La comprobación formal del desarrollo externo y la corrección de la prosa son cuestiones distintas, también separadas por A93. `source_A93_review` registra esta lectura documental sin modificar los siete manifiestos anteriores ni `source_C_review`.
 
 ## Fuente C: complemento de las cotas de torre
 

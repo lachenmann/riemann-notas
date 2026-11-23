@@ -11,7 +11,8 @@ el documento de 55 páginas, y \textbf{B} a la nota preliminar de Robin Zhang,
 de 73 páginas. La fuente \textbf{C}, \emph{Twisted cokernels in a cyclotomic
 tower}, de riemann-rev, tiene 22 páginas \cite{fuenteA,fuenteB,fuenteC}.
 Las páginas citadas son las impresas de esos ejemplares y coinciden
-con el contador del PDF.
+con el contador del PDF. La versión larga A93 se incorpora con
+localizadores propios en §\ref{subsec:guia-a93}.
 
 B ofrece una lectura progresiva y antecedentes; A precisa las hipótesis,
 normalizaciones, estimaciones uniformes y nombres de declaraciones Lean.
@@ -144,3 +145,66 @@ Las identidades de periodos, los modelos integrales, las cotas de
 jets y las entradas profundas de cohomología y automorfía
 conservan sus hipótesis. La construcción aritmética completa
 de las ventanas permanece por reconstruir.
+
+\clearpage
+\subsection{La versión larga A93: guía de cotejo}
+\label{subsec:guia-a93}
+
+Conservamos \textbf{A} para el ejemplar de 55 páginas ya citado.
+La versión larga \textbf{A93}, de 93 páginas, amplía la misma
+exposición y reorganiza su recorrido \cite{fuenteA93}: presenta
+los marcos y la comparación aritmética antes de construir sus entradas.
+Esta correspondencia orienta la lectura; las citas anteriores siguen
+referidas a A55 y los nuevos lemas se identifican por separado.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.34\textwidth}YY@{}}
+\toprule
+\textbf{Bloque} & \textbf{A55} & \textbf{A93} \\
+\midrule
+Marcos y pendientes & §5, pp.~17--20 & §3, pp.~10--16 \\
+Cancelación y presupuesto & §10, pp.~46--49 & §4, pp.~17--21 \\
+Primos auxiliares & §3, pp.~7--12 & §5, pp.~21--28 \\
+Torres theta y geometría & §§6--7, pp.~20--34 & §§7--8, pp.~37--61 \\
+Cohomología y denominadores & §8, pp.~35--42 & §9, pp.~61--77 \\
+Ventana común y conclusión & §11, pp.~49--52 & §11, pp.~85--89 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\textbf{El promedio que necesita la extracción.}
+A93, pp.~18 y 36, precisa que basta la cota del promedio uniforme
+sobre las traslaciones de $A_0$, con una familia compatible de pesos
+y errores uniformes. La cota para cada traslación de su
+Proposición~6.4 sigue siendo suficiente. Primero se retiran los
+lugares delgados y se reemplazan los pesos gruesos por el valor
+común; después se aplica la ortogonalidad. Esta precisión acompaña
+la identidad de la Nota~\ref{sec:caracteres}.
+
+\textbf{La capa fija conserva su grupo cohomológico.}
+La segunda cota de torre de A93, (9.21), p.~74, usa la longitud
+del grupo completo $H^2$ en una capa fija y añade el resto lineal
+de crecimiento. La Nota~\ref{sec:cohomologia} ya mantiene ambos
+términos en \eqref{eq:cohom-segunda-cota}; la finitud y la cota
+uniforme de esa capa siguen sujetas a las entradas indicadas.
+
+\textbf{Una familia fija puede contener datos variables.}
+A93, pp.~88--89, separa la pareja de primos fija en las ventanas
+de entrada de la familia utilizada en la conclusión. Sus datos
+pueden variar con $x$; las constantes de comparación y el umbral
+se fijan antes de elegir la ventana final. Este es el orden
+conservado en la Nota~\ref{sec:parametros},
+\eqref{eq:par-orden-familia}. El Lema~11.3 de A93 explicita
+la última absorción de constantes.
+
+\textbf{Próxima lectura: selección de primos.}
+Seguiremos A, §3, junto con A93, §5, pp.~21--28.
+El nuevo Lema~5.2, p.~25, convierte dos cotas de segundo momento
+en una estimación simultánea en todo el intervalo. La selección
+sucesiva de $q,d$ conserva umbrales uniformes aunque la segunda
+progresión dependa de $q$. Las estimaciones de progresiones,
+densidad de ceros, colas y derivadas logarítmicas, así como la
+fórmula explícita uniforme, se reciben con sus hipótesis.
+Esta ampliación documental no añade una ejecución ni una
+auditoría de Lean.
