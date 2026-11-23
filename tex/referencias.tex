@@ -29,8 +29,8 @@ y los hashes de los archivos recuperados. La configuración declara
 Lean~4.33.1 y la revisión de Mathlib identificada en ese registro.
 El cotejo de esta entrega se limita a las interfaces y pasos señalados
 en las Notas~\ref{sec:ventanas}, \ref{sec:caracteres},
-\ref{sec:marcos}, \ref{sec:periodos}, \ref{sec:geometria}
-y~\ref{sec:cohomologia}.
+\ref{sec:marcos}, \ref{sec:periodos}, \ref{sec:geometria},
+\ref{sec:cohomologia} y~\ref{sec:parametros}.
 El tramo de marcos comprende la lectura localizada de 14 archivos sobre
 la desigualdad lineal, las pendientes y su transferencia; no verifica las
 entradas de la construcción automorfa. No incluyó compilación ni ejecución
@@ -48,7 +48,10 @@ las dos cotas de torre, la aplicación del lema K en una capa fija,
 la selección de ventanas y los pasos de finitud y sumabilidad que
 permiten usar \texttt{LinkN}. Los ensamblajes conservan sus entradas
 profundas; no se audita toda la clausura de dualidad, homología,
-torsión o automorfía. Los recuentos de cada tramo pueden compartir archivos.
+torsión o automorfía. El tramo de parámetros y ventanas coteja 28 archivos:
+26 completos y dos selectivos. Conserva el presupuesto de traza,
+el orden de los cuantificadores y las entradas de la selección de
+auxiliares. Los recuentos de cada tramo pueden compartir archivos.
 
 \bibitem[D1]{dlmf-zeta}
 NIST. \emph{Digital Library of Mathematical Functions}, versión 1.2.8.
@@ -212,14 +215,10 @@ $H_\psi$. Se ha comprobado la correspondencia de estos pasos con A y B;
 para las ventanas y los caracteres se leyeron además las declaraciones y
 pruebas Lean identificadas en las notas y en el registro del proyecto.
 
-La Nota~\ref{sec:marcos} demuestra la desigualdad de codimensión para
-marcos aproximados, el transporte de los cortes de pendiente por mapas
-integrales y la transferencia de la pendiente media mediante integración.
-La existencia de la filtración de Harder--Narasimhan permanece como
-resultado clásico citado. El cotejo localizado de este tramo abarcó
-14 archivos Lean de la revisión fijada, sin compilación ni ejecución;
-se distinguen sus interfaces y pasos leídos de las entradas automorfas
-que la aplicación todavía debe proporcionar.
+La Nota~\ref{sec:marcos} demuestra la cota de codimensión, el transporte
+de cortes por mapas integrales y la transferencia de pendientes medias.
+La filtración de Harder--Narasimhan se recibe como resultado clásico.
+El cotejo de 14 archivos Lean conserva las entradas automorfas de la aplicación.
 
 La Nota~\ref{sec:periodos} distingue las cuatro familias de espacios
 unitarios, conserva las conjugaciones del periodo y demuestra el lema
@@ -230,17 +229,13 @@ a las cotas de periodos. Incluye cuatro ejercicios resueltos y un
 cotejo de interfaces y pruebas Lean de compatibilidad. Las construcciones
 especializadas que suministran esas entradas siguen identificadas como tales.
 
-La Nota~\ref{sec:geometria} reconstruye el paso de las alturas por
-componentes a las pendientes, el descenso por multiplicación, el coste
-de proyectores racionales y la aplicación de evaluaciones integrales.
-Distingue la interpolación compleja de la comparación aritmética y
-demuestra las estimaciones de trazas, la estabilidad por recortes y la
-elección conjunta de precisión y cardinalidad. Sus siete resultados
-demostrados y cuatro ejercicios resueltos se acompañan de un cotejo de
-23 archivos Lean: 19 lecturas completas y cuatro selectivas. Las
-entradas especializadas de Hilbert--Samuel aritmético, extensión $L^2$,
-geometría de Shimura y estimación espectral conservan sus hipótesis
-y su condición de resultados citados o interfaces por cerrar.
+La Nota~\ref{sec:geometria} pasa de alturas y pendientes a evaluaciones,
+trazas y recortes, y elige conjuntamente precisión y cardinalidad.
+Distingue la interpolación compleja de la comparación aritmética.
+Incluye siete resultados demostrados y cuatro ejercicios resueltos;
+el cotejo Lean comprende 23 archivos, 19 completos y cuatro selectivos.
+Hilbert--Samuel aritmético, extensión $L^2$, geometría de Shimura y
+las estimaciones espectrales conservan sus hipótesis de entrada.
 
 La Nota~\ref{sec:cohomologia} desarrolla las longitudes y el coste
 de congruencias, explica los cociclos y torcidos negativos y conserva
@@ -253,8 +248,14 @@ Los resultados profundos que suministran las cotas cohomológicas,
 los datos de Galois y la automorfía no se presentan como demostrados
 por estas deducciones.
 
-Queda reunir los presupuestos en una elección uniforme de parámetros,
-controlar las contribuciones auxiliares y conectar el exceso geométrico
-con las ventanas de $H_\psi$. No se ha ejecutado Lean ni auditado el cierre
+La Nota~\ref{sec:parametros} demuestra siete resultados e incluye cuatro
+ejercicios resueltos. Normaliza el exceso, obtiene el exponente
+$1/2+(C+4)\varepsilon$ y coordina los umbrales de una misma familia.
+El reescalamiento conserva la pareja de primos en la ventana; el cotejo
+Lean distingue el ensamblaje de la existencia de los datos requeridos.
+
+Queda reconstruir la selección analítica de los primos auxiliares y
+la realización completa de los datos automorfos, integrales y de Galois
+que alimentan esos ensamblajes. No se ha ejecutado Lean ni auditado el cierre
 de axiomas de la revisión fijada; el cotejo de declaraciones y pruebas
 aquí documentado no certifica la demostración completa de la hipótesis.

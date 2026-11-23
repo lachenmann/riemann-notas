@@ -35,9 +35,10 @@
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
       "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
-      "size_bytes": 13664,
-      "sha256": "198c4788f541947249cba2563f6accf3aa83f0d91ff2e0e30d3be2b3c7127739",
-      "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de nombre, tipo y carpeta padre."
+      "size_bytes": 14892,
+      "sha256": "24f59527aac3b3949cf8871b388dd4996849a9edd9acd9f090de9e9ebb68b8ac",
+      "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked.",
+      "modified_time": "2026-11-23T04:02:29.803Z"
     },
     {
       "name": "01-Sumas-y-transformadas.md",
@@ -71,9 +72,10 @@
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
       "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
-      "size_bytes": 16757,
-      "sha256": "61f190af241b09f6dd7bbe908574cd9dbc375bca4ebcaaebed07fa386943de18",
-      "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de nombre, tipo y carpeta padre."
+      "size_bytes": 18334,
+      "sha256": "ad2eec4da0133666f4bf3eb0a9adc745a3fbe721eed408f8e2acf53d45007707",
+      "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked.",
+      "modified_time": "2026-11-23T04:02:26.525Z"
     },
     {
       "name": "04-Criterio-unilateral-de-ventanas.md",
@@ -107,9 +109,10 @@
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
       "url": "https://drive.google.com/file/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/view",
-      "size_bytes": 38645,
-      "sha256": "8c25a80ab9e59111127a2de64f7d0798ebfa40c8954aaa7c0825e65d759e0fd0",
-      "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de nombre, tipo y carpeta padre."
+      "size_bytes": 38646,
+      "sha256": "f223b38b148459ce4e258f50fa5ae89a27cf4d94cb97dc88da07d85c188960d2",
+      "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked.",
+      "modified_time": "2026-11-23T04:02:22.868Z"
     },
     {
       "name": "franja-critica.svg",
@@ -163,25 +166,39 @@
     {
       "id": "1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F",
       "name": "09-Cohomologia-y-denominadores.md",
-      "size_bytes": 66791,
-      "sha256": "d13b871c8d613150ff7969693cea16b1624a389912234b768d6f640de975f6f5",
+      "size_bytes": 66955,
+      "sha256": "a85385d7909087c524aa98485d8f6b2713f8fc8e228d3a2d28145810e88bcf81",
       "url": "https://drive.google.com/file/d/1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F/view",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de nombre, tipo y carpeta padre."
+      "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked.",
+      "modified_time": "2026-11-23T04:02:33.548Z"
+    },
+    {
+      "id": "1Zwmd8GaRBm4PpSHVflRbhAU211_h24H2",
+      "name": "10-Parametros-y-ventanas-comunes.md",
+      "mime_type": "text/markdown",
+      "parent_ids": [
+        "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+      ],
+      "url": "https://drive.google.com/file/d/1Zwmd8GaRBm4PpSHVflRbhAU211_h24H2/view",
+      "modified_time": "2026-11-23T04:02:11.389Z",
+      "size_bytes": 43547,
+      "sha256": "3c4fae57ded694140ddf08f5fc20c00fc2e643ee02276b71dca41b09c135128e",
+      "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked."
     }
   ],
   "obsidian_rendering_checked": false,
   "github_status": "active_public_repository",
   "latex": {
     "status": "compiled_and_composition_checked",
-    "pages": 99,
+    "pages": 112,
     "page_size": "A4",
     "path": "pdf/notas-hipotesis-riemann.pdf",
-    "size_bytes": 915546,
-    "sha256": "5d30e6a2f9f6b3918fd5a5d891eacf269484fc3b0cb776c8d6a7bd35c30eb20e",
+    "size_bytes": 998295,
+    "sha256": "fbca9c3177f6df68129dfd1f845bcfceefd1b74940d657ba53b7c9d7f0ea2e4d",
     "compilation_exit_code": 0,
     "warnings": 0,
     "unresolved_references": 0,
@@ -195,511 +212,613 @@
       3,
       4,
       5,
+      6,
       17,
-      79,
-      80,
-      81,
-      82,
-      83,
-      84,
-      85,
-      86,
-      87,
-      88,
-      89,
-      90,
-      91,
-      92,
-      93,
-      94,
-      95,
-      96,
-      97,
+      18,
       98,
-      99
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112
     ],
     "chapter_3_pages": [
-      24,
-      31
+      25,
+      32
     ],
     "chapter_4_pages": [
-      32,
-      43
+      33,
+      44
     ],
-    "cross_reading_with_markdown": "La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a 0<y<1, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal. La introducción conserva las 495 expresiones matemáticas cotejadas, 12 subsecciones, nueve enunciados, 15 ecuaciones numeradas y seis ejercicios con soluciones tras expandir las macros y adaptar enlaces al Markdown. La Nota 5 conserva las 345 expresiones matemáticas cotejadas, 13 subsecciones, cinco enunciados, 29 ecuaciones numeradas y tres ejercicios con soluciones; las tablas, hipótesis y referencias se leyeron de forma cruzada. La Nota 6 conserva 431 expresiones matemáticas, 16 subsecciones, 5 enunciados con 5 pruebas, 34 ecuaciones y 4 ejercicios con 4 soluciones. Se leyeron íntegramente ambos textos y se cotejaron tablas, enlaces y alcance de Lean; la única normalización técnica ignora la sangría inicial de una expresión dentro de una lista. La Nota 7 conserva las expresiones matemáticas y enlaces cotejados, 15 subsecciones, 28 ecuaciones numeradas, siete enunciados con siete pruebas, cuatro ejercicios con soluciones y una tabla. Se leyeron íntegramente TeX y Markdown; los detalles del cotejo constan en el evento de geometría. La Nota 8 se leyó íntegramente en TeX y Markdown; se conservaron 721 expresiones matemáticas del cuerpo, 36 ecuaciones, diez enunciados y pruebas, cuatro ejercicios con soluciones, tabla de casos y 80 identificadores. Solo se normalizó sangría inicial al comparar fórmulas.",
+    "cross_reading_with_markdown": "La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a 0<y<1, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal. La introducción conserva las 495 expresiones matemáticas cotejadas, 12 subsecciones, nueve enunciados, 15 ecuaciones numeradas y seis ejercicios con soluciones tras expandir las macros y adaptar enlaces al Markdown. La Nota 5 conserva las 345 expresiones matemáticas cotejadas, 13 subsecciones, cinco enunciados, 29 ecuaciones numeradas y tres ejercicios con soluciones; las tablas, hipótesis y referencias se leyeron de forma cruzada. La Nota 6 conserva 431 expresiones matemáticas, 16 subsecciones, 5 enunciados con 5 pruebas, 34 ecuaciones y 4 ejercicios con 4 soluciones. Se leyeron íntegramente ambos textos y se cotejaron tablas, enlaces y alcance de Lean; la única normalización técnica ignora la sangría inicial de una expresión dentro de una lista. La Nota 7 conserva las expresiones matemáticas y enlaces cotejados, 15 subsecciones, 28 ecuaciones numeradas, siete enunciados con siete pruebas, cuatro ejercicios con soluciones y una tabla. Se leyeron íntegramente TeX y Markdown; los detalles del cotejo constan en el evento de geometría. La Nota 8 se leyó íntegramente en TeX y Markdown; se conservaron 721 expresiones matemáticas del cuerpo, 36 ecuaciones, diez enunciados y pruebas, cuatro ejercicios con soluciones, tabla de casos y 80 identificadores. Solo se normalizó sangría inicial al comparar fórmulas. Nota 9: lectura íntegra de LaTeX y Markdown; 458 expresiones matemáticas, 28 ecuaciones numeradas, 7 resultados con 7 pruebas, 4 ejercicios con soluciones, 2 tablas y 56 identificadores. Equivalencia de fórmulas por AST y etiquetas a)/b) conservadas; sin inspección visual en Obsidian.",
     "lean_compiled_or_executed": false,
     "introduction_pages": [
-      5,
-      15
+      6,
+      16
     ],
     "guide_pages": [
-      16,
-      17
+      17,
+      18
     ],
     "chapter_1_pages": [
-      18,
-      20
+      19,
+      21
     ],
     "chapter_2_pages": [
-      21,
-      23
+      22,
+      24
     ],
     "chapter_5_pages": [
-      44,
-      53
+      45,
+      54
     ],
     "references_and_status_pages": [
-      97,
-      99
+      110,
+      112
     ],
     "previous_visual_review_preserved_by_pixel_identity": [],
     "all_pages_composition_checked": true,
-    "visual_method": "Poppler a 110 dpi: inspección directa de las 27 páginas nuevas o modificadas mediante view_image; igualdad de todos los píxeles de las otras 72 páginas con la entrega anterior. Comprobación de la numeración completa, sin cambios en las páginas anteriores.",
+    "visual_method": "Inspección directa de 23 páginas nuevas o modificadas: portada, índice, introducción y guía en PNG Poppler a 110 dpi; Nota 9 y fuentes/estado a 120dpi. Comparación de los otros 89 cuerpos con el PDF anterior a 110dpi, idénticos salvo folio; comprobación de todos los números de página.",
     "chapter_6_pages": [
-      54,
-      65
+      55,
+      66
     ],
     "previous_visual_review_preserved_except_page_number": [
       {
-        "previous_page": 6,
-        "current_page": 6,
-        "all_pixels_identical": true,
-        "identical_except_page_number": true
-      },
-      {
-        "previous_page": 7,
         "current_page": 7,
-        "all_pixels_identical": true,
+        "previous_page": 6,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 8,
         "current_page": 8,
-        "all_pixels_identical": true,
+        "previous_page": 7,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 9,
         "current_page": 9,
-        "all_pixels_identical": true,
+        "previous_page": 8,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 10,
         "current_page": 10,
-        "all_pixels_identical": true,
+        "previous_page": 9,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 11,
         "current_page": 11,
-        "all_pixels_identical": true,
+        "previous_page": 10,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 12,
         "current_page": 12,
-        "all_pixels_identical": true,
+        "previous_page": 11,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 13,
         "current_page": 13,
-        "all_pixels_identical": true,
+        "previous_page": 12,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 14,
         "current_page": 14,
-        "all_pixels_identical": true,
+        "previous_page": 13,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 15,
         "current_page": 15,
-        "all_pixels_identical": true,
+        "previous_page": 14,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 16,
         "current_page": 16,
-        "all_pixels_identical": true,
+        "previous_page": 15,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 18,
-        "current_page": 18,
-        "all_pixels_identical": true,
-        "identical_except_page_number": true
-      },
-      {
-        "previous_page": 19,
         "current_page": 19,
-        "all_pixels_identical": true,
+        "previous_page": 18,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 20,
         "current_page": 20,
-        "all_pixels_identical": true,
+        "previous_page": 19,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 21,
         "current_page": 21,
-        "all_pixels_identical": true,
+        "previous_page": 20,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 22,
         "current_page": 22,
-        "all_pixels_identical": true,
+        "previous_page": 21,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 23,
         "current_page": 23,
-        "all_pixels_identical": true,
+        "previous_page": 22,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 24,
         "current_page": 24,
-        "all_pixels_identical": true,
+        "previous_page": 23,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 25,
         "current_page": 25,
-        "all_pixels_identical": true,
+        "previous_page": 24,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 26,
         "current_page": 26,
-        "all_pixels_identical": true,
+        "previous_page": 25,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 27,
         "current_page": 27,
-        "all_pixels_identical": true,
+        "previous_page": 26,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 28,
         "current_page": 28,
-        "all_pixels_identical": true,
+        "previous_page": 27,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 29,
         "current_page": 29,
-        "all_pixels_identical": true,
+        "previous_page": 28,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 30,
         "current_page": 30,
-        "all_pixels_identical": true,
+        "previous_page": 29,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 31,
         "current_page": 31,
-        "all_pixels_identical": true,
+        "previous_page": 30,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 32,
         "current_page": 32,
-        "all_pixels_identical": true,
+        "previous_page": 31,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 33,
         "current_page": 33,
-        "all_pixels_identical": true,
+        "previous_page": 32,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 34,
         "current_page": 34,
-        "all_pixels_identical": true,
+        "previous_page": 33,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 35,
         "current_page": 35,
-        "all_pixels_identical": true,
+        "previous_page": 34,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 36,
         "current_page": 36,
-        "all_pixels_identical": true,
+        "previous_page": 35,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 37,
         "current_page": 37,
-        "all_pixels_identical": true,
+        "previous_page": 36,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 38,
         "current_page": 38,
-        "all_pixels_identical": true,
+        "previous_page": 37,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 39,
         "current_page": 39,
-        "all_pixels_identical": true,
+        "previous_page": 38,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 40,
         "current_page": 40,
-        "all_pixels_identical": true,
+        "previous_page": 39,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 41,
         "current_page": 41,
-        "all_pixels_identical": true,
+        "previous_page": 40,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 42,
         "current_page": 42,
-        "all_pixels_identical": true,
+        "previous_page": 41,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 43,
         "current_page": 43,
-        "all_pixels_identical": true,
+        "previous_page": 42,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 44,
         "current_page": 44,
-        "all_pixels_identical": true,
+        "previous_page": 43,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 45,
         "current_page": 45,
-        "all_pixels_identical": true,
+        "previous_page": 44,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 46,
         "current_page": 46,
-        "all_pixels_identical": true,
+        "previous_page": 45,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 47,
         "current_page": 47,
-        "all_pixels_identical": true,
+        "previous_page": 46,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 48,
         "current_page": 48,
-        "all_pixels_identical": true,
+        "previous_page": 47,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 49,
         "current_page": 49,
-        "all_pixels_identical": true,
+        "previous_page": 48,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 50,
         "current_page": 50,
-        "all_pixels_identical": true,
+        "previous_page": 49,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 51,
         "current_page": 51,
-        "all_pixels_identical": true,
+        "previous_page": 50,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 52,
         "current_page": 52,
-        "all_pixels_identical": true,
+        "previous_page": 51,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 53,
         "current_page": 53,
-        "all_pixels_identical": true,
+        "previous_page": 52,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 54,
         "current_page": 54,
-        "all_pixels_identical": true,
+        "previous_page": 53,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 55,
         "current_page": 55,
-        "all_pixels_identical": true,
+        "previous_page": 54,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 56,
         "current_page": 56,
-        "all_pixels_identical": true,
+        "previous_page": 55,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 57,
         "current_page": 57,
-        "all_pixels_identical": true,
+        "previous_page": 56,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 58,
         "current_page": 58,
-        "all_pixels_identical": true,
+        "previous_page": 57,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 59,
         "current_page": 59,
-        "all_pixels_identical": true,
+        "previous_page": 58,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 60,
         "current_page": 60,
-        "all_pixels_identical": true,
+        "previous_page": 59,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 61,
         "current_page": 61,
-        "all_pixels_identical": true,
+        "previous_page": 60,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 62,
         "current_page": 62,
-        "all_pixels_identical": true,
+        "previous_page": 61,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 63,
         "current_page": 63,
-        "all_pixels_identical": true,
+        "previous_page": 62,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 64,
         "current_page": 64,
-        "all_pixels_identical": true,
+        "previous_page": 63,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 65,
         "current_page": 65,
-        "all_pixels_identical": true,
+        "previous_page": 64,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 66,
         "current_page": 66,
-        "all_pixels_identical": true,
+        "previous_page": 65,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 67,
         "current_page": 67,
-        "all_pixels_identical": true,
+        "previous_page": 66,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 68,
         "current_page": 68,
-        "all_pixels_identical": true,
+        "previous_page": 67,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 69,
         "current_page": 69,
-        "all_pixels_identical": true,
+        "previous_page": 68,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 70,
         "current_page": 70,
-        "all_pixels_identical": true,
+        "previous_page": 69,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 71,
         "current_page": 71,
-        "all_pixels_identical": true,
+        "previous_page": 70,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 72,
         "current_page": 72,
-        "all_pixels_identical": true,
+        "previous_page": 71,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 73,
         "current_page": 73,
-        "all_pixels_identical": true,
+        "previous_page": 72,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 74,
         "current_page": 74,
-        "all_pixels_identical": true,
+        "previous_page": 73,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 75,
         "current_page": 75,
-        "all_pixels_identical": true,
+        "previous_page": 74,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 76,
         "current_page": 76,
-        "all_pixels_identical": true,
+        "previous_page": 75,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 77,
         "current_page": 77,
-        "all_pixels_identical": true,
+        "previous_page": 76,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "previous_page": 78,
         "current_page": 78,
-        "all_pixels_identical": true,
+        "previous_page": 77,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 79,
+        "previous_page": 78,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 80,
+        "previous_page": 79,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 81,
+        "previous_page": 80,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 82,
+        "previous_page": 81,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 83,
+        "previous_page": 82,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 84,
+        "previous_page": 83,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 85,
+        "previous_page": 84,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 86,
+        "previous_page": 85,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 87,
+        "previous_page": 86,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 88,
+        "previous_page": 87,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 89,
+        "previous_page": 88,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 90,
+        "previous_page": 89,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 91,
+        "previous_page": 90,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 92,
+        "previous_page": 91,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 93,
+        "previous_page": 92,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 94,
+        "previous_page": 93,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 95,
+        "previous_page": 94,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 96,
+        "previous_page": 95,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 97,
+        "previous_page": 96,
+        "all_pixels_identical": false,
         "identical_except_page_number": true
       }
     ],
     "chapter_7_pages": [
-      66,
-      78
+      67,
+      79
     ],
     "chapter_8_pages": [
-      79,
-      96
+      80,
+      97
+    ],
+    "chapter_9_pages": [
+      98,
+      109
     ]
   },
   "events": [
@@ -3569,6 +3688,1007 @@
       "vault_prewrite_version_guard": "Recuperación completa y comparación byte por byte de los cuatro Markdown existentes contra su baseline, con nombre, tipo y carpeta comprobados. El nombre MD09 no existía en la lista completa de archivos de la carpeta antes de crearlo.",
       "publication_authorization": "Continuación autorizada del cuaderno en el repositorio público y su bóveda; se conserva la autorización anterior.",
       "next_step": "Reunir presupuestos en una elección uniforme de parámetros; mantener las entradas automorfas y de compatibilidad de A§9 y estudiar el enlace con ventanas de H_psi en A§§10–11/B§6."
+    },
+    {
+      "date": "2026-11-23",
+      "action": "uniform_parameters_and_common_windows_added",
+      "previous_github_commit": "70308ad9b5634dd7fef0e628dad53ee39257c28a",
+      "request": "Ya está listo y compilado en TeXstudio. Ahora sigamos con la parte matemática: parámetros y ventanas comunes, conforme al punto de reanudación.",
+      "canonical_file": "tex/capitulos/09-parametros-y-ventanas-comunes.tex",
+      "canonical_sha256": "648515dde11af65619d663be3ca87bb599ca0e0b23873cf91b23d24940d3acc8",
+      "contents": {
+        "subsections": 14,
+        "numbered_equations": 28,
+        "numbered_statements": 7,
+        "proofs": 7,
+        "exercises": 4,
+        "solutions": 4,
+        "math_expressions": 458,
+        "inline_math": 400,
+        "display_math": 58,
+        "literal_identifiers": 56,
+        "literal_identifiers_in_prose": 56,
+        "literal_identifiers_in_math": 0,
+        "tex_lines": 1046,
+        "markdown_lines": 734,
+        "source_tables": 2,
+        "source_table_body_rows": [
+          5,
+          9
+        ],
+        "source_table_columns": [
+          3,
+          2
+        ],
+        "markdown_extra_source_table": 1,
+        "content_atoms": 4500,
+        "body_link_occurrences": 31,
+        "body_unique_links": 21,
+        "explicit_tex_href_occurrences": 14,
+        "classical_bibliography_entries": 0,
+        "deductions_developed": [
+          "equilibrio entre los costes x/m y m",
+          "normalización de los cuatro términos del presupuesto",
+          "separación de los dos errores de extracción de caracteres",
+          "cierre escalar y absorción de constantes con exponente de pérdida fijo",
+          "paso de realización uniforme a ventanas unilaterales",
+          "transporte a una ventana común para la misma pareja de primos",
+          "reunión finita de condiciones eventuales en una clase común"
+        ],
+        "specialized_inputs_kept_external": [
+          "selección analítica de pares auxiliares PairEx con cotas en toda la ventana",
+          "entrada cohomológica HypV/VWinAt con uniformidad respecto de la pareja",
+          "existencia de una familia en las clases geométrica y aritmética compatibles",
+          "ChosenE, TuSize, DGamSize, denominadores suaves y retorcimientos compatibles",
+          "nueve grupos de entradas eventuales del ensamblaje geométrico",
+          "construcciones automorfas, integrales y de Galois para los mismos datos",
+          "realización completa de las entradas de las ventanas de H_psi"
+        ],
+        "normalization": "Cuatro términos normalizados; errores de extracción distintos; C fijado antes de epsilon; misma pareja y familia; transporte del corte 401 al 400; estimación unilateral.",
+        "scope": "Pruebas finitas y ensamblajes con hipótesis explícitas; cotejo localizado sin certificación global de RH o GRH."
+      },
+      "sources": {
+        "A": "§§10–11, pp.46–52, ejemplar de 55 páginas; entradas de §3, pp.7–12, §8, pp.35–41, y §9, pp.41–46.",
+        "B": "§6, pp.64–67, ejemplar B73 del 21 de noviembre de 2026.",
+        "newer_B_incorporated": false,
+        "lean_manifest": "lean_source_review_parameters",
+        "lean_files": 28,
+        "lean_files_read_in_full": 26,
+        "lean_files_read_selectively": 2,
+        "lean_lines_read": 4497,
+        "lean_discovery_files_excluded": 1,
+        "classical_bibliography": []
+      },
+      "mathematical_review": {
+        "result": "Dos lecturas independientes cubrieron íntegramente el bloque numérico y el de ventanas/ejercicios; el cotejo Lean y su concordancia se revisaron por separado. Sin errores matemáticos bloqueantes bajo las entradas explícitas.",
+        "corrections_incorporated": [
+          "V_x corresponde al cambio de argumento; el cambio de pesos se conserva en el término delgado.",
+          "La extracción recibe las hipótesis completas de A4.3 y una cota común para todas las traslaciones.",
+          "El cierre escalar cuantifica Z antes de su condición.",
+          "La reunión finita explicita K no negativo y una colección no vacía.",
+          "La concordancia conserva LargeX, el nivel cíclico retenido y las compatibilidades entre clases."
+        ],
+        "lean_compiled": false,
+        "lean_executed": false,
+        "axiom_report_run": false,
+        "full_proof_audit": false,
+        "original_distribution_compared": false
+      },
+      "technical_notes_preserved": [
+        {
+          "path": "tex/capitulos/01-sumas-y-transformadas.tex",
+          "sha256": "13f178ff0751265b7c135d7d85d7a1311962628cec98ef6e0cbbad2c7c1c6e3b",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/02-proyecciones-y-denominadores.tex",
+          "sha256": "4f2d14516ed3850480e6a2ebce9844e52269527a03641bf0b8b546208aeb49be",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/03-criterio-unilateral-de-ventanas.tex",
+          "sha256": "804f5f7ec2c165356d3f15ce02bc570c8368b7f919cc50c87576ae1c6a5de007",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/04-identidad-de-caracteres.tex",
+          "sha256": "095204f6d6e0ea80af39a862ce34c626b4f2d1b8d27e784d0364797ec5993a9a",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/05-marcos-y-pendientes.tex",
+          "sha256": "36777a13e8ad65369bc39ca2acaaed39b8d6612f568ceb934ac3f6fa4a3ccb89",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/06-periodos-y-torres-theta.tex",
+          "sha256": "8f364bc671ec39fa6bd635b6987f8257c6c43dd8359ba5c0838f03394be62ec0",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/07-geometria-evaluaciones-y-marcos.tex",
+          "sha256": "ac48246ad128a9002a6589d946523e99a14329a4a26ccd516aa82d2cb06fbc75",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/08-cohomologia-y-denominadores.tex",
+          "sha256": "d01122fce6c7022bec7e6e92f890f8b2c913610c660bb149cdd852e9035bb574",
+          "unchanged": true
+        }
+      ],
+      "introduction_changes": {
+        "tex": "Solo recuento de ocho a nueve notas.",
+        "mathematical_content_preserved": true,
+        "svg_changed": false
+      },
+      "pdf": {
+        "path": "pdf/notas-hipotesis-riemann.pdf",
+        "pages": 112,
+        "size_bytes": 998295,
+        "sha256": "fbca9c3177f6df68129dfd1f845bcfceefd1b74940d657ba53b7c9d7f0ea2e4d",
+        "git_blob_sha": "faac8e262373e0d0a2c24e7c7556ef23bc635ed9",
+        "compilation_exit_code": 0,
+        "warnings": 0,
+        "unresolved_references": 0,
+        "overfull_boxes": 0,
+        "underfull_boxes": 0,
+        "missing_characters": 0,
+        "all_pages_visually_reviewed_in_this_revision": false,
+        "directly_visually_reviewed_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          17,
+          18,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ],
+        "previous_visual_review_preserved_except_page_number": [
+          {
+            "current_page": 7,
+            "previous_page": 6,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 8,
+            "previous_page": 7,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 9,
+            "previous_page": 8,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 10,
+            "previous_page": 9,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 11,
+            "previous_page": 10,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 12,
+            "previous_page": 11,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 13,
+            "previous_page": 12,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 14,
+            "previous_page": 13,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 15,
+            "previous_page": 14,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 16,
+            "previous_page": 15,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 19,
+            "previous_page": 18,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 20,
+            "previous_page": 19,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 21,
+            "previous_page": 20,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 22,
+            "previous_page": 21,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 23,
+            "previous_page": 22,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 24,
+            "previous_page": 23,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 25,
+            "previous_page": 24,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 26,
+            "previous_page": 25,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 27,
+            "previous_page": 26,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 28,
+            "previous_page": 27,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 29,
+            "previous_page": 28,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 30,
+            "previous_page": 29,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 31,
+            "previous_page": 30,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 32,
+            "previous_page": 31,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 33,
+            "previous_page": 32,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 34,
+            "previous_page": 33,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 35,
+            "previous_page": 34,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 36,
+            "previous_page": 35,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 37,
+            "previous_page": 36,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 38,
+            "previous_page": 37,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 39,
+            "previous_page": 38,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 40,
+            "previous_page": 39,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 41,
+            "previous_page": 40,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 42,
+            "previous_page": 41,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 43,
+            "previous_page": 42,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 44,
+            "previous_page": 43,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 45,
+            "previous_page": 44,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 46,
+            "previous_page": 45,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 47,
+            "previous_page": 46,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 48,
+            "previous_page": 47,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 49,
+            "previous_page": 48,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 50,
+            "previous_page": 49,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 51,
+            "previous_page": 50,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 52,
+            "previous_page": 51,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 53,
+            "previous_page": 52,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 54,
+            "previous_page": 53,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 55,
+            "previous_page": 54,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 56,
+            "previous_page": 55,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 57,
+            "previous_page": 56,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 58,
+            "previous_page": 57,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 59,
+            "previous_page": 58,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 60,
+            "previous_page": 59,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 61,
+            "previous_page": 60,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 62,
+            "previous_page": 61,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 63,
+            "previous_page": 62,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 64,
+            "previous_page": 63,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 65,
+            "previous_page": 64,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 66,
+            "previous_page": 65,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 67,
+            "previous_page": 66,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 68,
+            "previous_page": 67,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 69,
+            "previous_page": 68,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 70,
+            "previous_page": 69,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 71,
+            "previous_page": 70,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 72,
+            "previous_page": 71,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 73,
+            "previous_page": 72,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 74,
+            "previous_page": 73,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 75,
+            "previous_page": 74,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 76,
+            "previous_page": 75,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 77,
+            "previous_page": 76,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 78,
+            "previous_page": 77,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 79,
+            "previous_page": 78,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 80,
+            "previous_page": 79,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 81,
+            "previous_page": 80,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 82,
+            "previous_page": 81,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 83,
+            "previous_page": 82,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 84,
+            "previous_page": 83,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 85,
+            "previous_page": 84,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 86,
+            "previous_page": 85,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 87,
+            "previous_page": 86,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 88,
+            "previous_page": 87,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 89,
+            "previous_page": 88,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 90,
+            "previous_page": 89,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 91,
+            "previous_page": 90,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 92,
+            "previous_page": 91,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 93,
+            "previous_page": 92,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 94,
+            "previous_page": 93,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 95,
+            "previous_page": 94,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 96,
+            "previous_page": 95,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "current_page": 97,
+            "previous_page": 96,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          }
+        ],
+        "all_pages_composition_checked": true,
+        "visual_method": "Inspección directa de 23 páginas nuevas o modificadas: portada, índice, introducción y guía en PNG Poppler a 110 dpi; Nota 9 y fuentes/estado a 120dpi. Comparación de los otros 89 cuerpos con el PDF anterior a 110dpi, idénticos salvo folio; comprobación de todos los números de página.",
+        "reading_copy_identical_to_build": true
+      },
+      "markdown_review": {
+        "sha256": "3c4fae57ded694140ddf08f5fc20c00fc2e643ee02276b71dca41b09c135128e",
+        "complete_cross_reading": true,
+        "metrics": {
+          "subsections": 14,
+          "numbered_equations": 28,
+          "numbered_statements": 7,
+          "proofs": 7,
+          "exercises": 4,
+          "solutions": 4,
+          "math_expressions": 458,
+          "inline_math": 400,
+          "display_math": 58,
+          "literal_identifiers": 56,
+          "literal_identifiers_in_prose": 56,
+          "literal_identifiers_in_math": 0,
+          "tex_lines": 1046,
+          "markdown_lines": 734,
+          "source_tables": 2,
+          "source_table_body_rows": [
+            5,
+            9
+          ],
+          "source_table_columns": [
+            3,
+            2
+          ],
+          "markdown_extra_source_table": 1,
+          "content_atoms": 4500,
+          "body_link_occurrences": 31,
+          "body_unique_links": 21,
+          "explicit_tex_href_occurrences": 14,
+          "classical_bibliography_entries": 0
+        },
+        "checks": {
+          "equation_tags_match_final_aux": true,
+          "statement_tags_match_final_aux": true,
+          "exercise_solution_numbers_match": true,
+          "prepared_ast_math_to_markdown_ast_equal": true,
+          "math_raw_text_equal": true,
+          "math_line_indentation_changes": 0,
+          "normalization": "Se retira únicamente el espacio en los extremos de cada fórmula, como hace math_items; no hizo falta normalizar sangría de líneas. Se conservan comandos, signos y espacios interiores.",
+          "prepared_ast_content_atoms_equal_after_citation_caption_normalization": true,
+          "content_atom_normalization": "Str y Code literales; Math con strip en los extremos. Única excepción textual: [L] pasa a L como etiqueta del mismo enlace bibliográfico inmutable, operación editorial explícita del conversor. Se comparan 4500 nodos de contenido.",
+          "body_links_roundtrip_equal": true,
+          "explicit_tex_urls_preserved": true,
+          "relative_link_targets": [
+            {
+              "target": "01-Sumas-y-transformadas.md",
+              "exists": true
+            },
+            {
+              "target": "04-Criterio-unilateral-de-ventanas.md",
+              "exists": true
+            },
+            {
+              "target": "05-Identidad-de-caracteres-y-termino-principal.md",
+              "exists": true
+            },
+            {
+              "target": "07-Periodos-y-torres-theta.md",
+              "exists": true
+            },
+            {
+              "target": "08-Geometria-evaluaciones-y-marcos.md",
+              "exists": true
+            },
+            {
+              "target": "09-Cohomologia-y-denominadores.md",
+              "exists": true
+            }
+          ],
+          "literal_identifiers_equal_source": true,
+          "math_identifiers_included_in_literal_comparison": true,
+          "table_dimensions_preserved": true,
+          "lettered_exercise_items_preserved": true,
+          "no_unresolved_reference_in_body_or_bibliography": true,
+          "source_and_aux_unchanged_since_conversion": true,
+          "bibliography_unchanged_since_conversion": true,
+          "local_readback_hash_matches": true,
+          "only_change_after_full_manual_read": "Se conservaron a)/b) como etiquetas explícitas en el Ejercicio 9.3; se releyeron las líneas 662–693. La fuente final no cambió y las 458 fórmulas, 56 identificadores, enlaces y 4500 nodos de contenido se volvieron a cotejar."
+        },
+        "result": "Aprobado: lectura cruzada íntegra TeX→Markdown sin pérdida de prosa, fórmulas, hipótesis, signos, factores, rótulos, identificadores, resultados, pruebas, ejercicios, soluciones o enlaces. No se detectaron cambios matemáticos necesarios.",
+        "obsidian_rendering_checked": false,
+        "transfer_mode": "Preparación editorial puntual con lectura manual; no sincronización automática."
+      },
+      "vault_files_written_and_readback_verified": [
+        {
+          "id": "1Zwmd8GaRBm4PpSHVflRbhAU211_h24H2",
+          "name": "10-Parametros-y-ventanas-comunes.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/1Zwmd8GaRBm4PpSHVflRbhAU211_h24H2/view",
+          "modified_time": "2026-11-23T04:02:11.389Z",
+          "size_bytes": 43547,
+          "sha256": "3c4fae57ded694140ddf08f5fc20c00fc2e643ee02276b71dca41b09c135128e",
+          "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked."
+        },
+        {
+          "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+          "name": "00-Introduccion-y-fundamentos.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/view",
+          "modified_time": "2026-11-23T04:02:22.868Z",
+          "size_bytes": 38646,
+          "sha256": "f223b38b148459ce4e258f50fa5ae89a27cf4d94cb97dc88da07d85c188960d2",
+          "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked."
+        },
+        {
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+          "name": "03-Dudas-y-pendientes.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
+          "modified_time": "2026-11-23T04:02:26.525Z",
+          "size_bytes": 18334,
+          "sha256": "ad2eec4da0133666f4bf3eb0a9adc745a3fbe721eed408f8e2acf53d45007707",
+          "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked."
+        },
+        {
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+          "name": "00-Mapa-de-estudio.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
+          "modified_time": "2026-11-23T04:02:29.803Z",
+          "size_bytes": 14892,
+          "sha256": "24f59527aac3b3949cf8871b388dd4996849a9edd9acd9f090de9e9ebb68b8ac",
+          "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked."
+        },
+        {
+          "id": "1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F",
+          "name": "09-Cohomologia-y-denominadores.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F/view",
+          "modified_time": "2026-11-23T04:02:33.548Z",
+          "size_bytes": 66955,
+          "sha256": "a85385d7909087c524aa98485d8f6b2713f8fc8e228d3a2d28145810e88bcf81",
+          "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked."
+        }
+      ],
+      "vault_editorial_changes": [
+        {
+          "name": "10-Parametros-y-ventanas-comunes.md",
+          "before_sha256": null,
+          "after_sha256": "3c4fae57ded694140ddf08f5fc20c00fc2e643ee02276b71dca41b09c135128e",
+          "change": "Borrador nuevo preparado desde el TeX final, con numeración y referencias resueltas; lectura cruzada íntegra y equivalencia matemática documentadas en el recibo de cierre.",
+          "previous_record": null
+        },
+        {
+          "name": "00-Introduccion-y-fundamentos.md",
+          "before_sha256": "8c25a80ab9e59111127a2de64f7d0798ebfa40c8954aaa7c0825e65d759e0fd0",
+          "after_sha256": "f223b38b148459ce4e258f50fa5ae89a27cf4d94cb97dc88da07d85c188960d2",
+          "change": "Solo cambio de ocho a nueve notas; contenido matemático conservado.",
+          "previous_record": {
+            "name": "00-Introduccion-y-fundamentos.md",
+            "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "url": "https://drive.google.com/file/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/view",
+            "size_bytes": 38645,
+            "sha256": "8c25a80ab9e59111127a2de64f7d0798ebfa40c8954aaa7c0825e65d759e0fd0",
+            "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de nombre, tipo y carpeta padre."
+          }
+        },
+        {
+          "name": "03-Dudas-y-pendientes.md",
+          "before_sha256": "61f190af241b09f6dd7bbe908574cd9dbc375bca4ebcaaebed07fa386943de18",
+          "after_sha256": "ad2eec4da0133666f4bf3eb0a9adc745a3fbe721eed408f8e2acf53d45007707",
+          "change": "Registrados cálculos y ensamblaje condicionado de parámetros; realización simultánea de las entradas conservada como pendiente.",
+          "previous_record": {
+            "name": "03-Dudas-y-pendientes.md",
+            "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
+            "size_bytes": 16757,
+            "sha256": "61f190af241b09f6dd7bbe908574cd9dbc375bca4ebcaaebed07fa386943de18",
+            "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de nombre, tipo y carpeta padre."
+          }
+        },
+        {
+          "name": "00-Mapa-de-estudio.md",
+          "before_sha256": "198c4788f541947249cba2563f6accf3aa83f0d91ff2e0e30d3be2b3c7127739",
+          "after_sha256": "24f59527aac3b3949cf8871b388dd4996849a9edd9acd9f090de9e9ebb68b8ac",
+          "change": "Añadida Nota 9 al mapa, alcance y orden de lectura; continuación hacia selección de auxiliares y compatibilidad de Galois.",
+          "previous_record": {
+            "name": "00-Mapa-de-estudio.md",
+            "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
+            "size_bytes": 13664,
+            "sha256": "198c4788f541947249cba2563f6accf3aa83f0d91ff2e0e30d3be2b3c7127739",
+            "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de nombre, tipo y carpeta padre."
+          }
+        },
+        {
+          "name": "09-Cohomologia-y-denominadores.md",
+          "before_sha256": "d13b871c8d613150ff7969693cea16b1624a389912234b768d6f640de975f6f5",
+          "after_sha256": "a85385d7909087c524aa98485d8f6b2713f8fc8e228d3a2d28145810e88bcf81",
+          "change": "Solo párrafo de continuidad hacia Nota 9; cuerpo matemático y ejercicios preservados.",
+          "previous_record": {
+            "id": "1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F",
+            "name": "09-Cohomologia-y-denominadores.md",
+            "size_bytes": 66791,
+            "sha256": "d13b871c8d613150ff7969693cea16b1624a389912234b768d6f640de975f6f5",
+            "url": "https://drive.google.com/file/d/1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F/view",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de nombre, tipo y carpeta padre."
+          }
+        }
+      ],
+      "vault_prewrite_version_guard": {
+        "method": "Recuperación completa de bytes originales inmediatamente antes de escribir; comparación de SHA256 y bytes con baseline, más tipo y carpeta padre.",
+        "files": [
+          {
+            "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+            "name": "00-Introduccion-y-fundamentos.md",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "modified_time": "2026-11-23T03:00:54.255Z",
+            "sha256": "8c25a80ab9e59111127a2de64f7d0798ebfa40c8954aaa7c0825e65d759e0fd0",
+            "size_bytes": 38645,
+            "identical_to_baseline": true
+          },
+          {
+            "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+            "name": "03-Dudas-y-pendientes.md",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "modified_time": "2026-11-23T03:00:57.811Z",
+            "sha256": "61f190af241b09f6dd7bbe908574cd9dbc375bca4ebcaaebed07fa386943de18",
+            "size_bytes": 16757,
+            "identical_to_baseline": true
+          },
+          {
+            "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+            "name": "00-Mapa-de-estudio.md",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "modified_time": "2026-11-23T03:01:01.418Z",
+            "sha256": "198c4788f541947249cba2563f6accf3aa83f0d91ff2e0e30d3be2b3c7127739",
+            "size_bytes": 13664,
+            "identical_to_baseline": true
+          },
+          {
+            "id": "1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F",
+            "name": "09-Cohomologia-y-denominadores.md",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "modified_time": "2026-11-23T03:00:40.738Z",
+            "sha256": "d13b871c8d613150ff7969693cea16b1624a389912234b768d6f640de975f6f5",
+            "size_bytes": 66791,
+            "identical_to_baseline": true
+          }
+        ],
+        "new_file_name_absent_in_fresh_folder_listing": true
+      },
+      "publication_authorization": "Continuación autorizada del cuaderno en el repositorio público y su bóveda; se conserva la autorización anterior.",
+      "next_step": "Estudiar las entradas de selección analítica de primos auxiliares de A§3 y de compatibilidad automórfica de Galois de A§9, con sus condiciones locales, rangos y cuantificadores para los mismos datos."
     }
   ],
   "github": {
@@ -10160,6 +11280,1971 @@
       "B": "§5, pp.52–64, ejemplar B73 del 21 de noviembre de 2026.",
       "newer_B_incorporated": false,
       "scope": "Longitudes, dos cotas de torre, aplicación de LemmaK en grado acotado, selección de ventana y enlace condicionado por finitud y sumabilidad con LinkN."
+    }
+  },
+  "lean_source_review_parameters": {
+    "schema_version": 1,
+    "review_key": "lean_source_review_uniform_parameters_excess_windows",
+    "review_date": "2026-11-23",
+    "repository": "CocoSgt/riemann-hypothesis-lean",
+    "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+    "retrieval": "GitHub connector fetch_file with the exact commit as ref; read-only remote access",
+    "hash_verification": "Git blob SHA-1 recalculated as SHA1(blob header + byte_length + NUL + bytes), matches GitHub metadata for all 29 retrieved files; SHA-256 additionally recorded.",
+    "summary": {
+      "retrieved_files": 29,
+      "reviewed_files": 28,
+      "complete_reads": 26,
+      "selective_reads": 2,
+      "discovery_only_files": 1,
+      "reviewed_lines": 4497
+    },
+    "mathematical_findings": [
+      "The uniform order is fixed exponents eD,eL before epsilon; transported K before compatible Fm; thresholds before x and host/word indices quantified later.",
+      "ErrWindows retains (etaBar+4sqrt(eBar))*x^cHH*b <= K*x^epsilon*nT*a. The weaker etaBar<=1,eBar<=1 interface is refuted by a numerical counterexample in error_sizes_weak_false.",
+      "ChCore yields GmA <= x^(1/2+(C+3)epsilon)+SigA; CoreGm uses C=eD+eL+3, SigA<=4o*x^(1/2+epsilon) and 1+4o<=x^epsilon to obtain eD+eL+7.",
+      "WinPairs uses an explicit rescaling, assuming VWinAt psi 401 and PairEx; PairEx is an existence proposition, not a proof, in PairGood.lean.",
+      "Pointwise unilateral bounds imply integral WindowHyp/WindowHypU, preserving integrability and quantifiers; landau_window excludes poles under PoleData."
+    ],
+    "limits": [
+      "Lean was not executed or installed.",
+      "Only listed ranges were mathematically read; discovery-only files and unread portions are excluded from proof claims.",
+      "No complete transitive import, axiom, kernel, or dependency audit was performed.",
+      "Definitions : Prop and structure fields were not counted as proofs of realization.",
+      "Conditional assemblies do not establish all arithmetic/geometric/cohomological inputs.",
+      "The fixed mirror was not compared in full with an original distribution; authorship and a global RH claim are not certified.",
+      "The parent study compares fixed A55/B73; this code audit does not assert complete equivalence with either PDF."
+    ],
+    "report": "tmp/parametros/lean-review.md",
+    "files": [
+      {
+        "path": "src/Formalism/SizeWindowBrackets/GrowthBracketBoundOfSizeWindows.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/GrowthBracketBoundOfSizeWindows.lean",
+        "blob_sha_reported": "c38f7fc29fa932ec153cd3d4066eb244359116e5",
+        "git_blob_sha_recomputed": "c38f7fc29fa932ec153cd3d4066eb244359116e5",
+        "sha256": "812eb1852eecf11528386086ec35c2081d1855f08cb8d31915393a3ac8e9770f",
+        "bytes": 17701,
+        "line_count": 273,
+        "read_scope": "selective",
+        "lineas_leidas": [
+          [
+            100,
+            165
+          ]
+        ],
+        "read_ranges": [
+          [
+            100,
+            165
+          ]
+        ],
+        "classification": "interfaces",
+        "declaraciones": [
+          {
+            "name": "delta1",
+            "source_name": "delta1",
+            "kind": "def",
+            "line": 102
+          },
+          {
+            "name": "bracketSizeWindowBrackets",
+            "source_name": "bracketSizeWindowBrackets",
+            "kind": "def",
+            "line": 104
+          },
+          {
+            "name": "NcForm",
+            "source_name": "NcForm",
+            "kind": "def",
+            "line": 109
+          },
+          {
+            "name": "GrowthBracketBoundOfSizeWindows",
+            "source_name": "GrowthBracketBoundOfSizeWindows",
+            "kind": "def",
+            "line": 113
+          },
+          {
+            "name": "GrowthBoundByBracketOfSizeWindows",
+            "source_name": "GrowthBoundByBracketOfSizeWindows",
+            "kind": "def",
+            "line": 118
+          },
+          {
+            "name": "GrowthBracketBoundFails",
+            "source_name": "GrowthBracketBoundFails",
+            "kind": "def",
+            "line": 123
+          },
+          {
+            "name": "GrowthBracketBoundAttained",
+            "source_name": "GrowthBracketBoundAttained",
+            "kind": "def",
+            "line": 128
+          },
+          {
+            "name": "GrowthDisplayFailsAtHalf",
+            "source_name": "GrowthDisplayFailsAtHalf",
+            "kind": "def",
+            "line": 133
+          },
+          {
+            "name": "GrowthBracketBoundAttainedAtHalf",
+            "source_name": "GrowthBracketBoundAttainedAtHalf",
+            "kind": "def",
+            "line": 139
+          },
+          {
+            "name": "BracketSizes",
+            "source_name": "BracketSizes",
+            "kind": "def",
+            "line": 145
+          },
+          {
+            "name": "BracketConclusion",
+            "source_name": "BracketConclusion",
+            "kind": "def",
+            "line": 150
+          },
+          {
+            "name": "GrowthBracketBoundAtPoint",
+            "source_name": "GrowthBracketBoundAtPoint",
+            "kind": "def",
+            "line": 156
+          }
+        ],
+        "hypotheses": "SizeWindows o BracketSizes con las cotas de aE, m, nT, nT2 y k propias de cada interfaz; 24≤x^(7ε/8) para la conclusión especializada.",
+        "scope": "Lectura selectiva del corchete y las interfaces. Son definiciones : Prop; no se atribuye aquí prueba a los nombres GrowthBracketBound*. No confundir la variante aE≤xb con aE≤2xb ni sus coeficientes."
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/FixedEpsilonConcreteGrowthBound.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/FixedEpsilonConcreteGrowthBound.lean",
+        "blob_sha_reported": "b0cef217f44950449a860231cf670e70ff33253a",
+        "git_blob_sha_recomputed": "b0cef217f44950449a860231cf670e70ff33253a",
+        "sha256": "27a048ee107e236a862ee42a0c12a91d6a9d3521bf13b6eba18342640628b573",
+        "bytes": 8181,
+        "line_count": 144,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            144
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            144
+          ]
+        ],
+        "classification": "interfaces",
+        "declaraciones": [
+          {
+            "name": "cTop7",
+            "source_name": "cTop7",
+            "kind": "def",
+            "line": 14
+          },
+          {
+            "name": "CTop7Values",
+            "source_name": "CTop7Values",
+            "kind": "def",
+            "line": 16
+          },
+          {
+            "name": "CoreTopEachSized7",
+            "source_name": "CoreTopEachSized7",
+            "kind": "def",
+            "line": 24
+          },
+          {
+            "name": "PropTL7",
+            "source_name": "PropTL7",
+            "kind": "def",
+            "line": 35
+          },
+          {
+            "name": "TopOfInputs2Sized7",
+            "source_name": "TopOfInputs2Sized7",
+            "kind": "def",
+            "line": 49
+          },
+          {
+            "name": "ChainTop7",
+            "source_name": "ChainTop7",
+            "kind": "def",
+            "line": 60
+          },
+          {
+            "name": "ChainAt7",
+            "source_name": "ChainAt7",
+            "kind": "def",
+            "line": 63
+          },
+          {
+            "name": "FixedEpsilonGrowthBound",
+            "source_name": "FixedEpsilonGrowthBound",
+            "kind": "def",
+            "line": 75
+          },
+          {
+            "name": "FixedEpsilonConcreteGrowthBound",
+            "source_name": "FixedEpsilonConcreteGrowthBound",
+            "kind": "def",
+            "line": 122
+          },
+          {
+            "name": "ChainSizesModelEv7",
+            "source_name": "ChainSizesModelEv7",
+            "kind": "def",
+            "line": 141
+          }
+        ],
+        "hypotheses": "Cadena ChainCore y cotas refinadas CErr7; para +6ε se especializa eD=2,eL=0 y la cadena solo-zeta.",
+        "scope": "Lectura completa de un archivo de definiciones : Prop. No prueba por sí mismo RH ni las cotas refinadas. Se registra para impedir confusión con el exponente eD+eL+7 de CoreGm."
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/ErrorFormsEventualPowerBound.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ErrorFormsEventualPowerBound.lean",
+        "blob_sha_reported": "23718e33f9a352f801389264644a1cf49214020e",
+        "git_blob_sha_recomputed": "23718e33f9a352f801389264644a1cf49214020e",
+        "sha256": "f455efdea3aba8795ba61d6a290164f52cdc9708dbad58f9dd8b14fde0a78002",
+        "bytes": 9408,
+        "line_count": 163,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            163
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            163
+          ]
+        ],
+        "classification": "interfaces",
+        "declaraciones": [
+          {
+            "name": "CErr7",
+            "source_name": "CErr7",
+            "kind": "def",
+            "line": 11
+          },
+          {
+            "name": "ErrorFormsAnyExponent",
+            "source_name": "ErrorFormsAnyExponent",
+            "kind": "def",
+            "line": 20
+          },
+          {
+            "name": "ErrorTermPowerBound",
+            "source_name": "ErrorTermPowerBound",
+            "kind": "def",
+            "line": 28
+          },
+          {
+            "name": "ErrorFormsEachTranslate",
+            "source_name": "ErrorFormsEachTranslate",
+            "kind": "def",
+            "line": 34
+          },
+          {
+            "name": "ErrorFormsEventualPowerBound",
+            "source_name": "ErrorFormsEventualPowerBound",
+            "kind": "def",
+            "line": 47
+          },
+          {
+            "name": "ErrExpBelowFalse",
+            "source_name": "ErrExpBelowFalse",
+            "kind": "def",
+            "line": 113
+          },
+          {
+            "name": "SizesSat",
+            "source_name": "SizesSat",
+            "kind": "def",
+            "line": 130
+          }
+        ],
+        "hypotheses": "ErrWindows, LargeX, comparaciones de exponentes y tamaños según cada proposición.",
+        "scope": "Lectura completa de definiciones : Prop y términos auxiliares; las proposiciones nombradas no son teoremas demostrados en este archivo."
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/ChainSlopeWindows/PSmall.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/PSmall.lean",
+        "blob_sha_reported": "999096013e211b213a56d840d2937968480b4d57",
+        "git_blob_sha_recomputed": "999096013e211b213a56d840d2937968480b4d57",
+        "sha256": "ecf649267895528be3a4c15d8a2594b4f855fbb89b14dd3ca6baa78af0af74e0",
+        "bytes": 5576,
+        "line_count": 168,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            168
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            168
+          ]
+        ],
+        "classification": "proofs",
+        "declaraciones": [
+          {
+            "name": "node_sizes_of_windows",
+            "source_name": "node_sizes_of_windows",
+            "kind": "theorem",
+            "line": 15
+          },
+          {
+            "name": "window_sizes_explicit",
+            "source_name": "window_sizes_explicit",
+            "kind": "theorem",
+            "line": 39
+          },
+          {
+            "name": "node_sizes_explicit",
+            "source_name": "node_sizes_explicit",
+            "kind": "theorem",
+            "line": 57
+          },
+          {
+            "name": "cj_sub",
+            "source_name": "cj_sub",
+            "kind": "lemma",
+            "line": 76
+          },
+          {
+            "name": "hOf_of_coprime",
+            "source_name": "hOf_of_coprime",
+            "kind": "lemma",
+            "line": 91
+          },
+          {
+            "name": "prodHom",
+            "source_name": "prodHom",
+            "kind": "def",
+            "line": 156
+          }
+        ],
+        "hypotheses": "Tamaños de WindowsAt, positividad y compatibilidad del bit grueso; hipótesis de coprimalidad en los lemas de caracteres.",
+        "scope": "Pruebas locales de tamaños y algunas identidades de caracteres. No prueba existencia de las ventanas aritméticas."
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/ChainSlopeWindows/PChain.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/PChain.lean",
+        "blob_sha_reported": "57559bc6dedbabbac7365c9f31fbbab09164edca",
+        "git_blob_sha_recomputed": "57559bc6dedbabbac7365c9f31fbbab09164edca",
+        "sha256": "be3c0f0ead3ebf13bc147c927c79aa5470d45a67739249d3b04a40d17281bf0d",
+        "bytes": 78841,
+        "line_count": 1659,
+        "read_scope": "selective",
+        "lineas_leidas": [
+          [
+            1,
+            155
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            155
+          ]
+        ],
+        "classification": "conditional_proofs",
+        "declaraciones": [
+          {
+            "name": "proposition_hypothesis_split",
+            "source_name": "proposition_hypothesis_split",
+            "kind": "theorem",
+            "line": 14
+          },
+          {
+            "name": "small_costs_split",
+            "source_name": "small_costs_split",
+            "kind": "theorem",
+            "line": 19
+          },
+          {
+            "name": "size_windows_split",
+            "source_name": "size_windows_split",
+            "kind": "theorem",
+            "line": 23
+          },
+          {
+            "name": "chain_top_bound",
+            "source_name": "chain_top_bound",
+            "kind": "theorem",
+            "line": 28
+          },
+          {
+            "name": "chain_at_alt",
+            "source_name": "chain_at_alt",
+            "kind": "theorem",
+            "line": 70
+          },
+          {
+            "name": "chain_weighted_mean_to_unit_weight",
+            "source_name": "chain_weighted_mean_to_unit_weight",
+            "kind": "theorem",
+            "line": 81
+          },
+          {
+            "name": "moveCostEv",
+            "source_name": "moveCostEv",
+            "kind": "lemma",
+            "line": 88
+          },
+          {
+            "name": "le_rpow_26",
+            "source_name": "le_rpow_26",
+            "kind": "lemma",
+            "line": 130
+          },
+          {
+            "name": "x_large_eventually",
+            "source_name": "x_large_eventually",
+            "kind": "theorem",
+            "line": 137
+          },
+          {
+            "name": "chain_eventually",
+            "source_name": "chain_eventually",
+            "kind": "theorem",
+            "line": 147
+          }
+        ],
+        "hypotheses": "ChainCore/ChainInputs, identidad de balance, ErrWindows, SizeData₂, familias compatibles y realización para todo ε pequeño según ChainEventualGivesRiemannHypothesis.",
+        "scope": "Solo líneas 1–155. Se lee el ensamblaje y el umbral; no se lee el resto del archivo ni los modelos y variantes posteriores. La realización aritmética es una premisa del ensamblaje."
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/FamCore.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/FamCore.lean",
+        "blob_sha_reported": "44cd54c38881086724fdf7f10f32b7d8e80e35b3",
+        "git_blob_sha_recomputed": "44cd54c38881086724fdf7f10f32b7d8e80e35b3",
+        "sha256": "b261e12923d7dc47037a7b5b458e61ef59d69545f3b40a904a36e6bf8047ec78",
+        "bytes": 10481,
+        "line_count": 218,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            218
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            218
+          ]
+        ],
+        "classification": "structure_and_proofs",
+        "declaraciones": [
+          {
+            "name": "FamCore",
+            "source_name": "FamCore",
+            "kind": "structure",
+            "line": 71
+          },
+          {
+            "name": "FamCore.Windows",
+            "source_name": "FamCore.Windows",
+            "kind": "def",
+            "line": 155
+          },
+          {
+            "name": "coverS_of_cover",
+            "source_name": "coverS_of_cover",
+            "kind": "theorem",
+            "line": 47
+          },
+          {
+            "name": "FamCore.coverS_carry",
+            "source_name": "FamCore.coverS_carry",
+            "kind": "theorem",
+            "line": 187
+          },
+          {
+            "name": "FamCore.coverU_hyp_self",
+            "source_name": "FamCore.coverU_hyp_self",
+            "kind": "theorem",
+            "line": 207
+          }
+        ],
+        "hypotheses": "Los campos de FamCore fijan J y constantes uniformes, familias Ix(x), rangos y datos comunes dentro de x, unboundedness, identificaciones eW y cobertura; Windows es una condición adicional.",
+        "scope": "Lectura completa de estructura, definiciones y pruebas de transporte. Que la estructura declare campos no demuestra que exista una familia aritmética que los satisfaga."
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/GlobalTheoremInputs.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/GlobalTheoremInputs.lean",
+        "blob_sha_reported": "ba31f5120ed089d48968754ae577427912d467c5",
+        "git_blob_sha_recomputed": "ba31f5120ed089d48968754ae577427912d467c5",
+        "sha256": "4d51ccc0586441a159ad6d09ebc0a46b3c462e3c5b296d5a5bd7613266e17bfb",
+        "bytes": 8939,
+        "line_count": 168,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            168
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            168
+          ]
+        ],
+        "classification": "interfaces",
+        "declaraciones": [
+          {
+            "name": "LinkV",
+            "source_name": "LinkV",
+            "kind": "def",
+            "line": 22
+          },
+          {
+            "name": "LinkN",
+            "source_name": "LinkN",
+            "kind": "def",
+            "line": 45
+          },
+          {
+            "name": "LinkEta",
+            "source_name": "LinkEta",
+            "kind": "def",
+            "line": 49
+          },
+          {
+            "name": "LinkIRR",
+            "source_name": "LinkIRR",
+            "kind": "def",
+            "line": 55
+          },
+          {
+            "name": "DIVinN",
+            "source_name": "DIVinN",
+            "kind": "def",
+            "line": 62
+          },
+          {
+            "name": "LinkMu",
+            "source_name": "LinkMu",
+            "kind": "def",
+            "line": 74
+          },
+          {
+            "name": "LinkDIV",
+            "source_name": "LinkDIV",
+            "kind": "def",
+            "line": 91
+          },
+          {
+            "name": "LinkG",
+            "source_name": "LinkG",
+            "kind": "def",
+            "line": 138
+          },
+          {
+            "name": "LinkS",
+            "source_name": "LinkS",
+            "kind": "def",
+            "line": 152
+          },
+          {
+            "name": "GlobalTheoremInputs",
+            "source_name": "GlobalTheoremInputs",
+            "kind": "def",
+            "line": 158
+          },
+          {
+            "name": "LinkGLOBAL",
+            "source_name": "LinkGLOBAL",
+            "kind": "def",
+            "line": 162
+          }
+        ],
+        "hypotheses": "Cada Link* expresa un enlace geométrico/cohomológico; GlobalTheoremInputs es la conjunción de entradas y LinkGLOBAL es una implicación uniformemente cuantificada.",
+        "scope": "Lectura completa de interfaces. No se presentan los campos Link* como resultados automáticamente disponibles."
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/TopWin.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/TopWin.lean",
+        "blob_sha_reported": "a6ac464a67f99a546566ee3a3e0fd1db1f4c2550",
+        "git_blob_sha_recomputed": "a6ac464a67f99a546566ee3a3e0fd1db1f4c2550",
+        "sha256": "afbbf8ec0a8aca08b7935c6118c76eef06b2eee896805e7de277b9d4e09fc52b",
+        "bytes": 8117,
+        "line_count": 140,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            140
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            140
+          ]
+        ],
+        "classification": "interfaces_and_conditional_proofs",
+        "declaraciones": [
+          {
+            "name": "ChebyshevInequalityOnFamilyWindows",
+            "source_name": "ChebyshevInequalityOnFamilyWindows",
+            "kind": "def",
+            "line": 23
+          },
+          {
+            "name": "ChebyshevInequalityOnWindows",
+            "source_name": "ChebyshevInequalityOnWindows",
+            "kind": "def",
+            "line": 26
+          },
+          {
+            "name": "ChebyshevInequalityAtWindowScale",
+            "source_name": "ChebyshevInequalityAtWindowScale",
+            "kind": "def",
+            "line": 30
+          },
+          {
+            "name": "ExWin",
+            "source_name": "ExWin",
+            "kind": "def",
+            "line": 40
+          },
+          {
+            "name": "ChainWin",
+            "source_name": "ChainWin",
+            "kind": "def",
+            "line": 44
+          },
+          {
+            "name": "tiedWin_of_ex",
+            "source_name": "tiedWin_of_ex",
+            "kind": "theorem",
+            "line": 50
+          },
+          {
+            "name": "exists_small_eps",
+            "source_name": "exists_small_eps",
+            "kind": "theorem",
+            "line": 59
+          },
+          {
+            "name": "level_of_tiedWin",
+            "source_name": "level_of_tiedWin",
+            "kind": "theorem",
+            "line": 68
+          },
+          {
+            "name": "zeroFreeOn_of_tiedWin_cyc",
+            "source_name": "zeroFreeOn_of_tiedWin_cyc",
+            "kind": "theorem",
+            "line": 90
+          }
+        ],
+        "hypotheses": "ExWin y ChainWin para el empalme; ChebyshevInequalityOnWindows, FormBAt y ChebyshevInequalityAtWindowScale para excluir ceros. eD,eL quedan fijos antes de ε; K se elige antes de Fm.",
+        "scope": "Lectura completa. Pruebas de empalme de interfaces y elección de ε, conservando ventanas y umbrales. No prueba las hipótesis aritméticas de entrada."
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/CharacterBoxes/DesWin.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/DesWin.lean",
+        "blob_sha_reported": "94820ef32775f43f41c61da2b892a121d0549b86",
+        "git_blob_sha_recomputed": "94820ef32775f43f41c61da2b892a121d0549b86",
+        "sha256": "655762e90a0d7aae940774b631286a6cb942e59f68d7a3c350c05274487bf6ec",
+        "bytes": 2157,
+        "line_count": 35,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            35
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            35
+          ]
+        ],
+        "classification": "conditional_assembly",
+        "declaraciones": [
+          {
+            "name": "topDesWin",
+            "source_name": "topDesWin",
+            "kind": "theorem",
+            "line": 11
+          }
+        ],
+        "hypotheses": "DesignExists más nueve entradas Closed (hN,hDIV,hEta,hIRR,hZ,hRk,hG,hS,hGL) y disponibilidad de HypV para la clase indicada.",
+        "scope": "Lectura completa del ensamblaje condicionado. No se atribuye al teorema una demostración de DesignExists, LinkG, LinkS u otras entradas."
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/CharacterBoxes/WinPairs.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/WinPairs.lean",
+        "blob_sha_reported": "4670fec488d1eb59a3cc52dffc8d0eab16e16b0b",
+        "git_blob_sha_recomputed": "4670fec488d1eb59a3cc52dffc8d0eab16e16b0b",
+        "sha256": "41c1edf737bb6e1a4791d4440488a885889209db750698359ab4d1e237dc2f6e",
+        "bytes": 4570,
+        "line_count": 81,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            81
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            81
+          ]
+        ],
+        "classification": "conditional_proof",
+        "declaraciones": [
+          {
+            "name": "UpperTheory.Top.winPairs",
+            "source_name": "UpperTheory.Top.winPairs",
+            "kind": "theorem",
+            "line": 5
+          }
+        ],
+        "hypotheses": "VWinAt ψ 401 y PairEx. Los primos q,d se fijan para una ventana grande mediante PairEx; VWinAt proporciona la ventana cohomológica antes del reescalado.",
+        "scope": "Lectura completa del transporte [W,W²]→[Z,Z^(3/2)] con Z=c^(1/(2+8ε))W. Umbrales W≥k³ y W≥k^400. No prueba PairEx."
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/CharacterBoxes/PairRows.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/PairRows.lean",
+        "blob_sha_reported": "f92f69d4f22ee8dd7bed5e32899838a3254eb54b",
+        "git_blob_sha_recomputed": "f92f69d4f22ee8dd7bed5e32899838a3254eb54b",
+        "sha256": "d6127d2887d36c090ef5be5510babe63204c02f630c7a6fb3694dc7845d68bbb",
+        "bytes": 20523,
+        "line_count": 387,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            387
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            387
+          ]
+        ],
+        "classification": "conditional_proofs",
+        "declaraciones": [
+          {
+            "name": "boxes_core",
+            "source_name": "boxes_core",
+            "kind": "theorem",
+            "line": 18
+          },
+          {
+            "name": "boxq_of_pair",
+            "source_name": "boxq_of_pair",
+            "kind": "theorem",
+            "line": 170
+          },
+          {
+            "name": "pairRow_of_pair",
+            "source_name": "pairRow_of_pair",
+            "kind": "theorem",
+            "line": 245
+          },
+          {
+            "name": "qdq_core",
+            "source_name": "qdq_core",
+            "kind": "theorem",
+            "line": 264
+          },
+          {
+            "name": "qdq_of_pair",
+            "source_name": "qdq_of_pair",
+            "kind": "theorem",
+            "line": 299
+          },
+          {
+            "name": "UpperTheory.Top.pairRows",
+            "source_name": "UpperTheory.Top.pairRows",
+            "kind": "theorem",
+            "line": 334
+          }
+        ],
+        "hypotheses": "PairGood, compatibilidad de caracteres primitivos y del host, restricciones sobre ε,Y,x y rangos. PairGood ya incluye las cotas analíticas de los twists.",
+        "scope": "Lectura completa. Convierte PairGood en cajas libres de ceros, QDq y PairRow; no prueba la existencia de pares buenos."
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChCore.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChCore.lean",
+        "blob_sha_reported": "878f5077bc382426c7da988e5a375b85deeaa7de",
+        "git_blob_sha_recomputed": "878f5077bc382426c7da988e5a375b85deeaa7de",
+        "sha256": "80ceae1e3c5728267fe7e7848342ca2d754c5363e9b6d8ae2d628c70f26772e0",
+        "bytes": 25006,
+        "line_count": 446,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            446
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            446
+          ]
+        ],
+        "classification": "conditional_proofs",
+        "declaraciones": [
+          {
+            "name": "sum_A",
+            "source_name": "sum_A",
+            "kind": "lemma",
+            "line": 28
+          },
+          {
+            "name": "sum_Th",
+            "source_name": "sum_Th",
+            "kind": "lemma",
+            "line": 56
+          },
+          {
+            "name": "th_le",
+            "source_name": "th_le",
+            "kind": "lemma",
+            "line": 75
+          },
+          {
+            "name": "move",
+            "source_name": "move",
+            "kind": "lemma",
+            "line": 154
+          },
+          {
+            "name": "triv",
+            "source_name": "triv",
+            "kind": "lemma",
+            "line": 167
+          },
+          {
+            "name": "sum_vv",
+            "source_name": "sum_vv",
+            "kind": "lemma",
+            "line": 187
+          },
+          {
+            "name": "one_char",
+            "source_name": "one_char",
+            "kind": "lemma",
+            "line": 202
+          },
+          {
+            "name": "core",
+            "source_name": "core",
+            "kind": "lemma",
+            "line": 283
+          },
+          {
+            "name": "ch_core",
+            "source_name": "ch_core",
+            "kind": "theorem",
+            "line": 343
+          }
+        ],
+        "hypotheses": "HostFacts, CharsA, SizesA, ThinScales, CostWindows, RestSize, cota de gapA, positividad, m≤x^(1/2+ε/2), xm≤k y |c|≤1; umbral después de fijar C,ε,CE,Ko,c,M.",
+        "scope": "Lectura completa. Prueba extracción GmA≤x^(1/2+(C+3)ε)+SigA. No suministra por sí sola CharsA, controles auxiliares, realización geométrica o los lemas importados."
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/CoreGm.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/PrimitiveCosets/CoreGm.lean",
+        "blob_sha_reported": "3ba7a590e84c5993882ea6c5dcf9fdbed5f07d4d",
+        "git_blob_sha_recomputed": "3ba7a590e84c5993882ea6c5dcf9fdbed5f07d4d",
+        "sha256": "73abeaad38ed40bde0c2f974f53cae9d851e72d23ae389dea129b2bbddc58bc8",
+        "bytes": 4613,
+        "line_count": 74,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            74
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            74
+          ]
+        ],
+        "classification": "conditional_assembly",
+        "declaraciones": [
+          {
+            "name": "UpperTheory.Comparison₂.core_gm",
+            "source_name": "UpperTheory.Comparison₂.core_gm",
+            "kind": "theorem",
+            "line": 12
+          }
+        ],
+        "hypotheses": "EAtH y CoreAtH; Λ,eD,eL,K,cHH,eK,C,ε fijados antes de ∃x1; φ,H,TT cuantificados después del umbral.",
+        "scope": "Lectura completa. Aplica ch_top/ch_core, controla SigA y absorbe 1+4o≤x^ε. Concluye Level.Gm≤x^(1/2+(eD+eL+7)ε), sin demostrar la existencia de las entradas."
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/SChain.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/SChain.lean",
+        "blob_sha_reported": "a4bc8cecac40a1f5fd307661e151639aaf6a6efa",
+        "git_blob_sha_recomputed": "a4bc8cecac40a1f5fd307661e151639aaf6a6efa",
+        "sha256": "fbd9601bd93a72f7004d6de3f67737755a588631035c760f3e7f063c4c4a197f",
+        "bytes": 15604,
+        "line_count": 252,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            252
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            252
+          ]
+        ],
+        "classification": "interfaces",
+        "declaraciones": [
+          {
+            "name": "SizeData₂",
+            "source_name": "SizeData₂",
+            "kind": "def",
+            "line": 17
+          },
+          {
+            "name": "Ident",
+            "source_name": "Ident",
+            "kind": "def",
+            "line": 26
+          },
+          {
+            "name": "BNBounds",
+            "source_name": "BNBounds",
+            "kind": "def",
+            "line": 33
+          },
+          {
+            "name": "CostWindows",
+            "source_name": "CostWindows",
+            "kind": "def",
+            "line": 50
+          },
+          {
+            "name": "RestSize",
+            "source_name": "RestSize",
+            "kind": "def",
+            "line": 53
+          },
+          {
+            "name": "ChainCore",
+            "source_name": "ChainCore",
+            "kind": "def",
+            "line": 60
+          },
+          {
+            "name": "ChainInputs",
+            "source_name": "ChainInputs",
+            "kind": "def",
+            "line": 82
+          },
+          {
+            "name": "ChainCoreNoAnalytic",
+            "source_name": "ChainCoreNoAnalytic",
+            "kind": "def",
+            "line": 188
+          },
+          {
+            "name": "ChainSizesModelEv",
+            "source_name": "ChainSizesModelEv",
+            "kind": "def",
+            "line": 204
+          },
+          {
+            "name": "SizesTextAt",
+            "source_name": "SizesTextAt",
+            "kind": "def",
+            "line": 207
+          },
+          {
+            "name": "ChainSizesTextEv",
+            "source_name": "ChainSizesTextEv",
+            "kind": "def",
+            "line": 229
+          }
+        ],
+        "hypotheses": "Las once condiciones de SizeData₂ y los restantes campos de tamaños, costos, compatibilidad, cotas analíticas e identificaciones; los modelos numéricos se formulan como existencias.",
+        "scope": "Lectura completa de interfaces y parametrización. Una definición : Prop de un modelo no prueba que la familia aritmética requerida exista."
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/ChainSlopeWindows/SubThreeMulLogTwoLe.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/SubThreeMulLogTwoLe.lean",
+        "blob_sha_reported": "28ee72c3eb9d128f39780d53241ebb18ab723374",
+        "git_blob_sha_recomputed": "28ee72c3eb9d128f39780d53241ebb18ab723374",
+        "sha256": "fd4d5681f52473477e8e04e8aed6dc14d81bc7daf63b354037a02d585dcdd00a",
+        "bytes": 31058,
+        "line_count": 614,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            614
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            614
+          ]
+        ],
+        "classification": "proofs",
+        "declaraciones": [
+          {
+            "name": "core_ineq",
+            "source_name": "core_ineq",
+            "kind": "theorem",
+            "line": 13
+          },
+          {
+            "name": "error_sizes",
+            "source_name": "error_sizes",
+            "kind": "theorem",
+            "line": 259
+          },
+          {
+            "name": "large_x_eventually",
+            "source_name": "large_x_eventually",
+            "kind": "theorem",
+            "line": 319
+          },
+          {
+            "name": "error_sizes_eventually",
+            "source_name": "error_sizes_eventually",
+            "kind": "theorem",
+            "line": 331
+          },
+          {
+            "name": "error_lower_eta",
+            "source_name": "error_lower_eta",
+            "kind": "theorem",
+            "line": 378
+          },
+          {
+            "name": "modelD",
+            "source_name": "modelD",
+            "kind": "def",
+            "line": 405
+          },
+          {
+            "name": "modelC",
+            "source_name": "modelC",
+            "kind": "def",
+            "line": 446
+          },
+          {
+            "name": "error_sizes_weak_false",
+            "source_name": "error_sizes_weak_false",
+            "kind": "theorem",
+            "line": 471
+          },
+          {
+            "name": "text_sizes_windows",
+            "source_name": "text_sizes_windows",
+            "kind": "theorem",
+            "line": 490
+          },
+          {
+            "name": "error_bound",
+            "source_name": "error_bound",
+            "kind": "theorem",
+            "line": 551
+          },
+          {
+            "name": "joint_error_bound",
+            "source_name": "joint_error_bound",
+            "kind": "theorem",
+            "line": 588
+          }
+        ],
+        "hypotheses": "ErrWindows y LargeX para el presupuesto; ε,K,cHH,eK fijos antes de ∃x0; TextSizes en la variante de parámetros; compatibilidad y cota media para joint_error_bound.",
+        "scope": "Lectura completa. Prueba CErr=eDiv+eLoss+3; prueba también por modelo numérico que la versión débil etaBar≤1,eBar≤1 no implica el presupuesto. Este contraejemplo es de una interfaz numérica debilitada, no de la construcción aritmética."
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/PrimitiveCosets/SigALe.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/PrimitiveCosets/SigALe.lean",
+        "blob_sha_reported": "e9c80e2017ec149ac559bc20c184b9264b9ec0c2",
+        "git_blob_sha_recomputed": "e9c80e2017ec149ac559bc20c184b9264b9ec0c2",
+        "sha256": "88689d3064a0a824da4109d4c183a4cffed8953acffe6eeacb75b088b4f78f55",
+        "bytes": 3181,
+        "line_count": 60,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            60
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            60
+          ]
+        ],
+        "classification": "conditional_proof",
+        "declaraciones": [
+          {
+            "name": "character_trivial_first_factor",
+            "source_name": "character_trivial_first_factor",
+            "kind": "theorem",
+            "line": 8
+          },
+          {
+            "name": "chr_bounded",
+            "source_name": "chr_bounded",
+            "kind": "theorem",
+            "line": 18
+          },
+          {
+            "name": "UpperTheory.Comparison₂.sigA_le",
+            "source_name": "UpperTheory.Comparison₂.sigA_le",
+            "kind": "theorem",
+            "line": 38
+          }
+        ],
+        "hypotheses": "EAtH.bdG, compatibilidad ell=ellOf, identificación con caracteres primitivos y pertenencia a PsiA.",
+        "scope": "Lectura completa. Prueba SigA≤4o*x^(1/2+ε) contando con la totalidad de ΨA; no deriva la cota analítica que se recibe en bdG."
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/ExplicitFormulaErrorOfHostConditions.lean",
+        "blob_sha_reported": "ed60b4b997cd4703713660b185b9e43fd95559a1",
+        "git_blob_sha_recomputed": "ed60b4b997cd4703713660b185b9e43fd95559a1",
+        "sha256": "d6b12bcbdc15c1b717c33a712474f9fca18c577a65c41fff2b2937534e5447ba",
+        "bytes": 7338,
+        "line_count": 168,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            168
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            168
+          ]
+        ],
+        "classification": "structure_interfaces_and_proofs",
+        "declaraciones": [
+          {
+            "name": "Level",
+            "source_name": "Level",
+            "kind": "structure",
+            "line": 8
+          },
+          {
+            "name": "Level.Gm",
+            "source_name": "Gm",
+            "kind": "def",
+            "line": 38
+          },
+          {
+            "name": "Level.wt",
+            "source_name": "wt",
+            "kind": "def",
+            "line": 36
+          },
+          {
+            "name": "Level.ofSub",
+            "source_name": "Level.ofSub",
+            "kind": "def",
+            "line": 105
+          },
+          {
+            "name": "Level.cyc",
+            "source_name": "Level.cyc",
+            "kind": "def",
+            "line": 121
+          },
+          {
+            "name": "Frame.lam",
+            "source_name": "lam",
+            "kind": "def",
+            "line": 135
+          },
+          {
+            "name": "Frame.Shares",
+            "source_name": "Shares",
+            "kind": "def",
+            "line": 139
+          },
+          {
+            "name": "EAtH",
+            "source_name": "EAtH",
+            "kind": "structure",
+            "line": 144
+          },
+          {
+            "name": "EAtH.explicit_formula_error_of_host_conditions",
+            "source_name": "EAtH.explicit_formula_error_of_host_conditions",
+            "kind": "theorem",
+            "line": 155
+          }
+        ],
+        "hypotheses": "HostConditions, Shares, compatibilidad del host/nivel y cotas logarítmicas; EAtH contiene kept, ps, shares, bdG y bdL.",
+        "scope": "Lectura completa. Definición de la combinación retenida, pesos y estructura de entradas analíticas; prueba de transporte desde HostConditions. No prueba que los caracteres auxiliares satisfagan espontáneamente bdG."
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/CharacterBoxes/PairHyp.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/PairHyp.lean",
+        "blob_sha_reported": "d47dbeec05e2463c5882a8a7643dc2bf22059f35",
+        "git_blob_sha_recomputed": "d47dbeec05e2463c5882a8a7643dc2bf22059f35",
+        "sha256": "53e9e84d14f148d61844f97dc184f29119a828c4cd48b8ead5eeff45206d9c54",
+        "bytes": 1715,
+        "line_count": 35,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            35
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            35
+          ]
+        ],
+        "classification": "conditional_proof",
+        "declaraciones": [
+          {
+            "name": "jac_neg_of_dvd",
+            "source_name": "jac_neg_of_dvd",
+            "kind": "theorem",
+            "line": 5
+          },
+          {
+            "name": "jac_neg_recip",
+            "source_name": "jac_neg_recip",
+            "kind": "theorem",
+            "line": 15
+          },
+          {
+            "name": "UpperTheory.Top.pairHyp",
+            "source_name": "UpperTheory.Top.pairHyp",
+            "kind": "theorem",
+            "line": 24
+          }
+        ],
+        "hypotheses": "WinPair, datos de rango y condiciones de divisibilidad y congruencia especificadas.",
+        "scope": "Lectura completa. Produce hipótesis del host mediante identidades de Jacobi, sin producir los primos."
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/CharacterBoxes/PairGood.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/PairGood.lean",
+        "blob_sha_reported": "68d04b506355e999c0f6020ee066c4967c1e6939",
+        "git_blob_sha_recomputed": "68d04b506355e999c0f6020ee066c4967c1e6939",
+        "sha256": "e5ddbc7f4573275caad502b8414dc3579ed904d1fa6c5f3848080bbd94fb3abb",
+        "bytes": 2421,
+        "line_count": 46,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            46
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            46
+          ]
+        ],
+        "classification": "structure_and_interfaces",
+        "declaraciones": [
+          {
+            "name": "tw",
+            "source_name": "tw",
+            "kind": "def",
+            "line": 9
+          },
+          {
+            "name": "ZeroBox",
+            "source_name": "ZeroBox",
+            "kind": "def",
+            "line": 12
+          },
+          {
+            "name": "height",
+            "source_name": "height",
+            "kind": "def",
+            "line": 15
+          },
+          {
+            "name": "PairGood",
+            "source_name": "PairGood",
+            "kind": "structure",
+            "line": 18
+          },
+          {
+            "name": "PairEx",
+            "source_name": "PairEx",
+            "kind": "def",
+            "line": 28
+          },
+          {
+            "name": "RealBox",
+            "source_name": "RealBox",
+            "kind": "def",
+            "line": 32
+          },
+          {
+            "name": "ThinH",
+            "source_name": "ThinH",
+            "kind": "def",
+            "line": 36
+          },
+          {
+            "name": "PairGood.mono",
+            "source_name": "PairGood.mono",
+            "kind": "theorem",
+            "line": 41
+          }
+        ],
+        "hypotheses": "PairGood contiene WinPair, coprimalidad, cotas uniformes de gChi y derivada logarítmica para twists no triviales, y cajas libres de ceros; PairEx exige existencia de tales pares.",
+        "scope": "Lectura completa. PairEx es una proposición definida, no un teorema de existencia en este archivo; el único transporte final es la monotonía por subventanas."
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/ErrorFormsWeakWindowsFalse.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ErrorFormsWeakWindowsFalse.lean",
+        "blob_sha_reported": "1d1d179d111b5aa668893327264648558f30fdb6",
+        "git_blob_sha_recomputed": "1d1d179d111b5aa668893327264648558f30fdb6",
+        "sha256": "8b8613a5e3934127fb8b52ba402e658414662f63bff8f0e9fb52bedddd1173f2",
+        "bytes": 8391,
+        "line_count": 165,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            165
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            165
+          ]
+        ],
+        "classification": "interfaces",
+        "declaraciones": [
+          {
+            "name": "ErrText",
+            "source_name": "ErrText",
+            "kind": "def",
+            "line": 16
+          },
+          {
+            "name": "CErr",
+            "source_name": "CErr",
+            "kind": "def",
+            "line": 19
+          },
+          {
+            "name": "KBig",
+            "source_name": "KBig",
+            "kind": "def",
+            "line": 21
+          },
+          {
+            "name": "ConstsBound",
+            "source_name": "ConstsBound",
+            "kind": "def",
+            "line": 23
+          },
+          {
+            "name": "ErrWindows0",
+            "source_name": "ErrWindows0",
+            "kind": "def",
+            "line": 28
+          },
+          {
+            "name": "ErrWindows",
+            "source_name": "ErrWindows",
+            "kind": "def",
+            "line": 43
+          },
+          {
+            "name": "ErrWindowsWeak",
+            "source_name": "ErrWindowsWeak",
+            "kind": "def",
+            "line": 47
+          },
+          {
+            "name": "LargeX",
+            "source_name": "LargeX",
+            "kind": "def",
+            "line": 52
+          },
+          {
+            "name": "ErrorFormsUnderWindows",
+            "source_name": "ErrorFormsUnderWindows",
+            "kind": "def",
+            "line": 54
+          },
+          {
+            "name": "ErrorFormsEventual",
+            "source_name": "ErrorFormsEventual",
+            "kind": "def",
+            "line": 80
+          },
+          {
+            "name": "TextSizes",
+            "source_name": "TextSizes",
+            "kind": "def",
+            "line": 106
+          },
+          {
+            "name": "errorBracketSizeWindows",
+            "source_name": "errorBracketSizeWindows",
+            "kind": "def",
+            "line": 133
+          },
+          {
+            "name": "LeadingTermGrowthJoint",
+            "source_name": "LeadingTermGrowthJoint",
+            "kind": "def",
+            "line": 141
+          }
+        ],
+        "hypotheses": "ErrWindows agrega (etaBar+4√eBar)*x^cHH*b≤K*x^ε*nT*a a ErrWindows0; LargeX exige logx≤x^ε y KBig≤x^ε.",
+        "scope": "Lectura completa de definiciones : Prop y términos del presupuesto. Sus pruebas están en SubThreeMulLogTwoLe y otros archivos, no en la nomenclatura de esta interfaz."
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/GrowthBoundGivesRiemannHypothesis.lean",
+        "blob_sha_reported": "a3ece4b4aea97a95ba2977fa9e8d437e72677774",
+        "git_blob_sha_recomputed": "a3ece4b4aea97a95ba2977fa9e8d437e72677774",
+        "sha256": "8143a96da8be39cf426ef142bccbff94bac7706e5bd8e97719a8feebf3272309",
+        "bytes": 10434,
+        "line_count": 183,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            183
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            183
+          ]
+        ],
+        "classification": "definitions_and_interfaces",
+        "declaraciones": [
+          {
+            "name": "psC",
+            "source_name": "psC",
+            "kind": "def",
+            "line": 16
+          },
+          {
+            "name": "Gsig",
+            "source_name": "Gsig",
+            "kind": "def",
+            "line": 33
+          },
+          {
+            "name": "topExcess",
+            "source_name": "topExcess",
+            "kind": "def",
+            "line": 50
+          },
+          {
+            "name": "ThinScales",
+            "source_name": "ThinScales",
+            "kind": "def",
+            "line": 55
+          },
+          {
+            "name": "LipW",
+            "source_name": "LipW",
+            "kind": "def",
+            "line": 58
+          },
+          {
+            "name": "DerivInt",
+            "source_name": "DerivInt",
+            "kind": "def",
+            "line": 62
+          },
+          {
+            "name": "ValuesAtX",
+            "source_name": "ValuesAtX",
+            "kind": "def",
+            "line": 67
+          },
+          {
+            "name": "SmallCosts",
+            "source_name": "SmallCosts",
+            "kind": "def",
+            "line": 96
+          },
+          {
+            "name": "SizeWindows",
+            "source_name": "SizeWindows",
+            "kind": "def",
+            "line": 109
+          },
+          {
+            "name": "GrowthSizeBound",
+            "source_name": "GrowthSizeBound",
+            "kind": "def",
+            "line": 119
+          },
+          {
+            "name": "GrowthInequalityDataExists",
+            "source_name": "GrowthInequalityDataExists",
+            "kind": "def",
+            "line": 124
+          },
+          {
+            "name": "GrowthBoundGivesRiemannHypothesis",
+            "source_name": "GrowthBoundGivesRiemannHypothesis",
+            "kind": "def",
+            "line": 139
+          }
+        ],
+        "hypotheses": "Cada interfaz enumera explícitamente las cotas y existencias que requiere; la implicación a RH contiene la existencia de datos para todo ε pequeño y todo x suficientemente grande.",
+        "scope": "Lectura completa. Salvo los pequeños campos probados de psC, son definiciones e interfaces, no una prueba autónoma de RH; no debe inferirse el estado lógico del archivo por su nombre."
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/ChainSlopeWindows/LevelOfCongruence.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/LevelOfCongruence.lean",
+        "blob_sha_reported": "e08edc360cdf8d5d95d82ef1b805a8ea1a6151ef",
+        "git_blob_sha_recomputed": "e08edc360cdf8d5d95d82ef1b805a8ea1a6151ef",
+        "sha256": "b28d36820d558a77dd1b3d15fa0d8f13b130081b82f9439cc61bc676a137efd4",
+        "bytes": 12049,
+        "line_count": 246,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            246
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            246
+          ]
+        ],
+        "classification": "conditional_proofs",
+        "declaraciones": [
+          {
+            "name": "s_lower5",
+            "source_name": "s_lower5",
+            "kind": "lemma",
+            "line": 50
+          },
+          {
+            "name": "Vvar_bound5",
+            "source_name": "Vvar_bound5",
+            "kind": "lemma",
+            "line": 68
+          },
+          {
+            "name": "u_function_le_mean",
+            "source_name": "u_function_le_mean",
+            "kind": "lemma",
+            "line": 81
+          },
+          {
+            "name": "key_identity5",
+            "source_name": "key_identity5",
+            "kind": "lemma",
+            "line": 105
+          },
+          {
+            "name": "Ga_bound5",
+            "source_name": "Ga_bound5",
+            "kind": "lemma",
+            "line": 113
+          },
+          {
+            "name": "weighted_mean_lower_bound_le",
+            "source_name": "weighted_mean_lower_bound_le",
+            "kind": "lemma",
+            "line": 162
+          },
+          {
+            "name": "each_unit_bound_statement",
+            "source_name": "each_unit_bound_statement",
+            "kind": "theorem",
+            "line": 175
+          },
+          {
+            "name": "weighted_mean_bound_statement",
+            "source_name": "weighted_mean_bound_statement",
+            "kind": "theorem",
+            "line": 199
+          },
+          {
+            "name": "uniform_bound_statement",
+            "source_name": "uniform_bound_statement",
+            "kind": "theorem",
+            "line": 237
+          }
+        ],
+        "hypotheses": "HidaSetting, DIV, EComp5, HComp, Count5, Slopes, QuotientSlopeBoundsWith, LossBounds, SlopeIneq, HHBound, FParams; no vacuidad de U0 para el promedio.",
+        "scope": "Lectura completa de las deducciones locales/medias a partir de entradas. Prueba el paso geométrico formal al error, sin demostrar las once entradas aritméticas."
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChTop.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChTop.lean",
+        "blob_sha_reported": "ce06a34a9e0b1b332e10d3b7efb04a06e9ab77f5",
+        "git_blob_sha_recomputed": "ce06a34a9e0b1b332e10d3b7efb04a06e9ab77f5",
+        "sha256": "9be04f7335746cae6bbdf52a813ae6713a90bf2a555eefc56f538bfd96af954f",
+        "bytes": 3793,
+        "line_count": 76,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            76
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            76
+          ]
+        ],
+        "classification": "conditional_proofs",
+        "declaraciones": [
+          {
+            "name": "ch_top_main_eq",
+            "source_name": "ch_top_main_eq",
+            "kind": "lemma",
+            "line": 11
+          },
+          {
+            "name": "ch_top",
+            "source_name": "ch_top",
+            "kind": "theorem",
+            "line": 37
+          }
+        ],
+        "hypotheses": "IdentU, SizeData₂, ErrWindows, BNBoundsU y LargeX.",
+        "scope": "Lectura completa. Identifica el término principal y transporta la cota puntual a gapA≤x^(CErr*ε)*errorBracketSizeWindows. No realiza las estructuras de entrada."
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/Window.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/Window.lean",
+        "blob_sha_reported": "099d96fec932b03a505ea79a81c45bcc3fbf0ea3",
+        "git_blob_sha_recomputed": "099d96fec932b03a505ea79a81c45bcc3fbf0ea3",
+        "sha256": "882989a78da888b0462d17f285e42e44970a3dee70c1dc8c667fb5a3f985c2f7",
+        "bytes": 1825,
+        "line_count": 50,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            50
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            50
+          ]
+        ],
+        "classification": "interfaces_and_proofs",
+        "declaraciones": [
+          {
+            "name": "HasWindows",
+            "source_name": "HasWindows",
+            "kind": "def",
+            "line": 7
+          },
+          {
+            "name": "HasWindows.mono",
+            "source_name": "HasWindows.mono",
+            "kind": "theorem",
+            "line": 10
+          },
+          {
+            "name": "hasWindows_of_large",
+            "source_name": "hasWindows_of_large",
+            "kind": "theorem",
+            "line": 17
+          },
+          {
+            "name": "Level.LandauWinAt",
+            "source_name": "LandauWinAt",
+            "kind": "def",
+            "line": 24
+          },
+          {
+            "name": "Level.FormBAt",
+            "source_name": "FormBAt",
+            "kind": "def",
+            "line": 30
+          },
+          {
+            "name": "Level.FormBAt.mono",
+            "source_name": "FormBAt.mono",
+            "kind": "theorem",
+            "line": 37
+          }
+        ],
+        "hypotheses": "HasWindows expresa ∀y∃Y≥y∀x∈[Y,Y^la]; FormBAt es la interfaz analítica. El transporte final por exponentes usa bases Y≥1.",
+        "scope": "Lectura completa. Define ventanas y prueba que sobrevive eliminar un segmento inicial. Las ventanas no requieren cubrir una semirrecta."
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauZeroFreeCriterion.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauZeroFreeCriterion.lean",
+        "blob_sha_reported": "54fd0de979e0dad6ac7709ad8ecbec8a29e21872",
+        "git_blob_sha_recomputed": "54fd0de979e0dad6ac7709ad8ecbec8a29e21872",
+        "sha256": "d4c5a8ba961bb0e91121212b697217904bf0ba56c2e89c00435fb7ee416a22d7",
+        "bytes": 2678,
+        "line_count": 66,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            66
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            66
+          ]
+        ],
+        "classification": "structures_and_interfaces",
+        "declaraciones": [
+          {
+            "name": "gm",
+            "source_name": "gm",
+            "kind": "def",
+            "line": 9
+          },
+          {
+            "name": "zeroSet",
+            "source_name": "zeroSet",
+            "kind": "def",
+            "line": 11
+          },
+          {
+            "name": "PoleData",
+            "source_name": "PoleData",
+            "kind": "structure",
+            "line": 15
+          },
+          {
+            "name": "WindowHypU",
+            "source_name": "WindowHypU",
+            "kind": "def",
+            "line": 25
+          },
+          {
+            "name": "famD",
+            "source_name": "famD",
+            "kind": "def",
+            "line": 33
+          },
+          {
+            "name": "GmLevel",
+            "source_name": "GmLevel",
+            "kind": "def",
+            "line": 53
+          },
+          {
+            "name": "LandauZeroFreeCriterion",
+            "source_name": "LandauZeroFreeCriterion",
+            "kind": "def",
+            "line": 61
+          }
+        ],
+        "hypotheses": "PoleData enumera medibilidad, crecimiento global, representación de Laplace, holomorfía fuera de polos, aislamiento y residuos no nulos/positivos en polos reales. WindowHypU incluye integrabilidad del mayorante ponderado.",
+        "scope": "Lectura completa. WindowHypU conserva ∀η>0∀U0∃U≥U0∃R. LandauZeroFreeCriterion al final del archivo es otra interfaz de cota eventual en semirrecta, no el teorema de ventanas."
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/WindowHypUOfWindowHyp.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/WindowHypUOfWindowHyp.lean",
+        "blob_sha_reported": "701f0502ae106ab89e390105cd9c98e6cf881e1a",
+        "git_blob_sha_recomputed": "701f0502ae106ab89e390105cd9c98e6cf881e1a",
+        "sha256": "2e4ac8197f1fda900ba710cef10627ebd0576d2bc4207d919f0a8a769ba13c98",
+        "bytes": 2647,
+        "line_count": 60,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            60
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            60
+          ]
+        ],
+        "classification": "proofs",
+        "declaraciones": [
+          {
+            "name": "windowHypU_of_windowHyp_image",
+            "source_name": "windowHypU_of_windowHyp_image",
+            "kind": "theorem",
+            "line": 9
+          },
+          {
+            "name": "windowHypU_of_windowHyp_fun",
+            "source_name": "windowHypU_of_windowHyp_fun",
+            "kind": "theorem",
+            "line": 21
+          },
+          {
+            "name": "windowHypU_of_windowHyp",
+            "source_name": "windowHypU_of_windowHyp",
+            "kind": "theorem",
+            "line": 29
+          }
+        ],
+        "hypotheses": "WindowHyp de una CharFamily y δ>0.",
+        "scope": "Lectura completa del cambio y=exp(u), incluido transporte de integrabilidad y de la integral. No requiere una cota bilateral de Gm."
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/WindowHypOfRpow.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/WindowHypOfRpow.lean",
+        "blob_sha_reported": "dde1c159371538875c28374574ca7e452b0450d9",
+        "git_blob_sha_recomputed": "dde1c159371538875c28374574ca7e452b0450d9",
+        "sha256": "f9238ed2d6c67f1cbe383a33cc3759c00bed31b97a10253fbee59279290c6a5c",
+        "bytes": 2999,
+        "line_count": 61,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            61
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            61
+          ]
+        ],
+        "classification": "proofs",
+        "declaraciones": [
+          {
+            "name": "windowHyp_of_rpow_eventually",
+            "source_name": "windowHyp_of_rpow_eventually",
+            "kind": "theorem",
+            "line": 9
+          },
+          {
+            "name": "windowHyp_of_rpow",
+            "source_name": "windowHyp_of_rpow",
+            "kind": "theorem",
+            "line": 27
+          }
+        ],
+        "hypotheses": "δ>0; constante real fija C; para todo Y0 existe Y≥Y0 con Gm(y)≤C*y^θ para todo y∈[Y,Y^(1+δ)].",
+        "scope": "Lectura completa. Construye R(y)=|C|y^θ e integra |C|/y; el umbral puede depender de η y absorbe |C|δlogY≤Y^η. C queda fijo antes de elegir ventanas."
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/landauWindow.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/landauWindow.lean",
+        "blob_sha_reported": "7915058f10b33a52652290cd887cbccdc00e676a",
+        "git_blob_sha_recomputed": "7915058f10b33a52652290cd887cbccdc00e676a",
+        "sha256": "57f49606e6ffd8cab45672d8d4b9c7ded6c0b6b0d140821cc51b5baeb4f67ab5",
+        "bytes": 9681,
+        "line_count": 170,
+        "read_scope": "complete",
+        "lineas_leidas": [
+          [
+            1,
+            170
+          ]
+        ],
+        "read_ranges": [
+          [
+            1,
+            170
+          ]
+        ],
+        "classification": "conditional_analytic_proofs",
+        "declaraciones": [
+          {
+            "name": "landau_window_contra",
+            "source_name": "landau_window_contra",
+            "kind": "theorem",
+            "line": 20
+          },
+          {
+            "name": "landau_window_key",
+            "source_name": "landau_window_key",
+            "kind": "theorem",
+            "line": 40
+          },
+          {
+            "name": "landau_window_re_pos",
+            "source_name": "landau_window_re_pos",
+            "kind": "theorem",
+            "line": 75
+          },
+          {
+            "name": "landau_window",
+            "source_name": "landau_window",
+            "kind": "theorem",
+            "line": 83
+          }
+        ],
+        "hypotheses": "PoleData g Φ Z, 0<θ<1, δ>0 y WindowHypU g θ δ; utiliza lemas importados de Cauchy, selección local de polos y colas.",
+        "scope": "Lectura completa del ensamblaje y su prueba, no de todas las dependencias importadas en esta revisión. Concluye ∀ρ∈Z Reρ≤θ, sin suponer un cero de parte real máxima."
+      }
+    ],
+    "excluded_or_discovery_files": [
+      {
+        "path": "src/Formalism/SizeWindowBrackets/ChainSlopeWindows/PBrDiv.lean",
+        "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/PBrDiv.lean",
+        "blob_sha_reported": "27066a6a5124e607e010f8448c0ce314f469d628",
+        "git_blob_sha_recomputed": "27066a6a5124e607e010f8448c0ce314f469d628",
+        "sha256": "c7915b4b3d298548590956c45b1157c3656f4ee71da90dd56db72693e883b8db",
+        "bytes": 25932,
+        "line_count": 646,
+        "read_scope": "discovery_only",
+        "lineas_leidas": [],
+        "read_ranges": [],
+        "classification": "discovery_only",
+        "declaraciones": [],
+        "hypotheses": "No auditadas.",
+        "scope": "Recuperado durante localización. Solo se enumeraron nombres mediante búsqueda; no se leyó el cuerpo matemático. Excluido del recuento y de las conclusiones de esta revisión."
+      }
+    ],
+    "date": "2026-11-23",
+    "toolchain": "4.33.1",
+    "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "document_comparison": {
+      "A": "§§10–11, pp.46–52, ejemplar A55; entradas de selección de §3 y de compatibilidad de §9 conservadas.",
+      "B": "§6, pp.64–67, ejemplar B73 del 21 de noviembre de 2026.",
+      "newer_B_incorporated": false,
+      "scope": "Normalización del presupuesto, dos errores de extracción, cierre numérico, orden uniforme de parámetros, transporte y ensamblaje condicionado de ventanas, paso al criterio unilateral."
     }
   }
 }

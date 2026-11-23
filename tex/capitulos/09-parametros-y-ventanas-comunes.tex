@@ -1,0 +1,1046 @@
+\section{Elección de parámetros y ventanas comunes}
+\label{sec:parametros}
+
+Las estimaciones de las notas anteriores se convierten en una cota para
+$H_\psi$ después de dividir el exceso aritmético por el coeficiente que
+produce la selección de caracteres. Esa división cambia el tamaño de
+cada error. Además, el criterio analítico utiliza un intervalo entero:
+los datos que permiten acotar el exceso deben existir de manera compatible
+en todos sus puntos. Esta nota desarrolla el cálculo de los exponentes
+y la coordinación de las elecciones.
+
+\fuente{A, §§10--11, pp.~46--52, con la extracción de la Proposición~4.3,
+pp.~16--17; B, §6, Lema~6.1 y Proposición~6.3, pp.~64--67.
+Se mantienen los ejemplares A de 55 páginas y B de 73 páginas del
+21 de noviembre. Las deducciones numéricas y lógicas se prueban aquí;
+la realización aritmética de todas sus hipótesis se identifica como
+entrada de la propuesta.}
+
+\subsection{La estimación que debe producir la construcción}
+
+Sea $\psi$ un carácter primitivo de orden $o$. Conservamos la notación
+de la Nota~\ref{sec:caracteres}:
+\begin{equation}
+ H_\psi(x)=G_1(x)+\frac{1}{3o+1}
+       \sum_{j=1}^{o-1}\Ree G_{\psi^{[j]}}(x).
+ \label{eq:par-hpsi}
+\end{equation}
+Aquí $\psi^{[j]}$ es el carácter primitivo que induce la potencia
+$\psi^j$. Para $o=1$ la suma es vacía y $H_\psi=G_1$.
+B llama $\mathcal G_\psi$ a esta función. Los coeficientes de
+\eqref{eq:par-hpsi} son positivos; los valores de la función pueden
+tener ambos signos.
+
+La meta es la propiedad
+\begin{equation}
+ \forall\eta>0\ \forall A\ge3\ \exists Y\ge A\
+ \forall x\in[Y,Y^{3/2}],\qquad H_\psi(x)\le x^{1/2+\eta}.
+ \label{eq:par-meta}
+\end{equation}
+El carácter $\psi$ se fija antes de estas elecciones. Los cuerpos,
+pesos y mapas auxiliares podrán variar con $x$ si las constantes de la
+estimación y el intervalo ya están fijados. La función $H_\psi$ permanece
+la misma en todos los puntos.
+
+La Nota~\ref{sec:ventanas}, Proposición~\ref{vent-corolario}, explica por
+qué \eqref{eq:par-meta}, junto con las hipótesis analíticas allí
+comprobadas, excluye los ceros de $L(s,\psi)$ con parte real mayor
+que $1/2$. El trabajo aritmético consiste en producir esta cota
+unilateral en ventanas arbitrariamente lejanas.
+
+\subsection{El presupuesto se forma después de cancelar}
+
+La comparación de pendientes de la Proposición~\ref{prop:periodos-balance},
+bajo sus hipótesis, entrega un exceso de la forma
+\[
+ \Delta=\sum_{j,t}
+   \bigl(\mathcal A(a_t,t,w_j)-\mathcal M(a_t,w_j)\bigr).
+\]
+La cantidad $\mathcal A$ reúne ganancias de divisibilidad; $\mathcal M$
+es el término principal que contiene los logaritmos y la derivada
+logarítmica que interviene en la normalización del periodo
+arquimediano. En A, Proposición~10.1, la comparación se organiza,
+para una traslación fijada, mediante
+\begin{equation}
+ \Delta\le M_0+E_{\mathrm{HN}}+
+       \sum_i p_iL_i+E_D+E_C+A_\Sigma E_T+E_P,
+ \qquad A_\Sigma=\sum_t a_t,\quad \sum_i p_i=1.
+ \label{eq:par-costes}
+\end{equation}
+Los pesos $p_i$ son positivos. $M_0$ controla la pendiente inicial;
+$E_{\mathrm{HN}}$ es la pérdida del marco; $L_i$ recoge los costes
+integrales; los demás términos registran las comparaciones de altura,
+nivel, cardinalidad y ganancia finita. El subíndice de $A_\Sigma$ evita
+confundir esta suma con la fuente A o con el umbral de
+\eqref{eq:par-meta}.
+
+La formación de \eqref{eq:par-costes} usa cancelaciones exactas ya
+preparadas en la Nota~\ref{sec:periodos}. El retorcimiento finito común
+aparece con signos opuestos en la fuente y el destino. El término de
+nivel $mA_\Sigma\log g_0$ se cancela con el que aporta el conteo de
+palabras. Finalmente, la identidad normalizada
+\begin{equation}
+ \log\Omega=\gamma_E+\log(\pi/v)-\Ree\ell_\kappa
+ \label{eq:par-periodo}
+\end{equation}
+cancela los logaritmos de $v/\pi$ procedentes de los pesos
+arquimedianos. Aquí $\kappa$ es el carácter cuadrático del periodo y
+$\ell_\kappa=L'(1,\kappa)/L(1,\kappa)$.
+La cota \eqref{eq:par-costes} se aplica al resto que queda tras estas
+cancelaciones. Sustituir prematuramente los términos firmados por sus
+valores absolutos perdería las cancelaciones que identifican
+$\mathcal M$.
+
+Las Notas~\ref{sec:geometria} y~\ref{sec:cohomologia} explican cómo
+varias entradas geométricas y cohomológicas controlan esos restos.
+En este bloque utilizamos como hipótesis que su suma queda acotada por
+$x^{C\varepsilon}\mathcal B$, con un exponente $C$ fijo.
+La expresión $\mathcal B$ se analiza a continuación. La estimación
+debe valer para cada traslación que usa la extracción de caracteres:
+\[
+ \Delta_u(x)\le E(x)\qquad\text{para todo }u\in A_0.
+\]
+El sistema de datos, el presupuesto y los factores normalizadores
+son comunes, con las dependencias uniformes de esa extracción.
+
+\subsection{Parámetros, densidades y coeficiente de extracción}
+
+Fijemos $x\ge3$, $\varepsilon>0$ y $C\ge0$. Escribimos
+$n$ para el tamaño del factor abeliano del grupo auxiliar,
+$t=|T_1|$ para el número de posiciones superiores y
+$v_2=|T_2|$ para el tamaño del conjunto grueso. En A estos dos últimos
+números se escriben $r_T$ y $n_2$; $n^2$ denotará siempre el
+cuadrado de $n$.
+
+La longitud de la torre theta es $m$. El número $k$ es la dimensión
+inicial y $b>0$ la escala de los pesos grandes. Usamos $a_E\ge0$
+para una cota superior de las amplitudes $a_t$. El cálculo requiere
+\begin{equation}
+ \begin{gathered}
+ 0\le a_E\le2xb,\qquad
+ t\ge\frac n2x^{-\varepsilon/8},\qquad
+ nx^{-\varepsilon}\le v_2\le n,\\
+ x^{1/2-\varepsilon}\le m\le x^{1/2+\varepsilon/2},
+ \qquad
+ xm\le k\le n^2x^{1/2-\varepsilon}.
+ \end{gathered}
+ \label{eq:par-rangos}
+\end{equation}
+Los números $n,t,v_2,m$ son enteros positivos en la aplicación.
+La estimación elemental sigue siendo válida para valores reales
+positivos de esos parámetros y de $k$. Relajar el dominio en un
+lema numérico no construye los espacios y conjuntos que los realizan.
+
+Definamos
+\begin{equation}
+ Q=tmb>0,\qquad d=\frac{v_2}{n},\qquad
+ \mathcal B=
+ ta_E\left(1+\frac{m^2}{k}\right)
+ +m\left(2nmbx^\varepsilon+
+               \frac{v_2kbx^{2\varepsilon}}{n^2}\right).
+ \label{eq:par-presupuesto}
+\end{equation}
+La letra $d$ designa aquí una densidad; en el apartado de ventanas
+comunes volveremos a escribir explícitamente los primos auxiliares
+como $q_{\mathrm{aux}},d_{\mathrm{aux}}$.
+
+El coeficiente que acompaña a la combinación retenida es $Qd/2$.
+El factor $d/2$ procede de \eqref{car-factor-medio}; $t$ cuenta las
+posiciones y $m$ las etapas. Por ello, una cota grande para el exceso
+puede dar una cota pequeña para $H_\psi$ si se compara con este
+coeficiente, conservando las pérdidas debidas a las densidades.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}YY@{}}
+\toprule
+\textbf{Cantidad} & \textbf{Cota utilizada} & \textbf{Efecto al normalizar}\\
+\midrule
+$a_E/b$ & $a_E/b\le2x$ & Produce los términos $x/m$ y $xm/k$.\\
+$t/n$ & $t/n\ge x^{-\varepsilon/8}/2$ &
+El factor $n/t$ cuesta a lo sumo $2x^{\varepsilon/8}$.\\
+$v_2/n=d$ & $d\ge x^{-\varepsilon}$ &
+Despejar $H_\psi$ cuesta a lo sumo $x^\varepsilon$.\\
+$m$ & Entre $x^{1/2-\varepsilon}$ y $x^{1/2+\varepsilon/2}$ &
+Mantiene próximos a $\sqrt{x}$ los costes opuestos.\\
+$k$ & $xm\le k\le n^2x^{1/2-\varepsilon}$ &
+Controla simultáneamente un término inverso y otro directo en $k$.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Por qué la longitud de torre está cerca de la raíz}
+
+El primer término de $\mathcal B/Q$ es $a_E/(mb)\le2x/m$.
+El tercero es $2(n/t)mx^\varepsilon$. Salvo los factores
+$x^{O(\varepsilon)}$ permitidos por \eqref{eq:par-rangos},
+uno disminuye y el otro aumenta al crecer $m$.
+
+\begin{lema}[Equilibrio de dos costes]
+\label{lem:par-equilibrio}
+Para $x,m>0$ se tiene
+\[
+ \frac xm+m\ge2\sqrt{x},
+\]
+con igualdad si y solo si $m=\sqrt{x}$. Si $m$ debe ser entero,
+la elección $m=\lceil\sqrt{x}\rceil$ satisface el rango de $m$ en
+\eqref{eq:par-rangos} siempre que $x\ge2^{2/\varepsilon}$.
+\end{lema}
+
+\begin{proof}
+La identidad
+\[
+ \frac xm+m-2\sqrt{x}
+   =\left(\sqrt m-\sqrt{x/m}\right)^2
+\]
+prueba la desigualdad y su caso de igualdad. Para $x\ge1$,
+\[
+ \sqrt{x}\le\lceil\sqrt{x}\rceil
+       \le\sqrt{x}+1\le2\sqrt{x}.
+\]
+La cota inferior de \eqref{eq:par-rangos} se sigue de
+$x^{-\varepsilon}\le1$; la superior se sigue de
+$2\le x^{\varepsilon/2}$.
+\end{proof}
+
+El rango de $k$ impone otra compatibilidad:
+\begin{equation}
+ xm\le n^2x^{1/2-\varepsilon}
+ \quad\Longleftrightarrow\quad
+ n\ge m^{1/2}x^{1/4+\varepsilon/2}.
+ \label{eq:par-compatibilidad}
+\end{equation}
+Si se usa también $m\ge x^{1/2-\varepsilon}$, resulta la condición
+necesaria $n\ge\sqrt{x}$. Elegir $m$ por sí solo deja abierta la
+construcción del grupo auxiliar, de la dimensión y de las posiciones
+que cumplen todos los rangos. Esa realización simultánea será una
+hipótesis explícita.
+
+\subsection{La cuenta de los cuatro términos}
+
+\begin{lema}[Presupuesto normalizado]
+\label{lem:par-presupuesto}
+Bajo \eqref{eq:par-rangos}, la cantidad definida en
+\eqref{eq:par-presupuesto} satisface
+\begin{equation}
+ \frac{\mathcal B}{Q}\le10x^{1/2+13\varepsilon/8}.
+ \label{eq:par-diez}
+\end{equation}
+En consecuencia, si $E\le x^{C\varepsilon}\mathcal B$, entonces
+\begin{equation}
+ \frac{2E}{Qd}\le20x^{1/2+(C+21/8)\varepsilon}.
+ \label{eq:par-veinte}
+\end{equation}
+\end{lema}
+
+\begin{proof}
+La división por $Q=tmb$ da la igualdad
+\begin{equation}
+ \frac{\mathcal B}{Q}
+ =\frac{a_E}{mb}+\frac{a_Em}{bk}
+     +\frac{2nmx^\varepsilon}{t}
+     +\frac{v_2kx^{2\varepsilon}}{n^2t}.
+ \label{eq:par-cuatro}
+\end{equation}
+Las cuatro cotas se obtienen por separado. Primero,
+\[
+ \frac{a_E}{mb}\le\frac{2x}{m}\le2x^{1/2+\varepsilon},
+ \qquad
+ \frac{a_Em}{bk}\le\frac{2xm}{k}\le2.
+\]
+La densidad de $T_1$ y la cota superior de $m$ dan
+\[
+ \frac{2nmx^\varepsilon}{t}
+ \le4m x^{9\varepsilon/8}
+ \le4x^{1/2+13\varepsilon/8}.
+\]
+Para el último término usamos primero $v_2\le n$, después
+$n/t\le2x^{\varepsilon/8}$ y finalmente la cota superior de $k$:
+\[
+ \frac{v_2kx^{2\varepsilon}}{n^2t}
+ \le\frac{kx^{2\varepsilon}}{nt}
+ \le\frac{2k}{n^2}x^{17\varepsilon/8}
+ \le2x^{1/2+9\varepsilon/8}.
+\]
+Cada potencia obtenida es a lo sumo
+$x^{1/2+13\varepsilon/8}$, pues $x\ge1$ y $\varepsilon>0$.
+Sumar los coeficientes $2+2+4+2=10$ prueba
+\eqref{eq:par-diez}. La desigualdad
+$d^{-1}\le x^\varepsilon$ convierte esa cota en
+\eqref{eq:par-veinte}.
+\end{proof}
+
+El incremento de $13/8$ a $21/8$ registra la pérdida por
+$d^{-1}$. Es una contribución del despeje del coeficiente, distinta
+de los errores que ya estaban incluidos en $\mathcal B$.
+La prueba coincide con el núcleo numérico de A, Proposición~10.2,
+pp.~48--49, y de B, Lema~6.1, pp.~65--66.
+
+\subsection{De la selección de caracteres a una desigualdad escalar}
+
+La Nota~\ref{sec:caracteres} retiene $4o$ caracteres: los $o$
+que forman \eqref{eq:par-hpsi} y $3o$ auxiliares. Denotemos por
+$\Sigma_{\mathrm{aux}}(x)$ una cota no negativa para la suma de
+los valores absolutos de sus contribuciones auxiliares. Escribamos
+$\rho$ para el error de los coeficientes del selector, $P_x$ para
+una cota de las sumas retenidas y $V_x$ para el error producido al
+cambiar un argumento $y$ por $x$ cuando $|y-x|\le1$.
+El coste de reemplazar los pesos ya se incorpora al término
+$4/(dx)$ que aparece abajo. Estas cantidades son las de la
+extracción de A, Proposición~4.3; no son la suma cohomológica
+$V(E,h')$ de la Nota~\ref{sec:cohomologia}.
+
+Bajo las hipótesis sobre pesos, cotas analíticas y aproximación del
+selector de A, Proposición~4.3, recibimos la desigualdad
+\begin{equation}
+ H_\psi(x)\le
+ \Sigma_{\mathrm{aux}}(x)+F_x+
+ \frac{2E}{Qd}+\frac{4}{dx},
+ \qquad F_x=4o(V_x+\rho P_x).
+ \label{eq:par-selector}
+\end{equation}
+Aquí $E$ acota el exceso para cada traslación del conjunto utilizado.
+Para pasar de esa cota puntual al promedio se emplean sus coeficientes
+no negativos y el mismo sistema de datos. Una media tomada con otros
+pesos necesitaría su propia justificación.
+
+\begin{lema}[Separación de los dos errores de extracción]
+\label{lem:par-selector}
+Supongamos \eqref{eq:par-selector}, $E\le x^{C\varepsilon}\mathcal B$ y
+\begin{equation}
+ \Sigma_{\mathrm{aux}}(x)\le4o\,x^{1/2+\varepsilon},
+ \qquad F_x\le4x^{1/2+\varepsilon}.
+ \label{eq:par-auxiliares}
+\end{equation}
+Definamos
+\begin{equation}
+ Z=H_\psi(x)-4o\,x^{1/2+\varepsilon}.
+ \label{eq:par-z}
+\end{equation}
+Entonces
+\begin{equation}
+ \frac{Qd}{2}\left(Z-4x^{1/2+\varepsilon}\right)
+ \le x^{C\varepsilon}\mathcal B+\frac{2Q}{x}.
+ \label{eq:par-escalar}
+\end{equation}
+\end{lema}
+
+\begin{proof}
+Sustituir \eqref{eq:par-auxiliares} en
+\eqref{eq:par-selector} y restar los dos términos explícitos da
+\[
+ Z-4x^{1/2+\varepsilon}
+ \le \frac{2E}{Qd}+\frac{4}{dx}.
+\]
+Multiplicamos por $Qd/2>0$ y utilizamos la cota de $E$.
+\end{proof}
+
+La desigualdad \eqref{eq:par-escalar} es la hipótesis de B,
+Lema~6.1, con nuestra notación para $H_\psi$. Los dos desplazamientos
+son distintos: $4o\,x^{1/2+\varepsilon}$ corresponde a los caracteres
+auxiliares, mientras que $4x^{1/2+\varepsilon}$ controla los demás
+errores de extracción. El coeficiente $4o$ de la cota auxiliar
+incorpora holgura; el número de caracteres auxiliares sigue siendo
+$3o$.
+
+El lema explica la deducción entre desigualdades. Las cotas
+\eqref{eq:par-auxiliares} requieren las estimaciones de los primos
+auxiliares y del selector. Una cota cruda del tipo
+$P_x=O_\psi(x\log x)$ solo resulta útil en \eqref{eq:par-selector}
+cuando se combina con la pequeñez de $\rho$. Por ejemplo,
+$\rho=O_\psi(x^{-1+\varepsilon})$ da
+$\rho P_x=O_\psi(x^\varepsilon\log x)$; para $\varepsilon$ fijo,
+este error es menor que $x^{1/2+\varepsilon}$ después de un umbral.
+Los factores implícitos deben permanecer fijos respecto de $x$.
+
+\subsection{El exponente final y la absorción de constantes}
+
+\begin{proposicion}[Lema numérico de cierre]
+\label{prop:par-cierre}
+Sea $Z\in\R$ que satisface \eqref{eq:par-escalar}.
+Bajo \eqref{eq:par-rangos} se tiene
+\begin{equation}
+ Z\le26x^{1/2+(C+21/8)\varepsilon}.
+ \label{eq:par-veintiseis}
+\end{equation}
+Si $26\le x^{3\varepsilon/8}$, entonces
+$Z\le x^{1/2+(C+3)\varepsilon}$.
+Si además $Z$ está dado por \eqref{eq:par-z} y
+$1+4o\le x^\varepsilon$, entonces
+\begin{equation}
+ H_\psi(x)\le x^{1/2+(C+4)\varepsilon}.
+ \label{eq:par-cierre}
+\end{equation}
+\end{proposicion}
+
+\begin{proof}
+Dividimos \eqref{eq:par-escalar} por $Q/2$ y aplicamos
+\eqref{eq:par-diez}:
+\[
+ d\left(Z-4x^{1/2+\varepsilon}\right)
+ \le20x^{1/2+(C+13/8)\varepsilon}+\frac4x
+ \le22x^{1/2+(C+13/8)\varepsilon}.
+\]
+La última desigualdad usa $x\ge3$ y
+$x^{1/2+(C+13/8)\varepsilon}\ge1$.
+Como $d^{-1}\le x^\varepsilon$, resulta
+\[
+ Z\le4x^{1/2+\varepsilon}
+       +22x^{1/2+(C+21/8)\varepsilon}
+ \le26x^{1/2+(C+21/8)\varepsilon}.
+\]
+La comparación de exponentes usa $C\ge0$. No se ha supuesto que
+$Z$ o $H_\psi$ sean no negativos.
+
+La identidad $21/8+3/8=3$ muestra que
+$26\le x^{3\varepsilon/8}$ absorbe el factor $26$.
+Por \eqref{eq:par-z},
+\[
+ H_\psi(x)\le x^{1/2+(C+3)\varepsilon}
+                  +4o\,x^{1/2+\varepsilon}
+ \le (1+4o)x^{1/2+(C+3)\varepsilon}.
+\]
+Usar $1+4o\le x^\varepsilon$ prueba \eqref{eq:par-cierre}.
+\end{proof}
+
+Un umbral explícito suficiente para las dos absorciones es
+\begin{equation}
+ X_{\mathrm{abs}}(\psi,\varepsilon)=
+ \max\left\{3,\ 26^{8/(3\varepsilon)},\
+                      (1+4o)^{1/\varepsilon}\right\}.
+ \label{eq:par-umbral}
+\end{equation}
+Debe combinarse con los umbrales de las estimaciones recibidas.
+Su tamaño puede ser enorme cuando $\varepsilon$ es pequeño.
+La conclusión de existencia de ventanas arbitrariamente lejanas
+permite imponerlo sin exigir un valor práctico de $Y$.
+
+A especializa los exponentes de divisibilidad y pérdida a
+$e_D=2$ y $e_L=0$, y utiliza $C=e_D+e_L+3=5$.
+En esa especialización \eqref{eq:par-cierre} toma la forma
+$H_\psi(x)\le x^{1/2+9\varepsilon}$.
+Conservar $C$ en la prueba permite ver qué uniformidad necesita
+la conclusión; el valor $5$ requiere la especialización concreta
+de las entradas de la fuente.
+
+\subsection{Realización uniforme y orden de las elecciones}
+
+La siguiente hipótesis expresa el contenido que B reúne en su
+Proposición~6.3. Fijado $\psi$, existen $C\ge0$ y
+$\varepsilon_0>0$ tales que, para cada
+$0<\varepsilon<\varepsilon_0$ y cada $A\ge3$, hay $Y\ge A$
+con esta propiedad: para todo $x\in[Y,Y^{3/2}]$ se pueden elegir
+datos que satisfacen \eqref{eq:par-rangos} y
+\eqref{eq:par-escalar}, con $Z$ dado por \eqref{eq:par-z}.
+Llamaremos a esta afirmación $\mathsf U_\psi$.
+
+Su estructura es
+\begin{equation}
+ \exists C,\varepsilon_0\
+ \forall\varepsilon\in(0,\varepsilon_0)\
+ \forall A\ge3\
+ \exists Y\ge A\
+ \forall x\in[Y,Y^{3/2}]\
+ \exists\text{ datos compatibles}.
+ \label{eq:par-cuantificadores}
+\end{equation}
+Los valores de $C$ y $\varepsilon_0$ pueden depender de $\psi$.
+El primero no depende de $\varepsilon$, de $Y$ ni de $x$.
+Los últimos datos pueden depender de todos los parámetros que los
+preceden. La existencia de números que cumplen los rangos de
+\eqref{eq:par-rangos} es solo una parte de esta hipótesis:
+también debe existir la construcción que justifica
+\eqref{eq:par-escalar}.
+
+\begin{proposicion}[De la realización uniforme a las ventanas]
+\label{prop:par-ventanas}
+La hipótesis $\mathsf U_\psi$ implica \eqref{eq:par-meta}.
+\end{proposicion}
+
+\begin{proof}
+Fijemos $\eta>0$ y $A\ge3$. Elegimos primero los valores de
+$C$ y $\varepsilon_0$ suministrados por $\mathsf U_\psi$,
+y después un número
+\[
+ 0<\varepsilon<
+       \min\left\{\varepsilon_0,\frac{\eta}{C+4}\right\}.
+\]
+Aplicamos $\mathsf U_\psi$ con el umbral
+$A_*=\max\{A,X_{\mathrm{abs}}(\psi,\varepsilon)\}$.
+Obtenemos un solo $Y\ge A_*$ para el cual los datos existen en
+cada punto $x\in[Y,Y^{3/2}]$. La Proposición~\ref{prop:par-cierre}
+se aplica en todos esos puntos con el mismo $C$ y el mismo
+$\varepsilon$, y da
+\[
+ H_\psi(x)\le x^{1/2+(C+4)\varepsilon}
+              \le x^{1/2+\eta}.
+\]
+El último paso usa $x\ge1$.
+\end{proof}
+
+La prueba muestra la función de cada cuantificador. Si se obtuviera
+un $C(\varepsilon)$ arbitrario, no se seguiría que
+$(C(\varepsilon)+4)\varepsilon$ pudiera hacerse pequeño.
+Si el umbral dependiera libremente de $x$, tampoco se obtendría una
+cota en el intervalo elegido. A, §11, conserva una familia de datos,
+sus constantes y un umbral común antes de escoger la ventana final.
+
+\subsection{Una misma pareja de primos en la ventana}
+
+La Proposición~\ref{prop:cohom-ventana-aritmetica} proporciona,
+bajo sus entradas, una ventana cohomológica. Para combinarla con
+las estimaciones de los caracteres auxiliares se necesita la misma
+pareja de primos. A, §11, pp.~49--50, organiza las dos entradas
+con el siguiente orden.
+
+Fijados $\psi$ y $0<\varepsilon<1/52$, la selección analítica
+afirma que, para cada $J\ge1$ fijado, todo $T$ suficientemente grande
+admite una pareja $q_{\mathrm{aux}},d_{\mathrm{aux}}$ que satisface
+las condiciones analíticas en $[T,T^J]$. La pareja seleccionada
+cumple además las congruencias y tamaños exigidos por la entrada
+cohomológica. Estas son propiedades del teorema de selección que
+recibimos; no se deducen de la mera existencia de dos primos.
+
+Por su parte, fijemos un selector diádico $h:[1,\infty)\to\Z_{\ge0}$
+tal que
+\begin{equation}
+ y^{2+8\varepsilon}\le2^{h(y)}
+                  \le2y^{2+8\varepsilon}.
+ \label{eq:par-selector-diadico}
+\end{equation}
+Se puede tomar $h(y)=\lceil(2+8\varepsilon)\log_2 y\rceil$.
+La entrada cohomológica elige $J\ge1$ y $X_0$ antes de la pareja:
+para todo $X\ge X_0$ y toda pareja admisible a escala $X^{1/J}$,
+existe $W\ge X^{1/J}$ con $W^2\le X$ tal que
+\begin{equation}
+ \mathcal V\bigl(E_{h(y),q_{\mathrm{aux}},d_{\mathrm{aux}}},
+                         \lfloor y^{401}\rfloor\bigr)
+       \le\exp(y^\varepsilon/2)
+ \qquad(W\le y\le W^2).
+ \label{eq:par-ventana-cohom}
+\end{equation}
+La estimación vale para todo cuerpo auxiliar que realiza la
+descripción de cuerpo fijo requerida por esa entrada. Usamos
+$\mathcal V$ con la finitud y sumabilidad ya separadas en la
+Nota~\ref{sec:cohomologia}. Su monotonía en el corte fue demostrada
+en el Lema~\ref{lem:cohom-presupuesto}.
+
+El orden permite elegir primero $J$, después aplicar con ese $J$
+la selección analítica y finalmente obtener $W$ para la pareja
+seleccionada. Si el teorema cohomológico solo permitiera escoger
+otra pareja, este argumento no conectaría las dos estimaciones.
+
+\begin{proposicion}[Transporte a una ventana común]
+\label{prop:par-ventana-comun}
+Recibidas las dos entradas anteriores, sea $c\ge1$ fijo. Existen
+$J\ge1$ y valores arbitrariamente grandes de $Y$ para los cuales
+una misma pareja $q_{\mathrm{aux}},d_{\mathrm{aux}}$ y una misma
+escala $T$ sirven para todos los $x\in[Y,Y^{3/2}]$.
+En cada punto puede elegirse un entero $e\ge0$ tal que
+\begin{equation}
+ \begin{gathered}
+ x^{1/J}\le T\le x,\qquad
+ x^{2+8\varepsilon}\le c\,2^e\le2x^{2+8\varepsilon},\\
+ \mathcal V\bigl(E_{e,q_{\mathrm{aux}},d_{\mathrm{aux}}},
+                            \lfloor x^{400}\rfloor\bigr)
+      \le\exp(x^\varepsilon/2).
+ \end{gathered}
+ \label{eq:par-ventana-comun}
+\end{equation}
+Las condiciones analíticas de la pareja permanecen válidas en $[T,x]$.
+\end{proposicion}
+
+\begin{proof}
+Tomamos $J,X_0$ de la entrada cohomológica y el umbral $T_0$
+de la selección analítica para ese mismo $J$. Pongamos
+\[
+ \lambda=c^{1/(2+8\varepsilon)}\ge1.
+\]
+El símbolo $\lambda$ evita confundir este factor real con el
+carácter cuadrático $\kappa$ de \eqref{eq:par-periodo}.
+Dado un umbral deseado $A$, elegimos
+\[
+ M\ge\max\{A,T_0,1,\lambda^3,\lambda^{400}\},
+ \quad X\ge\max\{X_0,M^J\},\quad T=X^{1/J}.
+\]
+La selección analítica proporciona una pareja en $[T,X]$.
+La entrada cohomológica, aplicada a esa pareja, da $W\ge T$
+con $W^2\le X$ y \eqref{eq:par-ventana-cohom}.
+Definimos $Y=\lambda W$.
+
+Sea $x\in[Y,Y^{3/2}]$ y pongamos $y=x/\lambda$.
+Como $W\ge\lambda^3$, se tiene
+$(\lambda W)^{3/2}\le W^2$. Por tanto,
+\begin{equation}
+ T\le W\le y\le x\le W^2\le X.
+ \label{eq:par-inclusiones}
+\end{equation}
+Las condiciones analíticas se restringen de $[T,X]$ a $[T,x]$.
+Además, $x\le X$ implica $x^{1/J}\le X^{1/J}=T$.
+
+Tomamos $e=h(y)$. La igualdad
+$\lambda^{2+8\varepsilon}=c$ transforma
+\eqref{eq:par-selector-diadico} en el rango de $c\,2^e$
+de \eqref{eq:par-ventana-comun}. Para el corte de torcidos,
+$y\ge W\ge\lambda^{400}$ da
+\begin{equation}
+ x^{400}=\lambda^{400}y^{400}\le y^{401},
+ \qquad
+ \lfloor x^{400}\rfloor\le\lfloor y^{401}\rfloor.
+ \label{eq:par-corte}
+\end{equation}
+La monotonía de $\mathcal V$ permite disminuir el corte de
+\eqref{eq:par-ventana-cohom}. Puesto que $y\le x$,
+también se tiene $\exp(y^\varepsilon/2)\le\exp(x^\varepsilon/2)$.
+Esto prueba la última cota de \eqref{eq:par-ventana-comun}.
+La pareja y $T$ se eligieron antes de $x$, y
+$Y\ge W\ge M\ge A$.
+\end{proof}
+
+El exponente $401$ reserva una potencia para absorber el factor fijo
+de reescala; la construcción final utiliza el corte $400$.
+La potencia $3/2$ de la ventana deja espacio dentro de $[W,W^2]$.
+La meta cohomológica sigue siendo
+$\exp(x^\varepsilon/2)=\sqrt{\exp(x^\varepsilon)}$.
+La expresión $\exp(x^{\varepsilon/2})$ impondría una cota diferente.
+
+\subsection{Un máximo finito de umbrales para una sola familia}
+
+Una pareja común resuelve parte de la compatibilidad. Las aplicaciones
+integrales, los marcos, los rangos y las métricas deben pertenecer
+también a una misma familia. El principio de cierre que A usa en
+la Proposición~11.2 tiene una prueba lógica breve, pero sus hipótesis
+conservan toda la carga de las construcciones.
+
+\begin{lema}[Reunión de condiciones eventuales]
+\label{lem:par-umbral-comun}
+Fijado $\varepsilon$, sea $\operatorname{Adm}_\varepsilon(K,\mathcal F)$,
+con $K\in\R_{\ge0}$, una condición de calidad para familias,
+monótona en el siguiente
+sentido:
+\[
+ K'\ge K,\quad
+ \operatorname{Adm}_\varepsilon(K',\mathcal F)
+ \quad\Longrightarrow\quad
+ \operatorname{Adm}_\varepsilon(K,\mathcal F).
+\]
+Supongamos que para cada $K$ existe una familia
+$\mathcal F\in\mathcal C'$ que satisface esa condición.
+Sean $P_1,\ldots,P_s$, con $s\ge1$, un número finito de propiedades. Si para cada
+$i$ hay $K_i$ tal que toda familia de $\mathcal C'$ con calidad
+$K_i$ tiene $P_i$, existe una sola familia de $\mathcal C'$
+que satisface todas las propiedades.
+\end{lema}
+
+\begin{proof}
+Tomamos $K_*=\max\{K_1,\ldots,K_s\}$ y elegimos una familia
+$\mathcal F\in\mathcal C'$ con
+$\operatorname{Adm}_\varepsilon(K_*,\mathcal F)$.
+La monotonía da
+$\operatorname{Adm}_\varepsilon(K_i,\mathcal F)$ para cada $i$,
+de donde se sigue $P_i(\mathcal F)$.
+\end{proof}
+
+Si cada propiedad exige además
+$0<\varepsilon<\varepsilon_i$, se fija primero
+$\varepsilon<\min_i\varepsilon_i$ y después se obtienen los
+$K_i(\varepsilon)$. Si el umbral es una función de otros parámetros
+fijos, el máximo se toma punto a punto. Se necesita que la existencia
+de familias esté disponible para ese umbral combinado.
+
+La afirmación $\forall i\,\exists\mathcal F_i\,P_i(\mathcal F_i)$
+no contiene este principio: una propiedad podría requerir un índice
+par y otra uno impar. Las construcciones de A suministran propiedades
+de \emph{todas} las familias suficientemente admisibles de una clase
+común, y el teorema de existencia se aplica después de reunir
+sus umbrales.
+
+\subsection{Las entradas que conserva el ensamblaje geométrico}
+
+En A, Proposición~11.2, la clase de existencia
+$\mathcal C'$ está incluida en una clase geométrica $\mathcal C$
+y en una clase aritmética $\mathcal E$. La inclusión
+\[
+ \mathcal C'\subseteq\mathcal C\cap\mathcal E
+\]
+permite usar ambas colecciones de propiedades para la misma familia.
+La existencia debe aportar también los denominadores suaves,
+los retorcimientos compatibles, una constante $C_H\ge0$ y el
+testigo de evaluación \texttt{ChosenE}, junto con los controles de
+tamaño \texttt{TuSize} y \texttt{DGamSize}. Estas son entradas
+adicionales de la construcción, no consecuencias de la notación
+de clases.
+
+Los nueve grupos de propiedades eventuales de la fuente tienen
+los siguientes cometidos. Los nombres permiten localizar las
+interfaces; la tabla no afirma una revisión completa de sus pruebas.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.29\textwidth}Y@{}}
+\toprule
+\textbf{Propiedad de A} & \textbf{Entrada que debe proporcionar}\\
+\midrule
+\texttt{LinkN} &
+Control del defecto integral mediante longitudes cohomológicas
+y errores de tamaño.\\
+\texttt{LinkEta} &
+Condición de cubrimiento local compatible con los torcidos elegidos.\\
+\texttt{LinkIRR} &
+Cota cuantitativa de la proporción de filas eliminadas y de la
+fracción de rango retenida.\\
+\texttt{SmallLevelRankEq} &
+Identificación del rango después del paso a nivel pequeño.\\
+\texttt{LinkDIVt} &
+Mapas integrales de evaluación y comparaciones de altura, periodo,
+nivel y pendiente.\\
+\texttt{NuFullF}, \texttt{MuRank} &
+Plenitud de los retículos y positividad de los rangos necesarios.\\
+\texttt{LinkG} &
+Ganancia en lugares finitos, costes de índices y comparación de
+órbitas de Frobenius servidas.\\
+\texttt{LinkS} &
+Estimaciones espectrales y de marco aproximado.\\
+\texttt{LinkGLOBAL} &
+Comparación global de pendientes que reúne esas entradas.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+El rango positivo permite dividir por un rango. La cota cuantitativa
+de \texttt{LinkIRR} controla, además, cuánto puede costar esa división.
+Son hipótesis diferentes; la positividad no sustituye a una
+proporción retenida cercana a uno.
+
+La clase aritmética $\mathcal E$ conserva dos propiedades: la
+estimación cohomológica eventual para cada dato pertinente y la
+existencia de intervalos completos $[Y,Y^{3/2}]$ arbitrariamente
+lejanos dentro del conjunto de escalas admisibles. La reunión finita
+se hace dentro de esa clase, de modo que la familia elegida mantiene
+las ventanas.
+
+Se distinguen dos umbrales. El umbral de calidad $K_*$ se fija antes
+de invocar la existencia de $\mathcal F_\varepsilon$.
+Después se fijan las constantes de comparación de esa familia y
+un umbral de escala $x_0$. Solo entonces se elige
+$[Y,Y^{3/2}]$ con $Y\ge x_0$ dentro de sus escalas admisibles.
+La sucesión de dependencias puede escribirse como
+\begin{equation}
+ \begin{gathered}
+ \psi,\ (e_D,e_L)
+ \ ;\quad \varepsilon
+ \ ;\quad K_*
+ \ ;\quad \mathcal F_\varepsilon;\\
+ \text{constantes y }x_0
+ \ ;\quad Y
+ \ ;\quad x\text{ y sus datos}.
+ \end{gathered}
+ \label{eq:par-orden-familia}
+\end{equation}
+Aquí $C=e_D+e_L+3$ está fijado antes de $\varepsilon$.
+Los prefactores y $x_0$ pueden depender de la familia y de
+$\varepsilon$; su uniformidad respecto de $x$ permite escoger
+la ventana después.
+
+\subsection{El enlace con el criterio unilateral}
+
+La Proposición~\ref{prop:par-ventanas} recibe
+$\mathsf U_\psi$ como entrada. Las
+Proposiciones~\ref{prop:par-ventana-comun} y el
+Lema~\ref{lem:par-umbral-comun} reconstruyen dos operaciones
+de su realización: conservar una pareja durante una ventana y
+reunir propiedades eventuales en una familia. Las estimaciones
+especializadas que alimentan esas operaciones siguen siendo
+necesarias.
+
+Si se dispone de esas entradas para cada carácter primitivo, el
+paso analítico final puede formularse sin añadir una cota entre
+ventanas. Supongamos que $\rho$ es un cero de $L(s,\psi)$ con
+$\beta=\Ree\rho>1/2$. Elegimos
+$0<\eta<\min\{\beta-1/2,1/2\}$ y ponemos
+$\theta=1/2+\eta\in(1/2,1)$. La ventana
+\eqref{eq:par-meta} se convierte, al escribir $x=e^u$ y
+$U=\log Y$, en
+\begin{equation}
+ H_\psi(e^u)\le e^{\theta u}
+ \qquad(U\le u\le3U/2).
+ \label{eq:par-log-ventana}
+\end{equation}
+Es la ventana de la Nota~\ref{sec:ventanas} con $\delta=1/2$.
+El mayorante $R_U(u)=e^{\theta u}$ satisface
+\[
+ \int_U^{3U/2}R_U(u)e^{-\theta u}\dd u
+       =\frac U2.
+\]
+Para todo $\eta'>0$ fijo, $U/2\le e^{\eta'U}$ cuando $U$
+es suficientemente grande. Las ventanas arbitrariamente lejanas
+permiten imponer ese umbral. El criterio unilateral excluye
+entonces el polo asociado a $\rho$, pues $\beta>\theta$ y
+el residuo no se cancela entre los coeficientes positivos de
+\eqref{eq:par-hpsi}. La ecuación funcional proporciona la reducción
+del otro lado de la franja ya expuesta en la introducción.
+
+Esta es una deducción condicionada a la realización uniforme.
+La cota obtenida concierne a $H_\psi$, no a $|H_\psi|$, y se
+afirma en las ventanas seleccionadas. Las Notas~\ref{sec:sumas}
+y~\ref{sec:ventanas} explican por qué esa información basta
+para el argumento analítico.
+
+\subsection{Concordancia localizada con Lean y alcance}
+
+El cotejo de este bloque utiliza la revisión fijada
+\texttt{7cbf7a0} del espejo indicado en la referencia~\cite{lean}.
+Comprende 28 archivos: 26 leídos completos y dos de manera selectiva,
+con 4497 líneas leídas. Se recuperó además un archivo para localizar
+el recorrido, excluido de las conclusiones. El registro conserva
+las rutas, los intervalos y los hashes de los archivos consultados.
+Los siguientes enlaces apuntan a esa revisión inmutable.
+
+\paragraph{El presupuesto del resto.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ErrorFormsWeakWindowsFalse.lean}{\texttt{Error\allowbreak{}Forms\allowbreak{}Weak\allowbreak{}Windows\allowbreak{}False}}
+define \texttt{ErrWindows} con una condición de traza que conviene
+mantener explícita:
+\begin{equation}
+ (\bar\eta+4\sqrt{\bar e})x^{c_{\mathrm{HH}}}b
+       \le Kx^\varepsilon(n_Ta).
+ \label{eq:par-traza-lean}
+\end{equation}
+Aquí $\bar\eta,\bar e$ miden errores del marco; $n_Ta$ es la
+escala de referencia de ese presupuesto, y $c_{\mathrm{HH}}$
+controla el crecimiento del factor geométrico. Estos símbolos
+pertenecen a esa interfaz. La condición \eqref{eq:par-traza-lean}
+controla el producto completo: las cotas
+$\bar\eta\le1$ y $\bar e\le1$ dejarían sin controlar la
+amplificación por $x^{c_{\mathrm{HH}}}b$.
+
+En \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/SubThreeMulLogTwoLe.lean}{\texttt{SubThreeMulLogTwoLe}},
+\texttt{error\_sizes} prueba, bajo \texttt{ErrWindows}
+y la condición de escala \texttt{LargeX},
+\[
+ \mathrm{errorTermWith}\le
+ x^{(e_{\mathrm{Div}}+e_{\mathrm{Loss}}+3)\varepsilon}
+ \left[n_Ta\left(1+\frac{m^2}{k}\right)+m(B_0+N_c)\right].
+\]
+La constante que se absorbe está fijada antes de aumentar $x$:
+\[
+ K_{\mathrm{big}}=200(1+K)^2(1+c_{\mathrm{HH}})(1+e_K),
+ \qquad K_{\mathrm{big}}\le x^\varepsilon.
+\]
+El mismo archivo prueba \texttt{error\_sizes\_weak\_false},
+un contraejemplo numérico a la interfaz que sustituye
+\eqref{eq:par-traza-lean} por las dos cotas débiles.
+Su alcance es esa sustitución de hipótesis; no constituye un
+contraejemplo a la construcción aritmética ni a RH.
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChTop.lean}{\texttt{ChTop}} transporta el presupuesto al exceso
+\texttt{gapA} de cada traslación, conservando
+\texttt{IdentU}, \texttt{SizeData}$_2$, \texttt{BNBoundsU},
+\texttt{ErrWindows} y \texttt{LargeX}.
+
+\paragraph{El umbral y la combinación retenida.}
+En \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/ChCore.lean}{\texttt{ChCore}},
+\texttt{ch\_core} fija $C,\varepsilon,C_E,K_o,c,M$ antes
+de elegir $x_1$. El grupo, el host, los conjuntos, los pesos y
+los demás datos aparecen después de ese umbral. Bajo las
+condiciones de tamaños, escalas, caracteres y exceso, obtiene
+\[
+ G_{m,A}(x)\le x^{1/2+(C+3)\varepsilon}+\Sigma_A(x).
+\]
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/PrimitiveCosets/SigALe.lean}{\texttt{SigALe}} recibe la cota analítica
+\texttt{EAtH.bdG} y demuestra
+$\Sigma_A(x)\le4o\,x^{1/2+\varepsilon}$.
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/PrimitiveCosets/CoreGm.lean}{\texttt{CoreGm}} usa $C=e_D+e_L+3$
+y $1+4o\le x^\varepsilon$ para concluir
+\begin{equation}
+ \Lambda.\mathrm{Gm}(x)
+       \le x^{1/2+(e_D+e_L+7)\varepsilon}.
+ \label{eq:par-exponente-lean}
+\end{equation}
+Con las identificaciones del nivel cíclico
+$\Lambda=\mathrm{Level.cyc}(\psi)$,
+$\Lambda.\mathrm{Gm}$ corresponde a $H_\psi$; no designa
+la suma individual $G_\chi$. El exponente coincide con
+\eqref{eq:par-cierre}, pues $C+4=e_D+e_L+7$.
+Otras interfaces refinadas del recorrido solo-zeta muestran
+$1/2+6\varepsilon$ al especializar $e_D=2,e_L=0$;
+ese exponente pertenece a otra formulación y no reemplaza
+\eqref{eq:par-exponente-lean}.
+
+\paragraph{Existencia y estimación sobre una misma familia.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/RamificationFrobenius/TotientGaloisClasses/TopWin.lean}{\texttt{TopWin}} distingue
+\texttt{ExWin}, de la forma $\forall K\,\exists\mathcal F$,
+y \texttt{ChainWin}, de la forma
+$\exists K\,\forall\mathcal F$ compatible.
+El teorema \texttt{tiedWin\_of\_ex} elige primero el
+$K$ que proporciona la estimación y después la familia que
+lo realiza. Los exponentes $e_D,e_L$ se fijan antes de
+$\varepsilon$. \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/DesWin.lean}{\texttt{DesWin}}
+consume \texttt{DesignExists}, nueve hipótesis
+\texttt{Closed}, la entrada cohomológica \texttt{HypV}
+y las compatibilidades entre clases.
+Estas son pruebas de ensamblaje bajo entradas expresas.
+
+\paragraph{La selección analítica de los auxiliares.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/PairGood.lean}{\texttt{PairGood}} define \texttt{PairGood} como
+un paquete de propiedades aritméticas, cotas de torcidos en
+una ventana completa y cajas libres de ceros. La proposición
+\texttt{PairEx} afirma la existencia de esos pares, pero ese
+archivo no contiene una prueba de su realización.
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/PairRows.lean}{\texttt{PairRows}} transporta el paquete a las entradas
+del host. \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/WinPairs.lean}{\texttt{WinPairs}} recibe
+\texttt{PairEx} y \texttt{VWinAt} de profundidad 401;
+su reescalamiento utiliza las condiciones correspondientes a
+$W\ge\lambda^3$ y $W\ge\lambda^{400}$ de
+la Proposición~\ref{prop:par-ventana-comun}.
+La lectura confirma las inclusiones de intervalos y conserva
+la selección analítica como entrada.
+
+\paragraph{El paso analítico final.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/WindowHypOfRpow.lean}{\texttt{WindowHypOfRpow}} convierte las cotas puntuales
+en una condición integral mediante
+$R(y)=|C_0|y^\theta$, con $C_0$ fijo. Demuestra la
+integrabilidad y la cuenta
+\[
+ \int_Y^{Y^{1+\delta}}R(y)y^{-\theta-1}\dd y
+       =|C_0|\delta\log Y\le Y^{\eta'}
+\]
+para $Y$ suficientemente grande, dado $\eta'>0$.
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/WindowHypUOfWindowHyp.lean}{\texttt{WindowHypUOfWindowHyp}} realiza $y=e^u$
+y conserva integrabilidad y cuantificadores.
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/DedekindLFunctions/LandauTheorems/landauWindow.lean}{\texttt{landauWindow}} excluye los polos con
+parte real mayor que $\theta$, bajo \texttt{PoleData},
+$0<\theta<1$, $\delta>0$ y \texttt{WindowHypU}.
+Son los pasos analíticos utilizados en el apartado anterior.
+
+Las dos lecturas selectivas son
+\texttt{GrowthBracketBoundOfSizeWindows}, líneas 100--165,
+y \texttt{PChain}, líneas 1--155. Las definiciones de
+proposiciones y los campos de estructuras no se cuentan como
+pruebas de la existencia de sus datos. No se ejecutó ni instaló
+Lean, no se auditó la clausura completa de imports o axiomas
+ni se comparó todo el espejo con la distribución original.
+Este cotejo localizado y las deducciones de la nota no certifican
+el argumento global.
+
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}\label{ej:par-equilibrio}
+Sean $A_0,B_0,x>0$. Determine el mínimo, para $m>0$, de
+$A_0x/m+B_0m$. Explique qué cambia si solo se puede elegir
+$m$ entero y por qué el equilibrio de este ejercicio no prueba
+por sí solo la existencia de una torre theta admisible.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:par-equilibrio}.}
+Se tiene
+\[
+ \frac{A_0x}{m}+B_0m-2\sqrt{A_0B_0x}
+ =\left(\sqrt{B_0m}-\sqrt{A_0x/m}\right)^2.
+\]
+El mínimo es $2\sqrt{A_0B_0x}$ y se alcanza en
+$m_*=\sqrt{A_0x/B_0}$. Para $m$ entero positivo se compara
+entre los enteros vecinos permitidos, usando la monotonía de
+la función a cada lado de $m_*$. Si $m_*<1$, el mínimo entero
+está en $m=1$; si $m_*\ge1$, basta comparar
+$\lfloor m_*\rfloor$ y $\lceil m_*\rceil$.
+Cuando $A_0,B_0$ son fijos y $x$ crece, el redondeo es
+despreciable en relación con $m_*$.
+El ejercicio optimiza una función real; la torre debe cumplir
+también las condiciones de rango, integridad, pesos y compatibilidad
+de la construcción.
+
+\begin{ejercicio}\label{ej:par-modelo}
+Sea $s\ge2$ entero, $x=s^2$, $0<\varepsilon<1$ y $b>0$.
+Considere
+\[
+ n=t=v_2=x,\qquad m=s,\qquad k=s^3,\qquad a_E=2xb.
+\]
+Compruebe \eqref{eq:par-rangos} y calcule $\mathcal B/Q$.
+Indique el alcance de este ejemplo.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:par-modelo}.}
+Las dos densidades son uno y las condiciones de $t,v_2,a_E$
+se cumplen. Como $m=\sqrt{x}$, también se cumple su rango.
+Se tiene $k=xm=x^{3/2}$ y
+\[
+ n^2x^{1/2-\varepsilon}
+ =x^{5/2-\varepsilon}\ge x^{3/2}
+\]
+porque $\varepsilon<1$ y $x\ge1$. Sustituyendo en
+\eqref{eq:par-cuatro} obtenemos
+\begin{equation}
+ \frac{\mathcal B}{Q}
+ =2\sqrt{x}+2+2x^{1/2+\varepsilon}
+                         +x^{-1/2+2\varepsilon}.
+ \label{eq:par-modelo}
+\end{equation}
+Cada término cumple el mayorante correspondiente del
+Lema~\ref{lem:par-presupuesto}. El ejemplo realiza los rangos
+numéricos con enteros; no proporciona el grupo de Galois, sus
+posiciones, los periodos ni la desigualdad
+\eqref{eq:par-escalar}.
+
+\begin{ejercicio}\label{ej:par-cuantificadores}
+\begin{enumerate}[label=\alph*)]
+\item Explique por qué permitir $C(\varepsilon)=1/\varepsilon$
+en una cota $H(x)\le x^{1/2+C(\varepsilon)\varepsilon}$
+no permite deducir cotas con exponente arbitrariamente próximo
+a $1/2$.
+\item Construya dos conjuntos disjuntos de escalas que contengan
+ventanas $[Y,Y^{3/2}]$ arbitrariamente lejanas.
+\end{enumerate}
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:par-cuantificadores}.}
+En a), el exponente de la cota es siempre $3/2$.
+Por ejemplo, $H(x)=x$ satisface esa cota para $x\ge1$ y
+todo $\varepsilon>0$, pero no satisface
+$H(x)\le x^{1/2+\eta}$ para $x>1$ y $0<\eta<1/2$.
+Esto demuestra la necesidad de controlar la dependencia de $C$.
+
+Para b), pongamos
+\[
+ \mathcal W_0=\bigcup_{j\ge1}
+      [e^{4^{2j}},e^{(3/2)4^{2j}}],
+ \qquad
+ \mathcal W_1=\bigcup_{j\ge1}
+      [e^{4^{2j+1}},e^{(3/2)4^{2j+1}}].
+\]
+Cada intervalo tiene la forma requerida y sus extremos inferiores
+tienden a infinito. En coordenadas logarítmicas son intervalos
+$[4^r,(3/2)4^r]$ con $r$ de paridad distinta. El extremo
+superior de cualquiera es menor que el extremo inferior del
+siguiente, pues $(3/2)4^r<4^{r+1}$.
+Los dos conjuntos son disjuntos. Las ventanas comunes de la
+Proposición~\ref{prop:par-ventana-comun} dependen de la compatibilidad
+de las entradas; no se obtienen intersectando dos conclusiones
+independientes de existencia.
+
+\begin{ejercicio}\label{ej:par-reescala}
+Sea $\lambda\ge1$, $1<\alpha<2$ y $p>q>0$.
+Dé condiciones sobre $W$ que garanticen, al poner
+$Y=\lambda W$ y $y=x/\lambda$,
+\[
+ x\in[Y,Y^\alpha]\ \Longrightarrow\
+ W\le y\le x\le W^2
+ \quad\hbox{y}\quad x^q\le y^p.
+\]
+Recupere los exponentes $3$ y $400$ usados antes.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:par-reescala}.}
+La cota $x\ge Y$ da $y\ge W$ y $\lambda\ge1$ da $y\le x$.
+Para asegurar $x\le W^2$ basta
+\[
+ (\lambda W)^\alpha\le W^2
+ \quad\Longleftrightarrow\quad
+ W\ge\lambda^{\alpha/(2-\alpha)}.
+\]
+Como $x^q=\lambda^q y^q$, para el segundo requisito basta
+$y^{p-q}\ge\lambda^q$, que se cumple si
+\[
+ W\ge\lambda^{q/(p-q)}.
+\]
+Tomar $\alpha=3/2$, $p=401$ y $q=400$ produce los umbrales
+$W\ge\lambda^3$ y $W\ge\lambda^{400}$. El argumento explica
+las reservas cuantitativas de la elección sin atribuirles optimalidad.

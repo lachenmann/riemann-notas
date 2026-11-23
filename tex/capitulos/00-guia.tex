@@ -84,7 +84,9 @@ cotejos entre A y B tampoco constituyen una auditoría de ese código.
     Después de cancelar los términos principales, aparecen costes del orden
     de $x/m$ y de $m$, salvo potencias pequeñas de $x$. Una longitud de torre
     $m$ cercana a $\sqrt{x}$ los equilibra. Las condiciones deben cumplirse
-    en un mismo intervalo. Referencias: A, §§10--11; B, §§5.5--6.
+    en un mismo intervalo. La Nota~\ref{sec:parametros} demuestra el
+    cálculo de los exponentes y la coordinación de ventanas y umbrales,
+    bajo las entradas que precisa. Referencias: A, §§10--11; B, §§5.5--6.
 \end{enumerate}
 
 \subsection{Notación común y primeras metas}
@@ -111,11 +113,12 @@ Geometría, evaluación y marcos & §7, pp.~28--34 & §4.3, pp.~33--40; §4.4, p
 Proyecciones y denominadores & §§6--8 & Lema~5.1, p.~53; pp.~54--56 \\
 Cohomología y denominadores & §8, pp.~35--41 & §5, pp.~52--64 \\
 Cancelación y raíz cuadrada & Props.~10.1--10.2, pp.~47--49 & (4.5)--(4.10), pp.~48--51; Lema~6.1, pp.~65--66 \\
+Ventana común y realización & Props.~11.1--11.2, pp.~49--52 & Prop.~6.3, pp.~66--67 \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
-Las ocho notas desarrollan esta ruta. Las tres primeras preparan
+Las nueve notas desarrollan esta ruta. Las tres primeras preparan
 Mellin, los denominadores y el criterio de ventanas.
 La Nota~\ref{sec:caracteres} prueba la identidad de caracteres,
 la cancelación y la selección que explica $1/(3o+1)$.
@@ -128,13 +131,15 @@ y correlaciones al control colectivo del marco.
 La Nota~\ref{sec:cohomologia} distingue finitud y sumabilidad,
 conserva las correcciones de dualidad y compara la capa variable
 con una capa fija de grado acotado.
-Las Notas~\ref{sec:ventanas}--\ref{sec:cohomologia} incluyen
+La Nota~\ref{sec:parametros} normaliza el exceso, conserva las pérdidas
+de densidad y coordina la elección uniforme de parámetros y ventanas.
+Las Notas~\ref{sec:ventanas}--\ref{sec:parametros} incluyen
 cotejos localizados con una revisión fijada de Lean,
 sin compilar ni ejecutar el código.
 
-El siguiente desarrollo reunirá los presupuestos en una elección
-uniforme de parámetros y estudiará las contribuciones auxiliares
-que conectan el exceso con las ventanas de $H_\psi$.
+El siguiente desarrollo estudiará las entradas que permiten seleccionar
+los primos auxiliares con sus propiedades analíticas en toda la ventana
+y enlazarlos con los datos de Galois de la construcción.
 Las identidades de periodos, los modelos integrales, las cotas de
 jets y las entradas profundas de cohomología y automorfía
 conservan sus hipótesis. La construcción aritmética completa
