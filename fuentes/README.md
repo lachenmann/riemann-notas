@@ -55,6 +55,15 @@ La Nota 6 añade referencias para situar las convenciones theta. Su uso no acred
 | **Ga.** Wee Teck Gan, *Automorphic Forms and the Theta Correspondence*, arXiv:2303.14918v1, 27 de marzo de 2023. | [Versión consultada](https://arxiv.org/pdf/2303.14918v1), §§3.1–3.6, pp. 23–26: núcleo theta, representación global de Weil y levantamiento. |
 | **GQT.** Wee Teck Gan, Yannan Qiu y Shuichiro Takeda, *The Regularized Siegel–Weil Formula (The Second Term Identity) and the Rallis Inner Product Formula*, Invent. Math. 198 (2014), 739–831. | [Prepublicación consultada, v3 del 21 de enero de 2014](https://arxiv.org/pdf/1207.4709v3), §11: convención del levantamiento, producto interno y rangos e hipótesis de la fórmula de Rallis. |
 
+La Nota 7 añade dos fuentes primarias para situar las entradas geométricas y analíticas. Sus localizadores corresponden a las versiones indicadas; no se utilizan como certificación de todos los datos especializados de A/B.
+
+| Clave y referencia | Localizadores utilizados |
+| --- | --- |
+| **Mo.** Atsushi Moriwaki, *Continuity of volumes on arithmetic varieties*, Journal of Algebraic Geometry 18 (2009), 407–457. | [Prepublicación del 5 de enero de 2007, versión 2.0](https://www.math.kyoto-u.ac.jp/preprint/2007/01moriwaki_ContArVol.pdf): Corolario 5.5, pp. 38–39, y Corolario 6.4, p. 42. Conteo de secciones pequeñas, volumen aritmético y comparación con la autointersección, bajo sus hipótesis de positividad. |
+| **De.** Jean-Pierre Demailly, *On the Ohsawa–Takegoshi–Manivel $L^2$ extension theorem*. | [PDF en la web del autor](https://www-fourier.univ-grenoble-alpes.fr/~demailly/source_files/pdf/ohsawa_tak.pdf): §4, pp. 7–15, extensión holomorfa con estimaciones y convenciones geométricas. Referencia del método; la constante 280 y los pesos concretos de la Nota 7 proceden de A. |
+
+La estimación del número de secciones pequeñas no se identifica por sí sola con una cota de pendiente media para el subretículo automorfo de interés. Del mismo modo, la referencia al método de extensión no construye el puente entre el espacio de Bergman y el modelo integral finito de la propuesta. La Nota 7 distingue estas entradas de sus deducciones finitas.
+
 ## Código Lean utilizado en la nota de ventanas
 
 El cotejo selectivo utiliza [CocoSgt/riemann-hypothesis-lean en la revisión fijada](https://github.com/CocoSgt/riemann-hypothesis-lean/tree/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4):
@@ -105,3 +114,19 @@ La cuarta lectura mantiene la revisión `7cbf7a0c32fca1badf05931879a37c3f8a2b03b
 | Mismo mapa, retículos y métricas | `RecBridge.wordFacts_of_face` usa `hBk` y `HLatTie`; conserva `2*FoOfR=L.Fo`. `linkDIVt_of_rows` ensambla umbrales de las entradas `BridgeRows`. |
 
 La [concordancia de la Nota 6](../tex/capitulos/06-periodos-y-torres-theta.tex) contiene los enlaces inmutables principales. El registro incluye las 23 URL y los límites por archivo. No se ejecutó ni compiló Lean ni se auditó la clausura de axiomas o dependencias. La construcción automorfa e integral completa, la identificación aritmética de periodos CM y las cotas uniformes locales no quedan certificadas por esta lectura.
+
+## Código Lean utilizado en la nota de geometría, evaluaciones y marcos
+
+La quinta lectura mantiene la revisión `7cbf7a0c32fca1badf05931879a37c3f8a2b03b4` y los ejemplares A55/B73. El manifiesto `lean_source_review_geometry` registra 23 archivos: 19 leídos completos y cuatro de forma selectiva, con intervalos de líneas. Se recalcularon los SHA-256 y los hashes Git de los 23 contenidos; estos últimos coinciden con los identificadores de los blobs recuperados. Los recuentos por nota pueden compartir archivos y no incluyen las dependencias importadas que no se leyeron.
+
+| Paso | Declaraciones y alcance |
+| --- | --- |
+| Componentes, cubiertas y pendiente media | [`CovolXOfCovol`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Definitions/Divisors/CovolXOfCovol.lean) define las proposiciones de entrada. Se leyeron `descent`, `lowAt_of_cover`, `sumComponents'` y los ensamblajes numéricos; no se atribuye al promedio no ponderado de `meanHeightLowerBound` toda la formulación expositiva de A, Lema 7.1. |
+| Recorte ortogonal y absorción | [`slope_good_ge`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/MajAtAddRight.lean) conserva los submódulos sobre $\mathcal O_K$ y la pérdida $12\delta Q$; `lcv_le` y `exists_loss_le` fijan las constantes y los exponentes antes del umbral. |
+| Interpolación y sus entradas analíticas | El [`ot0` interno](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/ReciprocityTheory/L2DbarEstimates/LeviForms/Ot0.lean) recibe cuatro enunciados analíticos; el [`ot0` externo](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/ReciprocityTheory/L2DbarEstimates/NormFibrations/Hormander.lean) los obtiene de resultados importados. Se leyeron esas pruebas y ensamblajes, sin recorrer toda su dependencia analítica. |
+| Correlaciones y defectos colectivos | [`TraceConjTransposeMulSelf`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/TraceConjTransposeMulSelf.lean) prueba las cotas de trazas y su compresión, con $e=2e_0$ y $\eta=5\sigma+3\sqrt{\delta_0}$ bajo sus hipótesis. Se distingue la pérdida en las fuentes del recorte de filas del receptor. |
+| La misma familia de mapas y los umbrales | `LinkS_at` conserva la condición de comparabilidad de rangos y `LinkS` controla $\eta_0,\eta_1,\sqrt{e_0}$. [`FamRec`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/GlobalTheory/FamRec.lean) registra la factorización y el bloque de la matriz del mismo mapa aritmético; los puentes leídos en `FamRecP` y `LinkSFinal` reciben sus compatibilidades y entradas especializadas. |
+
+La [concordancia de la Nota 7](../tex/capitulos/07-geometria-evaluaciones-y-marcos.tex) precisa los enlaces y las diferencias de formulación. El lema de Gram se demuestra matemáticamente en el cuaderno, sin atribuirlo a una única declaración Lean como transcripción exacta. El cotejo de `ot0` trata valores en ceros simples, no una teoría de jets superiores. Las realizaciones profundas de los modelos geométricos, la evaluación integral y los datos automorfos no se auditaron completamente.
+
+No se ejecutó ni compiló Lean, no se obtuvo un informe de axiomas y no se comparó todo el espejo con la distribución original. Las torres cohomológicas y `SecondBound` quedan fuera de este cotejo; serán parte del siguiente bloque de A, §8, y B, §5. Los manifiestos anteriores permanecen íntegros.

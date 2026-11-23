@@ -1,0 +1,1201 @@
+\section{Geometría, evaluaciones y control del marco}
+\label{sec:geometria}
+
+La comparación de la Nota~\ref{sec:periodos} utiliza pendientes medias,
+pendientes extremas y una estimación colectiva de los mapas de periodos.
+Estas cantidades proceden de construcciones diferentes. Los espacios de
+secciones de fibrados proporcionan retículos; las evaluaciones y las
+comparaciones de métricas permiten estimar sus pendientes; las correlaciones
+entre columnas controlan las dos trazas del operador del marco.
+El objetivo de esta nota es demostrar los pasos finitos que convierten
+esas entradas en las desigualdades de la Nota~\ref{sec:marcos}.
+
+Se conserva la pendiente $\mu$ de \eqref{eq:marcos-normalizacion},
+igual al doble de la pendiente de Arakelov habitual. En A se escribe
+$\mu_2$. Los grados son aditivos para una sucesión exacta equipada
+con las métricas inducida y cociente. Los índices finitos contribuyen
+con el factor $2/[K:\Q]$ de \eqref{eq:marcos-coste-indice}.
+Las constantes de esta nota pertenecen a una familia previamente fijada;
+su independencia de los índices variables forma parte de cada entrada.
+
+\fuente{A, §7, pp.~28--34, con su enlace a §8; B, §4.3, pp.~33--40,
+§4.4, pp.~41--46, y el enlace con §4.5, p.~46. B, §5, identifica el coste
+cohomológico que permanece pendiente. Se usan los mismos ejemplares
+de 55 y 73 páginas de las notas anteriores.}
+
+\subsection{Secciones de fibrados y retículos de formas}
+
+Un fibrado en rectas $\mathcal L$ asigna a cada punto una recta que
+varía algebraica u holomórficamente; localmente sus secciones se escriben
+como funciones multiplicadas por un generador. Sobre un modelo propio
+$\mathcal X$ definido sobre $\OK$, el módulo
+\[
+ M_k=H^0(\mathcal X,\mathcal L^{\otimes k})
+\]
+reúne las secciones integrales. Cuando es finito y libre de torsión,
+su fibra sobre $K$ es un espacio vectorial y $M_k$ es un retículo en él.
+Una métrica hermitiana en el fibrado produce normas sobre las secciones
+en cada inmersión compleja, por ejemplo la norma supremo o una norma
+$L^2$ con una medida especificada. Comparar ambas normas exige una
+estimación; sus covolúmenes no se identifican sin ese paso.
+
+En B, pp.~33--34, las formas automorfas holomorfas se realizan mediante
+fibrados sobre modelos de espacios de módulos de variedades abelianas.
+Si $\pi:\mathcal A\to\mathcal M$ es la familia universal y $e$ su
+sección cero, el fibrado de Hodge es
+$\omega=e^*\Omega^1_{\mathcal A/\mathcal M}$.
+La acción del anillo de enteros del cuerpo CM lo descompone, tras
+escoger un cuerpo de definición adecuado. Los pesos especifican
+potencias de rectas obtenidas de esos sumandos y de sus banderas.
+La condición cuspidal se expresa mediante anulación en la frontera
+de una compactificación.
+
+Esta descripción identifica los objetos que intervienen en las
+estimaciones. Para aplicarla se necesitan modelos integrales,
+extensión de los fibrados a la frontera, comparaciones de normas
+y control de los cambios de peso y nivel. La realización compleja
+de las formas no proporciona por sí sola esos datos finitos.
+
+\subsection{Secciones pequeñas, generación y pendiente}
+
+Para un fibrado hermitiano $\overline{\mathcal L}$ sobre una variedad
+aritmética de dimensión total $d$, el conteo de secciones pequeñas es
+\[
+ \widehat h^0(k\overline{\mathcal L})
+ =\log\#\{s\in H^0(\mathcal X,\mathcal L^{\otimes k}):
+                       \|s\|_{\sup}\le1\}.
+\]
+Su crecimiento define el volumen aritmético
+\[
+ \widehat{\operatorname{vol}}(\overline{\mathcal L})
+ =\limsup_{k\to\infty}\frac{d!}{k^d}
+                  \widehat h^0(k\overline{\mathcal L}).
+\]
+B, pp.~34--36, distingue este conteo de la característica
+$\chi_{\sup}$ definida mediante volumen y covolumen. Para un fibrado
+aritméticamente nef con métricas suaves, el teorema de Hilbert--Samuel de
+Moriwaki identifica el término principal del conteo con la
+autointersección aritmética. Si se supone nefness en cada fibra
+geométrica y curvatura semipositiva, su Corolario~6.4 da una
+desigualdad entre volumen e intersección; la positividad de esta
+última produce secciones pequeñas \cite{moriwaki-volumen}.
+Ser nef en las fibras significa tener grado no negativo en sus
+curvas; ser aritméticamente nef exige además grados no negativos
+en las curvas horizontales y semipositividad de la curvatura.
+Una asintótica para datos fijos necesita además un control uniforme
+antes de utilizarse en una familia de pesos, niveles y componentes.
+
+La cantidad de vectores pequeños y el subespacio que generan
+son datos distintos. En $\Z^2$, para $N>0$, consideremos
+\begin{equation}
+ \|(x,y)\|^2=e^{-2N}x^2+e^{2N}y^2.
+ \label{eq:geom-secciones-ejemplo}
+\end{equation}
+Todo vector de norma a lo sumo uno tiene $y=0$, mientras que hay
+$2\lfloor e^N\rfloor+1$ posibilidades para $x$.
+El determinante de Gram es uno: la pendiente media duplicada
+es cero. El conteo crece exponencialmente y los vectores contados
+generan una sola recta. A, p.~28, utiliza este ejemplo para
+explicar por qué la construcción añade información de generación,
+rango y descenso a la información de volumen.
+
+\subsection{Promediar por componentes con sus rangos}
+
+Las componentes de una cubierta contribuyen grados y rangos
+diferentes. El promedio relevante para la pendiente está ponderado
+por los rangos. El siguiente lema de A, p.~29, conserva esa
+distinción.
+
+\begin{lema}[Comparación de promedios]
+Sea $\mathcal Z$ finito y no vacío. Supongamos que $h_Z,s_Z\in\R$,
+$c_s,c_c,X\ge0$ y $0\le\rho,z<1$ satisfacen
+\[
+ h_Z+c_s\ge0,\qquad
+ (1-\rho)\max(0,s_Z+c_s)\le h_Z+c_s+c_c,\qquad
+ \frac1{|\mathcal Z|}\sum_Zs_Z\ge-X.
+\]
+Sean $d_0,b_T>0$ y números $d_Z,r_Z>0$ tales que
+\[
+ d_0\le d_Z\le\frac{d_0}{1-\rho},
+ \qquad
+ b_Td_Z\le r_Z\le\frac{b_Td_Z}{1-z}.
+\]
+Entonces
+\begin{equation}
+ \frac{\sum_Zr_Zh_Z}{\sum_Zr_Z}
+       \ge-X-(z+2\rho)c_s-c_c.
+ \label{eq:geom-promedio}
+\end{equation}
+\label{lem:geom-promedio}
+\end{lema}
+
+\begin{proof}
+Pongamos $\theta=(1-z)(1-\rho)$ y
+$w_Z=r_Z/\sum_Wr_W$.
+Las cotas de rango implican $w_Z\ge\theta/|\mathcal Z|$.
+Como $h_Z+c_s\ge0$, resulta
+\[
+ \sum_Zw_Z(h_Z+c_s)
+ \ge\frac{\theta}{|\mathcal Z|}\sum_Z(h_Z+c_s).
+\]
+La segunda hipótesis y $\max(0,s_Z+c_s)\ge s_Z+c_s$ dan
+\[
+ \frac1{|\mathcal Z|}\sum_Z(h_Z+c_s)
+       \ge(1-\rho)(c_s-X)-c_c.
+\]
+Al restar $c_s$ se obtiene
+\[
+ \sum_Zw_Zh_Z
+ \ge-\theta(1-\rho)X
+       -[1-\theta(1-\rho)]c_s-\theta c_c.
+\]
+Se tiene $0<\theta\le1$ y
+$1-(1-z)(1-\rho)^2\le z+2\rho$.
+Estas dos desigualdades prueban la conclusión.
+\end{proof}
+
+En la aplicación de A, $b_T=\binom{T-1}{q}$, donde $q$ es una
+dimensión geométrica y $T$ una potencia auxiliar. La entrada
+de grado por componente tiene la forma
+\begin{equation}
+ d_Z^{\rm ar}\ge b_Td_Z
+ \bigl[Th_Z-3(q+1)|h_Z|-A_0\log(2+|h_Z|)-R_0\bigr].
+ \label{eq:geom-grado-componente}
+\end{equation}
+La construcción aporta las restantes cotas de $T$, $A_0$, $R_0$
+y las alturas. El lema explica el coste
+$T(z+2\rho)c_s$ al convertir un promedio de alturas en una
+estimación ponderada. No autoriza a reemplazar esas alturas
+por una cota inferior puntual ausente de las hipótesis.
+Tampoco estima por sí solo los términos absoluto y logarítmico
+de \eqref{eq:geom-grado-componente}.
+
+\subsection{Mapas de multiplicación y un complemento pequeño}
+
+Sobre una cubierta, A, pp.~28--29, compara espacios de secciones
+con pesos cercanos mediante mapas integrales de multiplicación.
+La pérdida se puede aislar mediante el siguiente argumento.
+
+\begin{lema}[Transferencia con generación controlada]
+Sean $E,F$ retículos hermitianos sobre $\OK$ de rangos positivos.
+Sea $I$ un conjunto finito no vacío, y supongamos que
+\[
+ \Phi:E\longrightarrow F^{\oplus I},\qquad
+ \Phi(s)=(\phi_i(s))_{i\in I},
+\]
+es integral e inyectiva, y que, en cada inmersión $\sigma$,
+\begin{equation}
+ \sum_{i\in I}\|\phi_i(s)\|_\sigma^2
+                         \le e^{2b}\|s\|_\sigma^2
+ \quad(b\ge0).
+ \label{eq:geom-multiplicacion-norma}
+\end{equation}
+Supongamos además, para $P>0$ y $A_0\ge0$, que
+\[
+ \mu(E)\ge-A_0,\qquad
+ |I|\operatorname{rk}F\le(1+b/P)\operatorname{rk}E,
+\]
+y que $F_K$ está generado por un mismo conjunto de vectores de
+$F$ cuyas normas son a lo sumo $e^P$ en todas las inmersiones.
+Entonces
+\begin{equation}
+                   \mu(F)\ge-A_0-4b.
+ \label{eq:geom-multiplicacion-pendiente}
+\end{equation}
+\label{lem:geom-multiplicacion}
+\end{lema}
+
+\begin{proof}
+Escribamos $r=\operatorname{rk}E$ y
+$n=|I|\operatorname{rk}F$, y sea $S$ la saturación de la imagen
+de $\Phi$. La cota de operador $\|\Phi_\sigma\|\le e^b$ limita
+el crecimiento del volumen en dimensión $r$ por $e^{br}$.
+La comparación de determinantes, con la normalización duplicada,
+da $\mu(S)\ge\mu(E)-2b\ge-A_0-2b$.
+La saturación solo aumenta el grado de la imagen.
+
+El cociente $Q=F^{\oplus I}/S$ tiene la métrica cociente.
+Los generadores indicados de las sumas directas proyectan a
+vectores integrales que generan $Q_K$, de norma a lo sumo $e^P$
+en cada inmersión. Si su rango es positivo, escojamos entre ellos
+una base sobre $K$. La desigualdad de Hadamard acota cada
+determinante de Gram por $e^{2P\operatorname{rk}Q}$.
+El subretículo generado por esa base tiene pendiente al menos
+$-2P$, y su índice en $Q$ solo mejora la cota. Luego
+$\mu(Q)\ge-2P$.
+
+La aditividad del grado y la métrica ortogonal de la suma directa
+implican
+\[
+ n\mu(F)
+ \ge-r(A_0+2b)-2P(n-r).
+\]
+Si $n=r$, el último sumando es cero.
+En todos los casos $r\le n$ y $(n-r)/n\le b/P$; por tanto,
+$\mu(F)\ge-A_0-2b-2b$.
+\end{proof}
+
+La escala $P$ corresponde al producto $P\kappa$ de A; aquí se
+renombra para no confundir sus factores con otros parámetros.
+El argumento usa una cota para la \emph{suma} de las normas al
+cuadrado. Cotas separadas $\|\phi_i\|\le e^b$ solo darían
+$\|\Phi\|\le |I|^{1/2}e^b$ y añadirían $\log|I|$ a la
+comparación de pendientes.
+La existencia de esos mapas, la generación integral y el
+descenso desde la cubierta siguen siendo entradas geométricas.
+La cuenta anterior conserva también la forma más general
+\[
+ \mu(F)\ge t-\frac bP(|t|+2P)
+ \quad\text{si}\quad t\le\mu(E)-2b.
+\]
+En efecto, la cota previa a simplificar es
+$\mu(F)\ge(r/n)t-2P(1-r/n)$.
+Para transportar un término principal de signo libre se debe
+conservar esta pérdida de rango; el corolario con $4b$ tiene
+la hipótesis adicional $\mu(E)\ge-A_0$, $A_0\ge0$.
+
+\subsection{Proyecciones integrales y rango descartado}
+
+El recorte que selecciona tipos o representaciones conserva
+una parte del retículo. Su pérdida depende del rango eliminado,
+de sus pendientes y del denominador de la proyección.
+
+\begin{lema}[Coste de una proyección ortogonal racional]
+Sean $0\ne L\subseteq M$ retículos hermitianos con la métrica
+inducida, y $e:L_K\to L_K$ un idempotente ortogonal en todas
+las inmersiones. Supongamos que un entero $g\ge1$ satisface
+$ge(L)\subseteq L$. Definamos
+\[
+ L_g=L\cap\operatorname{im}e,\quad
+ L_b=L\cap\ker e,\quad
+ r_g=\operatorname{rk}L_g,\quad r_b=\operatorname{rk}L_b.
+\]
+Si $0\le\delta_b\le1/12$ y $Q_0\ge0$ satisfacen
+\[
+ r_b\le3\delta_b\operatorname{rk}L,\qquad
+ \mu_{\max}(M)\le Q_0,\qquad
+ \mu(L)\ge-Q_0,\qquad 2\log g\le Q_0,
+\]
+entonces $L_g\ne0$ y
+\begin{equation}
+                \mu(L_g)\ge\mu(L)-12\delta_bQ_0.
+ \label{eq:geom-proyeccion}
+\end{equation}
+\label{lem:geom-proyeccion}
+\end{lema}
+
+\begin{proof}
+La descomposición sobre $K$ da $r=r_g+r_b=\operatorname{rk}L$.
+Como $r_b\le r/4$, se tiene $r_g>0$ y
+\[
+             \frac{r_b}{r_g}
+              \le\frac{3\delta_b}{1-3\delta_b}\le4\delta_b.
+\]
+La proyección $1-e$ induce un isomorfismo
+\[
+ L/(L_g\oplus L_b)\simeq(1-e)L/L_b.
+\]
+La inclusión $g(1-e)L\subseteq L_b$ acota el orden de este
+cociente por $g^{[K:\Q]r_b}$.
+La ortogonalidad y la fórmula de índice dan
+\[
+ r\mu(L)\le r_g\mu(L_g)+r_b\mu(L_b)+2r_b\log g.
+\]
+Si $r_b=0$, el cociente es trivial y la afirmación sigue
+directamente. Si $r_b>0$, la saturación de $L_b$ en $M$
+tiene pendiente no menor que la de $L_b$, de modo que
+$\mu(L_b)\le\mu_{\max}(M)\le Q_0$.
+Despejar $\mu(L_g)$ produce una pérdida a lo sumo
+\[
+ \frac{r_b}{r_g}\bigl(\mu(L_b)-\mu(L)+2\log g\bigr)
+                    \le4\delta_b(3Q_0).
+\]
+\end{proof}
+
+Este es el Lema~7.2 de A, p.~30. El entero $g$ controla un índice
+finito, aunque $e$ sea ortogonal en el espacio complejo. La
+Nota~\ref{sec:proyecciones} ya muestra ese fenómeno en dimensión
+dos. La cota del rango descartado tiene efecto cuantitativo
+después de acotar también las pendientes y ese índice.
+
+\subsection{Absorber una pérdida exponencial de rango}
+
+A, pp.~28--30, organiza la construcción mediante un retículo
+central $L_{\rm core}$, un retículo de tipo $L\subseteq M$
+y el retículo retenido $L_g$, con el proyector y las métricas
+del Lema~\ref{lem:geom-proyeccion}.
+Sean $\mathcal E\ge b\ge1$, $C_1,C_2\ge0$, y supongamos
+\[
+ \mu(L_{\rm core})\ge-\mathcal M_j-C_2\mathcal E,\qquad
+ \mu(L)\ge\mu(L_{\rm core})-C_1\mathcal E.
+\]
+Aquí $\mathcal M_j$ es la contribución principal del periodo
+en esa etapa. Supongamos además
+\[
+ \mu_{\max}(M)\le x^{A_1}b,\qquad
+ |\mathcal M_j|\le x^{A_2}b,\qquad
+ 2\log g\le b,\qquad
+ r_b\le3\delta_b(x)r,
+\]
+con $x\ge1$, $A_1,A_2\ge0$ y
+$\delta_b(x)=\exp(-x^c)$, $c>0$ fijo.
+Aplicamos el lema anterior con
+\[
+ Q_0=(x^{A_1}+x^{A_2}+C_1+C_2+1)\mathcal E.
+\]
+Si
+\begin{equation}
+ 12\delta_b(x)(x^{A_1}+x^{A_2}+C_1+C_2+1)\le1,
+ \label{eq:geom-absorcion-condicion}
+\end{equation}
+se cumplen sus hipótesis y resulta
+\begin{equation}
+          \mu(L_g)\ge-\mathcal M_j-(C_1+C_2+1)\mathcal E.
+ \label{eq:geom-core-final}
+\end{equation}
+Para cualquier exponente fijo $a$,
+$\log(x^ae^{-x^c})=a\log x-x^c\to-\infty$.
+Por ello \eqref{eq:geom-absorcion-condicion} vale por encima
+de un umbral común una vez fijados los exponentes y constantes.
+
+Si la construcción suministra además
+$\operatorname{lcv}(M_j^{\rm row})/D\le-\mu(L_g)$,
+con su normalización de covolumen y rango $D$, se obtiene
+\[
+ \frac{\operatorname{lcv}(M_j^{\rm row})}{D}
+       \le\mathcal M_j+(C_1+C_2+1)\mathcal E.
+\]
+Esta es la deducción numérica de A, Proposición~7.3.
+La cota inferior del retículo central, la cota superior máxima
+y la comparación final de retículos tienen funciones distintas
+en el argumento.
+
+\subsection{Evaluaciones, jets y pendientes máximas}
+
+Evaluar una sección en un punto conserva su valor.
+Un jet de orden $k$ conserva además sus coeficientes de Taylor
+hasta grado total $k$. En coordenadas locales de dimensión $n$,
+el espacio de jets de una función escalar en un punto liso es
+\[
+ \mathcal O_{X,p}/\mathfrak m_p^{k+1};
+\]
+los monomios $z^\alpha$ con $|\alpha|\le k$ forman una base.
+Su dimensión es $\binom{n+k}{n}$, por el conteo de las soluciones
+$\alpha_1+\cdots+\alpha_n+\alpha_{n+1}=k$ en enteros no negativos.
+Para una sección de un fibrado en rectas se usa también una
+trivialización de su fibra. Una estructura integral de jets
+requiere el modelo y los módulos correspondientes sobre el
+anillo de enteros.
+
+La inyectividad de una evaluación en varios puntos o jets
+significa que ninguna sección no nula del espacio considerado
+se anula con todos los órdenes prescritos. Es una propiedad
+global de ese espacio de secciones.
+Las cotas de Cauchy de la Nota~\ref{sec:periodos} estiman las
+normas de coeficientes; la inyectividad y la integridad requieren
+sus propias justificaciones.
+
+\begin{lema}[Cota máxima mediante una evaluación integral]
+Sea $j:M\hookrightarrow J$ una aplicación integral e inyectiva
+entre retículos hermitianos de rangos positivos. Con la altura
+global utilizada en la Nota~\ref{sec:marcos},
+\begin{equation}
+                  \mu_{\max}(M)\le\mu_{\max}(J)+h(j).
+ \label{eq:geom-evaluacion-max}
+\end{equation}
+\label{lem:geom-evaluacion-max}
+\end{lema}
+
+\begin{proof}
+Para cada subretículo saturado $S\subseteq M$ de rango positivo,
+la comparación de determinantes de $j|_S$ da
+$\mu(S)\le\mu(jS)+h(j|_S)$.
+Su altura es a lo sumo $h(j)$ porque la norma restringida no
+excede la del operador completo.
+La saturación de $jS$ en $J$ aumenta su grado, de donde
+$\mu(jS)\le\mu_{\max}(J)$.
+Tomar el máximo sobre $S$ prueba la desigualdad.
+\end{proof}
+
+Este lema describe qué debe aportar una construcción por
+evaluaciones para controlar la pendiente máxima. Una evaluación
+compleja sobreyectiva, una cota de su norma y una realización
+integral son afirmaciones diferentes. También se distinguirá
+la sobreyectividad, necesaria para interpolar datos, de la
+inyectividad que se acaba de utilizar.
+
+\subsection{Interpolación con jacobiano y pesos globales}
+
+A, Teorema~7.4, p.~31, utiliza una entrada de extensión $L^2$.
+Sea $X$ una variedad compleja de dimensión $n\ge1$, con un mapa
+localmente biholomorfo $z:X\to\C^n$ y una función de agotamiento
+plurisubarmónica suave. La medida $\dd V_z$ es la medida euclídea
+transportada por esas coordenadas. Sean $g=(g_1,\ldots,g_n)$
+holomorfo, $\varphi,\varphi_2$ plurisubarmónicas suaves,
+$r>0$ y $j\ge2$ entero. Las hipótesis incluyen
+\begin{equation}
+ \begin{gathered}
+ \|g(x)\|^2e^{-\varphi(x)}\le r^2\quad(x\in X),\qquad
+ Z=\{g=0\}\text{ finito},\\
+ J_g(p)=\det(dg/dz)(p)\ne0\quad(p\in Z).
+ \end{gathered}
+ \label{eq:geom-ot-hip}
+\end{equation}
+La plurisubarmonicidad suave expresa la semipositividad de la
+forma de Levi; el agotamiento permite aproximar $X$ por
+subniveles relativamente compactos.
+
+La entrada afirma que, dados $c_p\in\C$, existe una función
+holomorfa $F$ tal que $F(p)=c_pJ_g(p)$ y
+\begin{equation}
+ \int_X|F|^2e^{-\varphi_2-(n+j)\varphi}\dd V_z
+ \le C_{\rm OT}\sum_{p\in Z}|c_p|^2
+                           e^{-\varphi_2(p)-j\varphi(p)},
+ \qquad
+ C_{\rm OT}=\frac{280\pi^nr^{2n}}{(n-1)!}.
+ \label{eq:geom-ot}
+\end{equation}
+La existencia holomorfa se recibe como resultado citado.
+La teoría de extensión de Ohsawa--Takegoshi proporciona el
+contexto analítico; \cite[§4]{demailly-extension} explica el
+método de extensión con estimaciones.
+La constante $280$ y las normalizaciones de
+\eqref{eq:geom-ot} son las de la entrada específica de A.
+
+El jacobiano se entiende mediante una cuenta local.
+Pongamos $\rho=\|g\|^2e^{-\varphi}/r^2$.
+Cerca de un cero simple, $w=g(z)$ es un cambio de coordenadas y
+$\dd V_w=|J_g|^2\dd V_z$.
+En la corona $\varepsilon^2/2\le\rho\le\varepsilon^2$,
+el integrando
+$|J_g|^2e^{-\varphi_2-(n+j)\varphi}\rho^{-n}$
+se transforma en
+\[
+ r^{2n}|w|^{-2n}e^{-\varphi_2-j\varphi}\dd V_w.
+\]
+La fórmula polar
+\begin{equation}
+ \int_{a\le|w|^2\le b}|w|^{-2n}\dd V_w
+                  =\frac{\pi^n}{(n-1)!}\log(b/a)
+ \quad(0<a<b)
+ \label{eq:geom-corona}
+\end{equation}
+se obtiene integrando
+$2\pi^nR^{2n-1}/(n-1)!$ contra $R^{-2n}\dd R$.
+Para justificar el límite, se reescala
+$w=\varepsilon r e^{\varphi(p)/2}u$.
+La condición de la corona pasa a
+$1/2\le|u|^2e^{\varphi(p)-\varphi(z(w))}\le1$.
+Para $\varepsilon$ pequeño, estos dominios quedan dentro de
+$1/4\le|u|^2\le2$ y sus indicadoras convergen, salvo en las
+esferas frontera de medida cero, a la de
+$1/2\le|u|^2\le1$.
+Los pesos convergen uniformemente y el integrando queda dominado
+en esa corona fija. La convergencia dominada da la masa límite
+\[
+ \frac{\pi^n\log2}{(n-1)!}
+                 r^{2n}e^{-\varphi_2(p)-j\varphi(p)}.
+\]
+Este cálculo explica el factor $r^{2n}$ y la desaparición de
+$n$ en el peso puntual. Para interpolar valores $F(p)=a_p$,
+se debe poner $c_p=a_p/J_g(p)$; por tanto, el lado derecho
+contiene $|a_p|^2/|J_g(p)|^2$.
+La condición global de \eqref{eq:geom-ot-hip} y la elección
+de medida forman parte de la estimación.
+
+\subsection{De la interpolación al determinante de evaluación}
+
+\begin{lema}[Gram de una evaluación sobreyectiva]
+Sea $\mathcal H$ un espacio de Hilbert, sea $Y$ un espacio
+hermitiano de dimensión $q>0$ y sea
+$E:\mathcal H\to Y$ lineal y continuo.
+Si para todo $c\in Y$ existe $f\in\mathcal H$ con
+$Ef=c$ y $\|f\|^2\le C\|c\|^2$, donde $C>0$, entonces
+\begin{equation}
+                 EE^*\ge C^{-1}I_Y,\qquad
+                 \det(EE^*)\ge C^{-q}.
+ \label{eq:geom-eval-gram}
+\end{equation}
+\label{lem:geom-eval-gram}
+\end{lema}
+
+\begin{proof}
+La aplicación es sobreyectiva y su núcleo es cerrado.
+Cada fibra tiene un único elemento de norma mínima, en
+$(\ker E)^\perp$. Esos elementos definen una inversa por
+la derecha lineal $S:Y\to\mathcal H$, con $\|S\|\le\sqrt C$.
+Para $c\in Y$,
+\[
+ \|c\|^2=\langle ESc,c\rangle
+        =\langle Sc,E^*c\rangle
+        \le\sqrt C\|c\|\|E^*c\|.
+\]
+Luego $\langle EE^*c,c\rangle=\|E^*c\|^2
+\ge C^{-1}\|c\|^2$.
+Todos los autovalores de $EE^*$ son al menos $C^{-1}$;
+su producto prueba la desigualdad de determinantes.
+\end{proof}
+
+En \eqref{eq:geom-ot}, tomamos como $\mathcal H$ el espacio
+de funciones holomorfas de norma $L^2$ finita para el peso
+indicado, y como $Y$ el espacio $\C^Z$ con norma
+\[
+ \|c\|_Y^2=\sum_{p\in Z}|c_p|^2e^{-\varphi_2(p)-j\varphi(p)}.
+\]
+La evaluación es $E(F)=(F(p)/J_g(p))_{p\in Z}$.
+La desigualdad local de valor medio y los pesos suaves positivos
+garantizan su continuidad. Para $Z\ne\varnothing$, el lema
+da \eqref{eq:geom-eval-gram} con $C=C_{\rm OT}$, calculando
+el adjunto y el determinante con esas métricas.
+Es el Lema~7.5 de A, pp.~31--32.
+
+La evaluación de este espacio de Bergman es de orden cero.
+Una interpolación de jets de orden superior exige otro enunciado.
+Además, restringir $E$ a un subespacio de formas automorfas
+puede destruir su sobreyectividad: el interpolante construido
+en $\mathcal H$ debe pertenecer al modelo que se quiere utilizar.
+La comparación aritmética requiere también identificar
+el retículo de evaluación, sus índices y todas sus métricas.
+
+A, p.~32, expresa una comparación posterior entre niveles
+mediante las pendientes normalizadas
+$\mu_0=\mu(R_0^\vee)-\log\kappa_R$ y
+$\mu_\sharp=\mu(R^\vee)-\log\kappa_R$:
+\begin{equation}
+ \mu_\sharp\le
+ \mu_0+3\delta_e(\mu_0+h_0+28\lambda)+28\lambda.
+ \label{eq:geom-base-sharp}
+\end{equation}
+Aquí la construcción suministra la misma normalización de
+filas $\kappa_R$ en ambos niveles. Si
+$\delta_e\ge0$, $\mu_0+h_0+28\lambda\le Q_0$,
+$Q_0\ge1$, $3\delta_eQ_0\le1$ y
+$0\le\lambda\le\lambda_0$, la pérdida es a lo sumo
+$1+28\lambda_0$.
+El número $28$ resume comparaciones anteriores; la sola
+desigualdad $\log280<28$ no demuestra
+\eqref{eq:geom-base-sharp}.
+
+\subsection{Correlaciones por bloques y las dos trazas}
+
+Sea $(A_\alpha:H_\alpha\to\mathcal H_0)_\alpha$ una familia
+finita no vacía de aplicaciones entre
+espacios hermitianos complejos de dimensiones
+$r_\alpha>0$ y $D>0$.
+Los bloques
+$K_{\alpha\beta}=A_\alpha^*A_\beta$
+comparan columnas completas.
+Las entradas espectrales de A, Proposición~7.6, p.~32,
+y B, pp.~45--46, tienen la forma
+\begin{align}
+ \|K_{\alpha\alpha}-I_{H_\alpha}\|_{\rm HS}^2
+       &\le e_0r_\alpha,
+       \label{eq:geom-bloque-diagonal}\\
+ \|K_{\alpha\beta}\|_{\rm HS}^2
+       &\le(1+\eta_0)\frac{r_\alpha r_\beta}{D_*}
+       \quad(\alpha\ne\beta),
+       \label{eq:geom-bloque-cruzado}\\
+ D&\le(1+\eta_1)D_*,
+       \label{eq:geom-dimension}
+\end{align}
+donde $D_*>0$ y $e_0,\eta_0,\eta_1\ge0$.
+Los escalares positivos de la normalización de los periodos
+se incorporan en $A_\alpha$ como una elección de coordenadas
+complejas auxiliares. Las alturas aritméticas $h_\alpha$
+conservan los mapas y métricas originales de la
+Nota~\ref{sec:periodos}.
+La norma de Hilbert--Schmidt del bloque es independiente de
+las bases ortonormales; una cota de entradas individuales
+necesitaría contabilizar sus dimensiones.
+
+\begin{lema}[De bloques a trazas]
+Pongamos $a=\sqrt{e_0}$, $R=\sum_\alpha r_\alpha$ y
+$Q=\sum_\alpha A_\alpha A_\alpha^*$.
+Bajo \eqref{eq:geom-bloque-diagonal}--\eqref{eq:geom-dimension},
+\begin{equation}
+ |\operatorname{Tr}Q-R|\le aR,\qquad
+ \operatorname{Tr}(Q^2)
+       \le(1+a)^2R+(1+\eta_0)\frac{R^2}{D_*}.
+ \label{eq:geom-trazas}
+\end{equation}
+Si $e_0\le1/4$, las hipótesis del marco de
+\eqref{eq:marcos-error-fuentes}--\eqref{eq:marcos-error-destino}
+se cumplen con $\gamma_\alpha=1$, $e=e_0$ y
+\begin{equation}
+ 1+\eta=
+ \frac{(D/R)(1+a)^2+(1+\eta_0)(1+\eta_1)}{(1-a)^2}.
+ \label{eq:geom-eta-marco}
+\end{equation}
+\label{lem:geom-bloques-trazas}
+\end{lema}
+
+\begin{proof}
+Sea $E_\alpha=K_{\alpha\alpha}-I$.
+Cauchy--Schwarz para la traza implica
+\[
+ |\operatorname{Tr}E_\alpha|
+ \le\sqrt{r_\alpha}\|E_\alpha\|_{\rm HS}
+ \le ar_\alpha.
+\]
+Además,
+\[
+ \|K_{\alpha\alpha}\|_{\rm HS}^2
+ =r_\alpha+2\operatorname{Tr}E_\alpha+\|E_\alpha\|_{\rm HS}^2
+ \le(1+a)^2r_\alpha.
+\]
+Sumar las trazas da la primera cota.
+Por ciclicidad,
+\[
+ \operatorname{Tr}(Q^2)
+    =\sum_{\alpha,\beta}
+                 \|A_\alpha^*A_\beta\|_{\rm HS}^2.
+\]
+Los bloques diagonales aportan a lo sumo $(1+a)^2R$;
+los cruzados aportan a lo sumo
+$(1+\eta_0)\sum_{\alpha\ne\beta}r_\alpha r_\beta/D_*
+\le(1+\eta_0)R^2/D_*$.
+Como $\operatorname{Tr}Q\ge(1-a)R>0$, multiplicar esta
+cota por $D/(\operatorname{Tr}Q)^2$ y usar
+\eqref{eq:geom-dimension} prueba la condición del receptor.
+La condición de las fuentes se obtiene sumando
+\eqref{eq:geom-bloque-diagonal}. La expresión elegida
+para $\eta$ es no negativa.
+\end{proof}
+
+La comparación utiliza los pesos de rango del teorema de
+pendientes: normalizar $Q$ por $D/R$ corresponde a
+$p_\alpha=r_\alpha/R$.
+Una elección distinta de pesos debe conservar esa
+correspondencia antes de aplicar la Nota~\ref{sec:marcos}.
+Las cotas espectrales
+\eqref{eq:geom-bloque-diagonal}--\eqref{eq:geom-dimension}
+son entradas especializadas: su demostración utiliza
+estimaciones locales, expansiones convergentes de núcleos,
+selección de representaciones y conteos uniformes.
+
+\subsection{Recortes en las fuentes y en el receptor}
+
+En la aplicación, los espacios fuente completos se recortan
+antes de usar su filtración de pendientes. La estimación siguiente
+reconstruye la última transición de B, p.~45.
+
+\begin{proposicion}[Marco después de un recorte de fuentes]
+Supongamos \eqref{eq:geom-bloque-diagonal}--\eqref{eq:geom-dimension},
+y escribamos ahora $d_\alpha$ para los rangos completos y
+$R_0=\sum_\alpha d_\alpha$.
+Sean $V_\alpha:\C^{r_\alpha}\hookrightarrow H_\alpha$
+inclusiones isométricas, $B_\alpha=A_\alpha V_\alpha$ y
+$R=\sum_\alpha r_\alpha$.
+Se omiten las columnas con $r_\alpha=0$.
+Supongamos
+\[
+ 0<\sigma\le\frac1{20},\qquad
+ \eta_0,\eta_1,\sqrt{e_0}\le\frac{\sigma}{2},\qquad
+ R_0\ge\frac{D_*}{\sigma},\qquad
+ R\ge(1-\delta_0)R_0,\quad 0\le\delta_0\le\frac14.
+\]
+Entonces las aplicaciones $B_\alpha$ satisfacen las dos
+condiciones del marco con
+\begin{equation}
+              e=2e_0,\qquad \eta=5\sigma+3\sqrt{\delta_0}.
+ \label{eq:geom-marco-recortado}
+\end{equation}
+\label{prop:geom-compresion}
+\end{proposicion}
+
+\begin{proof}
+Pongamos $a=\sqrt{e_0}$,
+$E_\alpha=A_\alpha^*A_\alpha-I$ y
+$P_\alpha=V_\alpha V_\alpha^*$.
+La compresión no aumenta la norma de Hilbert--Schmidt, así que
+\[
+ \sum_\alpha\|B_\alpha^*B_\alpha-I\|_{\rm HS}^2
+ \le e_0R_0\le\frac{e_0}{1-\delta_0}R\le2e_0R.
+\]
+Sea $Q=\sum_\alpha B_\alpha B_\alpha^*$ y $t=\operatorname{Tr}Q$.
+Cauchy--Schwarz para la suma de los bloques da
+\[
+ \left|\sum_\alpha\operatorname{Tr}(P_\alpha E_\alpha)\right|
+ \le\sqrt R\sqrt{\sum_\alpha\|E_\alpha\|_{\rm HS}^2}
+ \le aR_0.
+\]
+Por ello $t\ge(1-\delta_0-a)R_0>0$.
+Si $Q_0=\sum_\alpha A_\alpha A_\alpha^*$, entonces
+$0\le Q\le Q_0$ y
+$\operatorname{Tr}(Q^2)\le\operatorname{Tr}(Q_0^2)$.
+En efecto, escribir $Q_0=Q+D_0$ con $D_0\ge0$ produce
+$2\operatorname{Tr}(QD_0)+\operatorname{Tr}(D_0^2)\ge0$;
+no se necesita que los dos operadores conmuten.
+El lema anterior implica
+\begin{equation}
+ \frac{D\operatorname{Tr}(Q^2)}{t^2}
+ \le\frac{(1+\eta_1)[1+\eta_0+\sigma(1+a)^2]}
+              {(1-\delta_0-a)^2}
+ \le\frac{N(\sigma)}{(1-\delta_0-\sigma/2)^2},
+ \label{eq:geom-razon-compresion}
+\end{equation}
+donde
+\[
+ N(s)=1+2s+\frac74s^2+\frac34s^3+\frac18s^4.
+\]
+Para $0\le s\le1/20$, $N(s)\le9/8$ y
+\[
+ (1+4s)(1-s/2)^2-N(s)
+ =s\left(1-\frac{11}{2}s+\frac14s^2-\frac18s^3\right)\ge0.
+\]
+La última desigualdad se sigue, por ejemplo, de
+$1-\frac{11}{2}s-\frac18s^3
+\ge1-\frac{11}{40}-\frac1{64000}>0$.
+Para $0\le d\le1/4$,
+\[
+ \frac{\dd}{\dd d}\frac{N(s)}{(1-d-s/2)^2}
+ \le\frac{2(9/8)}{(29/40)^3}
+ =\frac{144000}{24389}<6.
+\]
+Integrar desde $d=0$ da
+\[
+ \frac{N(s)}{(1-d-s/2)^2}
+ \le1+4s+6d\le1+5s+3\sqrt d.
+\]
+La última comparación usa $6d\le3\sqrt d$ para $d\le1/4$.
+Aplicarla a \eqref{eq:geom-razon-compresion} prueba la
+segunda condición del marco.
+Finalmente, $2e_0\le\sigma^2/2\le1/800<1/4$, como exige
+el teorema de la Nota~\ref{sec:marcos}.
+\end{proof}
+
+B, p.~45, suministra para su recorte ramificado la identidad
+\[
+ r_\alpha=d_\alpha
+       \left(1-\frac1{T_\alpha-1}\right)^f.
+\]
+Esta identidad de dimensiones es una entrada de la representación
+local. A partir de ella, si $T_\alpha\ge b\ge3$, la desigualdad
+de Bernoulli da
+\begin{equation}
+ 1-\frac{r_\alpha}{d_\alpha}
+ \le\frac{f}{T_\alpha-1}\le\frac{2f}{b},
+ \qquad
+ \frac{R_0-R}{R_0}\le\frac{2f}{b}.
+ \label{eq:geom-rango-ramificado}
+\end{equation}
+
+El recorte en el receptor tiene otro parámetro.
+El espacio espectral completo, de dimensión $D$, se proyecta
+mediante una misma aplicación sobre el receptor aritmético
+$C\otimes_\sigma\C$, de dimensión $d$.
+La construcción debe realizar los mapas $b_\alpha$ mediante
+esa proyección y dar
+\begin{equation}
+                      d\ge(1-\delta_{\rm row})D,
+                 \qquad 0\le\delta_{\rm row}<1.
+ \label{eq:geom-rango-receptor}
+\end{equation}
+Este $\delta_{\rm row}$ es el $\delta$ de la Nota~\ref{sec:marcos}.
+A, p.~33, recibe además
+$\delta_{\rm row}\le\exp(-x^{c_{\rm row}})$, con
+$c_{\rm row}>0$ fijo. Por encima de un umbral,
+$\delta_{\rm row}\le1/2$ y
+$1/(1-\delta_{\rm row})\le2$.
+El parámetro $\delta_0$ de \eqref{eq:geom-marco-recortado}
+mide fuentes descartadas; $\delta_b$ mide el recorte del
+retículo del Lema~\ref{lem:geom-proyeccion}.
+Mantenerlos separados permite aplicar cada cota con su rango
+y su denominador correctos.
+
+\subsection{Dispersión de pendientes y precisión del marco}
+
+Con rangos fuente retenidos $r_\alpha$ y alturas $h_\alpha$,
+pongamos
+\begin{align}
+ s&=\sum_\alpha\frac{r_\alpha}{R}
+                    \bigl(\mu(N_\alpha)-h_\alpha\bigr),
+                    \label{eq:geom-media-ajustada}\\
+ u&=\max_\alpha\bigl(\mu_{\max}(N_\alpha)-h_\alpha\bigr)-s.
+                    \label{eq:geom-dispersion}
+\end{align}
+Se tiene $u\ge0$: el máximo domina la media ponderada de
+$\mu(N_\alpha)-h_\alpha$.
+Para $C=M_W^\vee$, la cota de profundidad requerida es
+\[
+ s-\mu_{\min}(C)=s+\mu_{\max}(M_W)\le H_0.
+\]
+B, p.~46, emplea una cota $H_0=bx^{C_H}$ con exponente fijo.
+La pendiente máxima del retículo de filas y la pendiente media
+que se estima mediante el covolumen son entradas distintas.
+
+Hay una cuenta útil para localizar el efecto de los índices.
+Si $M'_\alpha\subseteq M_\alpha$ tiene índice finito y
+$N_\alpha=\mathfrak a_\alpha^{-1}M'_\alpha$, pongamos
+\[
+ \iota_\alpha=
+ \frac{2}{[K:\Q]r_\alpha}\log\#(M_\alpha/M'_\alpha).
+\]
+El giro por el ideal desplaza todas las pendientes por un
+mismo número $g_\alpha$. La Nota~\ref{sec:periodos} da
+\[
+ \mu(N_\alpha)=\mu(M_\alpha)+g_\alpha-\iota_\alpha,
+ \qquad
+ \mu_{\max}(N_\alpha)\le\mu_{\max}(M_\alpha)+g_\alpha.
+\]
+Por consiguiente,
+\begin{equation}
+ \mu_{\max}(N_\alpha)-\mu(N_\alpha)
+ \le\mu_{\max}(M_\alpha)-\mu(M_\alpha)+\iota_\alpha.
+ \label{eq:geom-dispersion-indice}
+\end{equation}
+Si $a_\alpha=\mu(N_\alpha)-h_\alpha$, se deduce también
+\[
+ u\le
+ \max_\alpha\{\mu_{\max}(M_\alpha)-\mu(M_\alpha)+\iota_\alpha\}
+       +\max_\alpha a_\alpha-\min_\alpha a_\alpha.
+\]
+Esta desigualdad identifica los términos que necesitan cotas;
+no afirma que cada uno sea pequeño sin utilizar la construcción.
+
+La pérdida de la transferencia es
+\begin{equation}
+ \mathcal E_{\rm marco}
+ =\frac{4u\log(1+H_0/u)+(\eta+4\sqrt e)H_0}
+        {1-\delta_{\rm row}},
+ \label{eq:geom-presupuesto-marco}
+\end{equation}
+con el primer término igual a cero para $u=0$.
+Para $H_0\ge0$, la identidad
+\[
+ u\log(1+H_0/u)=\int_0^{H_0}\frac{u}{u+t}\dd t
+ \quad(u>0)
+\]
+muestra que la expresión es creciente en $u$ y se prolonga
+continuamente por cero en $u=0$.
+Una cota $u\le U$ puede por tanto sustituirse en ese término.
+
+Los otros errores se multiplican por $H_0$.
+Por ejemplo, para lograr
+$\sigma H_0\le bx^{-A}$ cuando $H_0\le bx^{C_H}$,
+es suficiente escoger
+\begin{equation}
+ \sigma=x^{-(C_H+A)},\qquad
+ q_{\rm col}\ge C_0\Gamma^2/\sigma,
+ \qquad
+ d_\alpha\ge\frac{D_*}{C_0\Gamma^2}.
+ \label{eq:geom-cardinalidad}
+\end{equation}
+La segunda y tercera condiciones dan
+$R_0\ge D_*/\sigma$.
+Si se escoge un $\sigma$ menor, la cardinalidad debe ajustarse
+a ese nuevo valor.
+Para $C_H+A>0$, aumentar el umbral asegura $\sigma\le1/20$.
+
+A, p.~32, escribe $\Gamma=\exp(C_\Gamma m^5fL)$.
+Las cotas espectrales proporcionadas en A y B son
+$\eta_0,\eta_1,\sqrt{e_0}\le\exp(-x^{\varepsilon/8})$.
+Con $\varepsilon>0$ fijo, esa cantidad es menor que toda
+potencia inversa fija de $x$ por encima de un umbral.
+La existencia de suficientes columnas admisibles con las
+dimensiones de \eqref{eq:geom-cardinalidad} es una entrada
+adicional de selección y conteo.
+
+La pérdida $\sqrt{\delta_0}$ requiere también atención.
+Si $\delta_0\le2f/b$, entonces
+\[
+ \frac{\sqrt{\delta_0}H_0}{b}
+       \le x^{C_H}\sqrt{\frac{2f}{b}}.
+\]
+En particular, con $f\le x^{C_f}$ y $b=\exp(x^\varepsilon)$,
+el lado derecho es a lo sumo
+$\sqrt2\,x^{C_H+C_f/2}\exp(-x^\varepsilon/2)$
+y tiende a cero más deprisa que cualquier potencia inversa fija.
+La afirmación está normalizada por $b$; no dice que el
+producto sin normalizar tienda a cero.
+
+Primero se fijan los exponentes de las cotas de alturas y
+pendientes. Después se escoge la precisión que requieren
+sus productos con los errores del marco y, finalmente,
+la cantidad de columnas y los umbrales espectrales.
+Un máximo de finitísimos umbrales ya uniformes permite
+ensamblar las estimaciones. Umbrales individuales para cada
+columna de una familia que crece con $x$ no dan ese resultado.
+
+\subsection{Entradas geométricas y aritméticas delimitadas}
+
+Las pruebas anteriores separan los mecanismos finitos de la
+construcción de sus datos. La tabla precisa los puntos en que
+el estudio todavía recibe resultados especializados.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.22\textwidth}Y>{\raggedright\arraybackslash}p{0.18\textwidth}@{}}
+\toprule
+Objetivo & Datos que deben construirse & Localizador\\
+\midrule
+Pendiente media inferior &
+Modelos y métricas de frontera; alturas y grados de componentes;
+mapas de multiplicación integrales; generadores pequeños y descenso. &
+A, pp.~28--30; B, pp.~33--40.\\
+Pendiente máxima &
+Evaluaciones o comparaciones que controlen el mismo retículo,
+con inyectividad, integridad y alturas uniformes. &
+A, pp.~28--32; B, pp.~39--40.\\
+Determinante de evaluación &
+Extensión holomorfa con los pesos globales; paso al espacio
+automorfo utilizado y a su retículo integral. &
+A, pp.~31--32.\\
+Dos trazas del marco &
+Cotas diagonales y cruzadas, convergencia de expansiones,
+comparación de dimensiones y suficientes columnas admisibles. &
+A, pp.~32--33; B, pp.~44--46.\\
+Costes finitos &
+Denominadores de proyectores, longitudes locales finitas
+y sumabilidad de la contribución cohomológica. &
+A, pp.~33--41; B, §5.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+En particular, la métrica de Hodge natural puede tener
+singularidades en la frontera. B, pp.~37--38, describe una
+corrección por un potencial $U/2$, regularizaciones y una
+comparación de autointersecciones. Esos pasos justifican
+el uso de resultados formulados para métricas suaves.
+El control de los límites y del promedio de $U$ pertenece
+a la construcción; no se deduce del solo nombre del
+teorema de Hilbert--Samuel.
+
+En los lugares finitos, la entrada de jets utilizada en A, §6,
+tiene la hipótesis $p\ge5$. Los primos $2$ y $3$ reciben
+comparaciones integrales distintas, descritas en A, pp.~33--34.
+La suma de defectos locales de A, (7.9), exige longitudes
+cohomológicas finitas y una serie no negativa convergente.
+Esa definición de defecto no incorpora el factor dos:
+este aparece al convertir el coste a grado y pendiente.
+
+Con estas entradas, la geometría y las dos trazas suministran
+las hipótesis que la Nota~\ref{sec:periodos} inserta en su
+balance. Producir las ventanas aritméticas exige además
+controlar los denominadores y escoger simultáneamente los
+parámetros de selección. Las desigualdades de esta nota
+muestran qué cantidades y qué uniformidad debe conservar
+esa elección.
+
+\subsection{Concordancia localizada con Lean}
+\label{subsec:geometria-lean}
+
+El cotejo utiliza la revisión
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/tree/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4}{\texttt{7cbf7a0}}
+del mismo espejo \cite{lean}.
+Se leyeron 19 archivos completos y pasajes delimitados de
+otros cuatro. El registro conserva las 23 rutas, hashes,
+intervalos y distinción entre interfaces y pruebas.
+Un archivo reutilizado de la Nota~\ref{sec:periodos} se
+volvió a leer y a identificar por sus bytes.
+
+\begingroup
+\raggedright
+\begin{enumerate}
+\item \textbf{Componentes y descenso de cubiertas.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Definitions/Divisors/CovolXOfCovol.lean}{\texttt{CovolXOfCovol}}
+define los predicados de rangos, mapas, generadores, grados
+y alturas. Su cota de generadores es simultánea en todas
+las inmersiones, con escala \texttt{PP * kap}.
+La prueba
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/HtMapLeOfPoints.lean}{\texttt{descent}}
+reúne los mapas en una suma ortogonal y obtiene
+$\mu(F)\ge t-\epsilon(|t|+2\Lambda)$ bajo sus hipótesis
+de rango y norma. El Lema~\ref{lem:geom-multiplicacion}
+desarrolla aquí una variante con cota inicial
+$\mu(E)\ge-A_0$, $A_0\ge0$, y pérdida $4b$,
+a partir de la desigualdad previa de grados.
+Se leyeron también
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/MeanHeightDescent/AverageDegreeBounds/SumComponents.lean}{\texttt{sumComponents'}}
+y
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/UniformLowerBoundOfSums.lean}{\texttt{uLow\_of}},
+que conservan los rangos ponderados y las entradas de
+altura. El Lema~\ref{lem:geom-promedio} aísla una parte
+de ese argumento; no se presenta como transcripción literal
+de toda la prueba formal de componentes.
+
+\item \textbf{Recorte y absorción.}
+En
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/MajAtAddRight.lean}{\texttt{MajAtAddRight}},
+\texttt{slope\_good\_ge} conserva la pérdida $12\delta Q$,
+el denominador integral y la ortogonalidad en todas las
+inmersiones. En
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CovolumeFromGramAndBounds.lean}{\texttt{CovolumeFromGramAndBounds}},
+\texttt{lcv\_le} realiza la absorción y
+\texttt{covolX\_of\_steps} reúne umbrales uniformes.
+El punto de entrada
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/HodgeBundleWeights/TopCovolSlim2Use.lean}{\texttt{topCovolSlim2\_use\_alt}}
+recibe explícitamente resultados geométricos, de volumen,
+de comparación integral y de separación de puntos.
+Se cotejó su ensamblaje; no se reconstruyó la clausura de
+esas entradas.
+
+\item \textbf{Interpolación.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/ReciprocityTheory/L2DbarEstimates/JacobianInterpolationStatement.lean}{\texttt{JacobianInterpolationStatement}}
+prescribe valores $c(p)J_g(p)$ con el peso de
+\eqref{eq:geom-ot}; su entero $j$ es un exponente del peso.
+La prueba interna
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/ReciprocityTheory/L2DbarEstimates/LeviForms/Ot0.lean}{\texttt{I.ot0}}
+recibe cuatro entradas de solución, coronas, datos locales y corte.
+El teorema exterior \texttt{ot0} de
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/ReciprocityTheory/L2DbarEstimates/NormFibrations/Hormander.lean}{\texttt{NormFibrations/Hormander}}
+construye esas entradas mediante resultados importados;
+su firma no las exige como hipótesis adicionales.
+Se leyeron ambas pruebas, sin auditar todos esos imports.
+La deducción abstracta de Gram se demuestra aquí como
+argumento matemático; no se identificó en este alcance
+un único teorema Lean que fuera su transcripción exacta.
+
+\item \textbf{Defectos colectivos.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/TraceSquareAndDiagBounds.lean}{\texttt{TraceSquareAndDiagBounds}}
+define el operador, los defectos y la compresión.
+Las pruebas están en
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/TraceConjTransposeMulSelf.lean}{\texttt{TraceConjTransposeMulSelf}}:
+\texttt{trace\_Qm\_sq}, \texttt{compressDiagDefectBound}
+y \texttt{compressTraceSquareBound}, entre otras.
+Se mantienen $e=2e_0$ y $\eta=5\sigma+3\sqrt{\delta_0}$.
+La prueba de la Proposición~\ref{prop:geom-compresion}
+desarrolla una deducción suficiente de esas constantes,
+sin afirmar identidad paso a paso con su prueba Lean.
+
+\item \textbf{Los mismos mapas y sus dos rangos.}
+Las estructuras de
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/GlobalTheory/FamRec.lean}{\texttt{FamRec}}
+y las pruebas seleccionadas de
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/GlobalTheory/FamRecP.lean}{\texttt{FamRecP}}
+identifican las matrices comprimidas, la proyección al
+receptor y los mapas aritméticos.
+\texttt{del} mide el déficit de filas y \texttt{deF}
+el de las fuentes.
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/LinkSFinal.lean}{\texttt{LinkSFinal}}
+ensambla el enlace espectral desde estimaciones locales,
+de núcleos y de conteo.
+\texttt{LinkS\_at} sigue siendo una implicación bajo la
+comparabilidad de $d_\alpha\Gamma^2/D_*$;
+\texttt{LinkS} fija la cota
+$\exp(-x^{\varepsilon/8})$ para $\eta_0$, $\eta_1$
+y $\sqrt{e_0}$.
+Los campos de una estructura de datos no constituyen
+por sí solos una demostración de que esos datos existen.
+\end{enumerate}
+\endgroup
+
+Los hashes recalculados coinciden con los archivos recuperados
+en la revisión fijada. No se ejecutó ni compiló Lean, no se
+auditó el cierre de axiomas y dependencias y no se verificó
+íntegramente la identidad del espejo con la distribución
+original de Alpöge. La finitud y sumabilidad cohomológicas,
+el paso completo de Bergman al retículo automorfo y la elección
+final de parámetros quedan fuera del alcance demostrado aquí.
+
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}\label{ej:geom-pequenos}
+En $\Z^2$, con $N>0$, considere la norma al cuadrado
+$e^{-2N}x^2+e^{4N}y^2$.
+Determine los vectores de norma a lo sumo uno, su subespacio
+generado, el covolumen y la pendiente media duplicada.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:geom-pequenos}.}
+Como $e^{4N}>1$, se debe tener $y=0$.
+La condición restante es $|x|\le e^N$.
+Hay $2\lfloor e^N\rfloor+1$ vectores y generan la recta
+$\Q(1,0)$.
+Las longitudes ortogonales de la base son $e^{-N}$ y
+$e^{2N}$; por tanto, el covolumen es $e^N$ y
+$\mu=-2\log(e^N)/2=-N$.
+El número de vectores pequeños crece mientras la pendiente
+media tiende a $-\infty$.
+
+\begin{ejercicio}\label{ej:geom-jets}
+En $M=\Z[z]_{\le3}$ compare la aplicación de coeficientes
+de Taylor en cero con
+$f\mapsto(f(0),f'(0),f''(0),f'''(0))$.
+Calcule sus índices en $\Z^4$ y el efecto de reducir módulo
+dos. En $\Z[z]_{\le1}$, calcule además el índice de
+$f\mapsto(f(0),f(2))$.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:geom-jets}.}
+Si $f=a_0+a_1z+a_2z^2+a_3z^3$, el jet normalizado es
+\[
+ \bigl(f(0),f'(0),f''(0)/2!,f'''(0)/3!\bigr)
+                         =(a_0,a_1,a_2,a_3).
+\]
+Es un isomorfismo integral y su índice es uno.
+Las derivadas ordinarias tienen matriz
+$\operatorname{diag}(1,1,2,6)$, con índice $12$.
+Módulo dos desaparecen sus dos últimas coordenadas;
+los coeficientes normalizados conservan las cuatro.
+Su integridad en este ejemplo procede del retículo de
+polinomios enteros.
+
+Para $f=a+bz$, la evaluación da $(a,a+2b)$.
+Su imagen es
+$\{(u,v)\in\Z^2:v-u\in2\Z\}$, de índice dos.
+La matriz tiene determinante dos y es un isomorfismo
+sobre $\Q$ o $\C$.
+La interpolación compleja no elimina esa condición de
+congruencia sobre los valores enteros.
+
+\begin{ejercicio}\label{ej:geom-recorte}
+Tome $q$ copias de $A_\alpha=I_{\C^D}$.
+Restrinja todas a un mismo subespacio de dimensión
+$(1-\delta_0)D$, entero positivo.
+Calcule el defecto de isometría de cada restricción y
+el menor $\eta$ que satisface la desigualdad de la
+segunda traza en dimensión $D$.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:geom-recorte}.}
+Cada restricción es isométrica, así que el defecto diagonal
+es cero. Si $P$ es la proyección sobre el subespacio retenido,
+el operador colectivo es $Q=qP$ y
+\[
+ \operatorname{Tr}Q=q(1-\delta_0)D,\qquad
+ \operatorname{Tr}(Q^2)=q^2(1-\delta_0)D.
+\]
+Por ello
+$D\operatorname{Tr}(Q^2)/(\operatorname{Tr}Q)^2
+=1/(1-\delta_0)$ y el mínimo es
+$\eta=\delta_0/(1-\delta_0)$.
+Aumentar $q$ conserva ese cociente: las direcciones
+eliminadas siguen siendo las mismas.
+
+\begin{ejercicio}\label{ej:geom-uniforme}
+Suponga $H_0\le bx^{C_H}$,
+$d_\alpha\ge D_*/(C_0\Gamma^2)$,
+$C_H\ge0$ y $A>0$.
+Elija $\sigma$ y una cardinalidad suficiente para obtener
+$\sigma H_0\le bx^{-A}$ y $R_0\ge D_*/\sigma$.
+Explique también por qué la convergencia a cero de
+$f_k(x)=\mathbf1_{\{x<k\}}$ para cada $k$ fijo no da
+convergencia uniforme en $k\in\N$.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:geom-uniforme}.}
+Se puede escoger
+$\sigma=x^{-(C_H+A)}$ y un número entero de columnas
+\[
+ q_{\rm col}\ge C_0\Gamma^2x^{C_H+A}.
+\]
+Entonces $\sigma H_0\le bx^{-A}$ y
+$R_0\ge q_{\rm col}D_*/(C_0\Gamma^2)\ge D_*/\sigma$.
+Las cotas espectrales y $\sigma\le1/20$ se imponen con
+un umbral común posterior.
+Un $\sigma$ menor requiere volver a exigir
+$q_{\rm col}\ge C_0\Gamma^2/\sigma$.
+
+Para cada $k$ fijo, $f_k(x)=0$ cuando $x\ge k$.
+Sin embargo, dado cualquier $x$, se puede elegir un entero
+$k>x$, y entonces $f_k(x)=1$.
+Por tanto, $\sup_k f_k(x)=1$ para todo $x$.
+Este ejemplo distingue los cuantificadores
+$\forall k\,\exists x_k$ y $\exists x_0\,\forall k$ que
+intervienen en una estimación uniforme.
+
+
+
+

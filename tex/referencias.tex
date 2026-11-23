@@ -29,7 +29,7 @@ y los hashes de los archivos recuperados. La configuración declara
 Lean~4.33.1 y la revisión de Mathlib identificada en ese registro.
 El cotejo de esta entrega se limita a las interfaces y pasos señalados
 en las Notas~\ref{sec:ventanas}, \ref{sec:caracteres},
-\ref{sec:marcos} y~\ref{sec:periodos}.
+\ref{sec:marcos}, \ref{sec:periodos} y~\ref{sec:geometria}.
 El tramo de marcos comprende la lectura localizada de 14 archivos sobre
 la desigualdad lineal, las pendientes y su transferencia; no verifica las
 entradas de la construcción automorfa. No incluyó compilación ni ejecución
@@ -38,6 +38,11 @@ integral con la distribución original.
 El tramo de periodos añade 23 archivos, con 19 lecturas completas y
 cuatro selectivas de definiciones y pruebas de enlace. Su alcance queda
 detallado en la concordancia de la Nota~\ref{sec:periodos}.
+El tramo geométrico coteja otros 23 archivos, 19 completos y
+cuatro selectivos, con las hipótesis de cubiertas, evaluaciones,
+recortes y control colectivo que detalla la
+Nota~\ref{sec:geometria}. Los recuentos de cada tramo pueden
+compartir archivos.
 
 \bibitem[D1]{dlmf-zeta}
 NIST. \emph{Digital Library of Mathematical Functions}, versión 1.2.8.
@@ -131,6 +136,27 @@ Se consultó arXiv:1207.4709v3, 21 de enero de 2014,
 rangos e hipótesis de la fórmula de Rallis.
 \href{https://arxiv.org/pdf/1207.4709v3}{PDF de la versión consultada}.
 
+\bibitem[Mo]{moriwaki-volumen}
+Atsushi Moriwaki.
+\emph{Continuity of volumes on arithmetic varieties}.
+\emph{Journal of Algebraic Geometry} 18 (2009), pp.~407--457.
+Se consultó la prepublicación de 5 de enero de 2007,
+versión~2.0, Corolario~5.5, pp.~38--39, y Corolario~6.4,
+p.~42: conteo de secciones pequeñas, volumen aritmético
+y comparación con la autointersección, con sus hipótesis
+de positividad.
+\href{https://www.math.kyoto-u.ac.jp/preprint/2007/01moriwaki_ContArVol.pdf}{PDF de la versión consultada}.
+
+\bibitem[De]{demailly-extension}
+Jean-Pierre Demailly.
+\emph{On the Ohsawa--Takegoshi--Manivel $L^2$ extension theorem}.
+Texto en la web del autor, §4, pp.~7--15:
+extensión holomorfa con estimaciones y convenciones geométricas.
+Se utiliza como referencia del método; la constante $280$ y
+los pesos de la Nota~\ref{sec:geometria} proceden de A.
+\href{https://www-fourier.univ-grenoble-alpes.fr/~demailly/source_files/pdf/ohsawa_tak.pdf}{PDF del autor}.
+Consulta: 22 de noviembre de 2026.
+
 \end{thebibliography}
 
 \subsection*{Estado de la entrega}
@@ -174,11 +200,23 @@ a las cotas de periodos. Incluye cuatro ejercicios resueltos y un
 cotejo de interfaces y pruebas Lean de compatibilidad. Las construcciones
 especializadas que suministran esas entradas siguen identificadas como tales.
 
-Permanecen por estudiar la construcción aritmética de los datos de la
-selección, los errores de pesos y argumentos, las cotas geométricas y
-de evaluación que verifican las hipótesis del marco y los controles
-cohomológicos de denominadores. El siguiente paso estudia las pendientes
-y la distribución colectiva de las imágenes de los periodos. Las
-estimaciones uniformes que suministran la cota del exceso y el presupuesto
-final siguen pendientes de reconstrucción.
-No se ha efectuado en esta entrega una auditoría del repositorio Lean.
+La Nota~\ref{sec:geometria} reconstruye el paso de las alturas por
+componentes a las pendientes, el descenso por multiplicación, el coste
+de proyectores racionales y la aplicación de evaluaciones integrales.
+Distingue la interpolación compleja de la comparación aritmética y
+demuestra las estimaciones de trazas, la estabilidad por recortes y la
+elección conjunta de precisión y cardinalidad. Sus siete resultados
+demostrados y cuatro ejercicios resueltos se acompañan de un cotejo de
+23 archivos Lean: 19 lecturas completas y cuatro selectivas. Las
+entradas especializadas de Hilbert--Samuel aritmético, extensión $L^2$,
+geometría de Shimura y estimación espectral conservan sus hipótesis
+y su condición de resultados citados o interfaces por cerrar.
+
+El siguiente bloque estudia los controles cohomológicos de denominadores
+de A, \S8, y B, \S5: finitud de las longitudes, sumabilidad, comparación
+entre capas de la torre y la relación con el defecto usado por el marco.
+Después queda la elección uniforme de parámetros que suministra la cota
+del exceso y conecta el presupuesto geométrico con las ventanas
+analíticas. No se ha ejecutado Lean ni auditado el cierre de axiomas
+de la revisión fijada; el cotejo de declaraciones y pruebas aquí
+documentado no certifica la demostración completa de la hipótesis.

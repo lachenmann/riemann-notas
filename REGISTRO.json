@@ -35,9 +35,9 @@
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
       "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
-      "size_bytes": 11021,
-      "sha256": "563ed2a51017ae5b6153894dfd44d55ec0765ec7b06c432639fade8da35182bc",
-      "verification": "raw bytes identical; parent and MIME verified"
+      "size_bytes": 12502,
+      "sha256": "7db6ac5133e16035430a7ec9fe003611f4e2f5856510c6512a2ce86d2e5ef17e",
+      "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de tipo y carpeta padre."
     },
     {
       "name": "01-Sumas-y-transformadas.md",
@@ -71,9 +71,9 @@
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
       "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
-      "size_bytes": 11547,
-      "sha256": "78a9ab7d05966b78ceef170e7cfdce4279ae33d9103a1c46fad85889cb38d8c0",
-      "verification": "raw bytes identical; parent and MIME verified"
+      "size_bytes": 14952,
+      "sha256": "e4de2c155326a0bf3350f06e79d53e59ec478b5a6c7cd2c50436626e60bb2f00",
+      "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de tipo y carpeta padre."
     },
     {
       "name": "04-Criterio-unilateral-de-ventanas.md",
@@ -107,9 +107,9 @@
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
       "url": "https://drive.google.com/file/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/view",
-      "size_bytes": 38645,
-      "sha256": "48ef2edabe2f8765a5de1cc12db90b79911f064f470f4dda2ff984d817248105",
-      "verification": "raw bytes identical; parent and MIME verified"
+      "size_bytes": 38646,
+      "sha256": "5b95fb7f02d5b94bf1db6a7112a36a9bf2685eabd0b5ba7dbd32504232a4268d",
+      "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de tipo y carpeta padre."
     },
     {
       "name": "franja-critica.svg",
@@ -144,20 +144,32 @@
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
       "url": "https://drive.google.com/file/d/13iD1CbPWZj1crX8ZCdzUz5-GVhZ8tjC_/view",
-      "size_bytes": 47177,
-      "sha256": "c4a1789106ca0d60c7f487a2515501404017780c54bf5c01785b6f878b3f4032",
-      "verification": "raw bytes identical; parent and MIME verified"
+      "size_bytes": 47364,
+      "sha256": "255bc4751a2b2f7757b01365f04e8864e7ea0444fe3ea38106dd431e4782bcc9",
+      "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de tipo y carpeta padre."
+    },
+    {
+      "name": "08-Geometria-evaluaciones-y-marcos.md",
+      "id": "1G1EpaFzjX7Nnef3VwaV8hRqvhDGrv3-Q",
+      "mime_type": "text/markdown",
+      "parent_ids": [
+        "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+      ],
+      "url": "https://drive.google.com/file/d/1G1EpaFzjX7Nnef3VwaV8hRqvhDGrv3-Q/view",
+      "size_bytes": 48637,
+      "sha256": "5ea395843a3825abbbb1631001c5aabb48df436acc841db85d15f6eaf2d84b53",
+      "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de tipo y carpeta padre."
     }
   ],
   "obsidian_rendering_checked": false,
   "github_status": "active_public_repository",
   "latex": {
     "status": "compiled_and_composition_checked",
-    "pages": 67,
+    "pages": 81,
     "page_size": "A4",
     "path": "pdf/notas-hipotesis-riemann.pdf",
-    "size_bytes": 705468,
-    "sha256": "6df0c4a95ead9f119c00e9b10f7026a9c972ed016463ffd1f6dbe80462c32797",
+    "size_bytes": 788011,
+    "sha256": "2d9c37a27d71573159d166cc41c81eb9a964f8eaccd2527e86e436d7fe2e713a",
     "compilation_exit_code": 0,
     "warnings": 0,
     "unresolved_references": 0,
@@ -170,111 +182,420 @@
       2,
       3,
       4,
-      15,
+      5,
       16,
-      53,
-      54,
-      55,
-      56,
-      57,
-      58,
-      59,
-      60,
-      61,
-      62,
-      63,
-      64,
-      65,
+      17,
       66,
-      67
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81
     ],
     "chapter_3_pages": [
-      23,
-      30
+      24,
+      31
     ],
     "chapter_4_pages": [
-      31,
-      42
+      32,
+      43
     ],
-    "cross_reading_with_markdown": "La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a 0<y<1, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal. La introducción conserva las 495 expresiones matemáticas cotejadas, 12 subsecciones, nueve enunciados, 15 ecuaciones numeradas y seis ejercicios con soluciones tras expandir las macros y adaptar enlaces al Markdown. La Nota 5 conserva las 345 expresiones matemáticas cotejadas, 13 subsecciones, cinco enunciados, 29 ecuaciones numeradas y tres ejercicios con soluciones; las tablas, hipótesis y referencias se leyeron de forma cruzada. La Nota 6 conserva 431 expresiones matemáticas, 16 subsecciones, 5 enunciados con 5 pruebas, 34 ecuaciones y 4 ejercicios con 4 soluciones. Se leyeron íntegramente ambos textos y se cotejaron tablas, enlaces y alcance de Lean; la única normalización técnica ignora la sangría inicial de una expresión dentro de una lista.",
+    "cross_reading_with_markdown": "La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a 0<y<1, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal. La introducción conserva las 495 expresiones matemáticas cotejadas, 12 subsecciones, nueve enunciados, 15 ecuaciones numeradas y seis ejercicios con soluciones tras expandir las macros y adaptar enlaces al Markdown. La Nota 5 conserva las 345 expresiones matemáticas cotejadas, 13 subsecciones, cinco enunciados, 29 ecuaciones numeradas y tres ejercicios con soluciones; las tablas, hipótesis y referencias se leyeron de forma cruzada. La Nota 6 conserva 431 expresiones matemáticas, 16 subsecciones, 5 enunciados con 5 pruebas, 34 ecuaciones y 4 ejercicios con 4 soluciones. Se leyeron íntegramente ambos textos y se cotejaron tablas, enlaces y alcance de Lean; la única normalización técnica ignora la sangría inicial de una expresión dentro de una lista. La Nota 7 conserva las expresiones matemáticas y enlaces cotejados, 15 subsecciones, 28 ecuaciones numeradas, siete enunciados con siete pruebas, cuatro ejercicios con soluciones y una tabla. Se leyeron íntegramente TeX y Markdown; los detalles del cotejo constan en el evento de geometría.",
     "lean_compiled_or_executed": false,
     "introduction_pages": [
-      4,
-      14
+      5,
+      15
     ],
     "guide_pages": [
-      15,
-      16
+      16,
+      17
     ],
     "chapter_1_pages": [
-      17,
-      19
+      18,
+      20
     ],
     "chapter_2_pages": [
-      20,
-      22
+      21,
+      23
     ],
     "chapter_5_pages": [
-      43,
-      52
+      44,
+      53
     ],
     "references_and_status_pages": [
-      65,
-      67
+      79,
+      81
     ],
-    "previous_visual_review_preserved_by_pixel_identity": [
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      17,
-      18,
-      19,
-      20,
-      21,
-      22,
-      23,
-      24,
-      25,
-      26,
-      27,
-      28,
-      29,
-      30,
-      31,
-      32,
-      33,
-      34,
-      35,
-      36,
-      37,
-      38,
-      39,
-      40,
-      41,
-      42,
-      43,
-      44,
-      45,
-      46,
-      47,
-      48,
-      49,
-      50,
-      51,
-      52
-    ],
+    "previous_visual_review_preserved_by_pixel_identity": [],
     "all_pages_composition_checked": true,
-    "visual_method": "Inspección real con view_image de las páginas nuevas y modificadas y de p.2; comparación de píxeles de renders Poppler a 110 dpi con el PDF anterior para el resto. Ampliaciones adicionales de pp. 58 y 64 a 180 dpi.",
+    "visual_method": "Inspección real de todas las páginas nuevas o modificadas con view_image. Comparación de píxeles de renders Poppler a 110 dpi para las páginas anteriores correspondientes, enmascarando únicamente el rectángulo central del número de página (285,790,312,813 puntos), porque el índice añadió una página. Se comprobaron aparte todos los números de página; las imágenes restantes coinciden exactamente.",
     "chapter_6_pages": [
-      53,
-      64
+      54,
+      65
+    ],
+    "previous_visual_review_preserved_except_page_number": [
+      {
+        "previous_page": 5,
+        "current_page": 6,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 6,
+        "current_page": 7,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 7,
+        "current_page": 8,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 8,
+        "current_page": 9,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 9,
+        "current_page": 10,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 10,
+        "current_page": 11,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 11,
+        "current_page": 12,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 12,
+        "current_page": 13,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 13,
+        "current_page": 14,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 14,
+        "current_page": 15,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 17,
+        "current_page": 18,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 18,
+        "current_page": 19,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 19,
+        "current_page": 20,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 20,
+        "current_page": 21,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 21,
+        "current_page": 22,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 22,
+        "current_page": 23,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 23,
+        "current_page": 24,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 24,
+        "current_page": 25,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 25,
+        "current_page": 26,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 26,
+        "current_page": 27,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 27,
+        "current_page": 28,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 28,
+        "current_page": 29,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 29,
+        "current_page": 30,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 30,
+        "current_page": 31,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 31,
+        "current_page": 32,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 32,
+        "current_page": 33,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 33,
+        "current_page": 34,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 34,
+        "current_page": 35,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 35,
+        "current_page": 36,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 36,
+        "current_page": 37,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 37,
+        "current_page": 38,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 38,
+        "current_page": 39,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 39,
+        "current_page": 40,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 40,
+        "current_page": 41,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 41,
+        "current_page": 42,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 42,
+        "current_page": 43,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 43,
+        "current_page": 44,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 44,
+        "current_page": 45,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 45,
+        "current_page": 46,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 46,
+        "current_page": 47,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 47,
+        "current_page": 48,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 48,
+        "current_page": 49,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 49,
+        "current_page": 50,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 50,
+        "current_page": 51,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 51,
+        "current_page": 52,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 52,
+        "current_page": 53,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 53,
+        "current_page": 54,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 54,
+        "current_page": 55,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 55,
+        "current_page": 56,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 56,
+        "current_page": 57,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 57,
+        "current_page": 58,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 58,
+        "current_page": 59,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 59,
+        "current_page": 60,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 60,
+        "current_page": 61,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 61,
+        "current_page": 62,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 62,
+        "current_page": 63,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 63,
+        "current_page": 64,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      },
+      {
+        "previous_page": 64,
+        "current_page": 65,
+        "all_pixels_identical": false,
+        "identical_except_page_number": true
+      }
+    ],
+    "chapter_7_pages": [
+      66,
+      78
     ]
   },
   "events": [
@@ -1615,6 +1936,690 @@
       "vault_prewrite_version_guard": "Se recuperaron y compararon íntegramente los 4 archivos existentes con sus respaldos antes de reemplazarlos. El nombre nuevo no existía en la carpeta.",
       "publication_authorization": "Continuación autorizada del cuaderno en el repositorio público y su bóveda; se conserva la autorización anterior.",
       "next_step": "Estimaciones geométricas y de evaluación para pendientes y defectos colectivos del marco, A, §§7–8, y B, §§4.3–4.4 y 5."
+    },
+    {
+      "date": "2026-11-22",
+      "action": "geometry_evaluation_and_frame_bounds_added",
+      "previous_github_commit": "4da2592d298cc863768f9c583d384ff9181f4daf",
+      "request": "Vamos con el siguiente bloque: geometría, evaluaciones y control del marco, conforme al punto de reanudación.",
+      "canonical_file": "tex/capitulos/07-geometria-evaluaciones-y-marcos.tex",
+      "canonical_sha256": "ac48246ad128a9002a6589d946523e99a14329a4a26ccd516aa82d2cb06fbc75",
+      "contents": {
+        "subsections": 15,
+        "numbered_equations": 28,
+        "numbered_statements": 7,
+        "proofs": 7,
+        "exercises": 4,
+        "solutions": 4,
+        "source_tables": 1,
+        "source_table_body_rows": [
+          5
+        ],
+        "source_table_columns": [
+          3
+        ],
+        "markdown_extra_source_table": 1,
+        "math_expressions": 451,
+        "inline_math": 376,
+        "display_math": 75,
+        "body_link_occurrences": 35,
+        "body_unique_links": 21,
+        "explicit_tex_href_occurrences": 16,
+        "literal_identifiers": 28,
+        "proofs_included": [
+          "promedio ponderado de alturas y pendientes por componentes",
+          "descenso por mapas de multiplicación y generadores simultáneos",
+          "coste de un proyector racional ortogonal con denominador controlado",
+          "pendiente máxima a partir de una evaluación integral inyectiva",
+          "cota de Gram mediante interpolación sobreyectiva y solución de norma mínima",
+          "estimaciones diagonales y cruzadas que controlan las dos trazas del marco",
+          "compresión de fuentes con e=2e0 y eta=5sigma+3sqrt(delta0)"
+        ],
+        "additional_deductions": [
+          "normalización de coronas mediante cambio de variables y convergencia dominada",
+          "absorción exponencial de pérdidas de rango",
+          "dispersión de pendientes y contribución de índices con rangos retenidos",
+          "elección simultánea de precisión, cardinalidad y umbrales uniformes"
+        ],
+        "specialized_inputs_kept_external": [
+          "Hilbert–Samuel aritmético, modelos, métricas de frontera y generadores pequeños",
+          "extensión holomorfa L2 con pesos y jacobiano",
+          "puente entre espacios de Bergman, espacios automorfos y sus retículos integrales",
+          "estimaciones espectrales, comparación de dimensiones y existencia de suficientes columnas",
+          "finitud, sumabilidad y cotas cohomológicas de denominadores",
+          "elección final uniforme de parámetros que produce la cota del exceso y las ventanas"
+        ],
+        "normalization": "Pendiente duplicada; métricas e integridad conservadas. Déficits de componentes malas, fuentes comprimidas y filas separados. La escala auxiliar es el producto P*kappa.",
+        "scope": "Las deducciones finitas se demuestran con hipótesis explícitas; no se certifica la propuesta completa de RH o GRH."
+      },
+      "sources": {
+        "A": "§7, pp.28–34, ejemplar de 55 páginas; §8, pp.35–41, solo continuidad.",
+        "B": "§4.3, pp.33–40, §4.4, pp.41–46, enlace §4.5 p.46; ejemplar B73 del 21 de noviembre de 2026.",
+        "newer_B_incorporated": false,
+        "lean_manifest": "lean_source_review_geometry",
+        "lean_files": 23,
+        "lean_files_read_in_full": 19,
+        "lean_files_read_selectively": 4,
+        "classical_bibliography": [
+          {
+            "author": "Atsushi Moriwaki",
+            "title": "Continuity of volumes on arithmetic varieties",
+            "url": "https://www.math.kyoto-u.ac.jp/preprint/2007/01moriwaki_ContArVol.pdf",
+            "locators": "Corolarios 5.5 y 6.4, pp.38–39 y 42 del preprint; referencia de volumen y nefness."
+          },
+          {
+            "author": "Jean-Pierre Demailly",
+            "title": "On the Ohsawa–Takegoshi–Manivel L2 extension theorem",
+            "url": "https://www-fourier.univ-grenoble-alpes.fr/~demailly/source_files/pdf/ohsawa_tak.pdf",
+            "locators": "§4, pp.7–15; referencia del método holomorfo de extensión, sin atribuirle la constante 280 de A."
+          }
+        ]
+      },
+      "mathematical_review": {
+        "result": "Revisiones analítica, aritmética y de concordancia favorables; lectura cruzada íntegra TeX/MD.",
+        "corrections_incorporated": [
+          "distinción entre contar secciones pequeñas y obtener generadores",
+          "variante de coste 4b deducida de grados con A0>=0, sin atribuirla como sustitución literal de descent",
+          "escala P*kappa y control simultáneo en todas las inmersiones",
+          "simple evaluación e interpolación de valores diferenciadas de jets de orden superior",
+          "familia finita no vacía, rangos positivos y normalización auxiliar explícitos",
+          "eta0, eta1 y sqrt(e0) controlados por exp(-x^(epsilon/8))",
+          "cardinalidad ligada al valor realmente elegido de sigma; umbrales uniformes"
+        ],
+        "lean_compiled": false,
+        "lean_executed": false,
+        "axiom_report_run": false,
+        "full_proof_audit": false,
+        "original_distribution_compared": false
+      },
+      "technical_notes_preserved": [
+        {
+          "path": "tex/capitulos/01-sumas-y-transformadas.tex",
+          "sha256": "13f178ff0751265b7c135d7d85d7a1311962628cec98ef6e0cbbad2c7c1c6e3b",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/02-proyecciones-y-denominadores.tex",
+          "sha256": "4f2d14516ed3850480e6a2ebce9844e52269527a03641bf0b8b546208aeb49be",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/03-criterio-unilateral-de-ventanas.tex",
+          "sha256": "804f5f7ec2c165356d3f15ce02bc570c8368b7f919cc50c87576ae1c6a5de007",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/04-identidad-de-caracteres.tex",
+          "sha256": "095204f6d6e0ea80af39a862ce34c626b4f2d1b8d27e784d0364797ec5993a9a",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/05-marcos-y-pendientes.tex",
+          "sha256": "36777a13e8ad65369bc39ca2acaaed39b8d6612f568ceb934ac3f6fa4a3ccb89",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/06-periodos-y-torres-theta.tex",
+          "sha256": "8f364bc671ec39fa6bd635b6987f8257c6c43dd8359ba5c0838f03394be62ec0",
+          "unchanged": true
+        }
+      ],
+      "introduction_changes": {
+        "tex": "Solo recuento de seis a siete notas.",
+        "markdown": "Solo recuento de seis a siete notas.",
+        "mathematical_content_preserved": true,
+        "svg_changed": false
+      },
+      "pdf": {
+        "path": "pdf/notas-hipotesis-riemann.pdf",
+        "pages": 81,
+        "size_bytes": 788011,
+        "sha256": "2d9c37a27d71573159d166cc41c81eb9a964f8eaccd2527e86e436d7fe2e713a",
+        "git_blob_sha": "ed1cffb83b7a3d91b97b6e3b61362d0fc8142972",
+        "compilation_exit_code": 0,
+        "warnings": 0,
+        "unresolved_references": 0,
+        "overfull_boxes": 0,
+        "underfull_boxes": 0,
+        "missing_characters": 0,
+        "all_pages_visually_reviewed_in_this_revision": false,
+        "directly_visually_reviewed_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          16,
+          17,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81
+        ],
+        "previous_visual_review_preserved_except_page_number": [
+          {
+            "previous_page": 5,
+            "current_page": 6,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 6,
+            "current_page": 7,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 7,
+            "current_page": 8,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 8,
+            "current_page": 9,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 9,
+            "current_page": 10,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 10,
+            "current_page": 11,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 11,
+            "current_page": 12,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 12,
+            "current_page": 13,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 13,
+            "current_page": 14,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 14,
+            "current_page": 15,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 17,
+            "current_page": 18,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 18,
+            "current_page": 19,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 19,
+            "current_page": 20,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 20,
+            "current_page": 21,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 21,
+            "current_page": 22,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 22,
+            "current_page": 23,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 23,
+            "current_page": 24,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 24,
+            "current_page": 25,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 25,
+            "current_page": 26,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 26,
+            "current_page": 27,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 27,
+            "current_page": 28,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 28,
+            "current_page": 29,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 29,
+            "current_page": 30,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 30,
+            "current_page": 31,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 31,
+            "current_page": 32,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 32,
+            "current_page": 33,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 33,
+            "current_page": 34,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 34,
+            "current_page": 35,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 35,
+            "current_page": 36,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 36,
+            "current_page": 37,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 37,
+            "current_page": 38,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 38,
+            "current_page": 39,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 39,
+            "current_page": 40,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 40,
+            "current_page": 41,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 41,
+            "current_page": 42,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 42,
+            "current_page": 43,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 43,
+            "current_page": 44,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 44,
+            "current_page": 45,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 45,
+            "current_page": 46,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 46,
+            "current_page": 47,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 47,
+            "current_page": 48,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 48,
+            "current_page": 49,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 49,
+            "current_page": 50,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 50,
+            "current_page": 51,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 51,
+            "current_page": 52,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 52,
+            "current_page": 53,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 53,
+            "current_page": 54,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 54,
+            "current_page": 55,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 55,
+            "current_page": 56,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 56,
+            "current_page": 57,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 57,
+            "current_page": 58,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 58,
+            "current_page": 59,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 59,
+            "current_page": 60,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 60,
+            "current_page": 61,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 61,
+            "current_page": 62,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 62,
+            "current_page": 63,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 63,
+            "current_page": 64,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          },
+          {
+            "previous_page": 64,
+            "current_page": 65,
+            "all_pixels_identical": false,
+            "identical_except_page_number": true
+          }
+        ],
+        "all_pages_composition_checked": true,
+        "visual_method": "Inspección real de todas las páginas nuevas o modificadas con view_image. Comparación de píxeles de renders Poppler a 110 dpi para las páginas anteriores correspondientes, enmascarando únicamente el rectángulo central del número de página (285,790,312,813 puntos), porque el índice añadió una página. Se comprobaron aparte todos los números de página; las imágenes restantes coinciden exactamente.",
+        "reading_copy_identical_to_build": true
+      },
+      "markdown_review": {
+        "sha256": "5ea395843a3825abbbb1631001c5aabb48df436acc841db85d15f6eaf2d84b53",
+        "complete_cross_reading": true,
+        "metrics": {
+          "subsections": 15,
+          "numbered_equations": 28,
+          "numbered_statements": 7,
+          "proofs": 7,
+          "exercises": 4,
+          "solutions": 4,
+          "source_tables": 1,
+          "source_table_body_rows": [
+            5
+          ],
+          "source_table_columns": [
+            3
+          ],
+          "markdown_extra_source_table": 1,
+          "math_expressions": 451,
+          "inline_math": 376,
+          "display_math": 75,
+          "body_link_occurrences": 35,
+          "body_unique_links": 21,
+          "explicit_tex_href_occurrences": 16,
+          "literal_identifiers": 28
+        },
+        "checks": {
+          "equation_tags_match_final_aux": true,
+          "statement_tags_match_final_aux": true,
+          "exercise_solution_numbers_match": true,
+          "prepared_ast_math_to_markdown_ast_equal": true,
+          "math_raw_text_equal": true,
+          "math_line_indentation_changes": 0,
+          "normalization": "No fue necesario normalizar sangría: las 451 expresiones matemáticas coinciden exactamente.",
+          "body_links_roundtrip_equal": true,
+          "explicit_tex_urls_preserved": true,
+          "relative_link_targets": [
+            {
+              "target": "02-Proyecciones-y-denominadores.md",
+              "exists": true
+            },
+            {
+              "target": "06-Marcos-y-pendientes.md",
+              "exists": true
+            },
+            {
+              "target": "07-Periodos-y-torres-theta.md",
+              "exists": true
+            }
+          ],
+          "literal_identifiers_equal_source": true,
+          "gathered_geom_ot_hip_preserved": true,
+          "tabularx_raggedright_modifiers_supported": true,
+          "source_and_aux_unchanged_since_conversion": true,
+          "local_readback_hash_matches": true,
+          "only_change_after_full_manual_read": "El apóstrofo tipográfico de un identificador se restauró a ASCII; reconstruir la versión anterior devuelve exactamente su hash."
+        },
+        "result": "Aprobado: lectura cruzada completa TeX→Markdown sin pérdida de prosa, hipótesis, signos, factores, rótulos, identificadores o enlaces.",
+        "obsidian_rendering_checked": false,
+        "transfer_mode": "Preparación editorial puntual con lectura manual; no sincronización automática."
+      },
+      "vault_files_written_and_readback_verified": [
+        {
+          "name": "08-Geometria-evaluaciones-y-marcos.md",
+          "id": "1G1EpaFzjX7Nnef3VwaV8hRqvhDGrv3-Q",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/1G1EpaFzjX7Nnef3VwaV8hRqvhDGrv3-Q/view",
+          "size_bytes": 48637,
+          "sha256": "5ea395843a3825abbbb1631001c5aabb48df436acc841db85d15f6eaf2d84b53",
+          "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de tipo y carpeta padre."
+        },
+        {
+          "name": "00-Mapa-de-estudio.md",
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
+          "size_bytes": 12502,
+          "sha256": "7db6ac5133e16035430a7ec9fe003611f4e2f5856510c6512a2ce86d2e5ef17e",
+          "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de tipo y carpeta padre."
+        },
+        {
+          "name": "03-Dudas-y-pendientes.md",
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
+          "size_bytes": 14952,
+          "sha256": "e4de2c155326a0bf3350f06e79d53e59ec478b5a6c7cd2c50436626e60bb2f00",
+          "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de tipo y carpeta padre."
+        },
+        {
+          "name": "00-Introduccion-y-fundamentos.md",
+          "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/view",
+          "size_bytes": 38646,
+          "sha256": "5b95fb7f02d5b94bf1db6a7112a36a9bf2685eabd0b5ba7dbd32504232a4268d",
+          "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de tipo y carpeta padre."
+        },
+        {
+          "name": "07-Periodos-y-torres-theta.md",
+          "id": "13iD1CbPWZj1crX8ZCdzUz5-GVhZ8tjC_",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "url": "https://drive.google.com/file/d/13iD1CbPWZj1crX8ZCdzUz5-GVhZ8tjC_/view",
+          "size_bytes": 47364,
+          "sha256": "255bc4751a2b2f7757b01365f04e8864e7ea0444fe3ea38106dd431e4782bcc9",
+          "verification": "Recuperación completa tras escritura; igualdad byte por byte con el candidato y comprobación de tipo y carpeta padre."
+        }
+      ],
+      "vault_editorial_changes": [
+        {
+          "name": "08-Geometria-evaluaciones-y-marcos.md",
+          "before_sha256": null,
+          "after_sha256": "5ea395843a3825abbbb1631001c5aabb48df436acc841db85d15f6eaf2d84b53",
+          "change": "Nota 7 completa, con siete pruebas, cuatro ejercicios resueltos, fuentes y continuidad."
+        },
+        {
+          "name": "00-Mapa-de-estudio.md",
+          "before_sha256": "563ed2a51017ae5b6153894dfd44d55ec0765ec7b06c432639fade8da35182bc",
+          "after_sha256": "7db6ac5133e16035430a7ec9fe003611f4e2f5856510c6512a2ce86d2e5ef17e",
+          "change": "Estado del bloque de geometría, enlace a Nota 7 y siguiente tramo cohomológico."
+        },
+        {
+          "name": "03-Dudas-y-pendientes.md",
+          "before_sha256": "78a9ab7d05966b78ceef170e7cfdce4279ae33d9103a1c46fad85889cb38d8c0",
+          "after_sha256": "e4de2c155326a0bf3350f06e79d53e59ec478b5a6c7cd2c50436626e60bb2f00",
+          "change": "Deducciones finitas cerradas; entradas especializadas y siguiente pendiente cohomológico explicitados."
+        },
+        {
+          "name": "00-Introduccion-y-fundamentos.md",
+          "before_sha256": "48ef2edabe2f8765a5de1cc12db90b79911f064f470f4dda2ff984d817248105",
+          "after_sha256": "5b95fb7f02d5b94bf1db6a7112a36a9bf2685eabd0b5ba7dbd32504232a4268d",
+          "change": "Solo recuento de seis a siete notas."
+        },
+        {
+          "name": "07-Periodos-y-torres-theta.md",
+          "before_sha256": "c4a1789106ca0d60c7f487a2515501404017780c54bf5c01785b6f878b3f4032",
+          "after_sha256": "255bc4751a2b2f7757b01365f04e8864e7ea0444fe3ea38106dd431e4782bcc9",
+          "change": "Solo continuidad hacia la Nota 7 y el siguiente bloque."
+        }
+      ],
+      "vault_prewrite_version_guard": "Recuperación y comparación íntegra de los cuatro archivos existentes antes de reemplazarlos; el nombre nuevo no existía en la carpeta.",
+      "publication_authorization": "Continuación autorizada del cuaderno en el repositorio público y su bóveda; se conserva la autorización anterior.",
+      "next_step": "Control cohomológico de denominadores, A§8/B§5: finitud, sumabilidad, comparación con capa fija (SecondBound) antes de la cota de grado acotado y enlace con el defecto del marco."
     }
   ],
   "github": {
@@ -3928,6 +4933,1784 @@
       "B": "§4.1, pp.24–30 y §4.5, pp.46–51, ejemplar B73",
       "newer_B_incorporated": false,
       "scope": "Deducciones lineales y aritméticas, Cauchy, gamma y balance condicional; puentes Lean leídos con sus entradas explícitas."
+    }
+  },
+  "lean_source_review_geometry": {
+    "schema_version": 1,
+    "review_key": "lean_source_review_geometry",
+    "review_profile": "revisión matemática localizada de fuentes Lean; comprobación de identidad de los bytes recuperados; sin ejecución",
+    "recorded_at_utc": "2026-11-23T01:52:36.721272+00:00",
+    "repository": "CocoSgt/riemann-hypothesis-lean",
+    "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+    "source_correspondence": [
+      {
+        "source": "A",
+        "file": "riemann_hypothesis.pdf",
+        "pages": 55,
+        "sha256": "419e24a4ba07eb9ce98524ad11f568f2bd87d8d70abe288e4ef37632bdd8bb85",
+        "reviewed_pages": "§7 pp.28–34; p.35 solo frontera cohomológica; concordancia pp.53–54"
+      },
+      {
+        "source": "B73",
+        "file": "GRH-note.pdf",
+        "pages": 73,
+        "sha256": "2cbd7e9b693c753f6afa22251db9669c9652555a91cee0cdfbd37a8465ad2ad9",
+        "reviewed_pages": "pp.33–46; pp.52–53 solo frontera de costes; no se incorpora B76"
+      }
+    ],
+    "retrieval": "22 archivos por github_fetch_file con ref fijo y base64; 1 reutilizado del manifiesto de Nota6 y revalidado; búsquedas limitadas solo para localizar rutas.",
+    "summary": {
+      "files": 23,
+      "files_read_in_full": 19,
+      "files_read_selectively": 4,
+      "files_retrieved_this_stage": 22,
+      "files_reused_and_rehashed": 1,
+      "bytes": 303848,
+      "all_git_blob_sha_recalculated": true,
+      "all_sha256_recalculated": true,
+      "lean_executed": false,
+      "dependency_closure_reviewed": false,
+      "axioms_checked": false,
+      "original_archive_identity_checked": false
+    },
+    "limits": [
+      "Lectura de código y prueba matemática de pasajes seleccionados; no compilación, kernel check ni auditoría global.",
+      "Los imports no cuentan como archivos leídos ni como hipótesis descargadas de la prueba global.",
+      "No se cotejó identidad integral de este espejo con el archivo original publicado por Alpöge.",
+      "No se identificó un único teorema Lean como transcripción exacta del lema abstracto A7.5 de evaluación/Gram; su demostración matemática es separable del cotejo de ot0.",
+      "No se reconstruyó el puente completo del Bergman a modelos integrales finitos ni teoría general de jets; ot0 aquí interpola valores simples.",
+      "A§8/B§5 solo delimitan entradas de finitud/sumabilidad; SecondBound y la clausura cohomológica no se auditaron.",
+      "Los resultados espectrales y geométricos profundos recibidos por topCovolSlim2_use_alt y theoremS_link permanecen fuera de la clausura de esta revisión."
+    ],
+    "files": [
+      {
+        "path": "src/Development/AbelianVarietyTheory/Definitions/Divisors/CovolXOfCovol.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Definitions/Divisors/CovolXOfCovol.lean",
+        "git_blob_sha": "4ed4695093989e1f18246a3244b79102db6c548e",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "f40c762ed8c2b18311d604540c15613e4a5969b1395dcab59b2854584fb6d3ae",
+        "bytes": 15459,
+        "line_count": 294,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "GlobalTheory.CovTop",
+        "declarations": [
+          "GramAt",
+          "RecAt",
+          "CutAt",
+          "BadAt",
+          "LamAt",
+          "SizeAt",
+          "CoreAt",
+          "LowAt",
+          "MapsAt",
+          "RkAt",
+          "GminAt",
+          "FlatAt",
+          "UAt",
+          "DegAt",
+          "ShareAt",
+          "HeightAt",
+          "HSAt",
+          "SumAt",
+          "EvTied",
+          "EvTied.and",
+          "Lifts",
+          "Covers",
+          "CovolX",
+          "CovolX.covol"
+        ],
+        "proofs_reviewed": [
+          "RecTied.core_size",
+          "two_PO_le",
+          "RecTied.core_size_le",
+          "goodCov_iff",
+          "evTied_iff",
+          "EvTied.and",
+          "CovolX.covol"
+        ],
+        "scope": "Lectura íntegra de las interfaces geométricas y pruebas auxiliares. MapsAt y GminAt se refieren al mismo retículo de tipo en la cubierta y sus normas; el conjunto integral generador está acotado simultáneamente en todas las inmersiones por exp(PP*kap). EvTied ordena los cuantificadores de uniformidad.",
+        "hypotheses_or_external_inputs": [
+          "Las cotas geométricas son definiciones de Prop; este archivo no construye sus testigos.",
+          "CutAt exige proyector idempotente, identidad de Pitágoras en cada embedding, g*e(L)⊆L y 2log(g)≤b.",
+          "SumAt conserva el factor 2 en la pendiente; la escala auxiliar es PP*kap, producto."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A §7; B §4.3–4.5",
+        "declaration_details": [
+          {
+            "name": "GramAt",
+            "kind": "def",
+            "line": 53
+          },
+          {
+            "name": "RecAt",
+            "kind": "def",
+            "line": 57
+          },
+          {
+            "name": "CutAt",
+            "kind": "def",
+            "line": 61
+          },
+          {
+            "name": "BadAt",
+            "kind": "def",
+            "line": 69
+          },
+          {
+            "name": "LamAt",
+            "kind": "def",
+            "line": 73
+          },
+          {
+            "name": "SizeAt",
+            "kind": "def",
+            "line": 75
+          },
+          {
+            "name": "CoreAt",
+            "kind": "def",
+            "line": 92
+          },
+          {
+            "name": "LowAt",
+            "kind": "def",
+            "line": 96
+          },
+          {
+            "name": "MapsAt",
+            "kind": "def",
+            "line": 119
+          },
+          {
+            "name": "RkAt",
+            "kind": "def",
+            "line": 125
+          },
+          {
+            "name": "GminAt",
+            "kind": "def",
+            "line": 128
+          },
+          {
+            "name": "FlatAt",
+            "kind": "def",
+            "line": 135
+          },
+          {
+            "name": "UAt",
+            "kind": "def",
+            "line": 138
+          },
+          {
+            "name": "DegAt",
+            "kind": "def",
+            "line": 140
+          },
+          {
+            "name": "ShareAt",
+            "kind": "def",
+            "line": 143
+          },
+          {
+            "name": "HeightAt",
+            "kind": "def",
+            "line": 146
+          },
+          {
+            "name": "HSAt",
+            "kind": "def",
+            "line": 153
+          },
+          {
+            "name": "SumAt",
+            "kind": "def",
+            "line": 158
+          },
+          {
+            "name": "EvTied",
+            "kind": "def",
+            "line": 200
+          },
+          {
+            "name": "EvTied.and",
+            "kind": "theorem",
+            "line": 207
+          },
+          {
+            "name": "Lifts",
+            "kind": "def",
+            "line": 216
+          },
+          {
+            "name": "Covers",
+            "kind": "def",
+            "line": 220
+          },
+          {
+            "name": "CovolX",
+            "kind": "def",
+            "line": 278
+          },
+          {
+            "name": "CovolX.covol",
+            "kind": "theorem",
+            "line": 281
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CovolumeFromGramAndBounds.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CovolumeFromGramAndBounds.lean",
+        "git_blob_sha": "bdb5d891bb3f738cb8cb8c61218ce2e2863630a4",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "840e9bdd6a0114433a9a8a7b42c52cc6f69cd5ab6604b3fa95750e3c580e90a7",
+        "bytes": 5827,
+        "line_count": 114,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "GlobalTheory.CovTop.Assembly",
+        "declarations": [
+          "tendsto_exp_mul_rpow",
+          "exists_loss_le",
+          "lcv_le",
+          "covolX_of_steps"
+        ],
+        "proofs_reviewed": [
+          "tendsto_exp_mul_rpow",
+          "exists_loss_le",
+          "lcv_le",
+          "covolX_of_steps"
+        ],
+        "scope": "Lectura íntegra. lcv_le aplica el recorte con Q=(x^A+x^B+C1+C2+1)E y obtiene lcv/D≤M+(C1+C2+1)E. exists_loss_le absorbe un factor polinómico en exp(−x^c); covolX_of_steps escoge un umbral común.",
+        "hypotheses_or_external_inputs": [
+          "En lcv_le se exige x>0, C1,C2≥0 y 12 exp(−x^(ez/7))(x^A+x^B+C1+C2+1)≤1, más GramAt/RecAt/CutAt/BadAt/LamAt/SizeAt/CoreAt/LowAt.",
+          "El umbral se elige después de fijar A,B,C1,C2 y ez>0."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A proposición7.3 pp.30–31",
+        "declaration_details": [
+          {
+            "name": "tendsto_exp_mul_rpow",
+            "kind": "theorem",
+            "line": 17
+          },
+          {
+            "name": "exists_loss_le",
+            "kind": "theorem",
+            "line": 25
+          },
+          {
+            "name": "lcv_le",
+            "kind": "theorem",
+            "line": 39
+          },
+          {
+            "name": "covolX_of_steps",
+            "kind": "theorem",
+            "line": 86
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/HtMapLeOfPoints.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/HtMapLeOfPoints.lean",
+        "git_blob_sha": "87a9932805b500be9ac51c3250f6dc314b5f3f25",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "8e8e305e8ac618f3a093dbf872266ef4e92562b3d379a820b96aa2e657d85944",
+        "bytes": 8637,
+        "line_count": 145,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "GlobalTheory.DescentFamily",
+        "declarations": [
+          "numeric",
+          "htMap_le_of_points",
+          "normAt_pi_sq",
+          "descent"
+        ],
+        "proofs_reviewed": [
+          "numeric",
+          "htMap_le_of_points",
+          "normAt_pi_sq",
+          "descent"
+        ],
+        "scope": "Lectura íntegra. Descent reúne los mapas en una suma ortogonal, demuestra cota de altura 2P, usa generadores pequeños para la pendiente mínima y concluye μ(B)≥t−ε(|t|+2Λ).",
+        "hypotheses_or_external_inputs": [
+          "K totalmente complejo; normas HasGram; retículos finitamente generados; A≠0; mapas integrales de núcleo común cero.",
+          "Cota sumada por embedding; un conjunto generador simultáneamente acotado; n*rk(B)≤(1+ε)rk(A), Λ≥0, ε≥0 y t≤μ(A)−2P.",
+          "Se usan resultados importados sobre descenso de pendientes y sumas ortogonales, cuya clausura no se auditó."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A p.28; B pp.39–40",
+        "declaration_details": [
+          {
+            "name": "numeric",
+            "kind": "theorem",
+            "line": 15
+          },
+          {
+            "name": "htMap_le_of_points",
+            "kind": "theorem",
+            "line": 34
+          },
+          {
+            "name": "normAt_pi_sq",
+            "kind": "theorem",
+            "line": 58
+          },
+          {
+            "name": "descent",
+            "kind": "theorem",
+            "line": 69
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LowerBoundOfAllEstimates.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LowerBoundOfAllEstimates.lean",
+        "git_blob_sha": "4d30dd405b7d5b26d61d37507a095cc7ef426dc5",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "111bbcfa0022d90c5aebb3d52247857c8f10ff9269cc369f5d2eaae8a76637d9",
+        "bytes": 7019,
+        "line_count": 125,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "GlobalTheory.CovTop.LowCover",
+        "declarations": [
+          "numeric",
+          "lowAt_mono",
+          "lowAt_of_cover",
+          "low"
+        ],
+        "proofs_reviewed": [
+          "numeric",
+          "lowAt_mono",
+          "lowAt_of_cover",
+          "low"
+        ],
+        "scope": "Lectura íntegra del paso de cubierta al núcleo. lowAt_of_cover aplica descent con Λ=PP*kap, ε=b/Λ y combina RingAt; obtiene LowAt con constante 2(CF+CU)+9. low separa la última etapa de las etapas que requieren una cubierta.",
+        "hypotheses_or_external_inputs": [
+          "Size, LowDef, DeepEx, DeepGood, Ring, Maps, Rk, Gmin, Flat y ULow son entradas; el teorema prueba su ensamblaje.",
+          "El umbral se toma común mediante EvTied.and."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A pp.28–29; B p.40",
+        "declaration_details": [
+          {
+            "name": "numeric",
+            "kind": "theorem",
+            "line": 18
+          },
+          {
+            "name": "lowAt_mono",
+            "kind": "theorem",
+            "line": 60
+          },
+          {
+            "name": "lowAt_of_cover",
+            "kind": "theorem",
+            "line": 65
+          },
+          {
+            "name": "low",
+            "kind": "theorem",
+            "line": 107
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/MajAtAddRight.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/MajAtAddRight.lean",
+        "git_blob_sha": "333507ec0c9cfc17d024a01ee81f24d74171e4e9",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "6a1ee253147d270c21ed5f2b763eca2d8b23082f8dc3307ed1abf217fd4efae7",
+        "bytes": 7536,
+        "line_count": 144,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "GlobalTheory.CutNum",
+        "declarations": [
+          "selfAdj_of_pyth",
+          "numeric",
+          "slope_good_ge"
+        ],
+        "proofs_reviewed": [
+          "selfAdj_of_pyth",
+          "numeric",
+          "slope_good_ge"
+        ],
+        "scope": "Lectura íntegra, incluidas las identidades hermíticas auxiliares. slope_good_ge prueba μ(Lgood)≥μ(L)−12δQ desde el recorte ortogonal y el índice de denominadores.",
+        "hypotheses_or_external_inputs": [
+          "Retículos O_K, K totalmente complejo, normas HasGram, M finitamente generado, 0≠L⊆M, e²=e.",
+          "Pitágoras en todas las inmersiones, g≥1 entero, g*e(L)⊆L, 0≤δ≤1/12, rk(Lbad)≤3δrk(L), μmax(M)≤Q, −Q≤μ(L), 2log(g)≤Q."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A lema7.2 p.30",
+        "declaration_details": [
+          {
+            "name": "selfAdj_of_pyth",
+            "kind": "theorem",
+            "line": 55
+          },
+          {
+            "name": "numeric",
+            "kind": "theorem",
+            "line": 93
+          },
+          {
+            "name": "slope_good_ge",
+            "kind": "theorem",
+            "line": 111
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/UniformLowerBoundOfSums.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/UniformLowerBoundOfSums.lean",
+        "git_blob_sha": "957c8d12c9a5fe0871cff366641b3533259df3e3",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "614e039611d248da03163a52c9ac53bfa9cc53aa1c8bce8c365c99bd15b0ec2a",
+        "bytes": 4722,
+        "line_count": 73,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "GlobalTheory.CovTop.FromComp",
+        "declarations": [
+          "core",
+          "atPoint",
+          "uLow_of"
+        ],
+        "proofs_reviewed": [
+          "core",
+          "atPoint",
+          "uLow_of"
+        ],
+        "scope": "Lectura íntegra. core convierte las cotas de alturas y grados de componentes en μ≥−2(3C1+C2+4)E. atPoint identifica los componentes de una misma cubierta, binom(T−1,q), sus rangos y grados; uLow_of conserva la uniformidad.",
+        "hypotheses_or_external_inputs": [
+          "DeepGood, Size, Deg, Share, Height, HS y SumC son entradas geométricas; no se derivan por conteo informal de secciones pequeñas.",
+          "La condición 2Σdeg/Σrk≤μ fija la normalización de pendiente."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A §7; B §4.3–4.5",
+        "declaration_details": [
+          {
+            "name": "core",
+            "kind": "theorem",
+            "line": 15
+          },
+          {
+            "name": "atPoint",
+            "kind": "theorem",
+            "line": 39
+          },
+          {
+            "name": "uLow_of",
+            "kind": "theorem",
+            "line": 61
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/HodgeBundleWeights/CovolumeLowerBoundOfCover.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/HodgeBundleWeights/CovolumeLowerBoundOfCover.lean",
+        "git_blob_sha": "89958fc7706bfb6f156f6275a81d2217e6ae51b4",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "c90f5fb7ff7f1a923d694a881941ecb0ce895464f45b434b7dc598466909c36c",
+        "bytes": 4314,
+        "line_count": 64,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "GlobalTheory.CovTop.MeasLow / GlobalTheory.T",
+        "declarations": [
+          "nef_share_lower_bound",
+          "covolume_lower_bound_of_cover"
+        ],
+        "proofs_reviewed": [
+          "nef_share_lower_bound",
+          "covolume_lower_bound_of_cover"
+        ],
+        "scope": "Lectura íntegra de un auxiliar de normalización de medidas. Su conclusión concreta es log(ratAt)≥−K*E, usando cotas de volumen de Tamagawa y producto de dimensiones; el nombre del archivo no equivale por sí solo a toda la cota de pendiente media.",
+        "hypotheses_or_external_inputs": [
+          "PublishedHodgeBundleTheorems y resultados importados sobre el producto de Tamagawa, tamaños y pesos."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A §7; B §4.3–4.5",
+        "declaration_details": [
+          {
+            "name": "nef_share_lower_bound",
+            "kind": "theorem",
+            "line": 19
+          },
+          {
+            "name": "covolume_lower_bound_of_cover",
+            "kind": "theorem",
+            "line": 62
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/HodgeBundleWeights/TopCovolG.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/HodgeBundleWeights/TopCovolG.lean",
+        "git_blob_sha": "0ee0f545592ea47639847afb0b45557b526c75a9",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "aa962307ea883be1c9bdc1a9345aae157163dab4a2d56eca67046f47951b6e4e",
+        "bytes": 5327,
+        "line_count": 50,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "SelfIntersectionVolumeEstimates",
+        "declarations": [
+          "topCovolG_alt"
+        ],
+        "proofs_reviewed": [
+          "topCovolG_alt"
+        ],
+        "scope": "Lectura íntegra de la ruta HodgeBundleWeights. Enumera y conecta medidas, cubiertas, rangos, alturas, Hilbert–Samuel, descenso y recorte para obtener CovolX.",
+        "hypotheses_or_external_inputs": [
+          "Entradas explícitas: VolumeEstimateHypotheses, HypothesesX, PublishedHodgeBundleTheorems, HypothesesH, GrothendieckDeformation, HSCore.Quoted y Plug.DeepStR.",
+          "Se cotejó el ensamblaje y sus llamadas, no todas las pruebas importadas. Hay otros archivos TopCovolG en el repositorio; este manifiesto fija la ruta exacta."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A §7; B §4.3–4.5",
+        "declaration_details": [
+          {
+            "name": "topCovolG_alt",
+            "kind": "theorem",
+            "line": 29
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/HodgeBundleWeights/TopCovolSlim2Use.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/HodgeBundleWeights/TopCovolSlim2Use.lean",
+        "git_blob_sha": "2c0571b6939b361367a2547ae03608b965b8dad6",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": true,
+        "sha256": "20df27f899909339421c8e357513533f0211cfc9b87e9db63c7720742faa7fe6",
+        "bytes": 3136,
+        "line_count": 24,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "SelfIntersectionVolumeEstimates",
+        "declarations": [
+          "topCovolSlim2_use_alt"
+        ],
+        "proofs_reviewed": [
+          "topCovolSlim2_use_alt"
+        ],
+        "scope": "Lectura íntegra del punto de entrada consolidado HodgeBundleWeights. Construye los paquetes de hipótesis de topCovolG_alt con resultados recibidos como argumentos.",
+        "hypotheses_or_external_inputs": [
+          "Entradas explícitas: resolución, principalización, Poincaré–Lelong, HSUse, MoriwakiBigStatement, FarguesExact, ZarhinStatement, NefRR, SiegelToroidalIntegral, ToroidalForFanKS, SemiAbelianLieSeminegative, PointSeparationPair, ArDegree, PublishedHodgeBundleTheorems y GrothendieckDeformation.",
+          "Estas hipótesis no se han cerrado por inspección de imports ni por una compilación."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A §7; B §4.3–4.5",
+        "declaration_details": [
+          {
+            "name": "topCovolSlim2_use_alt",
+            "kind": "theorem",
+            "line": 16
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalToGlobal/Divisibility/ConstantGeTwentyEight.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/Divisibility/ConstantGeTwentyEight.lean",
+        "git_blob_sha": "a61b39dd907ac9c5a935742838dc57b349ed0bbd",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "4713087be5bc51d5a1a642f74ab5336d438e62a895b111be8f706ddcff42be5b",
+        "bytes": 18505,
+        "line_count": 320,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "Formalism.L2.DIV",
+        "declarations": [
+          "FoOfR",
+          "boundBR",
+          "DivInputs0R",
+          "DivInputsR",
+          "DivClausesR",
+          "height_chain_atR",
+          "divClausesR_of"
+        ],
+        "proofs_reviewed": [
+          "height_chain_atR",
+          "divClausesR_of"
+        ],
+        "scope": "Lectura selectiva de los datos y las dos pruebas genéricas. En divClausesR_of se cotejó mu0, la normalización común κ y la absorción 3δQ≤1, λ≤λ0, C0≥28. No se revisaron los envoltorios concretos finales.",
+        "hypotheses_or_external_inputs": [
+          "Q≥1, δ≥0, 3δQ≤1, μ0+h0+28λ≤Q, λ≤λ0 y C0≥28; se usan también las condiciones del paquete RecNums.",
+          "El número 28 aparece en el paso de pendientes y su absorción; no se deduce aquí de log(280)."
+        ],
+        "file_read_in_full": false,
+        "selected_line_ranges": [
+          [
+            1,
+            247
+          ]
+        ],
+        "source_passage": "A (7.5) p.32; conexión con Nota6",
+        "declaration_details": [
+          {
+            "name": "FoOfR",
+            "kind": "def",
+            "line": 20
+          },
+          {
+            "name": "boundBR",
+            "kind": "def",
+            "line": 23
+          },
+          {
+            "name": "DivInputs0R",
+            "kind": "structure",
+            "line": 26
+          },
+          {
+            "name": "DivInputsR",
+            "kind": "structure",
+            "line": 105
+          },
+          {
+            "name": "DivClausesR",
+            "kind": "def",
+            "line": 111
+          },
+          {
+            "name": "height_chain_atR",
+            "kind": "theorem",
+            "line": 123
+          },
+          {
+            "name": "divClausesR_of",
+            "kind": "theorem",
+            "line": 184
+          }
+        ],
+        "selected_structure_fields": [
+          {
+            "structure": "DivInputs0R",
+            "fields": [
+              "Q",
+              "de0",
+              "deQ",
+              "Q1",
+              "Qb",
+              "la_le",
+              "constant_ge_twenty_eight"
+            ],
+            "line_range": [
+              91,
+              103
+            ],
+            "meaning": "Cota auxiliar y condiciones recibidas para absorber el paso base a sharp."
+          }
+        ],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalToGlobal/GlobalTheory/FamRec.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/GlobalTheory/FamRec.lean",
+        "git_blob_sha": "988d2d5b2e192959f81477e8ec54a7868de20ad8",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "49d94c8a4b8cee80b7c894b0daf2e23365f61cd0e6c70ce267608b3827c00eb7",
+        "bytes": 17518,
+        "line_count": 358,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "Formalism.L2.GlobalTheoryTheory.FamRec",
+        "declarations": [
+          "Mx",
+          "fam0",
+          "famOf",
+          "LocalTie",
+          "MatRec",
+          "LatticeHypothesisOfColumnFacts",
+          "RamRank",
+          "etaM",
+          "eM"
+        ],
+        "proofs_reviewed": [],
+        "scope": "Lectura selectiva de estructuras/interfaces y la construcción de datos de familia. Mx tiene filas completas como RR.ι⊕Fin(Dall−Drows); MatRec exige Ball=Bf*Vr, Vr*Vr=I y que la proyección de filas sea exactamente la matriz del mismo Bk aritmético.",
+        "hypotheses_or_external_inputs": [
+          "Mx es una estructura de datos y MatRec una Prop, no una existencia incondicional.",
+          "fam0 conserva fuente, destino, retículos, matrices, γ y alturas; etaM=5x^(−CH)+3√deF y eM=2e0.",
+          "No se revisó toda la maquinaria posterior de cambio de familias."
+        ],
+        "file_read_in_full": false,
+        "selected_line_ranges": [
+          [
+            40,
+            200
+          ],
+          [
+            250,
+            345
+          ]
+        ],
+        "source_passage": "A p.33; B pp.44–46",
+        "declaration_details": [
+          {
+            "name": "Mx",
+            "kind": "structure",
+            "line": 46
+          },
+          {
+            "name": "fam0",
+            "kind": "def",
+            "line": 58
+          },
+          {
+            "name": "famOf",
+            "kind": "def",
+            "line": 103
+          },
+          {
+            "name": "LocalTie",
+            "kind": "def",
+            "line": 112
+          },
+          {
+            "name": "MatRec",
+            "kind": "def",
+            "line": 142
+          },
+          {
+            "name": "LatticeHypothesisOfColumnFacts",
+            "kind": "def",
+            "line": 153
+          },
+          {
+            "name": "RamRank",
+            "kind": "def",
+            "line": 178
+          },
+          {
+            "name": "etaM",
+            "kind": "def",
+            "line": 298
+          },
+          {
+            "name": "eM",
+            "kind": "def",
+            "line": 301
+          }
+        ],
+        "selected_structure_fields": [
+          {
+            "structure": "Mx",
+            "fields": [
+              "v",
+              "Y",
+              "Y'",
+              "Ball",
+              "γ",
+              "Bf",
+              "Vr",
+              "η0",
+              "η1",
+              "e0"
+            ],
+            "line_range": [
+              46,
+              56
+            ],
+            "meaning": "Datos sin pruebas de compatibilidad; MatRec añade las condiciones como Prop."
+          }
+        ],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalToGlobal/GlobalTheory/FamRecP.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/GlobalTheory/FamRecP.lean",
+        "git_blob_sha": "1b45dbea48ba76babcd1ddfb27b6a427b7e4bf5b",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "3bde281455836dab8d3bfa4c5edbda6bfaa06e1207ddadadfffe885a590f7249",
+        "bytes": 74127,
+        "line_count": 1595,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "Formalism.L2.GlobalTheoryTheory.FamRec",
+        "declarations": [
+          "card_lattice_level_zero",
+          "lattice_N_prime_eq",
+          "card_RR",
+          "card_all",
+          "del_famOf_rr",
+          "lattice_hypotheses_small",
+          "hsSq_submatrix",
+          "matRec_of_fin",
+          "IO_famOf",
+          "del_famOf",
+          "localTie_of"
+        ],
+        "proofs_reviewed": [
+          "card_lattice_level_zero",
+          "lattice_N_prime_eq",
+          "card_RR",
+          "card_all",
+          "del_famOf_rr",
+          "lattice_hypotheses_small",
+          "hsSq_submatrix",
+          "matRec_of_fin",
+          "IO_famOf",
+          "del_famOf",
+          "localTie_of"
+        ],
+        "scope": "Lectura selectiva de las pruebas que identifican rangos y retículos, cambian bases sin alterar normas HS y pasan al paquete LatHyp. card_all y del_famOf_rr separan el déficit de filas. matRec_of_fin preserva el mapa y la factorización por isometrías; no crea desde cero la estimación espectral.",
+        "hypotheses_or_external_inputs": [
+          "lattice_hypotheses_small recibe NprimeDef, RRFull, NuFull, rangos positivos, integridad y alturas, MatRec, déficit de filas<1 y cotas espectrales.",
+          "localTie_of usa las identidades de sumas locales ya importadas/probadas en otras secciones; no se leyó todo FamRecP.",
+          "Las primeras líneas se consultaron para normalizaciones locales; el bloque completo de aritmética de ideales no se auditó."
+        ],
+        "file_read_in_full": false,
+        "selected_line_ranges": [
+          [
+            1,
+            169
+          ],
+          [
+            395,
+            549
+          ],
+          [
+            1030,
+            1083
+          ]
+        ],
+        "source_passage": "A p.33; B pp.44–46",
+        "declaration_details": [
+          {
+            "name": "card_lattice_level_zero",
+            "kind": "theorem",
+            "line": 399
+          },
+          {
+            "name": "lattice_N_prime_eq",
+            "kind": "theorem",
+            "line": 425
+          },
+          {
+            "name": "card_RR",
+            "kind": "theorem",
+            "line": 433
+          },
+          {
+            "name": "card_all",
+            "kind": "theorem",
+            "line": 436
+          },
+          {
+            "name": "del_famOf_rr",
+            "kind": "theorem",
+            "line": 442
+          },
+          {
+            "name": "lattice_hypotheses_small",
+            "kind": "theorem",
+            "line": 456
+          },
+          {
+            "name": "hsSq_submatrix",
+            "kind": "theorem",
+            "line": 495
+          },
+          {
+            "name": "matRec_of_fin",
+            "kind": "theorem",
+            "line": 503
+          },
+          {
+            "name": "IO_famOf",
+            "kind": "theorem",
+            "line": 1037
+          },
+          {
+            "name": "del_famOf",
+            "kind": "theorem",
+            "line": 1058
+          },
+          {
+            "name": "localTie_of",
+            "kind": "theorem",
+            "line": 1072
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/LinkSFinal.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/LinkSFinal.lean",
+        "git_blob_sha": "6cc13624e00a505c30d297e38d95f7292040c040",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "1d9b550b4c69ff52e4f5149892c79f15abf9284c111d709254098b0e5cc548ae",
+        "bytes": 11015,
+        "line_count": 164,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "Formalism.L2.SG.ThmSOwn",
+        "declarations": [
+          "countOwn_of_rowsPEv",
+          "linkS_of_thmSPEv",
+          "linkS_concreteEv",
+          "kExpTied_holds",
+          "absConvTied_holds",
+          "theoremS_link_zero",
+          "theoremS_link"
+        ],
+        "proofs_reviewed": [
+          "countOwn_of_rowsPEv",
+          "linkS_of_thmSPEv",
+          "linkS_concreteEv",
+          "kExpTied_holds",
+          "absConvTied_holds",
+          "theoremS_link_zero",
+          "theoremS_link"
+        ],
+        "scope": "Lectura íntegra del puente espectral a LinkS familiar. Examina elección de filas, conteos, umbrales y ensamblaje diagonal/fuera de la diagonal; no reemplaza la estimación espectral por una cota individual de norma.",
+        "hypotheses_or_external_inputs": [
+          "theoremS_link lleva instancia Fact CoefWeightedLoc y argumentos de decaimiento Wu, dimensión finita, compatibilidad local, marco, residuos, tipos, términos principales, bucle de filas, TheoremSSingle, umbrales y conteos.",
+          "kExpTied_holds y absConvTied_holds son pruebas por resultados importados cuya clausura no se auditó."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A proposición7.6 p.32; B p.45",
+        "declaration_details": [
+          {
+            "name": "countOwn_of_rowsPEv",
+            "kind": "theorem",
+            "line": 22
+          },
+          {
+            "name": "linkS_of_thmSPEv",
+            "kind": "theorem",
+            "line": 57
+          },
+          {
+            "name": "linkS_concreteEv",
+            "kind": "theorem",
+            "line": 71
+          },
+          {
+            "name": "kExpTied_holds",
+            "kind": "theorem",
+            "line": 92
+          },
+          {
+            "name": "absConvTied_holds",
+            "kind": "theorem",
+            "line": 97
+          },
+          {
+            "name": "theoremS_link_zero",
+            "kind": "theorem",
+            "line": 105
+          },
+          {
+            "name": "theoremS_link",
+            "kind": "theorem",
+            "line": 135
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/MeanHeightDescent/AverageDegreeBounds/CombinedAverageDegreeBoundOf.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/MeanHeightDescent/AverageDegreeBounds/CombinedAverageDegreeBoundOf.lean",
+        "git_blob_sha": "fcd1c699d35bbdf8d9b2db80b134eb85c4b15f8e",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "a9bbd7a098fa4e7533217eb00831d2359ec63657c8a0ccd27c5aa105fe5c9a3a",
+        "bytes": 1608,
+        "line_count": 33,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "Formalism.ExtensionFiltration",
+        "declarations": [
+          "meanHeightLowerBound",
+          "combinedAverageDegreeBound_of"
+        ],
+        "proofs_reviewed": [
+          "meanHeightLowerBound",
+          "combinedAverageDegreeBound_of"
+        ],
+        "scope": "Lectura íntegra. Prueba el promedio no ponderado de alturas desplazadas y ensambla la cota de grado a partir del resultado SumComponents. No contiene por sí solo toda la prueba ponderada simplificada del lema A7.1.",
+        "hypotheses_or_external_inputs": [
+          "MeanHeights, SumComponents y CombinedAverageDegreeBound están definidos en un import no recuperado aquí; sus usos se cotejaron con los llamadores leídos."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A §7; B §4.3–4.5",
+        "declaration_details": [
+          {
+            "name": "meanHeightLowerBound",
+            "kind": "theorem",
+            "line": 8
+          },
+          {
+            "name": "combinedAverageDegreeBound_of",
+            "kind": "theorem",
+            "line": 25
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/MeanHeightDescent/AverageDegreeBounds/CovolumeFullAssemblyHolds.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/MeanHeightDescent/AverageDegreeBounds/CovolumeFullAssemblyHolds.lean",
+        "git_blob_sha": "893e0dd53b01a9e41b5d63e46f51778e47df6ea5",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "78ebe013c16eb1a3f52f0db59aada37c04876c5a033f75fab9f4565138dfcadc",
+        "bytes": 1760,
+        "line_count": 28,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "Formalism.ExtensionFiltration",
+        "declarations": [
+          "mean_height_sum_bound_holds",
+          "covolume_full_assembly_holds"
+        ],
+        "proofs_reviewed": [
+          "mean_height_sum_bound_holds",
+          "covolume_full_assembly_holds"
+        ],
+        "scope": "Lectura íntegra de este envoltorio de ensamblaje. mean_height_sum_bound_holds invoca las dos pruebas de promedio/suma recuperadas. El segundo teorema transmite las numerosas hipótesis a un ensamblaje de covolumen importado.",
+        "hypotheses_or_external_inputs": [
+          "No se recuperó ni auditó CovolumeAssemblyHolds; se leyó la llamada y el paso de parámetros."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A §7; B §4.3–4.5",
+        "declaration_details": [
+          {
+            "name": "mean_height_sum_bound_holds",
+            "kind": "theorem",
+            "line": 10
+          },
+          {
+            "name": "covolume_full_assembly_holds",
+            "kind": "theorem",
+            "line": 12
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/MeanHeightDescent/AverageDegreeBounds/SumComponents.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/MeanHeightDescent/AverageDegreeBounds/SumComponents.lean",
+        "git_blob_sha": "8857ab1dd2ecd7eb054ccc31e7852505549a95b4",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "28cf44b93f249215fca8e3aeb4b78e426d725aec7e64452ae800b76d4e7373f7",
+        "bytes": 6475,
+        "line_count": 120,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "Formalism.ExtensionFiltration",
+        "declarations": [
+          "sumComponents'"
+        ],
+        "proofs_reviewed": [
+          "sumComponents'"
+        ],
+        "scope": "Lectura íntegra de la prueba de suma ponderada por componentes: absorción del término A log(2+|h|), comparación de grados algebraicos, positividad de alturas desplazadas y denominador de rangos. Se distinguen los casos de signo de la cota intermedia.",
+        "hypotheses_or_external_inputs": [
+          "Recibe los datos y desigualdades de SumComponents; usa ρ<1, z<1, Bn>0, δ′>0, componentes finitas no vacías.",
+          "La exposición A7.1 presenta un lema más aislado; no se certifica una transcripción literal de su prueba."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A pp.29–30; B p.40",
+        "declaration_details": [
+          {
+            "name": "sumComponents'",
+            "kind": "theorem",
+            "line": 8
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/SharpRestriction/GlobalTheoremInputs.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/GlobalTheoremInputs.lean",
+        "git_blob_sha": "ba31f5120ed089d48968754ae577427912d467c5",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "4d51ccc0586441a159ad6d09ebc0a46b3c462e3c5b296d5a5bd7613266e17bfb",
+        "bytes": 8939,
+        "line_count": 168,
+        "retrieval": "Reutilización de bytes ya recuperados por github_fetch_file a la misma revisión; hash recalculado en esta revisión.",
+        "namespace": "Formalism.MainNotions",
+        "declarations": [
+          "etaSum",
+          "LinkN_at",
+          "LinkN",
+          "LinkIRR",
+          "BesselId",
+          "NprimeMuR",
+          "LinkMu",
+          "LinkDIV_at",
+          "LinkDIV",
+          "LinkDIVt",
+          "LinkG_at",
+          "hsDiagFull",
+          "LinkS_at",
+          "GamOf",
+          "LinkS",
+          "GlobalTheoremInputs"
+        ],
+        "proofs_reviewed": [],
+        "scope": "Relectura íntegra de interfaces a partir de los mismos bytes fijados de Nota6. LinkS_at es una implicación bajo comparabilidad de d_u Γ²/D*. LinkS controla η0,η1,√e0 por exp(−x^(eps/8)); LinkIRR controla el déficit de filas por exp(−x^(ez/7)).",
+        "hypotheses_or_external_inputs": [
+          "Todas las entradas enumeradas son def Prop. LinkDIV_at requiere sFrame+μmax(RR)≤x^CH*b y cota de altura solo si Bk≠0.",
+          "LinkN_at recibe Summable(vvTerm); etaSum no lleva factor 2. La finitud/cohomología necesaria queda fuera de Nota7.",
+          "LinkMu conserva una constante y umbral uniformes para todas las columnas/familias."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A pp.32–35; B pp.44–46,52–53",
+        "declaration_details": [
+          {
+            "name": "etaSum",
+            "kind": "def",
+            "line": 36
+          },
+          {
+            "name": "LinkN_at",
+            "kind": "def",
+            "line": 40
+          },
+          {
+            "name": "LinkN",
+            "kind": "def",
+            "line": 45
+          },
+          {
+            "name": "LinkIRR",
+            "kind": "def",
+            "line": 55
+          },
+          {
+            "name": "BesselId",
+            "kind": "def",
+            "line": 65
+          },
+          {
+            "name": "NprimeMuR",
+            "kind": "def",
+            "line": 69
+          },
+          {
+            "name": "LinkMu",
+            "kind": "def",
+            "line": 74
+          },
+          {
+            "name": "LinkDIV_at",
+            "kind": "def",
+            "line": 77
+          },
+          {
+            "name": "LinkDIV",
+            "kind": "def",
+            "line": 91
+          },
+          {
+            "name": "LinkDIVt",
+            "kind": "def",
+            "line": 94
+          },
+          {
+            "name": "LinkG_at",
+            "kind": "def",
+            "line": 122
+          },
+          {
+            "name": "hsDiagFull",
+            "kind": "def",
+            "line": 142
+          },
+          {
+            "name": "LinkS_at",
+            "kind": "def",
+            "line": 145
+          },
+          {
+            "name": "GamOf",
+            "kind": "def",
+            "line": 150
+          },
+          {
+            "name": "LinkS",
+            "kind": "def",
+            "line": 152
+          },
+          {
+            "name": "GlobalTheoremInputs",
+            "kind": "def",
+            "line": 158
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/Chain2aCoreNoAnalytic.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/Chain2aCoreNoAnalytic.lean",
+        "git_blob_sha": "65f69d1384df4c02143504aab03c4b15acd5bc04",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "440a1f491afbd797972022ea96670747d0c38370df301697889cf955ee74087e",
+        "bytes": 44031,
+        "line_count": 804,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "Formalism.LFunctionChainParameters.LChain2.Fam",
+        "declarations": [
+          "N'",
+          "du",
+          "dM",
+          "lenR",
+          "EeJ",
+          "del",
+          "deF",
+          "LatHyp",
+          "PlaceHyp"
+        ],
+        "proofs_reviewed": [],
+        "scope": "Lectura selectiva de definiciones. del=1−Drows/Dall; deF=1−Rret/Rfull. LatHyp exige los mismos mapas/matrices y cotas, y PlaceHyp registra la fórmula de rango retenido y los costes locales. No se auditó el resto del archivo de 804 líneas.",
+        "hypotheses_or_external_inputs": [
+          "LatHyp y PlaceHyp son Prop; no demuestran la existencia de datos automorfos.",
+          "PlaceHyp usa el rango completo dM en las cotas locales y conserva el factor 2 en EeJ."
+        ],
+        "file_read_in_full": false,
+        "selected_line_ranges": [
+          [
+            1,
+            4
+          ],
+          [
+            110,
+            195
+          ]
+        ],
+        "source_passage": "A p.33; B pp.44–46; frontera con Nota6",
+        "declaration_details": [
+          {
+            "name": "N'",
+            "kind": "def",
+            "line": 128
+          },
+          {
+            "name": "du",
+            "kind": "def",
+            "line": 134
+          },
+          {
+            "name": "dM",
+            "kind": "def",
+            "line": 136
+          },
+          {
+            "name": "lenR",
+            "kind": "def",
+            "line": 144
+          },
+          {
+            "name": "EeJ",
+            "kind": "def",
+            "line": 158
+          },
+          {
+            "name": "del",
+            "kind": "def",
+            "line": 164
+          },
+          {
+            "name": "deF",
+            "kind": "def",
+            "line": 166
+          },
+          {
+            "name": "LatHyp",
+            "kind": "def",
+            "line": 168
+          },
+          {
+            "name": "PlaceHyp",
+            "kind": "def",
+            "line": 175
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/ChainSlopeWindows/TraceConjTransposeMulSelf.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/ChainSlopeWindows/TraceConjTransposeMulSelf.lean",
+        "git_blob_sha": "d760f54c4fa755a635394a69821f02c4deff01e6",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "8b2afe7d7f80e919c8b6317e9236393c96c5dd4251c438ac25bb3e38b8b89acb",
+        "bytes": 28028,
+        "line_count": 631,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "Formalism.LFunctionChainParameters.HilbertSchmidtNormSquare",
+        "declarations": [
+          "trace_Qm",
+          "trace_Qm_sq",
+          "traceLowerBound",
+          "trQ_lower",
+          "trQsq_upper",
+          "hsSq_compress",
+          "compressTraceLowerBound",
+          "compressDiagDefectBound",
+          "num_main",
+          "num_ram",
+          "cor_common",
+          "compressTraceSquareBound"
+        ],
+        "proofs_reviewed": [
+          "trace_Qm",
+          "trace_Qm_sq",
+          "traceLowerBound",
+          "trQ_lower",
+          "trQsq_upper",
+          "hsSq_compress",
+          "compressTraceLowerBound",
+          "compressDiagDefectBound",
+          "num_main",
+          "num_ram",
+          "cor_common",
+          "compressTraceSquareBound"
+        ],
+        "scope": "Lectura íntegra de las identidades de trazas, Cauchy–Schwarz, compresión y absorciones numéricas. Prueba la pérdida de traza (δ+√(δe0))Rfull, e=2e0 y η=5σ+3√δ. Los resultados controlan el marco colectivo.",
+        "hypotheses_or_external_inputs": [
+          "Se preservan las normalizaciones por rangos de InputS/F1/F2; no se atribuye al archivo la generalidad editorial de pesos de probabilidad arbitrarios.",
+          "El déficit de filas no aparece como δ en estos teoremas de compresión del dominio: es una variable distinta."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A lema7.7 p.33; B p.45",
+        "declaration_details": [
+          {
+            "name": "trace_Qm",
+            "kind": "lemma",
+            "line": 50
+          },
+          {
+            "name": "trace_Qm_sq",
+            "kind": "lemma",
+            "line": 66
+          },
+          {
+            "name": "traceLowerBound",
+            "kind": "theorem",
+            "line": 137
+          },
+          {
+            "name": "trQ_lower",
+            "kind": "lemma",
+            "line": 204
+          },
+          {
+            "name": "trQsq_upper",
+            "kind": "lemma",
+            "line": 222
+          },
+          {
+            "name": "hsSq_compress",
+            "kind": "lemma",
+            "line": 324
+          },
+          {
+            "name": "compressTraceLowerBound",
+            "kind": "theorem",
+            "line": 414
+          },
+          {
+            "name": "compressDiagDefectBound",
+            "kind": "theorem",
+            "line": 450
+          },
+          {
+            "name": "num_main",
+            "kind": "lemma",
+            "line": 481
+          },
+          {
+            "name": "num_ram",
+            "kind": "lemma",
+            "line": 506
+          },
+          {
+            "name": "cor_common",
+            "kind": "lemma",
+            "line": 549
+          },
+          {
+            "name": "compressTraceSquareBound",
+            "kind": "theorem",
+            "line": 591
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/Formalism/SizeWindowBrackets/TraceSquareAndDiagBounds.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SizeWindowBrackets/TraceSquareAndDiagBounds.lean",
+        "git_blob_sha": "9fa80554a83904eb1cf696c7dd38fa88b5d9ad5c",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "f1baa428bebdc0d62dce1f5bf29a4960f26e8ad02ceea3033198b76f752b346f",
+        "bytes": 5615,
+        "line_count": 120,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "Formalism.LFunctionChainParameters.HilbertSchmidtNormSquare",
+        "declarations": [
+          "hsSq",
+          "hsNorm",
+          "Kp",
+          "Kd",
+          "Qm",
+          "Rs",
+          "F1",
+          "F2",
+          "InputS",
+          "Isom",
+          "Bram",
+          "TraceIdentities",
+          "TraceLower",
+          "CorBounds",
+          "TraceSquareAndDiagBounds",
+          "RamCompress",
+          "RamLoewner",
+          "RamTrace",
+          "CompressDiagDefectBound",
+          "CompressTraceSquareBound"
+        ],
+        "proofs_reviewed": [],
+        "scope": "Lectura íntegra de definiciones e interfaces. Qm=Σγ_u B_u B_u*, F1 controla Tr(Q²) relativo a Tr(Q)²/D y F2 el defecto diagonal relativo a la suma de rangos. Este archivo no prueba las interfaces.",
+        "hypotheses_or_external_inputs": [
+          "La compresión usa isometrías V_u*V_u=I. Para el defecto colectivo: D*>0, 0<σ≤1/20, Rfull≥D*/σ, η0≥−1, η0,η1,√e0≤σ/2, 0≤δ≤1/4 y pérdida de rango≤δRfull."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A lema7.7 p.33; B p.45",
+        "declaration_details": [
+          {
+            "name": "hsSq",
+            "kind": "def",
+            "line": 10
+          },
+          {
+            "name": "hsNorm",
+            "kind": "def",
+            "line": 13
+          },
+          {
+            "name": "Kp",
+            "kind": "def",
+            "line": 20
+          },
+          {
+            "name": "Kd",
+            "kind": "def",
+            "line": 24
+          },
+          {
+            "name": "Qm",
+            "kind": "def",
+            "line": 28
+          },
+          {
+            "name": "Rs",
+            "kind": "def",
+            "line": 31
+          },
+          {
+            "name": "F1",
+            "kind": "def",
+            "line": 33
+          },
+          {
+            "name": "F2",
+            "kind": "def",
+            "line": 36
+          },
+          {
+            "name": "InputS",
+            "kind": "def",
+            "line": 39
+          },
+          {
+            "name": "Isom",
+            "kind": "def",
+            "line": 44
+          },
+          {
+            "name": "Bram",
+            "kind": "def",
+            "line": 47
+          },
+          {
+            "name": "TraceIdentities",
+            "kind": "def",
+            "line": 53
+          },
+          {
+            "name": "TraceLower",
+            "kind": "def",
+            "line": 60
+          },
+          {
+            "name": "CorBounds",
+            "kind": "def",
+            "line": 64
+          },
+          {
+            "name": "TraceSquareAndDiagBounds",
+            "kind": "def",
+            "line": 72
+          },
+          {
+            "name": "RamCompress",
+            "kind": "def",
+            "line": 80
+          },
+          {
+            "name": "RamLoewner",
+            "kind": "def",
+            "line": 87
+          },
+          {
+            "name": "RamTrace",
+            "kind": "def",
+            "line": 93
+          },
+          {
+            "name": "CompressDiagDefectBound",
+            "kind": "def",
+            "line": 101
+          },
+          {
+            "name": "CompressTraceSquareBound",
+            "kind": "def",
+            "line": 109
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/ReciprocityTheory/L2DbarEstimates/JacobianInterpolationStatement.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/ReciprocityTheory/L2DbarEstimates/JacobianInterpolationStatement.lean",
+        "git_blob_sha": "913eb5b04ea335e1e4438262a15e6e0fb2e15b54",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "9597ccebed4b233c125e1fa9a9186f3cc3e37f6ed098cd278f3d8ab7ec36c1f6",
+        "bytes": 7630,
+        "line_count": 137,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "ReciprocityTheory.L2DbarEstimates",
+        "declarations": [
+          "HStatement",
+          "TWStatement",
+          "ohsawaTakegoshiConstant",
+          "JacobianInterpolationStatement"
+        ],
+        "proofs_reviewed": [],
+        "scope": "Lectura íntegra de interfaces analíticas. La interpolación prescribe F(p)=c(p)*jac(p), con peso φ2+(n+j)φ y constante 280π^n r^(2n)/(n−1)!. Son definiciones de Prop; j es un exponente de peso, no el orden de un jet.",
+        "hypotheses_or_external_inputs": [
+          "EtaleStein; n≥1, j≥2, r>0; g holomorfa; φ y φ2 suaves plurisubarmónicas; cota global Σ|g_i|²exp(−φ)≤r²; ceros finitos y jacobianos no nulos."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A teorema7.4 pp.31–32",
+        "declaration_details": [
+          {
+            "name": "HStatement",
+            "kind": "def",
+            "line": 10
+          },
+          {
+            "name": "TWStatement",
+            "kind": "def",
+            "line": 77
+          },
+          {
+            "name": "ohsawaTakegoshiConstant",
+            "kind": "def",
+            "line": 106
+          },
+          {
+            "name": "JacobianInterpolationStatement",
+            "kind": "def",
+            "line": 109
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/ReciprocityTheory/L2DbarEstimates/LeviForms/Ot0.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/ReciprocityTheory/L2DbarEstimates/LeviForms/Ot0.lean",
+        "git_blob_sha": "0140b2868af66f897feb00ded2a4dcfd4a9b6d3f",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "7c7a106b55d27ddc542c451ebb5e5cfb7551e0e8488507bd7fe4dbae3166faa5",
+        "bytes": 13774,
+        "line_count": 241,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "ReciprocityTheory.L2DbarEstimates.I",
+        "declarations": [
+          "ot0"
+        ],
+        "proofs_reviewed": [
+          "ot0"
+        ],
+        "scope": "Lectura íntegra de la prueba que ensambla soluciones a parámetro fijo, estimación de coronas, datos locales y función de corte. Conserva el caso de datos nulos y la selección simultánea de epsilon; verifica numéricamente la constante 280.",
+        "hypotheses_or_external_inputs": [
+          "La firma interna recibe FixedStatement, ShellStatement, LocalStatement y CutoffStatement.",
+          "No se auditó la clausura de esas cuatro entradas."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A teorema7.4 pp.31–32",
+        "declaration_details": [
+          {
+            "name": "ot0",
+            "kind": "theorem",
+            "line": 10
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      },
+      {
+        "path": "src/ReciprocityTheory/L2DbarEstimates/NormFibrations/Hormander.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/ReciprocityTheory/L2DbarEstimates/NormFibrations/Hormander.lean",
+        "git_blob_sha": "a563a75792b1ca5b6cea54157106064d96e7da98",
+        "git_blob_sha_verified": true,
+        "git_tree_metadata_compared": false,
+        "sha256": "721aafa4488069c3216231604c35f4d93fddb065ffb74aebc7da0c6f5e416097",
+        "bytes": 2846,
+        "line_count": 59,
+        "retrieval": "github_fetch_file, commit fijado, base64",
+        "namespace": "ReciprocityTheory.L2DbarEstimates",
+        "declarations": [
+          "regMAll",
+          "hormander",
+          "skoda",
+          "tw",
+          "ot0",
+          "ma",
+          "detMono",
+          "inhabited"
+        ],
+        "proofs_reviewed": [
+          "regMAll",
+          "hormander",
+          "skoda",
+          "tw",
+          "ot0",
+          "ma",
+          "detMono",
+          "inhabited"
+        ],
+        "scope": "Lectura íntegra del envoltorio. Su ot0 construye las cuatro entradas de I.ot0; la firma externa no las pide como hipótesis adicionales. Se inspeccionaron las llamadas, no las pruebas de todos los imports analíticos.",
+        "hypotheses_or_external_inputs": [
+          "No afirmar que ot0 externo queda meramente postulado por la presencia de la interfaz JacobianInterpolationStatement.",
+          "Tampoco afirmar verificación independiente completa de Hörmander o ejecución Lean."
+        ],
+        "file_read_in_full": true,
+        "selected_line_ranges": null,
+        "source_passage": "A teorema7.4 pp.31–32",
+        "declaration_details": [
+          {
+            "name": "regMAll",
+            "kind": "theorem",
+            "line": 20
+          },
+          {
+            "name": "hormander",
+            "kind": "theorem",
+            "line": 24
+          },
+          {
+            "name": "skoda",
+            "kind": "theorem",
+            "line": 30
+          },
+          {
+            "name": "tw",
+            "kind": "theorem",
+            "line": 35
+          },
+          {
+            "name": "ot0",
+            "kind": "theorem",
+            "line": 39
+          },
+          {
+            "name": "ma",
+            "kind": "theorem",
+            "line": 50
+          },
+          {
+            "name": "detMono",
+            "kind": "theorem",
+            "line": 53
+          },
+          {
+            "name": "inhabited",
+            "kind": "theorem",
+            "line": 56
+          }
+        ],
+        "selected_structure_fields": [],
+        "dependency_closure_reviewed": false
+      }
+    ],
+    "date": "2026-11-22",
+    "toolchain": "4.33.1",
+    "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "document_comparison": {
+      "A": "§7, pp.28–34, ejemplar A55; §8 solo para delimitar la continuación.",
+      "B": "§4.3, pp.33–40, §4.4, pp.41–46, enlace §4.5 p.46; ejemplar B73.",
+      "newer_B_incorporated": false,
+      "scope": "Deducciones finitas de pendientes, evaluación, trazas y compresión; entradas geométricas, analíticas, espectrales y cohomológicas delimitadas."
     }
   }
 }
