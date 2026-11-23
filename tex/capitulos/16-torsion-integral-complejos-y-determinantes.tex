@@ -1,0 +1,909 @@
+\section{Torsión integral, complejos y determinantes}
+\label{sec:torsion-integral}
+
+La Nota~\ref{sec:capa-fija} dejó una entrada de tamaño: acotar la
+torsión de la homología de $\operatorname{GL}_N(\mathcal O_K)$
+incluyendo todos los primos. Desarrollamos esa entrada. Primero
+medimos la torsión de un complejo libre por los volúmenes de sus
+fronteras. Después construimos un modelo finito para un subgrupo
+de congruencia sin torsión y recuperamos el grupo completo mediante
+un descenso integral de índice finito.
+
+La construcción de Ash y el teorema de bases acotadas de
+Bayer-Fluckiger, Emery y Houriet se reciben como resultados clásicos.
+A partir de ellos probamos el recuento de celdas, la cota de las
+fronteras, el descenso y la absorción cuantitativa. La conclusión
+proporciona un exponente absoluto explícito para la entrada de
+torsión de la Nota~\ref{sec:capa-fija}; las otras entradas de aquella
+nota conservan su alcance.
+
+\fuente{A93, pp.~72--74, localiza la estimación integral requerida.
+Soulé~\cite{soule-torsion}, §§3.1--3.3, pp.~776--778, aporta el
+antecedente geométrico y el umbral de primos que examinamos.
+Bayer-Fluckiger--Emery--Houriet~\cite{bfeh}, Teorema~2.2, p.~74,
+y Proposición~4.7, p.~80, proporciona las dos entradas geométricas.
+Brown~\cite{brown-grupos}, Corolario~3.4, p.~22, y (5.6), p.~33,
+y Weibel~\cite{weibel-homologia}, §§6.5 y~6.8, proporcionan la
+transferencia y la sucesión espectral de una extensión.
+No se incorpora un nuevo cotejo de declaraciones ni se ejecuta Lean.}
+
+\subsection{Qué orden se debe controlar}
+
+Sea $K$ un cuerpo de números, $n=[K:\Q]\ge2$,
+$D=|\operatorname{disc}K|$, $N\ge5$ y
+\[
+ \Gamma=\operatorname{GL}_N(\mathcal O_K),\qquad
+ T_{N,j}(K)=\#H_j(\Gamma,\Z)_{\mathrm{tors}}.
+\]
+La finitud de ese orden se deducirá de la construcción.
+Todos los logaritmos sin subíndice son naturales.
+Para un grupo abeliano finitamente generado $A$ escribimos
+$t(A)=\#A_{\mathrm{tors}}$; en particular, $t(0)=1$.
+
+La aplicación a la nota anterior usa $N=4e+6$ y
+$0\le j\le2e+1$, con $e\ge1$. Obtendremos
+\begin{equation}
+ \log T_{4e+6,j}(K)
+ \le \exp\!\left((2en)^{20}\log(2D)\right).
+ \label{eq:ti-objetivo}
+\end{equation}
+El exponente es deliberadamente holgado. Su función es conservar
+una dependencia polinómica en $e,n$ dentro del exponente y lineal
+en $\log(2D)$. El orden de torsión de la izquierda es el completo.
+No se localizan los coeficientes ni se elimina una parte primaria.
+
+\subsection{La torsión homológica está en un conúcleo}
+
+\begin{lema}[Frontera y torsión]
+\label{lem:ti-conucleo}
+Sea $C_\bullet$ un complejo de grupos abelianos libres de rango
+finito, con $C_{-1}=0$. Para cada $j\ge0$ la inclusión de ciclos
+induce un isomorfismo canónico
+\begin{equation}
+ H_j(C_\bullet)_{\mathrm{tors}}
+ \simeq
+ \bigl(C_j/\operatorname{im}d_{j+1}\bigr)_{\mathrm{tors}}.
+ \label{eq:ti-conucleo}
+\end{equation}
+\end{lema}
+
+\begin{proof}
+La frontera $d_j$ induce la sucesión exacta
+\[
+ 0\longrightarrow H_j(C_\bullet)
+ \longrightarrow C_j/\operatorname{im}d_{j+1}
+ \longrightarrow\operatorname{im}d_j\longrightarrow0.
+\]
+El último grupo es un subgrupo de $C_{j-1}$ y, por tanto, es
+libre. Todo elemento de torsión del grupo central tiene imagen
+cero, de modo que pertenece a $H_j(C_\bullet)$. La inclusión
+conserva su orden y prueba la igualdad de las partes de torsión.
+No hace falta elegir una escisión.
+\end{proof}
+
+Este paso evita estimar una base del núcleo de $d_j$.
+Tampoco supone que $\operatorname{im}d_{j+1}$ sea un subretículo
+primitivo: su falta de saturación es precisamente la torsión
+que necesitamos medir.
+
+\subsection{Saturación y determinantes}
+
+Para $L\subset\Z^a$, su saturación es
+$L^{\mathrm{sat}}=(L\otimes_\Z\Q)\cap\Z^a$.
+Un elemento de $\Z^a/L$ es de torsión si y solo si algún
+múltiplo entero no nulo pertenece a $L$. Por ello
+\[
+ (\Z^a/L)_{\mathrm{tors}}=L^{\mathrm{sat}}/L.
+\]
+Los covolúmenes siguientes se calculan en el subespacio real
+generado por $L$, con la métrica euclídea de $\R^a$.
+
+\begin{proposicion}[Cota de Gabber por columnas]
+\label{prop:ti-gabber}
+Sea $A:\Z^b\to\Z^a$ una matriz entera de rango $r$.
+Si $v_1,\ldots,v_r$ son columnas linealmente independientes,
+entonces
+\begin{equation}
+ t(\operatorname{coker}A)
+ \le\prod_{i=1}^r\|v_i\|_2.
+ \label{eq:ti-gabber}
+\end{equation}
+Si todas las columnas tienen norma a lo sumo $B\ge1$, resulta
+\begin{equation}
+ \log t(\operatorname{coker}A)
+ \le r\log B\le\min(a,b)\log B.
+ \label{eq:ti-gabber-log}
+\end{equation}
+Para $r=0$ el producto vacío vale uno.
+\end{proposicion}
+
+\begin{proof}
+Pongamos $L=\operatorname{im}A$ y
+$L_0=\sum_{i=1}^r\Z v_i$. Las inclusiones
+$L_0\subset L\subset L^{\mathrm{sat}}$ tienen índice finito y
+\[
+ [L^{\mathrm{sat}}:L]
+ \le[L^{\mathrm{sat}}:L_0]
+ =\frac{\operatorname{covol}(L_0)}
+        {\operatorname{covol}(L^{\mathrm{sat}})}.
+\]
+Si $w_1,\ldots,w_r$ es una base entera de $L^{\mathrm{sat}}$,
+la fórmula de Cauchy--Binet expresa
+$\det((\langle w_i,w_k\rangle)_{i,k})$ como la suma de los
+cuadrados de sus menores de orden $r$. Es un entero positivo.
+Así $\operatorname{covol}(L^{\mathrm{sat}})\ge1$.
+Por Hadamard,
+$\operatorname{covol}(L_0)\le\prod_i\|v_i\|_2$.
+La identificación con la saturación prueba
+\eqref{eq:ti-gabber}; tomar logaritmos da la otra desigualdad.
+Si $r=0$, la imagen es cero y el conúcleo es libre.
+\end{proof}
+
+Los determinantes se toman en rango $r$, no necesariamente en
+todo $\R^a$. El argumento admite un conúcleo con parte libre.
+Es la forma de Gabber del Lema~3.1 de
+Bayer-Fluckiger--Emery--Houriet; aquí hemos dado la prueba que
+usaremos y conservado el rango efectivo.
+
+\subsection{De las columnas a un complejo celular}
+
+\begin{proposicion}[Tamaño y fronteras]
+\label{prop:ti-complejo}
+Sean $c_i=\operatorname{rank}C_i$ y $B_{j+1}\ge1$ una cota
+para las normas de las columnas de $d_{j+1}$ en bases enteras.
+Entonces
+\begin{equation}
+ \begin{aligned}
+ \operatorname{rank}H_j(C_\bullet)&\le c_j,\\
+ \log t(H_j(C_\bullet))
+ &\le\min(c_j,c_{j+1})\log B_{j+1}.
+ \end{aligned}
+ \label{eq:ti-complejo}
+\end{equation}
+Si cada columna tiene a lo sumo $s$ entradas no nulas de
+valor absoluto a lo sumo $a$, se puede tomar
+$B_{j+1}=\max(1,a\sqrt{s})$.
+\end{proposicion}
+
+\begin{proof}
+La cota de rango se obtiene del núcleo contenido en $C_j$.
+El Lema~\ref{lem:ti-conucleo} reduce la torsión al conúcleo
+de $d_{j+1}$ y la Proposición~\ref{prop:ti-gabber} la acota.
+La última afirmación usa que la suma de los cuadrados de
+las entradas de cada columna es a lo sumo $sa^2$.
+\end{proof}
+
+Para celdas poliedrales con a lo sumo $b$ facetas geométricas,
+cada incidencia tiene signo $\pm1$ antes de pasar al cociente.
+Varias facetas pueden identificarse después. La estimación
+siempre válida para la columna resultante es
+\begin{equation}
+ \|d\sigma\|_2\le\|d\sigma\|_1\le b.
+ \label{eq:ti-incidencias}
+\end{equation}
+Una mejora a $\sqrt b$ exigiría controlar esas identificaciones.
+Usaremos \eqref{eq:ti-incidencias}, suficiente para la cota final.
+
+El número de celdas por sí solo no acota la torsión: el complejo
+$\Z\xrightarrow{\times a}\Z$ tiene un generador en cada uno
+de dos grados y conúcleo $\Z/a$. La frontera contiene el dato
+de tamaño. Al tensorizar con $\Q$ ese conúcleo desaparece;
+el complejo racional tampoco permite recuperar su orden.
+
+\subsection{Homología de un grupo finito con coeficientes}
+
+Prepararemos el descenso sin suponer trivial la acción en los
+coeficientes. Sea $F$ finito, $m=|F|\ge2$, y sea $M$ un
+$\Z[F]$-módulo finitamente generado como grupo abeliano.
+Escribamos $r=\operatorname{rank}M$ y $t=t(M)$.
+
+\begin{proposicion}[Control de todos los grados]
+\label{prop:ti-grupo-finito}
+Se tienen
+\begin{equation}
+ \begin{aligned}
+ t(H_0(F,M))&\le m^r t,\\
+ \#H_p(F,M)&\le(m^r t)^{(m-1)^p}\qquad(p>0).
+ \end{aligned}
+ \label{eq:ti-grupo-finito}
+\end{equation}
+En particular, los grupos de grado positivo son finitos.
+\end{proposicion}
+
+\begin{proof}
+Sea $T=M_{\mathrm{tors}}$ y $A=M/T$, libre de rango $r$.
+Los coinvariantes dan una sucesión exacta por la derecha
+$T_F\to M_F\to A_F\to0$. Su primer término es finito
+de orden a lo sumo $t$. La norma induce
+$\mathcal N:A_F\to A^F$, por
+$[a]\mapsto\sum_{g\in F}ga$.
+La composición con $A^F\to A_F$ es multiplicar por $m$.
+Como $A^F$ es libre, la torsión de $A_F$ está anulada por $m$.
+El grupo $A_F$ tiene a lo sumo $r$ generadores, de modo que
+$t(A_F)\le m^r$. La torsión de $M_F$ tiene núcleo de orden
+a lo sumo $t$ e imagen contenida en la torsión de $A_F$.
+Esto prueba la primera desigualdad.
+
+Para $p>0$ recibimos la identidad clásica de transferencia:
+$mH_p(F,M)=0$, válida para cualquier acción en $M$.
+Se deduce al restringir al subgrupo trivial y volver a incluir:
+la composición es multiplicar por el índice, y la homología
+positiva del grupo trivial es cero.
+
+El complejo bar normalizado tiene grupo de cadenas
+$M^{(m-1)^p}$ en grado $p$: se suprimen los símbolos que
+contienen la identidad. Su grupo de ciclos $Z_p$ tiene rango
+a lo sumo $r(m-1)^p$ y torsión de orden a lo sumo
+$t^{(m-1)^p}$. Como $m$ anula su cociente $H_p(F,M)$,
+el mapa de ciclos factoriza por $Z_p/mZ_p$. Para todo grupo
+abeliano finitamente generado $Z$,
+\[
+ \#(Z/mZ)=m^{\operatorname{rank}Z}\#(Z_{\mathrm{tors}}/mZ_{\mathrm{tors}})
+ \le m^{\operatorname{rank}Z}t(Z).
+\]
+Aplicar esta fórmula a $Z_p$ prueba la segunda desigualdad
+y, a la vez, la finitud.
+\end{proof}
+
+El factor $m^r$ mide la torsión que una acción puede crear al
+pasar a coinvariantes. Por ejemplo, si $F=C_2$ actúa en $\Z$
+por cambio de signo, sus coinvariantes son $\Z/2$ aunque
+el módulo original sea libre.
+
+\clearpage
+\subsection{Descenso integral por índice finito}
+
+\begin{teorema}[Una extensión de grupos]
+\label{thm:ti-descenso}
+Sea $1\to\Gamma'\to\Gamma\to F\to1$ exacta, con
+$m=|F|\ge2$, y supongamos que $H_q(\Gamma',\Z)$ es
+finitamente generado para $0\le q\le j$.
+Pongamos
+$r_q=\operatorname{rank}H_q(\Gamma',\Z)$ y
+$t_q=t(H_q(\Gamma',\Z))$. Entonces $H_j(\Gamma,\Z)$ es
+finitamente generado y
+\begin{equation}
+ t(H_j(\Gamma,\Z))
+ \le\prod_{q=0}^j(m^{r_q}t_q)^{(m-1)^{j-q}}.
+ \label{eq:ti-descenso}
+\end{equation}
+Equivalentemente,
+\begin{equation}
+ \log t(H_j(\Gamma,\Z))
+ \le\sum_{q=0}^j(m-1)^{j-q}
+          \bigl(r_q\log m+\log t_q\bigr).
+ \label{eq:ti-descenso-log}
+\end{equation}
+Si $m=1$, se tiene simplemente $\Gamma'=\Gamma$.
+\end{teorema}
+
+\begin{proof}
+Usamos la sucesión espectral homológica de
+Lyndon--Hochschild--Serre
+\begin{equation}
+ E^2_{p,q}=H_p(F,H_q(\Gamma',\Z))
+ \ \Longrightarrow\ H_{p+q}(\Gamma,\Z).
+ \label{eq:ti-lhs}
+\end{equation}
+La acción de $F$ procede de conjugación; no necesitamos que
+sea trivial. Esta sucesión de primer cuadrante proporciona
+en grado total $j$ una filtración finita con cocientes
+$E^\infty_{p,j-p}$.
+
+Para $p>0$ y $0\le q\le j$, los términos $E^2_{p,q}$ son finitos por la
+Proposición~\ref{prop:ti-grupo-finito}. Sus términos posteriores
+son subcocientes y su orden no aumenta.
+El término $E^2_{0,j}$ puede tener parte libre. Debemos
+tratarlo aparte: un cociente arbitrario de un grupo libre
+puede crear torsión.
+
+Los diferenciales homológicos tienen bidegrado $(-a,a-1)$
+en la página $a\ge2$. Desde $(0,j)$ no sale ninguno.
+Solo llegan imágenes de $E^a_{a,j-a+1}$, que son finitas
+porque su primera coordenada es positiva. En cada paso
+se divide, por tanto, por un subgrupo finito contenido en
+la torsión. Para $B$ finitamente generado y $U\subset B$
+finito, $(B/U)_{\mathrm{tors}}=B_{\mathrm{tors}}/U$.
+Resulta
+$t(E^\infty_{0,j})\le t(E^2_{0,j})$.
+
+Todos los cocientes de la filtración son finitamente
+generados, luego también lo es $H_j(\Gamma,\Z)$.
+En una sucesión exacta $0\to A\to B\to C\to0$ de tales
+grupos se cumple $t(B)\le t(A)t(C)$: el núcleo de la
+restricción a torsión es $A_{\mathrm{tors}}$ y su imagen
+está contenida en $C_{\mathrm{tors}}$.
+Aplicando esto a la filtración y usando
+\eqref{eq:ti-grupo-finito}, con $p=j-q$, obtenemos
+\eqref{eq:ti-descenso}. Tomar logaritmos da
+\eqref{eq:ti-descenso-log}.
+\end{proof}
+
+El descenso utiliza los rangos de la cubierta además de sus
+torsiones. No se intenta invertir el índice $m$: sus factores
+primos quedan incluidos en el coste.
+
+\subsection{Un subgrupo de congruencia sin torsión}
+
+Definimos
+\[
+ \Gamma(3)=\ker\!\left(
+ \operatorname{GL}_N(\mathcal O_K)\longrightarrow
+ \operatorname{GL}_N(\mathcal O_K/3\mathcal O_K)\right).
+\]
+El anillo residual puede tener nilpotentes; el argumento
+no exige que $3$ sea no ramificado.
+
+\begin{lema}[Nivel tres]
+\label{lem:ti-nivel-tres}
+El grupo $\Gamma(3)$ es normal, sin torsión y de índice
+\begin{equation}
+ m=[\Gamma:\Gamma(3)]\le3^{nN^2}.
+ \label{eq:ti-indice}
+\end{equation}
+\end{lema}
+
+\begin{proof}
+La normalidad es inmediata. Como $\mathcal O_K$ es libre
+de rango $n$ sobre $\Z$, el anillo $\mathcal O_K/3\mathcal O_K$
+tiene $3^n$ elementos. El número de todas las matrices
+$N\times N$ sobre él es $3^{nN^2}$, lo que acota la imagen.
+
+Eligiendo una base entera de $\mathcal O_K$, la restricción
+de escalares da una inclusión
+$\Gamma\hookrightarrow\operatorname{GL}_{nN}(\Z)$ y lleva
+$\Gamma(3)$ al núcleo de reducción módulo $3$.
+Si ese núcleo tuviera un elemento de orden finito no trivial,
+alguna potencia tendría orden primo $p$. Escribámosla
+$g=I+3^aB$, con $a\ge1$ y alguna entrada de $B$ no divisible
+por $3$.
+
+Si $p\ne3$, dividir $g^p-I$ por $3^a$ y reducir módulo $3$
+da $pB\ne0$, contradicción. Si $p=3$, la identidad exacta es
+\[
+ \frac{g^3-I}{3^{a+1}}
+   =B+3^aB^2+3^{2a-1}B^3.
+\]
+Su reducción módulo $3$ es $B\ne0$, otra contradicción.
+Así no existe torsión no trivial.
+\end{proof}
+
+\subsection{Las dos entradas geométricas}
+
+Fijemos $\Lambda=\mathcal O_K^N$ y sea $\Sigma$ el conjunto
+de las $n$ inmersiones de $K$ en $\C$.
+Una métrica hermítica $h$ da la forma euclídea real
+\[
+ q_h(x)=\sum_{\sigma\in\Sigma}h_\sigma(x_\sigma,x_\sigma).
+\]
+Las dos inmersiones de cada par complejo se cuentan en esta
+suma. Denotamos por $M(h)$ el conjunto de vectores no nulos
+de $\Lambda$ con $q_h(x)=1$.
+
+\paragraph{Retracto de Ash, recibido.}
+El espacio $\widetilde W$ de métricas de mínimo uno para las
+que $M(h)$ genera $K^N$ sobre $K$ es contráctil y tiene
+una estructura celular poliedral, localmente finita,
+compatible con $\Gamma$. Una celda abierta está determinada
+por su conjunto exacto de vectores mínimos. Sus caras se
+obtienen añadiendo igualdades $q_h(x)=1$; las clausuras
+son poliedros con incidencias de facetas $\pm1$.
+Los estabilizadores de celdas son finitos y el cociente
+por $\Gamma$ es compacto.
+Esta es la construcción descrita en
+Bayer-Fluckiger--Emery--Houriet, §2.3, Teorema~2.2,
+y Soulé, §3.1.
+
+El espacio real de todas las formas tiene dimensión
+\begin{equation}
+ d=r_1\frac{N(N+1)}2+r_2N^2
+ \le \delta:=n\frac{N(N+1)}2\le nN^2.
+ \label{eq:ti-dimension}
+\end{equation}
+Usaremos $\delta$ como sobrecota; no necesitamos conocer
+la dimensión exacta del retracto.
+
+\paragraph{Bases acotadas, recibido.}
+La Proposición~4.7 de Bayer-Fluckiger--Emery--Houriet,
+para $n\ge2$ y $N\ge5$, proporciona en cada retículo
+$(\Lambda,h)$ de $\widetilde W$ una base sobre
+$\mathcal O_K$ cuyos vectores tienen norma a lo sumo
+\begin{equation}
+ B=4N^2 n^{5Nn^2}D^{6N(n+1)}.
+ \label{eq:ti-base-acotada}
+\end{equation}
+Hemos aumentado su constante suprimiendo el factor $2^{-N}$.
+Desde esta entrada construiremos el conjunto finito de vectores
+necesario para contar. No usaremos la comparación homológica
+fuera de pequeños primos de su Corolario~2.3.
+
+\subsection{Un conjunto finito de vectores mínimos}
+
+\begin{proposicion}[Coordenadas mediante volumen y empaquetamiento]
+\label{prop:ti-phi}
+Pongamos
+\begin{equation}
+ s=nN,\qquad
+ R=n\,s^s B^{2(s-1)}D^N,\qquad
+ P=(3\sqrt R)^s.
+ \label{eq:ti-R-P}
+\end{equation}
+Existe un conjunto finito $\Phi\subset\Lambda$ con
+$\#\Phi\le P$ tal que para cada $h\in\widetilde W$ algún
+$\gamma\in\Gamma$ satisface $\gamma M(h)\subset\Phi$.
+\end{proposicion}
+
+\begin{proof}
+Tomemos una base acotada $e_1,\ldots,e_N$ y escribamos
+$H_\sigma=(h_\sigma(e_i,e_k))_{i,k}$.
+Para $x=\sum_i x_i e_i\in M(h)$,
+Cauchy--Schwarz para la forma $H_\sigma$ y Hadamard
+en su menor principal dan
+\[
+ |\sigma(x_i)|^2
+ \le (H_\sigma^{-1})_{ii}\,h_\sigma(x)
+ \le \det(H_\sigma)^{-1}B^{2(N-1)}.
+\]
+Aquí $h_\sigma(x)\le q_h(x)=1$.
+También $\det H_\sigma\le B^{2N}$, de modo que
+\begin{equation}
+ \sum_{\sigma\in\Sigma}|\sigma(x_i)|^2
+ \le n B^{2(s-1)}
+           \prod_{\sigma\in\Sigma}\det(H_\sigma)^{-1}.
+ \label{eq:ti-coordenadas}
+\end{equation}
+
+El retículo euclídeo $(\Lambda,q_h)$ tiene dimensión $s$,
+mínimo uno y covolumen $v$. Las bolas abiertas de radio
+$1/2$ se inyectan en el toro cociente. Una de ellas contiene
+un cubo de lado $1/\sqrt{s}$, por lo que
+$v\ge s^{-s/2}$.
+La fórmula del discriminante, con las dos inmersiones
+complejas incluidas en la métrica, da
+\[
+ v^2=D^N\prod_{\sigma\in\Sigma}\det H_\sigma.
+\]
+En efecto, para la métrica de traza estándar el covolumen de
+$\mathcal O_K$ es $\sqrt D$; cambiar a las matrices
+$H_\sigma$ multiplica el cuadrado del volumen por ese producto.
+Por tanto
+$\prod_\sigma\det(H_\sigma)^{-1}\le s^sD^N$.
+La desigualdad \eqref{eq:ti-coordenadas} queda acotada por $R$.
+
+En una base fija $f_1,\ldots,f_N$ de $\Lambda$ definimos
+\[
+ \Phi=\left\{\sum_i a_i f_i:
+       a_i\in\mathcal O_K,\ 
+       \sum_{\sigma\in\Sigma}|\sigma(a_i)|^2\le R
+       \text{ para cada }i\right\}.
+\]
+El automorfismo que lleva cada $e_i$ a $f_i$ transporta
+$M(h)$ dentro de $\Phi$.
+
+Para contar, la distancia entre dos enteros algebraicos
+distintos en la métrica de traza es al menos uno.
+En efecto, para $a\ne0$ el entero $|N_{K/\Q}(a)|\ge1$,
+y la desigualdad aritmético-geométrica da
+$\sum_\sigma|\sigma(a)|^2\ge n$.
+Las bolas de radio $1/2$ alrededor de los puntos de norma
+a lo sumo $\sqrt R$ son disjuntas y están dentro de una
+bola de radio $\sqrt R+1/2$. Hay a lo sumo
+$(1+2\sqrt R)^n\le(3\sqrt R)^n$ puntos, porque $R\ge1$.
+Las $N$ coordenadas se eligen por separado, luego
+$\#\Phi\le(3\sqrt R)^{nN}=P$.
+\end{proof}
+
+La identidad de covolúmenes conserva la normalización de
+traza en los lugares complejos. La estimación inferior del
+volumen usa solo el mínimo del retículo; por ello el cálculo
+no necesita una elección adicional de unidades.
+
+\subsection{Contar ecuaciones independientes y facetas}
+
+\begin{proposicion}[Complejidad celular]
+\label{prop:ti-celdas}
+Si $\Phi$ tiene la propiedad de la
+Proposición~\ref{prop:ti-phi}, entonces hay a lo sumo $P^\delta$
+órbitas de celdas de cada dimensión bajo $\Gamma$.
+Cada celda de $\widetilde W$ tiene a lo sumo
+\begin{equation}
+ \beta=P^{N+1}
+ \label{eq:ti-facetas}
+\end{equation}
+facetas geométricas.
+\end{proposicion}
+
+\begin{proof}
+En el espacio real de formas, $L_x(h)=q_h(x)$ es lineal
+en $h$. Una celda de dimensión $q$ y conjunto de mínimos $M$
+tiene envolvente afín dada por las igualdades $L_x(h)=1$
+para $x\in M$. Para justificarlo, cerca de una métrica
+$h_0$ de la celda se tiene $q_h\ge q_{h_0}/2$.
+Solo los finitos vectores con $q_{h_0}(x)\le4$ pueden
+amenazar las desigualdades estrictas. Los que no están
+en $M$ tienen un margen positivo común. Así la celda
+contiene una vecindad relativa de $h_0$ en el espacio
+afín de sus igualdades. Podemos escoger $d-q$ ecuaciones
+independientes que definan esa misma envolvente.
+
+La envolvente determina la celda: $M$ es exactamente el
+conjunto de vectores de $\Lambda\setminus\{0\}$ cuya ecuación
+vale idénticamente en ella. Una igualdad que valga en el
+interior relativo vale en toda la envolvente; una igualdad
+que valga en la envolvente vale, en particular, en cada
+punto de la celda. Las demás desigualdades son estrictas.
+No se supone que $|M|=d-q$; puede haber muchas ecuaciones
+redundantes.
+
+Transportando $M$ dentro de $\Phi$, el número de posibilidades
+es a lo sumo $\binom{\#\Phi}{d-q}\le P^\delta$.
+Un subconjunto independiente determina a lo sumo una celda,
+lo que basta para acotar las órbitas.
+
+Para las facetas fijemos una celda con mínimos $M$ y una
+base $v_1,\ldots,v_N$ de $K^N$ contenida en $M$.
+Cada faceta añade al menos una ecuación $L_x=1$ independiente
+de las anteriores; una de ellas determina su envolvente
+afín dentro de la de la celda. No hace falta que su conjunto
+completo de mínimos sea $M\cup\{x\}$.
+
+Sea $M'$ el conjunto de mínimos de la faceta.
+Elegimos $\gamma$ con $\gamma M'\subset\Phi$.
+El mapa $\gamma$ queda determinado por las $N$ imágenes
+$\gamma v_i\in\Phi$; una vez fijado, $x$ queda determinado
+por $\gamma x\in\Phi$. Hay a lo sumo
+$(\#\Phi)^{N+1}\le P^{N+1}$ posibilidades.
+Cada una determina a lo sumo una faceta. Esta cuenta se
+realiza antes de tomar el cociente por el grupo.
+\end{proof}
+
+La elección de ecuaciones independientes hace explícito el
+recuento sugerido por Soulé, Proposición~3, y
+Bayer-Fluckiger--Emery--Houriet, §3.3. Los vectores mínimos
+y sus ecuaciones pueden tener dependencias; el argumento
+solo usa el rango del sistema afín.
+
+\subsection{Un complejo libre y la torsión del grupo completo}
+
+\begin{proposicion}[Modelo integral de la cubierta]
+\label{prop:ti-cubierta}
+El cociente $X'=\Gamma(3)\backslash\widetilde W$ es un
+modelo celular finito de $B\Gamma(3)$.
+Sus cadenas celulares enteras son libres y satisfacen
+\begin{equation}
+ c_q\le mP^\delta,\qquad
+ \|d_{q+1}\text{ en cada columna}\|_2\le P^{N+1}.
+ \label{eq:ti-cubierta}
+\end{equation}
+En consecuencia, para todo $q\ge0$,
+\begin{equation}
+ r_q\le mP^\delta,\qquad
+ \log t_q\le mP^\delta(N+1)\log P.
+ \label{eq:ti-cubierta-homologia}
+\end{equation}
+\end{proposicion}
+
+\begin{proof}
+Un elemento que estabiliza una celda de $\widetilde W$
+pertenece a su estabilizador finito. Su intersección con
+$\Gamma(3)$ es trivial por el Lema~\ref{lem:ti-nivel-tres}.
+Por tanto el subgrupo actúa libremente sobre las celdas
+y sus puntos. La acción es propia: $\Gamma$ es discreto
+en $\operatorname{GL}_N(K\otimes_\Q\R)$, y el espacio
+de formas positivas es un espacio homogéneo de ese grupo
+real con estabilizador compacto. La contractibilidad de
+$\widetilde W$ hace del cociente un modelo de
+$B\Gamma(3)$.
+
+Cada órbita de $\Gamma$ se descompone en a lo sumo $m$
+órbitas de $\Gamma(3)$. La Proposición~\ref{prop:ti-celdas}
+acota así el número de celdas de cada dimensión; hay
+solo un número finito de dimensiones. Elegir una
+orientación por celda del cociente da bases enteras.
+
+Aunque el cociente pueda identificar caras distintas de
+una celda, su frontera suma a lo sumo $P^{N+1}$
+incidencias con signo. La desigualdad
+\eqref{eq:ti-incidencias} prueba la segunda cota.
+La Proposición~\ref{prop:ti-complejo} da
+\eqref{eq:ti-cubierta-homologia}. No se necesita subdividir
+ni invertir los órdenes de estabilizadores.
+\end{proof}
+
+\begin{teorema}[Cota integral aritmética]
+\label{thm:ti-aritmetica}
+Bajo las dos entradas geométricas citadas, para todo
+cuerpo $K$ de grado $n\ge2$, todo $N\ge5$ y todo $j\ge0$,
+$H_j(\operatorname{GL}_N(\mathcal O_K),\Z)$ es
+finitamente generado y
+\begin{equation}
+ \log T_{N,j}(K)
+ \le (j+1)m^{j+1}P^\delta
+       \bigl(\log m+(N+1)\log P\bigr),
+ \label{eq:ti-aritmetica}
+\end{equation}
+con $m,\delta,B,R,P$ como arriba.
+\end{teorema}
+
+\begin{proof}
+Para $m\ge2$ aplicamos el Teorema~\ref{thm:ti-descenso}
+al cociente finito $\Gamma/\Gamma(3)$.
+Cada sumando de \eqref{eq:ti-descenso-log} es a lo sumo
+\[
+ m^{j-q}\,mP^\delta
+       \bigl(\log m+(N+1)\log P\bigr).
+\]
+Hay $j+1$ sumandos y $m^{j-q}\le m^j$.
+Esto prueba \eqref{eq:ti-aritmetica}.
+Si $m=1$, la Proposición~\ref{prop:ti-cubierta} da directamente
+$\log T_{N,j}(K)\le P^\delta(N+1)\log P$, menor o igual
+que la derecha de \eqref{eq:ti-aritmetica}.
+\end{proof}
+
+El complejo celular finito calcula la homología de
+$\Gamma(3)$. La sucesión espectral calcula el coste de
+recuperar $\Gamma$, cuya torsión impide usar directamente
+un modelo finito libre del mismo tipo.
+
+\subsection{Un exponente absoluto para la capa fija}
+
+\begin{proposicion}[Absorción explícita]
+\label{prop:ti-exponente}
+Para $e\ge1$, $n\ge2$, $N=4e+6$ y $0\le j\le2e+1$,
+la cota \eqref{eq:ti-aritmetica} implica
+\eqref{eq:ti-objetivo}. Se puede tomar $C_T=20$ en
+\eqref{eq:cf-torsion-entrada}.
+\end{proposicion}
+
+\begin{proof}
+Pongamos $u=2en\ge4$ y $Y=\log(2D)\ge1/2$.
+Entonces
+\begin{equation}
+ n\le u,\quad N\le u^2,\quad j+1\le u,\quad
+ s\le u^3,\quad \delta\le u^5,\quad \log m\le2u^5.
+ \label{eq:ti-parametros}
+\end{equation}
+Por ejemplo, $N\le10e\le(2en)^2$;
+$j+1\le2e+2\le4e\le2en$.
+Usando $\log u\le u$ y $\log D\le Y$ en
+\eqref{eq:ti-base-acotada}, obtenemos
+\[
+ \log B
+ \le2u^2+5u^5+12u^3Y
+ \le(4u^2+10u^5+12u^3)Y
+ \le u^7Y.
+\]
+La última desigualdad vale para $u\ge4$, como se ve
+dividiendo entre $u^7$. De \eqref{eq:ti-R-P} se sigue
+\[
+ \begin{aligned}
+ \log R
+ &=\log n+s\log s+2(s-1)\log B+N\log D\\
+ &\le u+3u^4+2u^{10}Y+u^2Y
+ \le u^{11}Y,\\
+ \log P
+ &=s\bigl(\log3+\tfrac12\log R\bigr)
+ \le u^3\bigl(2+\tfrac12u^{11}Y\bigr)
+ \le u^{14}Y.
+ \end{aligned}
+\]
+Todas las constantes se absorbieron usando $u\ge4$ y
+$Y\ge1/2$, sin acotar el discriminante por una constante.
+
+Escribamos $Q_0=\log m+(N+1)\log P>0$.
+Las cotas anteriores dan $Q_0\le4u^{16}Y$.
+El logaritmo de la derecha de \eqref{eq:ti-aritmetica}
+está acotado por
+\[
+ \begin{aligned}
+ \log(j+1)+(j+1)\log m+\delta\log P+\log Q_0
+ &\le u+2u^6+u^{19}Y+4u^{16}Y\\
+ &\le(6u^6+u^{19}+4u^{16})Y\\
+ &\le2u^{19}Y\le u^{20}Y.
+ \end{aligned}
+\]
+Usamos $\log Q_0\le Q_0$ y
+$6u^6+4u^{16}\le u^{19}$ para $u\ge4$.
+Al exponenciar queda \eqref{eq:ti-objetivo}.
+\end{proof}
+
+En la Nota~\ref{sec:capa-fija}, la fórmula
+\eqref{eq:cf-exponente} da ahora
+\begin{equation}
+ C_K=\max(5\cdot20+9,29)+2=111.
+ \label{eq:ti-CK}
+\end{equation}
+Esta sustitución descarga la entrada de torsión.
+La deducción de la cota de $H^2$ sigue recibiendo el rango
+filtrado, la estabilidad integral, los ciclos, las comparaciones
+de clases y Selmer y la extensión auxiliar que allí se enumeran.
+
+\subsection{Qué ocurre con los pequeños primos}
+
+El descenso por $\Gamma(3)$ evita decidir qué primos se pueden
+suprimir. Conviene, de todos modos, precisar el antecedente
+citado en la nota anterior.
+
+\begin{lema}[Un umbral válido por restricción de escalares]
+\label{lem:ti-primos}
+Para este lema admitimos cualquier $N\ge1$.
+Si $\gamma\in\operatorname{GL}_N(\mathcal O_K)$ tiene orden
+primo $p$, entonces
+\begin{equation}
+ p\le nN+1.
+ \label{eq:ti-primos}
+\end{equation}
+En consecuencia, todo primo que divide el orden de un
+subgrupo finito de $\Gamma$ satisface esa desigualdad.
+\end{lema}
+
+\begin{proof}
+La restricción de escalares representa a $\gamma$ como
+una matriz racional de tamaño $nN$ y del mismo orden.
+Su polinomio mínimo divide $X^p-1$ y tiene algún factor
+distinto de $X-1$. Como
+$\Phi_p(X)=1+X+\cdots+X^{p-1}$ es irreducible sobre $\Q$,
+ese factor tiene grado $p-1$. Así $p-1\le nN$.
+La afirmación sobre subgrupos finitos sigue del teorema de
+Cauchy, que proporciona un elemento de orden $p$.
+\end{proof}
+
+El Lema~9 de Soulé (2003), pp.~777--778, imprime el
+umbral $p\le1+\max(n,N)$. Tal enunciado, en esa generalidad,
+admite un contraejemplo. Tomemos
+\begin{equation}
+ K=\Q(\sqrt5),\qquad
+ t=\frac{\sqrt5-1}{2},\qquad
+ \gamma=\begin{pmatrix}0&-1\\1&t\end{pmatrix}
+       \in\operatorname{SL}_2(\mathcal O_K).
+ \label{eq:ti-contraejemplo}
+\end{equation}
+Tenemos $t^2+t=1$, $\gamma^2=t\gamma-I$ y, sucesivamente,
+\[
+ \gamma^3=-t\gamma-tI,\qquad
+ \gamma^4=-\gamma+tI,\qquad
+ \gamma^5=I.
+\]
+Como $\gamma\ne I$ y $5$ es primo, su orden es $5$.
+Aquí $n=N=2$ y $1+\max(n,N)=3$.
+La cota \eqref{eq:ti-primos}, en cambio, da $5$.
+
+El paso problemático de la prueba impresa es la afirmación
+de que $\Phi_p$ permanece irreducible sobre $K$ cuando
+$K$ no contiene todas las raíces $p$-ésimas de la unidad.
+Un subcuerpo propio del cuerpo ciclotómico puede reducir
+su grado de irreducibilidad. El ejemplo anterior lo realiza.
+Esta observación corrige ese umbral concreto; no se utiliza
+para atribuir un fallo a todos los resultados del artículo.
+Nuestra estimación integral se apoya en el complejo de la
+cubierta y en el descenso demostrado, y no usa ese lema.
+
+\clearpage
+\subsection{Resultado obtenido y entradas que permanecen}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.28\textwidth}Y@{}}
+\toprule
+Paso & Alcance en esta nota\\
+\midrule
+Complejos y determinantes &
+Pruebas completas de saturación, Gabber, normas de frontera
+y torsión homológica.\\
+Descenso de índice finito &
+Prueba de la cota integral desde transferencia y la sucesión
+espectral clásicas, incluidas acciones no triviales.\\
+Geometría aritmética &
+Retracto de Ash y bases acotadas recibidos; construcción de
+$\Phi$, recuento, facetas y cubierta desarrollados aquí.\\
+Torsión y capa fija &
+$C_T=20$ demostrado desde esas entradas geométricas;
+$C_K=111$ bajo las demás entradas de la Nota~\ref{sec:capa-fija}.\\
+Continuación &
+Rango filtrado, estabilidad y realización de ciclos;
+comparaciones de clases, unidades y Selmer.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+La cota uniforme cubre cuerpos reales o imaginarios de grado
+al menos dos. Para la aplicación a $H^2$ siguen vigentes
+las hipótesis de cuerpo totalmente imaginario y raíces de
+la unidad de la Nota~\ref{sec:capa-fija}.
+No se ha probado aquí una cota integral para los grupos de
+teoría $K$ mediante Hurewicz; la cantidad estimada es la
+torsión de la homología del grupo lineal.
+
+El siguiente bloque puede concentrarse en el rango de la
+imagen homológica y la realización de los ciclos de A93.
+Esas entradas deben producir los mismos mapas y condiciones
+que usa la cancelación de la altura. La nueva cota de tamaño
+no construye por sí sola tales mapas.
+
+\clearpage
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}[Una imagen no saturada]
+Sea $A:\Z^2\to\Z^3$ la matriz con columnas
+$(2,0,0)$ y $(0,3,0)$. Calcular el conúcleo, su torsión
+y la cota de Gabber. ¿Qué cambia al pasar a $\Q$?
+\end{ejercicio}
+
+\paragraph{Solución.}
+Se tiene
+$\operatorname{coker}A\simeq\Z/2\oplus\Z/3\oplus\Z$.
+La saturación de la imagen es
+$\Z(1,0,0)\oplus\Z(0,1,0)$ y su índice sobre la imagen
+es $6$. Las columnas son ortogonales, de normas $2$ y $3$;
+Gabber da exactamente $6$. Sobre $\Q$ queda solo un
+conúcleo de dimensión uno, sin información sobre esos factores.
+
+\begin{ejercicio}[Facetas identificadas]
+Un cociente celular identifica $b$ facetas de una celda
+con una misma celda de dimensión menor y con la misma
+orientación. Comparar las normas $\ell^1$ y $\ell^2$
+de la columna de frontera resultante.
+\end{ejercicio}
+
+\paragraph{Solución.}
+La columna tiene una única entrada igual a $b$.
+Ambas normas valen $b$, y para $b>1$ exceden $\sqrt b$.
+Contar facetas antes de tomar el cociente sí permite
+$\|d\sigma\|_2\le\|d\sigma\|_1\le b$.
+La coincidencia de varias caras explica por qué conservamos
+esa forma del presupuesto.
+
+\begin{ejercicio}[Rangos en el descenso]
+Sea $F=C_2$ actuando en $M=\Z$ por $x\mapsto-x$.
+Calcular $H_0(F,M)$ y explicar por qué una cota de
+descenso que solo utilice $t(M)$ sería insuficiente.
+\end{ejercicio}
+
+\paragraph{Solución.}
+La relación de coinvariantes es $-x-x=-2x$, luego
+$H_0(F,M)=\Z/2$. Aunque $t(M)=1$, los coinvariantes
+tienen torsión de orden $2$.
+La Proposición~\ref{prop:ti-grupo-finito} incorpora el coste
+$m^{\operatorname{rank}M}=2$ y alcanza el orden exacto.
+En la sucesión espectral, el rango de la homología de la
+cubierta participa por esta misma razón.
+
+\begin{ejercicio}[Dos cocientes distintos]
+Comparar el efecto sobre la torsión de dividir $\Z$
+por $2\Z$ y de dividir $\Z\oplus\Z/6$ por su subgrupo
+$0\oplus\langle\bar3\rangle$.
+¿Cuál corresponde al paso por $E^a_{0,j}$?
+\end{ejercicio}
+
+\paragraph{Solución.}
+El primer cociente es $\Z/2$: un subgrupo infinito puede
+crear torsión al tomar el cociente.
+El segundo es $\Z\oplus\Z/3$: dividir por un subgrupo
+finito reduce la torsión de orden $6$ a orden $3$.
+En $E^a_{0,j}$ solo entran imágenes de grupos finitos;
+por eso se aplica el segundo mecanismo. No sería correcto
+acotar la torsión de cualquier subcociente por la torsión
+del grupo inicial.
+
+\begin{ejercicio}[Hipótesis y exponentes]
+Tomar $e=1$ y un cuerpo totalmente imaginario de grado
+$n=2$ y discriminante absoluto $D$.
+Indicar $N$, los grados homológicos cubiertos y la cota
+obtenida. Explicar qué falta para usar $C_K=111$.
+\end{ejercicio}
+
+\paragraph{Solución.}
+Se tiene $N=10$, $u=2en=4$ y $0\le j\le3$.
+La conclusión es
+\[
+ \log T_{10,j}(K)\le\exp\!\left(4^{20}\log(2D)\right)
+                   =(2D)^{4^{20}}.
+\]
+Esta cota procede de Ash, de las bases acotadas y de las
+deducciones de esta nota. Para obtener la cota de $H^2$
+con $C_K=111$ hay que verificar además las hipótesis sobre
+raíces de la unidad y todas las entradas restantes de la
+Nota~\ref{sec:capa-fija}, incluida la extensión auxiliar
+cuando $2e+1<r_2(K)$ no se cumple. En este ejemplo
+$r_2(K)=1$, por lo que esa desigualdad falla.
+El exponente explícito no reemplaza ninguna de esas condiciones.

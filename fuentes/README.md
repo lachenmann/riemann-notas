@@ -97,6 +97,32 @@ El PDF de Soulé tiene **28 páginas**, **200 685 bytes** y SHA-256 `9c319682a1b
 
 La nota calcula exactamente $v_\ell(D_e)=2ec+2v_\ell(e!)$, pero conserva el exponente grueso de A93 en la entrada de comparación de clases: mejorar la separación no mejora automáticamente sus núcleos. Si la torsión se recibe con exponente absoluto $C_T\ge1$, la absorción desarrollada permite $C_K=\max(5C_T+9,29)+2$. La dependencia es explícita; no fija un valor numérico de la constante profunda recibida. Se mantienen íntegros los nueve manifiestos y las revisiones documentales C/A93/B76; no se añaden lecturas ni ejecución de Lean.
 
+## Nota 16: Torsión integral, complejos y determinantes
+
+La [Nota 16](../tex/capitulos/16-torsion-integral-complejos-y-determinantes.tex) desarrolla la entrada integral de torsión identificada en **A93, pp. 72–74**, sobre el mismo ejemplar de 93 páginas. La cantidad estimada es el orden completo de la torsión de la homología de $\operatorname{GL}_N(\mathcal O_K)$. El complejo celular finito pertenece al subgrupo $\Gamma(3)$; el descenso por la sucesión espectral recupera el grupo completo sin invertir su índice.
+
+| Fuente y localizador | Uso y alcance |
+| --- | --- |
+| [Bayer-Fluckiger, Emery y Houriet, *Hermitian Lattices and Bounds in K-Theory of Algebraic Integers*](https://ems.press/content/book-chapter-files/27436), Documenta Mathematica, Extra Volume Merkurjev (2015), pp. 71–83; Teorema 2.2, p. 74, y Proposición 4.7, p. 80 | Se reciben el retracto de Ash y la existencia de bases acotadas. La nota reconstruye las coordenadas por volumen y empaquetamiento, y el recuento por ecuaciones independientes. No usa la comparación de pequeños primos del Corolario 2.3 ni la estimación de coordenadas de la Proposición 5.1. |
+| Misma fuente, §3.2, Lema 3.1, p. 75 | Antecedente de Gabber. Se da una prueba completa por saturación, covolúmenes y Hadamard. Las fronteras se acotan por su norma $\ell^1$ para conservar posibles identificaciones de facetas. |
+| [Brown, *Lectures on the Cohomology of Groups*](https://pi.math.cornell.edu/~kbrown/papers/cohomology_hangzhou.pdf), Corolario 3.4 y Observación 3.5, p. 22; §5, (5.6), p. 33 | Transferencia con coeficientes generales y sucesión espectral de una extensión. Las cotas de órdenes, coinvariantes y filtraciones se demuestran en la nota. |
+| [Weibel, *An Introduction to Homological Algebra*, capítulo 6](https://math.mit.edu/~hrm/palestine/weibel/06-group_homology_and_cohomology.pdf), Cambridge University Press, 1994; §§6.5 y 6.8, pp. 177–180 y 195–196 | Bar normalizado, anulación por el orden y Teorema 6.8.2 de Lyndon–Hochschild–Serre. Se usa el capítulo editorial de 56 páginas conservado en MIT; las páginas citadas son las impresas. |
+| [Soulé (2003)](https://www.maths.tcd.ie/EMIS/journals/DMJDMV/vol-kato/soule.dm.pdf), §§3.1–3.3, pp. 776–778 | Antecedente celular y revisión del Lema 9. El elemento de orden $5$ sobre $\mathbb Q(\sqrt5)$ contradice su umbral $1+\max(n,N)$. Se prueba la cota válida $nN+1$ por restricción de escalares. El diagnóstico se limita a ese enunciado y a la inferencia de irreducibilidad utilizada en su prueba. |
+
+Se recibieron y verificaron estos ejemplares completos, consultados el 23 de noviembre de 2026:
+
+| Ejemplar | Páginas del archivo | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| Bayer-Fluckiger–Emery–Houriet, PDF editorial | 14 (la última sin contenido del artículo) | 184324 | 8c3e6b7470f127be16c0f8e58827370dcd223a30d09b7eae591bceeabd9d271b |
+| Brown, versión del autor | 41 | 291351 | 974ebb90cdcb56268a1c314ecf2826694f5204cb64458f9364eb5b94ff896889 |
+| Weibel, capítulo 6 editorial | 56 | 2202151 | 7e44c5cb4dc6201cacca2c0fd117eaaf5e7afaa51fdef177314b4cdbe15dcf95 |
+
+Soulé conserva el hash 9c319682a1bcb43e4440b299a7eb4285f67a276e06aab015bcb3bcabfe2900eb registrado en la Nota 15. El resultado de Ash se recibe por su enunciado y descripción en las fuentes matemáticas citadas; no se afirma una lectura directa del PDF original de Ash. El recuento conserva las dependencias entre vectores mínimos y cuenta facetas geométricas antes del cociente.
+
+El descenso y la absorción proporcionan $C_T=20$ para $N=4e+6$, $0\le j\le2e+1$, $e\ge1$ y $[K:\mathbb Q]\ge2$. Sustituirlo en la fórmula de la Nota 15 da $C_K=111$ bajo las demás entradas de aquella nota. No se deduce aquí una cota integral para grupos de teoría $K$ a través de Hurewicz.
+
+Se conservan íntegros los nueve manifiestos Lean y las revisiones C/A93/B76. Una búsqueda exploratoria del nombre ExponentLe mostró rutas y fragmentos de imports; no se recuperó por ella un archivo completo ni se cotejó una declaración. Esa exploración no se registra como un décimo manifiesto. No se ejecutó Lean.
+
 ## A93: versión larga y guía de cotejo
 
 El [archivo oficial de ULAM](https://www.ulam.ai/archive) presenta `rh-long.pdf` como «Long version» del mismo registro que enlaza A55. La fecha declarada por ese registro es el **23 de noviembre de 2026**; el PDF no imprime fecha ni firma. Los campos de autor del PDF y del [TeX enlazado](https://www.ulam.ai/research/rh-long.tex) están vacíos. La atribución del desarrollo Lean a Alpöge con Claude no identifica al autor de esta exposición.

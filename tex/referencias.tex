@@ -33,6 +33,9 @@ La Nota~\ref{sec:capa-fija} desarrolla la Proposición~9.4,
 los Lemas~9.5--9.7 y (9.7)--(9.20), pp.~67--74:
 distingue las deducciones de conteo y absorción de las
 entradas homológicas y aritméticas que las alimentan.
+La Nota~\ref{sec:torsion-integral} desarrolla la entrada
+de torsión integral de pp.~72--74 desde resultados geométricos
+clásicos y un descenso por índice finito.
 El Apéndice A de A93, pp.~89--92, conserva la revisión de código de [L]
 y atribuye las comprobaciones formales a informes externos.
 
@@ -235,6 +238,43 @@ Se citan como antecedente y para precisar su alcance; no
 proporcionan por sí solos la estimación de toda la torsión
 que recibe la Nota~\ref{sec:capa-fija}.
 Consulta: 23 de noviembre de 2026; ejemplar \texttt{9c319682a1bc}.
+La Nota~\ref{sec:torsion-integral} reconstruye el recuento de
+§3.2, p.~777, mediante ecuaciones independientes y examina
+el umbral del Lema~9, pp.~777--778, con un contraejemplo explícito.
+
+\bibitem[BEH]{bfeh}
+Eva Bayer-Fluckiger, Vincent Emery y Julien Houriet.
+\emph{Hermitian Lattices and Bounds in K-Theory of Algebraic Integers}.
+\emph{Documenta Mathematica}, Extra Volume Merkurjev (2015), pp.~71--83.
+\href{https://ems.press/content/book-chapter-files/27436}{PDF editorial};
+\href{https://arxiv.org/abs/1406.5953}{preprint arXiv:1406.5953}.
+§2.3, Teorema~2.2, p.~74: retracto de Ash;
+§3.2, Lema~3.1, p.~75: cota de Gabber;
+§4.3, Proposición~4.7, p.~80: bases acotadas.
+La Nota~\ref{sec:torsion-integral} recibe el retracto y las
+bases, y prueba sus estimaciones de coordenadas, celdas y
+descenso integral. No utiliza el Corolario~2.3 de comparación
+fuera de pequeños primos.
+Consulta: 23 de noviembre de 2026; ejemplar \texttt{8c3e6b7470f1}.
+
+\bibitem[Br]{brown-grupos}
+Kenneth S. Brown. \emph{Lectures on the Cohomology of Groups}.
+Versión del autor, 41 páginas.
+\href{https://pi.math.cornell.edu/~kbrown/papers/cohomology_hangzhou.pdf}{PDF en Cornell}.
+Corolario~3.4, p.~22: anulación por el orden de un grupo
+finito, con coeficientes generales; §5, (5.6) y
+Observaciones~5.4, p.~33: sucesión espectral de una extensión
+y acción en sus coeficientes.
+
+\bibitem[Wh]{weibel-homologia}
+Charles A. Weibel. \emph{An Introduction to Homological Algebra}.
+Cambridge Studies in Advanced Mathematics 38,
+Cambridge University Press, 1994.
+Capítulo~6, \emph{Group Homology and Cohomology}.
+\href{https://math.mit.edu/~hrm/palestine/weibel/06-group_homology_and_cohomology.pdf}{Capítulo editorial conservado en MIT}.
+§6.5, pp.~177--180: bar normalizado y anulación por el orden;
+Teorema~6.8.2, pp.~195--196: sucesión espectral homológica
+de Lyndon--Hochschild--Serre.
 
 \bibitem[Gr]{grayson-hn}
 Daniel R. Grayson. \emph{Reduction theory using semistability}.
@@ -415,7 +455,6 @@ y transporte local, y amplía el pegado a toda la familia.
 Conserva las entradas geométricas, theta y de periodos y las leyes
 locales especializadas.
 
-\clearpage
 La Nota~\ref{sec:congruencias-selmer} demuestra el modelo de
 denominadores, el cálculo del ideal de congruencias y la dependencia
 de la extensión residual respecto del retículo. Comprueba que esa
@@ -450,6 +489,13 @@ Conserva el rango filtrado, la estabilidad integral, los
 ciclos aritméticos, las comparaciones de clases y Selmer,
 la extensión auxiliar y la torsión en todos los primos
 como entradas precisas; cinco ejercicios comprueban los mecanismos.
+La Nota~\ref{sec:torsion-integral} desarrolla esta última entrada
+desde el retracto de Ash y las bases acotadas clásicas.
+Prueba la cota de Gabber, el descenso integral, el recuento
+celular y la absorción con $C_T=20$.
+La cota de capa fija admite entonces $C_K=111$ bajo sus
+otras entradas. El contraejemplo sobre $\Q(\sqrt5)$ precisa
+el umbral del Lema~9 de Soulé sin utilizarlo en la nueva prueba.
 Las entradas analíticas uniformes y las realizaciones
 integrales completas siguen pendientes. No se ejecutó Lean ni
 se auditó su cierre de axiomas; el cotejo localizado no certifica
