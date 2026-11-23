@@ -24,6 +24,8 @@ de [A], que sigue designando el ejemplar de 55 páginas.
 La Nota~\ref{sec:auxiliares} utiliza §5, pp.~21--28, en particular
 la Proposición~5.1, el Lema~5.2 y la Proposición~5.3; distingue
 las entradas analíticas uniformes de las deducciones que desarrolla.
+La Nota~\ref{sec:galois} desarrolla §10, pp.~77--85,
+con sus tres entradas y sus lemas de extracción y pegado.
 El Apéndice A de A93, pp.~89--92, conserva la revisión de código de [L]
 y atribuye las comprobaciones formales a informes externos.
 
@@ -60,7 +62,8 @@ Lean~4.33.1 y la revisión de Mathlib identificada en ese registro.
 El cotejo de esta entrega se limita a las interfaces y pasos señalados
 en las Notas~\ref{sec:ventanas}, \ref{sec:caracteres},
 \ref{sec:marcos}, \ref{sec:periodos}, \ref{sec:geometria},
-\ref{sec:cohomologia}, \ref{sec:parametros} y~\ref{sec:auxiliares}.
+\ref{sec:cohomologia}, \ref{sec:parametros}, \ref{sec:auxiliares}
+y~\ref{sec:galois}.
 El tramo de marcos comprende la lectura localizada de 14 archivos sobre
 la desigualdad lineal, las pendientes y su transferencia; no verifica las
 entradas de la construcción automorfa. No incluyó compilación ni ejecución
@@ -88,6 +91,38 @@ y el paso a la escala delgada; §\ref{subsec:aux-lean} detalla sus
 hipótesis y límites. No se revisan por completo las dependencias
 analíticas de esos ensamblajes. Los recuentos de cada tramo pueden
 compartir archivos.
+
+El noveno cotejo, de Galois y compatibilidad local, comprende
+36 archivos: 32 completos y cuatro selectivos, con 3299 líneas
+leídas. Separa las interfaces de sus productores, el pegado
+eventual por trazas de su conversión a isomorfías y las leyes
+locales restringidas a la clase buena.
+La prueba expositiva por Zariski y la prueba del código por
+caracteres de la adjunta no se identifican entre sí.
+La ampliación de la Proposición~\ref{prop:gal-todos} es propia
+del cuaderno y no se declara verificada en Lean.
+
+\bibitem[CH]{chenevier-harris}
+Gaëtan Chenevier y Michael Harris.
+\emph{Construction of automorphic Galois representations, II}.
+Cambridge Journal of Mathematics \textbf{1} (2013), n.º~1, 53--73.
+\href{https://doi.org/10.4310/CJM.2013.v1.n1.a2}{DOI};
+\href{https://webusers.imj-prg.fr/~michael.harris/ConstructionII.pdf}{PDF de autor},
+§1.5, pp.~6--7, y Teorema~3.2.3, pp.~11--12 de ese PDF.
+Se cita como antecedente de la existencia, las normalizaciones y
+las propiedades de Hodge en sus hipótesis cohomológicas y
+conjugadas autoduales; no como demostración de todas las leyes
+de la asignación auxiliar de A93. Consulta: 23 de noviembre de 2026.
+
+\bibitem[SP]{sorensen-patching}
+Claus M. Sorensen. \emph{A Patching Lemma}.
+En T. Haines y M. Harris (eds.), \emph{Shimura Varieties},
+Cambridge University Press, 2020, pp.~297--305.
+\href{https://doi.org/10.1017/9781108649711.012}{DOI y ficha editorial}.
+Se utiliza como antecedente del descenso por extensiones
+y de las familias con descomposición prescrita, sin sustituir
+las hipótesis concretas del pegado desarrollado aquí.
+Consulta: 23 de noviembre de 2026.
 
 \bibitem[D1]{dlmf-zeta}
 NIST. \emph{Digital Library of Mathematical Functions}, versión 1.2.8.
@@ -300,10 +335,12 @@ pareja y la reducción a la escala delgada bajo entradas analíticas
 explícitas. El cotejo Lean distingue esas deducciones de las estimaciones
 de progresiones, densidad de ceros y contorno que las alimentan.
 
-Queda reconstruir las estimaciones analíticas uniformes recibidas y
-la realización completa de los datos automorfos, integrales y de Galois
-que alimentan esos ensamblajes. El siguiente desarrollo estudiará la
-entrada de Galois de A, §9, pp.~42--46, y A93, §10, pp.~77--85.
-No se ha ejecutado Lean ni auditado el cierre
-de axiomas de la revisión fijada; el cotejo de declaraciones y pruebas
-aquí documentado no certifica la demostración completa de la hipótesis.
+La Nota~\ref{sec:galois} demuestra extracción, prolongación, pegado
+y transporte local, y amplía el pegado a toda la familia.
+Conserva las entradas geométricas, theta y de periodos y las leyes
+locales especializadas. El siguiente enlace estudia congruencias,
+retículos y extensiones con condiciones locales de A93, §9,
+pp.~61--77. Las entradas analíticas uniformes y las realizaciones
+integrales completas siguen pendientes. No se ejecutó Lean ni
+se auditó su cierre de axiomas; el cotejo localizado no certifica
+la demostración completa de la hipótesis.

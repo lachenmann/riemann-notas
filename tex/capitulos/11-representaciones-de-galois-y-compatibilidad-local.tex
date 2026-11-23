@@ -1,0 +1,1190 @@
+\section{Representaciones de Galois y compatibilidad local}
+\label{sec:galois}
+
+Las congruencias automorfas de las notas anteriores deben convertirse en
+información aritmética sobre representaciones de Galois. Para hacerlo
+no basta producir matrices con los polinomios de Frobenius esperados:
+hay que obtener la dimensión correcta, transportar las condiciones
+locales y conservar las normalizaciones que después intervienen en la
+cohomología. Esta nota desarrolla los mecanismos de extracción y
+descenso que realizan esas tareas, una vez recibidas las entradas
+geométricas y automorfas.
+
+\fuente{A, §9, pp.~42--46; A93, §10, pp.~77--85.
+Se conserva A como nombre del ejemplar de 55 páginas.
+Las entradas \texttt{Row0b} y \texttt{RecTExists} se explicitan;
+las pruebas de álgebra de representaciones y sus consecuencias se
+desarrollan aquí. El cotejo del código se delimita en
+§\ref{subsec:gal-lean}. La mejora de la conclusión del pegado en
+la Proposición~\ref{prop:gal-todos} es una deducción adicional de
+estas notas, no el enunciado literal de A93 ni de Lean.}
+
+\subsection{La función de esta entrada en el cuaderno}
+
+Escribimos $G_E=\operatorname{Gal}(\overline E/E)$ para el grupo de
+Galois absoluto de un cuerpo de números $E$. Una representación
+$\ell$-ádica de dimensión $a$ es un homomorfismo continuo
+\[
+ \rho:G_E\longrightarrow
+       \operatorname{GL}(V),\qquad
+ \dim_{\overline\Q_\ell}V=a.
+\]
+Un subespacio es invariante si lo preservan todas las matrices
+$\rho(g)$. La representación es \emph{irreducible} si no tiene
+subespacios invariantes propios no nulos, y \emph{semisimple} si
+es suma directa de irreducibles. Una isomorfía de representaciones
+es una transformación lineal invertible que entrelaza todas
+las acciones.
+
+Para un lugar finito $v$ de $E$, una elección de lugar sobre $v$
+en $\overline E$ determina un grupo de descomposición $D_v$ y su
+subgrupo de inercia $I_v$. La representación es no ramificada
+en $v$ cuando $\rho(I_v)=1$. En ese caso tiene sentido su polinomio
+característico de Frobenius. La elección de un lugar conjugado
+cambia las matrices por conjugación, de modo que no cambia ese
+polinomio.
+
+La representación automorfa $\pi$ pertenece a
+$\operatorname{GL}_a(\mathbb A_E)$, donde $\mathbb A_E$ es el anillo
+de adeles. Su espacio no tiene por qué ser finito dimensional.
+El entero $a$ es el rango del grupo lineal y será la dimensión de
+la representación de Galois asociada. La regularidad algebraica
+prescribe datos infinitesimales en los lugares complejos; esos datos
+se convierten, con la normalización adecuada, en pesos de Hodge--Tate.
+
+El recorrido de la construcción es el siguiente:
+\begin{enumerate}
+ \item La geometría proporciona representaciones auxiliares,
+       posiblemente de dimensión mayor que $a$.
+ \item Los levantamientos theta identifican los sumandos adicionales
+       como listas de caracteres.
+ \item La extracción produce una representación genuina de dimensión $a$
+       y conserva las propiedades locales de los sumandos.
+ \item El pegado cuadrático retira restricciones sobre el cuerpo base.
+ \item Las comparaciones en lugares que se descomponen recuperan
+       las condiciones locales sobre el cuerpo original.
+\end{enumerate}
+La existencia de representaciones automorfas de Galois tiene una
+literatura previa, como \cite{chenevier-harris}. Aquí interesa
+la forma precisa de la entrada que A93 usa para sus estimaciones,
+sin identificarla con todos los resultados posibles de esa teoría.
+
+\subsection{La entrada \texttt{Row0b}: hipótesis y pesos}
+\label{subsec:gal-row}
+
+Sea $E$ un cuerpo CM, $F$ su subcuerpo totalmente real maximal
+y $c$ la conjugación compleja de $E/F$. Fijamos $a\ge1$,
+una representación automorfa cuspidal regular algebraica $\pi$
+de $\operatorname{GL}_a(\mathbb A_E)$ y una identificación de cuerpos
+$\iota:\overline\Q_\ell\simeq\C$. La polarización utilizada por la
+fuente incluye un carácter de Hecke $\chi$ de $F$ y las dos condiciones
+\begin{equation}
+ \pi^c\simeq\pi^\vee\otimes(\chi\circ N_{E/F}),
+ \qquad \chi_v(-1)=(-1)^a
+       \quad\text{para cada lugar real }v\text{ de }F.
+ \label{eq:gal-polarizacion}
+\end{equation}
+La condición de signo forma parte de la hipótesis;
+no se omite al abreviar la dualidad conjugada.
+En el código ambas aparecen en \texttt{PolarizedPair}.
+
+La normalización algebraica de la componente local se denota
+$\pi_v^{\mathrm{alg}}$. La entrada afirma la existencia de una
+representación continua semisimple $\rho_{\pi,\ell}$ de dimensión $a$,
+un entero $w$ y multiconjuntos integrales $H_\tau$ tales que
+\begin{equation}
+ \begin{split}
+ H_\tau&=\{(a-1)/2-z:
+                  z\in\operatorname{Inf}_{\iota\tau}(\pi)\},\\
+ H_{\tau c}&=\{w-h:h\in H_\tau\}.
+ \end{split}
+ \label{eq:gal-pesos}
+\end{equation}
+Aquí $\tau:E\hookrightarrow\overline\Q_\ell$,
+$\operatorname{Inf}_{\iota\tau}(\pi)$ es el multiconjunto de
+parámetros del carácter infinitesimal en la convención de la fuente
+y $\tau c=\tau\circ c$. Todas las multiplicidades se conservan.
+
+Un multiconjunto registra cuántas veces aparece cada elemento.
+Por ejemplo, si $u\ne v$, los multiconjuntos
+$\{u,u,v\}$ y $\{u,v,v\}$ tienen la misma cardinalidad y el mismo
+conjunto de valores, pero no son iguales. Los operadores diagonales
+correspondientes son aniquilados por $(T-u)(T-v)$, aunque sus
+polinomios característicos son, respectivamente,
+\begin{equation}
+ (T-u)^2(T-v),\qquad (T-u)(T-v)^2.
+ \label{eq:gal-multiplicidades}
+\end{equation}
+Una relación de anulación no determina por sí sola los pesos
+con multiplicidad, ni la multiplicidad de los eigenvalores de Frobenius.
+
+En esta nota los pesos de Hodge son los índices $h$ de los saltos
+$\operatorname{gr}^h D_{\mathrm{dR}}$; con esta convención el carácter
+ciclotómico tiene peso $-1$. Los polinomios no ramificados se
+comparan con la misma elección de Frobenius y el mismo giro
+algebraico en ambos lados. Cambiar una sola de esas convenciones
+alteraría \eqref{eq:gal-pesos} o los factores de las comparaciones.
+
+El signo del peso ciclotómico puede comprobarse con el periodo
+$t$ de filtración $1$, que satisface $g(t)=\chi_\ell(g)t$:
+si $e$ genera la representación ciclotómica, $t^{-1}e$ es
+invariante y tiene salto de filtración $-1$.
+
+\subsection{Dos niveles de compatibilidad local}
+
+Un parámetro de Weil--Deligne es un par $y=(r_y,N_y)$:
+$r_y$ es una representación del grupo de Weil con imagen finita
+en inercia y $N_y$ es un operador nilpotente compatible con
+la norma del grupo de Weil. La monodromía es el operador $N_y$.
+Sea
+\[
+ y_v=\operatorname{rec}^{\mathrm{aux}}_v(\pi_v^{\mathrm{alg}})
+\]
+la asignación local auxiliar de A93. Si $v\nmid\ell$, denotamos
+por $x_v$ el parámetro asociado a $\rho_{\pi,\ell}$.
+
+Llamamos \emph{abeliano} a un parámetro cuando su representación
+de Weil factoriza por la abelianización. La condición mansa
+de multiplicidad exige que la inercia salvaje actúe trivialmente y que,
+para un generador $\gamma$ de la inercia mansa,
+\begin{equation}
+ \operatorname{mult}_{r_y(\gamma)}(z)\ge2
+ \quad\Longrightarrow\quad z^{q_v-1}=1,
+ \label{eq:gal-mansa}
+\end{equation}
+donde $q_v$ es la cardinalidad del cuerpo residual.
+La segunda hipótesis de la rama mansa es
+\begin{equation}
+ E_v\simeq\Q_p,\qquad a=1\ \text{o}\ p>16a^2.
+ \label{eq:gal-prime-field}
+\end{equation}
+Una extensión propia de $\Q_p$ no satisface esta hipótesis
+por el solo hecho de tener $p$ grande.
+
+La parte de \texttt{Row0b} que utiliza el cuaderno puede organizarse así:
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.20\textwidth}YY@{}}
+\toprule
+Lugar & Hipótesis local adicional & Conclusión recibida\\
+\midrule
+$v\nmid\ell$ &
+$N_{y_v}=0$ y $y_v$ abeliano &
+Igualdad de parámetros $x_v=y_v$.\\
+$v\nmid\ell$ &
+$N_{y_v}=0$, \eqref{eq:gal-mansa} y \eqref{eq:gal-prime-field} &
+$N_{x_v}=0$ e igualdad de polinomios característicos en inercia.\\
+$v\mid\ell$ &
+Componente esférica, en una realización compatible &
+Cristalinidad, pesos $H_\tau$ y comparación no ramificada de Frobenius.\\
+$v\mid\ell$ &
+$N_{y_v}=0$ y una de las dos ramas anteriores, en una realización compatible &
+Propiedad de de Rham, semiestabilidad potencial, pesos $H_\tau$
+y la comparación de Weil--Deligne de la rama correspondiente.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+La igualdad de dimensiones también forma parte de la entrada.
+Una misma $\rho_{\pi,\ell}$ sirve para toda asignación local
+admitida por las leyes de la fuente y para toda realización
+compatible. En un factor local, los pesos $H_\tau$ corresponden
+a las inmersiones globales que inducen ese lugar mediante el puente.
+La tabla conserva la diferencia entre igualdad del parámetro completo
+e igualdad de polinomios en inercia. Su formulación procede de
+A93, Proposición~10.1, pp.~77--78, y de
+\texttt{WeightsConjBis.lean}; aquí se recibe como entrada.
+
+La monodromía no se deduce de los polinomios de inercia.
+Para verlo, elijamos un elemento de Frobenius $\Phi$ y pongamos
+$c_\Phi=|\Phi|$. Considérese el parámetro no ramificado de Weil
+con $r(\Phi)=\operatorname{diag}(c_\Phi,1)$.
+Tanto $N=0$ como
+\begin{equation}
+ N=\begin{pmatrix}0&1\\0&0\end{pmatrix}
+ \quad\text{satisfacen}\quad
+ r(\Phi)Nr(\Phi)^{-1}=c_\Phi N.
+ \label{eq:gal-monodromia}
+\end{equation}
+Ambos tienen polinomio $(T-1)^2$ en cada elemento de inercia,
+y el segundo tiene monodromía no nula.
+Por ello la hipótesis $N_{y_v}=0$ y la conclusión $N_{x_v}=0$
+tienen que acompañar la comparación mansa.
+
+\subsection{Realizaciones locales con testigos}
+
+La expresión «en toda realización compatible» tiene contenido
+matemático. Para $v\mid\ell$ se elige un anillo de valoración
+$A\subset\overline E$ sobre $v$ y una inmersión
+$j:\overline E\hookrightarrow\overline\Q_\ell$ que induzca
+esa valoración:
+\begin{equation}
+ x\in A\quad\Longleftrightarrow\quad |j(x)|_\ell\le1.
+ \label{eq:gal-induces}
+\end{equation}
+El cuerpo local correspondiente es $\Q_\ell(j(E))$.
+La identificación del grupo local debe respetar la acción:
+\begin{equation}
+ e(g)(j(x))=j(g(x)).
+ \label{eq:gal-bridge}
+\end{equation}
+No basta escoger por separado una inmersión y unos anillos
+de periodos y suponer que corresponden al mismo lugar.
+
+A93, p.~78, y las declaraciones
+\texttt{exists\_locPrime\_tied} y \texttt{exists\_locBridge}
+aportan testigos de existencia. La condición \texttt{LocTied}
+liga los datos locales a los anillos de periodos cristalinos
+y de de Rham; \texttt{Induces} expresa
+\eqref{eq:gal-induces}. El puente se construye tras ampliar
+suficientemente el cuerpo finito de coeficientes.
+Así la cuantificación universal sobre realizaciones compatibles
+puede instanciarse en cada lugar sobre $\ell$.
+
+La lógica que se necesita es
+\begin{equation}
+ \exists\rho\quad\forall v\mid\ell\quad
+ \left[
+   \begin{array}{l}
+    \text{existen datos locales compatibles en }v,\\
+    \text{la conclusión vale para todo dato compatible.}
+   \end{array}
+ \right]
+ \label{eq:gal-cuantificadores-locales}
+\end{equation}
+La existencia de datos y la validez universal de la comparación
+son afirmaciones distintas. Esta distinción será importante al
+transportar propiedades a un sumando de $\rho$.
+
+\subsection{El alcance de la asignación local auxiliar}
+\label{subsec:gal-rect}
+
+La fuente llama \emph{buena} a una supercuspidal si es un carácter
+de $\operatorname{GL}_1$, o si el cuerpo local es $\Q_p$ y
+es un giro por un carácter de una supercuspidal de profundidad cero.
+Una representación irreducible admisible es buena cuando todos
+los miembros de su soporte supercuspidal lo son.
+«Profundidad cero» se expresa mediante vectores fijos por el primer
+subgrupo principal de congruencia del compacto maximal elegido.
+
+La asignación cuya existencia expresa \texttt{RecTExists}
+conserva la dimensión, coincide
+con reciprocidad local en rango uno, respeta la descripción por
+segmentos y los giros reales no ramificados, y envía las
+supercuspidales a parámetros irreducibles. También prescribe
+el valor absoluto del determinante. En la clase buena se añaden
+las leyes de giro por caracteres arbitrarios, dualidad,
+determinante exacto e inyectividad frente a un parámetro bueno,
+junto con las comparaciones de tipos de profundidad cero.
+Estas últimas leyes no se afirman sin esa restricción.
+
+La distinción permite completar una asignación sobre todas las
+clases locales sin presentar esa completación como una nueva
+demostración de toda la correspondencia local de Langlands.
+Las leyes que utiliza la aplicación deben verificarse en la
+clase a la que pertenece su componente local.
+El enunciado de A93 es la Proposición~10.6, p.~85;
+el código separa \texttt{IsRecTOfIsRec} de
+\texttt{LocalCentralUnits/RecTExists}.
+
+\begin{lema}[Órbitas de inercia y multiplicidad]
+\label{lem:gal-orbitas}
+Supongamos que la inercia salvaje actúa trivialmente.
+La condición \eqref{eq:gal-mansa} equivale a que toda órbita
+de eigenvalores bajo $z\mapsto z^{q_v}$ de longitud mayor que uno
+aparezca con multiplicidad uno.
+Las órbitas fijas pueden tener multiplicidades mayores.
+\end{lema}
+
+\begin{proof}
+La imagen finita de inercia es semisimple en característica cero.
+La relación entre Frobenius aritmético e inercia permuta los
+eigenvalores por $z\mapsto z^{q_v}$ y conserva sus multiplicidades.
+El uso de Frobenius geométrico invierte esta permutación y deja
+las mismas órbitas. Un eigenvalor es fijo precisamente cuando
+$z^{q_v-1}=1$. Si una órbita no fija tuviese multiplicidad al menos
+dos, violaría \eqref{eq:gal-mansa}. Recíprocamente, si las órbitas
+no fijas son simples, todo eigenvalor repetido es fijo.
+\end{proof}
+
+Por ejemplo, una órbita regular de caracteres de un cuerpo finito
+da eigenvalores distintos en el parámetro inducido de profundidad
+cero. La suma de varios caracteres de inercia triviales también
+satisface \eqref{eq:gal-mansa}, aunque tiene raíces repetidas.
+La condición no equivale a que el polinomio sea libre de cuadrados.
+
+\subsection{La entrada geométrica y el levantamiento theta}
+
+La construcción geométrica de A93, pp.~78--79, parte de datos
+unitarios compactos y sistemas propios de Hecke en secciones
+coherentes. Los invariantes de Hasse permiten mover pesos para
+obtener representaciones a partir de cohomología geométrica.
+Las hipótesis incluyen rango impar, condiciones sobre el cuerpo
+y los modelos integrales, lugares no descompuestos y niveles
+prescritos, una pareja auxiliar sobre $\ell$ y separación de pesos.
+
+El resultado de esta etapa es una representación auxiliar con
+ciertas ocurrencias de pesos y relaciones de anulación.
+Para cada lugar adicional se obtiene una representación que
+satisface la comparación requerida allí; la representación
+auxiliar puede depender de ese lugar. Esta es la forma de
+\texttt{HodgeTrAt}, ensamblada por \texttt{GeoOneOfParts}.
+No proporciona todavía todas las multiplicidades ni el rango final.
+
+El levantamiento theta permite reconocer las líneas adicionales.
+Para un espacio hermitiano definido $X$ de dimensión $n$ y un espacio
+antihermitiano definido $W$ de dimensión $d$ suficientemente grande,
+la fuente fija retículos, matriz de Gram escalar y caracteres
+de desdoblamiento con restricciones prescritas a $\mathbb A_F^\times$
+y exponentes $m_X(v),m_W(v)$. Sea $U$ una representación automorfa
+de $U(X)$ con peso dominante $\lambda$.
+Aquí $d$ designa una dimensión, no el primo auxiliar de la
+Nota~\ref{sec:auxiliares}. Si
+\[
+ d+m_W(v)\le2\lambda_k(v)
+       \quad\text{para todos }v\mid\infty\text{ y }1\le k\le n,
+\]
+el peso del levantamiento viene dado por
+\begin{equation}
+ 2\lambda'_k(v)=
+ \begin{cases}
+  2\lambda_k(v)-d-m_W(v)+n+m_X(v),&1\le k\le n,\\
+  n+m_X(v),&n<k\le d.
+ \end{cases}
+ \label{eq:gal-theta-pesos}
+\end{equation}
+Los umbrales se toman después de fijar los datos pertinentes
+y la conclusión se aplica a los $d$ admisibles suficientemente
+grandes. No se deduce una fórmula universal $d_0=2n$.
+Además de \eqref{eq:gal-theta-pesos}, se necesita el teorema de
+no anulación con todos sus datos locales.
+
+Un mecanismo elemental ayuda a leer esa no anulación.
+En una representación unitaria de un grupo unimodular, para una
+función de prueba $f$ que permita formar los operadores integrados,
+$f^*(g)=\overline{f(g^{-1})}$ y
+\[
+ \langle\pi(f*f^*)v,v\rangle
+       =\|\pi(f)^*v\|^2\ge0.
+\]
+La desigualdad es estricta cuando $\pi(f)^*v\ne0$.
+Esta identidad no construye por sí sola el vector que debe sobrevivir.
+
+\begin{lema}[Contribución compacta y cola]
+\label{lem:gal-positividad}
+Sea $kc$ integrable en un grupo medido y $K$ un subconjunto medible.
+Si
+\begin{equation}
+ \int_K kc=A>0,\qquad
+ \int_{G\setminus K}|kc|<A,
+ \label{eq:gal-cola}
+\end{equation}
+entonces $\Ree\int_G kc>0$.
+\end{lema}
+
+\begin{proof}
+La parte real de la integral en el complemento es al menos
+$-\int_{G\setminus K}|kc|$. Al sumarle $A$ se obtiene un número
+estrictamente positivo.
+\end{proof}
+
+Si $K$ es un subgrupo compacto, $c$ es el coeficiente matricial de un vector
+unitario de una representación unitaria irreducible $\tau$ de $K$
+y $k=\overline c$ en $K$, la ortogonalidad de Schur da
+$A=\operatorname{vol}(K)/\dim\tau$.
+Construir conjuntamente los núcleos, la identidad de producto interno,
+la integrabilidad y la cota estricta de la cola es la entrada theta.
+La desigualdad elemental no sustituye ese trabajo.
+
+\subsection{De una resta virtual a un sumando real}
+
+Sea $k$ un cuerpo algebraicamente cerrado de característica cero.
+Cuando se hable de continuidad, $G$ será un grupo topológico,
+$k$ un cuerpo topológico Hausdorff y $\{\pm1\}$ tendrá
+la topología discreta. La aplicación aritmética usa
+$k=\overline\Q_\ell$ con su topología $\ell$-ádica.
+Para representaciones finitas semisimples, la clase $[R]$ registra
+la multiplicidad de cada irreducible. En el grupo de Grothendieck
+se permiten multiplicidades negativas; una resta de clases no
+tiene por qué representar un espacio vectorial con acción.
+
+\begin{proposicion}[Positividad de una diferencia común]
+\label{prop:gal-diferencia}
+Sean $R_1,R_2,A_1,A_2$ representaciones semisimples de un grupo.
+Supongamos que $A_1$ y $A_2$ no comparten ningún constituyente
+irreducible y que
+\begin{equation}
+ [R_1]-[A_1]=[R_2]-[A_2].
+ \label{eq:gal-diferencia}
+\end{equation}
+Entonces existe una representación semisimple $V$, única hasta
+isomorfía, tal que
+\begin{equation}
+ R_1\simeq V\oplus A_1,\qquad
+ R_2\simeq V\oplus A_2.
+ \label{eq:gal-sumandos}
+\end{equation}
+Si los datos son continuos, $V$ puede elegirse continua.
+\end{proposicion}
+
+\begin{proof}
+Sea $m(S)$ la multiplicidad de un irreducible $S$ en la diferencia
+común. Si $S$ no aparece en $A_1$, entonces $m(S)$ es su
+multiplicidad en $R_1$ y es no negativa. Si aparece en $A_1$,
+no aparece en $A_2$; usando la segunda expresión,
+$m(S)$ es su multiplicidad en $R_2$, también no negativa.
+Solo hay finitos $S$ con $m(S)\ne0$. La suma de $m(S)$ copias
+de cada uno define $V$ y prueba las dos isomorfías.
+Las multiplicidades determinan su clase de isomorfía.
+Cada constituyente se realiza dentro de uno de los $R_i$;
+las acciones restringidas y su suma finita son continuas.
+\end{proof}
+
+La separación necesaria es entre $A_1$ y $A_2$ como
+representaciones, no entre sus nombres ni entre eigenvalores
+evaluados en un único elemento. En la aplicación, son listas de
+caracteres de Hecke cuya separación se conserva bajo realización
+de Galois; esta última afirmación requiere el teorema de unicidad
+de caracteres que usa \texttt{PCharInj}.
+
+Las ecuaciones \eqref{eq:gal-sumandos} permiten retirar líneas
+una a una mediante complementos invariantes.
+El código \texttt{PPeelAll} desarrolla esa extracción.
+Una desigualdad entre dimensiones totales no habría excluido
+una multiplicidad negativa de un constituyente particular.
+
+\subsection{De Frobenius a la igualdad de representaciones}
+\label{subsec:gal-trazas}
+
+Para una representación $R$ ponemos
+$P_R(g,T)=\det(T-R(g))$. Las comparaciones theta dan, en los
+elementos de Frobenius pertinentes, una identidad de la forma
+\begin{equation}
+ P_{R_1}(g,T)P_{A_2}(g,T)
+     =P_{R_2}(g,T)P_{A_1}(g,T).
+ \label{eq:gal-productos}
+\end{equation}
+Todos los factores son polinomios mónicos no nulos.
+Chebotarev y la continuidad de cada coeficiente extienden esa
+identidad a todo el grupo de Galois, una vez fijadas las
+normalizaciones y las restricciones al mismo cuerpo.
+Este uso del teorema de densidad es una entrada clásica;
+\texttt{PDenseId} efectúa el enlace en la construcción.
+
+\begin{lema}[Las trazas determinan una representación semisimple]
+\label{lem:gal-trazas}
+Dos representaciones finitas semisimples sobre $k$, con la misma
+traza en todo elemento del grupo, son isomorfas.
+\end{lema}
+
+\begin{proof}
+Sean $U,W$ las representaciones y $B$ el espacio generado por
+la imagen diagonal del grupo en $\operatorname{End}(U\oplus W)$.
+Es un álgebra finita dimensional: contiene la identidad y
+el producto de dos matrices de la imagen vuelve a estar en ella.
+Sus submódulos son exactamente los subespacios invariantes por
+el grupo. Por tanto $U\oplus W$ es un $B$-módulo fiel semisimple.
+
+El radical de $B$ aniquila cada módulo simple y, por fidelidad,
+es cero. El teorema de estructura de álgebras semisimples escribe
+$B$ como un producto de álgebras de matrices sobre $k$.
+Si $S_j$ es el módulo simple de un factor y $e_j$ su idempotente
+central, las trazas de $e_j$ en $U$ y $W$ son
+$m_j\dim S_j$ y $n_j\dim S_j$. La igualdad de trazas en los
+elementos del grupo se extiende por linealidad a $B$, así que
+esos números coinciden. En característica cero podemos dividir
+por $\dim S_j$ y obtenemos $m_j=n_j$ para todo $j$.
+Esto da $U\simeq W$.
+\end{proof}
+
+El coeficiente de grado inmediatamente inferior al máximo en
+\eqref{eq:gal-productos} da igualdad de trazas de
+$R_1\oplus A_2$ y $R_2\oplus A_1$.
+El lema produce la isomorfía; la
+Proposición~\ref{prop:gal-diferencia} produce el sumando $V$.
+Después se obtiene
+\begin{equation}
+ \dim V=\dim R_i-\dim A_i,\qquad
+ P_{R_i}(g,T)=P_V(g,T)P_{A_i}(g,T).
+ \label{eq:gal-cancelacion}
+\end{equation}
+La cancelación se hace en $k[T]$. No se divide por
+$P_{A_i}(g,\alpha)$ en un eigenvalor $\alpha$,
+que podría ser cero. Por ello se permiten eigenvalores
+compartidos entre $V$ y $A_i$.
+
+\subsection{Transporte local, pesos y giro final}
+
+Una descomposición global $R=V\oplus A$ sigue siendo una
+descomposición al restringir a un grupo de descomposición local.
+No es necesario que esa restricción sea semisimple:
+el proyector global sobre $V$ sigue siendo invariante localmente.
+La no ramificación y las relaciones polinómicas de anulación
+pasan directamente a $V$.
+
+\begin{lema}[Defectos de dimensión y sumandos]
+\label{lem:gal-periodos}
+Sea $D$ un funtor aditivo de periodos para el que
+$\dim D(U)\le\dim U$, sobre los cuerpos de comparación apropiados.
+Si $R=V\oplus A$ y $\dim D(R)=\dim R$, entonces
+$\dim D(V)=\dim V$ y $\dim D(A)=\dim A$.
+\end{lema}
+
+\begin{proof}
+Por aditividad,
+\[
+ 0=\dim R-\dim D(R)
+   =(\dim V-\dim D(V))+(\dim A-\dim D(A)).
+\]
+Los dos términos son no negativos, luego ambos son cero.
+\end{proof}
+
+Las propiedades de comparación y la desigualdad de dimensión
+de los funtores son entradas de teoría de Hodge $\ell$-ádica.
+Una vez disponibles, el lema prueba la estabilidad por sumandos
+de la propiedad de de Rham o cristalina.
+Para la semiestabilidad potencial se toma primero una extensión
+finita donde $R$ sea semiestable y se aplica allí el argumento.
+Todas estas operaciones deben ocurrir en una misma realización
+local compatible.
+
+Las filtraciones y los operadores de Frobenius respetan la suma.
+Si los pesos de $R$ son $J\sqcup J_A$ y los de $A$ son exactamente
+$J_A$, entonces los de $V$ son $J$, con multiplicidades.
+De modo semejante se cancelan factores mónicos en los polinomios
+de inercia y de Frobenius. Si $N_R=0$, también $N_V=0$.
+La compatibilidad del funtor de Weil--Deligne con esas comparaciones
+es otra entrada; la cancelación posterior es álgebra lineal.
+Estos pasos se separan en \texttt{PClSub}.
+
+Queda un giro final. Para no confundirlo con el carácter cuadrático
+CM $\kappa$ de las Notas~\ref{sec:periodos} y~\ref{sec:parametros},
+lo escribimos $\kappa_{\mathrm{tw}}$.
+Antes del giro, los eigenvalores deseados están multiplicados por
+$\kappa_{\mathrm{tw}}^{-1}$ y los pesos desplazados en $m$.
+El carácter de Galois asociado tiene peso $-m$. Por tanto
+\begin{equation}
+ (\alpha\,\kappa_{\mathrm{tw}}^{-1})
+       \kappa_{\mathrm{tw}}=\alpha,\qquad
+ (h+m)+(-m)=h.
+ \label{eq:gal-giro}
+\end{equation}
+El mismo tensor corrige Frobenius y Hodge;
+\texttt{PAtPlace} conserva ambas normalizaciones.
+
+Finalmente, fijemos una extracción $V$. Para cada nuevo lugar $v$,
+la entrada geométrica puede construir otra extracción $V_v$
+con la propiedad deseada allí. Si ambas tienen los mismos
+polinomios no ramificados fuera de un conjunto finito,
+Chebotarev y el Lema~\ref{lem:gal-trazas} dan $V_v\simeq V$.
+La propiedad local se transporta por esa isomorfía.
+Así se obtiene una representación global fija, aunque los
+objetos geométricos auxiliares varíen con $v$.
+
+\subsection{Restricción y prolongación en índice dos}
+
+\begin{lema}[Restricción a un subgrupo normal de índice finito]
+\label{lem:gal-restriccion}
+La restricción de una representación finita semisimple a un
+subgrupo normal de índice finito es semisimple.
+\end{lema}
+
+\begin{proof}
+Basta tratar una representación irreducible $W$ de $G$.
+Si $H\triangleleft G$, un subespacio $H$-invariante no nulo de
+dimensión mínima es un $H$-módulo simple $U$.
+Por normalidad, cada trasladado $gU$ vuelve a ser simple para $H$.
+La suma de esos trasladados, tomando representantes de $G/H$,
+es no nula e invariante por $G$, luego es todo $W$.
+Una suma finita de submódulos simples es semisimple:
+al añadir uno, su intersección con la suma anterior es cero
+o es todo él. Esto prueba la afirmación.
+\end{proof}
+
+\begin{lema}[Prolongaciones en índice dos]
+\label{lem:gal-prolongacion}
+Sea $H$ un subgrupo abierto normal de índice dos de $G$ y sea
+$r$ una representación continua semisimple de $H$ sobre $k$.
+Si $r$ es isomorfa a todos sus conjugados por $G$, admite una
+prolongación continua semisimple a $G$.
+Solo hay finitas clases de isomorfía de esas prolongaciones.
+\end{lema}
+
+\begin{proof}
+Tomemos $t\in G\setminus H$. La conjugación por $t$ permuta los
+constituyentes irreducibles de $r$ en órbitas de tamaño uno o dos;
+sus multiplicidades son constantes en cada órbita.
+
+Si $s$ es un constituyente fijo, existe un entrelazador invertible
+$A$ con
+\[
+ A\,s(h)\,A^{-1}=s(tht^{-1})\qquad(h\in H).
+\]
+Por el lema de Schur, $s(t^2)^{-1}A^2=c\,1$ para un escalar
+$c\ne0$. Como $k$ es algebraicamente cerrado, sustituimos $A$
+por $c^{-1/2}A$. Ahora
+\begin{equation}
+ A^2=s(t^2).
+ \label{eq:gal-prolongacion}
+\end{equation}
+Las relaciones de conjugación y \eqref{eq:gal-prolongacion}
+permiten definir $s(t)=A$ y prolongar $s$ a $G$.
+Las dos prolongaciones irreducibles se obtienen con $A$ y $-A$:
+difieren por el carácter no trivial de $G/H$.
+
+Si $s$ aparece con multiplicidad $m$, toda prolongación de ese
+bloque isótipo tiene la forma anterior tensorizada con un operador
+$J$ del espacio de multiplicidades, y $J^2=1$.
+En característica cero $J$ es diagonalizable con eigenvalores
+$1,-1$. Su clase queda determinada por
+\begin{equation}
+ m_++m_-=m,\qquad m_+,m_-\ge0.
+ \label{eq:gal-elecciones}
+\end{equation}
+Hay exactamente $m+1$ posibilidades para ese bloque.
+
+Si la órbita es $\{s,s^t\}$ con $s\not\simeq s^t$,
+la representación $\operatorname{Ind}_H^G s$ es irreducible
+y se restringe a $s\oplus s^t$.
+La acción del coset no trivial intercambia los dos componentes;
+cambios de base eliminan las elecciones restantes.
+El bloque de multiplicidad $m$ se prolonga como $m$ copias
+de esa representación inducida.
+
+Tomamos la suma sobre las órbitas.
+La descripción de los bloques agota las prolongaciones
+semisimples y da finitas clases.
+La acción es continua en $H$ y en su otro coset, donde es
+el producto de una matriz fija y una función continua.
+Como ambos cosets son abiertos, es continua en $G$.
+\end{proof}
+
+La prueba no supone que $G$ ni su imagen sean finitos.
+La ambigüedad de signo es real: el carácter trivial y el carácter
+no trivial de $G/H$ tienen la misma restricción a $H$.
+Una sola restricción cuadrática no distingue todas las
+prolongaciones.
+
+\subsection{Por qué casi todos los núcleos conservan la imagen}
+
+En este apartado la clausura es la \emph{clausura de Zariski}
+de una imagen matricial: el conjunto de ceros de todas las
+ecuaciones polinómicas que satisface esa imagen.
+No es la clausura en la topología profinita de $G$.
+
+\begin{lema}[Excepciones cuadráticas finitas]
+\label{lem:gal-zariski}
+Sea $R:G\to\operatorname{GL}(U)$ una representación finita
+sobre $k$. Salvo finitos caracteres cuadráticos
+$\eta:G\to\{\pm1\}$, se tiene
+\begin{equation}
+ \overline{R(\ker\eta)}^{\,\mathrm{Zar}}
+       =\overline{R(G)}^{\,\mathrm{Zar}}.
+ \label{eq:gal-zariski}
+\end{equation}
+Por tanto, para una familia infinita de caracteres distintos,
+la restricción a casi todos sus núcleos conserva los subespacios
+invariantes y los entrelazadores de cualquier lista finita
+de representaciones fijada de antemano.
+\end{lema}
+
+\begin{proof}
+Sea $\mathcal G=\overline{R(G)}^{\,\mathrm{Zar}}$,
+$\mathcal G^\circ$ su componente de la identidad y
+$M=R^{-1}(\mathcal G^\circ)$.
+El grupo algebraico $\mathcal G$ tiene finitas componentes;
+por eso $M$ es normal de índice finito en $G$.
+No se necesita afirmar que $M$ sea abierto en la topología original.
+
+Si $\eta$ no es trivial en $M$ y $H=\ker\eta$,
+entonces $G=HM$.
+La clausura $\mathcal H=\overline{R(H)}^{\,\mathrm{Zar}}$
+tiene índice a lo sumo dos en $\mathcal G$ y contiene
+$\mathcal G^\circ$. Además, $G=HM$ implica que
+$\mathcal H$ alcanza todas las componentes de $\mathcal G$.
+Así $\mathcal H=\mathcal G$.
+Los caracteres que podrían fallar son triviales en $M$,
+luego factorizan por el grupo finito $G/M$;
+solo hay finitos.
+
+Para una lista $R_1,\ldots,R_s$, aplicamos el argumento
+a $R_1\oplus\cdots\oplus R_s$.
+La invariancia de un subespacio y las ecuaciones
+$T R_j(g)=R_k(g)T$ son condiciones polinómicas en las matrices.
+Si valen en la imagen del núcleo, valen en su clausura y,
+por \eqref{eq:gal-zariski}, en toda la imagen de $G$.
+\end{proof}
+
+El mismo argumento se aplica dentro de un subgrupo $H_0$
+de índice dos. Además, la aplicación de restricción
+\begin{equation}
+ \eta\longmapsto\eta|_{H_0}
+ \label{eq:gal-fibras}
+\end{equation}
+tiene fibras de tamaño a lo sumo dos: el cociente de dos
+caracteres con la misma restricción factoriza por $G/H_0$.
+Por tanto una familia infinita de caracteres distintos
+sigue dando infinitos caracteres distintos tras restringir,
+y excluir finitos caracteres restringidos excluye solo
+finitos de la familia inicial.
+
+\subsection{El pegado cuadrático, con sus elecciones finitas}
+\label{subsec:gal-pegado}
+
+\begin{teorema}[Pegado cuadrático de A93]
+\label{teo:gal-pegado}
+Sea $\{\eta_i\}$ una familia infinita de caracteres cuadráticos
+continuos distintos de $G$, y $H_i=\ker\eta_i$.
+Para cada $i$, sea $r_i:H_i\to\operatorname{GL}_a(k)$
+continua semisimple. Supongamos:
+\begin{enumerate}
+ \item la traza de $r_i$ es invariante por conjugación por $G$;
+ \item para todo par $i,j$, las trazas de $r_i$ y $r_j$
+       coinciden en $H_i\cap H_j$.
+\end{enumerate}
+Existe una representación continua semisimple
+$\rho:G\to\operatorname{GL}_a(k)$ tal que
+\begin{equation}
+ \rho|_{H_i}\simeq r_i
+       \quad\text{para todos salvo finitos }i.
+ \label{eq:gal-eventual}
+\end{equation}
+\end{teorema}
+
+\begin{proof}
+Retiramos el posible carácter trivial y fijamos un índice $0$.
+La invariancia de trazas, la semisimplicidad y el
+Lema~\ref{lem:gal-trazas} dan invariancia por conjugación
+hasta isomorfía.
+El Lema~\ref{lem:gal-prolongacion} proporciona una lista finita
+$R_1,\ldots,R_s$ de todas las prolongaciones semisimples de $r_0$.
+
+Pongamos $L_i=H_0\cap H_i$.
+Aplicando el Lema~\ref{lem:gal-zariski} a $r_0$ en $H_0$
+y usando \eqref{eq:gal-fibras}, vemos que, salvo finitos $i$,
+la restricción a $L_i$ conserva la irreducibilidad y la distinción
+de los constituyentes de $r_0$.
+Por el Lema~\ref{lem:gal-restriccion}, las restricciones
+$r_i|_{L_i}$ y $r_0|_{L_i}$ son semisimples.
+Sus trazas coinciden, luego
+\begin{equation}
+ r_i|_{L_i}\simeq r_0|_{L_i}.
+ \label{eq:gal-interseccion}
+\end{equation}
+
+Expliquemos por qué esto hace de $r_i$ la restricción de algún
+$R_j$, que es el punto finito de la prueba.
+Para $i\ne0$, el mapa $H_i/L_i\to G/H_0$ es un isomorfismo.
+Podemos elegir el representante del coset no trivial de $G/H_0$
+dentro de $H_i$.
+Su acción sobre los constituyentes restringidos de $r_0$
+tiene las mismas órbitas de tamaño uno o dos que antes:
+la restricción ha conservado irreducibilidad y distinción.
+En cada órbita fija, las dos prolongaciones a $H_i$
+difieren por $\eta_0|_{H_i}$; son las restricciones de las
+dos prolongaciones a $G$.
+Si la multiplicidad es $m$, las opciones
+$m_++m_-=m$ también coinciden.
+En una órbita de tamaño dos, la única prolongación inducida
+con esa multiplicidad se obtiene igualmente por restricción.
+En efecto, $G=H_iH_0$ da
+\[
+ (\operatorname{Ind}_{H_0}^G s)|_{H_i}
+   \simeq\operatorname{Ind}_{L_i}^{H_i}(s|_{L_i}).
+\]
+El mapa entre los modelos tensoriales envía $h\otimes v$ a
+$h\otimes v$; es sobreyectivo por $G=H_iH_0$ y ambos espacios
+tienen dimensión $2\dim s$, luego es un isomorfismo.
+Así todas las elecciones que describen $r_i$ en
+\eqref{eq:gal-interseccion} aparecen en la lista $R_1,\ldots,R_s$.
+
+Apliquemos ahora el Lema~\ref{lem:gal-zariski} a
+$R=R_1\oplus\cdots\oplus R_s$.
+Elegimos $i_1$ fuera de las excepciones anteriores y de las
+excepciones de este lema. La imagen $R(H_{i_1})$ tiene entonces
+la misma clausura que $R(G)$.
+Tomamos $\rho$ en la lista de modo que
+$\rho|_{H_{i_1}}\simeq r_{i_1}$.
+
+Aplicando de nuevo el lema dentro de $H_{i_1}$,
+para todos salvo finitos $i$ la imagen
+$R(H_i\cap H_{i_1})$ tiene esa misma clausura.
+Ya sabemos que $r_i\simeq R_j|_{H_i}$ para algún $j$.
+La compatibilidad de trazas y la semisimplicidad dan una
+isomorfía entre $R_j$ y $\rho$ en $H_i\cap H_{i_1}$.
+Las ecuaciones de entrelazamiento se extienden por densidad
+de Zariski a $R(G)$, luego $R_j\simeq\rho$ en $G$.
+Esto prueba \eqref{eq:gal-eventual}.
+La continuidad y la semisimplicidad de $\rho$ provienen
+de la lista de prolongaciones.
+\end{proof}
+
+Esta reconstrucción sigue la prueba expositiva de A93,
+Proposición~10.5, pp.~82--83; A presenta el núcleo en
+Proposición~9.4, p.~45.
+La declaración \texttt{IndexTwoPatch.main} del código llega
+a igualdad eventual de trazas mediante finitud de caracteres
+cuadráticos en una representación adjunta y control de
+entrelazadores torcidos.
+\texttt{ResInjective} convierte esas trazas en isomorfías
+mediante semisimplicidad.
+Las dos rutas resuelven el mismo descenso, con pruebas distintas.
+
+\subsection{Una ampliación: recuperación de toda la familia}
+\label{subsec:gal-todos}
+
+La conclusión eventual basta para la aplicación de A93.
+Bajo sus hipótesis abstractas literales, se puede reforzar.
+Conservamos aquí la cuantificación sobre \emph{todo par}
+de índices; debilitarla cambiaría el argumento.
+
+\begin{proposicion}[Ampliación del pegado]
+\label{prop:gal-todos}
+Bajo las hipótesis del Teorema~\ref{teo:gal-pegado},
+la representación $\rho$ obtenida satisface
+\begin{equation}
+ \rho|_{H_i}\simeq r_i
+                \quad\text{para todo }i.
+ \label{eq:gal-todos}
+\end{equation}
+Además es única hasta isomorfía entre las representaciones
+semisimples con las restricciones eventuales prescritas.
+\end{proposicion}
+
+\begin{proof}
+Fijemos un índice $i$. Consideremos en $H_i$ la representación
+$U=(\rho|_{H_i})\oplus r_i$.
+Si $H_i$ tiene índice dos, las restricciones $\eta_j|_{H_i}$
+tienen fibras de tamaño a lo sumo dos; si $H_i=G$, son ya
+distintas. En ambos casos siguen siendo infinitas.
+El Lema~\ref{lem:gal-zariski} permite elegir $j$ fuera del
+conjunto excepcional de \eqref{eq:gal-eventual}, de modo que
+\[
+ \overline{U(H_i\cap H_j)}^{\,\mathrm{Zar}}
+       =\overline{U(H_i)}^{\,\mathrm{Zar}}.
+\]
+En la intersección, la traza de $\rho$ coincide con la de $r_j$,
+y esta coincide con la de $r_i$ por compatibilidad.
+La diferencia de esas trazas es una función polinómica de las
+matrices de $U$, luego se anula en todo $H_i$.
+El Lema~\ref{lem:gal-restriccion} da semisimplicidad de
+$\rho|_{H_i}$; el Lema~\ref{lem:gal-trazas} da
+\eqref{eq:gal-todos} para ese $i$.
+
+Para la unicidad, sean $\rho,\rho'$ dos soluciones eventuales.
+Aplicamos el Lema~\ref{lem:gal-zariski} a $\rho\oplus\rho'$.
+Elegimos $i$ fuera de sus excepciones y de las de ambas
+soluciones. La isomorfía entre sus restricciones a $H_i$
+es un entrelazador invertible cuyas ecuaciones valen en una
+imagen densa de Zariski; valen, por tanto, en toda la imagen
+de $G$. Así $\rho\simeq\rho'$.
+\end{proof}
+
+Esta mejora es una consecuencia matemática añadida al cuaderno.
+No se atribuye como enunciado a \texttt{IndexTwoPatch.main}
+ni se presenta como un nuevo archivo verificado por Lean.
+Tampoco corrige un error del enunciado más débil de la fuente:
+explica una consecuencia adicional de sus hipótesis completas.
+
+\subsection{Recuperar propiedades en un lugar que se descompone}
+
+Para aplicar el pegado a $G_E$ se usan extensiones cuadráticas
+$E_i/E$ y $H_i=G_{E_i}$. La invariancia y la compatibilidad
+en $H_i\cap H_j=G_{E_iE_j}$ provienen de cambio de base
+automorfo y de los polinomios de Frobenius.
+Chebotarev los extiende a todo el grupo de la intersección.
+La mera existencia de muchas representaciones del mismo rango
+no proporciona esas igualdades.
+
+\begin{proposicion}[Transporte por descomposición local]
+\label{prop:gal-split}
+Supongamos que $\rho|_{G_{E_i}}\simeq r_i$ y que un lugar $v$
+de $E$ se descompone completamente en $E_i$.
+Para un lugar $u$ sobre $v$, toda propiedad de $r_i$ en $u$
+invariante por isomorfía de representaciones locales se
+transfiere a $\rho$ en $v$, con los datos de comparación
+compatibles.
+\end{proposicion}
+
+\begin{proof}
+La descomposición da $E_{i,u}\simeq E_v$.
+Con elecciones compatibles de clausuras algebraicas y lugares,
+el grupo de descomposición original $D_v$ está contenido
+en $G_{E_i}$ y es el mismo grupo local que se utiliza en $u$.
+La isomorfía global restringida identifica las dos
+representaciones de ese grupo.
+Transportamos por ella los operadores, las filtraciones y los
+puentes de comparación que intervengan en la propiedad.
+No se ha cambiado el cuerpo local.
+\end{proof}
+
+En la ruta eventual de A93, para cada $v$ se construyen
+infinitas extensiones permitidas donde $v$ se descompone.
+Ello permite elegir una fuera del conjunto finito excepcional.
+Los cuantificadores tienen el orden
+\begin{equation}
+ \exists\rho\ \exists I_{\mathrm{exc}}\text{ finito}\
+ \forall v\ \exists i_v\notin I_{\mathrm{exc}}
+ \quad
+ \left[
+  \begin{array}{l}
+   v\text{ se descompone en }E_{i_v},\\
+   \rho|_{G_{E_{i_v}}}\simeq r_{i_v}.
+  \end{array}
+ \right]
+ \label{eq:gal-split-orden}
+\end{equation}
+El índice $i_v$ puede depender de $v$; $\rho$ ya está fijada.
+La infinitud por lugar es suficiente para esta ruta de la fuente.
+La Proposición~\ref{prop:gal-todos} refuerza el pegado abstracto,
+pero no construye por sí misma extensiones aritméticas con
+descomposición y con todas las demás condiciones exigidas.
+
+La descomposición local tiene una función indispensable en este
+transporte directo. Para una extensión cuadrática local ramificada
+$L/K$, el carácter cuadrático
+$\eta_{L/K}:G_K\to\{\pm1\}$ es ramificado en $K$, pero su
+restricción a $G_L$ es trivial.
+Por tanto la no ramificación tras una extensión local arbitraria
+no demuestra no ramificación sobre $K$.
+En un lugar descompuesto no se introduce esa extensión local.
+
+El pegado por extensiones y el uso de familias suficientemente
+generales tienen precedentes explícitos en
+\cite{sorensen-patching}. Se utiliza aquí como antecedente;
+las hipótesis de A93 se enuncian y comprueban en su propio marco.
+Los dos usos de densidad también se mantienen separados:
+Chebotarev extiende igualdades de Frobenius a grupos de Galois,
+y la clausura de Zariski conserva entrelazadores de una lista
+finita de representaciones.
+Un subgrupo abierto de índice dos no es denso en el grupo
+profinito original.
+
+\subsection{Regreso a los periodos y a la cohomología}
+
+La entrada de Galois debe aplicarse a la representación automorfa
+que surge de los mismos datos de las
+Notas~\ref{sec:periodos}--\ref{sec:parametros}.
+El giro \eqref{eq:gal-giro}, la igualdad de pesos con multiplicidad
+y el alcance exacto de las dos ramas locales evitan sustituir
+esa representación por otra con datos normalizados de forma distinta.
+
+En la Nota~\ref{sec:cohomologia} se usa Frobenius geométrico.
+Para el carácter ciclotómico $\chi_\ell$, fuera de $\ell$,
+\begin{equation}
+ \chi_\ell(\operatorname{Frob}^{\mathrm{geom}}_v)=q_v^{-1},
+ \qquad
+ \chi_\ell^{-e}(\operatorname{Frob}^{\mathrm{geom}}_v)=q_v^e.
+ \label{eq:gal-ciclotomico}
+\end{equation}
+Esto concuerda con peso de Hodge $-1$ para $\chi_\ell$
+y con el convenio de torcidos de la nota anterior.
+El cotejo de este bloque no exige cambiar esas ecuaciones.
+Sí hace explícito por qué la monodromía cero, los pesos y las
+hipótesis sobre el cuerpo local deben acompañar a la comparación.
+
+Hay un límite adicional: una representación semisimple sobre
+$\overline\Q_\ell$ no especifica un retículo integral ni una
+clase de extensión. Por ejemplo, el grupo aditivo $\Z_\ell$
+actúa continuamente mediante
+\begin{equation}
+ \rho(z)=
+ \begin{pmatrix}1&z\\0&1\end{pmatrix}.
+ \label{eq:gal-unipotente}
+\end{equation}
+Su semisimplificación es la representación trivial de dimensión
+dos. Ambas tienen traza $2$ y polinomio $(T-1)^2$ para todo $z$,
+pero no son isomorfas: $\rho(1)\ne1$.
+La información que detecta la extensión se pierde al semisimplificar.
+
+Por eso la entrada \texttt{Row0b} no reemplaza los teoremas
+integrales que enlazan congruencias de Hecke, extensiones y
+condiciones locales de Selmer.
+Las longitudes y los denominadores de la
+Nota~\ref{sec:cohomologia} requieren precisamente esa información.
+Del mismo modo, el pegado no produce las constantes uniformes
+de las ventanas de la Nota~\ref{sec:parametros}
+ni las estimaciones analíticas de la Nota~\ref{sec:auxiliares}.
+Aporta la representación y las comparaciones que esos pasos consumen.
+
+\subsection{Concordancia localizada con Lean}
+\label{subsec:gal-lean}
+
+El cotejo conserva la revisión \texttt{7cbf7a0} de [L].
+Separa las declaraciones que expresan una propiedad de los
+teoremas que la producen, y conserva las dependencias profundas
+como tales. El manifiesto noveno registra rutas completas,
+hashes y rangos exactos de lectura.
+Comprende 36 archivos: 32 lecturas completas y cuatro selectivas,
+con 3299 líneas leídas. Los archivos pueden coincidir con otros
+cotejos anteriores; el recuento describe este tramo.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.27\textwidth}YY@{}}
+\toprule
+Paso & Archivo o declaración & Alcance observado\\
+\midrule
+Polarización y salida &
+\texttt{DualIsConjByOne}; \texttt{WeightsConjBis}; \texttt{RowSrc} &
+Hipótesis de signo, pesos y ramas locales; productor que ensambla la salida.\\
+Realizaciones locales &
+\texttt{exists\_locPrime\_tied}; \texttt{exists\_locBridge} &
+Testigos para datos de periodos y para la valoración que induce el puente.\\
+Geometría y theta &
+\texttt{HodgeTrAt}; \texttt{GeoOneOfParts};
+las dos rutas de \texttt{TLiftK} &
+Objetos auxiliares, dependencias geométricas y elección por lugar.\\
+Extracción &
+\texttt{PDenseId}; \texttt{PCharInj}; \texttt{PPeelAll} &
+Identidad densa, separación real de caracteres y retirada sucesiva de líneas.\\
+Transporte local &
+\texttt{PClSub}; \texttt{PAtPlace} &
+Sumandos, periodos, cancelación polinómica y giro final.\\
+Pegado &
+\texttt{EqOneOrEqOfKer}; \texttt{ResInjective} &
+Trazas eventuales por caracteres en la adjunta; isomorfías tras semisimplicidad.\\
+Descenso por lugar &
+\texttt{CoreAllOfRowStarCoreInp} &
+Selección fuera de finitos y control del grupo de descomposición.\\
+Asignación auxiliar &
+\texttt{IsRecTOfIsRec}; \texttt{RecTExists} &
+Leyes globales débiles y leyes fuertes calificadas por la clase buena.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Los nombres de archivo abreviados no sustituyen sus rutas.
+\href{https://github.com/lachenmann/riemann-notas/blob/main/fuentes/README.md}{El inventario de fuentes}
+las proporciona, junto con enlaces fijados a la revisión de código.
+En \texttt{RowSrc}, el teorema
+\texttt{galoisLocalGlobalStrong\_recParameter}, del espacio de nombres
+\texttt{UpperTheory.Gal.Int}, es un productor que invoca un ensamblaje theta;
+leer su prueba breve no equivale a reconstruir todos sus teoremas
+importados. También se leyeron productores de las interfaces
+geométrica, theta, de extracción y de asignación local.
+
+La diferencia entre la prueba de pegado por Zariski y la prueba
+del código por caracteres de la adjunta se deja registrada.
+La Proposición~\ref{prop:gal-todos} es un desarrollo matemático
+de estas notas. No se ejecutó Lean, no se obtuvo un informe de
+axiomas y no se auditó la clausura de todas las dependencias.
+Los hashes identifican lo leído; por sí solos no validan
+la demostración global.
+
+\subsection{Ejercicios resueltos}
+
+\begin{ejercicio}\label{ej:gal-virtual}
+Sean $S,T$ irreducibles no isomorfos y tómese
+$R_1=R_2=T$, $A_1=A_2=S$.
+Compruebe la igualdad virtual y explique por qué la conclusión
+de la Proposición~\ref{prop:gal-diferencia} puede fallar.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:gal-virtual}.}
+Las dos diferencias son $[T]-[S]$.
+La multiplicidad de $S$ es $-1$, así que no representa una
+representación semisimple genuina.
+Falla precisamente la separación de los constituyentes de
+$A_1$ y $A_2$.
+Incluso si $\dim T\ge\dim S$, la dimensión virtual no negativa
+no elimina esa multiplicidad negativa.
+
+\begin{ejercicio}\label{ej:gal-anulador}
+Para $u\ne v$, calcule las trazas de los operadores diagonales
+con multiconjuntos $\{u,u,v\}$ y $\{u,v,v\}$.
+Explique por qué su aniquilador común y su dimensión no
+determinan las multiplicidades.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:gal-anulador}.}
+Las trazas son $2u+v$ y $u+2v$, con diferencia $u-v\ne0$.
+Ambos operadores tienen dimensión tres y son aniquilados
+por $(T-u)(T-v)$, pero sus polinomios característicos son
+los de \eqref{eq:gal-multiplicidades}.
+El aniquilador solo obliga a que cada eigenvalor pertenezca
+a $\{u,v\}$; no cuenta cuántas veces aparece.
+
+\begin{ejercicio}\label{ej:gal-prolongaciones}
+Suponga que un constituyente irreducible $s$ de $H$ es fijo
+por conjugación y aparece con multiplicidad tres.
+Cuente las prolongaciones de ese bloque en índice dos.
+Haga lo mismo para una órbita $\{t,t^g\}$ no fija que aparece
+con multiplicidad tres.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:gal-prolongaciones}.}
+En el primer caso los pares $(m_+,m_-)$ son
+$(3,0),(2,1),(1,2),(0,3)$: hay cuatro clases.
+No hay ocho clases, pues permutar tres copias indistinguibles
+no produce una nueva representación.
+En el segundo caso solo hay una: tres copias de
+$\operatorname{Ind}_H^G t$.
+Si ambos bloques aparecen a la vez y no hay otros,
+hay cuatro prolongaciones en total.
+
+\begin{ejercicio}\label{ej:gal-densidad}
+En $G=\Z_2^2$, tome
+$\eta(x,y)=(-1)^{x\bmod2}$ y
+$R(x,y)=\begin{pmatrix}1&x\\0&1\end{pmatrix}$ sobre
+$\overline\Q_2$.
+Compare la clausura profinita de $\ker\eta$ con las clausuras
+de Zariski de $R(G)$ y $R(\ker\eta)$.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:gal-densidad}.}
+El núcleo es $2\Z_2\times\Z_2$, cerrado y propio de índice dos;
+su clausura profinita no es $G$.
+Las imágenes tienen parámetros $x\in\Z_2$ y $x\in2\Z_2$,
+respectivamente. Ambos conjuntos son infinitos.
+Un polinomio de una variable sobre un cuerpo que se anula
+en cualquiera de ellos debe ser cero.
+Por ello ambas clausuras de Zariski son el mismo grupo
+unipotente $\{\begin{pmatrix}1&t\\0&1\end{pmatrix}:t\in\overline\Q_2\}$.
+Este ejemplo ilustra las dos topologías; no pretende por sí
+solo proporcionar una familia infinita de caracteres cuadráticos.
+
+\begin{ejercicio}\label{ej:gal-local}
+Sea $L/K$ una extensión cuadrática local ramificada.
+Muestre que $\eta_{L/K}|_{G_L}$ es no ramificada
+aunque $\eta_{L/K}$ no lo sea.
+Explique qué impide este ejemplo en el descenso local.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:gal-local}.}
+El núcleo de $\eta_{L/K}$ es $G_L$, de modo que la restricción
+es trivial. La imagen de la inercia de $K$ en
+$\operatorname{Gal}(L/K)$ es no trivial porque la extensión
+es ramificada; por eso el carácter original es ramificado.
+La trivialidad después de restringir no detecta la inercia
+perdida al pasar a $L$.
+En la Proposición~\ref{prop:gal-split}, en cambio,
+$E_{i,u}=E_v$ y el grupo local no disminuye.
+
+\subsection{Lo demostrado y el siguiente enlace}
+
+Se han demostrado la extracción positiva, la determinación por
+trazas, el argumento de periodos por sumandos, la finitud de
+prolongaciones en índice dos, el pegado por clausuras de Zariski,
+su ampliación a toda la familia y el transporte en lugares
+descompuestos. También se han precisado la multiplicidad mansa,
+la monodromía y el orden de las elecciones locales.
+
+Quedan recibidas como entradas la construcción geométrica
+con sus condiciones integrales, la no anulación theta uniforme,
+el cambio de base automorfo, las leyes de los funtores de periodos
+y la asignación local en el rango requerido.
+La lectura localizada de sus productores no desarrolla todas
+esas pruebas.
+
+El siguiente enlace matemático es el paso de una congruencia de
+Hecke a una extensión integral con las condiciones locales que
+entran en Selmer y en el denominador.
+Conviene comenzar por un modelo de retículos y extensiones
+en dimensión dos, comprobar qué conserva la semisimplificación
+y volver después a las hipótesis precisas de la
+Nota~\ref{sec:cohomologia}, A55, §8, pp.~35--42,
+y A93, §9, pp.~61--77.
+Ese desarrollo permitirá ampliar el eslabón integral sin
+atribuirlo a la sola existencia de $\rho_{\pi,\ell}$.
+
+

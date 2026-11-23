@@ -121,7 +121,7 @@ Ventana común y realización & Props.~11.1--11.2, pp.~49--52 & Prop.~6.3, pp.~6
 \end{tabularx}
 \end{center}
 
-Las diez notas desarrollan esta ruta. Las tres primeras preparan
+Las once notas desarrollan esta ruta. Las tres primeras preparan
 Mellin, los denominadores y el criterio de ventanas.
 La Nota~\ref{sec:caracteres} prueba la identidad de caracteres,
 la cancelación y la selección que explica $1/(3o+1)$.
@@ -139,15 +139,11 @@ de densidad y coordina la elección uniforme de parámetros y ventanas.
 La Nota~\ref{sec:auxiliares} desarrolla el segundo momento, el control
 simultáneo del intervalo y la selección sucesiva de los primos;
 deduce también la cota delgada bajo entradas analíticas uniformes.
-Las Notas~\ref{sec:ventanas}--\ref{sec:auxiliares} incluyen
+La Nota~\ref{sec:galois} desarrolla la extracción de sumandos y
+el pegado cuadrático, con sus condiciones locales explícitas.
+Las Notas~\ref{sec:ventanas}--\ref{sec:galois} incluyen
 cotejos localizados con una revisión fijada de Lean,
 sin compilar ni ejecutar el código.
-
-La continuación estudia la entrada de Galois
-(A, §9, pp.~42--46; A93, §10, pp.~77--85).
-Las estimaciones analíticas, los modelos integrales y las entradas de
-automorfía y cohomología conservan sus hipótesis;
-la realización aritmética completa sigue pendiente.
 
 \clearpage
 \subsection{La versión larga A93: guía de cotejo}
@@ -171,6 +167,7 @@ Cancelación y presupuesto & §10, pp.~46--49 & §4, pp.~17--21 \\
 Primos auxiliares & §3, pp.~7--12 & §5, pp.~21--28 \\
 Torres theta y geometría & §§6--7, pp.~20--34 & §§7--8, pp.~37--61 \\
 Cohomología y denominadores & §8, pp.~35--42 & §9, pp.~61--77 \\
+Entrada de Galois & §9, pp.~42--46 & §10, pp.~77--85 \\
 Ventana común y conclusión & §11, pp.~49--52 & §11, pp.~85--89 \\
 \bottomrule
 \end{tabularx}
@@ -213,7 +210,11 @@ La octava lectura localizada de Lean se delimita en
 §\ref{subsec:aux-lean}; no incluye ejecución del código ni una
 auditoría de todas sus dependencias.
 
-\textbf{Próxima lectura: la entrada de Galois.}
-Seguiremos A, §9, pp.~42--46, y A93, §10, pp.~77--85,
-para precisar las condiciones locales y globales de los datos
-que usan conjuntamente los periodos y las cotas cohomológicas.
+\textbf{La entrada de Galois en la Nota~\ref{sec:galois}.}
+La extracción conserva las multiplicidades y produce sumandos
+genuinos. El pegado cuadrático y el transporte en lugares
+descompuestos recuperan una representación global con condiciones
+locales precisas. La prueba expositiva usa clausuras de Zariski;
+el código controla caracteres de la adjunta. La nota distingue
+ambas rutas y demuestra una ampliación propia del enunciado
+abstracto a todas las restricciones de la familia.
