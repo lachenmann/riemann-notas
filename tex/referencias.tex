@@ -28,8 +28,12 @@ El registro del proyecto conserva el identificador completo, las rutas
 y los hashes de los archivos recuperados. La configuración declara
 Lean~4.33.1 y la revisión de Mathlib identificada en ese registro.
 El cotejo de esta entrega se limita a las interfaces y pasos señalados
-en las Notas~\ref{sec:ventanas} y~\ref{sec:caracteres}. No incluyó compilación ni ejecución de
-Lean, ni una comparación integral con la distribución original.
+en las Notas~\ref{sec:ventanas}, \ref{sec:caracteres} y~\ref{sec:marcos}.
+El tramo de marcos comprende la lectura localizada de 14 archivos sobre
+la desigualdad lineal, las pendientes y su transferencia; no verifica las
+entradas de la construcción automorfa. No incluyó compilación ni ejecución
+de Lean, ni una revisión de todas las dependencias o una comparación
+integral con la distribución original.
 
 \bibitem[D1]{dlmf-zeta}
 NIST. \emph{Digital Library of Mathematical Functions}, versión 1.2.8.
@@ -91,6 +95,21 @@ capítulo 3 (ideales y ramificación); pp.~73--75 (retículos);
 capítulo 8, pp.~139--143 (descomposición y Frobenius).
 \href{https://www.jmilne.org/math/CourseNotes/ANT.pdf}{Texto en la web del autor}.
 
+\bibitem[Gr]{grayson-hn}
+Daniel R. Grayson. \emph{Reduction theory using semistability}.
+\emph{Commentarii Mathematici Helvetici} 59 (1984), pp.~600--634.
+§1, Teorema~1.18, definiciones~1.19--1.20 y Corolario~1.30,
+pp.~609--613: filtración canónica y cocientes semiestables.
+\href{https://www.graysonfamily.org/dan/Papers/ReductionTheoryI.pdf}{PDF en la web del autor}.
+
+\bibitem[Bo]{bost-pendientes}
+Jean-Benoît Bost. \emph{Algebraic leaves of algebraic foliations over
+number fields}. \emph{Publications Mathématiques de l'IHÉS} 93 (2001),
+pp.~161--221. §4.1.1, Lema~4.2, p.~196: aditividad del grado;
+§4.1.4, ecuación~(4.10), Proposición~4.5 y ecuación~(4.12),
+pp.~199--200: alturas de aplicaciones y desigualdades de pendientes.
+\href{https://www.numdam.org/article/PMIHES_2001__93__161_0.pdf}{PDF en Numdam}.
+
 \end{thebibliography}
 
 \subsection*{Estado de la entrega}
@@ -116,8 +135,20 @@ $H_\psi$. Se ha comprobado la correspondencia de estos pasos con A y B;
 para las ventanas y los caracteres se leyeron además las declaraciones y
 pruebas Lean identificadas en las notas y en el registro del proyecto.
 
+La Nota~\ref{sec:marcos} demuestra la desigualdad de codimensión para
+marcos aproximados, el transporte de los cortes de pendiente por mapas
+integrales y la transferencia de la pendiente media mediante integración.
+La existencia de la filtración de Harder--Narasimhan permanece como
+resultado clásico citado. El cotejo localizado de este tramo abarcó
+14 archivos Lean de la revisión fijada, sin compilación ni ejecución;
+se distinguen sus interfaces y pasos leídos de las entradas automorfas
+que la aplicación todavía debe proporcionar.
+
 Permanecen por estudiar la construcción aritmética de los datos de la
-selección, los errores de pesos y argumentos, las estimaciones de marcos
-y pendientes y los resultados automorfos, geométricos y cohomológicos
-que suministran la cota del exceso y el presupuesto final.
+selección, los errores de pesos y argumentos y las estimaciones que
+verifican las hipótesis del marco para la familia de periodos. El siguiente
+paso reúne las torres theta, la divisibilidad finita y las normas
+arquimedianas de esos mismos periodos. Los resultados automorfos,
+geométricos y cohomológicos que suministran la cota del exceso y el
+presupuesto final siguen pendientes de reconstrucción.
 No se ha efectuado en esta entrega una auditoría del repositorio Lean.

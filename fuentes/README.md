@@ -41,6 +41,13 @@ Las consultas de la DLMF y de Kedlaya están fechadas el 22 de noviembre de 2026
 
 La comparación de pendientes conserva la normalización de las fuentes de la propuesta: A, §5, (5.1)–(5.3), pp. 17–18, y B, §4.3, p. 39, utilizan $\mu=2\mu_{\mathrm{Ar}}$. La definición euclídea introductoria emplea la pendiente usual y explicita esa diferencia.
 
+La Nota 5 añade dos referencias clásicas. Sus argumentos propios de marco, cortes e integración se reconstruyen a partir de A/B; la existencia de la filtración de Harder–Narasimhan se utiliza como resultado citado.
+
+| Clave y referencia | Localizadores utilizados |
+| --- | --- |
+| **Gr.** Daniel R. Grayson, *Reduction theory using semistability*. Commentarii Mathematici Helvetici 59 (1984), 600–634. | [PDF en la web del autor](https://www.graysonfamily.org/dan/Papers/ReductionTheoryI.pdf): §1, Teo. 1.18, Defs. 1.19–1.20 y Cor. 1.30, pp. 609–613. Filtración canónica, polígono y semiestabilidad; su convención por volumen tiene signo opuesto a la pendiente por grado. |
+| **Bo.** Jean-Benoît Bost, *Algebraic leaves of algebraic foliations over number fields*. Publications Mathématiques de l’IHÉS 93 (2001), 161–221. | [PDF en Numdam](https://www.numdam.org/article/PMIHES_2001__93__161_0.pdf): §4.1.1, Lema 4.2, p. 196, aditividad del grado; §4.1.4, (4.10), Prop. 4.5 y (4.12), pp. 199–200, alturas y comparación de pendientes. La nota explicita el factor 2 de su normalización. |
+
 ## Código Lean utilizado en la nota de ventanas
 
 El cotejo selectivo utiliza [CocoSgt/riemann-hypothesis-lean en la revisión fijada](https://github.com/CocoSgt/riemann-hypothesis-lean/tree/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4):
@@ -62,3 +69,17 @@ La segunda lectura conserva la misma revisión. Se cotejaron la [identidad `Dedu
 El manifiesto adicional `lean_source_review_characters` de `REGISTRO.json` identifica 23 archivos y distingue definiciones, pruebas finitas, interfaces y puentes aritméticos. Sus hashes Git se recalcularon y coinciden con los blobs informados por el repositorio. Se conserva íntegro el manifiesto anterior de la nota de ventanas; algunos archivos participan en ambas lecturas.
 
 B, proposición 3.1, permite un grupo abeliano finito general. La interfaz `ch_balance` usa el grupo producto y las hipótesis `HostFactsS` que dan la forma concreta de `ASK`. `prim_read` requiere la compatibilidad con las derivadas logarítmicas; la identificación de `Level.Gm` con $H_\psi$ se especializa al nivel cíclico. La nota registra también la dependencia de los pesos y el ancho de banda en la interfaz de extracción. Estas precisiones delimitan el cotejo; no sustituyen las estimaciones geométricas o aritméticas recibidas como hipótesis.
+
+## Código Lean utilizado en la nota de marcos y pendientes
+
+La tercera lectura mantiene la misma revisión y los ejemplares A55/B73. Se cotejaron 14 archivos de `Formalism/HarderNarasimhan` y `Formalism/CorankShare`. El manifiesto `lean_source_review_frames` de `REGISTRO.json` conserva las rutas, los hashes Git informados y recalculados, los SHA-256, las declaraciones y el alcance leído por archivo. Los manifiestos anteriores permanecen íntegros.
+
+| Paso de la Nota 5 | Declaración cotejada |
+| --- | --- |
+| Cota de codimensión con $\eta+4\varepsilon+4\sqrt e$ | [`FrameLA1`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/StatementFrameF.lean) y su prueba [`frame_linear_algebra_first`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/FrameLinearAlgebraFirst.lean). |
+| Transferencia con pérdida logarítmica y factor $1/(1-\delta)$ | [`TheoremFSharp`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/StatementFrameF.lean), la prueba [`frame_theorem_sharp`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/TheoremFSharp.lean) y la interfaz pública [`theoremFSharp`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/ShiftInvariance.lean). |
+| Normalización aritmética y altura | [`StatementPl.lean`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/StatementPl.lean): `ht`, `size`, `muDef`, `muMaxDef`, `muMinDef`, `htMap`; puentes de tamaño y desigualdad de imagen identificados en el manifiesto. |
+
+Los nombres de la tabla pertenecen a `Formalism.HN`. Se distingue `FrameLA1` de `FrameLA`, cuya cota tiene $2\eta$, y `TheoremFSharp` de `TheoremF`, que añade una pérdida de $\log|I|$. La realización euclídea usa rangos sobre $\mathbf Z$, pero los extremos y los cortes siguen recorriendo submódulos sobre $\mathcal O_K$; el factor común $[K:\mathbf Q]$ cancela en las proporciones.
+
+Se leyeron las pruebas seleccionadas de trazas, cortes, comparación de corangos e integración, incluidos los casos de mapas nulos y parámetro $u=0$. La lectura no desplegó toda la construcción de la filtración ni todas las dependencias importadas. No se compiló o ejecutó Lean, no se obtuvo un informe de axiomas y no se comparó íntegramente el espejo con la distribución original. La producción de los datos automorfos que satisfacen las hipótesis sigue pendiente.

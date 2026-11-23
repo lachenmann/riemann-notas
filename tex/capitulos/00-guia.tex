@@ -63,7 +63,9 @@ cotejos entre A y B tampoco constituyen una auditoría de ese código.
     Una familia de mapas debe cubrir suficientes direcciones del espacio
     destino. Las estimaciones de marcos, junto con la filtración de
     Harder--Narasimhan, convierten ese control en una desigualdad para
-    pendientes medias. Referencias: A, §5; B, §4.4.
+    pendientes medias. La Nota~\ref{sec:marcos} demuestra el mecanismo
+    abstracto; la existencia de la filtración se recibe como resultado
+    clásico. Referencias: A, §5; B, §4.4.
   \item \textbf{Controlar los denominadores.}
     La descomposición en autoespacios puede romper la estructura integral.
     Las congruencias de Hecke y las extensiones de representaciones de Galois
@@ -89,7 +91,7 @@ y un primo.
 \small
 \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.34\textwidth}YY@{}}
 \toprule
-\textbf{Paso que queremos reconstruir} & \textbf{A} & \textbf{B} \\
+\textbf{Paso del argumento} & \textbf{A} & \textbf{B} \\
 \midrule
 Transformada y corrección & §2, pp.~3--7 & §2, pp.~14--19 \\
 Criterio unilateral de ventanas & Teo.~2.2 y Lemas~2.3--2.4, pp.~4--6 & Prop.~2.1 y Lema~2.2, pp.~14--18 \\
@@ -101,13 +103,20 @@ Cancelación y raíz cuadrada & Props.~10.1--10.2, pp.~47--49 & (4.5)--(4.10), p
 \end{tabularx}
 \end{center}
 
-Las cuatro notas siguientes desarrollan los cálculos de Mellin, el ejemplo
-integral de una proyección, el criterio unilateral de ventanas y la identidad
-de caracteres. Esta última reconstruye la ortogonalidad, la cancelación del
+Las cinco notas siguientes desarrollan los cálculos de Mellin, el ejemplo
+integral de una proyección, el criterio unilateral de ventanas, la identidad
+de caracteres y la transferencia de pendientes mediante marcos aproximados.
+La Nota~\ref{sec:caracteres} reconstruye la ortogonalidad, la cancelación del
 término principal y la selección finita que explica el coeficiente
-$1/(3o+1)$. Las notas de ventanas y caracteres incluyen un cotejo localizado
-con declaraciones Lean de una revisión fijada.
-El siguiente desarrollo será la desigualdad de marcos y su paso a pendientes
-medias. La cota del exceso geométrico, las estimaciones de los caracteres
-auxiliares y las construcciones cohomológicas permanecen como resultados
-de las fuentes hasta desarrollar sus hipótesis y demostraciones.
+$1/(3o+1)$. La Nota~\ref{sec:marcos} prueba la desigualdad de codimensión
+y su integración por umbrales de pendiente. Las notas de ventanas,
+caracteres y marcos incluyen cotejos localizados con declaraciones Lean
+de una revisión fijada, sin compilar ni ejecutar el código.
+
+El siguiente desarrollo será la construcción de periodos automorfos mediante
+torres theta, su divisibilidad en los lugares finitos y la comparación con
+sus normas arquimedianas. Se trata de obtener, para los mismos mapas y
+retículos, las entradas de la Nota~\ref{sec:marcos}. La cota del exceso
+geométrico, las estimaciones de los caracteres auxiliares y los controles
+cohomológicos de denominadores permanecen como resultados de las fuentes
+hasta desarrollar sus hipótesis y demostraciones.

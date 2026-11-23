@@ -4,9 +4,9 @@
 
 ## Desarrollo matemático alcanzado
 
-El manuscrito contiene una introducción y una guía en la sección 0, seguidas de las cuatro notas de estudio, cuya numeración se conserva. La introducción nueva, `tex/capitulos/00-introduccion.tex`, tiene 12 subsecciones y seis ejercicios con sus soluciones. Prepara el recorrido desde primos, zeta y caracteres de Dirichlet hasta Mellin y polos; presenta también retículos, índices, valoraciones, grado y pendiente, cuerpos de números, inercia y Frobenius.
+El manuscrito contiene una introducción y una guía en la sección 0, seguidas de cinco notas de estudio. La introducción, `tex/capitulos/00-introduccion.tex`, tiene 12 subsecciones y seis ejercicios con sus soluciones. Prepara el recorrido desde primos, zeta y caracteres de Dirichlet hasta Mellin y polos; presenta también retículos, índices, valoraciones, grado y pendiente, cuerpos de números, inercia y Frobenius.
 
-Se incluyen pruebas breves de la infinitud de los primos, el producto de Euler y su no anulación en $\Re s>1$, la continuación de zeta a $\Re s>0$, la reducción de GRH al lado derecho de la franja, la extracción de clases por caracteres y el paso de ceros a polos. La continuación global, las ecuaciones funcionales y los teoremas clásicos sobre distribución de primos se identifican como resultados citados. La entrada a pendientes explicita el factor de normalización de A/B; la desigualdad de marcos y la filtración de Harder–Narasimhan siguen pendientes de desarrollo.
+Se incluyen pruebas breves de la infinitud de los primos, el producto de Euler y su no anulación en $\Re s>1$, la continuación de zeta a $\Re s>0$, la reducción de GRH al lado derecho de la franja, la extracción de clases por caracteres y el paso de ceros a polos. La continuación global, las ecuaciones funcionales y los teoremas clásicos sobre distribución de primos se identifican como resultados citados. La entrada a pendientes explicita el factor de normalización de A/B, desarrollado ahora en la Nota 5.
 
 Las Notas 1–4 desarrollan la transformada de Mellin y sus correcciones, el ejemplo de proyección racional y el lema local de denominadores, el criterio unilateral de ventanas y el núcleo finito de la identidad de caracteres.
 
@@ -16,27 +16,33 @@ La selección finita conserva $4o$ caracteres: los $o$ de la familia retenida y 
 
 La interpretación de los coeficientes como caracteres primitivos utiliza la entrada aritmética clásica indicada. La construcción del cuerpo y los conjuntos de selección, las estimaciones de pesos y argumentos, los caracteres auxiliares y la cota del exceso geométrico siguen por desarrollar. Haber probado la identidad y el criterio analítico no produce las ventanas aritméticas.
 
+La **Nota 5, Marcos aproximados y pendientes medias**, tiene 13 subsecciones, cinco enunciados demostrados, 29 ecuaciones numeradas y tres ejercicios con soluciones. Prueba la cota de codimensión $(\eta+4\varepsilon+4\sqrt e)D$, la comparación de pendientes por mapas integrales, el traslado de cortes y la transferencia de la media. Explica las métricas auxiliares, las alturas globales, la saturación y el coste de índice con la normalización duplicada. La existencia y las propiedades clásicas de la filtración de Harder–Narasimhan se reciben como resultados citados.
+
+La pérdida obtenida es $[4u\log(1+H_0/u)+(\eta+4\sqrt e)H_0]/(1-\delta)$, con el primer término igual a cero cuando $u=0$. Se demuestra mediante la proporción de pendientes bajas y la integral del déficit positivo; esta última puede ser mayor que el déficit de la media. Los ejemplos separan concentración y redundancia, y muestran por qué las normas individuales no dan por sí solas la estimación colectiva de la segunda traza. Producir las hipótesis para la familia de periodos sigue pendiente.
+
 ## Cotejo con A, B y Lean
 
-La introducción incorpora bibliografía fundacional de la DLMF, Sutherland, Kedlaya, Vaughan y Milne, con localizadores en `tex/referencias.tex` y [fuentes/README.md](fuentes/README.md). Sus resultados clásicos se distinguen de los pasos de la propuesta estudiados en las notas.
+La introducción incorpora bibliografía fundacional de la DLMF, Sutherland, Kedlaya, Vaughan y Milne. La Nota 5 añade Grayson y Bost para la filtración aritmética, el grado y las desigualdades de pendientes. Los localizadores están en `tex/referencias.tex` y [fuentes/README.md](fuentes/README.md). Sus resultados clásicos se distinguen de los pasos de la propuesta estudiados en las notas.
 
 La Nota 4 sigue A, §4, proposiciones 4.2–4.3, pp. 12–17, y B, §3, proposición 3.1, pp. 19–23. El núcleo finito concuerda en signos y normalizaciones. La nota distingue la identidad abstracta de B de las hipótesis del host que dan la forma específica de la suma aritmética en A y Lean.
 
 Se mantiene el espejo `CocoSgt/riemann-hypothesis-lean`, revisión `7cbf7a0c32fca1badf05931879a37c3f8a2b03b4`. Se cotejaron `ch_balance`, la ortogonalidad con inercia, `prim_read`, `gmA_eq`, `tops_sum` y la interfaz de extracción. El enlace con $H_\psi$ se especializa al nivel cíclico; los niveles generales permiten un carácter excepcional. La nota registra también la dependencia de los pesos y la correspondencia del ancho de banda.
 
-`REGISTRO.json` conserva el manifiesto anterior de ventanas, con 34 archivos, y añade un manifiesto de caracteres, con 23 archivos. Dos archivos participan en ambas lecturas. Cada entrada distingue las declaraciones y el alcance revisado; sus hashes Git recalculados coinciden con los blobs recuperados. La configuración de la revisión declara Lean 4.33.1 y la revisión de Mathlib registrada.
+La Nota 5 sigue A, §5, pp. 17–20, y B, §§4.3–4.4, pp. 39–44. Se cotejaron `FrameLA1` y `frame_linear_algebra_first`, así como `TheoremFSharp` y `frame_theorem_sharp`, con las normalizaciones y los pasos de cortes e integración. Se distinguen las variantes formales con $2\eta$ o con pérdida adicional de $\log|I|$. Los subobjetos de la filtración siguen siendo módulos sobre $\mathcal O_K$; el factor $[K:\mathbf Q]$ de la realización sobre $\mathbf Z$ cancela en medias y proporciones.
+
+`REGISTRO.json` conserva los manifiestos de ventanas, con 34 archivos, y caracteres, con 23 archivos, y añade `lean_source_review_frames`, con 14 archivos. Dos archivos participan en las dos primeras lecturas. Cada entrada distingue las declaraciones y el alcance revisado; sus hashes Git recalculados coinciden con los blobs recuperados. La configuración de la revisión declara Lean 4.33.1 y la revisión de Mathlib registrada.
 
 No se compiló ni ejecutó código Lean. El cotejo no abarca todas las dependencias ni una comparación integral del espejo con la distribución original de Alpöge.
 
 ## Soportes de trabajo y verificación
 
-El manuscrito se mantiene en el repositorio público [lachenmann/riemann-notas](https://github.com/lachenmann/riemann-notas), rama `main`. Esta ampliación incorpora la introducción de fundamentos, sus referencias y el PDF actualizado. El registro acumulativo conserva el alcance y las comprobaciones de cada entrega.
+El manuscrito se mantiene en el repositorio público [lachenmann/riemann-notas](https://github.com/lachenmann/riemann-notas), rama `main`. Esta ampliación incorpora la Nota 5, sus referencias y el PDF actualizado. Las Notas 1–4 conservan sus fuentes LaTeX byte por byte. El registro acumulativo mantiene el alcance y las comprobaciones de cada entrega.
 
-El cuaderno externo contiene ahora siete borradores Markdown, los dos PDF de referencia y el diagrama `90-Assets/franja-critica.svg`. Se añadió `00-Introduccion-y-fundamentos.md` y se actualizó el mapa, conservando su identificador. Los tres archivos escritos se recuperaron completos desde el destino: coinciden byte por byte, con tipo y carpeta padre comprobados. La lectura cruzada de la introducción conserva las 495 expresiones matemáticas, las referencias, los enunciados y los seis ejercicios con soluciones. El traspaso editorial continúa siendo manual. Se revisó el SVG mediante renders; la presentación dentro de Obsidian no se inspeccionó.
+El cuaderno externo contiene ahora ocho borradores Markdown, los dos PDF de referencia y el diagrama `90-Assets/franja-critica.svg`. Se añadió `06-Marcos-y-pendientes.md` y se actualizaron el mapa y los pendientes. En caracteres solo cambió el párrafo de continuidad; en la introducción, el recuento de notas. Los cinco archivos escritos se recuperaron completos desde el destino: coinciden byte por byte, con tipo y carpeta padre comprobados. La lectura cruzada de la nueva nota conserva sus 345 expresiones matemáticas, sus referencias, los cinco enunciados y los tres ejercicios con soluciones. El traspaso editorial continúa siendo manual; no se inspeccionó la presentación dentro de Obsidian.
 
 ## Compilación y composición
 
-El resultado compilado tiene 43 páginas A4. La Nota 3 ocupa las pp. 22–29 y la Nota 4, las pp. 30–41. La compilación terminó sin advertencias, referencias pendientes, caracteres faltantes ni cajas desbordadas. Se inspeccionaron visualmente las 43 páginas, incluidos la figura de la franja crítica, las fórmulas, las tablas, las seis soluciones y la bibliografía. La copia de lectura coincide byte por byte con el resultado de compilación. La revisión de composición no añade una validación del argumento completo ni una ejecución de Lean.
+El resultado compilado tiene 54 páginas A4. La Nota 3 ocupa las pp. 23–30; la Nota 4, las pp. 31–42; la Nota 5, las pp. 43–52. La compilación terminó sin advertencias, referencias pendientes, caracteres faltantes ni cajas desbordadas. Se inspeccionaron visualmente las 54 páginas, incluidos los nuevos cálculos, las tablas, los ejercicios y la concordancia Lean. La copia de lectura coincide byte por byte con el resultado de compilación. La revisión de composición no añade una validación del argumento completo ni una ejecución de Lean.
 
 ## Contribuciones y versiones de las fuentes
 
@@ -46,6 +52,6 @@ El enlace público de B entrega ahora un PDF de 76 páginas, fechado el 22 de no
 
 ## Siguiente desarrollo
 
-Reconstruir la desigualdad de marcos y su paso a pendientes medias: primero el argumento lineal de traza y dimensiones, después la integración mediante la filtración de Harder–Narasimhan. Se utilizarán A, proposición 5.2 y teorema 5.3, pp. 17–20, y B, lema 4.2 y proposición 4.3, pp. 41–44.
+Reconstruir la construcción de los mapas de periodos: torres theta, divisibilidad y compatibilidad entre las realizaciones integrales y complejas. Se utilizarán A, §6, pp. 20–28, y B, §4.1, pp. 24–30, y §4.5, pp. 46–51.
 
-El objetivo es identificar con precisión qué control de la familia de mapas permite acotar el exceso geométrico y qué hipótesis métricas e integrales se reciben de la construcción automorfa. Las preguntas pueden concretarse en issues con la proposición, fórmula o declaración formal que deba estudiarse.
+El objetivo es seguir la misma aplicación a través de sus normalizaciones, identificar sus dominios y retículos, y separar las contribuciones finitas de las normas arquimedianas. Así se podrá precisar cuáles de las entradas de la Nota 5 se han producido y cuáles necesitan estimaciones adicionales. Las cotas del exceso geométrico y la construcción de ventanas permanecen pendientes. Las preguntas pueden concretarse en issues con la proposición, fórmula o declaración formal que deba estudiarse.

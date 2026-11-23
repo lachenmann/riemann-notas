@@ -6,11 +6,11 @@ Cuaderno de estudio en español, iniciado por Alevi Peña, sobre dos exposicione
 
 El manuscrito editable está en LaTeX. Cada tramo distingue las demostraciones desarrolladas en el cuaderno, los resultados recibidos como entradas externas y las cuestiones pendientes. La preparación utiliza asistencia de IA para los borradores, el cotejo localizado y la edición; el alcance de las comprobaciones queda registrado de forma explícita.
 
-**Actualización, 22 de noviembre de 2026:** el manuscrito compilado reúne una introducción, una guía y cuatro notas desarrolladas en 43 páginas. La introducción contiene 12 subsecciones y seis ejercicios resueltos: parte de los primos y las funciones zeta y $L$, explica el paso de ceros a polos y presenta el vocabulario de retículos, pendientes, inercia y Frobenius. Distingue las pruebas breves desarrolladas en el cuaderno de los resultados clásicos citados. Las Notas 1–4 conservan su numeración; las de ventanas y caracteres mantienen sus cotejos localizados con A, B y Lean.
+**Actualización, 22 de noviembre de 2026:** el manuscrito compilado reúne una introducción, una guía y cinco notas desarrolladas en **54 páginas**. La nueva **Nota 5, Marcos aproximados y pendientes medias**, demuestra la desigualdad lineal de codimensión y su paso a pendientes mediante cortes de Harder–Narasimhan e integración del déficit. Incluye ejemplos, tres ejercicios resueltos y un cotejo localizado con las versiones precisas de los teoremas Lean. La introducción conserva sus 12 subsecciones y seis ejercicios; las Notas 1–4 mantienen su numeración y sus demostraciones.
 
 ## Empezar a leer
 
-El documento principal es `main.tex`. La [introducción y fundamentos](tex/capitulos/00-introduccion.tex) abre la sección 0, seguida de la guía de lectura; después se encuentran las cuatro notas desarrolladas:
+El documento principal es `main.tex`. La [introducción y fundamentos](tex/capitulos/00-introduccion.tex) abre la sección 0, seguida de la guía de lectura; después se encuentran las cinco notas desarrolladas:
 
 | Archivo | Contenido |
 | --- | --- |
@@ -20,6 +20,7 @@ El documento principal es `main.tex`. La [introducción y fundamentos](tex/capit
 | `tex/capitulos/02-proyecciones-y-denominadores.tex` | Proyección racional que introduce denominadores y lema local sobre longitudes. |
 | `tex/capitulos/03-criterio-unilateral-de-ventanas.tex` | Criterio analítico completo: desigualdad unilateral, colas del núcleo, selección de polos, Cauchy y contradicción. |
 | `tex/capitulos/04-identidad-de-caracteres.tex` | Ortogonalidad, inercia, cancelación exacta, ejemplo local y selección finita de caracteres. |
+| [tex/capitulos/05-marcos-y-pendientes.tex](tex/capitulos/05-marcos-y-pendientes.tex) | Operadores de Gram, desigualdad de codimensión, normalización de pendientes, cortes de Harder–Narasimhan y transferencia de la media. |
 | `tex/referencias.tex` | Referencias A/B, código consultado, bibliografía fundacional y estado matemático de esta entrega. |
 
 El PDF actualizado se conserva en [pdf/notas-hipotesis-riemann.pdf](pdf/notas-hipotesis-riemann.pdf). El estado del trabajo y el siguiente desarrollo están en [ESTADO.md](ESTADO.md).
@@ -58,14 +59,14 @@ La versión revisada está en `main.tex`, `tex/` y el PDF de lectura. Los borrad
 
 Los enlaces de consulta son el [PDF de A](https://www.ulam.ai/research/riemann_hypothesis.pdf) y el [PDF de B en la web de Robin Zhang](https://www.ihes.fr/~rzhang/files/GRH%20note.pdf). [fuentes/README.md](fuentes/README.md) identifica los ejemplares mediante sus hashes. **Las citas de B corresponden al ejemplar de 73 páginas del 21 de noviembre; el enlace del autor ya ofrece una versión de 76 páginas fechada el 22 de noviembre.** Esta actualización no se ha incorporado todavía al cotejo de las notas.
 
-La introducción utiliza además la DLMF y textos de Sutherland, Kedlaya, Vaughan y Milne. La [bibliografía de fundamentos](fuentes/README.md#bibliografía-de-fundamentos) reúne los enlaces y localizadores de los resultados clásicos citados, separados de las fuentes de la propuesta.
+La introducción utiliza además la DLMF y textos de Sutherland, Kedlaya, Vaughan y Milne. La Nota 5 añade referencias a Grayson y Bost para la filtración aritmética y las desigualdades de pendientes. La [bibliografía de fundamentos](fuentes/README.md#bibliografía-de-fundamentos) reúne los enlaces y localizadores de los resultados clásicos citados.
 
-**Código consultado.** Se utiliza el espejo `CocoSgt/riemann-hypothesis-lean`, fijado en la revisión `7cbf7a0c32fca1badf05931879a37c3f8a2b03b4`. La nota de ventanas distingue `PoleData`, `WindowHypU` y el teorema `landau_window`; desarrolla también el corolario que parte de una cota puntual. La nota de caracteres coteja `ch_balance`, la interpretación de `primVal` y los pasos de selección que enlazan con la combinación retenida. El registro documenta los archivos recuperados, sus hashes y el alcance de cada lectura. No se compiló ni ejecutó código Lean en este cotejo, ni se comparó todo el espejo con la distribución original.
+**Código consultado.** Se utiliza el espejo `CocoSgt/riemann-hypothesis-lean`, fijado en la revisión `7cbf7a0c32fca1badf05931879a37c3f8a2b03b4`. La nota de ventanas distingue `PoleData`, `WindowHypU` y el teorema `landau_window`; desarrolla también el corolario que parte de una cota puntual. La nota de caracteres coteja `ch_balance`, la interpretación de `primVal` y los pasos de selección que enlazan con la combinación retenida. La Nota 5 coteja `FrameLA1`, `frame_linear_algebra_first`, `TheoremFSharp` y `frame_theorem_sharp`, con atención a las normalizaciones, los pesos de rango y los casos límite. El registro documenta los archivos recuperados, sus hashes y el alcance de cada lectura. No se compiló ni ejecutó código Lean en estos cotejos, ni se comparó todo el espejo con la distribución original.
 
 Las referencias A/B utilizan las páginas impresas y los números de sección, proposición o ecuación de esos ejemplares. Este cuaderno es material de estudio propio; el cotejo local de algunos pasos no constituye una auditoría completa del desarrollo Lean.
 
 ## Continuar el trabajo
 
-El siguiente desarrollo es la desigualdad de marcos y su paso a pendientes medias: reconstruir primero el argumento lineal de traza y dimensiones, y después su integración mediante la filtración de Harder–Narasimhan. El criterio de ventanas y el núcleo finito de la identidad de caracteres ya están demostrados. La cota del exceso geométrico, los caracteres auxiliares y la construcción aritmética de las ventanas siguen por estudiar. Las preguntas sobre periodos, pendientes y cohomología se resumen en [ESTADO.md](ESTADO.md); pueden desarrollarse y discutirse mediante contribuciones al repositorio.
+El siguiente desarrollo es la construcción de los mapas de periodos: torres theta, divisibilidad integral y compatibilidad de las normas. La Nota 5 identifica las cotas de alturas, pendientes, rangos y trazas que harán falta para aplicar la transferencia demostrada. La cota del exceso geométrico, los caracteres auxiliares y la construcción aritmética de las ventanas siguen por estudiar. Las preguntas sobre periodos y cohomología se resumen en [ESTADO.md](ESTADO.md); pueden desarrollarse y discutirse mediante contribuciones al repositorio.
 
 Las instrucciones de edición del proyecto están en [AGENTS.md](AGENTS.md).

@@ -29,15 +29,14 @@
     },
     {
       "name": "00-Mapa-de-estudio.md",
-      "path_in_vault_project": "00-Mapa-de-estudio.md",
       "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
-      "url": "https://docs.google.com/document/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/edit",
+      "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 9635,
-      "sha256": "47b0188c1ae2fde7ce404e2a4deb6d0e0f5d847be4eddeaa8fd923532fc2706a",
+      "size_bytes": 10358,
+      "sha256": "d94d3a937272fa3c8556107c5ed62036ec27cd92dd4298d6756f3c38e49248e4",
       "verification": "raw bytes identical; parent and MIME verified"
     },
     {
@@ -67,13 +66,13 @@
     {
       "name": "03-Dudas-y-pendientes.md",
       "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
-      "url": "https://docs.google.com/document/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/edit",
+      "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 7748,
-      "sha256": "136dd519d8629d1868664cdce7d888dd09d915c8d4b7c283b2b5d34a0e55f12c",
+      "size_bytes": 9862,
+      "sha256": "4011b2c66be0bf6c1897aba31820afa6975a7638ec3ef8e1956326bef9f275e0",
       "verification": "raw bytes identical; parent and MIME verified"
     },
     {
@@ -91,26 +90,25 @@
     {
       "name": "05-Identidad-de-caracteres-y-termino-principal.md",
       "id": "14dHgRtCG-Mc0vInMZId0ILPzVYjynEot",
-      "url": "https://docs.google.com/document/d/14dHgRtCG-Mc0vInMZId0ILPzVYjynEot/edit",
+      "url": "https://drive.google.com/file/d/14dHgRtCG-Mc0vInMZId0ILPzVYjynEot/view",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 33288,
-      "sha256": "cbc0bc1c7d933afe28a979b91b2b973d067799e94516dc4819bec5dc0191316f",
+      "size_bytes": 33439,
+      "sha256": "f31c435c35fe8a659200534b6d0d2498d726a2fbd91bf0f9662cdc7345c5f251",
       "verification": "raw bytes identical; parent and MIME verified"
     },
     {
       "name": "00-Introduccion-y-fundamentos.md",
-      "path_in_vault_project": "00-Introduccion-y-fundamentos.md",
       "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
-      "url": "https://docs.google.com/document/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/edit",
+      "url": "https://drive.google.com/file/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/view",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "size_bytes": 38647,
-      "sha256": "18b1c23c8b1759e340b59809be02191b68db34fede600cdd0019e6a347a8cc08",
+      "size_bytes": 38646,
+      "sha256": "0177464d07bb0cf5f43280069a848f92f7196806e9c34d9b710d41c235c702a4",
       "verification": "raw bytes identical; parent and MIME verified"
     },
     {
@@ -125,17 +123,29 @@
       "size_bytes": 3144,
       "sha256": "fbc728548ac895c1381e21b44483cfce3b206c4eaa9f6a9cbbdc0f4dac5cb067",
       "verification": "raw bytes identical; parent and MIME verified"
+    },
+    {
+      "name": "06-Marcos-y-pendientes.md",
+      "id": "18_R_di4gVm5ZZy-OwxTW4gJeK-8ijRza",
+      "url": "https://drive.google.com/file/d/18_R_di4gVm5ZZy-OwxTW4gJeK-8ijRza/view",
+      "mime_type": "text/markdown",
+      "parent_ids": [
+        "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+      ],
+      "size_bytes": 33465,
+      "sha256": "46016b377138703509f7eb60bbff7275f66684921ab3fce74633d5ef93b3cbc0",
+      "verification": "raw bytes identical; parent and MIME verified"
     }
   ],
   "obsidian_rendering_checked": false,
   "github_status": "active_public_repository",
   "latex": {
     "status": "compiled_and_visually_reviewed",
-    "pages": 43,
+    "pages": 54,
     "page_size": "A4",
     "path": "pdf/notas-hipotesis-riemann.pdf",
-    "size_bytes": 558784,
-    "sha256": "50edd559dd10b2b1f7c453348991d1d71c86c604adc817544d3d36018e350739",
+    "size_bytes": 618223,
+    "sha256": "5577e78ba7e7fbdd1f0c478d674b7ec27ae6902f8fdff3201c9d7bb051a3ef88",
     "compilation_exit_code": 0,
     "warnings": 0,
     "unresolved_references": 0,
@@ -186,33 +196,52 @@
       40,
       41,
       42,
-      43
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54
     ],
     "chapter_3_pages": [
-      22,
-      29
+      23,
+      30
     ],
     "chapter_4_pages": [
-      30,
-      41
+      31,
+      42
     ],
-    "cross_reading_with_markdown": "La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a 0<y<1, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal. La introducción conserva las 495 expresiones matemáticas cotejadas, 12 subsecciones, nueve enunciados, 15 ecuaciones numeradas y seis ejercicios con soluciones tras expandir las macros y adaptar enlaces al Markdown.",
+    "cross_reading_with_markdown": "La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a 0<y<1, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal. La introducción conserva las 495 expresiones matemáticas cotejadas, 12 subsecciones, nueve enunciados, 15 ecuaciones numeradas y seis ejercicios con soluciones tras expandir las macros y adaptar enlaces al Markdown. La Nota 5 conserva las 345 expresiones matemáticas cotejadas, 13 subsecciones, cinco enunciados, 29 ecuaciones numeradas y tres ejercicios con soluciones; las tablas, hipótesis y referencias se leyeron de forma cruzada.",
     "lean_compiled_or_executed": false,
     "introduction_pages": [
-      3,
-      13
+      4,
+      14
     ],
     "guide_pages": [
-      14,
-      15
+      15,
+      16
     ],
     "chapter_1_pages": [
-      16,
-      18
+      17,
+      19
     ],
     "chapter_2_pages": [
-      19,
-      21
+      20,
+      22
+    ],
+    "chapter_5_pages": [
+      43,
+      52
+    ],
+    "references_and_status_pages": [
+      53,
+      54
     ]
   },
   "events": [
@@ -904,6 +933,289 @@
         "expected_parent": "41063ee89006bc95e6a4366564126b1b255633eb",
         "preserve_existing_history": true
       },
+      "vault_sharing_changed": false,
+      "license_changed": false
+    },
+    {
+      "date": "2026-11-22",
+      "action": "approximate_frames_and_mean_slopes_added",
+      "previous_github_commit": "46524d5f95e263b3ec80435a3d50191ccb21c5cd",
+      "request": "Vamos con el siguiente paso: desarrollar la desigualdad de marcos y su paso a pendientes medias, conforme al punto de reanudación.",
+      "canonical_file": "tex/capitulos/05-marcos-y-pendientes.tex",
+      "canonical_sha256": "36777a13e8ad65369bc39ca2acaaed39b8d6612f568ceb934ac3f6fa4a3ccb89",
+      "contents": {
+        "subsections": 13,
+        "numbered_statements": 5,
+        "numbered_equations": 29,
+        "exercises": 3,
+        "solutions": 3,
+        "content_tables": 2,
+        "proofs_included": [
+          "desigualdad lineal de codimensión con eta+4 epsilon+4 sqrt(e)",
+          "comparación de pendientes por mapas integrales y traslado de cortes",
+          "proporción de pendientes bajas con pesos de rango",
+          "transferencia de la pendiente media mediante integración",
+          "absorción del coste logarítmico"
+        ],
+        "classical_results_cited": [
+          "existencia, unicidad y propiedades de la filtración aritmética de Harder–Narasimhan",
+          "aditividad del grado con métricas de subespacio y cociente"
+        ],
+        "examples": [
+          "concentración de todos los mapas en una recta",
+          "marco exacto redundante con núcleo agregado",
+          "restricción de una familia de coordenadas",
+          "déficit positivo medio frente a déficit de la media",
+          "mapa racional 1/p y necesidad de integridad"
+        ],
+        "normalization": "Pendiente y altura duplicadas de A/B; índices divididos por [K:Q] en el grado y por [K:Q]r en la pendiente.",
+        "scope": "Mecanismo abstracto demostrado bajo entradas declaradas. Periodos, torres theta, cotas automorfas, exceso geométrico y producción aritmética de ventanas pendientes."
+      },
+      "sources": {
+        "A": "§5, Lema 5.1, Proposición 5.2, Teorema 5.3 y Lema 5.4, pp. 17–20, ejemplar de 55 páginas.",
+        "B": "§4.3, p. 39, y §4.4, Lema 4.2 y Proposición 4.3, pp. 41–44; contexto de aplicación pp. 44–46; ejemplar de 73 páginas del 21 de noviembre de 2026.",
+        "newer_B_incorporated": false,
+        "classical_bibliography": [
+          "Grayson, Reduction theory using semistability (1984), §1, Teo.1.18, Defs.1.19–1.20, Cor.1.30, pp.609–613.",
+          "Bost, Algebraic leaves of algebraic foliations over number fields (2001), §4.1.1 Lema4.2, p.196; §4.1.4, (4.10), Prop.4.5, (4.12), pp.199–200."
+        ],
+        "lean_manifest": "lean_source_review_frames",
+        "lean_files": 14
+      },
+      "mathematical_review": {
+        "result": "Revisiones favorables del marco lineal, del paso HN a media y de la concordancia localizada con Lean; lectura cruzada final íntegra TeX/MD.",
+        "corrections_incorporated": [
+          "rango positivo al definir pendiente",
+          "linealidad y dimensión finita en el ejercicio de proyección",
+          "distinción entre la media de mu-h y el máximo de mu_max-h",
+          "dos macros LaTeX corregidas",
+          "coste de índice explícito y ejemplo de necesidad de integridad"
+        ],
+        "lean_compiled": false,
+        "lean_executed": false,
+        "axiom_report_run": false,
+        "full_proof_audit": false,
+        "original_distribution_compared": false
+      },
+      "technical_notes_preserved": [
+        {
+          "path": "tex/capitulos/01-sumas-y-transformadas.tex",
+          "sha256": "13f178ff0751265b7c135d7d85d7a1311962628cec98ef6e0cbbad2c7c1c6e3b",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/02-proyecciones-y-denominadores.tex",
+          "sha256": "4f2d14516ed3850480e6a2ebce9844e52269527a03641bf0b8b546208aeb49be",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/03-criterio-unilateral-de-ventanas.tex",
+          "sha256": "804f5f7ec2c165356d3f15ce02bc570c8368b7f919cc50c87576ae1c6a5de007",
+          "unchanged": true
+        },
+        {
+          "path": "tex/capitulos/04-identidad-de-caracteres.tex",
+          "sha256": "095204f6d6e0ea80af39a862ce34c626b4f2d1b8d27e784d0364797ec5993a9a",
+          "unchanged": true
+        }
+      ],
+      "introduction_changes": {
+        "mathematical_content_preserved": true,
+        "tex": "Recuento de cinco notas y separación de tres rótulos de las líneas de la figura de la franja crítica.",
+        "markdown": {
+          "path": "riemann-notas/staging/vault/00-Introduccion-y-fundamentos.md",
+          "before_sha256": "18b1c23c8b1759e340b59809be02191b68db34fede600cdd0019e6a347a8cc08",
+          "after_sha256": "0177464d07bb0cf5f43280069a848f92f7196806e9c34d9b710d41c235c702a4",
+          "change": "Solo el recuento de cuatro a cinco notas."
+        },
+        "svg_changed": false
+      },
+      "pdf": {
+        "path": "pdf/notas-hipotesis-riemann.pdf",
+        "pages": 54,
+        "size_bytes": 618223,
+        "sha256": "5577e78ba7e7fbdd1f0c478d674b7ec27ae6902f8fdff3201c9d7bb051a3ef88",
+        "compilation_exit_code": 0,
+        "warnings": 0,
+        "unresolved_references": 0,
+        "overfull_boxes": 0,
+        "underfull_boxes": 0,
+        "missing_characters": 0,
+        "all_pages_visually_reviewed": true,
+        "visually_reviewed_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54
+        ],
+        "visual_method": "Se inspeccionaron las 54 páginas renderizadas por Poppler. Tras separar los rótulos de la figura en p.7, se revisó esa página y se comprobó identidad byte por byte de las otras 53 imágenes con las ya inspeccionadas.",
+        "candidate_sha256": "efac5f9e8faf85f54686d7424abfc0be0acd08307e699f984cec8ad41ae5086a",
+        "final_changed_pages": [
+          7
+        ],
+        "other_page_renders_identical": true,
+        "reading_copy_identical_to_build": true
+      },
+      "markdown_review": {
+        "sha256": "46016b377138703509f7eb60bbff7275f66684921ab3fce74633d5ef93b3cbc0",
+        "complete_cross_reading": true,
+        "math_expressions_compared": 345,
+        "result": "Prosa, hipótesis, constantes, tablas, fuentes y soluciones conservadas; macros expandidas, referencias resueltas y etiquetas de ecuación consecutivas.",
+        "obsidian_rendering_checked": false,
+        "transfer_mode": "Preparación editorial puntual con revisión manual; no sincronización automática."
+      },
+      "vault_files_written_and_readback_verified": [
+        {
+          "name": "06-Marcos-y-pendientes.md",
+          "id": "18_R_di4gVm5ZZy-OwxTW4gJeK-8ijRza",
+          "url": "https://drive.google.com/file/d/18_R_di4gVm5ZZy-OwxTW4gJeK-8ijRza/view",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "size_bytes": 33465,
+          "sha256": "46016b377138703509f7eb60bbff7275f66684921ab3fce74633d5ef93b3cbc0",
+          "verification": "raw bytes identical; parent and MIME verified"
+        },
+        {
+          "name": "00-Mapa-de-estudio.md",
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+          "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "size_bytes": 10358,
+          "sha256": "d94d3a937272fa3c8556107c5ed62036ec27cd92dd4298d6756f3c38e49248e4",
+          "verification": "raw bytes identical; parent and MIME verified"
+        },
+        {
+          "name": "03-Dudas-y-pendientes.md",
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+          "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "size_bytes": 9862,
+          "sha256": "4011b2c66be0bf6c1897aba31820afa6975a7638ec3ef8e1956326bef9f275e0",
+          "verification": "raw bytes identical; parent and MIME verified"
+        },
+        {
+          "name": "05-Identidad-de-caracteres-y-termino-principal.md",
+          "id": "14dHgRtCG-Mc0vInMZId0ILPzVYjynEot",
+          "url": "https://drive.google.com/file/d/14dHgRtCG-Mc0vInMZId0ILPzVYjynEot/view",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "size_bytes": 33439,
+          "sha256": "f31c435c35fe8a659200534b6d0d2498d726a2fbd91bf0f9662cdc7345c5f251",
+          "verification": "raw bytes identical; parent and MIME verified"
+        },
+        {
+          "name": "00-Introduccion-y-fundamentos.md",
+          "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+          "url": "https://drive.google.com/file/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/view",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "size_bytes": 38646,
+          "sha256": "0177464d07bb0cf5f43280069a848f92f7196806e9c34d9b710d41c235c702a4",
+          "verification": "raw bytes identical; parent and MIME verified"
+        }
+      ],
+      "vault_editorial_changes": [
+        {
+          "name": "00-Mapa-de-estudio.md",
+          "before_sha256": "47b0188c1ae2fde7ce404e2a4deb6d0e0f5d847be4eddeaa8fd923532fc2706a",
+          "after_sha256": "d94d3a937272fa3c8556107c5ed62036ec27cd92dd4298d6756f3c38e49248e4",
+          "sections_changed": [
+            "Fuentes y alcance: inclusión del mecanismo de marcos y pendientes en el cotejo localizado.",
+            "Entrada a los fundamentos: conservación de la numeración de las notas sin el recuento anterior de cuatro.",
+            "Seis bloques de trabajo: actualización de la celda del bloque 4 con enlace a la Nota 5 y aplicación aritmética pendiente.",
+            "Estado actual y continuidad: adición de la Nota 5, ejemplos, tres ejercicios y cotejo FrameLA1/TheoremFSharp de 14 archivos; siguiente estudio de periodos y torres theta.",
+            "Orden de lectura: incorporación de 06-Marcos-y-pendientes."
+          ]
+        },
+        {
+          "name": "03-Dudas-y-pendientes.md",
+          "before_sha256": "136dd519d8629d1868664cdce7d888dd09d915c8d4b7c283b2b5d34a0e55f12c",
+          "after_sha256": "4011b2c66be0bf6c1897aba31820afa6975a7638ec3ef8e1956326bef9f275e0",
+          "sections_changed": [
+            "Apartado 3, únicamente Aplicación por desarrollar: nuevo enlace a la Nota 5 y remisión al pendiente 7.",
+            "Apartado 5: adición del tercer cotejo de 14 archivos y actualización del trabajo siguiente.",
+            "Apartado 6: cierre del mecanismo abstracto, con fecha editorial 22 de noviembre de 2026; separación de las cotas aritméticas aún pendientes.",
+            "Nuevo apartado 7: periodos, torres theta, divisibilidad y compatibilidad integral y métrica.",
+            "Punto de reanudación: pendiente 7."
+          ]
+        },
+        {
+          "name": "05-Identidad-de-caracteres-y-termino-principal.md",
+          "before_sha256": "cbc0bc1c7d933afe28a979b91b2b973d067799e94516dc4819bec5dc0191316f",
+          "after_sha256": "f31c435c35fe8a659200534b6d0d2498d726a2fbd91bf0f9662cdc7345c5f251",
+          "sections_changed": [
+            "Únicamente el párrafo final Estado del tramo: enlace a la Nota 5 ya desarrollada y nuevo siguiente paso. Sus dos primeras frases de cierre y el enlace final a pendientes permanecen íntegros."
+          ]
+        }
+      ],
+      "repository_publication": {
+        "branch": "main",
+        "expected_parent": "46524d5f95e263b3ec80435a3d50191ccb21c5cd",
+        "preserve_existing_history": true
+      },
+      "next_step": "Periodos y torres theta: divisibilidad y compatibilidad integral y métrica; A §6, B §§4.1 y4.5.",
       "vault_sharing_changed": false,
       "license_changed": false
     }
@@ -1922,5 +2234,451 @@
     "scope_limit": "Fuentes y fragmentos seleccionados para el balance de caracteres y su puente a Hψ. No se compiló código Lean, no se ejecutó el kernel ni se auditó la totalidad de las dependencias. Las estimaciones automórficas, ThinScales, cotas de giros y construcción completa del host se mantienen como entradas externas al tramo.",
     "toolchain": "leanprover/lean4:v4.33.1",
     "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474"
+  },
+  "lean_source_review_frames": {
+    "schema_version": 1,
+    "review_key": "lean_source_review_frames",
+    "review_profile": "revisión matemática localizada y cotejo de interfaces Lean",
+    "recorded_at_utc": "2026-11-23T00:20:49.846344+00:00",
+    "repository": "CocoSgt/riemann-hypothesis-lean",
+    "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+    "source_correspondence": {
+      "A": "Ejemplar A55: §5, Lema 5.1, Proposición 5.2 y Teorema 5.3, pp. 17–20.",
+      "B": "Ejemplar B73 del 21 de noviembre de 2026: §4.4, Lema 4.2 y Proposición 4.3, pp. 41–44; normalización §4.3, p. 39.",
+      "B76_compared": false
+    },
+    "retrieval": {
+      "source_files": "Todos los contenidos Lean se obtuvieron mediante el conector GitHub fetch_file, encoding=base64 y ref igual al commit completo.",
+      "path_discovery": "El fetch del árbol recursivo de la raíz falló con Transport closed. HTTP público permitió leer árboles por SHA. Los árboles recursivos de raíz y src resultaron truncados y no se trataron como inventarios completos; se siguieron árboles de subdirectorios y una búsqueda de FrameLinearAlgebraFirst, seguida de lectura fijada. Los árboles finales HarderNarasimhan (44 entradas) y CorankShare no están truncados.",
+      "final_subtrees": [
+        {
+          "path": "src/Formalism/HarderNarasimhan",
+          "git_tree_sha": "51eea5a98e39d95827811816b9d3da443337092f",
+          "truncated": false
+        },
+        {
+          "path": "src/Formalism/CorankShare",
+          "git_tree_sha": "2f2f1fa039e6fd6b1240eddb631b7c29896c3295",
+          "truncated": false
+        }
+      ],
+      "integrity": "Cada SHA Git se recalculó como SHA1 de blob + espacio + longitud decimal + NUL + bytes; coincide con el árbol y el resultado fetch_file. SHA256 calculado sobre los mismos bytes."
+    },
+    "summary": {
+      "files": 14,
+      "total_bytes": 140060,
+      "mathematical_findings": "Concordancia de conclusiones precisas, constantes, pesos de rango, normalización y casos límite en el tramo leído; diferencias de presentación y generalidad explicitadas en la Nota 5, §5.12.",
+      "lean_compiled": false,
+      "lean_executed": false,
+      "axiom_report_run": false,
+      "original_distribution_compared": false
+    },
+    "limits": [
+      "No se auditó toda la construcción de la filtración HN ni de la realización aritmética; se leyeron interfaces, una prueba condicional de HNStep y los puentes seleccionados.",
+      "No se desplegaron todas las dependencias importadas, Mathlib o la construcción de covolúmenes.",
+      "Las hipótesis de marcos, alturas y rangos de la aplicación automorfa siguen siendo datos de entrada; no se verificó su producción aritmética.",
+      "La coincidencia de hashes acredita los archivos del espejo en la revisión fijada; no acredita identidad completa con el archivo original ni validez formal mediante una ejecución nueva."
+    ],
+    "files": [
+      {
+        "path": "src/Formalism/CorankShare/CorankShareProofs/LayerCakeFormula.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CorankShare/CorankShareProofs/LayerCakeFormula.lean",
+        "git_blob_sha_reported": "1fe7141b704740a711c78e1ebbbf6f60624fad4c",
+        "git_blob_sha_calculated": "1fe7141b704740a711c78e1ebbbf6f60624fad4c",
+        "git_blob_sha_verified": true,
+        "sha256": "ecf23723a1779e201e39209e33f4379e634463476502dd164e5e9727489ba96c",
+        "size_bytes": 4253,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "integración de déficits",
+        "declarations": [
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfran.ind_int",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfran.ind_lb",
+          "Formalism.CorankShareLayerCake.FR.layer_cake_formula"
+        ],
+        "hypotheses": "Las de LayerCake; el indicador de umbral estricto se integra ignorando extremos de medida cero.",
+        "scope": "Prueba íntegra leída: integrales de indicadores, intercambio de suma finita e integral y control por min(1,w).",
+        "proofs_reviewed": [
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfran.ind_int",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfran.ind_lb",
+          "Formalism.CorankShareLayerCake.FR.layer_cake_formula"
+        ]
+      },
+      {
+        "path": "src/Formalism/CorankShare/CorankShareProofs/SumNormSqLeHilbertSchmidt.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CorankShare/CorankShareProofs/SumNormSqLeHilbertSchmidt.lean",
+        "git_blob_sha_reported": "6e242d63c5e583842d8ac1a0f08c1a247fba3b3c",
+        "git_blob_sha_calculated": "6e242d63c5e583842d8ac1a0f08c1a247fba3b3c",
+        "git_blob_sha_verified": true,
+        "sha256": "8a45c25816d09d2610d1fc2c520cca015f4e6154a51ed98aa1443e786351c823",
+        "size_bytes": 23252,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "herramientas de trazas y Hilbert–Schmidt",
+        "declarations": [
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.hilbert_schmidt_eq_basis_sum",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.sum_norm_sq_le_hilbert_schmidt",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.sum_re_inner_bound",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.fam_bound",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.re_inner_Q",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.tQ_eq",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.trace_frame_sq_eq_sum",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.W_upper",
+          "Formalism.CorankShareLayerCake.FR.frame_linear_algebra_bound"
+        ],
+        "hypotheses": "Familias ortonormales y operadores entre espacios de Hilbert complejos finitos. W_upper supone que la familia del destino es ortogonal a B(N).",
+        "scope": "Archivo completo leído; pruebas de herramientas utilizadas por FrameLA1 y distinción del teorema anterior frame_linear_algebra_bound con coeficiente 2η.",
+        "proofs_reviewed": [
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.hilbert_schmidt_eq_basis_sum",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.sum_norm_sq_le_hilbert_schmidt",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.sum_re_inner_bound",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.fam_bound",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.re_inner_Q",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.tQ_eq",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.trace_frame_sq_eq_sum",
+          "Formalism.CorankShareLayerCake.FR.Pgsn2pfrla.W_upper",
+          "Formalism.CorankShareLayerCake.FR.frame_linear_algebra_bound"
+        ]
+      },
+      {
+        "path": "src/Formalism/CorankShare/StatementFR.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CorankShare/StatementFR.lean",
+        "git_blob_sha_reported": "bbf952cfa32adb68933c8ab356ae87b6d7323976",
+        "git_blob_sha_calculated": "bbf952cfa32adb68933c8ab356ae87b6d7323976",
+        "git_blob_sha_verified": true,
+        "sha256": "6a58077587c041d78925f57d3a6902e50dcc8ed42fccdc2327aff1e8205fd168",
+        "size_bytes": 3163,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "definiciones lineales y de integración",
+        "declarations": [
+          "Formalism.CorankShareLayerCake.FR.hs2",
+          "Formalism.CorankShareLayerCake.FR.frK",
+          "Formalism.CorankShareLayerCake.FR.frQ",
+          "Formalism.CorankShareLayerCake.FR.LayerCake",
+          "Formalism.CorankShareLayerCake.FR.FrameLA"
+        ],
+        "hypotheses": "hs2, frK y frQ usan espacios de Hilbert complejos finitos. LayerCake exige D>0, HH≥0, cota inferior, integrabilidad de min(1,w) y cota de recuento en [0,HH].",
+        "scope": "Definiciones leídas: hs2 es Re Tr(A* A), frK=c B* B, frQ=Σc B B*. FrameLA tiene 2η y no es la interfaz precisa FrameLA1.",
+        "proofs_reviewed": []
+      },
+      {
+        "path": "src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/FrameHermSharpB.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/FrameHermSharpB.lean",
+        "git_blob_sha_reported": "21681e780a1592a469189fded4ac2effef8b89e2",
+        "git_blob_sha_calculated": "21681e780a1592a469189fded4ac2effef8b89e2",
+        "git_blob_sha_verified": true,
+        "sha256": "60ebe7d84ef88dd5c79e1e2088675fe6eade77ce960f5a8a089b40f5b11a8521",
+        "size_bytes": 7316,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "enlace entre marcos y filtraciones",
+        "declarations": [
+          "Formalism.HN.frameB_share",
+          "Formalism.HN.frameB_count_lt",
+          "Formalism.HN.frameB_hnStep",
+          "Formalism.HN.slopeNormalisingConstant",
+          "Formalism.HN.frameB_muDef",
+          "Formalism.HN.frameB_muMaxDef",
+          "Formalism.HN.frameB_muMinDef",
+          "Formalism.HN.frameB_rkK_top",
+          "Formalism.HN.frameB_sum_sl",
+          "Formalism.HN.frameB_integral"
+        ],
+        "hypotheses": "frameB_share requiere u>0, τ≥0, media y cota superior de una familia finita con multiplicidades. Recuentos y sumas reciben las propiedades de las pendientes HN; frameB_integral requiere u>0, HH≥0.",
+        "scope": "Pruebas completas leídas del recuento elemental y de la integral; identificación afín de pendientes y rango; uso localizado de HNSlopes/HNExtreme mediante resultados importados.",
+        "proofs_reviewed": [
+          "Formalism.HN.frameB_share",
+          "Formalism.HN.frameB_count_lt",
+          "Formalism.HN.frameB_hnStep",
+          "Formalism.HN.frameB_muDef",
+          "Formalism.HN.frameB_muMaxDef",
+          "Formalism.HN.frameB_muMinDef",
+          "Formalism.HN.frameB_rkK_top",
+          "Formalism.HN.frameB_sum_sl",
+          "Formalism.HN.frameB_integral"
+        ]
+      },
+      {
+        "path": "src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/FrameLinearAlgebraFirst.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/FrameLinearAlgebraFirst.lean",
+        "git_blob_sha_reported": "7b95526eb3a09eb56d7d5536a495bc37ff542f0f",
+        "git_blob_sha_calculated": "7b95526eb3a09eb56d7d5536a495bc37ff542f0f",
+        "git_blob_sha_verified": true,
+        "sha256": "852a55f0b5058c59677fec2c3efdaa6286e5cc36bcf0d6a6cb3a25d085fa8e7a",
+        "size_bytes": 12115,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "marcos lineales",
+        "declarations": [
+          "Formalism.HN.PframeLA1.final_real1",
+          "Formalism.HN.frame_linear_algebra_first"
+        ],
+        "hypotheses": "Las de FrameLA1; ε≥0 se deduce del corango total y R>0. La prueba separa el caso de dimensión destino cero.",
+        "scope": "Lectura de la prueba completa: traza total, traza sobre el complemento omitido, varianza HS, desigualdad real y coeficiente η+4ε+4√e. Sigue la vía de varianza de B, no literalmente la demostración alternativa de A.",
+        "proofs_reviewed": [
+          "Formalism.HN.PframeLA1.final_real1",
+          "Formalism.HN.frame_linear_algebra_first"
+        ]
+      },
+      {
+        "path": "src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/HNStep.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/HNStep.lean",
+        "git_blob_sha_reported": "86838c8f233b764ce81cba39d76535874a4951c1",
+        "git_blob_sha_calculated": "86838c8f233b764ce81cba39d76535874a4951c1",
+        "git_blob_sha_verified": true,
+        "sha256": "a41fd5d1d57e538c3ca9348d5384824f6b021289dc77665e0d6782cc64c62eed",
+        "size_bytes": 6974,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "filtraciones",
+        "declarations": [
+          "Formalism.HN.imageLattice_mono",
+          "Formalism.HN.hnStep_of"
+        ],
+        "hypotheses": "hnStep_of recibe DegSupermod, MuChar, RatioMax, FinSup, SatR y SatBasic.",
+        "scope": "Prueba condicional íntegra: función grado−θ*rango, supermodularidad, supremo finito, saturación y desigualdad estricta de la parte cociente. Las seis propiedades recibidas no se demostraron de nuevo en este cotejo.",
+        "proofs_reviewed": [
+          "Formalism.HN.imageLattice_mono",
+          "Formalism.HN.hnStep_of"
+        ]
+      },
+      {
+        "path": "src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/ShiftInvariance.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/ShiftInvariance.lean",
+        "git_blob_sha_reported": "8d633427ec2f148a230aaa0b21aa259b1fb8c332",
+        "git_blob_sha_calculated": "8d633427ec2f148a230aaa0b21aa259b1fb8c332",
+        "git_blob_sha_verified": true,
+        "sha256": "268954d49f101d9a94af78733da2dc7a0cadd6541d31ae008a8d066cd150c936",
+        "size_bytes": 7915,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "filtraciones y cambio de normalización",
+        "declarations": [
+          "Formalism.HN.shiftInv_mu",
+          "Formalism.HN.shiftInv_count",
+          "Formalism.HN.shiftInv_sum",
+          "Formalism.HN.shiftInvariance_of"
+        ],
+        "hypotheses": "Dos realizaciones reticulares con igual rango y grados que difieren en c*rango para cada submódulo. shiftInvariance_of recibe MuChar en ambas realizaciones y HNSlopes en la primera.",
+        "scope": "Pruebas leídas de invariancia de saturación y traslación de extremos, umbral y polígono. Se distingue este archivo de pruebas del archivo público homónimo.",
+        "proofs_reviewed": [
+          "Formalism.HN.shiftInv_mu",
+          "Formalism.HN.shiftInv_count",
+          "Formalism.HN.shiftInv_sum",
+          "Formalism.HN.shiftInvariance_of"
+        ]
+      },
+      {
+        "path": "src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/SizeMu.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/SizeMu.lean",
+        "git_blob_sha_reported": "086bd6cb5940ecd807566c0ef83343551345fd8d",
+        "git_blob_sha_calculated": "086bd6cb5940ecd807566c0ef83343551345fd8d",
+        "git_blob_sha_verified": true,
+        "sha256": "1e92c71cc6d44b02c2b21e060d21eefefa980c3ce73cb9bc51a893ca4a837e94",
+        "size_bytes": 8038,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "normalización de covolumen",
+        "declarations": [
+          "Formalism.HN.sizeMu_rpow_eq",
+          "Formalism.HN.sizeMu_finrank_eq",
+          "Formalism.HN.sizeMu_of",
+          "Formalism.HN.size_maximal_slope"
+        ],
+        "hypotheses": "sizeMu_of recibe PlLat; cuerpo totalmente complejo y retículo FG no nulo con matrices invertibles. sizeMu_finrank_eq identifica [K:Q]=2*nPl K.",
+        "scope": "Prueba leída del cambio entre covolumen, size y pendiente normalizada; argumentos de supremo/ínfimo y monotonicidad revisados en este archivo. PlLat y resultados de covolumen importados se reciben como dependencias.",
+        "proofs_reviewed": [
+          "Formalism.HN.sizeMu_rpow_eq",
+          "Formalism.HN.sizeMu_finrank_eq",
+          "Formalism.HN.sizeMu_of",
+          "Formalism.HN.size_maximal_slope"
+        ]
+      },
+      {
+        "path": "src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/SlopeIneqMean.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/SlopeIneqMean.lean",
+        "git_blob_sha_reported": "7525fb1fa80a8138efc88b5a2a26e4face840d5e",
+        "git_blob_sha_calculated": "7525fb1fa80a8138efc88b5a2a26e4face840d5e",
+        "git_blob_sha_verified": true,
+        "sha256": "9f5336ea186f3332c2d14f1844bc187019963dcb1f721d4cc30efbad4100cbab",
+        "size_bytes": 13661,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "puente aritmético de alturas a filtraciones",
+        "declarations": [
+          "Formalism.HN.PlaceOperatorNorms.norm_sq_realize",
+          "Formalism.HN.PlaceOperatorNorms.fcoord_map",
+          "Formalism.HN.PlaceOperatorNorms.normAt_map_le",
+          "Formalism.HN.PlaceOperatorNorms.opNormAt_smul",
+          "Formalism.HN.PlaceOperatorNorms.opNormAt_pos",
+          "Formalism.HN.slopeIneqMean_of",
+          "Formalism.HN.slope_inequality_mean"
+        ],
+        "hypotheses": "slopeIneqMean_of recibe Twist, PlLat y SlopeIneq. Para la aplicación: cuerpo totalmente complejo, matrices invertibles, dominio FG y su imagen no nula.",
+        "scope": "Prueba íntegra leída: normalización de normas de operador por lugar mediante un cambio métrico de media logarítmica cero, desigualdad euclídea y conversión a muDef. No se auditó la prueba importada de SlopeIneq ni la construcción global de las realizaciones.",
+        "proofs_reviewed": [
+          "Formalism.HN.PlaceOperatorNorms.norm_sq_realize",
+          "Formalism.HN.PlaceOperatorNorms.fcoord_map",
+          "Formalism.HN.PlaceOperatorNorms.normAt_map_le",
+          "Formalism.HN.PlaceOperatorNorms.opNormAt_smul",
+          "Formalism.HN.PlaceOperatorNorms.opNormAt_pos",
+          "Formalism.HN.slopeIneqMean_of",
+          "Formalism.HN.slope_inequality_mean"
+        ]
+      },
+      {
+        "path": "src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/TheoremFSharp.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/TheoremFSharp.lean",
+        "git_blob_sha_reported": "a8f8c3bf7560fbab8302f3127fcaf0f5d9eacff8",
+        "git_blob_sha_calculated": "a8f8c3bf7560fbab8302f3127fcaf0f5d9eacff8",
+        "git_blob_sha_verified": true,
+        "sha256": "c365ecf5a0125193a1217a8cfc34e12b548ea4967526d880424f49e2f83c3f1f",
+        "size_bytes": 23027,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "transferencia de pendientes",
+        "declarations": [
+          "Formalism.HN.thmF_share",
+          "Formalism.HN.thmF_place",
+          "Formalism.HN.hilbert_schmidt_zero_map",
+          "Formalism.HN.theoremFSharp_of",
+          "Formalism.HN.frame_theorem_sharp",
+          "Formalism.HN.theoremF_of_sharp",
+          "Formalism.HN.frame_theorem_log_ideal"
+        ],
+        "hypotheses": "thmF_share admite u,τ≥0; thmF_place recibe FrameLA1 y lifts con proyección de bloque. theoremFSharp_of recibe FrameLA1 y todas las hipótesis de TheoremFSharp; no exige rango positivo de cada fuente, y deduce rango positivo del destino.",
+        "scope": "Prueba completa leída: recuento de pendientes, umbrales afines, inclusión filtrada, proyección, integración, casos u=0 y rangos nulos, y deducción de la variante débil. Las dependencias fundacionales importadas no se auditaron íntegramente.",
+        "proofs_reviewed": [
+          "Formalism.HN.thmF_share",
+          "Formalism.HN.thmF_place",
+          "Formalism.HN.hilbert_schmidt_zero_map",
+          "Formalism.HN.theoremFSharp_of",
+          "Formalism.HN.frame_theorem_sharp",
+          "Formalism.HN.theoremF_of_sharp",
+          "Formalism.HN.frame_theorem_log_ideal"
+        ]
+      },
+      {
+        "path": "src/Formalism/HarderNarasimhan/ShiftInvariance.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/ShiftInvariance.lean",
+        "git_blob_sha_reported": "95579d92ca3042890937c462b769cd5885a79868",
+        "git_blob_sha_calculated": "95579d92ca3042890937c462b769cd5885a79868",
+        "git_blob_sha_verified": true,
+        "sha256": "b6446ba242e53bcc131ebbc6ab586d543e979ceae2d372d32e4976952319f520",
+        "size_bytes": 3847,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "interfaz pública",
+        "declarations": [
+          "Formalism.HN.hnStep_spec",
+          "Formalism.HN.hnSlopes",
+          "Formalism.HN.shiftInvariance",
+          "Formalism.HN.sizeMu",
+          "Formalism.HN.slopeIneqMean",
+          "Formalism.HN.theoremFSharp",
+          "Formalism.HN.theoremF"
+        ],
+        "hypotheses": "Cada envoltorio conserva el tipo Prop correspondiente, sin añadir hipótesis textuales nuevas.",
+        "scope": "Lectura completa del ensamblaje público: theoremFSharp:=frame_theorem_sharp y theoremF:=frame_theorem_log_ideal. Los imports listados no se auditaron todos.",
+        "proofs_reviewed": [
+          "Formalism.HN.theoremFSharp",
+          "Formalism.HN.theoremF"
+        ]
+      },
+      {
+        "path": "src/Formalism/HarderNarasimhan/Statement.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/Statement.lean",
+        "git_blob_sha_reported": "7b4b0853ff8c38c8de7219dfbb6af4de49b67fb7",
+        "git_blob_sha_calculated": "7b4b0853ff8c38c8de7219dfbb6af4de49b67fb7",
+        "git_blob_sha_verified": true,
+        "sha256": "2d5b72c777c27d48bf40a7a4adf902585ed3a41841ced2e95e6ec95c44c9a33e",
+        "size_bytes": 9166,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "interfaces de filtraciones",
+        "declarations": [
+          "Formalism.HN.IsLat",
+          "Formalism.HN.IsSat",
+          "Formalism.HN.muMax",
+          "Formalism.HN.muMin",
+          "Formalism.HN.hnStep",
+          "Formalism.HN.slopeList",
+          "Formalism.HN.HNStep",
+          "Formalism.HN.HNSlopes",
+          "Formalism.HN.HNExtreme",
+          "Formalism.HN.SlopeIneq",
+          "Formalism.HN.ShiftInvariance"
+        ],
+        "hypotheses": "Realización aditiva en un espacio euclídeo real finito; IsLat exige inyectividad sobre el retículo y discreción de su imagen. Las propiedades de extremos no nulos se condicionan a L≠⊥.",
+        "scope": "Definiciones completas leídas, en particular el umbral inclusivo θ≤pendiente y el recuento estricto de pendientes omitidas. No se reconstruye toda la reducción aritmética desde estas interfaces. muMax, muMin y hnStep recorren Submodule R V: en la aplicación aritmética R=O_K. La realización subyacente sobre Z calcula rango y covolumen de esos submódulos; no amplía la colección de subobjetos a todos los subretículos Z.",
+        "proofs_reviewed": []
+      },
+      {
+        "path": "src/Formalism/HarderNarasimhan/StatementFrameF.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/StatementFrameF.lean",
+        "git_blob_sha_reported": "3f17f6e4ae975f00dbeafdc3fb9e8b66f8c60c1d",
+        "git_blob_sha_calculated": "3f17f6e4ae975f00dbeafdc3fb9e8b66f8c60c1d",
+        "git_blob_sha_verified": true,
+        "sha256": "ae794a2e9121b5baf91c46205565433073067ec464c3c341a8fc03dfbb06b2ea",
+        "size_bytes": 6377,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "interfaces de marcos y transferencia aritmética",
+        "declarations": [
+          "Formalism.HN.FrameLA1",
+          "Formalism.HN.TheoremFSharp",
+          "Formalism.HN.TheoremF"
+        ],
+        "hypotheses": "FrameLA1: espacios de Hilbert complejos finitos, coeficientes positivos, suma de dimensiones positiva, defecto HS acotado por eR, 0≤e≤1/4, η≥0, segunda traza y corango de fuentes. TheoremFSharp: cuerpo totalmente complejo, retículos FG y plenos, mapas integrales, alturas acotadas para mapas no nulos, media ponderada por rangos, cota máxima, cota mínima del destino, matrices de coordenadas invertibles, lifts con bloque superior prescrito, 0≤δ<1 y comparación de rangos.",
+        "scope": "Lectura íntegra de las tres definiciones Prop; distinción de la conclusión precisa y la variante que resta log(card I). Las definiciones no son por sí solas pruebas.",
+        "proofs_reviewed": []
+      },
+      {
+        "path": "src/Formalism/HarderNarasimhan/StatementPl.lean",
+        "immutable_url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/StatementPl.lean",
+        "git_blob_sha_reported": "0ef994d7e7998e4b46dfce96b8ccd24bebe4bda8",
+        "git_blob_sha_calculated": "0ef994d7e7998e4b46dfce96b8ccd24bebe4bda8",
+        "git_blob_sha_verified": true,
+        "sha256": "16766730a8dd781538ca5035ff73ddf7612decae9f293bbd995679093d9adc39",
+        "size_bytes": 10956,
+        "retrieval_method": "GitHub connector fetch_file, base64, pinned commit",
+        "full_file_read": true,
+        "category": "normalización e interfaz aritmética",
+        "declarations": [
+          "Formalism.HN.nPl",
+          "Formalism.HN.logDisc",
+          "Formalism.HN.rkK",
+          "Formalism.HN.ht",
+          "Formalism.HN.size",
+          "Formalism.HN.opNormAt",
+          "Formalism.HN.htMap",
+          "Formalism.HN.muDef",
+          "Formalism.HN.muMaxDef",
+          "Formalism.HN.muMinDef",
+          "Formalism.HN.PlLat",
+          "Formalism.HN.SizeMu",
+          "Formalism.HN.SlopeIneqMean",
+          "Formalism.HN.Twist"
+        ],
+        "hypotheses": "Se distinguen las definiciones generales de las proposiciones que requieren IsTotallyComplex, coordenadas invertibles y módulos FG. La cota de imagen SlopeIneqMean exige imagen no nula.",
+        "scope": "Lectura íntegra de las definiciones y de sus dominios. muDef=2*slope−log2+logDisc/[K:Q]; htMap promedia logaritmos de normas al cuadrado sobre lugares infinitos.",
+        "proofs_reviewed": []
+      }
+    ],
+    "date": "2026-11-22",
+    "toolchain": "leanprover/lean4:v4.33.1",
+    "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "copies": "Copias de trabajo conservadas fuera del recorrido público del manuscrito; las URL inmutables y los hashes siguientes identifican cada fuente.",
+    "document_comparison": {
+      "linear_statement": "Formalism.HN.FrameLA1; prueba frame_linear_algebra_first; cota (eta+4 epsilon+4 sqrt(e))D.",
+      "mean_slope_statement": "Formalism.HN.TheoremFSharp; prueba frame_theorem_sharp; interfaz pública theoremFSharp.",
+      "weaker_variants": "FrameLA tiene 2 eta; TheoremF resta además log|I|. No se confunden con las versiones precisas.",
+      "normalization": "mu=2 deg_Ar/r; muDef=2 slope+c_K, c_K=-log(2)+log|Delta_K|/[K:Q]. htMap coincide con las alturas de A/B.",
+      "subobjects": "Los extremos y los cortes recorren submódulos sobre O_K. La realización Z calcula rangos y covolúmenes; su multiplicidad común [K:Q] cancela.",
+      "rank_zero_cases": "La interfaz formal permite fuentes individuales de rango cero si R>0; la exposición desarrolla el caso positivo de A/B. La prueba trata u=0 y mapas nulos.",
+      "proof_presentation": "La prueba lineal de la nota sigue A mediante I-P; Lean sigue la varianza como B. El paso de altura usa determinantes en la nota y cambio de métricas en la prueba formal leída.",
+      "arithmetic_inputs": "No se construyeron aquí los periodos ni se probaron sus cotas de alturas, pendientes, rangos o marcos."
+    }
   }
 }

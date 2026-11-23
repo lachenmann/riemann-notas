@@ -1,0 +1,773 @@
+\section{Marcos aproximados y pendientes medias}
+\label{sec:marcos}
+
+\fuente{A, §5, Lema~5.1, Proposición~5.2 y Teorema~5.3,
+pp.~17--20; B, §§4.3--4.4, Lema~4.2 y Proposición~4.3,
+pp.~39--44. Reconstruimos la desigualdad lineal y su integración.
+La existencia de la filtración de Harder--Narasimhan se utiliza como
+resultado clásico citado.}
+
+Las aplicaciones integrales de la Nota~\ref{sec:proyecciones} parten de
+retículos pequeños y llegan a un mismo retículo receptor. Para comparar
+sus pendientes medias interesa saber cuántas direcciones del receptor
+siguen cubiertas cuando se retienen solo ciertas partes de las fuentes.
+Una familia muy numerosa puede concentrarse en una sola dirección.
+La información pertinente será una estimación colectiva de trazas.
+
+El argumento se desarrolla en dos niveles. Primero se estima la
+codimensión del espacio generado por imágenes de subespacios. Después
+se eligen esos subespacios mediante umbrales de pendiente, se aplica la
+estimación para cada umbral y se integra el déficit resultante. Las
+condiciones que hacen posible aplicar este mecanismo a los periodos
+automorfos quedan identificadas al final.
+
+\subsection{Operadores de Gram y distribución de las imágenes}
+
+Sean $V_i$ y $H$ espacios de Hilbert complejos de dimensión finita, y
+$B_i:V_i\to H$ una familia finita de aplicaciones lineales. Escribimos
+\[
+ r_i=\dim V_i,\qquad R=\sum_i r_i>0,\qquad D=\dim H>0.
+\]
+El adjunto $B_i^*$ se caracteriza por la identidad del producto hermitiano.
+Para un operador $A$, su norma de Hilbert--Schmidt satisface
+\[
+ \|A\|_{\mathrm{HS}}^2=\operatorname{Tr}(A^*A).
+\]
+En bases ortonormales es la suma de los cuadrados de los valores absolutos
+de las entradas. La desigualdad de Cauchy--Schwarz para este producto
+escalar da
+$|\operatorname{Tr}(A^*C)|\le\|A\|_{\mathrm{HS}}\|C\|_{\mathrm{HS}}$.
+Un proyector ortogonal de rango $k$ tiene norma de Hilbert--Schmidt
+$\sqrt{k}$.
+
+Elegimos números $c_i>0$ y definimos
+\begin{equation}
+ A_i=c_iB_i^*B_i,\qquad \Delta_i=A_i-I_{V_i},\qquad
+ Q=\sum_i c_iB_iB_i^*.
+ \label{eq:marcos-operadores}
+\end{equation}
+Los operadores $A_i$ y $Q$ son autoadjuntos semidefinidos positivos;
+$\Delta_i$ puede tener autovalores de ambos signos. La identidad
+de trazas para aplicaciones entre espacios de dimensiones distintas da
+\[
+ T:=\operatorname{Tr}Q=\sum_i\operatorname{Tr}A_i.
+\]
+
+Las dos hipótesis del marco son
+\begin{align}
+ \sum_i\|\Delta_i\|_{\mathrm{HS}}^2&\le eR,
+       &&0\le e\le\tfrac14,
+       \label{eq:marcos-error-fuentes}\\
+ \operatorname{Tr}(Q^2)&\le(1+\eta)\frac{T^2}{D},
+       &&\eta\ge0.
+       \label{eq:marcos-error-destino}
+\end{align}
+La primera compara las métricas de las fuentes con las inducidas por
+los mapas ponderados. La segunda limita la dispersión de los autovalores
+del operador colectivo. En efecto,
+\begin{equation}
+ \left\|Q-\frac TD I_H\right\|_{\mathrm{HS}}^2
+ =\operatorname{Tr}(Q^2)-\frac{T^2}{D}
+ \le\eta\frac{T^2}{D}.
+ \label{eq:marcos-varianza}
+\end{equation}
+Si $e=\eta=0$, cada $A_i$ es la identidad y $Q=(R/D)I_H$.
+La escala escalar del marco es $R/D$; puede ser distinta de $1$.
+
+\subsection{La desigualdad de codimensión}
+
+\begin{proposicion}[Marco aproximado]
+Supongamos \eqref{eq:marcos-error-fuentes} y
+\eqref{eq:marcos-error-destino}. Si $N_i\subseteq V_i$ son
+subespacios y $\varepsilon\ge0$ satisface
+$\sum_i\operatorname{codim}_{V_i}N_i\le\varepsilon R$, entonces
+\begin{equation}
+ \operatorname{codim}_H\left(\sum_i B_iN_i\right)
+ \le(\eta+4\varepsilon+4\sqrt e)D.
+ \label{eq:marcos-codimension}
+\end{equation}
+\label{prop:marco-lineal}
+\end{proposicion}
+
+\begin{proof}
+Como $T-R=\sum_i\operatorname{Tr}\Delta_i$, dos aplicaciones de
+Cauchy--Schwarz dan
+\begin{align*}
+ |T-R|&\le\sum_i\sqrt{r_i}\|\Delta_i\|_{\mathrm{HS}}\\
+ &\le\sqrt R\left(\sum_i\|\Delta_i\|_{\mathrm{HS}}^2\right)^{1/2}
+ \le R\sqrt e.
+\end{align*}
+Por tanto,
+\begin{equation}
+ T\ge(1-\sqrt e)R\ge R/2>0.
+ \label{eq:marcos-traza-positiva}
+\end{equation}
+
+Sea $S=\sum_iB_iN_i$. Denotemos por $P$ el proyector ortogonal
+sobre $S^\perp$ y por $P_i$ el proyector sobre $N_i^\perp$.
+La aplicación $PB_i$ se anula en $N_i$, de modo que $PB_i=PB_iP_i$.
+Una proyección ortogonal no aumenta las normas de los vectores; aplicando
+ese hecho a una base ortonormal de $V_i$ obtenemos
+\begin{align}
+ \operatorname{Tr}(PQ)
+ &=\sum_i c_i\|PB_i\|_{\mathrm{HS}}^2\notag\\
+ &\le\sum_i c_i\|B_iP_i\|_{\mathrm{HS}}^2
+ =\sum_i\operatorname{Tr}(P_iA_i)\notag\\
+ &=\sum_i\operatorname{rk}P_i+
+       \sum_i\operatorname{Tr}(P_i\Delta_i).
+ \label{eq:marcos-traza-omitida}
+\end{align}
+Las trazas del primer miembro y de $P_iA_i$ son reales y no negativas:
+por ciclicidad, coinciden con las de $PQP$ y $P_iA_iP_i$.
+Esto no exige que los productos $PQ$ o $P_iA_i$ sean autoadjuntos.
+
+Para el término de error,
+\begin{align*}
+ \left|\sum_i\operatorname{Tr}(P_i\Delta_i)\right|
+ &\le\sum_i\sqrt{\operatorname{rk}P_i}\|\Delta_i\|_{\mathrm{HS}}\\
+ &\le\left(\sum_i\operatorname{rk}P_i\right)^{1/2}
+       \left(\sum_i\|\Delta_i\|_{\mathrm{HS}}^2\right)^{1/2}
+ \le R\sqrt e,
+\end{align*}
+pues $\sum_i\operatorname{rk}P_i\le R$. La hipótesis de codimensión
+controla el término de identidad de \eqref{eq:marcos-traza-omitida}, y da
+\begin{equation}
+ 0\le\operatorname{Tr}(PQ)\le(\varepsilon+\sqrt e)R.
+ \label{eq:marcos-control-omitido}
+\end{equation}
+
+Ponemos $z=\operatorname{Tr}(PQ)/T$. La positividad de las trazas
+sobre $S$ y $S^\perp$ implica $0\le z\le1$;
+\eqref{eq:marcos-traza-positiva} y \eqref{eq:marcos-control-omitido}
+implican $z\le2(\varepsilon+\sqrt e)$. Aplicando Cauchy--Schwarz
+a $I_H-P$ y $Q$,
+\[
+ (1-z)^2T^2
+ =\bigl(\operatorname{Tr}((I_H-P)Q)\bigr)^2
+ \le\dim S\,\operatorname{Tr}(Q^2)
+ \le\dim S\,(1+\eta)T^2/D.
+\]
+Podemos cancelar $T^2>0$. Además,
+\[
+ \frac{(1-z)^2}{1+\eta}\ge1-\eta-2z,
+\]
+porque al multiplicar por $1+\eta$ la diferencia de ambos miembros
+es $z^2+\eta^2+2\eta z\ge0$. Por consiguiente,
+\[
+ \frac{\dim S}{D}\ge1-\eta-4\varepsilon-4\sqrt e,
+\]
+que equivale a \eqref{eq:marcos-codimension}.
+\end{proof}
+
+Esta es la prueba de A, Proposición~5.2, desarrollada con los operadores
+de compresión explícitos. B, Lema~4.2, conserva primero la cota más fina
+$R(\varepsilon+\sqrt{\varepsilon e})$ y compara la traza omitida
+con \eqref{eq:marcos-varianza}; llega a la misma constante.
+Para $\varepsilon\ge1$ la conclusión es inmediata de
+$\operatorname{codim}S\le D$. Los mapas pueden tener núcleo y algunos
+$N_i$ pueden ser cero. Cuando el coeficiente de la derecha es mayor
+o igual que $1$, la desigualdad sigue siendo válida, aunque no mejora
+esa cota elemental.
+
+\subsection{Ejemplos de concentración y redundancia}
+
+Tomemos $V_i=\C$, $H=\C^D$, $c_i=1$ y $B_i(z)=ze_1$ para
+$1\le i\le n$, donde $e_1$ pertenece a la base ortonormal habitual.
+Entonces $A_i=1$, así que $e=0$ es admisible, pero
+\[
+ Q=nP_{\C e_1},\qquad T=n,\qquad
+ \operatorname{Tr}(Q^2)=n^2.
+\]
+La segunda hipótesis exige $\eta\ge D-1$. Aumentar $n$ conserva
+esa exigencia: todas las imágenes siguen en la misma recta.
+
+En cambio, si se toman dos copias de cada aplicación
+$\C\to\C^D$, $z\mapsto ze_j$, entonces $R=2D$ y $Q=2I_H$.
+Se tiene $e=\eta=0$. Hay redundancia: la aplicación agregada
+$\bigoplus_iV_i\to H$, $(v_i)_i\mapsto\sum_iB_iv_i$, tiene
+núcleo de dimensión $D$. Ese núcleo no es el núcleo de un mapa
+individual y es compatible con un marco exacto.
+
+Con una sola copia de cada coordenada y $D=10$, suprimir una fuente
+de dimensión uno da $\varepsilon=1/10$. La imagen retenida tiene
+codimensión $1$, mientras \eqref{eq:marcos-codimension} garantiza
+codimensión a lo sumo $4$. El ejemplo muestra el carácter uniforme
+de la constante, que no pretende ser óptima en cada familia.
+
+\subsection{Normalización aritmética de las pendientes}
+
+Sea $K$ un cuerpo de números, de grado $d_K$, y sea $E$ un
+retículo hermitiano: un $\OK$-módulo proyectivo de rango finito positivo con
+métricas compatibles en sus realizaciones arquimedianas. Para una
+sección racional no nula $v$ de $\det E$, el grado normalizado es
+\begin{equation}
+ \widehat{\deg}_{\mathrm{Ar}}(E)=\frac1{d_K}
+ \left(\sum_{\mathfrak p}\operatorname{ord}_{\mathfrak p}(v;\det E)
+                 \log N\mathfrak p
+       -\sum_{\sigma:K\hookrightarrow\C}\log\|v\|_\sigma\right).
+ \label{eq:marcos-grado}
+\end{equation}
+La primera suma recorre los primos finitos. El orden se mide respecto
+de un generador local y puede ser negativo. La fórmula del producto
+hace que el resultado sea independiente de $v$; no se necesita una
+base integral global de $E$.
+
+Usamos la normalización de A y B:
+\begin{equation}
+ \mu(E)=\frac{2\widehat{\deg}_{\mathrm{Ar}}(E)}{\operatorname{rk}E},
+ \qquad
+ h(B)=\frac2{d_K}\sum_{\sigma:K\hookrightarrow\C}
+                         \log\|B_\sigma\|_{\mathrm{op}}\quad(B\ne0).
+ \label{eq:marcos-normalizacion}
+\end{equation}
+La suma comprende todas las inmersiones, contando las dos de cada par
+conjugado. Para $K$ totalmente complejo es equivalente sumar
+$\log\|B_v\|_{\mathrm{op}}^2$ una vez por lugar complejo y multiplicar
+por $2/d_K$, como en B. El número $h(B)$ puede ser negativo.
+Sobre $\Q$, $\mu(E)=-2\log\operatorname{covol}(E)/\operatorname{rk}E$,
+el doble de la pendiente introductoria.
+
+Si $K$ es totalmente complejo, $r_2=d_K/2$ y $r=\operatorname{rk}E$,
+la relación con el covolumen euclídeo de Minkowski es
+\begin{equation}
+ \mathcal H(E)=2^{r_2r}|\Delta_K|^{-r/2}
+                       \operatorname{covol}_{\R}(E),
+ \qquad \mu(E)=-\frac2{d_Kr}\log\mathcal H(E).
+ \label{eq:marcos-covolumen}
+\end{equation}
+El factor finito normaliza el covolumen de $\OK$; con estas
+convenciones $\mu(\OK^r)=0$ para las métricas habituales.
+Las fórmulas \eqref{eq:marcos-grado}--\eqref{eq:marcos-covolumen}
+son las de A, (5.1)--(5.3), pp.~17--18, y B, p.~39.
+
+Un subretículo $M\subset E$ es \emph{saturado} cuando $E/M$ no
+tiene torsión. La saturación reemplaza $M$ por
+$E\cap(M\otimes_{\OK}K)$. Si $E'\subset E$ tiene el mismo rango
+$r>0$, las mismas métricas y un cociente finito de cardinal $J$, entonces
+\begin{equation}
+ \widehat{\deg}_{\mathrm{Ar}}(E')=
+ \widehat{\deg}_{\mathrm{Ar}}(E)-\frac{\log J}{d_K},
+ \qquad \mu(E')=\mu(E)-\frac{2\log J}{d_Kr}.
+ \label{eq:marcos-coste-indice}
+\end{equation}
+Ampliar el retículo invierte el signo de esa diferencia. Esta es la
+contribución que conecta los denominadores de la
+Nota~\ref{sec:proyecciones} con las pendientes.
+
+\subsection{La filtración de Harder--Narasimhan}
+
+La pendiente máxima $\mu_{\max}(E)$ es el máximo de las pendientes
+de los subretículos saturados no nulos. La mínima $\mu_{\min}(E)$
+es el mínimo de las pendientes de los cocientes no nulos sin torsión,
+provistos de las métricas cociente. Un retículo es \emph{semiestable}
+cuando $\mu_{\max}(E)=\mu(E)$.
+
+La teoría clásica proporciona una filtración canónica por subretículos
+saturados
+\[
+ 0=E_0\subset E_1\subset\cdots\subset E_\ell=E,
+\]
+cuyos cocientes sucesivos, con las métricas inducidas, son semiestables
+y tienen pendientes estrictamente decrecientes. Repetir cada pendiente
+según el rango de su cociente produce una lista
+\begin{equation}
+ \lambda_1(E)\ge\cdots\ge\lambda_r(E),\qquad
+ \sum_{j=1}^r\lambda_j(E)=r\mu(E).
+ \label{eq:marcos-lista-hn}
+\end{equation}
+La primera y la última son $\mu_{\max}(E)$ y $\mu_{\min}(E)$.
+La existencia y las propiedades de esta filtración se reciben de la
+teoría de reducción aritmética; véanse Grayson \cite{grayson-hn},
+la discusión de A, p.~18, y B, p.~42. La aditividad del grado con
+métricas de subespacio y cociente está recogida también en
+\cite[§4.1.1, Lema~4.2]{bost-pendientes}.
+
+Escribimos $E^{\ge t}$ para la etapa de la filtración que retiene
+los cocientes de pendiente al menos $t$. Entonces
+\begin{align}
+ \operatorname{rk}E^{\ge t}&=\#\{j:\lambda_j(E)\ge t\},
+                  \label{eq:marcos-corte-hn}\\
+ \mu_{\min}(E^{\ge t})&\ge t,\qquad
+ \mu_{\max}(E/E^{\ge t})<t,
+                  \label{eq:marcos-extremos-hn}
+\end{align}
+donde cada pendiente se considera solo si el retículo correspondiente
+es no nulo. La desigualdad estricta del cociente resulta de haber
+retenido también los cocientes de pendiente igual a $t$.
+No se elige una descomposición de $E$ en los cocientes sucesivos:
+la filtración y sus rangos bastan para el argumento.
+
+\subsection{Una aplicación integral desplaza los umbrales}
+
+\begin{lema}[Comparación de pendientes]
+Si $B:E\to F$ es una aplicación integral no nula entre retículos
+hermitianos, entonces
+\begin{equation}
+ \mu_{\min}(E)\le\mu_{\max}(F)+h(B).
+ \label{eq:marcos-morfismo-pendientes}
+\end{equation}
+Para todo $t\in\R$ se tiene además
+\begin{equation}
+ B(E^{\ge t})\subseteq F^{\ge t-h(B)}.
+ \label{eq:marcos-inclusion-filtrada}
+\end{equation}
+\label{lem:marcos-altura}
+\end{lema}
+
+\begin{proof}
+Sea $I=B(E)$ con la métrica inducida por $F$, y sea $q=\operatorname{rk}I$.
+El núcleo es saturado porque $E/\ker B\simeq I$ no tiene torsión.
+La aplicación inducida $\overline B:E/\ker B\to I$ es un isomorfismo
+de módulos. Con la métrica cociente en el dominio, su determinante
+tiene norma a lo sumo $\|B_\sigma\|_{\mathrm{op}}^q$ en cada
+inmersión. La fórmula del grado, aplicada a ese determinante, da
+\[
+ \mu(E/\ker B)\le\mu(I)+h(B).
+\]
+La saturación $I^{\mathrm{sat}}$ en $F$ tiene el mismo rango y grado
+mayor o igual. Por las definiciones de pendiente mínima y máxima,
+\[
+ \mu_{\min}(E)\le\mu(E/\ker B)
+ \le\mu(I)+h(B)\le\mu(I^{\mathrm{sat}})+h(B)
+ \le\mu_{\max}(F)+h(B).
+\]
+
+Para probar la inclusión, compongamos la restricción de $B$ a
+$E^{\ge t}$ con la aplicación cociente
+$F\to F/F^{\ge t-h(B)}$. Si la composición fuera no nula, su
+altura sería a lo sumo $h(B)$, porque ni restringir el dominio con
+su métrica inducida ni proyectar con la métrica cociente aumenta
+la norma de operador. Las desigualdades
+\eqref{eq:marcos-morfismo-pendientes} y
+\eqref{eq:marcos-extremos-hn} darían
+\[
+ t\le\mu_{\min}(E^{\ge t})
+ \le\mu_{\max}(F/F^{\ge t-h(B)})+h(B)<t,
+\]
+una contradicción. La composición es cero, lo que prueba
+\eqref{eq:marcos-inclusion-filtrada}.
+\end{proof}
+
+Este es el Lema~5.1 de A. La comparación mediante determinantes es
+una forma del método de pendientes de Bost
+\cite[§4.1.4, pp.~199--200]{bost-pendientes}. Se han mantenido
+las métricas cociente y la saturación para que la contribución integral
+y la norma arquimediana correspondan a la misma aplicación.
+
+La integridad es una hipótesis efectiva. En rango uno sobre $\Q$, con
+retículos y métricas habituales, multiplicar por $1/p$ tiene altura
+arquimediana $-2\log p$, pero ambas pendientes son cero. Aplicar
+\eqref{eq:marcos-morfismo-pendientes} a ese mapa racional daría
+$0\le-2\log p$, que es falso. El denominador introduce un coste
+finito que la hipótesis integral evita omitir.
+
+\subsection{La proporción de pendientes bajas en las fuentes}
+
+Sean $E_i$ retículos de rangos $r_i>0$, $R=\sum_i r_i$ y
+$h_i\in\R$. La lista de pendientes desplazadas es
+\[
+ a_{i,j}=\lambda_j(E_i)-h_i\qquad(1\le j\le r_i).
+\]
+Cada término recibe peso $1/R$. La media de esta lista es
+\begin{equation}
+ \frac1R\sum_{i,j}a_{i,j}
+ =\sum_i\frac{r_i}{R}\bigl(\mu(E_i)-h_i\bigr).
+ \label{eq:marcos-media-fuentes}
+\end{equation}
+Los pesos $r_i/R$ proceden de contar dimensiones. Sustituirlos por
+probabilidades arbitrarias modificaría la relación con la hipótesis
+de marco, que está normalizada por $R$.
+
+\begin{lema}[Cola de una lista de pendientes]
+Supongamos que la media de los $a_{i,j}$ es al menos $s$ y que
+todos satisfacen $a_{i,j}\le s+u$, con $u\ge0$. Para $\tau>0$, sea
+\[
+ q(\tau)=\frac1R\#\{(i,j):a_{i,j}<s-\tau\}.
+\]
+Entonces
+\begin{equation}
+ q(\tau)\le\frac{u}{u+\tau}.
+ \label{eq:marcos-cola-fuentes}
+\end{equation}
+Si $u=0$, todos los términos son $s$ y $q(\tau)=0$.
+\label{lem:marcos-cola}
+\end{lema}
+
+\begin{proof}
+La parte de la lista contada por $q(\tau)$ está por debajo de
+$s-\tau$, y el resto está a lo sumo en $s+u$. Por tanto,
+\[
+ s\le\frac1R\sum_{i,j}a_{i,j}
+ \le q(\tau)(s-\tau)+(1-q(\tau))(s+u)
+ =s+u-q(\tau)(u+\tau).
+\]
+Como $u+\tau>0$, esta desigualdad implica
+\eqref{eq:marcos-cola-fuentes}. Si $u=0$, una lista cuyos términos
+son a lo sumo $s$ y cuya media es al menos $s$ tiene todos sus
+términos iguales a $s$.
+\end{proof}
+
+La cota superior individual controla cuánto pueden compensar las
+pendientes altas a las bajas. La media por sí sola no limita esa
+proporción: una sola pendiente arbitrariamente grande podría compensar
+muchas pendientes pequeñas.
+
+\subsection{El teorema de transferencia de la pendiente media}
+
+\begin{teorema}[Transferencia mediante un marco aproximado]
+Sea $K$ un cuerpo de números totalmente complejo. Sean $E_i$ una
+familia finita no vacía de retículos hermitianos de rangos $r_i>0$,
+y $F$ otro de rango $r>0$. Sean $b_i:E_i\to F$ aplicaciones
+integrales y $h_i\in\R$ tales que $h(b_i)\le h_i$ cuando $b_i\ne0$.
+Escribamos $R=\sum_i r_i$. Supongamos que, para ciertos
+$s\in\R$ y $u,H_0\ge0$,
+\begin{align}
+ \sum_i\frac{r_i}{R}\bigl(\mu(E_i)-h_i\bigr)&\ge s,
+                   \label{eq:marcos-hip-media}\\
+ \mu_{\max}(E_i)-h_i&\le s+u\quad\text{para todo }i,
+                   \label{eq:marcos-hip-max}\\
+ \mu_{\min}(F)&\ge s-H_0.
+                   \label{eq:marcos-hip-min}
+\end{align}
+En una inmersión compleja fijada, elijamos estructuras de Hilbert
+auxiliares, un espacio $\widetilde H$ de dimensión $D>0$, una
+aplicación lineal sobreyectiva $\pi:\widetilde H\to F_\sigma$ y
+levantamientos $\widetilde B_i:(E_i)_\sigma\to\widetilde H$ con
+$\pi\widetilde B_i=(b_i)_\sigma$.
+Supongamos que los levantamientos satisfacen
+\eqref{eq:marcos-error-fuentes}--\eqref{eq:marcos-error-destino}
+con coeficientes positivos, $0\le e\le1/4$ y $\eta\ge0$, y que
+\begin{equation}
+ r\ge(1-\delta)D,\qquad 0\le\delta<1.
+ \label{eq:marcos-hip-proyeccion}
+\end{equation}
+Entonces
+\begin{equation}
+ \boxed{\quad
+ \mu(F)\ge s-
+ \frac{4u\log(1+H_0/u)+(\eta+4\sqrt e)H_0}{1-\delta}.
+ \quad}
+ \label{eq:marcos-transferencia}
+\end{equation}
+Cuando $u=0$, el término $u\log(1+H_0/u)$ se interpreta como $0$.
+\label{teo:marcos-transferencia}
+\end{teorema}
+
+\begin{proof}
+Fijemos $\tau>0$. En cada fuente retenemos la realización compleja
+del corte de Harder--Narasimhan
+\[
+ N_i(\tau)=(E_i^{\ge s-\tau+h_i})_\sigma.
+\]
+Su codimensión cuenta las pendientes desplazadas menores que
+$s-\tau$. Las hipótesis \eqref{eq:marcos-hip-media} y
+\eqref{eq:marcos-hip-max}, junto con el Lema~\ref{lem:marcos-cola},
+dan
+\begin{equation}
+ \frac1R\sum_i\operatorname{codim}N_i(\tau)
+ =q(\tau)\le\frac{u}{u+\tau}.
+ \label{eq:marcos-descarte-fuentes}
+\end{equation}
+
+Si $b_i\ne0$, el Lema~\ref{lem:marcos-altura} implica
+\[
+ b_i(E_i^{\ge s-\tau+h_i})
+ \subseteq F^{\ge s-\tau+h_i-h(b_i)}
+ \subseteq F^{\ge s-\tau}.
+\]
+La segunda inclusión usa $h_i\ge h(b_i)$ y que los cortes disminuyen
+al aumentar el umbral. Para $b_i=0$ la inclusión es automática.
+
+Aplicamos la Proposición~\ref{prop:marco-lineal} a los levantamientos
+y a $N_i(\tau)$. Si $\widetilde S=\sum_i\widetilde B_iN_i(\tau)$,
+entonces
+\[
+ \operatorname{codim}_{\widetilde H}\widetilde S
+ \le\left(\eta+4\sqrt e+\frac{4u}{u+\tau}\right)D.
+\]
+La aplicación sobreyectiva $\pi$ induce una sobreyección
+$\widetilde H/\widetilde S\to F_\sigma/\pi\widetilde S$.
+Por ello proyectar no aumenta la codimensión. Además,
+$\pi\widetilde S\subseteq(F^{\ge s-\tau})_\sigma$.
+Al dividir por $r\ge(1-\delta)D>0$ obtenemos
+\begin{equation}
+ q_F(\tau):=\frac{\#\{j:\lambda_j(F)<s-\tau\}}r
+ \le\frac1{1-\delta}
+       \left(\eta+4\sqrt e+\frac{4u}{u+\tau}\right).
+ \label{eq:marcos-cola-destino}
+\end{equation}
+Esta parte del razonamiento utiliza las métricas auxiliares solo para
+aplicar el resultado lineal. Las alturas $h(b_i)$ se siguen calculando
+con las métricas aritméticas originales y con todas las inmersiones.
+La sobreyección $\pi$ no necesita ser ortogonal ni tener una norma acotada.
+
+Por \eqref{eq:marcos-hip-min}, cada pendiente del destino satisface
+$\lambda_j(F)\ge s-H_0$. Con $a_+=\max(a,0)$,
+\begin{equation}
+ (s-\lambda_j(F))_+
+ =\int_0^{H_0}\mathbf1_{\{\lambda_j(F)<s-\tau\}}\dd\tau.
+ \label{eq:marcos-capas}
+\end{equation}
+La igualdad se comprueba midiendo el intervalo
+$0<\tau<s-\lambda_j(F)$ cuando el extremo es positivo.
+Las posibles igualdades en los extremos no afectan a la integral.
+Al promediar una suma finita,
+\begin{equation}
+ s-\mu(F)\le\frac1r\sum_j(s-\lambda_j(F))_+
+ =\int_0^{H_0}q_F(\tau)\dd\tau.
+ \label{eq:marcos-deficit-medio}
+\end{equation}
+Si $u>0$, integrar \eqref{eq:marcos-cola-destino} y usar
+\[
+ \int_0^{H_0}\frac{u}{u+\tau}\dd\tau
+ =u\log(1+H_0/u)
+\]
+prueba \eqref{eq:marcos-transferencia}.
+Si $u=0$, $q(\tau)=0$ para todo $\tau>0$ y la misma integración
+solo conserva el término $(\eta+4\sqrt e)H_0/(1-\delta)$.
+Si $H_0=0$, todas las pendientes de $F$ son al menos $s$ y la
+conclusión se sigue directamente.
+\end{proof}
+
+La fórmula coincide con A, Teorema~5.3, y B, Proposición~4.3.
+El número de mapas no aparece en la pérdida. La información sobre
+toda la familia se reúne mediante los rangos y los dos defectos del
+marco; no se introduce un término $\log|I|$ al integrar.
+
+\subsection{Cómo la integral recupera un déficit}
+
+Consideremos la lista de pendientes $(-2,0,1,3)$, con $s=1$ y
+$H_0=3$. La proporción por debajo de $1-\tau$ y su contribución
+a la integral son
+\begin{center}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+Intervalo & $q_F(\tau)$ & Área \\
+\midrule
+$0<\tau<1$ & $1/2$ & $1/2$ \\
+$1\le\tau<3$ & $1/4$ & $1/2$ \\
+$\tau\ge3$ & $0$ & $0$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+El área total es $1$, igual al déficit positivo medio
+$(3+1+0+0)/4$. La media de la lista es $1/2$, de modo que
+$s-\mu=1/2$. La diferencia entre ambas cantidades es el excedente
+positivo medio $(0+0+0+2)/4=1/2$. Por eso
+\eqref{eq:marcos-deficit-medio} comienza con una desigualdad.
+El ejemplo ilustra la identidad de integración; por sí solo no
+especifica mapas que satisfagan las hipótesis del teorema.
+
+\subsection{El coste logarítmico y el tamaño de los errores}
+
+\begin{lema}
+Si $u,U,H_0,b,X\ge0$, $u\le U$ y $H_0\le Xb$, entonces
+\begin{equation}
+ u\log(1+H_0/u)\le(U+b)\log(1+X),
+ \label{eq:marcos-absorcion-log}
+\end{equation}
+con la misma convención cuando $u=0$.
+\end{lema}
+
+\begin{proof}
+Para $u>0$, la recta tangente a $\log y$ en $y=1+X$ da
+\[
+ \log(1+H_0/u)
+ \le\log(1+X)+\frac{H_0/u-X}{1+X}.
+\]
+Multiplicar por $u$, usar $H_0\le Xb$ y descartar el término
+no positivo $-uX/(1+X)$ produce
+\[
+ u\log(1+H_0/u)
+ \le u\log(1+X)+\frac{Xb}{1+X}.
+\]
+La desigualdad $X/(1+X)\le\log(1+X)$ se deduce de que
+la diferencia vale cero en $X=0$ y tiene derivada
+$X/(1+X)^2\ge0$. Con $u\le U$ obtenemos
+\eqref{eq:marcos-absorcion-log}. Para $u=0$ el miembro izquierdo
+es cero y el derecho es no negativo.
+\end{proof}
+
+Este es el Lema~5.4 de A, p.~20. Si $X$ es una potencia fija de
+$x$, su contribución tiene un factor $\log x$. Sustituirla
+prematuramente por un producto $uH_0$ perdería esa información.
+Los errores del marco aparecen multiplicados por $H_0$, mientras
+que el descarte por pendientes se integra mediante la función
+$u/(u+\tau)$. La pérdida $1/(1-\delta)$ procede de comparar
+la dimensión auxiliar con el rango del receptor.
+
+\subsection{Qué debe aportar la construcción de periodos}
+
+La Nota~\ref{sec:proyecciones} construye formalmente aplicaciones
+integrales $b_\alpha:N_\alpha\to C$ a partir de la divisibilidad
+de los emparejamientos. El Teorema~\ref{teo:marcos-transferencia}
+indica qué información adicional debe acreditarse para utilizarlas:
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.32\textwidth}Y@{}}
+\toprule
+Dato de entrada & Función en el argumento \\
+\midrule
+Integridad de $b_\alpha$ y altura $h_\alpha$ &
+Transportar el corte de pendiente sin omitir índices ni denominadores. \\
+Media de $\mu(N_\alpha)-h_\alpha$ y cota de $\mu_{\max}(N_\alpha)-h_\alpha$ &
+Fijar $s,u$ y controlar la fracción descartada en cada umbral. \\
+Mínimo de las pendientes de $C$ &
+Fijar el extremo $H_0$ de la integral del déficit. \\
+Defectos $e,\eta$ del marco &
+Controlar la pérdida de direcciones tras restringir simultáneamente las fuentes. \\
+Rango retenido y dimensión auxiliar &
+Fijar $\delta$ y comparar codimensión con proporción de pendientes del receptor. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Estas cotas tienen que referirse a los mismos mapas y a normalizaciones
+compatibles. Las normas individuales no proporcionan por sí solas
+la estimación colectiva de $\operatorname{Tr}(Q^2)$, como muestra
+el ejemplo de concentración. Un descarte previo de fuentes que cambie
+$e$ o $\eta$ tampoco se identifica con el parámetro $\delta$, que
+mide una pérdida de dimensión en el destino. B, pp.~44--46, distingue
+esos pasos en la aplicación a periodos.
+
+La desigualdad abstracta queda demostrada con las entradas indicadas.
+Producirlas para la familia automorfa requiere estudiar las torres theta,
+las estimaciones de evaluación, las estructuras integrales y los costes
+de las proyecciones de A, §§6--8, y B, §§4.1--4.5 y~5.
+Esta nota no da todavía la cota del exceso geométrico de la
+Nota~\ref{sec:caracteres} ni la ventana aritmética de la
+Nota~\ref{sec:ventanas}.
+
+\subsection{Concordancia localizada con Lean}
+\label{subsec:marcos-lean}
+
+El cotejo usa el espejo citado en \cite{lean}, fijado en la revisión
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/tree/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4}{\texttt{7cbf7a0}},
+cuyo identificador completo figura en el registro.
+Se leyeron catorce archivos de los módulos de Harder--Narasimhan y
+de corangos. El registro conserva sus rutas, declaraciones, hipótesis,
+URL fijadas y hashes. Los nombres siguientes llevan el prefijo
+\texttt{Formalism.HN}, salvo que se indique otro.
+
+\begin{enumerate}
+\item \textbf{La constante del marco lineal.}
+En
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/StatementFrameF.lean}{\texttt{StatementFrameF.lean}},
+\texttt{FrameLA1} define el enunciado
+\eqref{eq:marcos-codimension}. Su prueba es
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/FrameLinearAlgebraFirst.lean}{\texttt{frame\_linear\_algebra\_first}}.
+Recibe los coeficientes positivos, $R>0$, las dos hipótesis de trazas
+y la cota de codimensión total. Expresa la conclusión como la dimensión
+del complemento ortogonal. La no negatividad de $\varepsilon$ se deduce
+de las hipótesis; el caso $D=0$ se trata aparte. La prueba formal leída
+sigue el cálculo de varianza de B. La prueba por $I-P$ desarrollada
+arriba sigue A; las conclusiones y las constantes coinciden.
+
+\item \textbf{La transferencia precisa.}
+En el mismo archivo, \texttt{TheoremFSharp} define el enunciado
+preciso, cuya prueba es
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/HarderNarasimhanProofs/TheoremFSharp.lean}{\texttt{frame\_theorem\_sharp}}.
+La interfaz pública
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/ShiftInvariance.lean}{\texttt{theoremFSharp}}
+la expone directamente. Sus hipótesis incluyen la integridad, las alturas
+de los mapas no nulos, la media ponderada por $r_i$, los extremos de
+pendiente, las dos cotas de marco y la relación de rangos.
+El levantamiento se escribe por matrices: su bloque superior representa
+el mapa aritmético después de cambios de coordenadas invertibles.
+La proyección sobre ese bloque realiza la sobreyección de la prueba.
+La interfaz admite fuentes individuales de rango cero si $R>0$;
+nuestra exposición usa el caso de rangos positivos de A y B.
+
+\item \textbf{La normalización y los subobjetos.}
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/HarderNarasimhan/StatementPl.lean}{\texttt{StatementPl.lean}}
+define \texttt{ht}, \texttt{size}, \texttt{muDef} y \texttt{htMap}.
+La identidad demostrada por \texttt{size\_maximal\_slope} identifica
+\texttt{muDef} con \eqref{eq:marcos-covolumen}. Internamente,
+si $\lambda$ es una pendiente calculada mediante el covolumen euclídeo,
+la pendiente de nuestra normalización es $2\lambda+c_K$, donde
+\[
+ c_K=-\log2+\frac{\log|\Delta_K|}{d_K}.
+\]
+Este término ya está incorporado en \texttt{muDef}.
+Los extremos y los cortes recorren submódulos sobre $\OK$.
+La realización sobre $\Z$ sirve para calcular rango y covolumen;
+no amplía la familia de subobjetos a todos los subretículos sobre $\Z$.
+Las multiplicidades de las listas formales usan
+$\operatorname{rk}_{\Z}=d_K\operatorname{rk}_{\OK}$; el factor común
+$d_K$ cancela en las medias y en las proporciones.
+
+\item \textbf{Los cortes y su integral.}
+En la prueba de transferencia, \texttt{thmF\_share} estima la
+fracción de pendientes bajas y \texttt{thmF\_place} aplica el marco
+a los cortes y compara los corangos tras proyectar.
+El paso de altura a pendiente de la imagen utiliza
+\texttt{slope\_inequality\_mean}; su prueba leída cambia métricas
+para igualar las normas en los lugares y aplica una desigualdad
+euclídea importada. La reconstrucción anterior usa determinantes
+y saturación. Finalmente,
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CorankShare/CorankShareProofs/LayerCakeFormula.lean}{\texttt{layer\_cake\_formula}},
+del módulo de corangos, integra los recuentos
+estrictos, y \texttt{frameB\_integral} calcula el término logarítmico.
+La prueba trata expresamente $u=0$ y los mapas nulos.
+\end{enumerate}
+
+Hay variantes que deben distinguirse: \texttt{FrameLA}, en el módulo
+de corangos, tiene coeficiente $2\eta$; \texttt{TheoremF} resta además
+$\log|I|$. Las declaraciones precisas para las fórmulas de esta nota
+son \texttt{FrameLA1} y \texttt{TheoremFSharp}.
+
+En este tramo no se encontró una discrepancia de signos o constantes
+con A y B. Se distinguieron las definiciones de tipo \texttt{Prop}
+de las pruebas leídas. El cotejo no desplegó toda la construcción de la
+filtración ni todas las dependencias importadas, y no incluyó compilación,
+ejecución de Lean o comparación integral con la distribución original.
+Las hipótesis que debe producir la familia automorfa siguen siendo las
+entradas de la subsección anterior.
+
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}\label{ej:marcos-proyeccion}
+Sea $\pi:W\to V$ una aplicación lineal sobreyectiva entre espacios
+vectoriales de dimensión finita, y sea $S\subset W$ un subespacio.
+Demuestre que
+$\operatorname{codim}_V\pi S\le\operatorname{codim}_W S$.
+Determine cuándo hay igualdad.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:marcos-proyeccion}.}
+La fórmula de dimensiones da
+\[
+ \operatorname{codim}_V\pi S
+ =\operatorname{codim}_W S-\dim\ker\pi+\dim(S\cap\ker\pi).
+\]
+El término restado es no negativo. Hay igualdad si y solo si
+$\ker\pi\subseteq S$. El cálculo usa sobreyectividad y dimensiones,
+sin recurrir a ninguna métrica.
+
+\begin{ejercicio}\label{ej:marcos-pesos}
+Dos fuentes tienen rangos $1$ y $9$, y pendientes desplazadas
+constantes $9$ y $-1$, respectivamente. Calcule la media de la lista
+completa y compárela con la media que asigna peso $1/2$ a cada fuente.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:marcos-pesos}.}
+La lista consta de un $9$ y nueve valores $-1$, así que su media es
+$(9-9)/10=0$. La media de las dos fuentes con pesos iguales sería
+$(9-1)/2=4$. El segundo número no es la media que controla la
+codimensión total de los cortes: el marco cuenta las diez dimensiones.
+
+\begin{ejercicio}\label{ej:marcos-altura-negativa}
+Sobre $\Q$, sea $E=F=\Z$ como módulo, pero con normas
+$\|1\|_E=1$ y $\|1\|_F=e^{-a/2}$, donde $a>0$.
+Para la identidad integral $B:E\to F$, calcule $h(B)$ y las
+pendientes en la normalización duplicada. Compruebe
+\eqref{eq:marcos-morfismo-pendientes}.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:marcos-altura-negativa}.}
+La norma de operador es $e^{-a/2}$, por lo que $h(B)=-a$.
+Se tiene $\mu(E)=0$ y $\mu(F)=a$; como los rangos son uno,
+las pendientes máxima, mínima y media coinciden. La desigualdad
+es $0\le a-a=0$. Este ejemplo conserva la integridad del mapa
+y muestra por qué la altura arquimediana puede ser negativa.
