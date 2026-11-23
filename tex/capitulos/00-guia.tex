@@ -87,7 +87,9 @@ cotejos entre A y B tampoco constituyen una auditoría de ese código.
     $m$ cercana a $\sqrt{x}$ los equilibra. Las condiciones deben cumplirse
     en un mismo intervalo. La Nota~\ref{sec:parametros} demuestra el
     cálculo de los exponentes y la coordinación de ventanas y umbrales,
-    bajo las entradas que precisa. Referencias: A, §§10--11; B, §§5.5--6.
+    bajo las entradas que precisa. La Nota~\ref{sec:auxiliares} desarrolla
+    la selección uniforme de una pareja de primos bajo entradas analíticas.
+    Referencias: A, §3 y §§10--11; A93, §5; B, §§5.5--6.
 \end{enumerate}
 
 \subsection{Notación común y primeras metas}
@@ -119,7 +121,7 @@ Ventana común y realización & Props.~11.1--11.2, pp.~49--52 & Prop.~6.3, pp.~6
 \end{tabularx}
 \end{center}
 
-Las nueve notas desarrollan esta ruta. Las tres primeras preparan
+Las diez notas desarrollan esta ruta. Las tres primeras preparan
 Mellin, los denominadores y el criterio de ventanas.
 La Nota~\ref{sec:caracteres} prueba la identidad de caracteres,
 la cancelación y la selección que explica $1/(3o+1)$.
@@ -134,17 +136,18 @@ conserva las correcciones de dualidad y compara la capa variable
 con una capa fija de grado acotado.
 La Nota~\ref{sec:parametros} normaliza el exceso, conserva las pérdidas
 de densidad y coordina la elección uniforme de parámetros y ventanas.
-Las Notas~\ref{sec:ventanas}--\ref{sec:parametros} incluyen
+La Nota~\ref{sec:auxiliares} desarrolla el segundo momento, el control
+simultáneo del intervalo y la selección sucesiva de los primos;
+deduce también la cota delgada bajo entradas analíticas uniformes.
+Las Notas~\ref{sec:ventanas}--\ref{sec:auxiliares} incluyen
 cotejos localizados con una revisión fijada de Lean,
 sin compilar ni ejecutar el código.
 
-El siguiente desarrollo estudiará las entradas que permiten seleccionar
-los primos auxiliares con sus propiedades analíticas en toda la ventana
-y enlazarlos con los datos de Galois de la construcción.
-Las identidades de periodos, los modelos integrales, las cotas de
-jets y las entradas profundas de cohomología y automorfía
-conservan sus hipótesis. La construcción aritmética completa
-de las ventanas permanece por reconstruir.
+La continuación estudia la entrada de Galois
+(A, §9, pp.~42--46; A93, §10, pp.~77--85).
+Las estimaciones analíticas, los modelos integrales y las entradas de
+automorfía y cohomología conservan sus hipótesis;
+la realización aritmética completa sigue pendiente.
 
 \clearpage
 \subsection{La versión larga A93: guía de cotejo}
@@ -198,13 +201,19 @@ conservado en la Nota~\ref{sec:parametros},
 \eqref{eq:par-orden-familia}. El Lema~11.3 de A93 explicita
 la última absorción de constantes.
 
-\textbf{Próxima lectura: selección de primos.}
-Seguiremos A, §3, junto con A93, §5, pp.~21--28.
-El nuevo Lema~5.2, p.~25, convierte dos cotas de segundo momento
+\textbf{La selección de primos en la Nota~\ref{sec:auxiliares}.}
+Esta nota sigue A, §3, junto con A93, §5, pp.~21--28.
+El Lema~5.2, p.~25, convierte dos cotas de segundo momento
 en una estimación simultánea en todo el intervalo. La selección
 sucesiva de $q,d$ conserva umbrales uniformes aunque la segunda
 progresión dependa de $q$. Las estimaciones de progresiones,
 densidad de ceros, colas y derivadas logarítmicas, así como la
 fórmula explícita uniforme, se reciben con sus hipótesis.
-Esta ampliación documental no añade una ejecución ni una
-auditoría de Lean.
+La octava lectura localizada de Lean se delimita en
+§\ref{subsec:aux-lean}; no incluye ejecución del código ni una
+auditoría de todas sus dependencias.
+
+\textbf{Próxima lectura: la entrada de Galois.}
+Seguiremos A, §9, pp.~42--46, y A93, §10, pp.~77--85,
+para precisar las condiciones locales y globales de los datos
+que usan conjuntamente los periodos y las cotas cohomológicas.

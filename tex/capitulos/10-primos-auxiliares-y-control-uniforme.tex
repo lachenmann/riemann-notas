@@ -1,0 +1,1095 @@
+\section{Primos auxiliares y control uniforme}
+\label{sec:auxiliares}
+
+La construcción necesita una pareja de primos que satisfaga a la vez
+condiciones de descomposición y estimaciones analíticas en un intervalo
+entero. El segundo primo se elige en una progresión determinada por el
+primero. Esta nota desarrolla los mecanismos finitos y analíticos que
+permiten hacer esas elecciones con un umbral común, y distingue las
+estimaciones profundas que las alimentan.
+
+\fuente{A, §3, pp.~7--12, proposiciones~3.1--3.2;
+A93, §5, pp.~21--28, Proposición~5.1, Lema~5.2 y Proposición~5.3.
+A conserva el ejemplar de 55 páginas; A93 es el de 93 páginas.
+Las pruebas de segundo momento, máximo, selección e integración se
+reconstruyen aquí bajo las entradas uniformes que se enuncian.
+El cotejo Lean se delimita en §\ref{subsec:aux-lean}.}
+
+\subsection{Dos estimaciones y un orden de elección}
+
+Fijamos un entero $M\ge1$, un exponente $J\ge1$ y
+$0<\varepsilon<1/52$. Para una escala real $Y$ grande ponemos
+\begin{equation}
+ X=Y^J,\qquad z=Y^{\varepsilon/5},\qquad
+ z'=z(\log Y)^2,\qquad Z=X^{400}.
+ \label{eq:aux-escalas}
+\end{equation}
+$X$ es el extremo del intervalo que debemos controlar y $Z$ es el
+corte de una suma finita. Los primos se buscarán en intervalos de
+extremos exponenciales en $z$ y $z'$. Todos los umbrales pueden
+depender de $M,J,\varepsilon$, fijados antes de variar $Y$.
+
+Para un primo $p\equiv3\pmod4$, escribimos $\chi_{-p}$ para el
+carácter cuadrático primitivo de discriminante $-p$. Como función en
+los enteros, $\chi_{-p}(n)=(n/p)$. La primera meta es elegir $q,d$
+para que, para todo carácter $\xi$ módulo $M$ y toda pareja
+$(i,j)\in\{0,1\}^2\setminus\{(0,0)\}$, el carácter primitivo
+$\vartheta$ que induce $\xi\chi_{-q}^i\chi_{-d}^j$ satisfaga
+\begin{equation}
+ |G_\vartheta(y)|\le y^{1/2+\varepsilon/2},\qquad
+ |\ell_\vartheta|\le4\log y
+ \quad (Y\le y\le X).
+ \label{eq:aux-meta-pareja}
+\end{equation}
+Los torcidos no triviales por los primos nuevos son no principales.
+La cota para $G_\vartheta$ controla los caracteres auxiliares que se
+retiran en la extracción de la Nota~\ref{sec:caracteres}.
+
+La segunda meta se aplica a todos los caracteres del cuerpo anfitrión,
+incluido el principal, pero en argumentos mucho mayores:
+\begin{equation}
+ y\ge\tfrac13\exp(x^{\varepsilon/3})
+ \quad\Longrightarrow\quad
+ |G_\vartheta(y)|\le
+ y\exp\bigl(-\tfrac12x^{\varepsilon/8}\bigr).
+ \label{eq:aux-meta-delgada}
+\end{equation}
+Aquí $x$ es la escala de la construcción y $y$ el argumento de la suma.
+Una cota relativa en esta escala no es la cota de raíz cuadrada de
+\eqref{eq:aux-meta-pareja} en $[Y,Y^J]$.
+
+La selección que estudiaremos tiene el orden
+\begin{equation}
+ (M,J,\varepsilon)\ \longrightarrow\ Y_0\
+ \longrightarrow\ Y\ge Y_0\ \longrightarrow\ q\
+ \longrightarrow\ d\ \longrightarrow\
+ \text{todos los caracteres y todos los }y\in[Y,Y^J].
+ \label{eq:aux-orden}
+\end{equation}
+El umbral de la segunda etapa debe servir para todos los primeros
+primos admisibles. Un umbral elegido después de cada $q$ no daría
+la uniformidad necesaria al ensamblaje.
+
+\subsection{Congruencias, descomposición y módulo creciente}
+
+Definimos conjuntos finitos de primos
+\begin{align}
+ \mathcal P_1
+ &=\{q:e^{z/2}<q\le e^z,\ q\equiv3\pmod8\},\notag\\
+ R_q&=q\prod_{\substack{3\le p\le z\\p\text{ primo}}}p,\notag\\
+ \mathcal P_2(q)
+ &=\{d:e^{z'/2}<d\le e^{z'},\ d\equiv7\pmod{16},\
+                                      R_q\mid d+1\}.
+ \label{eq:aux-conjuntos}
+\end{align}
+Para $Y$ grande, $q>z$ y $R_q$ es impar y libre de cuadrados.
+También podemos exigir $q>M$ y $d>q$; así los dos primos son distintos
+y coprimos a $M$.
+
+\begin{lema}[La progresión del segundo primo]
+\label{lem:aux-crt}
+Si $R$ es impar, las condiciones $d\equiv7\pmod{16}$ y
+$d\equiv-1\pmod R$ equivalen a
+\begin{equation}
+ d\equiv8R-1\pmod{16R}.
+ \label{eq:aux-crt}
+\end{equation}
+Esta clase es coprima a $16R$.
+\end{lema}
+
+\begin{proof}
+Como $R$ es impar, $8R-1\equiv7\pmod{16}$ y
+$8R-1\equiv-1\pmod R$. El teorema chino del resto da una única
+clase módulo $16R$, pues $\gcd(16,R)=1$. Su representante es impar
+y no comparte un primo con $R$ porque es $-1$ módulo $R$.
+\end{proof}
+
+Las congruencias tienen un uso aritmético concreto. El criterio clásico
+para un discriminante cuadrático impar dice que $2$ es inerte si el
+discriminante es $5$ módulo $8$, y se descompone si es $1$ módulo $8$.
+Por ello $2$ es inerte en $\Q(\sqrt{-q})$ y se descompone en
+$\Q(\sqrt{-d})$. Para cada primo impar $p\le z$, y también para
+$p=q$, se tiene $-d\equiv1\pmod p$, luego $(-d/p)=1$ y esos primos
+se descomponen en $\Q(\sqrt{-d})$. Estos son los criterios usados
+por A93, p.~27; la construcción geométrica posterior recibe tales datos.
+
+La cota clásica de Chebyshev para
+$\theta(z)=\sum_{p\le z}\log p$ permite tomar $\theta(z)\le2z$
+para $z$ suficientemente grande. Así, uniformemente en $q\in\mathcal P_1$,
+\begin{equation}
+ \log(16R_q)\le\log16+z+\theta(z)\le4z,
+ \qquad \tfrac14(\log Y)^2\log(16R_q)\le z'.
+ \label{eq:aux-modulo}
+\end{equation}
+El módulo de la progresión crece con $Y$. De hecho,
+$\log(16R_q)>z/2$, mientras $\sqrt{z'}=\sqrt z\log Y$, de modo
+que $\log(16R_q)/\sqrt{z'}$ tiende a infinito. Un resultado que
+solo controle módulos fijos, o que exija un módulo mucho menor en
+esta comparación, no proporciona el conteo que se necesita.
+
+\subsection{Las entradas analíticas que se reciben}
+\label{subsec:aux-entradas}
+
+Sea
+\[
+ \mathcal P=\{p:\sqrt U<p\le U,\ p\equiv a_0\pmod{m_0}\},
+ \qquad \gcd(a_0,m_0)=1,\quad8\mid m_0.
+\]
+El rango de progresiones de A93, (5.1), es
+\begin{equation}
+ \tfrac14(\log Y)^2\log m_0\le\log U,
+ \qquad Y^{\varepsilon/6}\le\log U
+                  \le Y^{\varepsilon/5}(\log Y)^2.
+ \label{eq:aux-rango}
+\end{equation}
+Se reciben las siguientes estimaciones, con uniformidad en los datos
+variables de ese rango.
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item \textbf{Conteo de primos.} Para $Y$ suficientemente grande,
+$|\mathcal P|\ge U^{9/10}$.
+\item \textbf{Cancelación salvo una clase cuadrática.} Dados exponentes
+fijos $A,B>0$, existe a lo sumo un entero impar libre de cuadrados
+$s_*>1$, coprimo a $m_0$, que hay que excluir para tener
+\begin{equation}
+ \left|\sum_{p\in\mathcal P}\left(\frac p s\right)\right|
+ \le Y^{-B}|\mathcal P|
+ \quad\left(1<s\le Y^A,\ s\text{ impar libre de cuadrados},\
+ \gcd(s,m_0)=1,\ s\ne s_*\right).
+ \label{eq:aux-cancelacion}
+\end{equation}
+\item \textbf{Densidad de ceros.} El número de caracteres primitivos
+de conductor a lo sumo $Q$ con un cero en
+$\Ree s>399/400$, $|\Im s|\le Q$, es $O(Q^{1/4})$.
+\item \textbf{Cola y derivada logarítmica.} Una caja sin ceros con
+los rangos de conductor indicados más adelante proporciona
+\eqref{eq:aux-cola} y \eqref{eq:aux-loglog}.
+\item \textbf{Fórmula explícita uniforme.} Tras controlar los ceros
+reales de los caracteres pertinentes, se dispone de
+\eqref{eq:aux-psi}, con el término polar principal sustraído.
+\end{enumerate}
+
+Las tres primeras entradas corresponden a \texttt{MSqCount},
+\texttt{twistK} y \texttt{CountBad}; las otras se precisan al usarlas.
+A93, pp.~22--23, conserva el posible cero excepcional dentro del término
+principal del conteo de progresiones y estima el error relativamente
+a ese término. El teorema de Siegel interviene con una constante
+posiblemente inefectiva. Esto afecta al cálculo del umbral, no al orden
+lógico de la existencia. Esta nota no reconstruye esos teoremas uniformes
+a partir de ortogonalidad elemental.
+
+\subsection{La clase excepcional en el segundo momento}
+
+Para $y\ge3$, $Z\ge y$ y una secuencia compleja común
+$|\kappa(n)|\le1$, ponemos
+\begin{equation}
+ c_y(n)=\Lambda(n)\min(1,y/n),\qquad
+ S_p(y)=\sum_{n\le Z}c_y(n)\kappa(n)\left(\frac n p\right).
+ \label{eq:aux-suma-truncada}
+\end{equation}
+$S_p$ designa aquí una suma truncada sobre el primo que se está eligiendo;
+no es la suma suavizada $S_\chi$ de la Nota~\ref{sec:sumas}.
+La secuencia $\kappa$ puede cambiar entre aplicaciones, pero no depende
+del primo $p$ sobre el que se promedia en una misma aplicación.
+
+Suponemos $p>Z^2$ para todo $p\in\mathcal P$.
+Para cada entero $n\ge1$, sea $s(n)$ el producto de los primos que no dividen
+$m_0$ y aparecen con exponente impar en $n$.
+Como $c_y$ está soportada en potencias de primos, $s(n)$ vale $1$
+o un solo primo. Definimos
+\begin{equation}
+ R=\sum_{\substack{n\le Z\\s(n)=1}}c_y(n),\qquad
+ A_\ell=\sum_{\substack{k\ge1\text{ impar}\\\ell^k\le Z}}
+                         c_y(\ell^k)\ (\ell\nmid m_0),\qquad
+ B_0=\sup_{\ell\nmid m_0}A_\ell.
+ \label{eq:aux-coeficientes}
+\end{equation}
+Solo un número finito de $A_\ell$ es distinto de cero; si todos son cero,
+tomamos $B_0=0$. La letra $R$ en esta subsección es una suma de pesos,
+distinta del entero $R_q$ de \eqref{eq:aux-conjuntos}.
+
+\begin{lema}[Peso de las clases cuadráticas]
+\label{lem:aux-clases}
+La suma de los pesos $c_y(n)c_y(n')$ de los pares cuya parte cuadrática
+exterior es $1$ vale $R^2+\sum_\ell A_\ell^2$.
+Para una clase fija $s>1$, esa suma es a lo sumo
+$2B_0R+2B_0^2$. Bajo \eqref{eq:aux-cancelacion}, si $Z^2\le Y^A$,
+\begin{equation}
+ \frac1{|\mathcal P|}\sum_{p\in\mathcal P}|S_p(y)|^2
+ \le R^2+\sum_\ell A_\ell^2+2B_0R+2B_0^2
+       +Y^{-B}\left(\sum_{n\le Z}c_y(n)\right)^2.
+ \label{eq:aux-momento-finito}
+\end{equation}
+Se supone $\mathcal P\ne\varnothing$ en esta fórmula.
+\end{lema}
+
+\begin{proof}
+La parte cuadrática exterior de $nn'$ se obtiene multiplicando
+$s(n)$ y $s(n')$ y retirando los factores cuadrados. Es $1$ exactamente
+cuando ambos valores son $1$ o son el mismo primo, lo que da
+$R^2+\sum_\ell A_\ell^2$.
+Si $s=\ell$ es primo, los pares posibles tienen partes exteriores
+$1,\ell$ en uno de los dos órdenes y pesan $2RA_\ell$.
+Si $s=\ell r$ con $\ell\ne r$ primos, pesan $2A_\ell A_r$.
+Si $s$ tiene tres o más factores primos, no hay pares. Esto da la
+cota uniforme anunciada para cualquier clase excepcional.
+
+Al expandir $|S_p|^2$ aparece
+$\kappa(n)\overline{\kappa(n')}$, de módulo a lo sumo uno.
+La reciprocidad cuadrática y la clase fija de $p$ módulo $m_0$ dan
+\[
+ \left(\frac n p\right)\left(\frac{n'}p\right)
+ =\epsilon_{n,n'}\left(\frac p{s(nn')}\right),
+ \qquad \epsilon_{n,n'}\in\{-1,1\},
+\]
+con signo independiente de $p$. La condición $8\mid m_0$ fija
+las contribuciones de $2$ y de los signos de reciprocidad; los primos
+que dividen $m_0$ aportan también signos fijos. $p>Z^2$ evita símbolos
+nulos. Se estima trivialmente la clase $1$ y la posible clase $s_*$;
+para las demás se usa \eqref{eq:aux-cancelacion}. Sus pesos totales
+son a lo sumo $(\sum c_y)^2$, lo que prueba la desigualdad.
+\end{proof}
+
+Los términos mixtos $2B_0R$ importan: una potencia impar de un primo
+exterior y una potencia par de otro primo pueden pertenecer a una clase
+excepcional prima. El argumento conserva la clase excepcional y controla
+su peso, sin necesitar conocer cuál es.
+
+\subsection{De los coeficientes a una cota uniforme}
+
+\begin{proposicion}[Segundo momento de la suma truncada]
+\label{prop:aux-momento}
+Fijados los datos de \eqref{eq:aux-escalas}, supongamos que todo primo
+que divide $m_0$ es a lo sumo $z$ o es mayor que $Z$, y que se cumple
+\eqref{eq:aux-cancelacion} con $A=800J$ y $B=2J+2$.
+Entonces existe una constante $C_{\mathrm{ms}}$, uniforme en la secuencia
+$|\kappa|\le1$ y en los demás datos admitidos, tal que
+\begin{equation}
+ \sum_{p\in\mathcal P}|S_p(y)|^2
+ \le C_{\mathrm{ms}}|\mathcal P|\,y\log(2y)
+ \qquad(Y\le y\le X).
+ \label{eq:aux-momento}
+\end{equation}
+Se conservan las hipótesis de primalidad y tamaño del lema anterior.
+\end{proposicion}
+
+\begin{proof}
+Si $\mathcal P$ es vacío la cota es inmediata; supongámoslo no vacío.
+Usamos la cota clásica de Chebyshev
+$\Psi(u)=\sum_{n\le u}\Lambda(n)\ll u$.
+Para un primo $\ell\le y$, sus potencias hasta $y$ aportan a lo sumo
+$\log y$; la cola geométrica de las potencias mayores aporta
+$O(\log\ell)$. Para $\ell>y$, todas aportan
+$O(y\log\ell/\ell)$. Se deduce $B_0\ll\log(2y)$.
+
+Las potencias pares satisfacen
+\begin{equation}
+ \sum_{\ell,k\ge1}\log\ell\min(1,y/\ell^{2k})
+ =2y\int_{\sqrt y}^{\infty}\frac{\Psi(t)}{t^3}\dd t
+ \ll\sqrt y.
+ \label{eq:aux-pares}
+\end{equation}
+La identidad se obtiene escribiendo cada mínimo como la integral del
+núcleo $2y/t^3$ desde $\max(\sqrt y,\ell^k)$ hasta infinito;
+la no negatividad permite sumar. No se deriva la función escalonada
+$\Psi$. Los primos que dividen $m_0$ y son mayores que $Z$ no
+contribuyen; los restantes añaden $O(z\log(2y))$. Como
+$z\log(2y)/\sqrt y\le Y^{\varepsilon/5-1/2}
+(\log2+J\log Y)$, se obtiene $R\ll\sqrt y$ uniformemente.
+
+Para $\ell\le y$, la suma de los $A_\ell$ es $O(y)$: las
+potencias hasta $y$ se acotan por $\Psi(y)$ y las colas por
+$\sum_{\ell\le y}\log\ell\ll y$.
+Por ello $\sum_{\ell\le y}A_\ell^2\ll y\log(2y)$.
+Para los primos mayores que $y$, sumación parcial da
+\[
+ \sum_{\ell>y}A_\ell^2
+ \ll y^2\sum_{\ell>y}\frac{(\log\ell)^2}{\ell^2}
+ \ll y\log(2y).
+\]
+En la última estimación se aplica la cota de Chebyshev al factor
+$\log\ell$ y al núcleo decreciente $(\log t)/t^2$.
+
+También por sumación parcial,
+\[
+ \sum_{n\le Z}c_y(n)
+ =\frac{y\Psi(Z)}Z+y\int_y^Z\frac{\Psi(t)}{t^2}\dd t
+ \ll y(1+\log Z).
+\]
+Como $Z=Y^{400J}$, la última contribución de
+\eqref{eq:aux-momento-finito} está acotada por
+\[
+ Y^{-2J-2}X^2(1+400J\log Y)^2
+ =Y^{-2}(1+400J\log Y)^2=O_J(1).
+\]
+Además $Z^2=Y^{800J}$, como exige el rango de cancelación.
+Sustituyendo estas cotas en \eqref{eq:aux-momento-finito} se obtiene
+\eqref{eq:aux-momento}. Los términos $B_0R$ y $B_0^2$ también
+quedan absorbidos por $y\log(2y)$.
+\end{proof}
+
+La uniformidad en $\kappa$ es más fuerte que una afirmación solo
+para caracteres multiplicativos. Será necesaria para controlar la
+derivada de la suma truncada.
+
+\subsection{Un lema maximal para todo el intervalo}
+
+\begin{lema}[Control simultáneo a partir de dos momentos]
+\label{lem:aux-maximal}
+Sea $\mathcal P$ un conjunto finito y $2\le Y\le X$.
+Para cada $p\in\mathcal P$, sea $F_p:[Y,X]\to\C$
+absolutamente continua. Supongamos que, para una constante $C\ge0$,
+\begin{align}
+ \sum_p|F_p(t)|^2&\le C|\mathcal P|t\log(2t)
+                         &&\text{para todo }t,\notag\\
+ \sum_p|tF'_p(t)|^2&\le C|\mathcal P|t\log(2t)
+                         &&\text{para casi todo }t.
+ \label{eq:aux-dos-momentos}
+\end{align}
+Dados $h,\tau>0$, el número de índices para los que existe
+$t\in[Y,X]$ con $|F_p(t)|>ht^{1/2+\tau}$ es a lo sumo
+\begin{equation}
+ C h^{-2}|\mathcal P|Y^{-2\tau}
+ \left[\left(1+\frac1\tau\right)\log(2Y)
+                         +\frac1{2\tau^2}\right].
+ \label{eq:aux-maximal}
+\end{equation}
+La cota no contiene $X$.
+\end{lema}
+
+\begin{proof}
+Si $\mathcal P$ es vacío la afirmación es inmediata.
+Pongamos $Q_p(t)=t^{-1-2\tau}|F_p(t)|^2$.
+Esta función es absolutamente continua y, casi en todas partes,
+\begin{align*}
+ Q'_p(t)
+ &=2t^{-1-2\tau}\Ree\bigl(F'_p(t)\overline{F_p(t)}\bigr)
+       -(1+2\tau)t^{-2-2\tau}|F_p(t)|^2\\
+ &\le2t^{-2-2\tau}|F_p(t)|\,|tF'_p(t)|.
+\end{align*}
+El segundo término es no positivo. Integrando hasta cualquier
+$v\in[Y,X]$ y tomando el supremo,
+\[
+ \sup_{Y\le v\le X}Q_p(v)
+ \le Q_p(Y)+2\int_Y^X
+             \frac{|F_p(t)|\,|tF'_p(t)|}{t^{2+2\tau}}\dd t.
+\]
+Sumamos en $p$ y aplicamos Cauchy--Schwarz a las dos familias de
+\eqref{eq:aux-dos-momentos}. Resulta
+\begin{equation}
+ \sum_p\sup_{Y\le v\le X}Q_p(v)
+ \le C|\mathcal P|Y^{-2\tau}\log(2Y)
+       +2C|\mathcal P|\int_Y^\infty
+                    t^{-1-2\tau}\log(2t)\dd t.
+ \label{eq:aux-supremos}
+\end{equation}
+Solo se ha prolongado hasta infinito una integral comparadora positiva;
+las funciones $F_p$ siguen definidas únicamente en $[Y,X]$.
+Por integración por partes,
+\begin{equation}
+ \int_Y^\infty t^{-1-2\tau}\log(2t)\dd t
+ =Y^{-2\tau}\left(\frac{\log(2Y)}{2\tau}
+                                     +\frac1{4\tau^2}\right).
+ \label{eq:aux-integral-maximal}
+\end{equation}
+Cada índice excepcional aporta más de $h^2$ a la suma de supremos.
+Dividir \eqref{eq:aux-supremos} por $h^2$ y sustituir la integral
+prueba \eqref{eq:aux-maximal}.
+\end{proof}
+
+La continuidad absoluta permite recuperar cada valor de $Q_p$ a partir
+de su derivada integrable. Una cota para $F_p$ sin control de la
+variación no impediría que distintos índices tuvieran picos en
+puntos diferentes, hasta cubrir todos los índices al recorrer el intervalo.
+
+\subsection{La derivada y la familia de caracteres}
+
+Cada $S_p$ de \eqref{eq:aux-suma-truncada} es una suma finita de
+funciones continuas y afines a trozos, luego es absolutamente continua.
+Fuera de sus puntos de quiebre,
+\begin{equation}
+ tS'_p(t)=\sum_{t<n\le Z}\Lambda(n)\kappa(n)
+                         \left(\frac n p\right)\frac t n.
+ \label{eq:aux-derivada}
+\end{equation}
+Es la misma suma de pesos $c_t(n)$ con la secuencia
+$\kappa_t(n)=\kappa(n)\mathbf1_{n>t}$. Esta secuencia tiene módulo
+a lo sumo uno y es común a todos los primos promediados. Aunque depende
+de $t$ y puede perder multiplicatividad, la Proposición~\ref{prop:aux-momento}
+se aplica con la misma constante. Se obtienen así los dos momentos
+necesarios para el lema maximal.
+
+\begin{proposicion}[Una familia finita con el mismo umbral]
+\label{prop:aux-familia}
+Sea $\mathcal P\ne\varnothing$. Supongamos que para $r$ familias de funciones se cumplen
+\eqref{eq:aux-dos-momentos} con constantes $C_1,\ldots,C_r$.
+La proporción de índices que falla en alguna familia o algún punto
+está acotada por
+\begin{equation}
+ h^{-2}\left(\sum_{a=1}^r C_a\right)D_\tau(Y),
+ \qquad
+ D_\tau(Y)=Y^{-2\tau}
+ \left[\left(1+\frac1\tau\right)\log(2Y)+\frac1{2\tau^2}\right].
+ \label{eq:aux-union}
+\end{equation}
+En particular, si $r\le r_0$ y $C_a\le C_0$ uniformemente, para
+cada $\eta>0$ hay un umbral común que hace esa proporción menor
+que $\eta$.
+\end{proposicion}
+
+\begin{proof}
+La cardinalidad de una unión finita es a lo sumo la suma de las
+cardinalidades. Aplicamos \eqref{eq:aux-maximal} a cada familia y
+dividimos por $|\mathcal P|$, suponiéndolo positivo.
+Como $\tau>0$ es fijo, $D_\tau(Y)\to0$; basta imponer
+$h^{-2}r_0C_0D_\tau(Y)<\eta$.
+\end{proof}
+
+En la primera etapa se usan los caracteres primitivos que inducen
+caracteres módulo $8M$. En la segunda, para un $q$ fijado, se
+permiten además sus productos con $\chi_{-q}$: hay a lo sumo
+$2\varphi(8M)$ funciones base. Sus conductores varían, pero su
+módulo sigue acotado por uno, que es la propiedad utilizada en
+\eqref{eq:aux-momento}. El número de condiciones no crece con $q$.
+Se obtiene un umbral común a todas las fibras; no se hace una unión
+sobre todos los primeros primos posibles.
+
+La independencia de $X$ en \eqref{eq:aux-maximal} presupone un
+$C$ fijo. En su aplicación, la cancelación y la truncación usan
+$A=800J$, $B=2J+2$ y $Z=Y^{400J}$. El umbral completo puede
+por tanto depender de $J$, como permite \eqref{eq:aux-orden}.
+
+\subsection{Conductores primitivos y exclusión por densidad de ceros}
+
+Un carácter módulo $M$ puede ser imprimitivo. Su carácter primitivo
+inductor tiene los mismos valores en los enteros coprimos a $M$, pero
+puede tener valores distintos en los primos que dividen $M$ y no su
+conductor. En esta nota se toma primero el inductor primitivo y se
+utiliza esa función como $\kappa$. Esta elección permite aplicar a la
+misma suma la identidad con $G_\vartheta$; no se suprimen factores de
+Euler sin registrarlos.
+
+\begin{lema}[El conductor identifica el primo nuevo]
+\label{lem:aux-inyeccion}
+Sean $1\le F\le\sqrt U$ y $\mathcal P$ un conjunto de primos
+$p\equiv3\pmod4$ contenido en $(\sqrt U,U]$.
+Para cada $p\in\mathcal P$,
+si $\kappa$ es primitivo de conductor $f\le F$, entonces
+$\kappa\chi_{-p}$ es primitivo de conductor $fp$.
+Si se reciben el conteo $|\mathcal P|\ge U^{9/10}$ y la entrada de
+densidad de §\ref{subsec:aux-entradas}, la proporción de primos para
+los que algún carácter de esta forma tiene un cero en la caja de
+altura $FU$ está acotada por
+\begin{equation}
+ O(U^{-21/40}).
+ \label{eq:aux-densidad}
+\end{equation}
+\end{lema}
+
+\begin{proof}
+Los conductores $f$ y $p$ son coprimos. Por el teorema chino del resto,
+el carácter producto sobre las unidades módulo $fp$ se restringe
+a $\kappa$ y a $\chi_{-p}$ en los dos factores. Si su conductor
+fuera un divisor propio de $fp$, una de esas restricciones se
+induciría desde un divisor propio del conductor correspondiente,
+contradiciendo su primitividad. Por tanto el conductor es $fp$.
+
+Para cada primo malo elegimos un carácter que exhiba el fallo.
+En su conductor, $p$ es el único factor primo mayor que $F$,
+pues todos los factores de $f$ son a lo sumo $F$. Así un mismo
+carácter no puede elegirse para dos primos nuevos distintos,
+incluso si el carácter base cambia. Esta aplicación es inyectiva
+en el conjunto de caracteres excepcionales de conductor a lo sumo
+$FU$ y caja de altura $FU$. Su cardinalidad es
+$O((FU)^{1/4})\le O(U^{3/8})$.
+Dividir por $U^{9/10}$ da el exponente
+$3/8-9/10=-21/40$. No hay que multiplicar por el número de posibles
+caracteres base en esta cuenta inyectiva.
+\end{proof}
+
+\subsection{Elegir el segundo primo en su propia fibra}
+
+\begin{lema}[Selección sucesiva]
+\label{lem:aux-fibras}
+Sea $\mathcal Q$ un conjunto finito no vacío y, para cada $q\in\mathcal Q$,
+sea $\mathcal D_q$ un conjunto finito no vacío. Fijemos $0<\eta<1$.
+Supongamos que $\mathcal Q_0\subseteq\mathcal Q$ y
+$\mathcal D_q^0\subseteq\mathcal D_q$ para $q\in\mathcal Q_0$ cumplen
+\begin{equation}
+ |\mathcal Q_0|\ge(1-\eta)|\mathcal Q|,\qquad
+ |\mathcal D_q^0|\ge(1-\eta)|\mathcal D_q|.
+ \label{eq:aux-fibras}
+\end{equation}
+Existe una pareja buena $(q,d)$ con $q\in\mathcal Q_0$ y
+$d\in\mathcal D_q^0$. Si se elige $q$ uniformemente en $\mathcal Q$
+y después $d$ uniformemente en su fibra $\mathcal D_q$, la probabilidad
+de obtener una pareja buena es al menos $(1-\eta)^2$.
+\end{lema}
+
+\begin{proof}
+Las dos cotas inferiores son estrictamente positivas; sus cardinalidades
+enteras dan sucesivamente un $q$ bueno y un $d$ bueno en su fibra.
+Para la afirmación probabilística,
+\[
+ \mathbb P(\text{pareja buena})
+ =\frac1{|\mathcal Q|}\sum_{q\in\mathcal Q_0}
+             \frac{|\mathcal D_q^0|}{|\mathcal D_q|}
+ \ge\frac{|\mathcal Q_0|}{|\mathcal Q|}(1-\eta)
+ \ge(1-\eta)^2.
+\]
+No se ha supuesto independencia ni igualdad de tamaños de las fibras.
+\end{proof}
+
+En la aplicación, $\mathcal D_q=\mathcal P_2(q)$.
+El techo común de conductores de la segunda etapa es
+\begin{equation}
+ F=8Me^z,\qquad \log F=\log(8M)+z=o(z'),\qquad
+ F<e^{z'/2}=\sqrt U
+ \label{eq:aux-techo}
+\end{equation}
+para $Y$ suficientemente grande. Sirve para todos los $q\le e^z$.
+La cota de módulo \eqref{eq:aux-modulo} y la separación
+$e^{z/2}>Z^2=Y^{800J}$ también se obtienen con umbrales fijados
+antes de elegir $q$. El máximo de esos umbrales permite aplicar
+la selección sucesiva en una misma escala.
+
+La probabilidad del lema corresponde al muestreo indicado. Si las fibras
+tienen tamaños diferentes, la medida uniforme sobre todos los pares
+$(q,d)$ asigna otros pesos a los primeros primos; no debe confundirse
+con este muestreo sucesivo.
+
+\subsection{El signo de la suma truncada y la cola}
+
+\begin{lema}[Identidad exacta de truncación]
+\label{lem:aux-truncacion}
+Sea $\vartheta$ primitivo no principal y $Z\ge y\ge1$. Definamos
+\begin{equation}
+ T_\vartheta(Z)=-\ell_\vartheta-
+                  \sum_{n\le Z}\frac{\Lambda(n)\vartheta(n)}n.
+ \label{eq:aux-t}
+\end{equation}
+Entonces
+\begin{equation}
+ G_\vartheta(y)
+ =-\sum_{n\le Z}\Lambda(n)\vartheta(n)\min(1,y/n)
+                                      -yT_\vartheta(Z).
+ \label{eq:aux-truncacion}
+\end{equation}
+\end{lema}
+
+\begin{proof}
+El primer término del lado derecho es
+$-\sum_{n\le y}\Lambda(n)\vartheta(n)
+-y\sum_{y<n\le Z}\Lambda(n)\vartheta(n)/n$.
+Al sumar $-yT_\vartheta(Z)$, se cancelan los términos con $n>y$;
+quedan $\sum_{n\le y}\Lambda(n)\vartheta(n)(y/n-1)
++y\ell_\vartheta$, que es la definición de $G_\vartheta$.
+\end{proof}
+
+La identidad tiene signo negativo delante de la suma truncada.
+Para un torcido $\vartheta=\kappa\chi_{-p}$, esa suma es el
+$S_p$ de \eqref{eq:aux-suma-truncada} con la base primitiva apropiada.
+La entrada de contorno \texttt{TailKExp}, usada por \texttt{BoxOfS},
+proporciona
+\begin{equation}
+ X|T_\vartheta(X^{400})|\le Y^\varepsilon
+ \label{eq:aux-cola}
+\end{equation}
+cuando el conductor es a lo sumo $Q$, la caja especificada está libre
+de ceros y $Y^{\varepsilon/6}\le\log Q\le Y^{\varepsilon/4}$.
+Su reserva de exponente depende de $J$ mediante
+$\varepsilon/(1600J)$; no se obtiene una conclusión uniforme en
+$J$ eliminando esa dependencia.
+
+Aplicamos el lema maximal con $h=1/2$ y $\tau=\varepsilon/2$.
+Para los primos buenos, $|S_p(y)|\le\tfrac12 y^{1/2+\varepsilon/2}$
+en todo el intervalo. Además,
+\[
+ y|T_\vartheta(X^{400})|\le Y^\varepsilon
+       \le\tfrac12 y^{1/2+\varepsilon/2}
+\]
+para $Y$ grande, porque $1/2-\varepsilon/2>0$.
+La desigualdad triangular en \eqref{eq:aux-truncacion} da la primera
+cota de \eqref{eq:aux-meta-pareja}.
+
+La entrada \texttt{Kappa4Loglog} controla también
+\begin{equation}
+ |\ell_\vartheta|\le1000\log\log Q+C.
+ \label{eq:aux-loglog}
+\end{equation}
+Aquí $C$ es uniforme en el carácter seleccionado. Si
+$\log Q\le C_{M,J}Y^{\varepsilon/5}(\log Y)^2$, resulta
+\[
+ |\ell_\vartheta|\le200\varepsilon\log Y
+                    +2000\log\log Y+O_{M,J}(1).
+\]
+Como $200\varepsilon<4$, los términos de orden inferior se absorben
+en la holgura y se obtiene $|\ell_\vartheta|\le4\log Y\le4\log y$.
+La dependencia doblemente logarítmica del conductor es decisiva en
+esta cuenta; una cota por un múltiplo de $\log Q$ sería demasiado grande.
+
+\subsection{Ensamblaje condicionado de la pareja}
+
+\begin{proposicion}[Pareja con estimaciones en todo el intervalo]
+\label{prop:aux-pareja}
+Bajo las entradas uniformes de §\ref{subsec:aux-entradas},
+\eqref{eq:aux-cola} y \eqref{eq:aux-loglog}, existe $Y_0$, dependiente
+de los datos fijados en \eqref{eq:aux-escalas}, tal que para todo
+$Y\ge Y_0$ hay $q\in\mathcal P_1$ y $d\in\mathcal P_2(q)$,
+coprimos a $M$, que satisfacen \eqref{eq:aux-meta-pareja} para todos
+los caracteres y torcidos allí indicados. Para cada carácter real
+primitivo $\rho$ de conductor divisor de $8M$, los torcidos no triviales
+por $\chi_{-q}$ y $\chi_{-d}$ no tienen ceros en
+\begin{equation}
+ \Ree s>399/400,\qquad |\Im s|\le Q_j,
+ \qquad Q_j=8M\exp(z+jz'),\quad j\in\{0,1\},
+ \label{eq:aux-cajas}
+\end{equation}
+con $j$ igual al exponente del torcido por $\chi_{-d}$.
+\end{proposicion}
+
+\begin{proof}
+En la primera etapa tomamos $U=e^z$, $m_0=8$ y la clase $3$.
+En la segunda tomamos $U=e^{z'}$, $m_0=16R_q$ y la clase
+\eqref{eq:aux-crt}. La cota \eqref{eq:aux-modulo} coloca ambas
+etapas en \eqref{eq:aux-rango} al aumentar un único umbral.
+Los conjuntos son no vacíos por el conteo recibido.
+
+En ambos casos los primos promediados son mayores que $Z^2$.
+Los factores primos del segundo módulo son a lo sumo $z$, salvo
+$q>Z$; el primer módulo solo tiene el factor $2$.
+La Proposición~\ref{prop:aux-momento} y el lema maximal controlan
+las sumas truncadas de cada base. La Proposición~\ref{prop:aux-familia}
+reúne las condiciones para las bases módulo $8M$, y sus a lo sumo
+$2\varphi(8M)$ variantes en la segunda etapa, con coste uniforme.
+
+El Lema~\ref{lem:aux-inyeccion} descarta una proporción que tiende
+a cero para las cajas de ceros. En la primera etapa se usa el techo
+$8M$ y en la segunda el techo $F=8Me^z$, válido uniformemente por
+\eqref{eq:aux-techo}. Los techos finales de conductor y altura son
+precisamente $Q_0$ y $Q_1$. Sus logaritmos satisfacen los rangos de
+\eqref{eq:aux-cola}, pues
+$\log Q_1=\log(8M)+z+z'$ y
+$(\log Y)^2=o(Y^{\varepsilon/20})$.
+
+Fijamos, por ejemplo, una pérdida total menor que $1/2$ en cada etapa.
+Se distribuye esa pérdida entre los conjuntos excepcionales finitos y
+se toma el máximo de sus umbrales antes de elegir los primos.
+El Lema~\ref{lem:aux-fibras} da una pareja compatible.
+La identidad de truncación y \eqref{eq:aux-cola} producen la cota
+para $G$; \eqref{eq:aux-loglog} produce la de $\ell$.
+Tomar además $q>M$ y $d>q$ asegura la coprimalidad y distinción.
+Los caracteres módulo $M$ quedan incluidos al trabajar con las bases
+módulo $8M$, y los reales de conductor divisor de $8M$ quedan
+incluidos en la exclusión de cajas. Esto prueba todas las afirmaciones.
+\end{proof}
+
+La proposición reconstruye el ensamblaje de A93, Proposición~5.1,
+a partir de entradas analíticas delimitadas. No constituye aquí una
+nueva demostración de las estimaciones de progresiones, densidad de ceros
+ni contorno que se han recibido.
+
+\subsection{La escala delgada y la suma con el polo sustraído}
+
+Fijemos $B,D>0$ y un entero $Q_0\ge1$.
+Consideremos caracteres primitivos de conductor divisor
+de $Q_0qd$, donde $q,d$ son primos impares distintos y coprimos a $Q_0$,
+la parte impar de $Q_0$ es a lo sumo $B$ y
+\begin{equation}
+ \log(Q_0qd)\le D x^{\varepsilon/5}(\log x)^2.
+ \label{eq:aux-conductor-delgado}
+\end{equation}
+Suponemos que los caracteres reales no principales cuyo conductor
+contiene $q$ o $d$ no tienen ceros reales mayores que $399/400$.
+
+Un carácter real primitivo no principal tiene conductor de discriminante fundamental:
+su parte impar es libre de cuadrados y su parte de potencia de $2$
+divide $8$. Los que no contienen $q$ ni $d$ tienen conductor a lo
+sumo $8B$ y forman una familia finita. La no anulación de sus funciones
+$L$ en $1$ da un intervalo real común libre de ceros a la izquierda de
+$1$. Para los otros caracteres se utiliza la hipótesis anterior.
+Esta reducción permite aplicar la región clásica sin ceros y la entrada
+uniforme de fórmula explícita \texttt{PsiThin}.
+
+Escribamos
+\[
+ \Psi_0(\vartheta,u)=\sum_{n\le u}\Lambda(n)\vartheta(n)
+                              -\mathbf1_{\vartheta=1}u,
+ \qquad \lambda=\max(1,\log\operatorname{cond}\vartheta).
+\]
+La entrada que se utiliza, A93, (5.8), es
+\begin{equation}
+ |\Psi_0(\vartheta,u)|
+ \le C u(\log u+\lambda)^2
+      \exp\left(-\frac{c\log u}{\lambda+\sqrt{\log u}}\right),
+ \qquad u\ge e,
+ \label{eq:aux-psi}
+\end{equation}
+con $c,C>0$ uniformes en la familia. El carácter principal se incluye
+con su término polar sustraído. En lo que sigue se demuestra el paso
+de esta estimación a \eqref{eq:aux-meta-delgada}.
+
+\begin{lema}[Representación integral de la suma corregida]
+\label{lem:aux-integral-g}
+Bajo \eqref{eq:aux-psi}, para $y\ge1$ se tiene
+\begin{equation}
+ G_\vartheta(y)=-y\int_y^\infty
+                         \frac{\Psi_0(\vartheta,u)}{u^2}\dd u.
+ \label{eq:aux-integral-g}
+\end{equation}
+La fórmula vale también para el carácter primitivo principal, con la
+normalización de \eqref{eq:g-principal}.
+\end{lema}
+
+\begin{proof}
+Fijemos el carácter. Para $v=\log u$ suficientemente grande,
+$\lambda\le\sqrt v$, y \eqref{eq:aux-psi} prueba la convergencia
+absoluta de la integral mediante una cota por un múltiplo de
+$\int^\infty v^2e^{-c\sqrt v/2}\dd v$.
+Por sumación parcial, para $s>1$ real,
+\[
+ s\int_1^\infty\frac{\Psi_0(\vartheta,u)}{u^{s+1}}\dd u
+ =-\frac{L'(s,\vartheta)}{L(s,\vartheta)}
+                  -\mathbf1_{\vartheta=1}\frac{s}{s-1}.
+\]
+La convergencia absoluta recién probada permite pasar al límite
+$s\downarrow1$ por convergencia dominada. Para un carácter no principal
+el límite es $-\ell_\vartheta$.
+Para el principal, la expansión
+$-\zeta'(1+t)/\zeta(1+t)=1/t-\gamma+O(t)$ y
+$(1+t)/t=1/t+1$ da el límite $-1-\gamma$.
+Así
+\[
+ \int_1^\infty\frac{\Psi_0(\vartheta,u)}{u^2}\dd u
+ =\begin{cases}-\ell_\vartheta,&\vartheta\ne1,\\
+               -1-\gamma,&\vartheta=1.\end{cases}
+\]
+La suma suavizada de \eqref{eq:suma-suave} satisface
+$S_\vartheta(y)=y\int_1^y\Psi(\vartheta,u)u^{-2}\dd u$,
+con $\Psi=\sum_{n\le u}\Lambda(n)\vartheta(n)$.
+Para el principal, la contribución de $u$ a esta integral es
+$y\log y$. Sustituir las dos correcciones que definen $G_\vartheta$
+y restar la integral total produce \eqref{eq:aux-integral-g}.
+En ningún paso se introduce $L'/L(1,1)$.
+\end{proof}
+
+\subsection{Una regla de exponentes para el error relativo}
+
+\begin{proposicion}[Separación entre conductor y argumento]
+\label{prop:aux-delgada}
+Supongamos \eqref{eq:aux-psi} con constantes uniformes y
+\begin{equation}
+ \lambda\le D x^\alpha(\log x)^b,\qquad
+ \log y\ge c_0x^\beta,
+ \quad 0<\alpha<\beta,\quad b\ge0,\quad D,c_0>0.
+ \label{eq:aux-escala-general}
+\end{equation}
+Los parámetros de esta fórmula son fijos. Para cada
+\begin{equation}
+ 0<r<\min(\beta-\alpha,\beta/2)
+ \label{eq:aux-rango-r}
+\end{equation}
+hay un umbral de $x$, uniforme en el carácter y en $y$ admitidos,
+tal que $|G_\vartheta(y)|/y\le e^{-x^r}$.
+\end{proposicion}
+
+\begin{proof}
+La desigualdad \eqref{eq:aux-rango-r} permite elegir
+\begin{equation}
+ \max(\alpha/\beta,1/2)<\mu<1-r/\beta.
+ \label{eq:aux-mu}
+\end{equation}
+Para $v\ge v_0=\log y$ y $x$ grande, las cotas de
+\eqref{eq:aux-escala-general} implican $\lambda\le v^\mu$:
+el factor fijo $D(\log x)^b$ se absorbe en la potencia
+$x^{\beta\mu-\alpha}$, cuyo exponente es positivo.
+También $\sqrt v\le v^\mu$ y $(v+\lambda)^2\le4v^2$.
+Por \eqref{eq:aux-integral-g} y el cambio $v=\log u$,
+\begin{equation}
+ \frac{|G_\vartheta(y)|}{y}
+ \le4C\int_{v_0}^\infty
+                 v^2e^{-(c/2)v^{1-\mu}}\dd v.
+ \label{eq:aux-cola-delgada}
+\end{equation}
+El cambio $w=v^{1-\mu}$ convierte la integral en la cola de
+una potencia fija de $w$ multiplicada por $e^{-cw/2}$.
+Para $w$ grande, esa potencia se acota por una constante por
+$e^{cw/4}$, pues $\log w=o(w)$. Integrando el exponencial restante,
+\[
+ \frac{|G_\vartheta(y)|}{y}
+ \le C_1e^{-c_1v_0^{1-\mu}}
+ \le C_1e^{-c_2x^{\beta(1-\mu)}}.
+\]
+Como $\beta(1-\mu)>r$, se tiene
+$\log C_1+x^r\le c_2x^{\beta(1-\mu)}$ a partir de un umbral fijo.
+Esto da la conclusión con todas las uniformidades indicadas.
+\end{proof}
+
+En la aplicación tomamos $\alpha=\varepsilon/5$,
+$\beta=\varepsilon/3$, $b=2$ y $r=\varepsilon/8$.
+Para $y\ge\tfrac13e^{x^{\varepsilon/3}}$,
+$\log y\ge\tfrac12x^{\varepsilon/3}$ a partir de un umbral.
+El rango permitido es $r<2\varepsilon/15$, y
+$\varepsilon/8<2\varepsilon/15$. La elección explícita
+$\mu=61/100$ conserva las dos holguras
+\begin{equation}
+ \beta\mu-\alpha=\frac{\varepsilon}{300}>0,
+ \qquad \beta(1-\mu)-r=\frac{\varepsilon}{200}>0.
+ \label{eq:aux-holguras}
+\end{equation}
+La proposición produce $e^{-x^{\varepsilon/8}}$ después de aumentar
+el umbral; en particular implica la cota con la reserva $1/2$ de
+\eqref{eq:aux-meta-delgada}, utilizada por A93, Proposición~5.3.
+El resultado se mantiene para cualquier $D$ fijo en
+\eqref{eq:aux-conductor-delgado}. Una elección más amplia de $z'$
+puede cambiar $D$; no se impone el valor $D=2$ a datos para los que
+ese valor no haya sido comprobado.
+
+\subsection{Compatibilidad con el cuerpo y con la ventana aritmética}
+
+La condición sobre caracteres reales de la escala delgada debe
+verificarse para los conductores del cuerpo que efectivamente se usa.
+Si un carácter real primitivo tiene conductor divisor de $Q_0qd$,
+se separan los factores $q,d$ y queda un carácter real primitivo de
+conductor divisor de $8\operatorname{odd}(Q_0)$.
+Cuando $\operatorname{odd}(Q_0)\mid M$, ese factor pertenece a la
+familia de conductor divisor de $8M$ de \eqref{eq:aux-cajas}.
+Si aparece $q$ o $d$, el torcido es no trivial y su caja excluye en
+particular los ceros reales mayores que $399/400$.
+La entrada formal \texttt{RealBox} conserva además las hipótesis sobre
+el soporte primo del módulo del cuerpo; esas condiciones se comprueban
+en la aplicación y no se sustituyen por una semejanza de notación.
+
+Para combinar las ventanas, la Nota~\ref{sec:cohomologia} fija el
+exponente $J$ de su selección antes de elegir la pareja. La
+Proposición~\ref{prop:aux-pareja} admite ese $J$ fijo y produce
+una pareja con estimaciones analíticas en todo $[Y,Y^J]$.
+La entrada cohomológica se aplica a esa misma pareja admisible.
+El reescalamiento de la Proposición~\ref{prop:par-ventana-comun}
+conserva la pareja al pasar al intervalo común.
+
+Quedan reconstruir las entradas uniformes recibidas en esta nota y
+las realizaciones automorfas y de Galois que utilizan los mismos datos.
+Los argumentos demostrados explican el segundo momento, la simultaneidad,
+la selección dependiente y la absorción del error en escala delgada.
+Las próximas notas estudiarán la entrada de Galois de A, §9,
+pp.~42--46, y A93, §10, pp.~77--85, con sus condiciones locales
+y globales y su uso compartido por periodos y cohomología.
+
+
+\subsection{Concordancia localizada con Lean}
+\label{subsec:aux-lean}
+
+La octava lectura fuente conserva el espejo de
+\texttt{CocoSgt/riemann-hypothesis-lean}, revisión
+\nolinkurl{7cbf7a0c32fca1badf05931879a37c3f8a2b03b4}.
+Comprende 34 archivos: 28 lecturas completas y seis selectivas,
+con 3\,704 líneas leídas. Se verificaron los 34 hashes Git de los
+bytes recuperados y se registró además SHA-256. Los rangos exactos,
+las declaraciones y sus hipótesis están en la clave
+\texttt{lean\_source\_review\_auxiliary\_primes} de
+\texttt{REGISTRO.json}. No se ejecutó Lean ni se auditó la clausura
+transitiva de imports.
+
+La diferencia entre una proposición y su productor es decisiva:
+\texttt{PairGood.lean}, líneas 28--30, define \texttt{PairEx}
+como una proposición; \texttt{pairEx.lean}, líneas 112--169,
+contiene el teorema \texttt{QH.pairEx : UpperTheory.Top.PairEx}
+y su prueba. La Nota~\ref{sec:parametros} recibió esa proposición
+como entrada. Esta lectura localiza su productor y desarrolla parte
+de sus mecanismos, manteniendo identificadas las estimaciones que
+siguen fuera del desarrollo.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{.34\textwidth}X@{}}
+\toprule
+Archivo y declaración & Relación matemática comprobada \\
+\midrule
+\texttt{MeanSqAbs}, \texttt{MSqPairs} &
+Retienen la clase excepcional y el término mixto
+$2B\,RR$ junto a $2B^2$. \\
+\texttt{PrimeSetTwoBounds}, \texttt{meanSqK} &
+\texttt{MeanSq} admite toda secuencia acotada, lo que permite
+cortar $\kappa$ por $n>t$ para la derivada. \\
+\texttt{BadShare.bad\_share} &
+Controla los testigos variables en $t$ mediante derivadas,
+integración y bloques diádicos. \\
+\texttt{CountBadCore}, \texttt{StagePow} &
+Usan el conductor $fp$ para inyectar los primos descartados;
+el ahorro relativo es $U^{-21/40}$. \\
+\texttt{Stage1Succ}, \texttt{CharOf} &
+Pasan a primitivas; la igualdad con el carácter original
+se afirma en unidades. \\
+\texttt{PairShare}, \texttt{PairExists} &
+Fijan un umbral común y eligen sucesivamente $q$ y $d$
+en la fibra correspondiente. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Hay dos diferencias de presentación que no deben ocultarse.
+La función \texttt{sP} del código suma todas las potencias de un primo,
+mientras que $A_\ell$ en \eqref{eq:aux-coeficientes} suma las impares
+fuera del módulo. El código utiliza así un mayorante más grueso;
+no se identifica esa suma con nuestra descomposición exacta.
+Además, \texttt{BadShare} obtiene una proporción intermedia
+\begin{equation}
+ \frac{32C}{\tau}\frac{Y^{-\tau}}{1-2^{-\tau}}
+ \label{eq:aux-diadas-lean}
+\end{equation}
+para las sumas que trata. El Lema~\ref{lem:aux-maximal}, siguiendo
+A93, Lema~5.2, demuestra otra cota, con $Y^{-2\tau}$ y logaritmos,
+para funciones absolutamente continuas bajo sus dos momentos.
+Ambas pruebas dan la simultaneidad requerida; no se atribuye al
+código literalmente la constante de la prueba escrita.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{.34\textwidth}X@{}}
+\toprule
+Archivo y declaración & Paso y alcance \\
+\midrule
+\texttt{TwistPrim}, \texttt{BoxOfS} &
+La identidad global para conductores coprimos permite
+usar $G=-S-yT$ para la misma función. \\
+\texttt{TailKExp.tailK} &
+Conserva $Z=X^{400}$ y la holgura
+$\varepsilon/(1600J)$ en la cola. \\
+\texttt{Kappa4Loglog.kappa4} &
+Pasa de $1000\log\log Q+C$ a $4\log Y$;
+\texttt{pairEx} usa después $Y\le y$. \\
+\texttt{PsiThin}, \texttt{Thin} &
+Delimitan la fórmula explícita con el polo sustraído
+y la cota en escala delgada. \\
+\texttt{RealBox}, \texttt{thinH} &
+Conservan las hipótesis de conductores y soporte primo
+al trasladar la cota a los datos del cuerpo anfitrión. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Las seis lecturas selectivas son \texttt{PsiThin}, \texttt{twistK},
+\texttt{MSqCount}, \texttt{MSqTwist}, \texttt{MSqMain} y
+\texttt{MSqMainB}. La revisión no reconstruye todas las pruebas de
+progresiones uniformes, Siegel, región sin ceros, densidad, contornos
+ni fórmula explícita. Tampoco convierte la lectura de
+\texttt{QH.pairEx} o \texttt{QH.thinH} en una nueva verificación
+formal de sus dependencias. Este alcance precisa qué parte del puente
+analítico se estudió y cuál permanece como entrada.
+
+\subsection{Ejercicios resueltos}
+
+\begin{ejercicio}\label{ej:aux-congruencias}
+Tome $q=11$, $z=3$, $R_q=33$ y $d=263$.
+Compruebe las congruencias de la segunda etapa y las condiciones
+locales en $2$, $3$ y $q$. ¿Demuestra este ejemplo la existencia
+en los intervalos exponenciales requeridos?
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:aux-congruencias}.}
+$263$ es primo: no es divisible por $2,3,5,7,11,13$, los únicos
+primos no mayores que su raíz cuadrada. Se tiene
+\[
+ 8R_q-1=263,\qquad d\equiv7\pmod{16},\qquad
+ d+1=264=8R_q.
+\]
+Por tanto $-d\equiv1\pmod3$ y $-d\equiv1\pmod{11}$;
+$3$ y $11$ se descomponen en $\Q(\sqrt{-263})$.
+Como $-263\equiv1\pmod8$, también se descompone $2$ en ese cuerpo.
+En cambio $-11\equiv5\pmod8$, de modo que $2$ es inerte en
+$\Q(\sqrt{-11})$. El ejemplo comprueba las congruencias y sus
+consecuencias locales. No comprueba los intervalos exponenciales
+ni las estimaciones analíticas, que requieren sus propios parámetros
+y umbrales.
+
+\begin{ejercicio}\label{ej:aux-proporcion}
+Tres familias $F_{p,1},F_{p,2},F_{p,3}$ satisfacen los dos momentos
+del Lema~\ref{lem:aux-maximal} con $C=1$ y
+$\mathcal P\ne\varnothing$. Sean $h=1/2$, $\tau=1/4$ y
+$Y\ge10^8$. Demuestre que al menos tres cuartas partes de los
+índices cumplen las tres cotas en todo $[Y,X]$, cualquiera que sea
+$X\ge Y$.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:aux-proporcion}.}
+La suma de las tres proporciones excepcionales es a lo sumo
+\[
+ 12Y^{-1/2}\bigl(5\log(2Y)+8\bigr).
+\]
+La derivada de $Y^{-1/2}(5\log(2Y)+8)$ es
+$Y^{-3/2}(1-\tfrac52\log(2Y))$, negativa para $Y\ge2$.
+En $Y=10^8$, como $\log(2\cdot10^8)<20$, la cota es menor que
+$12\cdot108/10^4=0.1296<1/4$. Los otros índices satisfacen las
+tres desigualdades $|F_{p,j}(t)|\le\tfrac12t^{3/4}$ para todo
+$t\in[Y,X]$. El extremo $X$ no entra en esta estimación.
+
+\begin{ejercicio}\label{ej:aux-familia-creciente}
+Sean $Y\ge3$, $X=2Y$ y
+\[
+ N=\left\lceil\frac{4\sqrt{2Y}}{\log(2Y)}\right\rceil,
+ \qquad \mathcal P=\mathcal A=\{1,\ldots,N\},
+ \qquad F_{p,\alpha}(t)=2t^{3/4}\mathbf1_{p=\alpha}.
+\]
+Compruebe los dos momentos con $C=1$. Muestre que cada condición
+individual descarta una proporción que tiende a cero, pero ningún
+índice cumple todas las condiciones con $h=1$, $\tau=1/4$.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:aux-familia-creciente}.}
+Para $\alpha$ fijo y $Y\le t\le2Y$,
+\[
+ \sum_p|F_{p,\alpha}(t)|^2=4t^{3/2}
+ \le Nt\log(2t),
+\]
+pues $4\sqrt t/\log(2t)\le4\sqrt{2Y}/\log(2Y)\le N$.
+Además $tF'_{p,\alpha}=\tfrac34F_{p,\alpha}$, de modo que
+el segundo momento es $9/16$ del primero. Para cada $\alpha$
+solo falla $p=\alpha$: su proporción es $1/N\to0$.
+Pero cada $p$ falla para $\alpha=p$. Este ejemplo usa índices
+abstractos, sin afirmar que sean primos. Demuestra que la finitud
+a cada escala no reemplaza el control del número de condiciones
+cuando la escala varía.
+
+\begin{ejercicio}\label{ej:aux-fibras}
+En el Lema~\ref{lem:aux-fibras}, tome
+$\mathcal Q=\{0,1\}$, $\mathcal Q_0=\{0\}$,
+una fibra $\mathcal D(0)$ de un único elemento, que es bueno, y una fibra
+$\mathcal D(1)$ con $K\ge1$ elementos, ninguno bueno.
+Compare la selección sucesiva con la medida uniforme sobre
+el conjunto de todas las parejas.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:aux-fibras}.}
+Al elegir primero $q$ uniformemente y después un elemento de su
+fibra uniformemente, la probabilidad de éxito es $1/2$:
+el único elemento de la fibra de $0$ es bueno.
+En la unión de todas las parejas hay $K+1$ elementos y solo uno
+bueno, por lo que la proporción uniforme global es $1/(K+1)$.
+Los tamaños distintos de las fibras explican la diferencia.
+La existencia sucesiva necesita una fibra buena sobre un primer
+índice retenido; no necesita independencia ni una medida uniforme
+global sobre todas las parejas.
+
+\begin{ejercicio}\label{ej:aux-holguras}
+Use la Proposición~\ref{prop:aux-delgada} con
+$\alpha=\varepsilon/5$, $\beta=\varepsilon/3$ y
+$r=\varepsilon/8$. Compruebe el intervalo permitido para $r$
+y las reservas que deja $\mu=61/100$.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:aux-holguras}.}
+Se tiene $\beta-\alpha=2\varepsilon/15$ y
+$\beta/2=\varepsilon/6$, de modo que el extremo menor es
+$2\varepsilon/15$. La diferencia con $r$ es
+$2\varepsilon/15-\varepsilon/8=\varepsilon/120>0$.
+Además $\alpha/\beta=3/5$ y $1-r/\beta=5/8$;
+por tanto $3/5<61/100<5/8$. Finalmente
+\[
+ \beta\mu-\alpha=\frac{\varepsilon}{300},\qquad
+ \beta(1-\mu)-r=\frac{\varepsilon}{200}.
+\]
+La primera reserva absorbe el factor fijo y los logaritmos del
+conductor; la segunda absorbe las constantes y el prefactor de
+la cola integral. Ambas son positivas para $\varepsilon$ fijo.
+No dan un mismo umbral cuando $\varepsilon$ tiende a cero.

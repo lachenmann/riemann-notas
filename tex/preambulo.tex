@@ -46,6 +46,10 @@
 \setlist[description]{style=nextline,leftmargin=1.4em,labelindent=0pt}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \setcounter{tocdepth}{2}
+% Reservar espacio para números de subsección de dos cifras, como 10.10.
+\makeatletter
+\renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{3.0em}}
+\makeatother
 \numberwithin{equation}{section}
 \allowdisplaybreaks[1]
 \widowpenalty=10000

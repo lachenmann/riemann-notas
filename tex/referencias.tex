@@ -21,7 +21,10 @@ El \href{https://www.ulam.ai/archive}{archivo de ULAM} lo enlaza al mismo
 registro que [A], fechado el 23 de noviembre. El PDF no imprime firma
 ni fecha. La guía~\ref{subsec:guia-a93} distingue sus secciones de las
 de [A], que sigue designando el ejemplar de 55 páginas.
-Su Apéndice A, pp.~89--92, conserva la revisión de código de [L]
+La Nota~\ref{sec:auxiliares} utiliza §5, pp.~21--28, en particular
+la Proposición~5.1, el Lema~5.2 y la Proposición~5.3; distingue
+las entradas analíticas uniformes de las deducciones que desarrolla.
+El Apéndice A de A93, pp.~89--92, conserva la revisión de código de [L]
 y atribuye las comprobaciones formales a informes externos.
 
 \bibitem[B]{fuenteB}
@@ -57,7 +60,7 @@ Lean~4.33.1 y la revisión de Mathlib identificada en ese registro.
 El cotejo de esta entrega se limita a las interfaces y pasos señalados
 en las Notas~\ref{sec:ventanas}, \ref{sec:caracteres},
 \ref{sec:marcos}, \ref{sec:periodos}, \ref{sec:geometria},
-\ref{sec:cohomologia} y~\ref{sec:parametros}.
+\ref{sec:cohomologia}, \ref{sec:parametros} y~\ref{sec:auxiliares}.
 El tramo de marcos comprende la lectura localizada de 14 archivos sobre
 la desigualdad lineal, las pendientes y su transferencia; no verifica las
 entradas de la construcción automorfa. No incluyó compilación ni ejecución
@@ -78,7 +81,13 @@ profundas; no se audita toda la clausura de dualidad, homología,
 torsión o automorfía. El tramo de parámetros y ventanas coteja 28 archivos:
 26 completos y dos selectivos. Conserva el presupuesto de traza,
 el orden de los cuantificadores y las entradas de la selección de
-auxiliares. Los recuentos de cada tramo pueden compartir archivos.
+auxiliares. El octavo cotejo, sobre primos auxiliares, comprende
+34 archivos: 28 lecturas completas y seis selectivas, con 3704 líneas
+leídas. Sigue el segundo momento, la selección uniforme de la pareja
+y el paso a la escala delgada; §\ref{subsec:aux-lean} detalla sus
+hipótesis y límites. No se revisan por completo las dependencias
+analíticas de esos ensamblajes. Los recuentos de cada tramo pueden
+compartir archivos.
 
 \bibitem[D1]{dlmf-zeta}
 NIST. \emph{Digital Library of Mathematical Functions}, versión 1.2.8.
@@ -284,8 +293,17 @@ $1/2+(C+4)\varepsilon$ y coordina los umbrales de una misma familia.
 El reescalamiento conserva la pareja de primos en la ventana; el cotejo
 Lean distingue el ensamblaje de la existencia de los datos requeridos.
 
-Queda reconstruir la selección analítica de los primos auxiliares y
+La Nota~\ref{sec:auxiliares} desarrolla las congruencias, el segundo
+momento y el control simultáneo de una ventana, y conserva la dependencia
+del segundo primo respecto del primero. Demuestra el ensamblaje de la
+pareja y la reducción a la escala delgada bajo entradas analíticas
+explícitas. El cotejo Lean distingue esas deducciones de las estimaciones
+de progresiones, densidad de ceros y contorno que las alimentan.
+
+Queda reconstruir las estimaciones analíticas uniformes recibidas y
 la realización completa de los datos automorfos, integrales y de Galois
-que alimentan esos ensamblajes. No se ha ejecutado Lean ni auditado el cierre
+que alimentan esos ensamblajes. El siguiente desarrollo estudiará la
+entrada de Galois de A, §9, pp.~42--46, y A93, §10, pp.~77--85.
+No se ha ejecutado Lean ni auditado el cierre
 de axiomas de la revisión fijada; el cotejo de declaraciones y pruebas
 aquí documentado no certifica la demostración completa de la hipótesis.
