@@ -1764,3 +1764,164 @@ $X^{1/J}=2^{1/16}\le2$ y $W^2=4\le X$.
 Los extremos semiabiertos de los intervalos
 logarítmicos son los que permiten esta elección.
 
+\subsection{Lectura complementaria: conúcleos torcidos en una torre}
+\label{subsec:cohom-fuente-c}
+
+\fuente{C, \emph{Twisted cokernels in a cyclotomic tower},
+«Deformalization 1», ejemplar de 22 páginas:
+§§2--6, pp.~2--9, y §§7--8, pp.~9--15
+\cite{fuenteC}. Esta lectura complementaria desarrolla el mecanismo
+algebraico de las dos cotas de torre utilizadas en esta nota.}
+
+La fuente C aporta una exposición localizada del paso de un módulo
+de Iwasawa a las cotas de longitudes torcidas. Conservamos nuestra
+notación: $e$ es el torcido y $\nu$ la capa; corresponden a $h$ y $m$
+en C. El nivel del escalar se escribirá $a_u$, para distinguirlo
+de la altura diádica $a$ utilizada antes.
+
+\paragraph{Las hipótesis y los cuatro argumentos.}
+Fijemos un primo $\ell$, un entero $R\ge0$, una sobreyección
+$\Z_\ell^R\twoheadrightarrow X$
+y $\gamma\in\operatorname{End}_{\Z_\ell}(X)$ tal que
+$(\gamma-1)^N X\subseteq\ell X$ para algún $N\ge1$.
+Sea $u\in\Z_\ell$ con
+$a_u=v_\ell(u-1)$ entero finito, $a_u\ge1$, y $a_u\ge2$ si $\ell=2$.
+No suponemos que $X$ sea libre: $R$ cuenta generadores, incluida
+la posible torsión. Normalizamos $v_\ell(\ell)=1$, ponemos
+$v_\ell(0)=\infty$ y
+\[
+ \tau(\gamma,u;e,\nu)=
+ \length_{\Z_\ell}\operatorname{coker}
+       \bigl((u^e\gamma)^{\ell^\nu}-1\bigr),
+ \qquad e,\nu\in\N.
+\]
+La función está definida sin las hipótesis de unipotencia y nivel;
+estas se necesitan para las cotas. Sus valores pertenecen a
+$\N\cup\{\infty\}$. Como antes,
+$j_0=\lfloor\log_\ell R\rfloor+3$ para $R>0$ y $j_0=3$ para $R=0$.
+En este último caso $X=0$ y todas las longitudes son cero.
+
+\paragraph{Centros comunes y crecimiento por capas.}
+Los Teoremas A y B de C, p.~3, afirman que existen
+$c_1,\ldots,c_R\in\Z_\ell$ tales que, para todos $e,\nu\ge0$,
+\[
+ \begin{aligned}
+ \tau(\gamma,u;e,\nu)
+ &\le\sum_{i=1}^R
+       \bigl(\max\{\nu,j_0\}+a_u+v_\ell(c_i-e)\bigr),\\
+ \tau(\gamma,u;e,\nu)
+ &\le\tau(\gamma,u;e,j_0)+R(\nu-j_0)_+.
+ \end{aligned}
+\]
+Primero se fijan $X,R,\gamma,u$ y después se eligen los centros,
+que sirven para \emph{todos} los torcidos y todas las capas.
+Si se cambia $\gamma$ o $u$, la existencia de centros para cada
+nuevo par no proporciona centros comunes entre esos pares.
+
+La construcción explica esta independencia. A una capa fija se
+levanta $\gamma^{\ell^{j_0}}$ a una matriz sobre $\Z_\ell^R$.
+El conúcleo matricial se sobreyecta al conúcleo de $X$, por lo que
+su valoración del determinante da una \emph{cota superior}.
+La identidad
+$v_\ell(u^n-1)=a_u+v_\ell(n)$ y la compacidad de $\Z_\ell$
+permiten asociar un centro a cada autovalor del levantamiento.
+La desigualdad ultramétrica controla la proximidad a ese centro;
+no se utiliza un logaritmo $\ell$-ádico ni se requiere que $X$
+sea libre (C, §§3--4, pp.~5--7).
+
+Para pasar a otras capas se usa un argumento distinto.
+Si $w\equiv1\pmod{\ell^2}$ en el sentido de
+$(w-1)X\subseteq\ell^2X$, entonces
+$1+w+\cdots+w^{\ell-1}\equiv\ell\pmod{\ell^2}$.
+Nakayama muestra que su imagen contiene $\ell X$; su conúcleo
+tiene longitud a lo sumo $R$.
+La factorización de $w^\ell-1$ limita cada aumento de capa a $R$.
+La unipotencia módulo $\ell$ permite llegar a esa situación
+en una capa acotada por $\ell$ y $R$.
+Se transportan así los centros elegidos en $j_0$ a todos los niveles
+(C, §5, pp.~7--9).
+
+Para $1\le e\le Z$, cada centro admite a lo sumo un entero
+con $v_\ell(c_i-e)>\lfloor\log_\ell Z\rfloor$.
+Es el mecanismo del Lema~\ref{lem:cohom-excepcionales};
+el Corolario C de la nueva fuente, pp.~3 y 9, obtiene
+a lo sumo $R$ excepciones.
+Su número es uniforme en $Z$, aunque sus posiciones puedan cambiar.
+
+\paragraph{El puente aritmético y la capa fija.}
+Sea $L_\infty/L$ la torre ciclotómica, con $[L_\nu:L]=\ell^\nu$
+y con $L$ conteniendo
+$\mu_\ell$, y $\mu_4$ si $\ell=2$.
+El módulo $X_\infty$ considerado por C corresponde a la extensión
+abeliana pro-$\ell$ máxima de $L_\infty$ no ramificada en ningún
+lugar y en la que los primos sobre $\ell$ se descomponen completamente.
+Supongamos que está generado por $R\ge1$ elementos sobre $\Z_\ell$.
+Si $\chi_{\mathrm{cyc}}$ es el carácter ciclotómico, elegimos un
+generador topológico $\sigma$ de $\operatorname{Gal}(L_\infty/L)$.
+Entonces $u=\chi_{\mathrm{cyc}}(\sigma)$ genera su imagen;
+$\gamma$ es la acción de $\sigma$ en $X_\infty$.
+El descenso proporciona, para $e\ge1$,
+\[
+ s_{\ell,e}(L_\nu)=\tau(\gamma,u;e,\nu).
+\]
+La segunda cota y Poitou--Tate dan entonces
+\[
+ s_{\ell,e}(L_\nu)
+ \le
+ \underbrace{\length_{\Z_\ell}
+ H^2(G_{L_{j_0},S_\ell},\Z_\ell(e+1))}_{W_\ell(L_{j_0},e)}
+ +R(\nu-j_0)_+.
+\]
+Es precisamente la estructura de \eqref{eq:cohom-segunda-cota}:
+el primer término pertenece a la \emph{capa fija}.
+Una cota por centros puede ser infinita incluso si la longitud
+efectiva es finita, pues el levantamiento matricial puede introducir
+esa pérdida cuando hay torsión.
+La finitud en todas las capas se obtiene de esta segunda desigualdad
+y de la entrada finita para $H^2$, no del argumento de centros.
+
+C distingue tres entradas en §7, pp.~10--11:
+nilpotencia local sobre el módulo dual discreto, descenso de Sha
+y comparación por Poitou--Tate.
+La primera y la tercera se enuncian con bosquejos.
+El descenso se desarrolla en §8, pero recibe los Inputs 2a y 2b
+de p.~15: la identificación cohomológica con invariantes y su
+reducción al núcleo de un generador.
+La condición $e\ne0$ entra en la primera identificación;
+el uso aquí requiere $e\ge1$.
+Las cotas cuantitativas de la capa fija y la uniformidad de $R$
+en familias conservan el carácter de entradas de esta nota.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.30\textwidth}Y@{}}
+\toprule
+Pasaje de C & Lugar de estas notas \\
+\midrule
+Teoremas A--B; §§3--6 &
+Las dos cotas de torre y el
+Lema~\ref{lem:cohom-excepcionales}.\\
+Teorema D; §§7--8 &
+El núcleo local, la dualidad y
+\eqref{eq:cohom-segunda-cota}.\\
+§7, pp.~11--12 &
+La entrada de capa fija \eqref{eq:cohom-lema-k},
+la ventana y el orden de elecciones de la
+Nota~\ref{sec:parametros}.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\paragraph{Procedencia y alcance del cotejo.}
+C remite al espejo de Deicyde, revisión \texttt{40e56bab};
+nuestras concordancias previas fijan el espejo de CocoSgt,
+revisión \texttt{7cbf7a0}.
+Las comprobaciones declaradas por C se atribuyen a la fuente;
+esta incorporación no ejecuta Lean.
+C, §10, p.~17, aclara que su formulación de los centros
+en $\Z_\ell$, con el nivel exacto $a_u$, concreta más que el tipo
+literal \texttt{ABound} usado antes.
+Conservamos $j_0=\lfloor\log_\ell R\rfloor+3$:
+la mejora con $+2$ que C observa no es la formulación del archivo.
+El complemento explica el mecanismo de las torres; no demuestra
+las entradas \texttt{LemmaK}, \texttt{PairEx} ni el cierre global.

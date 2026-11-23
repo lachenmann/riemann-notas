@@ -1,26 +1,44 @@
 # Ejemplares utilizados
 
-Las notas se basan en los dos ejemplares identificados a continuación. Se conservan sus bytes originales en el archivo de trabajo del proyecto. El segundo recibió el nombre `GRH-note.pdf`; su contenido permanece idéntico al ejemplar estudiado como `GRH note.pdf`. Los enlaces externos sirven para consultar las fuentes; la versión utilizada en cada cotejo se identifica por su fecha, número de páginas y hash.
+Las notas utilizan dos exposiciones de base, A/B, y una lectura complementaria, C, identificadas a continuación. Se conservan sus bytes originales en el archivo de trabajo del proyecto. El segundo recibió el nombre `GRH-note.pdf`; su contenido permanece idéntico al ejemplar estudiado como `GRH note.pdf`. Los enlaces externos sirven para consultar las fuentes; la versión utilizada en cada cotejo se identifica por su fecha, número de páginas y hash.
 
 | Clave | Ejemplar utilizado | Enlace de consulta |
 | --- | --- | --- |
 | A | *Dirichlet L-functions and the critical line*. La portada no identifica autor. 55 páginas. | [PDF en ULAM](https://www.ulam.ai/research/riemann_hypothesis.pdf) |
 | B | Robin Zhang, *A preliminary note on Alpöge’s proposed proof of the generalized Riemann hypothesis*. 21 de noviembre de 2026. 73 páginas. | [PDF en la web de Robin Zhang](https://www.ihes.fr/~rzhang/files/GRH%20note.pdf) |
+| C | riemann-rev, *Twisted cokernels in a cyclotomic tower*, «Deformalization 1». 22 páginas; consulta: 23 de noviembre de 2026. | [PDF público](https://nasqret.github.io/riemann-rev/digests/tower-bound.pdf) · [Edición fijada](https://github.com/nasqret/riemann-rev/blob/198e87ac146b38a2b31e15faa3ba81c4bc4dd497/digests/tower-bound/editions/tower-bound-c054c66c84bc.pdf) |
 
 ## Identificación de versiones
 
-Los hashes siguientes identifican los ejemplares utilizados en las notas. Su conservación se comprobó byte por byte el 22 de noviembre de 2026.
+Los hashes siguientes identifican los ejemplares utilizados en las notas. La conservación de A/B se comprobó byte por byte el 22 de noviembre de 2026. C se recuperó el 23 de noviembre: la descarga pública y la edición del commit fijado coinciden byte por byte.
 
 | Archivo | Bytes | SHA-256 |
 | --- | ---: | --- |
 | `riemann_hypothesis.pdf` | 845543 | `419e24a4ba07eb9ce98524ad11f568f2bd87d8d70abe288e4ef37632bdd8bb85` |
 | `GRH-note.pdf` | 850937 | `2cbd7e9b693c753f6afa22251db9669c9652555a91cee0cdfbd37a8465ad2ad9` |
+| `tower-bound-c054c66c84bc.pdf` | 227407 | `c054c66c84bce37c1bb9c1cdf56a92e06d500b274fa7a28d30f97b802d4e4b87` |
 
 **Comprobación de los enlaces públicos, 22 de noviembre de 2026.** El enlace de A entrega exactamente el ejemplar de la tabla. El enlace de B entrega una versión posterior, fechada el 22 de noviembre, de 76 páginas y 872585 bytes, con SHA-256 `3bd82fa3d242fe473cb371cbab0a8d211cb7dd05f72ba2db1b4c4ef8f27478a3`. Las citas del cuaderno siguen referidas al ejemplar de 73 páginas del 21 de noviembre; queda pendiente comparar ambos textos antes de actualizar páginas o enunciados.
 
 Las páginas citadas corresponden a la numeración impresa de los ejemplares de la tabla, que coincide con el contador del PDF. El desarrollo de las notas es material de estudio propio. Las declaraciones de alcance de cada fuente deben tenerse en cuenta al cotejar sus enunciados con el código formal.
 
 Si una fuente se actualiza, registrar la nueva versión antes de cambiar referencias. No reemplazar silenciosamente un ejemplar por otro con el mismo nombre.
+
+## Fuente C: complemento de las cotas de torre
+
+El documento declara como autor a **riemann-rev**, tanto en sus metadatos como en su fuente TeX. No imprime una fecha de edición; se identifica por el hash del ejemplar y la fecha de consulta. La publicación está fijada en `nasqret/riemann-rev@198e87ac146b38a2b31e15faa3ba81c4bc4dd497`; el PDF tiene el blob Git `a965b4d0440d0d13c801b7e19c9571885569f836`. El material original del proyecto utiliza la [licencia 0BSD](https://github.com/nasqret/riemann-rev/blob/198e87ac146b38a2b31e15faa3ba81c4bc4dd497/LICENSE).
+
+La incorporación añade §8.17 al final de la Nota 8 y una remisión en §9.9. Se conservan la numeración de los resultados y ejercicios anteriores y los ejemplares A55/B73.
+
+| Pasaje de C | Uso en el cuaderno |
+| --- | --- |
+| Teoremas A–B y Corolario C, p. 3; §§3–6, pp. 5–9 | Conúcleo torcido con sus cuatro argumentos; presentación y determinante; centros comunes a todos los torcidos y capas; crecimiento y número de excepciones. |
+| Teorema D, p. 4; §§7–8, pp. 9–15 | Descenso desde el módulo de Iwasawa, signos del torcido y comparación de Sha con el $H^2$ de una capa fija. Se identifican las entradas 1–3 y 2a/2b. |
+| §10, pp. 17–18; Apéndice A, pp. 18–21 | Diferencia entre la exposición y los tipos formales, alcance de la concordancia y procedencia del código enlazado. |
+
+**Revisión distinta de Lean.** Los enlaces de C remiten a [Deicyde/riemann-hypothesis](https://github.com/Deicyde/riemann-hypothesis/tree/40e56bab026552e089d7afcfeff08d2defb9c005), revisión `40e56bab026552e089d7afcfeff08d2defb9c005`. Los siete manifiestos anteriores del cuaderno permanecen vinculados a `CocoSgt/riemann-hypothesis-lean@7cbf7a0c32fca1badf05931879a37c3f8a2b03b4`. No se ha comprobado la equivalencia íntegra entre ambos espejos/revisiones. Se releyeron cinco copias ya recuperadas para precisar la correspondencia, sin descargar otro conjunto Lean ni crear un octavo manifiesto.
+
+La concordancia de 108 declaraciones y las verificaciones formales descritas por C son controles **comunicados por esa fuente**. Esta incorporación revisa su exposición matemática y la identidad documental; no ejecuta Lean ni audita toda su clausura de dependencias. La cota uniforme del número de generadores en familias, la entrada cuantitativa `LemmaK` y la selección `PairEx` conservan su condición de pendientes del cuaderno. Se mantiene el umbral $\lfloor\log_\ell R\rfloor+3$ de la interfaz formal.
 
 ## Bibliografía de fundamentos
 

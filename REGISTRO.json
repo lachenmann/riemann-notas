@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-22",
+  "date": "2026-11-23",
   "vault_folder_id": "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC",
   "vault_folder_url": "https://drive.google.com/drive/folders/16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC",
   "files": [
@@ -35,10 +35,11 @@
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
       "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
-      "size_bytes": 14892,
-      "sha256": "24f59527aac3b3949cf8871b388dd4996849a9edd9acd9f090de9e9ebb68b8ac",
-      "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked.",
-      "modified_time": "2026-11-23T04:02:29.803Z"
+      "size_bytes": 16437,
+      "sha256": "b74fca85a5a1b33be969bdbe261ebd36ff9a9e7d68cce538249d51c9795d19c0",
+      "verification": "Recuperación íntegra posterior; igualdad byte por byte, nombre, tipo y carpeta padre comprobados.",
+      "modified_time": "2026-11-23T13:04:50.298Z",
+      "full_bytes_verified": true
     },
     {
       "name": "01-Sumas-y-transformadas.md",
@@ -72,10 +73,11 @@
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
       "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
-      "size_bytes": 18334,
-      "sha256": "ad2eec4da0133666f4bf3eb0a9adc745a3fbe721eed408f8e2acf53d45007707",
-      "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked.",
-      "modified_time": "2026-11-23T04:02:26.525Z"
+      "size_bytes": 20375,
+      "sha256": "29b412c70ea79db45ac6c9adb50369a5ef1dfb6119369501490b3ff95fe7f0c2",
+      "verification": "Recuperación íntegra posterior; igualdad byte por byte, nombre, tipo y carpeta padre comprobados.",
+      "modified_time": "2026-11-23T13:04:53.877Z",
+      "full_bytes_verified": true
     },
     {
       "name": "04-Criterio-unilateral-de-ventanas.md",
@@ -166,15 +168,16 @@
     {
       "id": "1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F",
       "name": "09-Cohomologia-y-denominadores.md",
-      "size_bytes": 66955,
-      "sha256": "a85385d7909087c524aa98485d8f6b2713f8fc8e228d3a2d28145810e88bcf81",
+      "size_bytes": 74065,
+      "sha256": "48cbac80e32037f3f0ee4c8905e9d292c9b9500c293b0a93c58457f6e94f123c",
       "url": "https://drive.google.com/file/d/1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F/view",
       "mime_type": "text/markdown",
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked.",
-      "modified_time": "2026-11-23T04:02:33.548Z"
+      "verification": "Recuperación íntegra posterior; igualdad byte por byte, nombre, tipo y carpeta padre comprobados.",
+      "modified_time": "2026-11-23T13:04:57.273Z",
+      "full_bytes_verified": true
     },
     {
       "id": "1Zwmd8GaRBm4PpSHVflRbhAU211_h24H2",
@@ -184,21 +187,39 @@
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
       "url": "https://drive.google.com/file/d/1Zwmd8GaRBm4PpSHVflRbhAU211_h24H2/view",
-      "modified_time": "2026-11-23T04:02:11.389Z",
-      "size_bytes": 43547,
-      "sha256": "3c4fae57ded694140ddf08f5fc20c00fc2e643ee02276b71dca41b09c135128e",
-      "verification": "Full remote raw bytes downloaded after writing and compared byte for byte to final candidate; MIME and parent checked."
+      "modified_time": "2026-11-23T13:05:01.185Z",
+      "size_bytes": 44458,
+      "sha256": "30fc9186244138328f29e92ffafea4110245473476e6fec4050aeb9542e5f48c",
+      "verification": "Recuperación íntegra posterior; igualdad byte por byte, nombre, tipo y carpeta padre comprobados.",
+      "full_bytes_verified": true
+    },
+    {
+      "id": "1xhKuu_oyoPPoz4bI7e7ywJ9UbBPvXB_d",
+      "name": "tower-bound-c054c66c84bc.pdf",
+      "mime_type": "application/pdf",
+      "parent_ids": [
+        "1JOOvjCkJkco_6fRznoOYLg-jsOiBQlol"
+      ],
+      "modified_time": "2026-11-23T13:02:43.518Z",
+      "sha256": "c054c66c84bce37c1bb9c1cdf56a92e06d500b274fa7a28d30f97b802d4e4b87",
+      "full_bytes_verified": true,
+      "size_bytes": 227407,
+      "url": "https://drive.google.com/file/d/1xhKuu_oyoPPoz4bI7e7ywJ9UbBPvXB_d/view",
+      "path_in_vault_project": "Fuentes/tower-bound-c054c66c84bc.pdf",
+      "source": "C",
+      "pages": 22,
+      "verification": "PDF original recuperado íntegramente del destino; bytes idénticos a la edición fijada y a la descarga pública; nombre, tipo y carpeta padre comprobados."
     }
   ],
   "obsidian_rendering_checked": false,
   "github_status": "active_public_repository",
   "latex": {
     "status": "compiled_and_composition_checked",
-    "pages": 112,
+    "pages": 114,
     "page_size": "A4",
     "path": "pdf/notas-hipotesis-riemann.pdf",
-    "size_bytes": 998295,
-    "sha256": "fbca9c3177f6df68129dfd1f845bcfceefd1b74940d657ba53b7c9d7f0ea2e4d",
+    "size_bytes": 1020282,
+    "sha256": "29eb35b259568391b8f9efcccfc0eea17fc1160ffd51947394d443229df4c871",
     "compilation_exit_code": 0,
     "warnings": 0,
     "unresolved_references": 0,
@@ -207,20 +228,11 @@
     "missing_characters": 0,
     "all_pages_visually_reviewed": false,
     "visually_reviewed_pages": [
-      1,
-      2,
-      3,
       4,
       5,
-      6,
       17,
-      18,
+      97,
       98,
-      99,
-      100,
-      101,
-      102,
-      103,
       104,
       105,
       106,
@@ -229,7 +241,9 @@
       109,
       110,
       111,
-      112
+      112,
+      113,
+      114
     ],
     "chapter_3_pages": [
       25,
@@ -239,7 +253,7 @@
       33,
       44
     ],
-    "cross_reading_with_markdown": "La lectura cruzada completa conserva las hipótesis, conjugados, signos, normalizaciones, extensión a 0<y<1, biyección de la familia retenida al dual del cociente, los dos términos de error y el alcance del cotejo formal. La introducción conserva las 495 expresiones matemáticas cotejadas, 12 subsecciones, nueve enunciados, 15 ecuaciones numeradas y seis ejercicios con soluciones tras expandir las macros y adaptar enlaces al Markdown. La Nota 5 conserva las 345 expresiones matemáticas cotejadas, 13 subsecciones, cinco enunciados, 29 ecuaciones numeradas y tres ejercicios con soluciones; las tablas, hipótesis y referencias se leyeron de forma cruzada. La Nota 6 conserva 431 expresiones matemáticas, 16 subsecciones, 5 enunciados con 5 pruebas, 34 ecuaciones y 4 ejercicios con 4 soluciones. Se leyeron íntegramente ambos textos y se cotejaron tablas, enlaces y alcance de Lean; la única normalización técnica ignora la sangría inicial de una expresión dentro de una lista. La Nota 7 conserva las expresiones matemáticas y enlaces cotejados, 15 subsecciones, 28 ecuaciones numeradas, siete enunciados con siete pruebas, cuatro ejercicios con soluciones y una tabla. Se leyeron íntegramente TeX y Markdown; los detalles del cotejo constan en el evento de geometría. La Nota 8 se leyó íntegramente en TeX y Markdown; se conservaron 721 expresiones matemáticas del cuerpo, 36 ecuaciones, diez enunciados y pruebas, cuatro ejercicios con soluciones, tabla de casos y 80 identificadores. Solo se normalizó sangría inicial al comparar fórmulas. Nota 9: lectura íntegra de LaTeX y Markdown; 458 expresiones matemáticas, 28 ecuaciones numeradas, 7 resultados con 7 pruebas, 4 ejercicios con soluciones, 2 tablas y 56 identificadores. Equivalencia de fórmulas por AST y etiquetas a)/b) conservadas; sin inspección visual en Obsidian.",
+    "cross_reading_with_markdown": "Las lecturas históricas se conservan en los doce eventos anteriores. El nuevo complemento de §8.17 conserva 86 expresiones matemáticas (82 en línea y cuatro en bloque), una tabla de tres filas y dos columnas y las referencias (8.28), (8.25), Lema 8.8 y Nota 9. Equivalencia tras expandir macros y normalizar espacios. El cuerpo previo de cohomología permanece idéntico y las fórmulas anteriores de la Nota 9 no cambian. No se inspeccionó la presentación en Obsidian.",
     "lean_compiled_or_executed": false,
     "introduction_pages": [
       6,
@@ -262,548 +276,603 @@
       54
     ],
     "references_and_status_pages": [
-      110,
-      112
+      111,
+      114
     ],
-    "previous_visual_review_preserved_by_pixel_identity": [],
+    "previous_visual_review_preserved_by_pixel_identity": [
+      {
+        "current_page": 1,
+        "previous_page": 1,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 2,
+        "previous_page": 2,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 3,
+        "previous_page": 3,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 6,
+        "previous_page": 6,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 7,
+        "previous_page": 7,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 8,
+        "previous_page": 8,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 9,
+        "previous_page": 9,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 10,
+        "previous_page": 10,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 11,
+        "previous_page": 11,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 12,
+        "previous_page": 12,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 13,
+        "previous_page": 13,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 14,
+        "previous_page": 14,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 15,
+        "previous_page": 15,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 16,
+        "previous_page": 16,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 18,
+        "previous_page": 18,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 19,
+        "previous_page": 19,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 20,
+        "previous_page": 20,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 21,
+        "previous_page": 21,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 22,
+        "previous_page": 22,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 23,
+        "previous_page": 23,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 24,
+        "previous_page": 24,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 25,
+        "previous_page": 25,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 26,
+        "previous_page": 26,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 27,
+        "previous_page": 27,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 28,
+        "previous_page": 28,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 29,
+        "previous_page": 29,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 30,
+        "previous_page": 30,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 31,
+        "previous_page": 31,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 32,
+        "previous_page": 32,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 33,
+        "previous_page": 33,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 34,
+        "previous_page": 34,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 35,
+        "previous_page": 35,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 36,
+        "previous_page": 36,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 37,
+        "previous_page": 37,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 38,
+        "previous_page": 38,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 39,
+        "previous_page": 39,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 40,
+        "previous_page": 40,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 41,
+        "previous_page": 41,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 42,
+        "previous_page": 42,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 43,
+        "previous_page": 43,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 44,
+        "previous_page": 44,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 45,
+        "previous_page": 45,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 46,
+        "previous_page": 46,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 47,
+        "previous_page": 47,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 48,
+        "previous_page": 48,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 49,
+        "previous_page": 49,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 50,
+        "previous_page": 50,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 51,
+        "previous_page": 51,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 52,
+        "previous_page": 52,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 53,
+        "previous_page": 53,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 54,
+        "previous_page": 54,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 55,
+        "previous_page": 55,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 56,
+        "previous_page": 56,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 57,
+        "previous_page": 57,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 58,
+        "previous_page": 58,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 59,
+        "previous_page": 59,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 60,
+        "previous_page": 60,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 61,
+        "previous_page": 61,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 62,
+        "previous_page": 62,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 63,
+        "previous_page": 63,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 64,
+        "previous_page": 64,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 65,
+        "previous_page": 65,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 66,
+        "previous_page": 66,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 67,
+        "previous_page": 67,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 68,
+        "previous_page": 68,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 69,
+        "previous_page": 69,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 70,
+        "previous_page": 70,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 71,
+        "previous_page": 71,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 72,
+        "previous_page": 72,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 73,
+        "previous_page": 73,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 74,
+        "previous_page": 74,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 75,
+        "previous_page": 75,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 76,
+        "previous_page": 76,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 77,
+        "previous_page": 77,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 78,
+        "previous_page": 78,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 79,
+        "previous_page": 79,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 80,
+        "previous_page": 80,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 81,
+        "previous_page": 81,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 82,
+        "previous_page": 82,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 83,
+        "previous_page": 83,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 84,
+        "previous_page": 84,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 85,
+        "previous_page": 85,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 86,
+        "previous_page": 86,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 87,
+        "previous_page": 87,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 88,
+        "previous_page": 88,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 89,
+        "previous_page": 89,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 90,
+        "previous_page": 90,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 91,
+        "previous_page": 91,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 92,
+        "previous_page": 92,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 93,
+        "previous_page": 93,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 94,
+        "previous_page": 94,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 95,
+        "previous_page": 95,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      },
+      {
+        "current_page": 96,
+        "previous_page": 96,
+        "all_pixels_identical": true,
+        "identical_except_page_number": true
+      }
+    ],
     "all_pages_composition_checked": true,
-    "visual_method": "Inspección directa de 23 páginas nuevas o modificadas: portada, índice, introducción y guía en PNG Poppler a 110 dpi; Nota 9 y fuentes/estado a 120dpi. Comparación de los otros 89 cuerpos con el PDF anterior a 110dpi, idénticos salvo folio; comprobación de todos los números de página.",
+    "visual_method": "Inspección directa de 16 páginas a 110 dpi; 98 páginas comparadas con el PDF de 112 páginas anterior: 93 idénticas en todos sus píxeles y 5 idénticas salvo folio. Verificados los 114 folios. Revisión independiente de pp. 97–98 y 111–114.",
     "chapter_6_pages": [
       55,
       66
     ],
     "previous_visual_review_preserved_except_page_number": [
       {
-        "current_page": 7,
-        "previous_page": 6,
+        "current_page": 99,
+        "previous_page": 98,
         "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "current_page": 8,
-        "previous_page": 7,
+        "current_page": 100,
+        "previous_page": 99,
         "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "current_page": 9,
-        "previous_page": 8,
+        "current_page": 101,
+        "previous_page": 100,
         "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "current_page": 10,
-        "previous_page": 9,
+        "current_page": 102,
+        "previous_page": 101,
         "all_pixels_identical": false,
         "identical_except_page_number": true
       },
       {
-        "current_page": 11,
-        "previous_page": 10,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 12,
-        "previous_page": 11,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 13,
-        "previous_page": 12,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 14,
-        "previous_page": 13,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 15,
-        "previous_page": 14,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 16,
-        "previous_page": 15,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 19,
-        "previous_page": 18,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 20,
-        "previous_page": 19,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 21,
-        "previous_page": 20,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 22,
-        "previous_page": 21,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 23,
-        "previous_page": 22,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 24,
-        "previous_page": 23,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 25,
-        "previous_page": 24,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 26,
-        "previous_page": 25,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 27,
-        "previous_page": 26,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 28,
-        "previous_page": 27,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 29,
-        "previous_page": 28,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 30,
-        "previous_page": 29,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 31,
-        "previous_page": 30,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 32,
-        "previous_page": 31,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 33,
-        "previous_page": 32,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 34,
-        "previous_page": 33,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 35,
-        "previous_page": 34,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 36,
-        "previous_page": 35,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 37,
-        "previous_page": 36,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 38,
-        "previous_page": 37,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 39,
-        "previous_page": 38,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 40,
-        "previous_page": 39,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 41,
-        "previous_page": 40,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 42,
-        "previous_page": 41,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 43,
-        "previous_page": 42,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 44,
-        "previous_page": 43,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 45,
-        "previous_page": 44,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 46,
-        "previous_page": 45,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 47,
-        "previous_page": 46,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 48,
-        "previous_page": 47,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 49,
-        "previous_page": 48,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 50,
-        "previous_page": 49,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 51,
-        "previous_page": 50,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 52,
-        "previous_page": 51,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 53,
-        "previous_page": 52,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 54,
-        "previous_page": 53,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 55,
-        "previous_page": 54,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 56,
-        "previous_page": 55,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 57,
-        "previous_page": 56,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 58,
-        "previous_page": 57,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 59,
-        "previous_page": 58,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 60,
-        "previous_page": 59,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 61,
-        "previous_page": 60,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 62,
-        "previous_page": 61,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 63,
-        "previous_page": 62,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 64,
-        "previous_page": 63,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 65,
-        "previous_page": 64,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 66,
-        "previous_page": 65,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 67,
-        "previous_page": 66,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 68,
-        "previous_page": 67,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 69,
-        "previous_page": 68,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 70,
-        "previous_page": 69,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 71,
-        "previous_page": 70,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 72,
-        "previous_page": 71,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 73,
-        "previous_page": 72,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 74,
-        "previous_page": 73,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 75,
-        "previous_page": 74,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 76,
-        "previous_page": 75,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 77,
-        "previous_page": 76,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 78,
-        "previous_page": 77,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 79,
-        "previous_page": 78,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 80,
-        "previous_page": 79,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 81,
-        "previous_page": 80,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 82,
-        "previous_page": 81,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 83,
-        "previous_page": 82,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 84,
-        "previous_page": 83,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 85,
-        "previous_page": 84,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 86,
-        "previous_page": 85,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 87,
-        "previous_page": 86,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 88,
-        "previous_page": 87,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 89,
-        "previous_page": 88,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 90,
-        "previous_page": 89,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 91,
-        "previous_page": 90,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 92,
-        "previous_page": 91,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 93,
-        "previous_page": 92,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 94,
-        "previous_page": 93,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 95,
-        "previous_page": 94,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 96,
-        "previous_page": 95,
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 97,
-        "previous_page": 96,
+        "current_page": 103,
+        "previous_page": 102,
         "all_pixels_identical": false,
         "identical_except_page_number": true
       }
@@ -814,11 +883,19 @@
     ],
     "chapter_8_pages": [
       80,
-      97
+      98
     ],
     "chapter_9_pages": [
-      98,
-      109
+      99,
+      110
+    ],
+    "visual_review_result": "Sin problemas de legibilidad, fórmulas, tablas, referencias o desbordes. Saltos de página normales.",
+    "printed_folios_verified": 114,
+    "reading_copy_identical_to_compiled_pdf": true,
+    "previous_pdf_sha256_for_comparison": "fbca9c3177f6df68129dfd1f845bcfceefd1b74940d657ba53b7c9d7f0ea2e4d",
+    "complement_8_17_pages": [
+      97,
+      98
     ]
   },
   "events": [
@@ -4688,6 +4765,389 @@
         "new_file_name_absent_in_fresh_folder_listing": true
       },
       "publication_authorization": "Continuación autorizada del cuaderno en el repositorio público y su bóveda; se conserva la autorización anterior.",
+      "next_step": "Estudiar las entradas de selección analítica de primos auxiliares de A§3 y de compatibilidad automórfica de Galois de A§9, con sus condiciones locales, rangos y cuantificadores para los mismos datos."
+    },
+    {
+      "date": "2026-11-23",
+      "action": "cyclotomic_tower_source_C_incorporated",
+      "previous_github_commit": "1927d77746fcca0ef41176383685a4df6b23f650",
+      "request": "Incorporemos esta fuente nueva: https://nasqret.github.io/riemann-rev/digests/tower-bound.pdf",
+      "canonical_file": "tex/capitulos/08-cohomologia-y-denominadores.tex",
+      "canonical_sha256": "6c145b32c0e189a28e2f466c12a8e83a487c348579608c0ee87eed7a28f47b45",
+      "canonical_support_files": [
+        {
+          "path": "tex/capitulos/09-parametros-y-ventanas-comunes.tex",
+          "size_bytes": 43707,
+          "sha256": "70dea50cd1840912a6ac0017e517544211300360b9c9793571fd5cba355dd429"
+        },
+        {
+          "path": "tex/capitulos/00-guia.tex",
+          "size_bytes": 8144,
+          "sha256": "389388987465a20ae629d13894f4792c476b0b757df7d31b646d6b43616f1a14"
+        },
+        {
+          "path": "tex/referencias.tex",
+          "size_bytes": 15464,
+          "sha256": "dee490e3c0ee53a77632e1a700bcb11fe56b8cb26449ba1fe02fad32b965c6e1"
+        }
+      ],
+      "contents": {
+        "new_subsection": "8.17",
+        "title": "Lectura complementaria: conúcleos torcidos en una torre",
+        "pages": [
+          97,
+          98
+        ],
+        "paragraphs": 4,
+        "new_numbered_equations": 0,
+        "new_numbered_statements": 0,
+        "math_expressions": 86,
+        "inline_math": 82,
+        "display_math": 4,
+        "source_table_body_rows": 3,
+        "source_table_columns": 2,
+        "scope": "Mecanismo algebraico de las dos cotas de torre y enlace con la longitud de Sha y H² de la capa fija; entradas aritméticas delimitadas.",
+        "numbered_equations_results_and_exercises_previously_present_unchanged": true,
+        "previous_note_8_tex_body_byte_identical": true,
+        "introduction_and_notes_1_to_7_byte_identical": true,
+        "note_9_change": "Remisión al nuevo complemento; fórmulas y resultados previos conservados."
+      },
+      "source_review": "source_C_review",
+      "previous_lean_manifests_preserved": [
+        "lean_source_review",
+        "lean_source_review_characters",
+        "lean_source_review_frames",
+        "lean_source_review_periods",
+        "lean_source_review_geometry",
+        "lean_source_review_cohomology",
+        "lean_source_review_parameters"
+      ],
+      "pdf": {
+        "path": "pdf/notas-hipotesis-riemann.pdf",
+        "size_bytes": 1020282,
+        "sha256": "29eb35b259568391b8f9efcccfc0eea17fc1160ffd51947394d443229df4c871",
+        "pages": 114,
+        "page_size": "A4",
+        "compilation_exit_code": 0,
+        "warnings": 0,
+        "unresolved_references": 0,
+        "overfull_boxes": 0,
+        "underfull_boxes": 0,
+        "missing_characters": 0,
+        "reading_copy_identical_to_compiled_pdf": true,
+        "all_pages_visually_reviewed_in_this_revision": false,
+        "directly_visually_reviewed_pages": [
+          4,
+          5,
+          17,
+          97,
+          98,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114
+        ],
+        "independently_reviewed_pages": [
+          97,
+          98,
+          111,
+          112,
+          113,
+          114
+        ],
+        "all_pages_composition_checked": true,
+        "printed_folios_verified": 114,
+        "comparison": {
+          "previous_pdf_sha256": "fbca9c3177f6df68129dfd1f845bcfceefd1b74940d657ba53b7c9d7f0ea2e4d",
+          "dpi": 110,
+          "all_pixels_identical_same_page_ranges": [
+            [
+              1,
+              3
+            ],
+            [
+              6,
+              16
+            ],
+            [
+              18,
+              96
+            ]
+          ],
+          "all_pixels_identical_page_count": 93,
+          "identical_body_current_page_range": [
+            99,
+            103
+          ],
+          "corresponding_previous_page_range": [
+            98,
+            102
+          ],
+          "identical_except_folio_page_count": 5
+        },
+        "current_ranges": {
+          "introduction": [
+            6,
+            16
+          ],
+          "guide": [
+            17,
+            18
+          ],
+          "chapter_1": [
+            19,
+            21
+          ],
+          "chapter_2": [
+            22,
+            24
+          ],
+          "chapter_3": [
+            25,
+            32
+          ],
+          "chapter_4": [
+            33,
+            44
+          ],
+          "chapter_5": [
+            45,
+            54
+          ],
+          "chapter_6": [
+            55,
+            66
+          ],
+          "chapter_7": [
+            67,
+            79
+          ],
+          "chapter_8": [
+            80,
+            98
+          ],
+          "complement_8_17": [
+            97,
+            98
+          ],
+          "chapter_9": [
+            99,
+            110
+          ],
+          "references_and_status": [
+            111,
+            114
+          ]
+        },
+        "review_result": "Sin problemas de legibilidad, fórmulas, tablas, referencias o desbordes. Saltos de página normales."
+      },
+      "markdown_review": {
+        "fragment_math_expressions": 86,
+        "inline_math": 82,
+        "display_math": 4,
+        "math_sequence_equal_after_macro_expansion_and_whitespace_normalization": true,
+        "old_note8_body_byte_identical": true,
+        "old_note9_math_sequence_unchanged": true,
+        "fragment_sha256": "7be1445385aa8522b97e647787425017d8b6c21b25d5282b9eb9aece6e472198",
+        "markdown_fragment_sha256": "92db794aaf095acc273dd5fa3bb15639f106944a6402db193b811e116a640ff8",
+        "references_resolved": {
+          "eq:cohom-segunda-cota": "8.28",
+          "eq:cohom-lema-k": "8.25",
+          "lem:cohom-excepcionales": "8.8",
+          "sec:parametros": "9"
+        },
+        "table_body_rows": 3,
+        "table_columns": 2,
+        "obsidian_rendering_checked": false,
+        "transfer_mode": "Traspaso editorial manual del complemento final; sin sincronización automática.",
+        "review": "Lectura cruzada del complemento y su tabla; macros expandidas y referencias resueltas. Se preserva el cuerpo anterior de cohomología."
+      },
+      "vault_prewrite_version_guard": {
+        "method": "Los cuatro Markdown existentes se recuperaron completos inmediatamente antes de reemplazarlos; coincidieron en bytes y SHA-256 con los baselines, y se comprobaron nombre, MIME, carpeta padre e identificador.",
+        "files": [
+          {
+            "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+            "name": "00-Mapa-de-estudio.md",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "modified_time": "2026-11-23T04:02:29.803Z",
+            "sha256": "24f59527aac3b3949cf8871b388dd4996849a9edd9acd9f090de9e9ebb68b8ac",
+            "full_bytes_verified": true,
+            "size_bytes": 14892,
+            "identical_to_baseline": true
+          },
+          {
+            "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+            "name": "03-Dudas-y-pendientes.md",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "modified_time": "2026-11-23T04:02:26.525Z",
+            "sha256": "ad2eec4da0133666f4bf3eb0a9adc745a3fbe721eed408f8e2acf53d45007707",
+            "full_bytes_verified": true,
+            "size_bytes": 18334,
+            "identical_to_baseline": true
+          },
+          {
+            "id": "1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F",
+            "name": "09-Cohomologia-y-denominadores.md",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "modified_time": "2026-11-23T04:02:33.548Z",
+            "sha256": "a85385d7909087c524aa98485d8f6b2713f8fc8e228d3a2d28145810e88bcf81",
+            "full_bytes_verified": true,
+            "size_bytes": 66955,
+            "identical_to_baseline": true
+          },
+          {
+            "id": "1Zwmd8GaRBm4PpSHVflRbhAU211_h24H2",
+            "name": "10-Parametros-y-ventanas-comunes.md",
+            "mime_type": "text/markdown",
+            "parent_ids": [
+              "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+            ],
+            "modified_time": "2026-11-23T04:02:11.389Z",
+            "sha256": "3c4fae57ded694140ddf08f5fc20c00fc2e643ee02276b71dca41b09c135128e",
+            "full_bytes_verified": true,
+            "size_bytes": 43547,
+            "identical_to_baseline": true
+          }
+        ]
+      },
+      "vault_files_written_and_readback_verified": [
+        {
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+          "name": "00-Mapa-de-estudio.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "modified_time": "2026-11-23T13:04:50.298Z",
+          "size_bytes": 16437,
+          "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
+          "sha256": "b74fca85a5a1b33be969bdbe261ebd36ff9a9e7d68cce538249d51c9795d19c0",
+          "full_bytes_verified": true,
+          "verification": "Recuperación íntegra posterior; igualdad byte por byte, nombre, tipo y carpeta padre comprobados."
+        },
+        {
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+          "name": "03-Dudas-y-pendientes.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "modified_time": "2026-11-23T13:04:53.877Z",
+          "size_bytes": 20375,
+          "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
+          "sha256": "29b412c70ea79db45ac6c9adb50369a5ef1dfb6119369501490b3ff95fe7f0c2",
+          "full_bytes_verified": true,
+          "verification": "Recuperación íntegra posterior; igualdad byte por byte, nombre, tipo y carpeta padre comprobados."
+        },
+        {
+          "id": "1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F",
+          "name": "09-Cohomologia-y-denominadores.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "modified_time": "2026-11-23T13:04:57.273Z",
+          "size_bytes": 74065,
+          "url": "https://drive.google.com/file/d/1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F/view",
+          "sha256": "48cbac80e32037f3f0ee4c8905e9d292c9b9500c293b0a93c58457f6e94f123c",
+          "full_bytes_verified": true,
+          "verification": "Recuperación íntegra posterior; igualdad byte por byte, nombre, tipo y carpeta padre comprobados."
+        },
+        {
+          "id": "1Zwmd8GaRBm4PpSHVflRbhAU211_h24H2",
+          "name": "10-Parametros-y-ventanas-comunes.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "modified_time": "2026-11-23T13:05:01.185Z",
+          "size_bytes": 44458,
+          "url": "https://drive.google.com/file/d/1Zwmd8GaRBm4PpSHVflRbhAU211_h24H2/view",
+          "sha256": "30fc9186244138328f29e92ffafea4110245473476e6fec4050aeb9542e5f48c",
+          "full_bytes_verified": true,
+          "verification": "Recuperación íntegra posterior; igualdad byte por byte, nombre, tipo y carpeta padre comprobados."
+        },
+        {
+          "id": "1xhKuu_oyoPPoz4bI7e7ywJ9UbBPvXB_d",
+          "name": "tower-bound-c054c66c84bc.pdf",
+          "mime_type": "application/pdf",
+          "parent_ids": [
+            "1JOOvjCkJkco_6fRznoOYLg-jsOiBQlol"
+          ],
+          "modified_time": "2026-11-23T13:02:43.518Z",
+          "sha256": "c054c66c84bce37c1bb9c1cdf56a92e06d500b274fa7a28d30f97b802d4e4b87",
+          "full_bytes_verified": true,
+          "size_bytes": 227407,
+          "url": "https://drive.google.com/file/d/1xhKuu_oyoPPoz4bI7e7ywJ9UbBPvXB_d/view",
+          "path_in_vault_project": "Fuentes/tower-bound-c054c66c84bc.pdf",
+          "source": "C",
+          "pages": 22,
+          "verification": "PDF original recuperado íntegramente del destino; bytes idénticos a la edición fijada y a la descarga pública; nombre, tipo y carpeta padre comprobados."
+        }
+      ],
+      "vault_editorial_changes": [
+        {
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+          "name": "00-Mapa-de-estudio.md",
+          "before_sha256": "24f59527aac3b3949cf8871b388dd4996849a9edd9acd9f090de9e9ebb68b8ac",
+          "after_sha256": "b74fca85a5a1b33be969bdbe261ebd36ff9a9e7d68cce538249d51c9795d19c0",
+          "change": "Añadida C al mapa y al alcance; remisión al complemento de §8.17."
+        },
+        {
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+          "name": "03-Dudas-y-pendientes.md",
+          "before_sha256": "ad2eec4da0133666f4bf3eb0a9adc745a3fbe721eed408f8e2acf53d45007707",
+          "after_sha256": "29b412c70ea79db45ac6c9adb50369a5ef1dfb6119369501490b3ff95fe7f0c2",
+          "change": "Registrados los argumentos aclarados por C y las entradas que continúan pendientes, sin atribuir ejecución formal propia."
+        },
+        {
+          "id": "1gn6dsYYEtaSKdsIvX5_ILQWuIyfwpY7F",
+          "name": "09-Cohomologia-y-denominadores.md",
+          "before_sha256": "a85385d7909087c524aa98485d8f6b2713f8fc8e228d3a2d28145810e88bcf81",
+          "after_sha256": "48cbac80e32037f3f0ee4c8905e9d292c9b9500c293b0a93c58457f6e94f123c",
+          "change": "Añadido §8.17 mediante traspaso editorial manual; cuerpo anterior conservado."
+        },
+        {
+          "id": "1Zwmd8GaRBm4PpSHVflRbhAU211_h24H2",
+          "name": "10-Parametros-y-ventanas-comunes.md",
+          "before_sha256": "3c4fae57ded694140ddf08f5fc20c00fc2e643ee02276b71dca41b09c135128e",
+          "after_sha256": "30fc9186244138328f29e92ffafea4110245473476e6fec4050aeb9542e5f48c",
+          "change": "Añadida remisión al complemento y su alcance; fórmulas previas conservadas."
+        }
+      ],
+      "vault_inventory_after": {
+        "markdown_files": 12,
+        "original_pdf_sources": 3,
+        "svg_files": 1,
+        "total_files": 16,
+        "previous_15_file_ids_preserved": true,
+        "previous_files_modified": 4,
+        "new_files": 1
+      },
+      "publication_authorization": "El usuario pidió incorporar C y mantiene la autorización previa para continuar las notas, su bóveda y la publicación en el repositorio público; no se requirió una confirmación adicional.",
+      "github_publication_at_record_time": {
+        "status": "prepared_pending_commit_and_readback",
+        "baseline_commit": "1927d77746fcca0ef41176383685a4df6b23f650",
+        "new_commit": null,
+        "remote_files_readback_completed": false,
+        "note": "Este registro se prepara antes del commit final. Las comprobaciones de Drive anteriores están completadas; no se afirma una publicación o lectura posterior de GitHub todavía no realizada."
+      },
       "next_step": "Estudiar las entradas de selección analítica de primos auxiliares de A§3 y de compatibilidad automórfica de Galois de A§9, con sus condiciones locales, rangos y cuantificadores para los mismos datos."
     }
   ],
@@ -13246,5 +13706,151 @@
       "newer_B_incorporated": false,
       "scope": "Normalización del presupuesto, dos errores de extracción, cierre numérico, orden uniforme de parámetros, transporte y ensamblaje condicionado de ventanas, paso al criterio unilateral."
     }
+  },
+  "source_C_review": {
+    "schema_version": 1,
+    "review_key": "source_C_review",
+    "date": "2026-11-23",
+    "review_profile": "Incorporación documental y revisión matemática localizada de una exposición complementaria; no constituye un octavo manifiesto de cotejo Lean.",
+    "title": "Twisted cokernels in a cyclotomic tower",
+    "series": "Deformalization 1",
+    "author_declared": "riemann-rev",
+    "author_evidence": "Coinciden el metadato Author del PDF y la declaración de autor en el TeX; la portada no firma a una persona individual.",
+    "date_evidence": {
+      "printed_publication_date": null,
+      "tex_date_field": "empty",
+      "consulted_date_client": "2026-11-23",
+      "source_commit_date_utc": "2026-11-23T11:50:41Z",
+      "pdf_creation_date_raw": "D:20261121232640+01'00'",
+      "pdf_modification_date_raw": "D:20261121232640+01'00'",
+      "pdf_date_not_treated_as_edition_publication_date": true,
+      "http_last_modified": "Mon, 23 Nov 2026 11:52:11 GMT"
+    },
+    "public_url": "https://nasqret.github.io/riemann-rev/digests/tower-bound.pdf",
+    "original_pdf": {
+      "pages": 22,
+      "page_size": "A4",
+      "size_bytes": 227407,
+      "sha256": "c054c66c84bce37c1bb9c1cdf56a92e06d500b274fa7a28d30f97b802d4e4b87",
+      "git_blob_sha": "a965b4d0440d0d13c801b7e19c9571885569f836",
+      "vault_file_id": "1xhKuu_oyoPPoz4bI7e7ywJ9UbBPvXB_d",
+      "path_in_vault_project": "Fuentes/tower-bound-c054c66c84bc.pdf",
+      "vault_url": "https://drive.google.com/file/d/1xhKuu_oyoPPoz4bI7e7ywJ9UbBPvXB_d/view"
+    },
+    "source_repository": {
+      "name": "nasqret/riemann-rev",
+      "branch_read": "main",
+      "commit": "198e87ac146b38a2b31e15faa3ba81c4bc4dd497",
+      "tree": "b0ee66ca297937db49af5720b40e3292ce52e70d",
+      "pdf_path": "digests/tower-bound/tower-bound.pdf",
+      "immutable_edition_path": "digests/tower-bound/editions/tower-bound-c054c66c84bc.pdf",
+      "immutable_pdf_url": "https://github.com/nasqret/riemann-rev/blob/198e87ac146b38a2b31e15faa3ba81c4bc4dd497/digests/tower-bound/editions/tower-bound-c054c66c84bc.pdf",
+      "current_and_edition_blob_identical": true
+    },
+    "public_url_bytes_identical_to_fixed_edition": true,
+    "vault_original_readback_bytes_identical": true,
+    "license": {
+      "spdx": "0BSD",
+      "title": "BSD Zero Clause License",
+      "copyright": "Copyright (c) 2026 Bartosz Naskręcki",
+      "url": "https://github.com/nasqret/riemann-rev/blob/198e87ac146b38a2b31e15faa3ba81c4bc4dd497/LICENSE",
+      "scope": "La web del proyecto vincula esta licencia a su material original; el anuncio y el archivo Lean conservan sus autorías propias."
+    },
+    "lean_archive_cited": {
+      "repository": "Deicyde/riemann-hypothesis",
+      "commit": "40e56bab026552e089d7afcfeff08d2defb9c005",
+      "evidence": "Real external links extracted from the downloaded PDF, including Appendix A; the full hash is present in each immutable link.",
+      "different_from_existing_study_mirror": true,
+      "existing_study_repository": "CocoSgt/riemann-hypothesis-lean",
+      "existing_study_commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+      "equivalence_of_mirrors_checked": false
+    },
+    "verification_claims_reported_by_source": {
+      "locator": "p.1; §10 pp.17–18; Appendix A pp.18–21",
+      "four_cluster_declarations": 4,
+      "replayed_by_name": 3,
+      "fourth_in_dependency_closure": true,
+      "concordance_declarations_reported": 108,
+      "source_algebra_directory_files_reported": 29,
+      "source_algebra_directory_lines_reported": 1193,
+      "source_algebra_theorems_and_lemmas_reported": 42,
+      "descent_section_method": "La fuente explica que §8 se redactó a partir de pruebas estructuradas que citan líneas del archivo; los enunciados se compararon con Lean. Informa 452 pasos citados de 58 pruebas.",
+      "independently_replayed_by_us": false
+    },
+    "mathematical_reading": {
+      "read_in_full": "§§1–10, pp. 1–18, con apoyo del TeX de la misma edición; consulta de la concordancia pertinente del Apéndice A y referencias de p. 22.",
+      "independent_complement_review": "Enunciados, hipótesis, dirección de las cotas, cuantificadores y localizadores cotejados por una segunda lectura.",
+      "checked_arguments": [
+        "Presentación por generadores, sobreyección de conúcleos y cota superior por determinante, admitiendo torsión.",
+        "Centros a una capa por ultrametricidad y compacidad; elección anterior a la variación de torcido y capa.",
+        "Crecimiento mediante unipotencia, congruencia módulo ell², Nakayama y coste de un paso a lo sumo R.",
+        "Separación ultramétrica y cardinal uniforme de torcidos excepcionales.",
+        "Dualidad algebraica y descenso a una capa bajo los Inputs 2a y 2b; signos del torcido y capa fija de H².",
+        "Fórmulas de los dos ejemplos de §9."
+      ],
+      "result": "No se encontraron errores materiales en los argumentos revisados bajo sus hipótesis explícitas.",
+      "precisions_preserved": [
+        "Nivel a_u entero finito, al menos 1 y al menos 2 cuando ell=2.",
+        "R cuenta generadores, incluida torsión; se conserva el caso R=0.",
+        "Una cota por centros infinita no fuerza una longitud efectiva infinita.",
+        "Se conserva j_0=floor(log_ell R)+3; la variante con +2 se distingue de la formulación del archivo.",
+        "La formulación de C con centros en Z_ell y nivel exacto no reemplaza silenciosamente el tipo más débil ABound."
+      ]
+    },
+    "rereading_of_previous_lean_copies": {
+      "reference_manifest": "lean_source_review_cohomology",
+      "repository": "CocoSgt/riemann-hypothesis-lean",
+      "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+      "files_read_in_full": 5,
+      "new_lean_files_retrieved": 0,
+      "files": [
+        {
+          "path": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/SecondBound.lean",
+          "sha256": "d0e3d59ca3196bc37ccf563afbe6829d6497e607c533b7984f27d5b8c91a29d6",
+          "git_blob_sha": "a2e12927214cad3ce637b33adb435f42992c1c65",
+          "read_in_full_from_previously_retrieved_copy": true
+        },
+        {
+          "path": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/AdditiveValuationNorms/ExistsCentresLevel.lean",
+          "sha256": "529e8eb85c14a999966f3d8f4d7e415a87b4f33484c4d7db2f117678c507fd94",
+          "git_blob_sha": "42c340126cd2d651603c6abbb30607cb2c3991dd",
+          "read_in_full_from_previously_retrieved_copy": true
+        },
+        {
+          "path": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/AdditiveValuationNorms/Growth.lean",
+          "sha256": "f48f9a66ef01757fe817311237d4a0c1f14b20aff238e946715200004c02cf20",
+          "git_blob_sha": "b7342ae414e9c24a16208de8f202028ea935bd61",
+          "read_in_full_from_previously_retrieved_copy": true
+        },
+        {
+          "path": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/AdditiveValuationNorms/ABoundOfDescends.lean",
+          "sha256": "30d198e1610fb4ce9152eec6d4baa3c1bfd5ac30c3e9fdc7fa33a4d4445b09e6",
+          "git_blob_sha": "7b5f2da8824b3e1cd85b5c1b46fd02ed1ef00df3",
+          "read_in_full_from_previously_retrieved_copy": true
+        },
+        {
+          "path": "src/Development/AutomorphicArithmetic/AutomorphicVarieties/AdditiveValuationNorms/ShaLeV.lean",
+          "sha256": "bf65172b1182f9d50858d61ad23b75e9c2755963a01b90cd9aff14aa3f8f575b",
+          "git_blob_sha": "6af293f1ba30d7aab77ac39a9fa5a3524b1cc434",
+          "read_in_full_from_previously_retrieved_copy": true
+        }
+      ],
+      "scope": "Relectura de cinco copias ya recuperadas para precisar la relación con las Notas 8–9; no es una recuperación nueva ni una comparación íntegra entre espejos."
+    },
+    "inputs_not_reconstructed_here": [
+      "Input 1: nilpotencia local aritmética.",
+      "Input 3: dualidad global, dualidad local y finitud local.",
+      "Inputs 2a y 2b: identificación cohomológica con invariantes y reducción al núcleo de un generador.",
+      "Cota uniforme del número de generadores al variar la base auxiliar.",
+      "Finitud y cota cuantitativa de LemmaK en la capa fija.",
+      "Selección analítica PairEx y compatibilidad de la misma pareja con la ventana común."
+    ],
+    "lean_compiled": false,
+    "lean_executed": false,
+    "axiom_report_run": false,
+    "full_dependency_audit": false,
+    "all_108_source_declarations_independently_audited": false,
+    "original_distribution_compared": false,
+    "global_RH_or_GRH_proof_certified": false
   }
 }
