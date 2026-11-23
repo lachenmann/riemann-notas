@@ -1,0 +1,767 @@
+\section{Congruencias de Hecke, retículos y clases de Selmer}
+\label{sec:congruencias-selmer}
+
+La Nota~11 distinguió una representación de Galois semisimple de los
+retículos y clases de extensión que puede contener una realización
+integral. Ahora hacemos explícito ese paso. El problema de los
+denominadores de un proyector de Hecke se reducirá primero a álgebra
+lineal sobre un anillo de valoración discreta; después veremos cómo
+una representación integral da un cociclo de Galois y qué hipótesis
+faltan para convertirlo en una estimación cohomológica útil.
+
+\fuente{A (ejemplar de 55 páginas), §8, pp.~35--42; A93
+(ejemplar de 93 páginas), §9, pp.~61--77; B, §5.1--5.2.
+Para el desglose de la fuente B se ha consultado además su versión
+de 76 páginas del 22 de noviembre de 2026, pp.~54--56,
+\url{https://www.ihes.fr/~rzhang/files/GRH\%20note.pdf}.
+Esta versión se distingue del ejemplar B de 73 páginas citado en
+las notas anteriores. Las proposiciones elementales siguientes
+se demuestran aquí; las comparaciones aritméticas globales
+se identifican como entradas pendientes. No se ha realizado
+un nuevo cotejo de Lean.}
+
+\subsection{Tres problemas que no deben confundirse}
+
+Sean $K$ una extensión finita de $\Q_\ell$, $\mathcal O$ su anillo
+de enteros, $\varpi$ un uniformizante, $k=\mathcal O/\varpi\mathcal O$
+y $v_\varpi(\varpi)=1$. No confundiremos esta valoración con
+$v_\ell(\ell)=1$: si $e=v_\varpi(\ell)$, entonces
+$v_\ell(x)=v_\varpi(x)/e$ para $x\in K^\times$.
+La longitud $\length_{\mathcal O}$ de un módulo finito de torsión
+cuenta sus factores simples $k$.
+
+En el problema aparecen tres objetos distintos:
+\begin{enumerate}
+\item Un espacio vectorial $V$ sobre $K$, descompuesto en autoespacios
+      de operadores de Hecke, y un retículo integral $M\subset V$.
+\item Una representación $\rho:G\to\operatorname{GL}(V)$ y un
+      retículo $G$-estable, cuya reducción puede contener extensiones
+      invisibles en la semisimplificación de $V$.
+\item Un grupo cohomológico con condiciones locales, cuya longitud
+      puede acotar determinadas clases de extensión \emph{si se
+      construye una comparación adecuada}.
+\end{enumerate}
+La existencia de cualquiera de los tres no proporciona
+automáticamente los otros dos. En particular, una congruencia
+de autovalores no constituye por sí sola una inyección del
+cociente $\mathcal O/\mathfrak c$ asociado a un ideal de
+congruencias en un grupo de Selmer.
+
+\subsection{El denominador de una proyección en dimensión dos}
+
+Escribamos $V=Ke_1\oplus Ke_2$ y fijemos $n\ge1$. El retículo
+\begin{equation}
+ M_n=\mathcal Oe_1+\mathcal O u_n,
+ \qquad u_n=\varpi^{-n}e_1+e_2
+ \label{eq:cs-reticulo}
+\end{equation}
+es libre de rango dos; no es la suma de sus intersecciones
+con los dos sumandos de $V$. Sea $p:V\to Ke_1$ la proyección
+paralela a $Ke_2$.
+
+\begin{proposicion}[Longitud exacta del denominador]
+\label{prop:cs-modelo-proyector}
+Para el retículo \eqref{eq:cs-reticulo} se cumple
+\begin{equation}
+ pM_n=\varpi^{-n}\mathcal Oe_1,
+ \qquad M_n\cap Ke_1=\mathcal Oe_1,
+ \qquad
+ \length_{\mathcal O}\frac{pM_n}{M_n\cap Ke_1}=n.
+ \label{eq:cs-longitud-exacta}
+\end{equation}
+\end{proposicion}
+
+\begin{proof}
+Como $p(e_1)=e_1$ y $p(u_n)=\varpi^{-n}e_1$,
+la primera igualdad es inmediata. Todo elemento de $M_n$ tiene
+forma $ae_1+bu_n$ con $a,b\in\mathcal O$; su coordenada $e_2$
+es $b$. Estar en $Ke_1$ obliga a $b=0$, de donde resulta la
+segunda igualdad. La multiplicación por $\varpi^n$ identifica
+el cociente con $\mathcal O/\varpi^n\mathcal O$, que tiene
+una filtración de longitud $n$ por sus potencias sucesivas.
+\end{proof}
+
+El espacio $V$ está perfectamente descompuesto sobre $K$,
+pero $p$ no preserva $M_n$. El defecto no es una cuestión de
+normas ni de aproximación: es un cociente de longitud exactamente $n$.
+
+\subsection{La cota general de un operador separador}
+
+\begin{lema}[Proyector y operador integral]
+\label{lem:cs-operador}
+Sean $V=V_1\oplus V_2$ un espacio vectorial de dimensión finita
+sobre $K$, $M$ un retículo completo y $p$ el proyector sobre
+$V_1$. Supongamos que $T\in\operatorname{End}_{\mathcal O}(M)$
+actúa como el escalar $a\in\mathcal O\setminus\{0\}$ en $V_1$
+y como cero en $V_2$. Entonces
+\begin{equation}
+ apM\subseteq M\cap V_1,
+ \qquad
+ \length_{\mathcal O}\frac{pM}{M\cap V_1}
+ \le (\dim_K V_1)v_\varpi(a).
+ \label{eq:cs-operator-bound}
+\end{equation}
+\end{lema}
+
+\begin{proof}
+Para $m\in M$ se tiene $Tm=apm$, y $Tm\in M\cap V_1$.
+Por tanto $apM\subseteq M\cap V_1\subseteq pM$.
+El módulo $pM$ es un retículo libre de rango
+$d=\dim_K V_1$. El cociente del enunciado es cociente de
+$pM/apM\simeq(\mathcal O/a\mathcal O)^d$;
+su longitud no supera $d\,v_\varpi(a)$.
+\end{proof}
+
+En \eqref{eq:cs-reticulo}, el operador $T=\varpi^n p$ es
+integral: envía $e_1$ a $\varpi^n e_1$ y $u_n$ a $e_1$.
+El lema proporciona $n\le n$, de modo que su cota es
+\emph{óptima} en este ejemplo. Este es el mecanismo elemental
+de B, Lema 5.1, en §5.1 (B76, p.~54; B73, p.~53);
+aquí se ha demostrado de nuevo.
+
+\subsection{Un álgebra de congruencias visible}
+
+Identifiquemos los operadores diagonales sobre $V$ con $K^2$.
+Definimos el subanillo
+\begin{equation}
+ \mathbb T_n=\{(a,b)\in\mathcal O^2:
+                a\equiv b\pmod{\varpi^n}\}.
+ \label{eq:cs-Tn}
+\end{equation}
+Los dos homomorfismos $\lambda_1,\lambda_2:\mathbb T_n\to
+\mathcal O$ que seleccionan las coordenadas son sistemas de
+valores propios congruentes módulo $\varpi^n$.
+
+\begin{proposicion}[El ideal de congruencias del modelo]
+\label{prop:cs-ideal}
+El anillo $\mathbb T_n$ preserva $M_n$. El ideal
+\begin{equation}
+ \mathfrak c_1
+ =\{\lambda_1(t):t\in\mathbb T_n,
+                      \lambda_2(t)=0\}
+ \label{eq:cs-ideal}
+\end{equation}
+es $\varpi^n\mathcal O$. Además,
+$(1,0)\notin\mathbb T_n$ mientras que
+$(\varpi^n,0)\in\mathbb T_n$. La longitud de
+$\mathcal O/\mathfrak c_1$ coincide con el denominador
+\eqref{eq:cs-longitud-exacta}.
+\end{proposicion}
+
+\begin{proof}
+El operador $(a,b)$ envía $e_1$ a $ae_1$ y
+\[
+ u_n\longmapsto bu_n+\frac{a-b}{\varpi^n}e_1.
+\]
+Preserva $M_n$ si y solo si $(a-b)/\varpi^n\in\mathcal O$,
+que es exactamente la congruencia definitoria de $\mathbb T_n$.
+Si $b=0$, esa congruencia equivale a $a\in\varpi^n\mathcal O$.
+Las dos afirmaciones de pertenencia a $\mathbb T_n$ se
+comprueban sustituyendo $a,b$; por último,
+$\length_{\mathcal O}(\mathcal O/\varpi^n\mathcal O)=n$.
+\end{proof}
+
+El idempotente racional $(1,0)$ existe en $K^2$, pero
+no en el álgebra integral que preserva el retículo.
+Multiplicarlo por $\varpi^n$ repara la integralidad al
+coste exacto de $n$ unidades de longitud.
+
+\subsection{Una misma representación, dos reducciones}
+
+Supongamos ahora que $G$ es un grupo profinito y que
+$\chi_1,\chi_2:G\to\mathcal O^\times$ son caracteres
+continuos tales que
+\begin{equation}
+ \chi_1(g)\equiv\chi_2(g)\pmod{\varpi^n}
+ \quad\text{para todo }g\in G.
+ \label{eq:cs-character-congruence}
+\end{equation}
+En $V=Ke_1\oplus Ke_2$ consideremos
+$\rho(g)=\operatorname{diag}(\chi_1(g),\chi_2(g))$.
+El retículo ordinario $M_0=\mathcal Oe_1\oplus\mathcal Oe_2$
+es estable y tiene reducción diagonal. El retículo $M_n$
+de \eqref{eq:cs-reticulo} también es estable, pero su reducción
+puede no ser diagonalizable.
+
+\begin{proposicion}[Matriz integral y reducción residual]
+\label{prop:cs-matriz}
+En la base $(e_1,u_n)$ de $M_n$, la representación es
+\begin{equation}
+ \rho_{M_n}(g)=
+ \begin{pmatrix}
+ \chi_1(g)&\displaystyle\frac{\chi_1(g)-\chi_2(g)}{\varpi^n}\\
+ 0&\chi_2(g)
+ \end{pmatrix}.
+ \label{eq:cs-matriz}
+\end{equation}
+Su reducción define una extensión
+\begin{equation}
+ 0\longrightarrow k(\bar\chi_1)
+ \longrightarrow\bar M_n
+ \longrightarrow k(\bar\chi_2)\longrightarrow0.
+ \label{eq:cs-extension}
+\end{equation}
+Los caracteres residuales coinciden, pero la extensión
+no tiene por qué escindirse.
+\end{proposicion}
+
+\begin{proof}
+La igualdad
+\[
+ \rho(g)u_n
+ =\chi_2(g)u_n+
+   \frac{\chi_1(g)-\chi_2(g)}{\varpi^n}e_1
+\]
+da la matriz. La hipótesis \eqref{eq:cs-character-congruence}
+hace integral la entrada superior derecha. La primera recta
+es estable y el cociente lleva el carácter $\bar\chi_2$.
+La igualdad de las diagonales residuales se deduce de la
+congruencia, pero no elimina la entrada superior derecha.
+\end{proof}
+
+En particular, el hecho de que los polinomios característicos
+sean $(X-\chi_1(g))(X-\chi_2(g))$ sobre $K$
+no dice si la extensión residual de \eqref{eq:cs-extension}
+se escinde. La traza y el determinante no distinguen los
+retículos $M_0$ y $M_n$.
+
+\subsection{Del término no diagonal a \texorpdfstring{$H^1$}{H1}}
+
+Dotemos al cuerpo $k$ de la topología discreta y sean
+$\alpha,\beta:G\to k^\times$ caracteres continuos y
+\begin{equation}
+ A(g)=\begin{pmatrix}\alpha(g)&b(g)\\0&\beta(g)\end{pmatrix}
+ \label{eq:cs-upper-triangular}
+\end{equation}
+una representación continua. La identidad $A(gh)=A(g)A(h)$
+impone
+\begin{equation}
+ b(gh)=\alpha(g)b(h)+b(g)\beta(h).
+ \label{eq:cs-b-identity}
+\end{equation}
+El módulo unidimensional
+$k(\alpha\beta^{-1})$ es el cuerpo $k$ dotado de la acción
+$g\cdot x=\alpha(g)\beta(g)^{-1}x$.
+
+\begin{lema}[Clasificación elemental de la extensión]
+\label{lem:cs-cociclo}
+Poniendo $c(g)=b(g)/\beta(g)$ se obtiene un cociclo
+continuo de grado uno:
+\begin{equation}
+ c(gh)=c(g)+(\alpha\beta^{-1})(g)c(h).
+ \label{eq:cs-cociclo}
+\end{equation}
+Cambiar un levantamiento de la recta cociente modifica
+$c$ en un coborde. La extensión definida por $A$ se
+escinde si y solo si su clase
+\begin{equation}
+ [c]\in H^1\bigl(G,k(\alpha\beta^{-1})\bigr)
+ \label{eq:cs-H1}
+\end{equation}
+es cero.
+\end{lema}
+
+\begin{proof}
+Dividimos \eqref{eq:cs-b-identity} entre
+$\beta(gh)=\beta(g)\beta(h)$, y resulta
+\eqref{eq:cs-cociclo}. Cambiar el segundo vector de la base
+por $e_2+t e_1$ reemplaza $b(g)$ por
+$b(g)+t(\alpha(g)-\beta(g))$ y, por tanto, $c(g)$ por
+\[
+ c(g)+t\bigl((\alpha\beta^{-1})(g)-1\bigr).
+\]
+El segundo sumando es un coborde. Una recta complementaria
+$G$-estable equivale a elegir $t$ que anule la entrada
+superior derecha para todos los $g$; esa condición equivale
+a que el cociclo sea un coborde.
+\end{proof}
+
+Es importante el orden de los caracteres:
+$\operatorname{Hom}_k(k(\beta),k(\alpha))$ tiene acción
+$\alpha\beta^{-1}$, \emph{no} $\beta\alpha^{-1}$.
+Cuando $\alpha=\beta$, la acción es trivial y los
+cobordes son cero. En ese caso, cualquier cociclo no nulo
+produce una extensión no escindida.
+
+\subsection{Ejemplo completo sobre \texorpdfstring{$\Z_\ell$}{Z-ell}}
+
+Tomemos $K=\Q_\ell$, $\mathcal O=\Z_\ell$,
+$\varpi=\ell$ y $G=(\Z_\ell,+)$.
+Sea $\chi_1(z)=1$ y definamos
+$\chi_2(z)=(1+\ell)^z$ por el desarrollo binomial
+$\ell$-ádico. Es un carácter continuo con valores en
+$\Z_\ell^\times$, y
+\begin{equation}
+ (1+\ell)^z\equiv1+\ell z\pmod{\ell^2}.
+ \label{eq:cs-binomial}
+\end{equation}
+La congruencia se comprueba primero para enteros
+no negativos y se extiende a $\Z_\ell$ por continuidad.
+El desarrollo binomial converge uniformemente en $\Z_\ell$,
+pues $\binom{z}{m}\in\Z_\ell$ y $\ell^m$ tiende a cero.
+La identidad multiplicativa también se extiende por continuidad.
+El argumento incluye el primo $\ell=2$.
+
+\begin{proposicion}[Extensión no trivial con semisimplificación fija]
+\label{prop:cs-Zell}
+Para $n=1$, la reducción de $M_1$ es
+\begin{equation}
+ \bar\rho_{M_1}(z)
+ =\begin{pmatrix}1&-\bar z\\0&1\end{pmatrix}.
+ \label{eq:cs-unipotente}
+\end{equation}
+La sucesión \eqref{eq:cs-extension} no se escinde,
+mientras que la reducción de $M_0$ sí se escinde.
+Ambas provienen de la misma representación semisimple
+$1\oplus\chi_2$ sobre $\Q_\ell$.
+\end{proposicion}
+
+\begin{proof}
+La entrada superior derecha de \eqref{eq:cs-matriz}
+es $(1-(1+\ell)^z)/\ell$, cuya reducción es $-\bar z$
+por \eqref{eq:cs-binomial}. Como la acción residual
+sobre los coeficientes es trivial, el cociclo $z\mapsto-\bar z$
+representa un elemento de
+$H^1_{\mathrm{cont}}(\Z_\ell,\mathbb F_\ell)$.
+No es cero porque vale $-1$ en $z=1$.
+Con acción trivial todos los cobordes son nulos; por el
+Lema~\ref{lem:cs-cociclo} la extensión no se escinde.
+La reducción del retículo $M_0$ es la suma directa
+de las dos rectas triviales. La representación sobre
+$\Q_\ell$ no ha cambiado.
+\end{proof}
+
+Esta diferencia es el motivo para no inferir una clase
+integral de la mera existencia de la representación
+semisimple de la Nota~11. La congruencia de trazas no garantiza
+que la reducción de un retículo estable elegido arbitrariamente
+sea no escindida: $M_0$ tiene reducción escindida, mientras que
+$M_1$ conserva la clase residual no nula.
+
+\paragraph{La clase residual y el cambio de coeficientes.}
+La no escisión residual tampoco garantiza que la clase sobreviva
+en el módulo divisible que se obtiene de los mismos caracteres.
+Volvamos al modelo general y pongamos
+\[
+ \eta=\chi_1\chi_2^{-1},\qquad
+ c_n(g)=\frac{\eta(g)-1}{\varpi^n}\in\mathcal O.
+\]
+Este es el cociclo normalizado de \eqref{eq:cs-matriz}:
+$c_n=b/\chi_2$. Su reducción $\bar c_n$ clasifica la extensión
+residual. Sea $A=(K/\mathcal O)(\eta)$, con la acción
+$g\cdot x=\eta(g)x$. La aplicación
+\[
+ j:k(\bar\eta)\hookrightarrow A,\qquad
+ \bar x\longmapsto x/\varpi+\mathcal O
+\]
+es una inyección bien definida y $G$-equivariante: cambiar
+el representante $x$ por $x+\varpi y$ no altera su imagen,
+y la reducción de la acción en $A[\varpi]$ es $\bar\eta$.
+Sin embargo,
+\[
+ \begin{aligned}
+ j\bigl(\bar c_n(g)\bigr)
+ &=\frac{\eta(g)-1}{\varpi^{n+1}}+\mathcal O\\
+ &=g\cdot\bigl(\varpi^{-(n+1)}+\mathcal O\bigr)
+   -\bigl(\varpi^{-(n+1)}+\mathcal O\bigr).
+ \end{aligned}
+\]
+Por tanto $j_*[\bar c_n]=0$ en $H^1(G,A)$: la imagen
+es un coborde. En el ejemplo anterior,
+$\eta(z)=(1+\ell)^{-z}$ y $n=1$, de modo que la clase
+residual $z\mapsto-\bar z$, que es no nula, se convierte
+en el coborde de $\ell^{-2}+\Z_\ell$.
+
+Una inyección de coeficientes no tiene por qué inducir una
+inyección en $H^1$. Aquí la sucesión
+$0\to A[\varpi]\to A\xrightarrow{\varpi}A\to0$
+lo explica: $\varpi^{-n}+\mathcal O$ es invariante y su
+imagen por la aplicación de conexión es $[\bar c_n]$,
+tras identificar $A[\varpi]$ con $k(\bar\eta)$ mediante $j$.
+El cálculo se refiere a la acción levantada $\eta$;
+no autoriza a cambiarla por otra acción en $K/\mathcal O$.
+Para usar coeficientes divisibles en Selmer habrá que comprobar,
+además de las condiciones locales, que las clases pertinentes
+sobreviven a la comparación de coeficientes.
+
+\subsection{Restricciones locales y condición de Selmer}
+
+Sea ahora $E$ un cuerpo de números, $S$ un conjunto finito
+de lugares finitos y $G_{E,S}$ el grupo de Galois de la
+máxima extensión de $E$ no ramificada fuera de $S$ y de
+los lugares infinitos. En las aplicaciones $\ell$-ádicas
+incluimos en $S$ los lugares sobre $\ell$ y todos los de
+ramificación de los coeficientes. Fijemos un $\mathcal O$-módulo
+de torsión discreto $A$ con acción continua y $\mathcal O$-lineal
+de $G_{E,S}$ y, para cada $w\in S$, un $\mathcal O$-submódulo
+prescrito $L_w\subseteq H^1(E_w,A)$.
+
+\begin{definicion}[Grupo de Selmer con condiciones prescritas]
+\label{def:cs-selmer}
+El grupo correspondiente es
+\begin{equation}
+ H^1_{\mathcal L}(E,A)
+ =\ker\!\left(
+ H^1(G_{E,S},A)\longrightarrow
+ \prod_{w\in S}\frac{H^1(E_w,A)}{L_w}
+ \right).
+ \label{eq:cs-selmer}
+\end{equation}
+En los lugares fuera de $S$ la no ramificación ya está
+incorporada en el grupo global. La notación no supone que
+las condiciones $L_w$ sean iguales para todos los lugares.
+Esta definición no impone condiciones en los lugares reales;
+si se desean, deben añadirse. En el caso CM posterior no hay
+lugares reales.
+\end{definicion}
+
+Si $T\subset V$ es un retículo estable en una representación
+$\ell$-ádica, se utiliza con frecuencia
+$A=V/T$, módulo de torsión que no es en general finito.
+En lugares sobre $\ell$, una elección aritmética importante
+es la condición finita de Bloch--Kato: la imagen de
+$H^1_f(E_w,V)$ en $H^1(E_w,A)$.
+Fuera de $\ell$ y de los lugares permitidos se exige
+no ramificación; en ciertos lugares permitidos puede
+admitirse todo $H^1(E_w,A)$. Estas son condiciones distintas.
+
+\begin{lema}[Escisión tras restringir a un grupo local]
+\label{lem:cs-local-split}
+Una extensión de caracteres sobre $G$, clasificada por
+$[c]\in H^1(G,k(\alpha\beta^{-1}))$, se escinde al
+restringirse a un subgrupo cerrado $D\subseteq G$ si
+y solo si
+$\operatorname{res}_D[c]=0$ en
+$H^1(D,k(\alpha\beta^{-1}))$.
+\end{lema}
+
+\begin{proof}
+La matriz de la representación restringida tiene la
+misma forma \eqref{eq:cs-upper-triangular}, ahora solo
+para $g\in D$. El argumento de cambio de levantamiento
+del Lema~\ref{lem:cs-cociclo} se aplica a $D$, de modo
+que existe un complemento $D$-estable exactamente cuando
+la clase restringida es un coborde.
+\end{proof}
+
+La condición $\operatorname{res}_D[c]=0$ es más fuerte
+que pedir que la clase pertenezca a un subgrupo local
+admisible $L_w$ que no sea cero. No reemplazaremos la
+condición finita de Bloch--Kato por una afirmación de escisión,
+ni la no ramificación por trivialidad local.
+
+\subsection{Una clase puede ser globalmente no trivial y localmente nula}
+
+En el ejemplo anterior, fijemos el subgrupo cerrado
+$D=\ell\Z_\ell\subseteq G=\Z_\ell$. El cociclo
+$c(z)=-\bar z$ no es cero en $H^1(G,\mathbb F_\ell)$, pero
+se anula sobre $D$. Por el Lema~\ref{lem:cs-local-split},
+la extensión no se escinde sobre $G$ y sí se escinde sobre
+$D$. Esto modela por qué una condición local de anulación
+no implica por sí sola la anulación global.
+
+En un cuerpo de números no se puede elegir arbitrariamente
+los grupos $D_w$: provienen de grupos de descomposición,
+y se debe comprobar que la clase cumple \emph{todas} las
+condiciones locales. El ejemplo es un modelo cohomológico,
+no una construcción de una clase global de Selmer para un
+cuerpo de números concreto.
+
+\subsection{Del ideal de congruencias a una cota de Selmer}
+
+La longitud del denominador de proyección está controlada
+por un ideal de congruencias, como en
+\eqref{eq:cs-operator-bound} y \eqref{eq:cs-ideal}.
+El paso verdaderamente aritmético consiste en relacionar
+ese ideal con clases de extensión sujetas a condiciones
+locales. La siguiente proposición enuncia una hipótesis
+suficiente para obtener esa comparación de longitudes.
+
+\begin{proposicion}[Puente condicional de longitudes]
+\label{prop:cs-puente}
+Supongamos que $\mathfrak c=(\varpi^n)\ne0$ es un
+ideal de congruencias, $S_\mathcal L$ un $\mathcal O$-módulo
+de longitud finita y existe una inyección $\mathcal O$-lineal
+\begin{equation}
+ \iota:\mathcal O/\mathfrak c\hookrightarrow S_\mathcal L.
+ \label{eq:cs-inyeccion}
+\end{equation}
+Entonces $n\le\length_{\mathcal O}S_\mathcal L$.
+Si, además, el operador integral del
+Lema~\ref{lem:cs-operador} tiene escalar $a$ con
+$v_\varpi(a)=n$ y $d=\dim_KV_1$, entonces
+\begin{equation}
+ \length_{\mathcal O}\frac{pM}{M\cap V_1}
+ \le d\,\length_{\mathcal O} S_\mathcal L.
+ \label{eq:cs-selmer-bound}
+\end{equation}
+\end{proposicion}
+
+\begin{proof}
+Una inyección de módulos de longitud finita no
+puede aumentar la longitud:
+$\length_{\mathcal O}(\mathcal O/\mathfrak c)
+=n\le\length_{\mathcal O}S_\mathcal L$.
+La segunda afirmación resulta al concatenar esta
+desigualdad con \eqref{eq:cs-operator-bound}.
+\end{proof}
+
+Más generalmente, sea $f:\mathcal O/\mathfrak c\to S_\mathcal L$
+un mapa $\mathcal O$-lineal con
+$\length_{\mathcal O}\ker f\le\kappa$. La aditividad de la
+longitud en la sucesión exacta de núcleo e imagen da
+\[
+ n=\length_{\mathcal O}\ker f+
+   \length_{\mathcal O}\operatorname{im}f
+ \le\kappa+\length_{\mathcal O}S_\mathcal L.
+\]
+Bajo la misma hipótesis sobre el escalar $a$, se obtiene
+\[
+ \length_{\mathcal O}\frac{pM}{M\cap V_1}
+ \le d\bigl(\kappa+\length_{\mathcal O}S_\mathcal L\bigr).
+\]
+La inyección es el caso $\kappa=0$. La desigualdad de
+longitudes por sí sola no implica que exista tal inyección,
+como muestra el Ejercicio~\ref{ej:cs-longitudes}.
+
+La proposición \emph{no afirma} que la inyección
+\eqref{eq:cs-inyeccion} exista para las álgebras de Hecke
+del argumento de GRH. Construir un mapa con suficiente
+control de su núcleo, del retículo, de las condiciones locales
+y de las normalizaciones es parte de la entrada profunda.
+Para varios sistemas de autovalores, el mismo razonamiento
+se aplica a cada cociente de congruencias si se dispone
+de los mapas y cotas correspondientes; las dimensiones
+de los autoespacios multiplican las pérdidas.
+
+\subsection{Obstrucciones al levantamiento: el lugar de \texorpdfstring{$H^2$}{H2}}
+
+El primer grupo cohomológico describe extensiones;
+el segundo aparece al intentar elevar cociclos a un nivel
+integral superior. Este fenómeno se observa sin introducir
+deformaciones automorfas.
+
+\begin{proposicion}[Bockstein para módulos finitos]
+\label{prop:cs-bockstein}
+Sea $T$ un $\mathcal O$-módulo libre de rango finito
+con acción continua y $\mathcal O$-lineal de $G$.
+Para $r\ge1$ existe una sucesión exacta de módulos
+finitos discretos de $G$:
+\begin{equation}
+ 0\longrightarrow T/\varpi^r T
+ \xrightarrow{\ \times\varpi\ }
+ T/\varpi^{r+1}T
+ \longrightarrow T/\varpi T\longrightarrow0.
+ \label{eq:cs-exacta-bockstein}
+\end{equation}
+Una clase $x\in H^1(G,T/\varpi T)$ se eleva a
+$H^1(G,T/\varpi^{r+1}T)$ si y solo si su obstrucción
+\begin{equation}
+ \delta_r(x)\in H^2(G,T/\varpi^rT)
+ \label{eq:cs-bockstein}
+\end{equation}
+es cero.
+\end{proposicion}
+
+\begin{proof}
+La multiplicación por $\varpi$ es inyectiva
+desde $T/\varpi^rT$ a $T/\varpi^{r+1}T$ porque
+$T$ no tiene torsión; su imagen es el núcleo de
+la reducción módulo $\varpi$.
+La sucesión larga de cohomología continua contiene
+\[
+ H^1(G,T/\varpi^{r+1}T)
+ \longrightarrow H^1(G,T/\varpi T)
+ \xrightarrow{\delta_r} H^2(G,T/\varpi^rT).
+\]
+La exactitud identifica la imagen de la primera flecha
+con el núcleo de $\delta_r$, que demuestra la equivalencia.
+\end{proof}
+
+En términos de cociclos, se levanta provisionalmente
+una función a nivel $\varpi^{r+1}$. El defecto de satisfacer
+la identidad de cociclo toma valores en el núcleo
+$T/\varpi^rT$ y produce un $2$-cociclo. Su clase se
+anula exactamente cuando puede corregirse el levantamiento.
+El grupo de esta obstrucción tiene coeficientes finitos
+$T/\varpi^rT$. Su aparición no lo identifica con el grupo
+$H^2(G_{E,S},\Z_\ell(j+1))$ que interviene en la comparación
+dual de la Nota~8. Esa identificación exigiría fijar
+coeficientes, condiciones locales y mapas de comparación;
+las cotas aritméticas de la Nota~8 requieren además sus
+propias hipótesis. La proposición anterior demuestra el
+criterio formal de levantamiento.
+
+\subsection{Normalizaciones y torcidos de Tate}
+
+La descomposición que la fuente B utiliza en §5.2
+(B76, p.~55; B73, p.~54) para un
+levantamiento theta tiene, después de fijar las entradas,
+la forma semisimple
+\begin{equation}
+ R_\lambda^{\mathrm{ss}}
+ \simeq\rho_\lambda\oplus
+ \bigoplus_{c=1}^{h}\xi_c,
+ \qquad
+ \xi_c=\xi_1\chi_\ell^{-(c-1)}.
+ \label{eq:cs-twists}
+\end{equation}
+Tras torcer por $\xi_1^{-1}$, los sumandos de dimensión
+uno son
+\[
+ 1,\ \chi_\ell^{-1},\ \ldots,\
+ \chi_\ell^{-(h-1)}.
+\]
+Para una extensión con subobjeto de carácter $\xi_c$ y
+cociente de carácter $\xi_d$, el módulo de cociclos es
+$\operatorname{Hom}(\xi_d,\xi_c)$. Si $c>d$, su carácter es
+\[
+ \xi_c\xi_d^{-1}=\chi_\ell^{-(c-d)}.
+\]
+De esta orientación proceden los torcidos negativos $(-j)$
+con $1\le j<h$; la orientación inversa produce $+j$.
+La selección de los bloques y de sus condiciones locales
+forma parte del enlace aritmético.
+
+La fuente organiza términos con coeficientes
+$\Q_\ell/\Z_\ell(-j)$ y otro término con coeficientes
+$A_\pi=(T_\pi\otimes_{\mathcal O}K)/T_\pi$, donde
+$T_\pi$ es un retículo $G_E$-estable en
+$\rho_\lambda\otimes\xi_1^{-1}$.
+No son necesariamente grupos de Selmer con las mismas
+condiciones locales: el término de dimensión mayor
+usa la condición finita en los lugares sobre $\ell$,
+mientras que el grupo de torsión unidimensional de la
+Nota~8 se organiza como un núcleo de restricción local.
+
+Si $E$ es CM y $S_\ell$ es el conjunto de lugares sobre
+$\ell$, el segundo tipo se escribe
+\begin{equation}
+ S_\ell(E,j)=\ker\!\left(
+ H^1\bigl(G_{E,S_\ell},\Q_\ell/\Z_\ell(-j)\bigr)
+ \longrightarrow
+ \prod_{w\mid\ell}
+ H^1\bigl(E_w,\Q_\ell/\Z_\ell(-j)\bigr)
+ \right),\quad j\ge1.
+ \label{eq:cs-Sell}
+\end{equation}
+Este grupo es $\operatorname{Sha}_{\ell,j}(E)$ en la
+notación de la Nota~8; aquí $S_\ell(E,j)$ conserva la
+denominación de B, §5.2 (B76, pp.~55--56; B73, pp.~54--55).
+Con Frobenius geométrico, el giro $(-j)$ actúa
+fuera de $\ell$ por $q_w^j$, de acuerdo con
+la convención de las Notas 8 y 11.
+Los cuantificadores sobre $E$, $\ell$, $j$, los retículos
+y las extensiones auxiliares son parte de cualquier
+estimación \emph{uniforme}: no quedan fijados por
+una igualdad formal de grupos.
+
+\subsection{Qué ha quedado demostrado y qué falta}
+
+Los cálculos de esta nota prueban que (i) un proyector
+racional puede introducir un denominador de longitud
+arbitraria, (ii) el ideal de congruencias mide exactamente
+ese defecto en el modelo $\mathbb T_n$, (iii) una elección
+de retículo puede retener una clase de $H^1$ no escindida
+que otra elección elimina, (iv) esa clase residual puede
+anularse al pasar al módulo divisible con la acción levantada,
+y (v) el levantamiento a un nivel integral superior puede
+presentar una obstrucción en $H^2$.
+
+Para obtener una cota de denominadores en el argumento
+aritmético completo todavía es necesario, entre otros pasos,
+construir las representaciones y retículos compatibles
+con los sistemas de Hecke; producir la comparación entre
+congruencias y clases de extensión con el control suficiente
+sobre núcleo, cambio de coeficientes y multiplicidades;
+demostrar que las clases
+satisfacen las condiciones locales requeridas; y obtener
+cotas uniformes de los grupos cohomológicos resultantes.
+En particular, ni \eqref{eq:cs-selmer-bound} ni la
+Proposición~\ref{prop:cs-Zell} sustituyen los teoremas de
+deformación, automorfía, dualidad y control de torre
+que intervienen en A, A93 y B.
+
+\subsection{Ejercicios resueltos}
+
+\begin{ejercicio}\label{ej:cs-reticulo}
+Sea $n=3$, $\mathcal O=\Z_5$ y
+$M=\mathcal Oe_1+\mathcal O(5^{-3}e_1+e_2)$.
+Calcule el cociente de proyección y el menor exponente
+$m\ge0$ para el cual $5^m p$ preserva $M$.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:cs-reticulo}.}
+El cociente es $5^{-3}\Z_5/\Z_5\simeq\Z_5/5^3\Z_5$,
+por lo que su longitud es tres. La imagen de
+$5^mp(5^{-3}e_1+e_2)$ es $5^{m-3}e_1$.
+Está en $M\cap Ke_1=\Z_5e_1$ si y solo si $m\ge3$.
+El menor exponente es $m=3$.
+
+\begin{ejercicio}\label{ej:cs-ideal}
+Para $\mathbb T_2\subset\Z_3^2$, determine
+$\mathfrak c_1$ y compruebe directamente
+que $(3,0)$ no preserva $M_2$ mientras que
+$(9,0)$ sí lo hace.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:cs-ideal}.}
+La condición es $a\equiv b\pmod9$; con $b=0$
+resulta $\mathfrak c_1=9\Z_3$.
+El operador $(3,0)$ envía
+$u_2=3^{-2}e_1+e_2$ a $3^{-1}e_1$, que no está
+en $M_2\cap Ke_1=\Z_3e_1$.
+El operador $(9,0)$ lo envía a $e_1\in M_2$.
+
+\begin{ejercicio}\label{ej:cs-cociclo}
+Si $A(g)$ es la matriz \eqref{eq:cs-upper-triangular},
+verifique la identidad de cociclo para
+$c=b/\beta$ y determine la clase de coeficientes
+cuando $\alpha=\beta$.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:cs-cociclo}.}
+La multiplicación de matrices da
+$b(gh)=\alpha(g)b(h)+b(g)\beta(h)$.
+Dividir por $\beta(g)\beta(h)$ produce
+$c(gh)=(\alpha\beta^{-1})(g)c(h)+c(g)$.
+Si $\alpha=\beta$, el cociclo toma valores en
+$k$ con acción trivial; es un homomorfismo
+continuo de $G$ a su grupo aditivo. Los cobordes
+son cero.
+
+\begin{ejercicio}\label{ej:cs-local}
+En $G=\Z_\ell$, con $D=\ell\Z_\ell$ y
+$c(z)=-z\bmod\ell$, determine si la clase
+es trivial en $G$ y si lo es en $D$.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:cs-local}.}
+La acción es trivial, de modo que los cobordes
+son cero. Como $c(1)=-1\ne0$, la clase global
+no es nula. Para $z\in D$ se tiene $z=\ell t$
+y $c(z)=0$, así que la restricción es nula.
+La extensión es escindida sobre $D$ pero no
+sobre $G$.
+
+\begin{ejercicio}\label{ej:cs-longitudes}
+Suponga que existe una inyección
+$\mathcal O/\varpi^n\mathcal O\hookrightarrow
+S$ con
+$S\simeq\mathcal O/\varpi^2\mathcal O\oplus
+\mathcal O/\varpi^3\mathcal O$.
+Compare la cota de longitud con la cota que se
+obtiene del exponente respecto de $\varpi$ de $S$.
+\end{ejercicio}
+
+\paragraph{Solución del Ejercicio~\ref{ej:cs-longitudes}.}
+La longitud de $S$ es $2+3=5$, y la inyección
+implica inicialmente $n\le5$. Pero todo elemento
+de $S$ es anulado por $\varpi^3$. Por la inyectividad,
+la imagen $x$ de $1$ tiene anulador
+$\operatorname{Ann}_{\mathcal O}(x)=(\varpi^n)$.
+Como $\varpi^3x=0$, se obtiene
+$\varpi^3\in(\varpi^n)$, es decir, $n\le3$.
+La cota por el exponente respecto de $\varpi$ es aquí más fuerte.
+La existencia de una inyección impone más que
+la desigualdad de longitudes aislada.

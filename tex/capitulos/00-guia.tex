@@ -13,6 +13,10 @@ tower}, de riemann-rev, tiene 22 páginas \cite{fuenteA,fuenteB,fuenteC}.
 Las páginas citadas son las impresas de esos ejemplares y coinciden
 con el contador del PDF. La versión larga A93 se incorpora con
 localizadores propios en §\ref{subsec:guia-a93}.
+La Nota~\ref{sec:congruencias-selmer} coteja además los §§5.1--5.2,
+pp.~54--56, del ejemplar \textbf{B76}, de 76 páginas
+\cite{fuenteB76}. Las referencias anteriores a B conservan
+el ejemplar de 73 páginas.
 
 B ofrece una lectura progresiva y antecedentes; A precisa las hipótesis,
 normalizaciones, estimaciones uniformes y nombres de declaraciones Lean.
@@ -80,6 +84,9 @@ cotejos entre A y B tampoco constituyen una auditoría de ese código.
     La Nota~\ref{sec:cohomologia} estudia las longitudes y los torcidos,
     distingue las dos cotas de torre y reconstruye la selección finita
     de una ventana, con las entradas profundas identificadas.
+    La Nota~\ref{sec:congruencias-selmer} desarrolla el modelo integral,
+    los cociclos y su cambio de coeficientes, y precisa la comparación
+    condicional con Selmer.
     Referencias: A, §8, pp.~35--41; B, §5, pp.~52--64.
   \item \textbf{Elegir escalas y una ventana común.}
     Después de cancelar los términos principales, aparecen costes del orden
@@ -121,29 +128,25 @@ Ventana común y realización & Props.~11.1--11.2, pp.~49--52 & Prop.~6.3, pp.~6
 \end{tabularx}
 \end{center}
 
-Las once notas desarrollan esta ruta. Las tres primeras preparan
-Mellin, los denominadores y el criterio de ventanas.
-La Nota~\ref{sec:caracteres} prueba la identidad de caracteres,
-la cancelación y la selección que explica $1/(3o+1)$.
-La Nota~\ref{sec:marcos} demuestra la cota de codimensión y su
-integración por umbrales de pendiente.
-La Nota~\ref{sec:periodos} estudia cocientes, retículos, Cauchy,
-gamma y el balance condicionado a las cotas de periodos.
-La Nota~\ref{sec:geometria} pasa de pendientes, interpolación
-y correlaciones al control colectivo del marco.
-La Nota~\ref{sec:cohomologia} distingue finitud y sumabilidad,
-conserva las correcciones de dualidad y compara la capa variable
-con una capa fija de grado acotado.
-La Nota~\ref{sec:parametros} normaliza el exceso, conserva las pérdidas
-de densidad y coordina la elección uniforme de parámetros y ventanas.
-La Nota~\ref{sec:auxiliares} desarrolla el segundo momento, el control
-simultáneo del intervalo y la selección sucesiva de los primos;
-deduce también la cota delgada bajo entradas analíticas uniformes.
-La Nota~\ref{sec:galois} desarrolla la extracción de sumandos y
-el pegado cuadrático, con sus condiciones locales explícitas.
-Las Notas~\ref{sec:ventanas}--\ref{sec:galois} incluyen
-cotejos localizados con una revisión fijada de Lean,
-sin compilar ni ejecutar el código.
+Las doce notas desarrollan esta ruta. Las tres primeras tratan Mellin,
+los denominadores y las ventanas. La Nota~\ref{sec:caracteres} prueba la
+identidad de caracteres, la cancelación y la selección de $1/(3o+1)$.
+La Nota~\ref{sec:marcos} integra la cota de codimensión;
+la Nota~\ref{sec:periodos} estudia retículos y normas bajo cotas de periodos;
+la Nota~\ref{sec:geometria} deduce el control colectivo del marco.
+La Nota~\ref{sec:cohomologia} distingue finitud y sumabilidad, conserva
+las correcciones de dualidad y compara una capa variable con una fija
+de grado acotado. La Nota~\ref{sec:parametros} coordina parámetros y
+ventanas con sus pérdidas de densidad; la Nota~\ref{sec:auxiliares}
+desarrolla la selección de primos y la cota delgada bajo entradas uniformes.
+La Nota~\ref{sec:galois} extrae sumandos y realiza el pegado cuadrático
+con condiciones locales explícitas.
+La Nota~\ref{sec:congruencias-selmer} estudia retículos, supervivencia
+al cambiar coeficientes y núcleos en la comparación con Selmer.
+Las Notas~\ref{sec:ventanas}--\ref{sec:galois} incluyen cotejos localizados
+con una revisión fijada de Lean, sin compilar ni ejecutar el código.
+La Nota~\ref{sec:congruencias-selmer} añade pruebas elementales y un
+cotejo de B76, sin una nueva lectura de Lean.
 
 \clearpage
 \subsection{La versión larga A93: guía de cotejo}

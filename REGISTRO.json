@@ -34,13 +34,14 @@
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "modified_time": "2026-11-23T18:13:35.250Z",
-      "size_bytes": 20616,
-      "sha256": "66968054ca315c9232169b55357eeace617d27d11f6bfaa1580d2e837a830621",
+      "modified_time": "2026-11-23T19:06:20.350Z",
+      "size_bytes": 22274,
+      "sha256": "2df43578d08116cad901cfbe1471df2b0d10d0906d5c36fe0841a7984322a30a",
       "full_bytes_verified": true,
-      "url": "https://drive.google.com/file/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/view",
+      "url": "https://docs.google.com/document/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
       "path_in_vault_project": "00-Mapa-de-estudio.md",
-      "verification": "Contenido completo recuperado del destino y cotejado byte por byte; nombre, MIME, identificador y carpeta padre comprobados."
+      "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
+      "current_revision_id": "0B4GzbHwPH-MvdXpLMXFYRldQUkNPUlJSQjZhSXU5VGZRaFhZPQ"
     },
     {
       "name": "01-Sumas-y-transformadas.md",
@@ -73,13 +74,14 @@
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "modified_time": "2026-11-23T18:13:39.244Z",
-      "size_bytes": 25842,
-      "sha256": "a85365e93cab665aa5498667701fe4f44e7d6bfa12ab1d32ad1cc94ccd62588a",
+      "modified_time": "2026-11-23T19:06:27.210Z",
+      "size_bytes": 28540,
+      "sha256": "b7f83f67201828545e302d608727d12c13f781eee80b21936e892cbb2792403f",
       "full_bytes_verified": true,
-      "url": "https://drive.google.com/file/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/view",
+      "url": "https://docs.google.com/document/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
       "path_in_vault_project": "03-Dudas-y-pendientes.md",
-      "verification": "Contenido completo recuperado del destino y cotejado byte por byte; nombre, MIME, identificador y carpeta padre comprobados."
+      "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
+      "current_revision_id": "0B4GzbHwPH-MvYjVkeURQYVZiR2QvZDdhb1VuRkN0TTIveXFFPQ"
     },
     {
       "name": "04-Criterio-unilateral-de-ventanas.md",
@@ -112,13 +114,14 @@
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "modified_time": "2026-11-23T18:13:43.093Z",
+      "modified_time": "2026-11-23T19:06:34.309Z",
       "size_bytes": 38645,
-      "sha256": "2ebf3dd8f0fc78b1962b840040e8b6e24c7ddfbd26d4e11ce8c92b52d6cdc86e",
+      "sha256": "a43f679c302a399e7e58baca766cbbf25f255e49f5cf444f312b1217b90804fa",
       "full_bytes_verified": true,
-      "url": "https://drive.google.com/file/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/view",
+      "url": "https://docs.google.com/document/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
       "path_in_vault_project": "00-Introduccion-y-fundamentos.md",
-      "verification": "Contenido completo recuperado del destino y cotejado byte por byte; nombre, MIME, identificador y carpeta padre comprobados."
+      "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
+      "current_revision_id": "0B4GzbHwPH-MvZVhXNW1lZ2syOTNTbGlWeHhCcWlyTm5JbWpnPQ"
     },
     {
       "name": "franja-critica.svg",
@@ -254,24 +257,57 @@
       "parent_ids": [
         "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
       ],
-      "modified_time": "2026-11-23T18:13:53.105Z",
-      "size_bytes": 52375,
-      "sha256": "c3d573225d7a5c5a8627fdaaedf18af4279d8f00c146eeb4ca08b5c65a1a87ba",
+      "modified_time": "2026-11-23T19:06:41.027Z",
+      "size_bytes": 52444,
+      "sha256": "34a20d3f9870eb7e02af195c3477dc1816adf2d10fce08d54e4a8a8ec993241d",
       "full_bytes_verified": true,
-      "url": "https://drive.google.com/file/d/1NX1d9c0Nby2Y9w8jx7ewzcuxVjElyJRG/view",
+      "url": "https://docs.google.com/document/d/1NX1d9c0Nby2Y9w8jx7ewzcuxVjElyJRG/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
       "path_in_vault_project": "12-Representaciones-de-galois-y-compatibilidad-local.md",
-      "verification": "Contenido completo recuperado del destino y cotejado byte por byte; nombre, MIME, identificador y carpeta padre comprobados."
+      "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
+      "current_revision_id": "0B4GzbHwPH-MvK0dQTWdKU3JsRGg3WkhmUVAydUliSzMvdkNZPQ"
+    },
+    {
+      "id": "1qjUQTF1TesjCJMAf-gADZ2WHcJHcpqiE",
+      "name": "GRH-note-B76-3bd82fa3d242.pdf",
+      "mime_type": "application/pdf",
+      "parent_ids": [
+        "1JOOvjCkJkco_6fRznoOYLg-jsOiBQlol"
+      ],
+      "modified_time": "2026-11-23T19:05:51.468Z",
+      "size_bytes": 872585,
+      "sha256": "3bd82fa3d242fe473cb371cbab0a8d211cb7dd05f72ba2db1b4c4ef8f27478a3",
+      "full_bytes_verified": true,
+      "url": "https://drive.google.com/file/d/1qjUQTF1TesjCJMAf-gADZ2WHcJHcpqiE/view?usp=drivesdk",
+      "path_in_vault_project": "Fuentes/GRH-note-B76-3bd82fa3d242.pdf",
+      "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
+      "current_revision_id": "0B4GzbHwPH-MvQzNjT3BHa2doQmY1a2lPdEplMi9Fb1JTcFFrPQ"
+    },
+    {
+      "id": "1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA",
+      "name": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+      "mime_type": "text/markdown",
+      "parent_ids": [
+        "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+      ],
+      "modified_time": "2026-11-23T19:05:59.564Z",
+      "size_bytes": 27717,
+      "sha256": "6b06e1bfa7fca8a6938d22f9aa64d5a52ab859d378f0e6b13de18230a6012fd5",
+      "full_bytes_verified": true,
+      "url": "https://docs.google.com/document/d/1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+      "path_in_vault_project": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+      "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
+      "current_revision_id": "0B4GzbHwPH-MvQnpmK0dsQVFMMXZ1SXl6UGFHd3FBK0IrU0tBPQ"
     }
   ],
   "obsidian_rendering_checked": false,
   "github_status": "active_public_repository",
   "latex": {
     "status": "compiled_and_composition_checked",
-    "pages": 143,
+    "pages": 153,
     "page_size": "A4",
     "path": "pdf/notas-hipotesis-riemann.pdf",
-    "size_bytes": 1213453,
-    "sha256": "dd1037db737fe12ee6cb392eac5cd62e5b39930692379e4c5b089696c879704f",
+    "size_bytes": 1262920,
+    "sha256": "44abbe3764e98babfe3d1eded266539666af469bb825032f9163903e108fbf37",
     "compilation_exit_code": 0,
     "warnings": 0,
     "unresolved_references": 0,
@@ -280,14 +316,14 @@
     "missing_characters": 0,
     "all_pages_visually_reviewed": false,
     "visually_reviewed_pages": [
+      1,
       2,
       3,
       4,
       5,
       6,
       19,
-      20,
-      143
+      20
     ],
     "chapter_3_pages": [
       27,
@@ -297,8 +333,6 @@
       35,
       46
     ],
-    "cross_reading_with_markdown": "Nota11:492 expresiones,26 ecuaciones,11 resultados/11 pruebas,5 ejercicios/5 soluciones,2 tablas,46 literales,52 referencias; fórmulas RAW, prosa y enlaces preservados. Sin inspección de Obsidian.",
-    "lean_compiled_or_executed": false,
     "introduction_pages": [
       7,
       17
@@ -319,1054 +353,10 @@
       47,
       56
     ],
-    "references_and_status_pages": [
-      140,
-      143
-    ],
-    "previous_visual_review_preserved_by_pixel_identity": [
-      {
-        "current_page": 8,
-        "previous_page": 7,
-        "previous_page_candidates": [
-          7
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 9,
-        "previous_page": 8,
-        "previous_page_candidates": [
-          8
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 10,
-        "previous_page": 9,
-        "previous_page_candidates": [
-          9
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 11,
-        "previous_page": 10,
-        "previous_page_candidates": [
-          10
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 12,
-        "previous_page": 11,
-        "previous_page_candidates": [
-          11
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 13,
-        "previous_page": 12,
-        "previous_page_candidates": [
-          12
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 14,
-        "previous_page": 13,
-        "previous_page_candidates": [
-          13
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 15,
-        "previous_page": 14,
-        "previous_page_candidates": [
-          14
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 16,
-        "previous_page": 15,
-        "previous_page_candidates": [
-          15
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 17,
-        "previous_page": 16,
-        "previous_page_candidates": [
-          16
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 18,
-        "previous_page": 17,
-        "previous_page_candidates": [
-          17
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 21,
-        "previous_page": 20,
-        "previous_page_candidates": [
-          20
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 22,
-        "previous_page": 21,
-        "previous_page_candidates": [
-          21
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 23,
-        "previous_page": 22,
-        "previous_page_candidates": [
-          22
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 24,
-        "previous_page": 23,
-        "previous_page_candidates": [
-          23
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 25,
-        "previous_page": 24,
-        "previous_page_candidates": [
-          24
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 26,
-        "previous_page": 25,
-        "previous_page_candidates": [
-          25
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 27,
-        "previous_page": 26,
-        "previous_page_candidates": [
-          26
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 28,
-        "previous_page": 27,
-        "previous_page_candidates": [
-          27
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 29,
-        "previous_page": 28,
-        "previous_page_candidates": [
-          28
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 30,
-        "previous_page": 29,
-        "previous_page_candidates": [
-          29
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 31,
-        "previous_page": 30,
-        "previous_page_candidates": [
-          30
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 32,
-        "previous_page": 31,
-        "previous_page_candidates": [
-          31
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 33,
-        "previous_page": 32,
-        "previous_page_candidates": [
-          32
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 34,
-        "previous_page": 33,
-        "previous_page_candidates": [
-          33
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 35,
-        "previous_page": 34,
-        "previous_page_candidates": [
-          34
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 36,
-        "previous_page": 35,
-        "previous_page_candidates": [
-          35
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 37,
-        "previous_page": 36,
-        "previous_page_candidates": [
-          36
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 38,
-        "previous_page": 37,
-        "previous_page_candidates": [
-          37
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 39,
-        "previous_page": 38,
-        "previous_page_candidates": [
-          38
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 40,
-        "previous_page": 39,
-        "previous_page_candidates": [
-          39
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 41,
-        "previous_page": 40,
-        "previous_page_candidates": [
-          40
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 42,
-        "previous_page": 41,
-        "previous_page_candidates": [
-          41
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 43,
-        "previous_page": 42,
-        "previous_page_candidates": [
-          42
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 44,
-        "previous_page": 43,
-        "previous_page_candidates": [
-          43
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 45,
-        "previous_page": 44,
-        "previous_page_candidates": [
-          44
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 46,
-        "previous_page": 45,
-        "previous_page_candidates": [
-          45
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 47,
-        "previous_page": 46,
-        "previous_page_candidates": [
-          46
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 48,
-        "previous_page": 47,
-        "previous_page_candidates": [
-          47
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 49,
-        "previous_page": 48,
-        "previous_page_candidates": [
-          48
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 50,
-        "previous_page": 49,
-        "previous_page_candidates": [
-          49
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 51,
-        "previous_page": 50,
-        "previous_page_candidates": [
-          50
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 52,
-        "previous_page": 51,
-        "previous_page_candidates": [
-          51
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 53,
-        "previous_page": 52,
-        "previous_page_candidates": [
-          52
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 54,
-        "previous_page": 53,
-        "previous_page_candidates": [
-          53
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 55,
-        "previous_page": 54,
-        "previous_page_candidates": [
-          54
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 56,
-        "previous_page": 55,
-        "previous_page_candidates": [
-          55
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 57,
-        "previous_page": 56,
-        "previous_page_candidates": [
-          56
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 58,
-        "previous_page": 57,
-        "previous_page_candidates": [
-          57
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 59,
-        "previous_page": 58,
-        "previous_page_candidates": [
-          58
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 60,
-        "previous_page": 59,
-        "previous_page_candidates": [
-          59
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 61,
-        "previous_page": 60,
-        "previous_page_candidates": [
-          60
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 62,
-        "previous_page": 61,
-        "previous_page_candidates": [
-          61
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 63,
-        "previous_page": 62,
-        "previous_page_candidates": [
-          62
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 64,
-        "previous_page": 63,
-        "previous_page_candidates": [
-          63
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 65,
-        "previous_page": 64,
-        "previous_page_candidates": [
-          64
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 66,
-        "previous_page": 65,
-        "previous_page_candidates": [
-          65
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 67,
-        "previous_page": 66,
-        "previous_page_candidates": [
-          66
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 68,
-        "previous_page": 67,
-        "previous_page_candidates": [
-          67
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 69,
-        "previous_page": 68,
-        "previous_page_candidates": [
-          68
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 70,
-        "previous_page": 69,
-        "previous_page_candidates": [
-          69
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 71,
-        "previous_page": 70,
-        "previous_page_candidates": [
-          70
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 72,
-        "previous_page": 71,
-        "previous_page_candidates": [
-          71
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 73,
-        "previous_page": 72,
-        "previous_page_candidates": [
-          72
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 74,
-        "previous_page": 73,
-        "previous_page_candidates": [
-          73
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 75,
-        "previous_page": 74,
-        "previous_page_candidates": [
-          74
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 76,
-        "previous_page": 75,
-        "previous_page_candidates": [
-          75
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 77,
-        "previous_page": 76,
-        "previous_page_candidates": [
-          76
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 78,
-        "previous_page": 77,
-        "previous_page_candidates": [
-          77
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 79,
-        "previous_page": 78,
-        "previous_page_candidates": [
-          78
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 80,
-        "previous_page": 79,
-        "previous_page_candidates": [
-          79
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 81,
-        "previous_page": 80,
-        "previous_page_candidates": [
-          80
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 82,
-        "previous_page": 81,
-        "previous_page_candidates": [
-          81
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 83,
-        "previous_page": 82,
-        "previous_page_candidates": [
-          82
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 84,
-        "previous_page": 83,
-        "previous_page_candidates": [
-          83
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 85,
-        "previous_page": 84,
-        "previous_page_candidates": [
-          84
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 86,
-        "previous_page": 85,
-        "previous_page_candidates": [
-          85
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 87,
-        "previous_page": 86,
-        "previous_page_candidates": [
-          86
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 88,
-        "previous_page": 87,
-        "previous_page_candidates": [
-          87
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 89,
-        "previous_page": 88,
-        "previous_page_candidates": [
-          88
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 90,
-        "previous_page": 89,
-        "previous_page_candidates": [
-          89
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 91,
-        "previous_page": 90,
-        "previous_page_candidates": [
-          90
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 92,
-        "previous_page": 91,
-        "previous_page_candidates": [
-          91
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 93,
-        "previous_page": 92,
-        "previous_page_candidates": [
-          92
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 94,
-        "previous_page": 93,
-        "previous_page_candidates": [
-          93
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 95,
-        "previous_page": 94,
-        "previous_page_candidates": [
-          94
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 96,
-        "previous_page": 95,
-        "previous_page_candidates": [
-          95
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 97,
-        "previous_page": 96,
-        "previous_page_candidates": [
-          96
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 98,
-        "previous_page": 97,
-        "previous_page_candidates": [
-          97
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 99,
-        "previous_page": 98,
-        "previous_page_candidates": [
-          98
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 100,
-        "previous_page": 99,
-        "previous_page_candidates": [
-          99
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 101,
-        "previous_page": 100,
-        "previous_page_candidates": [
-          100
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 102,
-        "previous_page": 101,
-        "previous_page_candidates": [
-          101
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 103,
-        "previous_page": 102,
-        "previous_page_candidates": [
-          102
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 104,
-        "previous_page": 103,
-        "previous_page_candidates": [
-          103
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 105,
-        "previous_page": 104,
-        "previous_page_candidates": [
-          104
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 106,
-        "previous_page": 105,
-        "previous_page_candidates": [
-          105
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 107,
-        "previous_page": 106,
-        "previous_page_candidates": [
-          106
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 108,
-        "previous_page": 107,
-        "previous_page_candidates": [
-          107
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 109,
-        "previous_page": 108,
-        "previous_page_candidates": [
-          108
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 110,
-        "previous_page": 109,
-        "previous_page_candidates": [
-          109
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 111,
-        "previous_page": 110,
-        "previous_page_candidates": [
-          110
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 112,
-        "previous_page": 111,
-        "previous_page_candidates": [
-          111
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 113,
-        "previous_page": 112,
-        "previous_page_candidates": [
-          112
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 114,
-        "previous_page": 113,
-        "previous_page_candidates": [
-          113
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 115,
-        "previous_page": 114,
-        "previous_page_candidates": [
-          114
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 116,
-        "previous_page": 115,
-        "previous_page_candidates": [
-          115
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 117,
-        "previous_page": 116,
-        "previous_page_candidates": [
-          116
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 118,
-        "previous_page": 117,
-        "previous_page_candidates": [
-          117
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 119,
-        "previous_page": 118,
-        "previous_page_candidates": [
-          118
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 120,
-        "previous_page": 119,
-        "previous_page_candidates": [
-          119
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 121,
-        "previous_page": 120,
-        "previous_page_candidates": [
-          120
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 122,
-        "previous_page": 121,
-        "previous_page_candidates": [
-          121
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 124,
-        "previous_page": 123,
-        "previous_page_candidates": [
-          123
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      },
-      {
-        "current_page": 125,
-        "previous_page": 124,
-        "previous_page_candidates": [
-          124
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true
-      }
-    ],
-    "all_pages_composition_checked": true,
-    "visual_method": "Exact RGB page-body SHA-256 after whitening only the folio rectangle. Each final body was matched independently against every baseline body and every reviewed candidate body, permitting shifts.",
     "chapter_6_pages": [
       57,
       68
     ],
-    "previous_visual_review_preserved_except_page_number": true,
     "chapter_7_pages": [
       69,
       81
@@ -1379,10 +369,6 @@
       101,
       112
     ],
-    "visual_review_result": "115 cuerpos idénticos al PDF anterior,20 preservados de cuerpos nuevos inspeccionados en el candidato y8 páginas finales inspeccionadas;143 folios correctos. Sin incidencias pendientes.",
-    "printed_folios_verified": true,
-    "reading_copy_identical_to_compiled_pdf": true,
-    "previous_pdf_sha256_for_comparison": "726a653cf5b3b4dc5d37c885dc0cf7edf7c328ec1a178b90851f8d1ac79d8ac4",
     "complement_8_17_pages": [
       99,
       100
@@ -1391,8 +377,747 @@
       20,
       20
     ],
-    "pages_visually_reviewed_or_preserved_within_current_delivery": {
-      "baseline_body_identity_pages": [
+    "chapter_10_pages": [
+      113,
+      125
+    ],
+    "chapter_11_pages": [
+      126,
+      139
+    ],
+    "references_and_status_pages": [
+      149,
+      153
+    ],
+    "chapter_12_pages": [
+      140,
+      148
+    ],
+    "cross_reading_with_markdown": "Nota 12: 32 fórmulas en bloque y 343 expresiones en línea ; 14 apartados,21 ecuaciones, 9 resultados/9 pruebas, 1 definición y 5 ejercicios/5 soluciones. Cuerpo Markdown aprobado conservado íntegramente; navegación añadida y recuperación completa desde la bóveda. Sin inspección de Obsidian.",
+    "lean_compiled_or_executed": false,
+    "previous_visual_review_preserved_by_text_and_geometry": [
+      {
+        "before_page": 8,
+        "after_page": 8
+      },
+      {
+        "before_page": 9,
+        "after_page": 9
+      },
+      {
+        "before_page": 10,
+        "after_page": 10
+      },
+      {
+        "before_page": 11,
+        "after_page": 11
+      },
+      {
+        "before_page": 12,
+        "after_page": 12
+      },
+      {
+        "before_page": 13,
+        "after_page": 13
+      },
+      {
+        "before_page": 14,
+        "after_page": 14
+      },
+      {
+        "before_page": 15,
+        "after_page": 15
+      },
+      {
+        "before_page": 16,
+        "after_page": 16
+      },
+      {
+        "before_page": 17,
+        "after_page": 17
+      },
+      {
+        "before_page": 20,
+        "after_page": 20
+      },
+      {
+        "before_page": 21,
+        "after_page": 21
+      },
+      {
+        "before_page": 22,
+        "after_page": 22
+      },
+      {
+        "before_page": 23,
+        "after_page": 23
+      },
+      {
+        "before_page": 24,
+        "after_page": 24
+      },
+      {
+        "before_page": 25,
+        "after_page": 25
+      },
+      {
+        "before_page": 26,
+        "after_page": 26
+      },
+      {
+        "before_page": 27,
+        "after_page": 27
+      },
+      {
+        "before_page": 28,
+        "after_page": 28
+      },
+      {
+        "before_page": 29,
+        "after_page": 29
+      },
+      {
+        "before_page": 30,
+        "after_page": 30
+      },
+      {
+        "before_page": 31,
+        "after_page": 31
+      },
+      {
+        "before_page": 32,
+        "after_page": 32
+      },
+      {
+        "before_page": 33,
+        "after_page": 33
+      },
+      {
+        "before_page": 34,
+        "after_page": 34
+      },
+      {
+        "before_page": 35,
+        "after_page": 35
+      },
+      {
+        "before_page": 36,
+        "after_page": 36
+      },
+      {
+        "before_page": 37,
+        "after_page": 37
+      },
+      {
+        "before_page": 38,
+        "after_page": 38
+      },
+      {
+        "before_page": 39,
+        "after_page": 39
+      },
+      {
+        "before_page": 40,
+        "after_page": 40
+      },
+      {
+        "before_page": 41,
+        "after_page": 41
+      },
+      {
+        "before_page": 42,
+        "after_page": 42
+      },
+      {
+        "before_page": 43,
+        "after_page": 43
+      },
+      {
+        "before_page": 44,
+        "after_page": 44
+      },
+      {
+        "before_page": 45,
+        "after_page": 45
+      },
+      {
+        "before_page": 46,
+        "after_page": 46
+      },
+      {
+        "before_page": 47,
+        "after_page": 47
+      },
+      {
+        "before_page": 48,
+        "after_page": 48
+      },
+      {
+        "before_page": 49,
+        "after_page": 49
+      },
+      {
+        "before_page": 50,
+        "after_page": 50
+      },
+      {
+        "before_page": 51,
+        "after_page": 51
+      },
+      {
+        "before_page": 52,
+        "after_page": 52
+      },
+      {
+        "before_page": 53,
+        "after_page": 53
+      },
+      {
+        "before_page": 54,
+        "after_page": 54
+      },
+      {
+        "before_page": 55,
+        "after_page": 55
+      },
+      {
+        "before_page": 56,
+        "after_page": 56
+      },
+      {
+        "before_page": 57,
+        "after_page": 57
+      },
+      {
+        "before_page": 58,
+        "after_page": 58
+      },
+      {
+        "before_page": 59,
+        "after_page": 59
+      },
+      {
+        "before_page": 60,
+        "after_page": 60
+      },
+      {
+        "before_page": 61,
+        "after_page": 61
+      },
+      {
+        "before_page": 62,
+        "after_page": 62
+      },
+      {
+        "before_page": 63,
+        "after_page": 63
+      },
+      {
+        "before_page": 64,
+        "after_page": 64
+      },
+      {
+        "before_page": 65,
+        "after_page": 65
+      },
+      {
+        "before_page": 66,
+        "after_page": 66
+      },
+      {
+        "before_page": 67,
+        "after_page": 67
+      },
+      {
+        "before_page": 68,
+        "after_page": 68
+      },
+      {
+        "before_page": 69,
+        "after_page": 69
+      },
+      {
+        "before_page": 70,
+        "after_page": 70
+      },
+      {
+        "before_page": 71,
+        "after_page": 71
+      },
+      {
+        "before_page": 72,
+        "after_page": 72
+      },
+      {
+        "before_page": 73,
+        "after_page": 73
+      },
+      {
+        "before_page": 74,
+        "after_page": 74
+      },
+      {
+        "before_page": 75,
+        "after_page": 75
+      },
+      {
+        "before_page": 76,
+        "after_page": 76
+      },
+      {
+        "before_page": 77,
+        "after_page": 77
+      },
+      {
+        "before_page": 78,
+        "after_page": 78
+      },
+      {
+        "before_page": 79,
+        "after_page": 79
+      },
+      {
+        "before_page": 80,
+        "after_page": 80
+      },
+      {
+        "before_page": 81,
+        "after_page": 81
+      },
+      {
+        "before_page": 82,
+        "after_page": 82
+      },
+      {
+        "before_page": 83,
+        "after_page": 83
+      },
+      {
+        "before_page": 84,
+        "after_page": 84
+      },
+      {
+        "before_page": 85,
+        "after_page": 85
+      },
+      {
+        "before_page": 86,
+        "after_page": 86
+      },
+      {
+        "before_page": 87,
+        "after_page": 87
+      },
+      {
+        "before_page": 88,
+        "after_page": 88
+      },
+      {
+        "before_page": 89,
+        "after_page": 89
+      },
+      {
+        "before_page": 90,
+        "after_page": 90
+      },
+      {
+        "before_page": 91,
+        "after_page": 91
+      },
+      {
+        "before_page": 92,
+        "after_page": 92
+      },
+      {
+        "before_page": 93,
+        "after_page": 93
+      },
+      {
+        "before_page": 94,
+        "after_page": 94
+      },
+      {
+        "before_page": 95,
+        "after_page": 95
+      },
+      {
+        "before_page": 96,
+        "after_page": 96
+      },
+      {
+        "before_page": 97,
+        "after_page": 97
+      },
+      {
+        "before_page": 98,
+        "after_page": 98
+      },
+      {
+        "before_page": 99,
+        "after_page": 99
+      },
+      {
+        "before_page": 100,
+        "after_page": 100
+      },
+      {
+        "before_page": 101,
+        "after_page": 101
+      },
+      {
+        "before_page": 102,
+        "after_page": 102
+      },
+      {
+        "before_page": 103,
+        "after_page": 103
+      },
+      {
+        "before_page": 104,
+        "after_page": 104
+      },
+      {
+        "before_page": 105,
+        "after_page": 105
+      },
+      {
+        "before_page": 106,
+        "after_page": 106
+      },
+      {
+        "before_page": 107,
+        "after_page": 107
+      },
+      {
+        "before_page": 108,
+        "after_page": 108
+      },
+      {
+        "before_page": 109,
+        "after_page": 109
+      },
+      {
+        "before_page": 110,
+        "after_page": 110
+      },
+      {
+        "before_page": 111,
+        "after_page": 111
+      },
+      {
+        "before_page": 112,
+        "after_page": 112
+      },
+      {
+        "before_page": 113,
+        "after_page": 113
+      },
+      {
+        "before_page": 114,
+        "after_page": 114
+      },
+      {
+        "before_page": 115,
+        "after_page": 115
+      },
+      {
+        "before_page": 116,
+        "after_page": 116
+      },
+      {
+        "before_page": 117,
+        "after_page": 117
+      },
+      {
+        "before_page": 118,
+        "after_page": 118
+      },
+      {
+        "before_page": 119,
+        "after_page": 119
+      },
+      {
+        "before_page": 120,
+        "after_page": 120
+      },
+      {
+        "before_page": 121,
+        "after_page": 121
+      },
+      {
+        "before_page": 122,
+        "after_page": 122
+      },
+      {
+        "before_page": 123,
+        "after_page": 123
+      },
+      {
+        "before_page": 124,
+        "after_page": 124
+      },
+      {
+        "before_page": 125,
+        "after_page": 125
+      },
+      {
+        "before_page": 126,
+        "after_page": 126
+      },
+      {
+        "before_page": 127,
+        "after_page": 127
+      },
+      {
+        "before_page": 128,
+        "after_page": 128
+      },
+      {
+        "before_page": 129,
+        "after_page": 129
+      },
+      {
+        "before_page": 130,
+        "after_page": 130
+      },
+      {
+        "before_page": 131,
+        "after_page": 131
+      },
+      {
+        "before_page": 132,
+        "after_page": 132
+      },
+      {
+        "before_page": 133,
+        "after_page": 133
+      },
+      {
+        "before_page": 134,
+        "after_page": 134
+      },
+      {
+        "before_page": 135,
+        "after_page": 135
+      },
+      {
+        "before_page": 136,
+        "after_page": 136
+      },
+      {
+        "before_page": 137,
+        "after_page": 137
+      },
+      {
+        "before_page": 138,
+        "after_page": 138
+      }
+    ],
+    "within_delivery_review_preserved_by_pixel_identity": [
+      {
+        "previous_page": 7,
+        "final_page": 7,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 18,
+        "final_page": 18,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 21,
+        "final_page": 20,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 140,
+        "final_page": 139,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 141,
+        "final_page": 140,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 142,
+        "final_page": 141,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 143,
+        "final_page": 142,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 144,
+        "final_page": 143,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 145,
+        "final_page": 144,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 146,
+        "final_page": 145,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 147,
+        "final_page": 146,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 148,
+        "final_page": 147,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 149,
+        "final_page": 148,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 150,
+        "final_page": 149,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 151,
+        "final_page": 150,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 152,
+        "final_page": 151,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 153,
+        "final_page": 152,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      },
+      {
+        "previous_page": 154,
+        "final_page": 153,
+        "body_pixels_identical": true,
+        "crop_pixels": [
+          0,
+          92,
+          993,
+          1300
+        ]
+      }
+    ],
+    "all_pages_composition_checked": true,
+    "visual_method": "Cotejo de texto y geometría de spans del cuerpo en y=55..780pt frente al PDF anterior; comparación exacta de píxeles RGB a 120 dpi en x0..993,y92..1300 con renders de esta entrega ya inspeccionados; inspección directa final de portada/índice 1–6 y guía 19–20. Cabeceras y pies quedan fuera de las comparaciones de cuerpos; los folios se verificaron por separado.",
+    "visual_review_result": "129 cuerpos con texto y geometría idénticos al PDF anterior ; 18 cuerpos con píxeles idénticos a renders inspeccionados en esta entrega ; 8 páginas finales inspeccionadas directamente. Los alcances se solapan en p. 20. Cobertura total 153; sin incidencias abiertas.",
+    "composition_coverage": {
+      "previous_body_text_and_geometry_identity_pages": [
         8,
         9,
         10,
@@ -1403,7 +1128,7 @@
         15,
         16,
         17,
-        18,
+        20,
         21,
         22,
         23,
@@ -1506,13 +1231,9 @@
         120,
         121,
         122,
-        124,
-        125
-      ],
-      "candidate_visual_identity_pages_not_reinspected_in_final": [
-        1,
-        7,
         123,
+        124,
+        125,
         126,
         127,
         128,
@@ -1525,1410 +1246,59 @@
         135,
         136,
         137,
-        138,
+        138
+      ],
+      "within_delivery_body_pixel_identity_pages": [
+        7,
+        18,
+        20,
         139,
         140,
         141,
-        142
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153
       ],
-      "final_visual_inspection_pages": [
+      "final_direct_visual_inspection_pages": [
+        1,
         2,
         3,
         4,
         5,
         6,
         19,
-        20,
-        143
+        20
       ],
       "counts": {
-        "baseline": 115,
-        "candidate_visual_identity": 20,
-        "final_visual": 8
+        "previous_text_and_geometry": 129,
+        "within_delivery_pixels": 18,
+        "final_direct_visual": 8
       },
+      "overlap_pages": [
+        20
+      ],
+      "partition_is_disjoint": false,
       "all_final_pages_covered": true,
-      "partition_is_disjoint": true
+      "comment": "Los tres alcances coinciden en p. 20; la unión cubre las 153 páginas. Texto/geometría no se presenta como identidad de píxeles."
     },
-    "within_delivery_review_preserved_by_pixel_identity": [
-      {
-        "current_page": 1,
-        "candidate_page": 1,
-        "candidate_page_candidates": [
-          1
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 7,
-        "candidate_page": 7,
-        "candidate_page_candidates": [
-          7
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 8,
-        "candidate_page": 8,
-        "candidate_page_candidates": [
-          8
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 9,
-        "candidate_page": 9,
-        "candidate_page_candidates": [
-          9
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 10,
-        "candidate_page": 10,
-        "candidate_page_candidates": [
-          10
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 11,
-        "candidate_page": 11,
-        "candidate_page_candidates": [
-          11
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 12,
-        "candidate_page": 12,
-        "candidate_page_candidates": [
-          12
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 13,
-        "candidate_page": 13,
-        "candidate_page_candidates": [
-          13
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 14,
-        "candidate_page": 14,
-        "candidate_page_candidates": [
-          14
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 15,
-        "candidate_page": 15,
-        "candidate_page_candidates": [
-          15
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 16,
-        "candidate_page": 16,
-        "candidate_page_candidates": [
-          16
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 17,
-        "candidate_page": 17,
-        "candidate_page_candidates": [
-          17
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 18,
-        "candidate_page": 18,
-        "candidate_page_candidates": [
-          18
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 19,
-        "candidate_page": 19,
-        "candidate_page_candidates": [
-          19
-        ],
-        "all_pixels_identical": true,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 20,
-        "candidate_page": 21,
-        "candidate_page_candidates": [
-          21
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 21,
-        "candidate_page": 22,
-        "candidate_page_candidates": [
-          22
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 22,
-        "candidate_page": 23,
-        "candidate_page_candidates": [
-          23
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 23,
-        "candidate_page": 24,
-        "candidate_page_candidates": [
-          24
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 24,
-        "candidate_page": 25,
-        "candidate_page_candidates": [
-          25
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 25,
-        "candidate_page": 26,
-        "candidate_page_candidates": [
-          26
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 26,
-        "candidate_page": 27,
-        "candidate_page_candidates": [
-          27
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 27,
-        "candidate_page": 28,
-        "candidate_page_candidates": [
-          28
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 28,
-        "candidate_page": 29,
-        "candidate_page_candidates": [
-          29
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 29,
-        "candidate_page": 30,
-        "candidate_page_candidates": [
-          30
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 30,
-        "candidate_page": 31,
-        "candidate_page_candidates": [
-          31
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 31,
-        "candidate_page": 32,
-        "candidate_page_candidates": [
-          32
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 32,
-        "candidate_page": 33,
-        "candidate_page_candidates": [
-          33
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 33,
-        "candidate_page": 34,
-        "candidate_page_candidates": [
-          34
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 34,
-        "candidate_page": 35,
-        "candidate_page_candidates": [
-          35
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 35,
-        "candidate_page": 36,
-        "candidate_page_candidates": [
-          36
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 36,
-        "candidate_page": 37,
-        "candidate_page_candidates": [
-          37
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 37,
-        "candidate_page": 38,
-        "candidate_page_candidates": [
-          38
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 38,
-        "candidate_page": 39,
-        "candidate_page_candidates": [
-          39
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 39,
-        "candidate_page": 40,
-        "candidate_page_candidates": [
-          40
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 40,
-        "candidate_page": 41,
-        "candidate_page_candidates": [
-          41
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 41,
-        "candidate_page": 42,
-        "candidate_page_candidates": [
-          42
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 42,
-        "candidate_page": 43,
-        "candidate_page_candidates": [
-          43
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 43,
-        "candidate_page": 44,
-        "candidate_page_candidates": [
-          44
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 44,
-        "candidate_page": 45,
-        "candidate_page_candidates": [
-          45
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 45,
-        "candidate_page": 46,
-        "candidate_page_candidates": [
-          46
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 46,
-        "candidate_page": 47,
-        "candidate_page_candidates": [
-          47
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 47,
-        "candidate_page": 48,
-        "candidate_page_candidates": [
-          48
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 48,
-        "candidate_page": 49,
-        "candidate_page_candidates": [
-          49
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 49,
-        "candidate_page": 50,
-        "candidate_page_candidates": [
-          50
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 50,
-        "candidate_page": 51,
-        "candidate_page_candidates": [
-          51
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 51,
-        "candidate_page": 52,
-        "candidate_page_candidates": [
-          52
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 52,
-        "candidate_page": 53,
-        "candidate_page_candidates": [
-          53
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 53,
-        "candidate_page": 54,
-        "candidate_page_candidates": [
-          54
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 54,
-        "candidate_page": 55,
-        "candidate_page_candidates": [
-          55
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 55,
-        "candidate_page": 56,
-        "candidate_page_candidates": [
-          56
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 56,
-        "candidate_page": 57,
-        "candidate_page_candidates": [
-          57
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 57,
-        "candidate_page": 58,
-        "candidate_page_candidates": [
-          58
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 58,
-        "candidate_page": 59,
-        "candidate_page_candidates": [
-          59
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 59,
-        "candidate_page": 60,
-        "candidate_page_candidates": [
-          60
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 60,
-        "candidate_page": 61,
-        "candidate_page_candidates": [
-          61
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 61,
-        "candidate_page": 62,
-        "candidate_page_candidates": [
-          62
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 62,
-        "candidate_page": 63,
-        "candidate_page_candidates": [
-          63
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 63,
-        "candidate_page": 64,
-        "candidate_page_candidates": [
-          64
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 64,
-        "candidate_page": 65,
-        "candidate_page_candidates": [
-          65
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 65,
-        "candidate_page": 66,
-        "candidate_page_candidates": [
-          66
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 66,
-        "candidate_page": 67,
-        "candidate_page_candidates": [
-          67
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 67,
-        "candidate_page": 68,
-        "candidate_page_candidates": [
-          68
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 68,
-        "candidate_page": 69,
-        "candidate_page_candidates": [
-          69
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 69,
-        "candidate_page": 70,
-        "candidate_page_candidates": [
-          70
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 70,
-        "candidate_page": 71,
-        "candidate_page_candidates": [
-          71
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 71,
-        "candidate_page": 72,
-        "candidate_page_candidates": [
-          72
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 72,
-        "candidate_page": 73,
-        "candidate_page_candidates": [
-          73
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 73,
-        "candidate_page": 74,
-        "candidate_page_candidates": [
-          74
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 74,
-        "candidate_page": 75,
-        "candidate_page_candidates": [
-          75
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 75,
-        "candidate_page": 76,
-        "candidate_page_candidates": [
-          76
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 76,
-        "candidate_page": 77,
-        "candidate_page_candidates": [
-          77
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 77,
-        "candidate_page": 78,
-        "candidate_page_candidates": [
-          78
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 78,
-        "candidate_page": 79,
-        "candidate_page_candidates": [
-          79
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 79,
-        "candidate_page": 80,
-        "candidate_page_candidates": [
-          80
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 80,
-        "candidate_page": 81,
-        "candidate_page_candidates": [
-          81
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 81,
-        "candidate_page": 82,
-        "candidate_page_candidates": [
-          82
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 82,
-        "candidate_page": 83,
-        "candidate_page_candidates": [
-          83
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 83,
-        "candidate_page": 84,
-        "candidate_page_candidates": [
-          84
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 84,
-        "candidate_page": 85,
-        "candidate_page_candidates": [
-          85
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 85,
-        "candidate_page": 86,
-        "candidate_page_candidates": [
-          86
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 86,
-        "candidate_page": 87,
-        "candidate_page_candidates": [
-          87
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 87,
-        "candidate_page": 88,
-        "candidate_page_candidates": [
-          88
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 88,
-        "candidate_page": 89,
-        "candidate_page_candidates": [
-          89
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 89,
-        "candidate_page": 90,
-        "candidate_page_candidates": [
-          90
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 90,
-        "candidate_page": 91,
-        "candidate_page_candidates": [
-          91
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 91,
-        "candidate_page": 92,
-        "candidate_page_candidates": [
-          92
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 92,
-        "candidate_page": 93,
-        "candidate_page_candidates": [
-          93
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 93,
-        "candidate_page": 94,
-        "candidate_page_candidates": [
-          94
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 94,
-        "candidate_page": 95,
-        "candidate_page_candidates": [
-          95
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 95,
-        "candidate_page": 96,
-        "candidate_page_candidates": [
-          96
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 96,
-        "candidate_page": 97,
-        "candidate_page_candidates": [
-          97
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 97,
-        "candidate_page": 98,
-        "candidate_page_candidates": [
-          98
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 98,
-        "candidate_page": 99,
-        "candidate_page_candidates": [
-          99
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 99,
-        "candidate_page": 100,
-        "candidate_page_candidates": [
-          100
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 100,
-        "candidate_page": 101,
-        "candidate_page_candidates": [
-          101
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 101,
-        "candidate_page": 102,
-        "candidate_page_candidates": [
-          102
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 102,
-        "candidate_page": 103,
-        "candidate_page_candidates": [
-          103
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 103,
-        "candidate_page": 104,
-        "candidate_page_candidates": [
-          104
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 104,
-        "candidate_page": 105,
-        "candidate_page_candidates": [
-          105
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 105,
-        "candidate_page": 106,
-        "candidate_page_candidates": [
-          106
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 106,
-        "candidate_page": 107,
-        "candidate_page_candidates": [
-          107
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 107,
-        "candidate_page": 108,
-        "candidate_page_candidates": [
-          108
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 108,
-        "candidate_page": 109,
-        "candidate_page_candidates": [
-          109
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 109,
-        "candidate_page": 110,
-        "candidate_page_candidates": [
-          110
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 110,
-        "candidate_page": 111,
-        "candidate_page_candidates": [
-          111
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 111,
-        "candidate_page": 112,
-        "candidate_page_candidates": [
-          112
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 112,
-        "candidate_page": 113,
-        "candidate_page_candidates": [
-          113
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 113,
-        "candidate_page": 114,
-        "candidate_page_candidates": [
-          114
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 114,
-        "candidate_page": 115,
-        "candidate_page_candidates": [
-          115
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 115,
-        "candidate_page": 116,
-        "candidate_page_candidates": [
-          116
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 116,
-        "candidate_page": 117,
-        "candidate_page_candidates": [
-          117
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 117,
-        "candidate_page": 118,
-        "candidate_page_candidates": [
-          118
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 118,
-        "candidate_page": 119,
-        "candidate_page_candidates": [
-          119
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 119,
-        "candidate_page": 120,
-        "candidate_page_candidates": [
-          120
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 120,
-        "candidate_page": 121,
-        "candidate_page_candidates": [
-          121
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 121,
-        "candidate_page": 122,
-        "candidate_page_candidates": [
-          122
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 122,
-        "candidate_page": 123,
-        "candidate_page_candidates": [
-          123
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 123,
-        "candidate_page": 124,
-        "candidate_page_candidates": [
-          124
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 124,
-        "candidate_page": 125,
-        "candidate_page_candidates": [
-          125
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 125,
-        "candidate_page": 126,
-        "candidate_page_candidates": [
-          126
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": false
-      },
-      {
-        "current_page": 126,
-        "candidate_page": 127,
-        "candidate_page_candidates": [
-          127
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 127,
-        "candidate_page": 128,
-        "candidate_page_candidates": [
-          128
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 128,
-        "candidate_page": 129,
-        "candidate_page_candidates": [
-          129
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 129,
-        "candidate_page": 130,
-        "candidate_page_candidates": [
-          130
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 130,
-        "candidate_page": 131,
-        "candidate_page_candidates": [
-          131
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 131,
-        "candidate_page": 132,
-        "candidate_page_candidates": [
-          132
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 132,
-        "candidate_page": 133,
-        "candidate_page_candidates": [
-          133
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 133,
-        "candidate_page": 134,
-        "candidate_page_candidates": [
-          134
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 134,
-        "candidate_page": 135,
-        "candidate_page_candidates": [
-          135
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 135,
-        "candidate_page": 136,
-        "candidate_page_candidates": [
-          136
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 136,
-        "candidate_page": 137,
-        "candidate_page_candidates": [
-          137
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 137,
-        "candidate_page": 138,
-        "candidate_page_candidates": [
-          138
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 138,
-        "candidate_page": 139,
-        "candidate_page_candidates": [
-          139
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 139,
-        "candidate_page": 140,
-        "candidate_page_candidates": [
-          140
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 140,
-        "candidate_page": 141,
-        "candidate_page_candidates": [
-          141
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 141,
-        "candidate_page": 142,
-        "candidate_page_candidates": [
-          142
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      },
-      {
-        "current_page": 142,
-        "candidate_page": 143,
-        "candidate_page_candidates": [
-          143
-        ],
-        "all_pixels_identical": false,
-        "identical_except_page_number": true,
-        "candidate_page_was_visually_inspected": true
-      }
-    ],
-    "chapter_10_pages": [
-      113,
-      125
-    ],
-    "chapter_11_pages": [
-      126,
-      139
-    ]
+    "printed_folios_verified": true,
+    "folio_summary": "Portada sin folio; pies2–153 consecutivos y correctos.",
+    "reading_copy_identical_to_compiled_pdf": true,
+    "previous_pdf_sha256_for_comparison": "dd1037db737fe12ee6cb392eac5cd62e5b39930692379e4c5b089696c879704f",
+    "within_delivery_previous_pdf_sha256": "1ebf0d03397766dc8d4e8dbc20ef6ff75bf5e55e349cd59b44f2db1ab081ccf6",
+    "previous_label_count": 420,
+    "new_label_count": 37,
+    "previous_label_numbers_preserved": true,
+    "duplicate_source_labels": []
   },
   "events": [
     {
@@ -12883,6 +11253,1322 @@
         "verification_plan": "Recuperar los bytes completos desde el commit publicado y compararlos con todos los candidatos; comprobar head, árbol y padre. El recibo final se conserva fuera del registro para evitar autorreferencia."
       },
       "next_step": "Congruencias de Hecke, retículos y extensiones con condiciones locales; modelo de dimensión dos y enlace con Nota8/A93§9pp61–77."
+    },
+    {
+      "date": "2026-11-23",
+      "recorded_at_utc": "2026-11-23T19:04:03.505402+00:00",
+      "action": "note_12_revised_hecke_congruences_lattices_and_selmer_integration",
+      "status": "validated_ready_for_guarded_publication",
+      "request": "Incorpora la revisión",
+      "previous_github_commit": "968fe25b62738f6428afbef7d37c502e98d4a1e8",
+      "canonical_file": "tex/capitulos/12-congruencias-de-Hecke-reticulos-y-Selmer.tex",
+      "canonical_sha256": "907202b4c7d6bfcd0ca3ac4162acabf7488dd8eeb058ceb7433bd667a8f512a8",
+      "canonical_support_files": [
+        {
+          "path": "main.tex",
+          "size_bytes": 3616,
+          "sha256": "6a6d171381b4268e0377cb857cf754524648227e7fdbd7f68865160dfad41d37"
+        },
+        {
+          "path": "tex/preambulo.tex",
+          "size_bytes": 2997,
+          "sha256": "3c2849ae6a4a3dc4b7a8286e10b67067ffe09784b2d643bb1ed51a9d6d2e1c76"
+        },
+        {
+          "path": "tex/capitulos/00-introduccion.tex",
+          "size_bytes": 35296,
+          "sha256": "42373d891f7e838bd48c8d9d780472ac889ced5f7d4dcfc483046685f2300d5a"
+        },
+        {
+          "path": "tex/capitulos/00-guia.tex",
+          "size_bytes": 12201,
+          "sha256": "77d3708a88714e703fdb6ce7ef8f30f72ff4faa6bddbd3866c15abc16d2b995e"
+        },
+        {
+          "path": "tex/capitulos/11-representaciones-de-galois-y-compatibilidad-local.tex",
+          "size_bytes": 50404,
+          "sha256": "a688bbcdc9ef15f2874af568bc52199f80efe4d2a6b5dc3687a30b247b4ba683"
+        },
+        {
+          "path": "tex/referencias.tex",
+          "size_bytes": 20231,
+          "sha256": "98be9f8e8746fa1ad55bb6a0f7f4d23edfaa721ec8a1882e38455bd038e7c57c"
+        },
+        {
+          "path": "README.md",
+          "size_bytes": 15640,
+          "sha256": "799f49fca50f05eace46557d0fc871716e6ab3a12217f3ca40dc96eba9f91859"
+        },
+        {
+          "path": "ESTADO.md",
+          "size_bytes": 35981,
+          "sha256": "c350b2ec6a51f3a75b3ced29b0e0cfce93f32b75cada125cbe3eec41720a8f2a"
+        },
+        {
+          "path": "fuentes/README.md",
+          "size_bytes": 63585,
+          "sha256": "1f5d6de641559591b3f887f8f2cf88dd5b379f882110072fe66d57b531eaad31"
+        }
+      ],
+      "approved_revision": {
+        "tex": {
+          "name": "12-congruencias-de-Hecke-reticulos-y-Selmer.tex",
+          "size_bytes": 29047,
+          "sha256": "907202b4c7d6bfcd0ca3ac4162acabf7488dd8eeb058ceb7433bd667a8f512a8"
+        },
+        "markdown": {
+          "name": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+          "size_bytes": 27304,
+          "sha256": "3909dfed5ec82067cb62680d3fc7a31dffa5bf627c395e9975a89972e772f487"
+        },
+        "source": "Revisión aprobada de la Nota 12, 23 de noviembre de 2026."
+      },
+      "contents": {
+        "subsections": 14,
+        "numbered_equations": 21,
+        "equation_range": [
+          "12.1",
+          "12.21"
+        ],
+        "numbered_results": 9,
+        "propositions": 6,
+        "lemmas": 3,
+        "definitions": 1,
+        "numbered_results_and_definitions": 10,
+        "proofs": 9,
+        "exercises": 5,
+        "solutions": 5,
+        "math_expressions": 375,
+        "inline_math": 343,
+        "display_math": 32
+      },
+      "mathematical_review": {
+        "source_scope": "B73§§5.1–5.2pp53–55/B76§§5.1–5.2pp54–56; A93§9pp61–62.",
+        "checks": [
+          "Cálculo exacto del denominador y álgebra de congruencias.",
+          "Diferencia entre retículo elegido, existencia de otro retículo y semisimplificación.",
+          "Construcción binomial válida también para ell=2.",
+          "Anulación de la clase residual al pasar al módulo divisible con la acción levantada de los mismos caracteres.",
+          "Condiciones locales como submódulos, acción continua y distinción entre Bloch–Kato y anulación local.",
+          "Bockstein con coeficientes finitos distinto de la comparación dual integral.",
+          "Comparación condicional con núcleo controlado y mismo operador separador.",
+          "Normalización de T_pi, signo de los torcidos y correspondencia de S_ell(E,j).",
+          "Anulador O-lineal en el ejercicio 12.5, también en anillos ramificados."
+        ],
+        "inputs_retained": [
+          "Construcción aritmética del mapa del cociente de congruencias a Selmer.",
+          "Control del núcleo, multiplicidades y supervivencia al cambiar de coeficientes.",
+          "Compatibilidad local y control uniforme de longitudes.",
+          "Entradas automorfas, geométricas y analíticas especializadas."
+        ],
+        "lean_execution": false,
+        "global_proof_certified": false
+      },
+      "source_review_key": "source_B76_review",
+      "lean_manifest": null,
+      "new_lean_files_retrieved_or_read": 0,
+      "previous_lean_manifests_preserved": [
+        "lean_source_review",
+        "lean_source_review_characters",
+        "lean_source_review_frames",
+        "lean_source_review_periods",
+        "lean_source_review_geometry",
+        "lean_source_review_cohomology",
+        "lean_source_review_parameters",
+        "lean_source_review_auxiliary_primes",
+        "lean_source_review_galois"
+      ],
+      "previous_source_reviews_preserved": [
+        "source_C_review",
+        "source_A93_review"
+      ],
+      "previous_events_preserved": 16,
+      "pdf": {
+        "status": "compiled_and_composition_checked",
+        "pages": 153,
+        "size_bytes": 1262920,
+        "sha256": "44abbe3764e98babfe3d1eded266539666af469bb825032f9163903e108fbf37",
+        "chapter_12_pages": [
+          140,
+          148
+        ],
+        "chapter_11_pages": [
+          126,
+          139
+        ],
+        "references_and_status_pages": [
+          149,
+          153
+        ],
+        "compilation_exit_code": 0,
+        "compilation_warnings": [],
+        "all_pages_composition_checked": true,
+        "final_visually_inspected_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          19,
+          20
+        ],
+        "baseline_body_text_and_geometry_preserved_pairs": [
+          {
+            "before_page": 8,
+            "after_page": 8
+          },
+          {
+            "before_page": 9,
+            "after_page": 9
+          },
+          {
+            "before_page": 10,
+            "after_page": 10
+          },
+          {
+            "before_page": 11,
+            "after_page": 11
+          },
+          {
+            "before_page": 12,
+            "after_page": 12
+          },
+          {
+            "before_page": 13,
+            "after_page": 13
+          },
+          {
+            "before_page": 14,
+            "after_page": 14
+          },
+          {
+            "before_page": 15,
+            "after_page": 15
+          },
+          {
+            "before_page": 16,
+            "after_page": 16
+          },
+          {
+            "before_page": 17,
+            "after_page": 17
+          },
+          {
+            "before_page": 20,
+            "after_page": 20
+          },
+          {
+            "before_page": 21,
+            "after_page": 21
+          },
+          {
+            "before_page": 22,
+            "after_page": 22
+          },
+          {
+            "before_page": 23,
+            "after_page": 23
+          },
+          {
+            "before_page": 24,
+            "after_page": 24
+          },
+          {
+            "before_page": 25,
+            "after_page": 25
+          },
+          {
+            "before_page": 26,
+            "after_page": 26
+          },
+          {
+            "before_page": 27,
+            "after_page": 27
+          },
+          {
+            "before_page": 28,
+            "after_page": 28
+          },
+          {
+            "before_page": 29,
+            "after_page": 29
+          },
+          {
+            "before_page": 30,
+            "after_page": 30
+          },
+          {
+            "before_page": 31,
+            "after_page": 31
+          },
+          {
+            "before_page": 32,
+            "after_page": 32
+          },
+          {
+            "before_page": 33,
+            "after_page": 33
+          },
+          {
+            "before_page": 34,
+            "after_page": 34
+          },
+          {
+            "before_page": 35,
+            "after_page": 35
+          },
+          {
+            "before_page": 36,
+            "after_page": 36
+          },
+          {
+            "before_page": 37,
+            "after_page": 37
+          },
+          {
+            "before_page": 38,
+            "after_page": 38
+          },
+          {
+            "before_page": 39,
+            "after_page": 39
+          },
+          {
+            "before_page": 40,
+            "after_page": 40
+          },
+          {
+            "before_page": 41,
+            "after_page": 41
+          },
+          {
+            "before_page": 42,
+            "after_page": 42
+          },
+          {
+            "before_page": 43,
+            "after_page": 43
+          },
+          {
+            "before_page": 44,
+            "after_page": 44
+          },
+          {
+            "before_page": 45,
+            "after_page": 45
+          },
+          {
+            "before_page": 46,
+            "after_page": 46
+          },
+          {
+            "before_page": 47,
+            "after_page": 47
+          },
+          {
+            "before_page": 48,
+            "after_page": 48
+          },
+          {
+            "before_page": 49,
+            "after_page": 49
+          },
+          {
+            "before_page": 50,
+            "after_page": 50
+          },
+          {
+            "before_page": 51,
+            "after_page": 51
+          },
+          {
+            "before_page": 52,
+            "after_page": 52
+          },
+          {
+            "before_page": 53,
+            "after_page": 53
+          },
+          {
+            "before_page": 54,
+            "after_page": 54
+          },
+          {
+            "before_page": 55,
+            "after_page": 55
+          },
+          {
+            "before_page": 56,
+            "after_page": 56
+          },
+          {
+            "before_page": 57,
+            "after_page": 57
+          },
+          {
+            "before_page": 58,
+            "after_page": 58
+          },
+          {
+            "before_page": 59,
+            "after_page": 59
+          },
+          {
+            "before_page": 60,
+            "after_page": 60
+          },
+          {
+            "before_page": 61,
+            "after_page": 61
+          },
+          {
+            "before_page": 62,
+            "after_page": 62
+          },
+          {
+            "before_page": 63,
+            "after_page": 63
+          },
+          {
+            "before_page": 64,
+            "after_page": 64
+          },
+          {
+            "before_page": 65,
+            "after_page": 65
+          },
+          {
+            "before_page": 66,
+            "after_page": 66
+          },
+          {
+            "before_page": 67,
+            "after_page": 67
+          },
+          {
+            "before_page": 68,
+            "after_page": 68
+          },
+          {
+            "before_page": 69,
+            "after_page": 69
+          },
+          {
+            "before_page": 70,
+            "after_page": 70
+          },
+          {
+            "before_page": 71,
+            "after_page": 71
+          },
+          {
+            "before_page": 72,
+            "after_page": 72
+          },
+          {
+            "before_page": 73,
+            "after_page": 73
+          },
+          {
+            "before_page": 74,
+            "after_page": 74
+          },
+          {
+            "before_page": 75,
+            "after_page": 75
+          },
+          {
+            "before_page": 76,
+            "after_page": 76
+          },
+          {
+            "before_page": 77,
+            "after_page": 77
+          },
+          {
+            "before_page": 78,
+            "after_page": 78
+          },
+          {
+            "before_page": 79,
+            "after_page": 79
+          },
+          {
+            "before_page": 80,
+            "after_page": 80
+          },
+          {
+            "before_page": 81,
+            "after_page": 81
+          },
+          {
+            "before_page": 82,
+            "after_page": 82
+          },
+          {
+            "before_page": 83,
+            "after_page": 83
+          },
+          {
+            "before_page": 84,
+            "after_page": 84
+          },
+          {
+            "before_page": 85,
+            "after_page": 85
+          },
+          {
+            "before_page": 86,
+            "after_page": 86
+          },
+          {
+            "before_page": 87,
+            "after_page": 87
+          },
+          {
+            "before_page": 88,
+            "after_page": 88
+          },
+          {
+            "before_page": 89,
+            "after_page": 89
+          },
+          {
+            "before_page": 90,
+            "after_page": 90
+          },
+          {
+            "before_page": 91,
+            "after_page": 91
+          },
+          {
+            "before_page": 92,
+            "after_page": 92
+          },
+          {
+            "before_page": 93,
+            "after_page": 93
+          },
+          {
+            "before_page": 94,
+            "after_page": 94
+          },
+          {
+            "before_page": 95,
+            "after_page": 95
+          },
+          {
+            "before_page": 96,
+            "after_page": 96
+          },
+          {
+            "before_page": 97,
+            "after_page": 97
+          },
+          {
+            "before_page": 98,
+            "after_page": 98
+          },
+          {
+            "before_page": 99,
+            "after_page": 99
+          },
+          {
+            "before_page": 100,
+            "after_page": 100
+          },
+          {
+            "before_page": 101,
+            "after_page": 101
+          },
+          {
+            "before_page": 102,
+            "after_page": 102
+          },
+          {
+            "before_page": 103,
+            "after_page": 103
+          },
+          {
+            "before_page": 104,
+            "after_page": 104
+          },
+          {
+            "before_page": 105,
+            "after_page": 105
+          },
+          {
+            "before_page": 106,
+            "after_page": 106
+          },
+          {
+            "before_page": 107,
+            "after_page": 107
+          },
+          {
+            "before_page": 108,
+            "after_page": 108
+          },
+          {
+            "before_page": 109,
+            "after_page": 109
+          },
+          {
+            "before_page": 110,
+            "after_page": 110
+          },
+          {
+            "before_page": 111,
+            "after_page": 111
+          },
+          {
+            "before_page": 112,
+            "after_page": 112
+          },
+          {
+            "before_page": 113,
+            "after_page": 113
+          },
+          {
+            "before_page": 114,
+            "after_page": 114
+          },
+          {
+            "before_page": 115,
+            "after_page": 115
+          },
+          {
+            "before_page": 116,
+            "after_page": 116
+          },
+          {
+            "before_page": 117,
+            "after_page": 117
+          },
+          {
+            "before_page": 118,
+            "after_page": 118
+          },
+          {
+            "before_page": 119,
+            "after_page": 119
+          },
+          {
+            "before_page": 120,
+            "after_page": 120
+          },
+          {
+            "before_page": 121,
+            "after_page": 121
+          },
+          {
+            "before_page": 122,
+            "after_page": 122
+          },
+          {
+            "before_page": 123,
+            "after_page": 123
+          },
+          {
+            "before_page": 124,
+            "after_page": 124
+          },
+          {
+            "before_page": 125,
+            "after_page": 125
+          },
+          {
+            "before_page": 126,
+            "after_page": 126
+          },
+          {
+            "before_page": 127,
+            "after_page": 127
+          },
+          {
+            "before_page": 128,
+            "after_page": 128
+          },
+          {
+            "before_page": 129,
+            "after_page": 129
+          },
+          {
+            "before_page": 130,
+            "after_page": 130
+          },
+          {
+            "before_page": 131,
+            "after_page": 131
+          },
+          {
+            "before_page": 132,
+            "after_page": 132
+          },
+          {
+            "before_page": 133,
+            "after_page": 133
+          },
+          {
+            "before_page": 134,
+            "after_page": 134
+          },
+          {
+            "before_page": 135,
+            "after_page": 135
+          },
+          {
+            "before_page": 136,
+            "after_page": 136
+          },
+          {
+            "before_page": 137,
+            "after_page": 137
+          },
+          {
+            "before_page": 138,
+            "after_page": 138
+          }
+        ],
+        "within_delivery_body_pixel_identity_pairs": [
+          {
+            "previous_page": 7,
+            "final_page": 7,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 18,
+            "final_page": 18,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 21,
+            "final_page": 20,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 140,
+            "final_page": 139,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 141,
+            "final_page": 140,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 142,
+            "final_page": 141,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 143,
+            "final_page": 142,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 144,
+            "final_page": 143,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 145,
+            "final_page": 144,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 146,
+            "final_page": 145,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 147,
+            "final_page": 146,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 148,
+            "final_page": 147,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 149,
+            "final_page": 148,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 150,
+            "final_page": 149,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 151,
+            "final_page": 150,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 152,
+            "final_page": 151,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 153,
+            "final_page": 152,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          },
+          {
+            "previous_page": 154,
+            "final_page": 153,
+            "body_pixels_identical": true,
+            "crop_pixels": [
+              0,
+              92,
+              993,
+              1300
+            ]
+          }
+        ],
+        "coverage": {
+          "previous_body_text_and_geometry_identity_pages": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138
+          ],
+          "within_delivery_body_pixel_identity_pages": [
+            7,
+            18,
+            20,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153
+          ],
+          "final_direct_visual_inspection_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            19,
+            20
+          ],
+          "counts": {
+            "previous_text_and_geometry": 129,
+            "within_delivery_pixels": 18,
+            "final_direct_visual": 8
+          },
+          "overlap_pages": [
+            20
+          ],
+          "partition_is_disjoint": false,
+          "all_final_pages_covered": true,
+          "comment": "Los tres alcances coinciden en p. 20; la unión cubre las 153 páginas. Texto/geometría no se presenta como identidad de píxeles."
+        },
+        "visual_method": "Cotejo de texto y geometría de spans del cuerpo en y=55..780pt frente al PDF anterior; comparación exacta de píxeles RGB a 120 dpi en x0..993,y92..1300 con renders de esta entrega ya inspeccionados; inspección directa final de portada/índice 1–6 y guía 19–20. Cabeceras y pies quedan fuera de las comparaciones de cuerpos; los folios se verificaron por separado.",
+        "source_files_unchanged": [
+          "tex/capitulos/01-sumas-y-transformadas.tex",
+          "tex/capitulos/02-proyecciones-y-denominadores.tex",
+          "tex/capitulos/03-criterio-unilateral-de-ventanas.tex",
+          "tex/capitulos/04-identidad-de-caracteres.tex",
+          "tex/capitulos/05-marcos-y-pendientes.tex",
+          "tex/capitulos/06-periodos-y-torres-theta.tex",
+          "tex/capitulos/07-geometria-evaluaciones-y-marcos.tex",
+          "tex/capitulos/08-cohomologia-y-denominadores.tex",
+          "tex/capitulos/09-parametros-y-ventanas-comunes.tex",
+          "tex/capitulos/10-primos-auxiliares-y-control-uniforme.tex"
+        ],
+        "previous_labels_preserved": 420,
+        "new_labels": 37,
+        "duplicate_source_labels": [],
+        "folios_verified": true,
+        "folio_summary": "Portada sin folio; pies2–153 consecutivos y correctos.",
+        "reading_copy_identical_to_compiled_pdf": true,
+        "resolved_editorial_issues": [
+          {
+            "id": "guide_short_page",
+            "old_page": 20,
+            "fix": "Recapitulación de la guía condensada; todo su cierre cabe enp19. La guíaA93 empieza enp20, sin hoja residual.",
+            "verified": "Renders finales19–20 inspeccionados."
+          }
+        ],
+        "unresolved_issues": [],
+        "method_limits": "La igualdad de texto/geometría y de píxeles se usa para trasladar QA de composición; no es una nueva auditoría matemática ni una ejecución de Lean."
+      },
+      "markdown_review": {
+        "status": "static_formula_parity_and_vault_full_readback_passed",
+        "candidate": {
+          "name": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+          "size_bytes": 27717,
+          "sha256": "6b06e1bfa7fca8a6938d22f9aa64d5a52ab859d378f0e6b13de18230a6012fd5"
+        },
+        "source": {
+          "name": "12-congruencias-de-Hecke-reticulos-y-Selmer.tex",
+          "size_bytes": 29047,
+          "sha256": "907202b4c7d6bfcd0ca3ac4162acabf7488dd8eeb058ceb7433bd667a8f512a8"
+        },
+        "inline_math": 343,
+        "display_math": 32,
+        "subsections": 14,
+        "numbered_equations": 21,
+        "equation_tags_consecutive": true,
+        "formula_differences": [],
+        "normalization": "Macros de presentación Q/Z/length, espacios y etiquetas.",
+        "obsidian_rendering_checked": false,
+        "scope": "Cotejo estático de fórmulas de la revisión aprobada y recuperación íntegra del Markdown escrito en la bóveda; sin inspección visual dentro de Obsidian.",
+        "approved_candidate": {
+          "name": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+          "size_bytes": 27304,
+          "sha256": "3909dfed5ec82067cb62680d3fc7a31dffa5bf627c395e9975a89972e772f487"
+        },
+        "approved_body_preserved_byte_for_byte": true,
+        "appended_content": "Navegación y enlaces a los ejemplares B73/B76; cuerpo aprobado conservado íntegramente.",
+        "readback_full_bytes_verified": true
+      },
+      "vault_prewrite_version_guard": [
+        {
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+          "name": "00-Mapa-de-estudio.md",
+          "bytes": 20616,
+          "sha256": "66968054ca315c9232169b55357eeace617d27d11f6bfaa1580d2e837a830621",
+          "modified_time": "2026-11-23T18:13:35.250Z",
+          "current_revision_id": "0B4GzbHwPH-MvSHJNaGFBN1h5bFdIWmRWSHkrMnZWNlIrWlF3PQ",
+          "bytes_identical_to_baseline": true,
+          "metadata_verified": true,
+          "current_revision_rechecked": true
+        },
+        {
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+          "name": "03-Dudas-y-pendientes.md",
+          "bytes": 25842,
+          "sha256": "a85365e93cab665aa5498667701fe4f44e7d6bfa12ab1d32ad1cc94ccd62588a",
+          "modified_time": "2026-11-23T18:13:39.244Z",
+          "current_revision_id": "0B4GzbHwPH-MvM3Z2cjNqT05tcWVDTWZmeXA3azVWbU8vWmlrPQ",
+          "bytes_identical_to_baseline": true,
+          "metadata_verified": true,
+          "current_revision_rechecked": true
+        },
+        {
+          "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+          "name": "00-Introduccion-y-fundamentos.md",
+          "bytes": 38645,
+          "sha256": "2ebf3dd8f0fc78b1962b840040e8b6e24c7ddfbd26d4e11ce8c92b52d6cdc86e",
+          "modified_time": "2026-11-23T18:13:43.093Z",
+          "current_revision_id": "0B4GzbHwPH-MvaFpaRmQ2OXJKZExtd2s1Q2FjU29xQzJpN2FrPQ",
+          "bytes_identical_to_baseline": true,
+          "metadata_verified": true,
+          "current_revision_rechecked": true
+        },
+        {
+          "id": "1NX1d9c0Nby2Y9w8jx7ewzcuxVjElyJRG",
+          "name": "12-Representaciones-de-galois-y-compatibilidad-local.md",
+          "bytes": 52375,
+          "sha256": "c3d573225d7a5c5a8627fdaaedf18af4279d8f00c146eeb4ca08b5c65a1a87ba",
+          "modified_time": "2026-11-23T18:13:53.105Z",
+          "current_revision_id": "0B4GzbHwPH-MvbFQrM0ZGUVg4ZnlBYVJlWEp2eEo4d3RuRVNvPQ",
+          "bytes_identical_to_baseline": true,
+          "metadata_verified": true,
+          "current_revision_rechecked": true
+        }
+      ],
+      "vault_files_written_and_readback_verified": [
+        {
+          "id": "1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt",
+          "name": "00-Mapa-de-estudio.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "modified_time": "2026-11-23T19:06:20.350Z",
+          "size_bytes": 22274,
+          "sha256": "2df43578d08116cad901cfbe1471df2b0d10d0906d5c36fe0841a7984322a30a",
+          "full_bytes_verified": true,
+          "url": "https://docs.google.com/document/d/1pdoO77zpJ5vWuyol8xwdcfv8E-SMWSlt/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+          "path_in_vault_project": "00-Mapa-de-estudio.md",
+          "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
+          "current_revision_id": "0B4GzbHwPH-MvdXpLMXFYRldQUkNPUlJSQjZhSXU5VGZRaFhZPQ",
+          "operation": "update",
+          "previous_revision_id": "0B4GzbHwPH-MvSHJNaGFBN1h5bFdIWmRWSHkrMnZWNlIrWlF3PQ",
+          "metadata_verified": true
+        },
+        {
+          "id": "1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB",
+          "name": "03-Dudas-y-pendientes.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "modified_time": "2026-11-23T19:06:27.210Z",
+          "size_bytes": 28540,
+          "sha256": "b7f83f67201828545e302d608727d12c13f781eee80b21936e892cbb2792403f",
+          "full_bytes_verified": true,
+          "url": "https://docs.google.com/document/d/1R7nOT7PHYqbiyJE5eiYpPiavtg33uHFB/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+          "path_in_vault_project": "03-Dudas-y-pendientes.md",
+          "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
+          "current_revision_id": "0B4GzbHwPH-MvYjVkeURQYVZiR2QvZDdhb1VuRkN0TTIveXFFPQ",
+          "operation": "update",
+          "previous_revision_id": "0B4GzbHwPH-MvM3Z2cjNqT05tcWVDTWZmeXA3azVWbU8vWmlrPQ",
+          "metadata_verified": true
+        },
+        {
+          "id": "1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD",
+          "name": "00-Introduccion-y-fundamentos.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "modified_time": "2026-11-23T19:06:34.309Z",
+          "size_bytes": 38645,
+          "sha256": "a43f679c302a399e7e58baca766cbbf25f255e49f5cf444f312b1217b90804fa",
+          "full_bytes_verified": true,
+          "url": "https://docs.google.com/document/d/1wmaZrvxs3zg4IjA6C9ZVxzQYRBTjiJkD/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+          "path_in_vault_project": "00-Introduccion-y-fundamentos.md",
+          "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
+          "current_revision_id": "0B4GzbHwPH-MvZVhXNW1lZ2syOTNTbGlWeHhCcWlyTm5JbWpnPQ",
+          "operation": "update",
+          "previous_revision_id": "0B4GzbHwPH-MvaFpaRmQ2OXJKZExtd2s1Q2FjU29xQzJpN2FrPQ",
+          "metadata_verified": true
+        },
+        {
+          "id": "1NX1d9c0Nby2Y9w8jx7ewzcuxVjElyJRG",
+          "name": "12-Representaciones-de-galois-y-compatibilidad-local.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "modified_time": "2026-11-23T19:06:41.027Z",
+          "size_bytes": 52444,
+          "sha256": "34a20d3f9870eb7e02af195c3477dc1816adf2d10fce08d54e4a8a8ec993241d",
+          "full_bytes_verified": true,
+          "url": "https://docs.google.com/document/d/1NX1d9c0Nby2Y9w8jx7ewzcuxVjElyJRG/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+          "path_in_vault_project": "12-Representaciones-de-galois-y-compatibilidad-local.md",
+          "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
+          "current_revision_id": "0B4GzbHwPH-MvK0dQTWdKU3JsRGg3WkhmUVAydUliSzMvdkNZPQ",
+          "operation": "update",
+          "previous_revision_id": "0B4GzbHwPH-MvbFQrM0ZGUVg4ZnlBYVJlWEp2eEo4d3RuRVNvPQ",
+          "metadata_verified": true
+        },
+        {
+          "id": "1qjUQTF1TesjCJMAf-gADZ2WHcJHcpqiE",
+          "name": "GRH-note-B76-3bd82fa3d242.pdf",
+          "mime_type": "application/pdf",
+          "parent_ids": [
+            "1JOOvjCkJkco_6fRznoOYLg-jsOiBQlol"
+          ],
+          "modified_time": "2026-11-23T19:05:51.468Z",
+          "size_bytes": 872585,
+          "sha256": "3bd82fa3d242fe473cb371cbab0a8d211cb7dd05f72ba2db1b4c4ef8f27478a3",
+          "full_bytes_verified": true,
+          "url": "https://drive.google.com/file/d/1qjUQTF1TesjCJMAf-gADZ2WHcJHcpqiE/view?usp=drivesdk",
+          "path_in_vault_project": "Fuentes/GRH-note-B76-3bd82fa3d242.pdf",
+          "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
+          "current_revision_id": "0B4GzbHwPH-MvQzNjT3BHa2doQmY1a2lPdEplMi9Fb1JTcFFrPQ",
+          "operation": "create",
+          "previous_revision_id": null,
+          "metadata_verified": true
+        },
+        {
+          "id": "1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA",
+          "name": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+          "mime_type": "text/markdown",
+          "parent_ids": [
+            "16TJUJvcQJLZHXx4iESy9zJF22SRuX6PC"
+          ],
+          "modified_time": "2026-11-23T19:05:59.564Z",
+          "size_bytes": 27717,
+          "sha256": "6b06e1bfa7fca8a6938d22f9aa64d5a52ab859d378f0e6b13de18230a6012fd5",
+          "full_bytes_verified": true,
+          "url": "https://docs.google.com/document/d/1d-hCfmz77VJE5jdyq3-TOyxbL6sNi5eA/edit?usp=drivesdk&ouid=112048658071900252983&rtpof=true&sd=true",
+          "path_in_vault_project": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+          "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
+          "current_revision_id": "0B4GzbHwPH-MvQnpmK0dsQVFMMXZ1SXl6UGFHd3FBK0IrU0tBPQ",
+          "operation": "create",
+          "previous_revision_id": null,
+          "metadata_verified": true
+        }
+      ],
+      "vault_editorial_changes": {
+        "status": "applied_and_verified_by_full_readback",
+        "new_markdown": "13-Congruencias-de-Hecke-reticulos-y-Selmer.md",
+        "new_source_pdf": "Fuentes/GRH-note-B76-3bd82fa3d242.pdf",
+        "existing": [
+          "00-Mapa-de-estudio.md",
+          "03-Dudas-y-pendientes.md",
+          "00-Introduccion-y-fundamentos.md",
+          "12-Representaciones-de-galois-y-compatibilidad-local.md"
+        ],
+        "introduction": "solo once→doce",
+        "galois": "dos párrafos de continuidad; fórmulas conservadas",
+        "map_and_pending": "Nota12, ejemplar B76 separado, navegación y siguiente comparación aritmética",
+        "approved_note_body_preserved_byte_for_byte": true,
+        "new_note_navigation_appended": true,
+        "source_pdfs_preexisting_unchanged": true,
+        "existing_ids_preserved": true,
+        "no_duplicate_names": true,
+        "static_link_targets_resolved": true,
+        "obsidian_rendering_checked": false
+      },
+      "vault_inventory_after": {
+        "files": 21,
+        "markdown": 15,
+        "source_pdfs": 5,
+        "svg": 1,
+        "previous_ids_preserved": 19
+      },
+      "publication_authorization": "El usuario solicita expresamente «Incorpora la revisión»; la integración se prepara sobre el snapshot vigente antes de consignar su publicación.",
+      "github_publication_at_record_time": {
+        "status": "prepared_for_guarded_commit_after_this_record",
+        "expected_parent": "968fe25b62738f6428afbef7d37c502e98d4a1e8",
+        "branch": "main",
+        "force": false,
+        "verification_plan": "Después de publicar el commit de contenido, recuperar íntegramente los archivos escritos y comparar sus bytes con los candidatos; comprobar head, árbol y padre. Añadir al mismo evento la evidencia observada de ese commit en un cierre posterior de REGISTRO.json, sin incluir el SHA del propio cierre."
+      },
+      "next_step": "Estudiar la construcción aritmética del mapa del cociente de congruencias de Hecke a las clases de extensión con condiciones de Selmer, retomando la Nota 8, A55, §8, pp. 35–42, A93, §9, pp. 61–77, y B76, §§5.1–5.2, pp. 54–56. El modelo de dimensión dos de la Nota 12 ya está desarrollado. Quedan por controlar el núcleo y las multiplicidades del mapa, la supervivencia de las clases al cambiar de coeficientes, la compatibilidad de las condiciones locales y las longitudes uniformes. Las entradas analíticas uniformes, la geometría y la producción aritmética completa de las ventanas conservan los pendientes ya identificados.",
+      "vault_prewrite_version_guard_verified_at_utc": "2026-11-23T19:05:41.714903+00:00",
+      "vault_new_names_absent_before_creation": true,
+      "vault_readback_verified_at_utc": "2026-11-23T19:07:21.499495+00:00",
+      "vault_revision_metadata_limit": "get_file_metadata normalizes its response and omits version and headRevisionId even when requested. currentRevisionId is observed through list_file_revisions; it is stored separately rather than presented as an observed metadata field.",
+      "ready_at_utc": "2026-11-23T19:11:12.934859+00:00"
     }
   ],
   "github": {
@@ -31661,5 +31347,111 @@
       "prior_equations_correction_required_by_this_review": false,
       "full_proof_or_dependency_audit": false
     }
+  },
+  "source_B76_review": {
+    "schema_version": 1,
+    "review_key": "B76_note12_local_documentary_comparison",
+    "date": "2026-11-23",
+    "label": "B76",
+    "existing_label_B_preserved_for_B73": true,
+    "title": "A preliminary note on Alpöge’s proposed proof of the generalized Riemann hypothesis",
+    "author": "Robin Zhang",
+    "public_url": "https://www.ihes.fr/~rzhang/files/GRH%20note.pdf",
+    "examined_pdf": {
+      "public_filename": "GRH note.pdf",
+      "printed_date": "2026-11-22",
+      "pages": 76,
+      "size_bytes": 872585,
+      "sha256": "3bd82fa3d242fe473cb371cbab0a8d211cb7dd05f72ba2db1b4c4ef8f27478a3"
+    },
+    "reference_pdf_B73": {
+      "printed_date": "2026-11-21",
+      "pages": 73,
+      "size_bytes": 850937,
+      "sha256": "2cbd7e9b693c753f6afa22251db9669c9652555a91cee0cdfbd37a8465ad2ad9"
+    },
+    "reviewed_passages": [
+      {
+        "topic": "Proyector y operador integral",
+        "section": "5.1",
+        "result": "Lema 5.1",
+        "B73_pages": [
+          53,
+          53
+        ],
+        "B76_pages": [
+          54,
+          54
+        ]
+      },
+      {
+        "topic": "Retículo T_pi, módulo A_pi y condiciones locales",
+        "section": "5.2",
+        "B73_pages": [
+          54,
+          54
+        ],
+        "B76_pages": [
+          55,
+          55
+        ]
+      },
+      {
+        "topic": "Longitudes, S_ell(E,j) y Observación 5.2",
+        "section": "5.2",
+        "result": "Observación 5.2",
+        "B73_pages": [
+          54,
+          55
+        ],
+        "B76_pages": [
+          55,
+          56
+        ]
+      }
+    ],
+    "related_A93_rereading": {
+      "section": "9",
+      "pages": [
+        61,
+        62
+      ],
+      "sha256": "295153115a035f909faee55ea26e2fbdd9471e4f1d89439a16480bbd74011dfb",
+      "scope": "Formulación y convenciones; no nueva revisión íntegra de las estimaciones uniformes."
+    },
+    "mathematical_scope": [
+      "Modelo exacto de denominadores y álgebra de congruencias.",
+      "Retículos estables, cociclos y cambio a coeficientes divisibles con acción levantada.",
+      "Condiciones locales, normalización de T_pi y signo de los torcidos.",
+      "Comparación condicional del cociente de congruencias con Selmer, con inyección o núcleo controlado."
+    ],
+    "complete_B73_B76_comparison": false,
+    "new_lean_files_retrieved_or_read": 0,
+    "lean_compiled": false,
+    "lean_executed": false,
+    "axiom_report_run": false,
+    "full_dependency_audit": false,
+    "global_RH_or_GRH_proof_certified": false,
+    "vault_preservation_status": "preserved_and_verified_by_full_readback",
+    "editorial_decision": "Incorporar B76 como fuente separada únicamente para los pasajes cotejados de la Nota 12; conservar las citas previas de B73 y los nueve manifiestos Lean.",
+    "original_pdf": {
+      "id": "1qjUQTF1TesjCJMAf-gADZ2WHcJHcpqiE",
+      "name": "GRH-note-B76-3bd82fa3d242.pdf",
+      "mime_type": "application/pdf",
+      "parent_ids": [
+        "1JOOvjCkJkco_6fRznoOYLg-jsOiBQlol"
+      ],
+      "modified_time": "2026-11-23T19:05:51.468Z",
+      "size_bytes": 872585,
+      "sha256": "3bd82fa3d242fe473cb371cbab0a8d211cb7dd05f72ba2db1b4c4ef8f27478a3",
+      "full_bytes_verified": true,
+      "url": "https://drive.google.com/file/d/1qjUQTF1TesjCJMAf-gADZ2WHcJHcpqiE/view?usp=drivesdk",
+      "path_in_vault_project": "Fuentes/GRH-note-B76-3bd82fa3d242.pdf",
+      "verification": "Contenido íntegro recuperado del destino, idéntico byte por byte al candidato; nombre, ID, tipo, carpeta padre y revisión comprobados.",
+      "current_revision_id": "0B4GzbHwPH-MvQzNjT3BHa2doQmY1a2lPdEplMi9Fb1JTcFFrPQ",
+      "source": "B76",
+      "pages": 76
+    },
+    "vault_readback_verified_at_utc": "2026-11-23T19:07:21.499495+00:00"
   }
 }

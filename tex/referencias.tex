@@ -38,6 +38,18 @@ Ejemplar suministrado bajo el nombre \texttt{GRH note.pdf}.
 La declaración del autor ocupa las pp.~1--2; la exposición matemática,
 las pp.~3--67; las referencias comienzan en p.~67.
 
+\bibitem[B76]{fuenteB76}
+Robin Zhang.
+\emph{A preliminary note on Alpöge's proposed proof of the generalized
+Riemann hypothesis}.
+22 de noviembre de 2026, 76 páginas; ejemplar
+\texttt{3bd82fa3d242}, identificado íntegramente en el registro.
+\href{https://www.ihes.fr/~rzhang/files/GRH\%20note.pdf}{PDF de consulta}.
+La Nota~\ref{sec:congruencias-selmer} coteja §5.1, Lema~5.1,
+p.~54, y §5.2, pp.~55--56: retículo torcido, coeficientes
+y condiciones locales. Este cotejo es localizado y mantiene
+separado el ejemplar de 73 páginas de [B].
+
 \bibitem[C]{fuenteC}
 riemann-rev.
 \emph{Twisted cokernels in a cyclotomic tower}.
@@ -338,9 +350,19 @@ de progresiones, densidad de ceros y contorno que las alimentan.
 La Nota~\ref{sec:galois} demuestra extracción, prolongación, pegado
 y transporte local, y amplía el pegado a toda la familia.
 Conserva las entradas geométricas, theta y de periodos y las leyes
-locales especializadas. El siguiente enlace estudia congruencias,
-retículos y extensiones con condiciones locales de A93, §9,
-pp.~61--77. Las entradas analíticas uniformes y las realizaciones
+locales especializadas.
+
+La Nota~\ref{sec:congruencias-selmer} demuestra el modelo de
+denominadores, el cálculo del ideal de congruencias y la dependencia
+de la extensión residual respecto del retículo. Comprueba que esa
+clase puede anularse al cambiar a coeficientes divisibles y formula
+una cota condicional de Selmer, con la variante de núcleo controlado.
+Incluye nueve resultados numerados con demostración, una definición
+y cinco ejercicios resueltos. El cotejo de B76 se limita a los
+pasajes indicados y no añade una nueva lectura de Lean.
+La construcción del mapa aritmético, su núcleo, las condiciones
+locales y las cotas uniformes conservan sus entradas pendientes.
+Las entradas analíticas uniformes y las realizaciones
 integrales completas siguen pendientes. No se ejecutó Lean ni
 se auditó su cierre de axiomas; el cotejo localizado no certifica
 la demostración completa de la hipótesis.

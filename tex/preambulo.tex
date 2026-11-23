@@ -16,6 +16,7 @@
 \usepackage{xcolor}
 \usepackage{booktabs,tabularx}
 \usepackage{enumitem}
+\usepackage{etoolbox}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{bookmark}
@@ -48,6 +49,9 @@
 \setcounter{tocdepth}{2}
 % Reservar espacio para números de subsección de dos cifras, como 10.10.
 \makeatletter
+\patchcmd{\l@section}{1.5em}{2.5em}{}{%
+  \PackageWarning{notas}{No se pudo ampliar la columna de seccion del indice}%
+}
 \renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{3.0em}}
 \makeatother
 \numberwithin{equation}{section}

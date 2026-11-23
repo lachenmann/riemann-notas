@@ -1,12 +1,13 @@
 # Ejemplares utilizados
 
-Las notas utilizan dos exposiciones de base, A/B, la versión ampliada A93 y una lectura complementaria, C, identificadas a continuación. **A conserva el significado de A55** en todas las citas anteriores. Se conservan sus bytes originales en el archivo de trabajo del proyecto. B recibió el nombre `GRH-note.pdf`; su contenido permanece idéntico al ejemplar estudiado como `GRH note.pdf`. Los enlaces externos sirven para consultar las fuentes; la versión utilizada en cada cotejo se identifica por su fecha, número de páginas y hash.
+Las notas utilizan dos exposiciones de base, A/B, la versión ampliada A93 y una lectura complementaria, C, identificadas a continuación. **A conserva el significado de A55 y B, el de B73** en todas las citas anteriores. B76 se identifica por separado para el cotejo localizado de la Nota 12. Se conservan sus bytes originales en el archivo de trabajo del proyecto. B recibió el nombre `GRH-note.pdf`; su contenido permanece idéntico al ejemplar estudiado como `GRH note.pdf`. Los enlaces externos sirven para consultar las fuentes; la versión utilizada en cada cotejo se identifica por su fecha, número de páginas y hash.
 
 | Clave | Ejemplar utilizado | Enlace de consulta |
 | --- | --- | --- |
 | A | *Dirichlet L-functions and the critical line*. La portada no identifica autor. 55 páginas. | [PDF en ULAM](https://www.ulam.ai/research/riemann_hypothesis.pdf) |
 | A93 | *Dirichlet L-functions and the critical line*, versión larga. Sin autor individual ni fecha en la portada. 93 páginas; consulta: 23 de noviembre de 2026. | [PDF largo en ULAM](https://www.ulam.ai/research/rh-long.pdf) |
 | B | Robin Zhang, *A preliminary note on Alpöge’s proposed proof of the generalized Riemann hypothesis*. 21 de noviembre de 2026. 73 páginas. | [PDF en la web de Robin Zhang](https://www.ihes.fr/~rzhang/files/GRH%20note.pdf) |
+| B76 | Robin Zhang, mismo título. 22 de noviembre de 2026. 76 páginas; cotejo localizado de §§5.1–5.2 para la Nota 12. | [PDF en la web de Robin Zhang](https://www.ihes.fr/~rzhang/files/GRH%20note.pdf) |
 | C | riemann-rev, *Twisted cokernels in a cyclotomic tower*, «Deformalization 1». 22 páginas; consulta: 23 de noviembre de 2026. | [PDF público](https://nasqret.github.io/riemann-rev/digests/tower-bound.pdf) · [Edición fijada](https://github.com/nasqret/riemann-rev/blob/198e87ac146b38a2b31e15faa3ba81c4bc4dd497/digests/tower-bound/editions/tower-bound-c054c66c84bc.pdf) |
 
 ## Identificación de versiones
@@ -18,13 +19,30 @@ Los hashes siguientes identifican los ejemplares utilizados en las notas. La con
 | `riemann_hypothesis.pdf` | 845543 | `419e24a4ba07eb9ce98524ad11f568f2bd87d8d70abe288e4ef37632bdd8bb85` |
 | `rh-long-295153115a03.pdf` | 1130005 | `295153115a035f909faee55ea26e2fbdd9471e4f1d89439a16480bbd74011dfb` |
 | `GRH-note.pdf` | 850937 | `2cbd7e9b693c753f6afa22251db9669c9652555a91cee0cdfbd37a8465ad2ad9` |
+| `GRH-note-B76-3bd82fa3d242.pdf` | 872585 | `3bd82fa3d242fe473cb371cbab0a8d211cb7dd05f72ba2db1b4c4ef8f27478a3` |
 | `tower-bound-c054c66c84bc.pdf` | 227407 | `c054c66c84bce37c1bb9c1cdf56a92e06d500b274fa7a28d30f97b802d4e4b87` |
 
-**Comprobación de los enlaces públicos, 22 de noviembre de 2026.** El enlace de A entrega exactamente el ejemplar de la tabla. El enlace de B entrega una versión posterior, fechada el 22 de noviembre, de 76 páginas y 872585 bytes, con SHA-256 `3bd82fa3d242fe473cb371cbab0a8d211cb7dd05f72ba2db1b4c4ef8f27478a3`. Las citas del cuaderno siguen referidas al ejemplar de 73 páginas del 21 de noviembre; queda pendiente comparar ambos textos antes de actualizar páginas o enunciados.
+**Comprobación de los enlaces públicos, 22 de noviembre de 2026.** El enlace de A entrega exactamente el ejemplar de la tabla. El enlace de B entrega una versión posterior, fechada el 22 de noviembre, de 76 páginas y 872585 bytes, con SHA-256 `3bd82fa3d242fe473cb371cbab0a8d211cb7dd05f72ba2db1b4c4ef8f27478a3`. Las citas anteriores de B siguen referidas al ejemplar de 73 páginas del 21 de noviembre. La Nota 12 añade el cotejo localizado de B76 descrito abajo; la comparación completa de las versiones permanece pendiente.
 
 Las páginas citadas corresponden a la numeración impresa de los ejemplares de la tabla, que coincide con el contador del PDF. El desarrollo de las notas es material de estudio propio. Las declaraciones de alcance de cada fuente deben tenerse en cuenta al cotejar sus enunciados con el código formal.
 
 Si una fuente se actualiza, registrar la nueva versión antes de cambiar referencias. No reemplazar silenciosamente un ejemplar por otro con el mismo nombre.
+
+## B76: cotejo localizado para la Nota 12
+
+La [Nota 12](../tex/capitulos/12-congruencias-de-Hecke-reticulos-y-Selmer.tex) utiliza B76, ejemplar de **76 páginas fechado el 22 de noviembre de 2026**, con SHA-256 `3bd82fa3d242fe473cb371cbab0a8d211cb7dd05f72ba2db1b4c4ef8f27478a3`. B73 conserva su identidad y todas las citas anteriores. El original de B76 se preserva en `Fuentes/GRH-note-B76-3bd82fa3d242.pdf`; su contenido íntegro se recuperó desde la bóveda y coincidió byte por byte con el ejemplar identificado. La revisión compara directamente estos pasajes:
+
+| Pasaje | B73 | B76 |
+| --- | --- | --- |
+| §5.1, Lema 5.1: proyector y operador integral | p. 53 | p. 54 |
+| §5.2: retículo $T_\pi$, módulo $A_\pi$ y condiciones locales | p. 54 | p. 55 |
+| §5.2: longitudes, $S_\ell(E,j)$ y Observación 5.2 | pp. 54–55 | pp. 55–56 |
+
+Se releyeron además la formulación y las convenciones de **A93, §9, pp. 61–62**, cuyo ejemplar conserva SHA-256 `295153115a035f909faee55ea26e2fbdd9471e4f1d89439a16480bbd74011dfb`. Esta lectura no vuelve a auditar las estimaciones uniformes de todo el capítulo.
+
+La Nota 12 distingue el retículo estable de una semisimplificación, precisa el giro de $T_\pi$, el signo de los torcidos y la correspondencia entre $S_\ell(E,j)$ y la notación de la Nota 8. Su modelo residual no produce por sí solo una clase no nula con coeficientes divisibles: con la acción levantada de los mismos caracteres, la clase se anula al cambiar de coeficientes. La comparación del cociente de congruencias con Selmer, incluida su variante con núcleo controlado, conserva explícitamente sus hipótesis.
+
+`source_B76_review` registra este cotejo documental. No se compararon completas las versiones B73 y B76, no se leyeron nuevos archivos Lean y no se compiló ni ejecutó Lean. Los nueve manifiestos anteriores y las revisiones C/A93 permanecen íntegros. El siguiente paso es estudiar la construcción aritmética del mapa a Selmer, su núcleo, la supervivencia de las clases, las condiciones locales y la uniformidad de las longitudes.
 
 ## A93: versión larga y guía de cotejo
 
@@ -206,7 +224,7 @@ La lectura cohomológica mantiene la revisión `7cbf7a0c32fca1badf05931879a37c3f
 
 La [concordancia de la Nota 8](../tex/capitulos/08-cohomologia-y-denominadores.tex) distingue las definiciones de proposiciones, las pruebas locales y los ensamblajes condicionados. `lemmaK_litN_alt`, en `KFinal.lean`, mantiene `LiteratureRankNHypothesis`; la ruta numérica leída no equivale a una revisión completa de homología, torsión o automorfía. `ShaFinOdd` cuantifica todos los primos, incluido 2, pese a su nombre. La definición de `etaSum` conserva el peso `lwP*ramIdx*etaJ`, sin un factor 2 adicional en esa suma.
 
-Las dos lecturas selectivas corresponden a `GlobalTheoremInputs.lean`, líneas 1–63, y `ExportBoundOfAdmissible.lean`, líneas 1–83 y 1000–1164. No se revisó completa la prueba de `point_bound`, el presupuesto de primos grandes y excepcionales ni toda la identificación integral de los proyectores y las longitudes normalizadas. No se ejecutó Lean, no se obtuvo un informe de axiomas y no se comparó todo el espejo con la distribución original. Los manifiestos anteriores permanecen íntegros; B76 no se incorpora.
+Las dos lecturas selectivas corresponden a `GlobalTheoremInputs.lean`, líneas 1–63, y `ExportBoundOfAdmissible.lean`, líneas 1–83 y 1000–1164. No se revisó completa la prueba de `point_bound`, el presupuesto de primos grandes y excepcionales ni toda la identificación integral de los proyectores y las longitudes normalizadas. No se ejecutó Lean, no se obtuvo un informe de axiomas y no se comparó todo el espejo con la distribución original. Los manifiestos anteriores permanecen íntegros; este cotejo no incorporó B76.
 
 
 ## Código Lean utilizado en la nota de parámetros y ventanas comunes
@@ -224,7 +242,7 @@ La lectura del 23 de noviembre de 2026 mantiene la revisión `7cbf7a0c32fca1badf
 
 La [concordancia de la Nota 9](../tex/capitulos/09-parametros-y-ventanas-comunes.tex) explica estas correspondencias y las condiciones que conserva cada enlace. Las lecturas selectivas son `GrowthBracketBoundOfSizeWindows.lean`, líneas 100–165, y `PChain.lean`, líneas 1–155. `PBrDiv.lean` se recuperó durante la localización y queda fuera de las conclusiones. Una definición de proposición o un campo de estructura no se cuenta como prueba de realización.
 
-No se ejecutó ni instaló Lean, no se auditó la clausura transitiva de imports o axiomas y no se comparó todo el espejo con la distribución original. Las operaciones numéricas y lógicas desarrolladas en la Nota 9 conservan como entradas la selección analítica de auxiliares y la realización de los datos automorfos, geométricos y de Galois. Los seis manifiestos anteriores permanecen íntegros; B76 no se incorpora. Los hashes de los dos ejemplares de referencia se volvieron a comprobar antes de este bloque.
+No se ejecutó ni instaló Lean, no se auditó la clausura transitiva de imports o axiomas y no se comparó todo el espejo con la distribución original. Las operaciones numéricas y lógicas desarrolladas en la Nota 9 conservan como entradas la selección analítica de auxiliares y la realización de los datos automorfos, geométricos y de Galois. Los seis manifiestos anteriores permanecen íntegros; este cotejo no incorporó B76. Los hashes de los dos ejemplares de referencia se volvieron a comprobar antes de este bloque.
 
 ## Código Lean utilizado en la nota de primos auxiliares y control uniforme
 
@@ -234,7 +252,7 @@ El cotejo distingue `PairEx`, definido como proposición en `PairGood`, de su pr
 
 Las etapas utilizan caracteres primitivos. Su identificación con caracteres de módulo mayor se restringe a las unidades; [`twist_prim`](https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/MeanSquareBounds/TwistPrim.lean#L9-L18) proporciona la identidad global para el producto de conductores coprimos que exige `BoxOfS`. Se conserva así la distinción entre los valores del carácter dado y `primVal`.
 
-No se ejecutó ni instaló Lean, no se auditó la clausura transitiva de imports o axiomas y no se comparó todo el espejo con la distribución original. Los resultados uniformes sobre progresiones con módulo creciente, la región libre de ceros, la densidad de ceros, la estimación de la cola y la fórmula explícita se reciben como entradas profundas. La construcción del cuerpo anfitrión y toda su compatibilidad aritmética siguen fuera de este cotejo; la Nota 11 desarrolla ahora A55, §9, pp. 42–46, y A93, §10, pp. 77–85, con los límites indicados abajo. B76 no se incorpora.
+No se ejecutó ni instaló Lean, no se auditó la clausura transitiva de imports o axiomas y no se comparó todo el espejo con la distribución original. Los resultados uniformes sobre progresiones con módulo creciente, la región libre de ceros, la densidad de ceros, la estimación de la cola y la fórmula explícita se reciben como entradas profundas. La construcción del cuerpo anfitrión y toda su compatibilidad aritmética siguen fuera de este cotejo; la Nota 11 desarrolla ahora A55, §9, pp. 42–46, y A93, §10, pp. 77–85, con los límites indicados abajo. Este cotejo no incorporó B76.
 
 ## Código Lean utilizado en la nota de Galois y compatibilidad local
 
@@ -294,4 +312,4 @@ La Proposición 11.10 del cuaderno refuerza la conclusión eventual del pegado a
 - **Chenevier–Harris**, *Construction of automorphic Galois representations, II*, Cambridge Journal of Mathematics 1 (2013), 53–73. [DOI](https://doi.org/10.4310/CJM.2013.v1.n1.a2), [PDF de autor](https://webusers.imj-prg.fr/~michael.harris/ConstructionII.pdf), §1.5, pp. 6–7, y Teorema 3.2.3, pp. 11–12 del PDF. Antecedente de existencia y propiedades de Hodge bajo sus propias hipótesis; no prueba automáticamente todas las leyes auxiliares de A93.
 - **Sorensen**, *A Patching Lemma*, en *Shimura Varieties* (2020), pp. 297–305. [DOI y ficha editorial](https://doi.org/10.1017/9781108649711.012). Antecedente del descenso por extensiones y familias con descomposición prescrita; no se identifica literalmente su formulación clásica con el enunciado abstracto de A93.
 
-Consultados el 23 de noviembre de 2026. La geometría de Shimura, la no anulación theta uniforme, las comparaciones de periodos, el cambio de base y las leyes locales especializadas conservan su carácter de entradas. El paso integral de congruencias a extensiones con condiciones de Selmer queda como siguiente desarrollo. Los ocho manifiestos previos y las revisiones C/A93 permanecen íntegros; B76 no se incorpora.
+Consultados el 23 de noviembre de 2026. La geometría de Shimura, la no anulación theta uniforme, las comparaciones de periodos, el cambio de base y las leyes locales especializadas conservan su carácter de entradas. El modelo integral de congruencias, retículos y condiciones de Selmer se desarrolla después en la Nota 12; la construcción aritmética del mapa y sus controles siguen pendientes. Los ocho manifiestos previos y las revisiones C/A93 permanecen íntegros; este cotejo no incorporó B76.
