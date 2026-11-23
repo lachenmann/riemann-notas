@@ -11258,7 +11258,7 @@
       "date": "2026-11-23",
       "recorded_at_utc": "2026-11-23T19:04:03.505402+00:00",
       "action": "note_12_revised_hecke_congruences_lattices_and_selmer_integration",
-      "status": "validated_ready_for_guarded_publication",
+      "status": "applied_published_and_verified",
       "request": "Incorpora la revisión",
       "previous_github_commit": "968fe25b62738f6428afbef7d37c502e98d4a1e8",
       "canonical_file": "tex/capitulos/12-congruencias-de-Hecke-reticulos-y-Selmer.tex",
@@ -12555,20 +12555,197 @@
         "svg": 1,
         "previous_ids_preserved": 19
       },
-      "publication_authorization": "El usuario solicita expresamente «Incorpora la revisión»; la integración se prepara sobre el snapshot vigente antes de consignar su publicación.",
+      "publication_authorization": "El usuario solicitó expresamente «Incorpora la revisión»; la incorporación se aplicó a la bóveda y al repositorio público mediante actualización guardada, con recuperación íntegra de los archivos escritos.",
       "github_publication_at_record_time": {
-        "status": "prepared_for_guarded_commit_after_this_record",
-        "expected_parent": "968fe25b62738f6428afbef7d37c502e98d4a1e8",
+        "status": "published_and_verified",
+        "content_commit": "16c53395cb1370a889aa3605f8c8bbc8c0eba532",
         "branch": "main",
         "force": false,
-        "verification_plan": "Después de publicar el commit de contenido, recuperar íntegramente los archivos escritos y comparar sus bytes con los candidatos; comprobar head, árbol y padre. Añadir al mismo evento la evidencia observada de ese commit en un cierre posterior de REGISTRO.json, sin incluir el SHA del propio cierre."
+        "readback_verified_at_utc": "2026-11-23T19:13:53.972684+00:00",
+        "verification_key": "github_publication_verification"
       },
       "next_step": "Estudiar la construcción aritmética del mapa del cociente de congruencias de Hecke a las clases de extensión con condiciones de Selmer, retomando la Nota 8, A55, §8, pp. 35–42, A93, §9, pp. 61–77, y B76, §§5.1–5.2, pp. 54–56. El modelo de dimensión dos de la Nota 12 ya está desarrollado. Quedan por controlar el núcleo y las multiplicidades del mapa, la supervivencia de las clases al cambiar de coeficientes, la compatibilidad de las condiciones locales y las longitudes uniformes. Las entradas analíticas uniformes, la geometría y la producción aritmética completa de las ventanas conservan los pendientes ya identificados.",
       "vault_prewrite_version_guard_verified_at_utc": "2026-11-23T19:05:41.714903+00:00",
       "vault_new_names_absent_before_creation": true,
       "vault_readback_verified_at_utc": "2026-11-23T19:07:21.499495+00:00",
       "vault_revision_metadata_limit": "get_file_metadata normalizes its response and omits version and headRevisionId even when requested. currentRevisionId is observed through list_file_revisions; it is stored separately rather than presented as an observed metadata field.",
-      "ready_at_utc": "2026-11-23T19:11:12.934859+00:00"
+      "ready_at_utc": "2026-11-23T19:11:12.934859+00:00",
+      "github_publication_verification": {
+        "repository": "lachenmann/riemann-notas",
+        "content_commit": "16c53395cb1370a889aa3605f8c8bbc8c0eba532",
+        "tree": "259d7848adb115c3e064810ba1e923b861f90d20",
+        "parent": "968fe25b62738f6428afbef7d37c502e98d4a1e8",
+        "url": "https://github.com/lachenmann/riemann-notas/commit/16c53395cb1370a889aa3605f8c8bbc8c0eba532",
+        "author_date": "2026-11-23T19:13:31Z",
+        "guarded_ref_update": {
+          "branch": "main",
+          "before": "968fe25b62738f6428afbef7d37c502e98d4a1e8",
+          "after": "16c53395cb1370a889aa3605f8c8bbc8c0eba532",
+          "succeeded": true,
+          "force": false
+        },
+        "full_tree_verified": true,
+        "blob_count": 26,
+        "modified_file_count": 12,
+        "unchanged_blob_count": 14,
+        "readback": {
+          "repository": "lachenmann/riemann-notas",
+          "commit": "16c53395cb1370a889aa3605f8c8bbc8c0eba532",
+          "expected_parent": "968fe25b62738f6428afbef7d37c502e98d4a1e8",
+          "verified_at_utc": "2026-11-23T19:13:53.972684+00:00",
+          "all_files_verified": true,
+          "files": [
+            {
+              "path": "ESTADO.md",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/16c53395cb1370a889aa3605f8c8bbc8c0eba532/ESTADO.md",
+              "http_status": 200,
+              "size_bytes": 35981,
+              "sha256": "c350b2ec6a51f3a75b3ced29b0e0cfce93f32b75cada125cbe3eec41720a8f2a",
+              "git_blob_sha": "523a17534d6246f7b5be89e29eb73a2ce4e01ea1",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "README.md",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/16c53395cb1370a889aa3605f8c8bbc8c0eba532/README.md",
+              "http_status": 200,
+              "size_bytes": 15640,
+              "sha256": "799f49fca50f05eace46557d0fc871716e6ab3a12217f3ca40dc96eba9f91859",
+              "git_blob_sha": "b6548857174211c811b9754e982eb9ac4853bfe4",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "REGISTRO.json",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/16c53395cb1370a889aa3605f8c8bbc8c0eba532/REGISTRO.json",
+              "http_status": 200,
+              "size_bytes": 1430077,
+              "sha256": "361002367c4802d122f16e9e068fa7bf20787bcc52b81fe6f3aea58476cd0aca",
+              "git_blob_sha": "6b52b80743c03518c59438976a7ca32aa8510d39",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "fuentes/README.md",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/16c53395cb1370a889aa3605f8c8bbc8c0eba532/fuentes/README.md",
+              "http_status": 200,
+              "size_bytes": 63585,
+              "sha256": "1f5d6de641559591b3f887f8f2cf88dd5b379f882110072fe66d57b531eaad31",
+              "git_blob_sha": "cf270e128b9aebcf9b037c3db459c642d269a65c",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "main.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/16c53395cb1370a889aa3605f8c8bbc8c0eba532/main.tex",
+              "http_status": 200,
+              "size_bytes": 3616,
+              "sha256": "6a6d171381b4268e0377cb857cf754524648227e7fdbd7f68865160dfad41d37",
+              "git_blob_sha": "081e2875d11a87951dac3f23120e57299da18b07",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "pdf/notas-hipotesis-riemann.pdf",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/16c53395cb1370a889aa3605f8c8bbc8c0eba532/pdf/notas-hipotesis-riemann.pdf",
+              "http_status": 200,
+              "size_bytes": 1262920,
+              "sha256": "44abbe3764e98babfe3d1eded266539666af469bb825032f9163903e108fbf37",
+              "git_blob_sha": "e9814a49e0ffb2a6def59fc7e8127cf8c0c59887",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "tex/capitulos/00-guia.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/16c53395cb1370a889aa3605f8c8bbc8c0eba532/tex/capitulos/00-guia.tex",
+              "http_status": 200,
+              "size_bytes": 12201,
+              "sha256": "77d3708a88714e703fdb6ce7ef8f30f72ff4faa6bddbd3866c15abc16d2b995e",
+              "git_blob_sha": "21e08818a078d7d38b255f78383cf1fc3337091e",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "tex/capitulos/00-introduccion.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/16c53395cb1370a889aa3605f8c8bbc8c0eba532/tex/capitulos/00-introduccion.tex",
+              "http_status": 200,
+              "size_bytes": 35296,
+              "sha256": "42373d891f7e838bd48c8d9d780472ac889ced5f7d4dcfc483046685f2300d5a",
+              "git_blob_sha": "fe5fc4becdaa76ff8b2de9c4f5251909d56b0a26",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "tex/capitulos/11-representaciones-de-galois-y-compatibilidad-local.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/16c53395cb1370a889aa3605f8c8bbc8c0eba532/tex/capitulos/11-representaciones-de-galois-y-compatibilidad-local.tex",
+              "http_status": 200,
+              "size_bytes": 50404,
+              "sha256": "a688bbcdc9ef15f2874af568bc52199f80efe4d2a6b5dc3687a30b247b4ba683",
+              "git_blob_sha": "3ec119e8db93154a0b3789dd95ffa4b3fd9537ce",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "tex/capitulos/12-congruencias-de-Hecke-reticulos-y-Selmer.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/16c53395cb1370a889aa3605f8c8bbc8c0eba532/tex/capitulos/12-congruencias-de-Hecke-reticulos-y-Selmer.tex",
+              "http_status": 200,
+              "size_bytes": 29047,
+              "sha256": "907202b4c7d6bfcd0ca3ac4162acabf7488dd8eeb058ceb7433bd667a8f512a8",
+              "git_blob_sha": "9953fbcd00325c3072ffc3ca349b2bbf9e34bfa9",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "tex/preambulo.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/16c53395cb1370a889aa3605f8c8bbc8c0eba532/tex/preambulo.tex",
+              "http_status": 200,
+              "size_bytes": 2997,
+              "sha256": "3c2849ae6a4a3dc4b7a8286e10b67067ffe09784b2d643bb1ed51a9d6d2e1c76",
+              "git_blob_sha": "89c2d8ef0fc5c81cfb5a668f651b00ff8b3a6d96",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            },
+            {
+              "path": "tex/referencias.tex",
+              "url": "https://raw.githubusercontent.com/lachenmann/riemann-notas/16c53395cb1370a889aa3605f8c8bbc8c0eba532/tex/referencias.tex",
+              "http_status": 200,
+              "size_bytes": 20231,
+              "sha256": "98be9f8e8746fa1ad55bb6a0f7f4d23edfaa721ec8a1882e38455bd038e7c57c",
+              "git_blob_sha": "bf8dd0376d4af60e290ba98a9650027b2074eeaa",
+              "full_bytes_equal": true,
+              "sha256_equal": true,
+              "git_blob_sha_equal": true
+            }
+          ]
+        },
+        "pdf_sha256": "44abbe3764e98babfe3d1eded266539666af469bb825032f9163903e108fbf37",
+        "approved_note12_tex_sha256": "907202b4c7d6bfcd0ca3ac4162acabf7488dd8eeb058ceb7433bd667a8f512a8",
+        "scope": "Se recuperaron y cotejaron completos los 12 archivos escritos en el commit de contenido. Se validó el árbol remoto de 26 blobs, con 14 sin cambios respecto al padre. El hash de REGISTRO.json de esta lectura identifica su versión en ese commit, anterior al presente cierre."
+      },
+      "registry_closure": {
+        "status": "prepared_for_guarded_commit_after_this_record",
+        "prepared_at_utc": "2026-11-23T19:14:44.566982+00:00",
+        "expected_parent": "16c53395cb1370a889aa3605f8c8bbc8c0eba532",
+        "branch": "main",
+        "force": false,
+        "changed_paths": [
+          "REGISTRO.json"
+        ],
+        "self_commit_recorded": false,
+        "scope": "Cierre del registro con evidencia observada del commit de contenido; no modifica el manuscrito, el PDF, la documentación ni la bóveda.",
+        "verification_plan": "Comprobar que main sigue en el commit de contenido, publicar solo REGISTRO.json sin force y recuperar íntegramente el registro desde el commit de cierre para comparar sus bytes. El SHA del propio cierre y el resultado de esa última recuperación se comunican fuera de este archivo para evitar autorreferencia."
+      }
     }
   ],
   "github": {
