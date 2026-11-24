@@ -1,0 +1,623 @@
+\section{Alturas, particiones de la unidad y reducción aritmética}
+\label{sec:alturas-reduccion}
+\fuente{A93, Proposición 9.4; espejo Lean fijado en \texttt{7cbf7a0c}, interfaces \texttt{SHt}, \texttt{SPU}, \texttt{SMom} y sus proveedores.}
+
+La Nota 22 reconstruye la sobreyectividad de formas invariantes a partir de una altura continua, una partición suave con derivadas controladas y la integrabilidad de momentos. El orden de los cuantificadores importa: el exponente de crecimiento de la derivada debe fijarse antes de aumentar el tamaño de las matrices. En este bloque demostramos que puede elegirse el exponente $1$ y que el momento de orden $A$ es integrable para $N\ge A+2$.
+
+Empleamos resultados clásicos en sus formulaciones usuales: el primer teorema de Minkowski, la finitud del grupo de clases, el teorema de unidades de Dirichlet, la descomposición de los enteros de un cuerpo de números en retículos locales y la teoría de la medida de Haar. No se pretende volver a demostrar esos fundamentos. La reducción a conjuntos de Siegel y la integración de los momentos se desarrollan aquí. En el último paso utilizamos directamente coordenadas de Iwasawa; el código utiliza una estimación de medida por empaquetamiento. Se distingue esta demostración matemática alternativa de una verificación del código Lean.
+
+\subsection{El retículo de Minkowski y los dos mínimos}
+
+Sea $L$ un cuerpo totalmente imaginario, $R=\mathcal O_L$, $r=r_2(L)\ge1$ y $d=[L:\Q]=2r$. Elegimos una inmersión compleja $\sigma_w$ por cada par conjugado. Para $N\ge1$ ponemos $V=\prod_w\C^N$ y $\Lambda=R^N\subset V$, mediante las inmersiones elegidas. Es un retículo real de rango $D=dN$. Usaremos $v_w=\sigma_w(v)$ para sus componentes y la misma letra $v$ para el punto de $V$.
+
+El cono $X_N=\prod_w\operatorname{Herm}_N^+(\C)$ y los grupos $\Gamma_N$, $G_N$, $S_N$ son los de la Nota 22. La acción izquierda es $A(g)H=((g_w^{-1})^*H_wg_w^{-1})_w$, donde $*$ significa transposición conjugada. Para $H\in X_N$ definimos
+\begin{equation}
+ Q_H(z)=\sum_w z_w^*H_w z_w,\qquad H^\vee=(H_w^{-T})_w,
+ \qquad \lambda(H)=\min_{0\ne v\in\Lambda}Q_H(v).
+ \label{eq:ahr-q}
+\end{equation}
+La notación $H_w^{-T}$ significa $(H_w^{-1})^T$, también hermitiana positiva. No se reemplaza por $H_w^{-1}$ sin cambiar el emparejamiento. El mínimo dual es $\lambda_D(H)=\lambda(H^\vee)$. Para todo $H$, los dos mínimos son positivos y se alcanzan: una bola para cualquiera de las dos normas contiene solo finitos puntos de $\Lambda$. Además, $H^\vee$ depende suavemente de $H$.
+
+Es conveniente introducir el emparejamiento complejo por componentes $f_w^Tz_w$ y el emparejamiento real $B(f,z)=\operatorname{Re}\sum_w f_w^Tz_w$. La norma dual de $Q_H$ respecto de $B$ es $Q_{H^\vee}$. En efecto, el representante de la funcional $z_w\mapsto f_w^Tz_w$ para el producto hermitiano dado por $H_w$ es $H_w^{-1}\overline{f_w}$. Esta convención explica la transpuesta en la definición.
+
+\begin{lema}[Invariancia y comparación local de mínimos]
+\label{lem:ahr-min}
+Si $0\le\delta<1$ y $(1-\delta)H\le K\le(1+\delta)H$ en el orden de Loewner componente a componente, entonces
+\begin{equation}
+ \begin{split}
+ (1-\delta)\lambda(H)&\le\lambda(K)\le(1+\delta)\lambda(H),\\
+ (1+\delta)^{-1}\lambda_D(H)&\le\lambda_D(K)
+       \le(1-\delta)^{-1}\lambda_D(H).
+ \end{split}
+ \label{eq:ahr-min-compara}
+\end{equation}
+Ambos mínimos son continuos e invariantes por $\Gamma_N$. Su producto es invariante por homotecias comunes $H\mapsto tH$, $t>0$.
+\end{lema}
+\begin{proof}
+Se toma el mínimo de las dos desigualdades de formas cuadráticas. Invertir matrices positivas invierte el orden; transponer lo conserva. Esto da la segunda pareja. Para $K\to H$ se puede tomar $\delta\to0$ conjugando por $H^{-1/2}$, lo que prueba continuidad. Si $\gamma\in\Gamma_N$, $Q_{A(\gamma)H}(v)=Q_H(\gamma^{-1}v)$ y $\gamma^{-1}$ permuta $\Lambda$. Además $(A(\gamma)H)^\vee=A(\gamma^{-T})(H^\vee)$, con $\gamma^{-T}\in\Gamma_N$. Por último, $\lambda(tH)=t\lambda(H)$ y $\lambda_D(tH)=t^{-1}\lambda_D(H)$.
+\end{proof}
+
+\subsection{La altura y su moderación por la derecha}
+
+Sea $o=(I_N)_w$. Definimos la altura
+\begin{equation}
+ h_N(g)=\bigl(\lambda(A(g)o)\lambda_D(A(g)o)\bigr)^{-1}.
+ \label{eq:ahr-altura}
+\end{equation}
+Esta es la altura del código, no su raíz cuadrada. En términos de mínimos de vectores se calcula mediante $\sum_w\|g_w^{-1}v_w\|^2$ y $\sum_w\|g_w^Tv_w\|^2$. La elección de mínimos cuadrados será decisiva en los exponentes de integración.
+
+\begin{proposicion}[La entrada de altura SHt]
+\label{prop:ahr-ht}
+Para cada $L$ y $N\ge1$, $h_N$ es positiva, continua, invariante por $\Gamma_N$ a izquierda y uniformemente acotada inferiormente por una constante $c_{L,N}>0$. Para cada compacto $C\subset G_N$ hay $M_C>0$ con $h_N(gc)\le M_C h_N(g)$ para $c\in C$.
+\end{proposicion}
+\begin{proof}
+La positividad, continuidad e invariancia siguen del Lema~\ref{lem:ahr-min}. Para la cota inferior, sean $b$ el covolumen de $\Lambda$ en la métrica euclídea fija y $\omega_D$ el volumen de la bola unitaria de $\R^D$. El covolumen en la métrica $Q_H$ es $b\prod_w\det H_w$, porque $H_w^{1/2}$ actúa sobre $\C^N$ con determinante real $\det H_w$. En la métrica dual es $b\prod_w(\det H_w)^{-1}$. Minkowski aplicado a bolas da
+\[
+ \lambda(H)\le 4(b/\omega_D)^{2/D}
+                       (\prod_w\det H_w)^{2/D},
+\]
+y la desigualdad análoga para $H^\vee$. Multiplicándolas se obtiene $\lambda(H)\lambda_D(H)\le16(b/\omega_D)^{4/D}$.
+
+Si $c\in G_N$, el mínimo de $Q_{A(gc)o}$ es al menos $\lambda(A(g)o)/\max_w\|c_w\|_{\rm op}^2$, pues $(gc)^{-1}=c^{-1}g^{-1}$. El mínimo dual es al menos $\lambda_D(A(g)o)/\max_w\|c_w^{-T}\|_{\rm op}^2$, pues $(gc)^T=c^Tg^T$. Las dos funciones de $c$ son continuas y acotadas en un compacto. Al invertir el producto se obtiene el resultado.
+\end{proof}
+
+No se requiere que $c_{L,N}$ o $M_C$ sean independientes de $N$. La uniformidad que debemos preservar es la del exponente de altura, no la de todas las constantes auxiliares.
+
+\subsection{Dos estimaciones elementales de geometría de números}
+
+\begin{lema}[Recuento en bolas de cualquier forma positiva]
+\label{lem:ahr-count}
+Para cada $D$ y $R_0\ge1$ existe $C(D,R_0)$ tal que, para todo retículo de rango $D$, toda métrica euclídea y $s>0$, el número $n_H(s)=\#\{v:Q_H(v)\le s\}$ satisface
+\begin{equation}
+ n_H(R_0s)\le C(D,R_0)n_H(s).
+ \label{eq:ahr-count}
+\end{equation}
+\end{lema}
+\begin{proof}
+Elijamos un entero $M\ge2\sqrt{R_0}$. Hay $M^D$ clases en $\Lambda/M\Lambda$. Dentro de cada clase que corte la bola grande fijamos un punto $v_0$. La aplicación $v\mapsto(v-v_0)/M$ es inyectiva y tiene norma $Q_H^{1/2}$ a lo sumo $2\sqrt{R_0s}/M\le\sqrt{s}$. Sumamos sobre las clases. Puede tomarse $C(D,R_0)=M^D$.
+\end{proof}
+
+\begin{lema}[Cobertura desde el mínimo dual]
+\label{lem:ahr-trans}
+Existe una constante $C_{L,N}>0$ tal que para todo $H\in X_N$ y $z\in V$ existe $v\in\Lambda$ con
+\begin{equation}
+ Q_H(z-v)\le C_{L,N}/\lambda_D(H).
+ \label{eq:ahr-cover}
+\end{equation}
+\end{lema}
+\begin{proof}
+Primero, para un retículo euclídeo $\Delta$ de rango $D$, sea $a$ la longitud mínima de su dual euclídeo. Demostramos por inducción que su radio de cobertura es a lo sumo $C_D/a$. Minkowski en $\Delta$ y su dual, cuyos covolúmenes son recíprocos, da que la longitud mínima de $\Delta$ es a lo sumo $C'_D/a$. Un vector mínimo $u$ es primitivo y se extiende a una base integral. La proyección ortogonal a $u^\perp$ es un retículo de dimensión $D-1$; su dual es $\Delta^*\cap u^\perp$ y tiene mínimo al menos $a$. Se aproxima la proyección de $z$ por inducción y se ajusta el componente en la dirección $u$ mediante un múltiplo entero de $u$, con error a lo sumo $\|u\|/2$. Esto prueba la afirmación, incluyendo el caso $D=1$. Las constantes pueden elegirse por recurrencia usando Pitágoras.
+
+Para aplicar esto a $Q_H$ y $\Lambda$, el dual algebraico de $\Lambda$ para $B$ es el retículo $2(\mathfrak d_L^{-1})^N$, donde $\mathfrak d_L^{-1}$ es la codiferente para la traza. En efecto $\operatorname{Tr}_{L/\Q}(fv)=2B(f,v)$, y por linealidad el emparejamiento extiende a los espacios reales. Existe un entero $b_0\ge1$ que lleva ese retículo a $\Lambda$ por multiplicación. Por ello su longitud mínima para $Q_{H^\vee}$ es al menos $\sqrt{\lambda_D(H)}/b_0$. En coordenadas euclídeas para $Q_H$, los dos retículos son duales, de modo que la estimación anterior al cuadrado prueba \eqref{eq:ahr-cover}. No se identifica sin más la codiferente con $R$.
+\end{proof}
+
+\subsection{Una regularización suave del mínimo}
+
+El mínimo $\lambda$ no es necesariamente diferenciable cuando varios vectores alcanzan el mismo valor. La partición de Whitney requiere funciones suaves. Elegimos una función decreciente $\rho:\R\to[0,1]$ de clase $C^\infty$, igual a $1$ para $t\le1$ y a $0$ para $t\ge4$. Elegimos asimismo $\chi:\R\to[0,1]$ creciente y suave, igual a cero para $t\le0$ e igual a uno para $t\ge1$. Para $s>0$ ponemos
+\begin{equation}
+ Z_s(H)=\sum_{v\in\Lambda}\rho(Q_H(v)/s),\quad
+ X_j(H)=\chi(Z_{4^j}(H)-1),\quad
+ \nu(H)=\sum_{j\in\Z}4^j(X_j(H)-X_{j-1}(H)).
+ \label{eq:ahr-smooth}
+\end{equation}
+El vector cero aporta uno a $Z_s$. Todos los demás términos tienen soporte contenido en la bola de radio cuadrado $4s$. Cerca de cualquier $H$, esa bola queda contenida en otra bola fija para la métrica de $H$; por tanto las sumas internas son localmente finitas, incluso como funciones suaves.
+
+\begin{lema}[Mínimo suavizado]
+\label{lem:ahr-smooth}
+La función $\nu$ es suave, invariante por $\Gamma_N$ y satisface $\lambda(H)/4\le\nu(H)\le4\lambda(H)$. Para $0\le\delta\le1/4$ y $K$ como en el Lema~\ref{lem:ahr-min}, existe $C_{L,N}$ independiente de $H,K$ tal que
+\begin{equation}
+ |\nu(K)-\nu(H)|\le C_{L,N}\delta\lambda(H).
+ \label{eq:ahr-smooth-lip}
+\end{equation}
+\end{lema}
+\begin{proof}
+$X_j$ es creciente con $j$. Si $4^{j+1}\le\lambda(H)$, solo el vector cero contribuye a $Z_{4^j}$ y $X_j=0$. Si $\lambda(H)\le4^j$, algún vector no nulo contribuye con peso uno y $X_j=1$. Para $4^m\le\lambda(H)<4^{m+1}$, solo los índices $m,m+1$ pueden contribuir a $\nu$. La expresión es $4^mX_m+4^{m+1}(1-X_m)$, una combinación convexa de dos números entre $\lambda(H)/4$ y $4\lambda(H)$. En un entorno del punto bastan finitos índices, lo que demuestra suavidad. La invariancia se obtiene por cambio de variable en el retículo.
+
+Para el control relativo, $\lambda(K)$ es comparable a $\lambda(H)$ por \eqref{eq:ahr-min-compara}, así que la unión de los índices relevantes para las dos sumas tiene cardinal acotado y cada escala relevante es comparable a $\lambda(H)$. Las diferencias de $X_j$ se acotan por las diferencias de $Z_{4^j}$: la constante Lipschitz de $\chi$ es finita. Si $s$ es una de las escalas usadas, los términos de $Z_s(K)-Z_s(H)$ están soportados en $Q_H(v)\le 16s/3$ y cada diferencia tiene módulo a lo sumo $C\delta Q_H(v)/s\le C'\delta$. El número de esos vectores está uniformemente acotado, aplicando \eqref{eq:ahr-count} con una bola menor que $\lambda(H)$, que solo contiene al cero. La escala $s$ es comparable a $\lambda(H)$, por lo que al multiplicar cada diferencia por $4^j$ y sumar se obtiene \eqref{eq:ahr-smooth-lip}.
+\end{proof}
+
+Definimos $\mu(H)=\nu(H^\vee)$. La comparación de formas inversas implica, tras ajustar la constante,
+\begin{equation}
+ \tfrac14\lambda_D(H)\le\mu(H)\le4\lambda_D(H),\qquad
+ |\mu(K)-\mu(H)|\le C\delta\mu(H).
+ \label{eq:ahr-mu}
+\end{equation}
+Para aplicar el lema a la perturbación dual se puede restringir inicialmente a $\delta\le1/8$; para el resto de $[0,1/4]$, la comparabilidad de los mínimos da la misma conclusión ampliando $C$. Esta función positiva es suave e invariante. Aquí se ha reproducido la estructura de la regularización de \texttt{GSmMin.lean}.
+
+\subsection{La aplicación de engrosamiento por rangos uno}
+
+Para $v\in\Lambda$ definimos la tupla de matrices de rango a lo sumo uno $R_H(v)_w=(H_wv_w)(H_wv_w)^*$. Sea
+\begin{equation}
+ T_s(H)=\frac{\sum_v\rho(Q_H(v)/s)R_H(v)}{s^2 Z_s(H)},\qquad
+ \mathcal R(H)=\mu(H)H+\sum_{j\in\Z}\rho(4^j\mu(H))T_{4^j}(H).
+ \label{eq:ahr-ret}
+\end{equation}
+La función $\mathcal R$ no se supone una retracción en el sentido de ser la identidad sobre su imagen. Su función es llevar todo el cono a una región con mínimos primal y dual uniformemente positivos. Es una aplicación de engrosamiento equivariante.
+
+\begin{lema}[Positividad, soporte y equivariancia]
+\label{lem:ahr-ret}
+Para $s>0$, $T_s(H)\ge0$, $T_s(H)\le (4/s)H$ y $T_s(H)=0$ si $4s\le\lambda(H)$. La aplicación $\mathcal R$ es suave, toma valores positivos, verifica $\mathcal R(H)\ge\mu(H)H$ y es $\Gamma_N$-equivariante.
+\end{lema}
+\begin{proof}
+$Z_s\ge1$ y cada sumando es positivo semidefinido. Por Cauchy--Schwarz para $H_w$,
+\[
+ \sum_w|z_w^*H_wv_w|^2\le Q_H(z)Q_H(v).
+\]
+Cuando el coeficiente es no nulo, $Q_H(v)\le4s$; al dividir la suma por $s^2Z_s$ resulta la cota. Para $4s\le\lambda(H)$ solo contribuye $v=0$, con matriz nula. Por otro lado $\rho(s\mu(H))=0$ si $s\mu(H)\ge4$. En un entorno de $H$ quedan, pues, solo finitas potencias de cuatro; también las sumas en $v$ son localmente finitas. La suavidad y la positividad se siguen de ello. Si $K=A(\gamma)H$, entonces $Q_K(\gamma v)=Q_H(v)$ y $R_K(\gamma v)=A(\gamma)R_H(v)$. Como $\mu$ es invariante, el cambio de variable en las sumas prueba la equivariancia.
+\end{proof}
+
+\subsection{Cota inferior del mínimo primal}
+
+\begin{proposicion}[El engrosamiento elimina los vectores demasiado cortos]
+\label{prop:ahr-low}
+Existe $c_P>0$, dependiente de $L,N$ pero no de $H$, con $\lambda(\mathcal R(H))\ge c_P$.
+\end{proposicion}
+\begin{proof}
+Fijemos $u\in\Lambda\setminus\{0\}$ y pongamos $a=Q_H(u)>0$. Si $\mu(H)a\ge1/16$, se aplica el Lema~\ref{lem:ahr-ret}. En otro caso, elijamos $s=4^j$ con $4a\le s\le16a$; entonces $s\mu(H)\le1$ y el coeficiente del término $T_s(H)$ en \eqref{eq:ahr-ret} es uno.
+
+Sea $S=\{v:Q_H(v)\le s/4\}$ y $B(v)=\operatorname{Re}\sum_w u_w^*H_wv_w$. Tanto $v$ como $v+u$ están en la bola de radio cuadrado $s$, por la desigualdad triangular y $a\le s/4$. Se tiene $B(v+u)=B(v)+a$, de modo que $B(v)^2+B(v+u)^2\ge a^2/2$. Por Cauchy--Schwarz en $\R^r$,
+\[
+ B(v)^2\le r\,Q_{R_H(v)}(u).
+\]
+Las dos sumas sobre $S$ y $S+u$ se dominan cada una por la suma ponderada del numerador de $Q_{T_s(H)}(u)$, pues $\rho=1$ en ambas bolas y el resto es no negativo. Luego ese numerador es al menos $\#S\,a^2/(4r)$. Por el Lema~\ref{lem:ahr-count}, $Z_s(H)\le n_H(4s)\le C(D,16)\#S$. Obtenemos
+\begin{equation}
+ Q_{T_s(H)}(u)\ge\frac{a^2}{4r C(D,16)s^2}
+ \ge\frac1{1024r C(D,16)}.
+ \label{eq:ahr-primal}
+\end{equation}
+El mínimo de esta constante y $1/16$ sirve para todo $u\ne0$. Tomamos el mínimo sobre el retículo.
+\end{proof}
+
+\subsection{Cota inferior del mínimo dual}
+
+\begin{proposicion}[Control dual del engrosamiento]
+\label{prop:ahr-dual}
+Existe $c_D>0$, dependiente de $L,N$, tal que $\lambda_D(\mathcal R(H))\ge c_D$ para todo $H\in X_N$.
+\end{proposicion}
+\begin{proof}
+Fijemos $f\in\Lambda\setminus\{0\}$. Sea $m_f$ el mínimo de $Q_H(v)$ entre los $v\in\Lambda$ tales que $f^Tv\ne0$ en $L$. Este conjunto no es vacío (basta una coordenada de $f$ no nula) y el mínimo se alcanza por discreción. Para un vector que lo alcanza, $f^Tv$ es un entero algebraico no nulo. Su norma absoluta es al menos uno, por lo que existe un lugar $w$ con $|f_w^Tv_w|\ge1$.
+
+Sea $y$ el vector de $V$ que vale $H_w^{-1}\overline{f_w}$ en ese lugar y cero en los otros. Pongamos $a=Q_H(y)>0$. Entonces $f_w^Ty_w=a$, y Cauchy--Schwarz da
+\begin{equation}
+ 1\le a m_f.
+ \label{eq:ahr-pair}
+\end{equation}
+Además $m_f\le C/\lambda_D(H)$: si $R_0=\sqrt{C_{L,N}/\lambda_D(H)}$ es el radio de cobertura del Lema~\ref{lem:ahr-trans}, tomamos el punto $2R_0 y/\sqrt a$. Su distancia en la norma $Q_H^{1/2}$ a cualquier vector con $f^Tv=0$ es al menos $2R_0$, porque la funcional $z\mapsto\operatorname{Re}(f_w^Tz_w)$ tiene norma $\sqrt a$. Un punto del retículo a distancia a lo sumo $R_0$ tiene emparejamiento no nulo y norma a lo sumo $3R_0$. Esto demuestra la cota con $C=9C_{L,N}$.
+
+Si $4s\le m_f$, todo vector que contribuye a $T_s(H)$ tiene $f^Tv=0$. Entonces $Q_{T_s(H)}(y)=0$, ya que $y_w^*H_wv_w=f_w^Tv_w$. Para las otras escalas, $Q_{T_s(H)}(y)\le4a/s$. Sumando la serie geométrica de potencias inversas de cuatro desde la primera escala $s>m_f/4$, obtenemos $\sum 4a/s\le(64/3)a/m_f$. Por \eqref{eq:ahr-mu} y la cota de $m_f$ se tiene $\mu(H)m_f\le C'$ con $C'$ independiente de $H$ y $f$. En consecuencia,
+\[
+ Q_{\mathcal R(H)}(y)\le C''a/m_f.
+\]
+Usamos de nuevo Cauchy--Schwarz, ahora en la métrica $\mathcal R(H)$, para la funcional de $f_w$ y el vector $y_w$. Su norma cuadrada es $f_w^*\mathcal R(H)_w^{-T}f_w$, a lo sumo $Q_{\mathcal R(H)^\vee}(f)$. Así
+\[
+ Q_{\mathcal R(H)^\vee}(f)
+ \ge\frac{|f_w^Ty_w|^2}{Q_{\mathcal R(H)}(y)}
+ \ge\frac{am_f}{C''}\ge\frac1{C''}.
+\]
+La constante vale para todo $f\ne0$. Esta prueba explica el papel del vector más corto con emparejamiento no nulo: controlar solo los vectores mínimos de $Q_H$ no bastaría para el dual.
+\end{proof}
+
+\subsection{Control relativo de la aplicación de engrosamiento}
+
+Utilizaremos la abreviatura $K\sim_\delta H$ para las desigualdades $(1-\delta)H\le K\le(1+\delta)H$; las matrices se comparan componente a componente. No se trata de una relación de equivalencia.
+
+\begin{lema}[Perturbación uniforme a una escala fija]
+\label{lem:ahr-tlip}
+Si $K\sim_\delta H$, $0\le\delta\le1/4$, entonces para todo $s>0$ y $z\in V$ se cumple
+\begin{equation}
+ |Q_{T_s(K)}(z)-Q_{T_s(H)}(z)|\le C_{L,N}\frac{\delta}{s}Q_H(z).
+ \label{eq:ahr-tlip}
+\end{equation}
+\end{lema}
+\begin{proof}
+Escribimos $b_H(v)=\rho(Q_H(v)/s)$ y $U_H(v)=Q_{R_H(v)}(z)$; usamos las letras análogas para $K$. El soporte conjunto de los pesos está contenido en $Q_H(v)\le16s/3$. Sea $M_s=n_H(6s)$. En este conjunto $|b_K-b_H|\le C\delta$ por la propiedad Lipschitz de $\rho$, y $0\le U_H,U_K\le C sQ_H(z)$. Para la diferencia de $U$, la hipótesis sobre $K$ implica
+\[
+ |z_w^*(K_w-H_w)v_w|\le\delta\sqrt{z_w^*H_wz_w}\sqrt{v_w^*H_wv_w}.
+\]
+Se aplica la identidad $||a|^2-|b|^2|\le |a-b|(|a|+|b|)$ y se suman los lugares; resulta $|U_K-U_H|\le C\delta s Q_H(z)$. Por tanto, si $P_H=\sum_v b_H(v)U_H(v)$, tenemos
+\[
+ |P_K-P_H|\le C\delta sQ_H(z)M_s,\qquad
+ |Z_s(K)-Z_s(H)|\le C\delta M_s.
+\]
+Ambos denominadores $Z_s(H),Z_s(K)$ son al menos $n_H(4s/5)$, ya que en esa bola los dos pesos son uno. El Lema~\ref{lem:ahr-count} da $M_s\le C n_H(4s/5)$. Finalmente $P_H\le4sQ_H(z)Z_s(H)$, de modo que
+\[
+ \left|\frac{P_K}{Z_s(K)}-\frac{P_H}{Z_s(H)}\right|
+ \le\frac{|P_K-P_H|}{Z_s(K)}+
+ \frac{P_H|Z_s(K)-Z_s(H)|}{Z_s(H)Z_s(K)}
+ \le C\delta sQ_H(z).
+\]
+Dividiendo por $s^2$ se obtiene la afirmación. La constante del recuento depende de la dimensión pero no del radio ni de la forma.
+\end{proof}
+
+\begin{proposicion}[Control de la variación del engrosamiento]
+\label{prop:ahr-rlip}
+Existe $C=C_{L,N}$ tal que si $K\sim_\delta H$ y $0\le\delta\le1/4$, entonces, para todo $z\in V$,
+\begin{equation}
+ |Q_{\mathcal R(K)}(z)-Q_{\mathcal R(H)}(z)|
+ \le C\delta\left(1+\frac1{\lambda(H)\lambda_D(H)}\right)Q_{\mathcal R(H)}(z).
+ \label{eq:ahr-rlip}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Escribimos $a=\mu(H)$, $b=\mu(K)$. Por \eqref{eq:ahr-mu}, $|a-b|\le C\delta a$ y existen constantes $c,C'>0$ con $ca\le b\le C'a$. La diferencia de los términos iniciales $aH,bK$ se acota por $C\delta aQ_H(z)$.
+
+Para los otros términos separamos, en cada escala $s=4^j$, la diferencia de $T_s$ de la diferencia de coeficientes. Si $s\le3\lambda(H)/16$, las dos matrices $T_s$ son nulas. En las restantes escalas la suma de las cotas \eqref{eq:ahr-tlip} es a lo sumo $C\delta Q_H(z)/\lambda(H)$, por la serie geométrica $\sum 4^{-j}$.
+
+La diferencia $\rho(sb)-\rho(sa)$ es nula si $s\max(a,b)\le1$ o $s\min(a,b)\ge4$. Solo puede contribuir en un intervalo de escalas cuya razón de extremos está acotada por $4\max(a,b)/\min(a,b)$. Hay un número uniformemente acotado de potencias de cuatro en él. Para cada escala, $|\rho(sb)-\rho(sa)|\le C s\delta a$ y $Q_{T_s(H)}(z)\le4Q_H(z)/s$; por tanto la suma de estas contribuciones está acotada por $C\delta aQ_H(z)$. No se introduce un factor que cuente todas las escalas entre los dos mínimos.
+
+Concluimos que la diferencia total es a lo sumo $C\delta(a+\lambda(H)^{-1})Q_H(z)$. Como $Q_{\mathcal R(H)}(z)\ge aQ_H(z)$ y $a\ge\lambda_D(H)/4$, obtenemos \eqref{eq:ahr-rlip}.
+\end{proof}
+
+El factor $1+h_N(g)$ de \eqref{eq:ahr-rlip} es suficiente para la derivada. Su origen es el producto de los mínimos primal y dual, no un número de vectores cortos que aumente con la altura.
+
+\subsection{Compacidad aritmética de la región engrosada}
+
+\begin{proposicion}[Compacidad de la región gruesa módulo el grupo aritmético]
+\label{prop:ahr-thick}
+Para $c>0$ existe un compacto $K_c\subset X_N$ tal que todo $H$ con $\lambda(H),\lambda_D(H)\ge c$ tiene un trasladado por $\Gamma_N$ en $K_c$.
+\end{proposicion}
+\begin{proof}
+Por el Lema~\ref{lem:ahr-trans}, el radio de cobertura de $\Lambda$ en la métrica $Q_H$ está uniformemente acotado por cierto $R_1>0$. Se pueden elegir $D$ vectores linealmente independientes de longitudes a lo sumo $3R_1$: después de elegir algunos, se toma un punto de longitud $2R_1$ ortogonal a su span y se aproxima a distancia $R_1$ por un vector del retículo. Ese vector no pertenece al span.
+
+El covolumen de $\Lambda$ para $Q_H$ está uniformemente acotado inferiormente por Minkowski y el mínimo primal. El subretículo generado por los $D$ vectores tiene covolumen acotado superiormente por Hadamard; por ello su índice está acotado. Si el índice es $j$, el retículo completo está contenido en $j^{-1}$ veces el subretículo. En coordenadas de los vectores elegidos hay solo finitos superretículos de $\Z^D$ de índice a lo sumo el presupuesto fijo (se consideran subgrupos de $(\Z/j)^D$). Para cada uno fijamos una base. Transportándolas a $\Lambda$ obtenemos una base integral $b_1,\ldots,b_D$ con longitudes uniformemente acotadas.
+
+La matriz de Gram de esa base tiene entradas uniformemente acotadas y determinante acotado inferiormente; de aquí se obtiene una cota positiva uniforme para su menor autovalor. Fijemos una base integral de $R$. La multiplicación por cada uno de sus elementos actúa en $V$ con norma para $Q_H^{1/2}$ acotada por el máximo de los valores absolutos de sus inmersiones, independientemente de $H$. En las bases $b_i$, sus matrices integrales tienen, por las dos cotas de Gram, entradas uniformemente acotadas. Hay solo finitas tuplas posibles de matrices de multiplicación.
+
+Para cada tupla que ocurra, fijamos una base integral $b^{(j)}$ de $\Lambda$ que la realice. Si $b$ es una base de la misma tupla, el isomorfismo integral $T$ que lleva $b^{(j)}$ a $b$ conmuta con la multiplicación por los elementos de $R$. Por ello $T$ es $R$-lineal e invertible sobre $R^N$, es decir, pertenece a $\Gamma_N$. La forma $A(T^{-1})H$ tiene en la base fija $b^{(j)}$ la matriz de Gram de $H$ en la base $b$. Por las cotas ya obtenidas, estas matrices de Gram pertenecen a un compacto de formas positivas. El espacio real de tuplas hermitianas se identifica, mediante $H\mapsto Q_H$, con un subespacio cerrado del espacio de formas cuadráticas reales; por tanto las cotas de Gram definen también un compacto de $X_N$. Unimos los compactos correspondientes a las finitas tuplas. Esto prueba el resultado sin confundir $\operatorname{GL}_D(\Z)$ con $\operatorname{GL}_N(R)$.
+\end{proof}
+
+\begin{lema}[Acción propia sobre el cono]
+\label{lem:ahr-proper}
+Si $K\subset X_N$ es compacto, entonces $\{\gamma\in\Gamma_N:A(\gamma)K\cap K\ne\varnothing\}$ es finito.
+\end{lema}
+\begin{proof}
+Todas las formas de $K$ están entre $a o$ y $b o$ para $0<a\le b$. Si $H$ y $A(\gamma)H$ pertenecen a $K$, las desigualdades para sus formas cuadráticas dan $\|\gamma_w^{-1}\|_{\rm op}\le\sqrt{b/a}$ y, usando $\gamma^{-1}$ y el punto trasladado, $\|\gamma_w\|_{\rm op}\le\sqrt{b/a}$. Las entradas de $\gamma$ son enteros algebraicos cuyas inmersiones están acotadas. Solo hay finitas posibilidades por la discreción del retículo de Minkowski de $R$. El argumento incluye estabilizadores finitos y no presupone que la acción sea libre.
+\end{proof}
+
+\subsection{Normalización, función de corte y partición controlada}
+
+La homotecia común debe desaparecer de la partición. Usaremos
+\begin{equation}
+ \mathcal N(H)=\left(\prod_w\det H_w\right)^{-1/(Nr)} H.
+ \label{eq:ahr-norm}
+\end{equation}
+Es suave y positiva, invariante por $H\mapsto tH$ y equivariante por $\Gamma_N$: si $\gamma\in\Gamma_N$, su determinante es una unidad y $\prod_w|\det\gamma_w|^2=1$. Además no altera el producto de mínimos. Si $K\sim_\delta H$ y $\delta\le1/4$, las desigualdades de determinantes implican que el cociente de los factores escalares en \eqref{eq:ahr-norm} pertenece a $[(1+\delta)^{-1},(1-\delta)^{-1}]$. Por ello $\mathcal N(K)\sim_{C\delta}\mathcal N(H)$, pudiendo tomarse $C=3$. En la estimación de derivadas usaremos perturbaciones suficientemente pequeñas.
+
+Por las Proposiciones~\ref{prop:ahr-low} y \ref{prop:ahr-dual}, la imagen de $\mathcal R\circ\mathcal N$ se encuentra en una región gruesa. Fijemos un compacto $K_c$ de la Proposición~\ref{prop:ahr-thick} para dicha región. Sea $\beta\ge0$ una función suave de soporte compacto $K'\subset X_N$ e igual a uno en $K_c$. La suma
+\[
+ S(H)=\sum_{\gamma\in\Gamma_N}\beta(A(\gamma^{-1})H)
+\]
+es suave, invariante y localmente finita por el Lema~\ref{lem:ahr-proper}. Sobre los trasladados de $K_c$, $S\ge1$. Para evitar cualquier problema fuera de esa unión, elijamos una función suave $\eta$ en $\R$ igual a $t^{-1}$ para $t\ge1$ y no negativa en $[0,\infty)$, y definamos $\psi(H)=\beta(H)\eta(S(H))$. Es suave, tiene soporte compacto en $K'$ y la suma de sus trasladados vale uno sobre la región gruesa.
+
+\begin{lema}[Lipschitz relativo para una función compactamente soportada]
+\label{lem:ahr-bump}
+Para $\psi$ como arriba existe $C>0$ con $|\psi(K)-\psi(H)|\le C\delta$ cuando $K\sim_\delta H$, $H,K\in X_N$ y $\delta\ge0$.
+\end{lema}
+\begin{proof}
+Para $\delta\ge1/2$ usamos $2\|\psi\|_\infty\le4\|\psi\|_\infty\delta$. Para $\delta<1/2$, si ambos valores son cero no hay nada que demostrar. En otro caso uno de los dos puntos pertenece a $K'$. Por comparabilidad relativa, ambos puntos y el segmento entre ellos están entre dos múltiplos fijos positivos de $o$. Allí la derivada ordinaria de $\psi$ está acotada. Asimismo $\|K-H\|\le C'\delta$ en la norma euclídea ambiente, por la cota superior uniforme para las formas. La desigualdad del valor medio prueba el lema.
+\end{proof}
+
+\begin{teorema}[Partición de la unidad con exponente uno]
+\label{thm:ahr-spu}
+Las funciones
+\begin{equation}
+ \varphi_\gamma(H)=\psi\bigl(\mathcal R(\mathcal N(A(\gamma^{-1})H))\bigr),
+ \qquad \gamma\in\Gamma_N,
+ \label{eq:ahr-particion}
+\end{equation}
+constituyen una partición de la unidad suave, equivariante, invariante por homotecias comunes y localmente finita. El número de funciones con soporte que contiene a un punto es uniformemente acotado para $L,N$ fijos, y las diferencias de etiquetas cuyos soportes se cortan pertenecen a un conjunto finito. Además existe $C_{L,N}$ tal que
+\begin{equation}
+ \|d\varphi_\gamma|_{A(g)o}\circ A(g)\|\le C_{L,N} h_N(g)
+ \qquad(g\in G_N,\ \gamma\in\Gamma_N).
+ \label{eq:ahr-deriv}
+\end{equation}
+\end{teorema}
+\begin{proof}
+Sea $F=\mathcal R\circ\mathcal N$. Su equivariancia da $\varphi_\gamma(H)=\psi(A(\gamma^{-1})F(H))$. La suma vale uno por la construcción de $\psi$. La suavidad y la homogeneidad siguen de las propiedades de $F$. Si $H$ recorre un compacto, $F(H)$ también; la propiedad de acción propia aplicada a la unión de ese compacto imagen con $K'$ da la finitud local.
+
+Si los soportes de $\varphi_\gamma$ y $\varphi_\delta$ se cortan en $H$, entonces $A(\gamma^{-1})F(H)$ y $A(\delta^{-1})F(H)$ pertenecen a $K'$; la afirmación se extiende de los conjuntos de no anulación a sus cierres por continuidad. Por tanto $\gamma^{-1}\delta$ pertenece al conjunto finito de retornos de $K'$ (o a su inverso, también finito). Fijando una etiqueta activa en un punto, todas las restantes están en un trasladado de dicho conjunto finito. Las derivadas se anulan fuera de los soportes cerrados, así que este mismo control sirve para Whitney.
+
+Para la derivada, primero tomamos $\gamma=1$. Si $K\sim_\delta H$ con $\delta$ pequeña, la normalización da una perturbación relativa de tamaño $3\delta$ y no altera la altura. Aplicando \eqref{eq:ahr-rlip} y el Lema~\ref{lem:ahr-bump} a $F(H),F(K)$ resulta
+\[
+ |\varphi_1(K)-\varphi_1(H)|\le C\delta(1+(\lambda(H)\lambda_D(H))^{-1}).
+\]
+En $H=A(g)o$ tomamos $K=H+tA(g)u$, donde $u$ es una tupla hermitiana. Con la norma ambiente de máximo de entradas, $|Q_u(z)|\le N\|u\|Q_o(z)$; esto sigue de la cota de la norma de operador por $N$ veces el máximo de entradas. Por conjugación, $K\sim_{|t|N\|u\|}H$ para $t$ suficientemente pequeño. Dividiendo la desigualdad por $|t|$ y tomando el límite, la derivada trasladada tiene norma a lo sumo $CN(1+h_N(g))$. La cota inferior de la Proposición~\ref{prop:ahr-ht} permite absorber el uno, obteniendo \eqref{eq:ahr-deriv} para $\gamma=1$. Para cualquier $\gamma$, por composición de las acciones, la derivada trasladada es la de $\varphi_1$ en el marco de $\gamma^{-1}g$. La altura es invariante a izquierda. Obtenemos así la misma constante para todas las etiquetas.
+\end{proof}
+
+Este teorema proporciona \texttt{SPU} con $a=1$. La dimensión aparece en las constantes de recuento, en la cobertura, en el tamaño de los compactos y en la cota de la norma de operador; ninguna de estas dependencias cambia la potencia de $h_N$. En particular se obtiene el orden de elección de parámetros utilizado en la Nota 22.
+
+\subsection{La reducción adélica: formulación y fundamentos}
+
+Para los momentos hay que estudiar la región no compacta del cociente. Utilizaremos adeles únicamente para construir los conjuntos de reducción. Escribamos $\mathbb A_L$ para los adeles de $L$ y $\mathbb A_L^\times$ para los ideles. En los lugares finitos normalizamos $|\pi_v|_v=(\#k_v)^{-1}$; en los complejos, el módulo local multiplicativo es $|z|^2$. El módulo global de un idele $a$ es $|a|_{\mathbb A}=\prod_v|a_v|_v$. La fórmula del producto dice que vale uno sobre $L^\times$. Sean $\mathcal K_N$ el producto restringido de los grupos $\operatorname{GL}_N(R_v)$ en los lugares finitos y los grupos unitarios en los complejos, y $B_N$ el grupo de matrices triangulares superiores invertibles sobre los adeles.
+
+Necesitaremos dos hechos de compacidad, que se explican antes de usarlos. El cociente aditivo $\mathbb A_L/L$ tiene representantes en un compacto: se ajusta cualquier adele por un elemento de $L$ para que sus componentes finitas sean integrales, mediante el teorema chino del resto después de limpiar denominadores, y después se ajusta por $R$ para colocar la componente infinita en un paralelogramo fundamental del retículo de Minkowski. El producto de ese compacto infinito con $\prod_{v<\infty}R_v$ es compacto. El cociente de los ideles de módulo uno por $L^\times$ tiene también representantes en un compacto. En efecto, la parte finita determina un ideal fraccionario; se elige uno de finitos representantes de clases y se multiplica por un elemento de $L^\times$ para fijar sus valuaciones. El módulo uno fija la suma de los logaritmos arquimedianos. Las unidades llevan la parte de suma cero de esos logaritmos a un paralelogramo compacto, por Dirichlet, y las fases complejas forman un compacto. La parte finita con valuaciones fijas es un trasladado de $\prod R_v^\times$, compacto. Estos dos argumentos usan los teoremas clásicos enunciados al inicio, no la finitud de volumen que queremos demostrar.
+
+Para un vector adélico $y=(y_1,\ldots,y_N)$ usamos la altura de fila
+\begin{equation}
+ \mathcal H(y)=\prod_{v<\infty}\max_i |y_{v,i}|_v
+                 \prod_{w\mid\infty}\|y_w\|_2^2.
+ \label{eq:ahr-row}
+\end{equation}
+Para una fila racional no nula $x$ y $g\in\operatorname{GL}_N(\mathbb A_L)$ se toma $\mathcal H(xg)$; es positiva, invariante por escala racional y por $\mathcal K_N$ a derecha. En todos salvo finitos lugares, $g$ es integral invertible y $x$ tiene al menos una coordenada unidad después de la escala local correspondiente; los factores de altura están bien definidos.
+
+\begin{lema}[Finitud proyectiva a altura acotada]
+\label{lem:ahr-rowfinite}
+Para cada $g$, las clases de filas $x\in L^N\setminus\{0\}$ módulo $L^\times$ con $\mathcal H(xg)\le C$ forman un conjunto finito. En particular existe una fila de altura mínima positiva.
+\end{lema}
+\begin{proof}
+Por las normas de operador locales de $g$ y $g^{-1}$, $\mathcal H(xg)$ y $\mathcal H(x)$ son comparables por constantes dependientes de $g$; en los lugares finitos donde $g$ es integral invertible se conserva exactamente la norma máxima. Basta probar finitud para $g=1$.
+
+Escalando $x$ racionalmente, se puede hacer que el ideal generado por sus coordenadas sea uno de finitos ideales integrales representantes de clases. Para ese ideal fijo, la contribución de los lugares finitos a $\mathcal H(x)$ es la inversa de su norma. La cota de altura controla por tanto el producto de las normas arquimedianas al cuadrado. Todas esas normas son positivas, porque la fila es no nula. Multiplicar la fila por una unidad preserva el ideal y permite, por Dirichlet, colocar las diferencias entre los logaritmos de las normas de los lugares complejos y su media en un conjunto acotado. La cota del producto da entonces una cota superior para cada norma arquimediana. Las coordenadas pertenecen a un ideal integral fijo y a una región acotada del espacio de Minkowski; hay solo finitas filas. Esto demuestra la finitud. Elegimos cualquier fila para obtener una cota inicial y minimizamos dentro del conjunto finito correspondiente.
+\end{proof}
+
+\begin{lema}[La estimación adélica de tamaño dos]
+\label{lem:ahr-adelicmink}
+Existe $C_L>0$ tal que para $b\in\operatorname{GL}_2(\mathbb A_L)$ se encuentra $0\ne x\in L^2$ con
+\begin{equation}
+ \mathcal H(xb)\le C_L |\det b|_{\mathbb A}^{1/2}.
+ \label{eq:ahr-adelicmink}
+\end{equation}
+\end{lema}
+\begin{proof}
+Sea $M_b=\{x\in L^2:xb_v\in R_v^2\text{ para todo }v<\infty\}$. Es un retículo integral fraccionario de rango $2d$. En coordenadas de Minkowski, su covolumen es el de $R^2$ multiplicado por $\prod_{v<\infty}|\det b_v|_v$: localmente, la preimagen del retículo integral por $b_v$ tiene medida aditiva $|\det b_v|_v^{-1}$, y el cociente de los covolúmenes globales es el inverso del cociente de las medidas finitas locales. Para verlo, se fija un entero positivo $a$ con $aR^2\subset M_b\subset a^{-1}R^2$ y se escribe el cociente de covolúmenes como $[R^2:aR^2]/[M_b:aR^2]$; los dos índices se factorizan por los lugares finitos. Más explícitamente, el signo de este factor se verifica con $b_v=\pi_v I_2$, cuya preimagen tiene covolumen global multiplicado por $(\#k_v)^{-2}$; el argumento general sigue de la forma normal diagonal local. En las componentes infinitas, al aplicar $b_w$, el determinante real multiplica el covolumen por $|\det b_w|^2$. El retículo infinito resultante tiene por tanto covolumen $c_L |\det b|_{\mathbb A}$, con $c_L$ el covolumen fijo de $R^2$.
+
+Minkowski en dimensión $2d$ proporciona un vector no nulo de longitud euclídea a lo sumo $C'_L|\det b|_{\mathbb A}^{1/(2d)}$. Cada norma de componente compleja es a lo sumo esa longitud, y cada factor finito es a lo sumo uno. Hay $r=d/2$ lugares complejos, de modo que el producto de los factores arquimedianos tiene exponente $2r/(2d)=1/2$. Esto da \eqref{eq:ahr-adelicmink}. El argumento no requiere que $M_b$ sea libre como $R$-módulo, solo que sea un retículo real.
+\end{proof}
+
+\subsection{De una fila mínima a los conjuntos de Siegel}
+
+\begin{proposicion}[Reducción triangular adélica]
+\label{prop:ahr-adelicred}
+Existe $t_L>0$ tal que para cada $N\ge1$ y cada $g\in\operatorname{GL}_N(\mathbb A_L)$ se encuentran $\gamma\in\operatorname{GL}_N(L)$, $b\in B_N$ y $k\in\mathcal K_N$ con
+\begin{equation}
+ \gamma g=bk,\qquad
+ t_L|b_{i+1,i+1}|_{\mathbb A}\le |b_{ii}|_{\mathbb A}
+ \quad(1\le i<N).
+ \label{eq:ahr-adelicred}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Para $N=1$ basta tomar la propia matriz. Supongamos $N\ge2$. Por el Lema~\ref{lem:ahr-rowfinite}, elijamos una fila racional de altura mínima para $g$ y completemos esa fila a la última fila de una matriz $\gamma_0\in\operatorname{GL}_N(L)$. En cada lugar se puede llevar la última fila de $\gamma_0 g$ a una fila que solo tenga su última coordenada no nula, mediante una matriz del grupo compacto local. En los complejos se usa una matriz unitaria; en los finitos se elige una coordenada de módulo máximo, se lleva al final y se eliminan las demás mediante operaciones integrales, pues sus cocientes por la coordenada elegida son integrales. Las elecciones locales forman un elemento de $\mathcal K_N$. Se obtiene una matriz triangular por bloques de la forma $\left(\begin{smallmatrix}B&u\\0&b_0\end{smallmatrix}\right)$, donde $b_0$ es un idele y $B\in\operatorname{GL}_{N-1}(\mathbb A_L)$ (la condición de integridad fuera de finitos lugares también vale para la inversa).
+
+Apliquemos la inducción al bloque $B$ y extendamos las operaciones racionales y compactas por la identidad en la última coordenada. Se obtiene una matriz triangular superior. Las primeras $N-2$ comparaciones se conservan. Para las dos últimas filas, las coordenadas no nulas se encuentran en las dos últimas columnas y forman una matriz adélica invertible de tamaño dos, con determinante $ab_0$, donde $a=b_{N-1,N-1}$. El Lema~\ref{lem:ahr-adelicmink} proporciona una combinación racional no nula de esas dos filas de altura a lo sumo $C_L\sqrt{|ab_0|_{\mathbb A}}$. La última fila sigue siendo mínima entre todas las filas racionales: las operaciones racionales a izquierda permutan las posibles filas y las compactas a derecha conservan su altura. Por ello
+\[
+ |b_0|_{\mathbb A}\le C_L\sqrt{|a|_{\mathbb A}|b_0|_{\mathbb A}},
+\]
+que implica $|b_0|_{\mathbb A}\le C_L^2|a|_{\mathbb A}$. Sirve $t_L=\min(1,C_L^{-2})$, independiente de $N$. La inducción demuestra \eqref{eq:ahr-adelicred}.
+\end{proof}
+
+\begin{proposicion}[Conjuntos de Siegel adélicos]
+\label{prop:ahr-siegeladele}
+Para cada $L,N$ hay un compacto $\Omega\subset B_N$ y $t>0$ tales que todo $g\in\operatorname{GL}_N(\mathbb A_L)$ admite una reducción
+\begin{equation}
+ \gamma g=b\operatorname{diag}(\underline r_1,\ldots,\underline r_N)k,
+ \quad b\in\Omega,\quad k\in\mathcal K_N,
+ \quad r_i>0,\quad t r_{i+1}\le r_i.
+ \label{eq:ahr-siegeladele}
+\end{equation}
+Aquí $\underline r_i$ es el idele con valor $r_i$ en cada lugar infinito y valor uno en los finitos.
+\end{proposicion}
+\begin{proof}
+Partimos de la Proposición~\ref{prop:ahr-adelicred}. Si $b_i$ es la $i$-ésima entrada diagonal, ponemos $r_i=|b_i|_{\mathbb A}^{1/d}$. El módulo de $\underline r_i$ es $r_i^d$. La comparación anterior da $t r_{i+1}\le r_i$ con $t=t_L^{1/d}$. Cada $b_i/\underline r_i$ tiene módulo uno; mediante una multiplicación racional diagonal a izquierda podemos llevar todos esos ideles a un compacto fijo de representantes de las clases de módulo uno, como se explicó antes del Lema~\ref{lem:ahr-rowfinite}.
+
+Separamos la matriz triangular resultante en su factor unipotente superior y su factor diagonal. El factor unipotente puede reducirse por multiplicación racional unipotente a izquierda hasta que todas sus entradas encima de la diagonal pertenezcan a un compacto fijo de representantes de $\mathbb A_L/L$. En efecto, procesamos las columnas de izquierda a derecha. Para corregir la entrada $(i,j)$ con $i<j$, sumamos a la fila $i$ un múltiplo racional de la fila $j$; la entrada diagonal de la fila $j$ es uno y sus entradas anteriores a la columna $j$ son cero. Así se ajusta la entrada elegida sin modificar las columnas ya procesadas. Los demás cambios se producen en columnas posteriores. Este procedimiento termina tras un número finito de operaciones.
+
+El producto de las matrices unipotentes con entradas en dicho compacto y las diagonales con ideles en el compacto de módulo uno es un compacto de $B_N$. La parte diagonal real positiva contiene todos los $r_i$ y conserva las desigualdades. Se obtiene \eqref{eq:ahr-siegeladele}. El desarrollo reproduce, en términos de filas mínimas, la ruta de \texttt{ReductionCore.lean} y \texttt{ReductionSiegel.lean}.
+\end{proof}
+
+\subsection{Descenso de la reducción al grupo arquimediano integral}
+
+\begin{proposicion}[Reducción de matrices generales]
+\label{prop:ahr-glred}
+Existe un conjunto finito $\mathcal E\subset\operatorname{GL}_N(L)$, un compacto de tuplas de matrices triangulares superiores invertibles y $t>0$ tales que para cada $x\in G_N$ existen $\delta\in\Gamma_N$, $g\in\mathcal E$ y una descomposición, para cada $w$,
+\begin{equation}
+ (\delta x)_w=\sigma_w(g)b_w\operatorname{diag}(r_1,\ldots,r_N)k_w,
+ \quad r_i>0,\quad tr_{i+1}\le r_i,
+ \label{eq:ahr-glred}
+\end{equation}
+con $b_w$ e inversas en el compacto indicado y $k_w$ unitarias.
+\end{proposicion}
+\begin{proof}
+Extendemos $x$ a una matriz adélica con todas las componentes finitas iguales a la identidad y aplicamos \eqref{eq:ahr-siegeladele}. La componente finita de la matriz racional $\gamma$ pertenece entonces a la proyección finita de $\Omega\mathcal K_N$, que es compacta. El grupo $\prod_{v<\infty}\operatorname{GL}_N(R_v)$ es abierto en $\operatorname{GL}_N(\mathbb A_{L,f})$. La proyección a su cociente discreto por clases laterales de la forma $aK$ envía compactos a conjuntos finitos. De cada clase $aK$ que intersecta matrices racionales se elige una matriz racional $a$. Si $\gamma$ y $a$ pertenecen a la misma clase, $a^{-1}\gamma$ y su inversa son integrales en todos los lugares finitos; por tanto $\delta=a^{-1}\gamma\in\Gamma_N$. La igualdad arquimediana de \eqref{eq:ahr-siegeladele}, multiplicada por $a^{-1}$, da \eqref{eq:ahr-glred} con $g=a^{-1}$. Los compactos proporcionan cotas superiores e inferiores para los módulos de las entradas diagonales de $b_w$, y cotas para todas las entradas e inversas. Se ha usado una elección finita de clases, no que el grupo de matrices generales adélicas tenga un único representante integral.
+\end{proof}
+
+\subsection{Reducción en determinante uno}
+
+Sea $\Lambda_N$ la imagen de $\operatorname{SL}_N(R)$ en $S_N$. Para un vector real $s=(s_1,\ldots,s_N)$ con $\sum_i s_i=0$, denotemos por $a(s)$ la misma matriz diagonal positiva $\operatorname{diag}(e^{s_i})$ en cada componente. Sea $K_N=\prod_w\operatorname{SU}(N)$ y, para $T\ge0$, definamos
+\begin{equation}
+ \mathcal C_T=\{s\in\R^N:\ \sum_i s_i=0,\ s_{i+1}\le s_i+T\}.
+ \label{eq:ahr-cone}
+\end{equation}
+
+\begin{proposicion}[Cubierta finita por conjuntos de Siegel en SL]
+\label{prop:ahr-slred}
+Hay un compacto $P$ de tuplas triangulares superiores de determinante uno, un $T\ge0$ y un conjunto finito de elementos $c_j\in S_N$ tales que
+\begin{equation}
+ S_N=\bigcup_j\Lambda_N c_j P a(\mathcal C_T)K_N.
+ \label{eq:ahr-slred}
+\end{equation}
+Cada $c_j$ es de la forma $(z_w\sigma_w(g_j))_w$, con $g_j\in\operatorname{GL}_N(L)$ y $z_w\in\C^\times$. Se puede exigir que $\prod_w|(p_w)_{ii}|=1$ para toda diagonal de $p\in P$.
+\end{proposicion}
+\begin{proof}
+Para $x\in S_N$, apliquemos la Proposición~\ref{prop:ahr-glred}. Como el grupo de unidades de $R$ es finitamente generado, $R^\times/(R^\times)^N$ es finito. Escribamos $\det\delta=v^N u_0$, donde $v$ es una unidad y $u_0$ pertenece a un conjunto fijo de representantes. Sea $D(u_0)=\operatorname{diag}(u_0,1,\ldots,1)$ y pongamos $\sigma=v^{-1}D(u_0^{-1})\delta\in\operatorname{SL}_N(R)$. El factor racional que queda en \eqref{eq:ahr-glred} es $g'=D(u_0^{-1})g$, que recorre un conjunto finito. Elegimos una vez por cada $g'$ escalares $z_w$ tales que $z_w^N\det\sigma_w(g')=1$ y definimos $c=(z_w\sigma_w(g'))_w$. Así $c\in S_N$.
+
+En cada componente de $c^{-1}\sigma x$ obtenemos $a_w b_w\operatorname{diag}(r_i)k_w$, con $a_w=z_w^{-1}\sigma_w(v)^{-1}$ escalar no nulo. Sea $R_*=(\prod_i r_i)^{1/N}$ y $s_i=\log(r_i/R_*)$. Entonces $\sum_i s_i=0$ y $s_{i+1}-s_i\le-\log t$. La condición de determinante uno implica $|a_wR_*|^N|\det b_w|=1$. Como las matrices $b_w$ y sus inversas están acotadas, los escalares $a_wR_*$ están acotados superior e inferiormente en módulo. En la factorización $b'_w\operatorname{diag}(e^{s_i})k_w$ con $b'_w=a_wR_*b_w$, se tiene $|\det b'_w|=1$. Podemos multiplicar $b'_w$ a derecha por una diagonal unitaria de determinante $(\det b'_w)^{-1}$, y transferir su inversa a $k_w$ porque conmuta con la diagonal real. Así ambos factores tienen determinante uno y el triangular permanece en una región compacta.
+
+Finalmente, si $p_w$ es ese factor triangular, pongamos $t_i=r^{-1}\sum_w\log|(p_w)_{ii}|$. Los $t_i$ están acotados y $\sum_i t_i=0$. Sustituyendo $p_w$ por $p_w\operatorname{diag}(e^{-t_i})$ y $s_i$ por $s_i+t_i$, obtenemos la condición $\prod_w|(p_w)_{ii}|=1$ y preservamos la suma cero. Las desigualdades de cono se conservan aumentando $T$ en una constante fija. Los factores triangulares resultantes se encuentran en un compacto $P$ (por ejemplo, la región cerrada de triangulares con esas cotas de entradas e inversas y la condición de producto). Como los $c$ posibles son finitos, resulta \eqref{eq:ahr-slred}. Esta es la transición de \texttt{SRedGL} a \texttt{SRed}, con el cociente de unidades y los escalares por lugar explicitados.
+\end{proof}
+
+\subsection{La altura a lo largo de una región de Siegel}
+
+Para $s$ en el hiperplano de suma cero definimos
+\begin{equation}
+ W(s)=\sum_{i=1}^{N-1}|s_i-s_{i+1}|,\qquad
+ \Phi(s)=\sum_{i<j}(s_i-s_j).
+ \label{eq:ahr-WPhi}
+\end{equation}
+La primera cantidad controla $\max_i s_i-\min_i s_i$, incluso cuando las diferencias consecutivas no son todas positivas. La segunda determina el factor de medida que aparece en la cúspide.
+
+\begin{proposicion}[Crecimiento de la altura en la cúspide]
+\label{prop:ahr-cuspht}
+Para cada representante $c_j$ de \eqref{eq:ahr-slred} existe $C_j>0$ tal que, para $p\in P$, $s$ de suma cero y $k\in K_N$,
+\begin{equation}
+ h_N(c_j p a(s)k)\le C_j\exp(2W(s)).
+ \label{eq:ahr-cuspht}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Escribamos $c=c_j=(z_w\sigma_w(g))_w$. Existe un entero positivo $D_0$ que limpia los denominadores de las entradas de $g^{-1}$ y de $g^T$. Sea $v\in R^N\setminus\{0\}$. Para $x=cpa(s)k$, el mínimo primal se calcula con
+\[
+ (x^{-1}v)_w=k_w^{-1}a(s)^{-1}p_w^{-1}z_w^{-1}\sigma_w(g^{-1}v).
+\]
+Sea $i$ la última coordenada no nula de $g^{-1}v$ como vector de $L^N$. La misma coordenada es la última no nula en cada inmersión. Como $p_w^{-1}$ es triangular superior, la coordenada $i$ tras aplicarlo es exactamente $(p_w)_{ii}^{-1}\sigma_w((g^{-1}v)_i)$; las coordenadas posteriores son cero. Las unitarias preservan las normas. De las cotas uniformes de $p$ y los escalares fijos se obtiene
+\[
+ Q_{A(x)o}(v)\ge C'_j e^{-2s_i}\sum_w|\sigma_w((g^{-1}v)_i)|^2.
+\]
+El entero algebraico $D_0(g^{-1}v)_i$ no es cero y su norma absoluta es al menos uno; al menos uno de sus módulos complejos es al menos uno. La suma es, por tanto, al menos $D_0^{-2}$. Tomando mínimos,
+\[
+ \lambda(A(x)o)\ge c_1 e^{-2\max_i s_i}.
+\]
+
+Para la métrica dual se emplea $x^Tv=k^Ta(s)p^Tc^Tv$ y la primera coordenada no nula de $g^Tv$. Ahora $p_w^T$ es triangular inferior, de modo que la coordenada elegida vuelve a estar dada por una sola entrada diagonal. Las cotas inferiores de esa diagonal y la limpieza de denominadores dan
+\[
+ \lambda_D(A(x)o)\ge c_2 e^{2\min_i s_i}.
+\]
+El producto de las dos cotas e inversión proporcionan una constante por $e^{2(\max s_i-\min s_i)}\le e^{2W(s)}$. El carácter racional salvo escalares del representante $c$ es sustantivo para el argumento con la norma de un entero algebraico. Una traslación arbitraria del lado izquierdo no permitiría la misma demostración.
+\end{proof}
+
+\subsection{La medida de Haar y la integrabilidad en el cono}
+
+Desarrollaremos una estimación directa de la medida, equivalente para nuestros fines a la cota de empaquetamiento de \texttt{MtInvUpper.lean}. Sea $U$ el grupo unipotente triangular superior de $\operatorname{SL}_N(\C)$. Todo elemento de $\operatorname{SL}_N(\C)$ admite coordenadas únicas $u a(t)k$, con $u\in U$, $t\in\R^N$ de suma cero, $k\in\operatorname{SU}(N)$. Se obtienen por Gram--Schmidt de las filas, de abajo arriba (o factorización RQ), normalizando las diagonales positivas; la triangular superior de diagonal positiva se descompone en unipotente por diagonal. La unicidad sigue de que una matriz triangular superior unitaria con diagonal positiva es la identidad. Las coordenadas son suaves.
+
+La medida en estas coordenadas es, salvo constante positiva de normalización,
+\begin{equation}
+ dg=e^{-2\Phi(t)}\,du\,dt\,dk.
+ \label{eq:ahr-haar}
+\end{equation}
+En efecto, las coordenadas complejas de las entradas estrictamente superiores dan una medida de Haar $du$ en $U$: multiplicar a izquierda por un unipotente es una transformación afín triangular de jacobiano uno en esas coordenadas. La conjugación por $a(t)$ multiplica la entrada $(i,j)$ por $e^{t_i-t_j}$, con jacobiano real $e^{2(t_i-t_j)}$. En $UA$ la medida izquierda lleva por ello el factor $e^{-2\Phi(t)}$. Para extenderla por $dk$, observamos que la medida de Haar del grupo completo es invariante a derecha por el compacto $K$ (su función modular es trivial allí). En la identificación $UA\times K$ es también invariante por $UA$ a izquierda. La unicidad de Haar para esta acción de producto determina \eqref{eq:ahr-haar}. La biinvariancia de Haar en $\operatorname{SL}_N(\C)$ se obtiene, por ejemplo, porque las conjugaciones tienen determinante uno sobre su álgebra de Lie (sobre $\operatorname{End}(\C^N)$ el determinante de $X\mapsto gXg^{-1}$ es uno, y sobre las matrices escalares la acción es trivial). Para el producto de los lugares se multiplican las densidades. En $S_N$ no se introduce un factor de medida procedente de los centros de $\operatorname{GL}_N(\C)$.
+
+\begin{lema}[Desigualdad en el cono de Siegel]
+\label{lem:ahr-phi}
+Para $N\ge2$, $s\in\mathcal C_T$ y $T\ge0$, existe $C_{N,T}$ con
+\begin{equation}
+ \Phi(s)\ge (N-1)W(s)-C_{N,T}.
+ \label{eq:ahr-phi}
+\end{equation}
+\end{lema}
+\begin{proof}
+Sea $d_i=s_i-s_{i+1}$. Cada diferencia $s_i-s_j$ es la suma de los $d_h$ entre $i$ y $j-1$. Contando los pares que contienen cada $h$,
+\[
+ \Phi(s)=\sum_{i=1}^{N-1}i(N-i)d_i.
+\]
+Los coeficientes $i(N-i)$ son al menos $N-1$. Si $d_i\ge0$, la contribución es al menos $(N-1)|d_i|$. Si $d_i<0$, tenemos $|d_i|\le T$, y la diferencia respecto de $(N-1)|d_i|$ es al menos $-(i(N-i)+N-1)T$. Se suman estas cotas. Puede tomarse $C_{N,T}=T\sum_{i=1}^{N-1}(i(N-i)+N-1)$.
+\end{proof}
+
+\begin{proposicion}[Integrabilidad de un peso exponencial]
+\label{prop:ahr-int}
+Sea $P$ como en la Proposición~\ref{prop:ahr-slred} y sea $f:S_N\to[0,\infty)$ medible. Si
+\[
+ f(p a(s)k)\le C e^{B W(s)}
+ \quad(p\in P,\ s\in\mathcal C_T,\ k\in K_N),
+\]
+con $B<2(N-1)$, entonces $f$ es integrable sobre $P a(\mathcal C_T)K_N$.
+\end{proposicion}
+\begin{proof}
+Para cada $p_w$ triangular, escribimos $p_w=u_w\operatorname{diag}(|(p_w)_{ii}|)\kappa_w$ con $\kappa_w$ diagonal unitaria de determinante uno. Las $u_w$ recorren un compacto, puesto que las entradas diagonales de $p_w$ están acotadas inferiormente. La coordenada diagonal de $p_w a(s) k_w$ en \eqref{eq:ahr-haar} es $t_w=s+b_w$, con $(b_w)_i=\log|(p_w)_{ii}|$ y $b_w$ en un compacto. Por la condición $\prod_w|(p_w)_{ii}|=1$ se tiene $\sum_w b_w=0$. Así $s=r^{-1}\sum_w t_w$ queda determinado por el elemento y las $b_w$ pertenecen a un subconjunto compacto del espacio de desviaciones de suma cero. El cambio lineal entre $(t_w)_w$ y $(s,(b_w)_w)$ tiene jacobiano constante no nulo en los espacios de dimensión correspondiente. La medida de las coordenadas unipotentes, compactas y de desviación acotada es finita. Además
+\[
+ \sum_w\Phi(t_w)=r\Phi(s),
+\]
+por linealidad. Integrando sobre una región que contiene el conjunto de Siegel, con el peso que domina a $f$ sobre el conjunto, la integral queda acotada por una constante multiplicada por
+\begin{equation}
+ \int_{\mathcal C_T}\exp(BW(s)-2r\Phi(s))\,ds.
+ \label{eq:ahr-int}
+\end{equation}
+El conjunto de Siegel es medible: las restricciones de $s$ a cajas compactas dan imágenes compactas, cuya unión numerable lo cubre. Por el Lema~\ref{lem:ahr-phi}, el integrando de \eqref{eq:ahr-int} es a lo sumo una constante por $e^{-\varepsilon W(s)}$, donde $\varepsilon=2r(N-1)-B>0$. La aplicación lineal $s\mapsto(d_i)_{1\le i<N}$ es un isomorfismo del hiperplano de suma cero con $\R^{N-1}$. Su núcleo es cero, porque un vector de suma cero con todas sus diferencias nulas es cero. En esas coordenadas, la integral sobre todo el hiperplano de $e^{-\varepsilon W(s)}$ es, salvo jacobiano constante, $(2/\varepsilon)^{N-1}$, que es finita. Se concluye. La estimación de medida del código solo utiliza el presupuesto $B<2(N-1)$; aquí la presencia de $r$ factores complejos permite una estimación más fuerte, aunque no necesitamos modificar el umbral usado en el ensamblaje.
+\end{proof}
+
+\subsection{Descenso al dominio fundamental y momentos}
+
+El subgrupo $\Lambda_N$ de $S_N$ es numerable y discreto, por el retículo de Minkowski aplicado a las entradas de una matriz. Puede elegirse un dominio fundamental medible para su acción por traslaciones: se toma una cubierta numerable de abiertos relativamente compactos del grupo en los que no se intersecten dos puntos de una misma órbita, y se elige la primera pieza que representa cada órbita, restando los trasladados de las piezas anteriores. Tal cubierta existe porque el grupo es localmente compacto, segundo numerable, y la traslación izquierda de un subgrupo discreto actúa propiamente. En efecto, para un compacto $K$ solo hay finitos $\gamma$ con $\gamma K\cap K\ne\varnothing$, pues están en $KK^{-1}$. Los pequeños abiertos se eligen con $UU^{-1}$ cortando a $\Lambda_N$ solo en la identidad. El procedimiento da una partición medible por trasladados, y la medida del dominio es positiva: si fuera cero, el grupo entero sería una unión numerable de conjuntos nulos, contradiciendo que Haar es no nula en abiertos no vacíos.
+
+\begin{lema}[Integración sobre una cubierta del cociente]
+\label{lem:ahr-coverint}
+Sea $G$ un grupo con medida de Haar izquierda, $\Gamma$ un subgrupo discreto numerable, $D$ un dominio fundamental medible y $f\ge0$ una función medible invariante por $\Gamma$. Si $T$ es medible y $G=\Gamma T$, entonces
+\[
+ \int_D f\,dg\le\int_T f\,dg.
+\]
+\end{lema}
+\begin{proof}
+Los conjuntos $\gamma D$ particionan $G$ (o lo hacen salvo conjuntos nulos). Por invariancia de la medida y de la función,
+\[
+ \int_T f=\sum_{\gamma\in\Gamma}\int_{T\cap\gamma D} f
+         =\sum_{\gamma\in\Gamma}\int_{\gamma^{-1}T\cap D} f.
+\]
+Como los conjuntos de la última suma cubren $D$, resulta la desigualdad. No se presupone que $T$ tenga multiplicidad uno, ni que tenga ya volumen finito.
+\end{proof}
+
+\begin{teorema}[Momentos de la altura: SMom]
+\label{thm:ahr-mom}
+Para cada entero $A\ge0$ y $N\ge A+2$ existe un dominio fundamental medible $D$ de $\Lambda_N\backslash S_N$ con medida de Haar de volumen positivo y finito y
+\begin{equation}
+ \int_D h_N(x)^A\,dx<\infty.
+ \label{eq:ahr-mom}
+\end{equation}
+\end{teorema}
+\begin{proof}
+La función $h_N^A$ es positiva, continua e invariante a izquierda por $\Lambda_N$ gracias a la Proposición~\ref{prop:ahr-ht}. La cubierta \eqref{eq:ahr-slred} permite usar el Lema~\ref{lem:ahr-coverint} para $T=\bigcup_j c_j P a(\mathcal C_T)K_N$. Para cada uno de sus conjuntos, por la invariancia izquierda de Haar, se integra $f_j(y)=h_N(c_jy)^A$ sobre $P a(\mathcal C_T)K_N$. Según \eqref{eq:ahr-cuspht}, esta función está acotada por $C_j^A e^{2AW(s)}$. Como $N\ge A+2$, se cumple estrictamente $2A<2(N-1)$; la Proposición~\ref{prop:ahr-int} da una integral finita. Hay finitos representantes, de modo que su suma es finita. Esto demuestra \eqref{eq:ahr-mom}. La misma estimación con $A=0$ da volumen finito; la positividad fue observada antes del Lema~\ref{lem:ahr-coverint}. La medida es biinvariante por la estructura de $S_N$ descrita en \eqref{eq:ahr-haar}.
+\end{proof}
+
+Para $A=0$ el argumento funciona con $N\ge2$. No necesitamos el caso $N=1$, cuyo grupo especial lineal es trivial. La cota más fuerte $A<r(N-1)$ se desprende del cálculo de medida; conservamos $N\ge A+2$ para coincidir con el presupuesto más grueso de \texttt{sMom\_of\_parts}.
+
+\subsection{Reinserción en la prueba de sobreyectividad}
+
+Las Proposiciones~\ref{prop:ahr-ht} y los Teoremas~\ref{thm:ahr-spu} y \ref{thm:ahr-mom} proporcionan la misma altura para las tres entradas. Fijados $L$ totalmente imaginario y $m=k+1<r_2(L)$, la Nota 22 construye un representante de Whitney y un promedio central con crecimiento a lo sumo $C h_N^m$, por el exponente $a=1$. Su norma cuadrada es integrable cuando $N\ge2m+2$, por \eqref{eq:ahr-mom}. La elección de $N$ debe además satisfacer el umbral de Hecke $N_0$ de aquella nota, la estabilización a partir de $2m+4$, el tamaño mínimo $3$ y cualquier tamaño inicial $n_0$. En otras palabras, podemos elegir
+\begin{equation}
+ N\ge\max\{n_0,3,2m+2,2m+4,N_0\}.
+ \label{eq:ahr-umbral}
+\end{equation}
+El $N_0$ procede de la comparación cohomológica en tamaño fijo, no del cociclo particular que se vaya a representar. No se está acotando aquí de manera efectiva ese umbral, y no es necesario para el argumento de rango: basta que exista.
+
+La cota de estabilidad integral y la finitud homológica cualitativa se justifican en la Nota~\ref{sec:estabilidad-integral}. Se conservan la separación por pesos de la Nota~\ref{sec:detectores-reales} y los argumentos de Hecke de la Nota~\ref{sec:sobreyectividad-hecke}. El desarrollo de altura y reducción suministra la última entrada analítica aislada por aquella nota.
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}p{.27\textwidth}Y@{}}
+\toprule
+Entrada & Alcance del desarrollo\\\midrule
+\texttt{SHt} & Altura de dos mínimos, continuidad, cota inferior y moderación; Proposición~\ref{prop:ahr-ht}.\\
+\texttt{SPU} & Regularización suave, engrosamiento, compacidad aritmética, soportes y derivada de exponente uno; Teorema~\ref{thm:ahr-spu}.\\
+\texttt{SMom} & Reducción adélica y arquimediana, estimación de altura y medida de las cúspides; Teorema~\ref{thm:ahr-mom}.\\
+\texttt{SSurj} & Ensamblaje del Teorema~\ref{thm:sh-surj} con las tres entradas y la estabilidad de Nota~\ref{sec:estabilidad-integral}.\\
+\texttt{BOdd} & Deducción de la Nota~\ref{sec:detectores-reales}, ensamblada en Proposición~\ref{prop:ehi-bodd}.\\
+\texttt{SStab} & Rango integral $N\ge2m+4$ y compatibilidad: Nota~\ref{sec:estabilidad-integral}.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+La coincidencia de los umbrales con las declaraciones Lean no significa que se haya certificado la implementación. En particular, las estimaciones de cobertura y compacidad aquí desarrolladas siguen argumentos clásicos de retículos, y la integración utiliza coordenadas de Iwasawa en lugar de volver a escribir el empaquetamiento gaussiano del espejo. La Nota~\ref{sec:estabilidad-integral} examina el rango preciso y su aplicación al transporte de torsión. La auditoría del bloque distingue la demostración expositiva, la literatura clásica recibida y el cotejo localizado del código.
+
+\clearpage
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}[Una cúspide en dimensión dos]
+Sea $L=\Q(i)$, $N=2$ y $g=\operatorname{diag}(e^t,e^{-t})$ con $t\ge0$. Calcular la altura de \eqref{eq:ahr-altura} y compararla con \eqref{eq:ahr-cuspht}.
+\end{ejercicio}
+\paragraph{Solución.} Para $R=\Z[i]$, el mínimo primal es $e^{-2t}$, alcanzado por $(1,0)$; el dual es también $e^{-2t}$, alcanzado por $(0,1)$. Así $h_2(g)=e^{4t}$. Como $W((t,-t))=2t$, la cota de crecimiento es una igualdad con constante uno en este ejemplo. No podría sustituirse en general el exponente $2W$ por $W$.
+
+\begin{ejercicio}[Control uniforme del recuento]
+En un retículo de rango real $D=6$, dar una constante válida para $n_H(16s)/n_H(s)$ utilizando el Lema~\ref{lem:ahr-count}.
+\end{ejercicio}
+\paragraph{Solución.} Basta tomar $M=2\sqrt{16}=8$ y la constante $8^6=262144$. Es deliberadamente gruesa, pero independiente de $s$ y $H$. La partición en clases módulo $M\Lambda$ evita utilizar una estimación dependiente de la forma del elipsoide.
+
+\begin{ejercicio}[El producto de mínimos y las homotecias]
+Para $H\in X_N$ y $u>0$, comprobar que $\mathcal N(uH)=\mathcal N(H)$ y que el producto de los dos mínimos se conserva.
+\end{ejercicio}
+\paragraph{Solución.} El producto de determinantes de $uH$ es $u^{Nr}\prod_w\det H_w$; su potencia $-1/(Nr)$ produce el factor $u^{-1}$ que cancela la homotecia. Los mínimos se multiplican respectivamente por $u$ y $u^{-1}$. La altura y la normalización poseen así la homogeneidad que requiere la construcción de Whitney.
+
+\begin{ejercicio}[El signo de la densidad]
+Para $N=3$, tomar $s=(t,0,-t)$ con $t\ge0$. Calcular $\Phi(s)$, $W(s)$ y la densidad en un lugar complejo.
+\end{ejercicio}
+\paragraph{Solución.} Las diferencias positivas son $t,2t,t$; por tanto $\Phi(s)=4t$ y $W(s)=2t$. La densidad es $e^{-8t}$ y $\Phi(s)=2W(s)$. La altura crece a lo sumo como $e^{4t}$. En general se integra sobre todo el cono, no solo sobre esta recta; en el cono de diferencias positivas los dos coeficientes de $\Phi$ valen $2$ y la comparación $\Phi=2W$ es exacta. Para un lugar complejo, el umbral suficiente de momentos es $A<2$. No debe tomarse la densidad de signo opuesto, pues produciría crecimiento de volumen en la cúspide.
+
+\begin{ejercicio}[El umbral uniforme de Whitney]
+Si el grado de la forma es $m=5$, ¿qué dimensión basta para la integrabilidad de su norma cuadrada? ¿Y para el rango de estabilidad de la Nota 22, si se admite su entrada?
+\end{ejercicio}
+\paragraph{Solución.} El crecimiento es $h_N^5$, la norma cuadrada tiene exponente $A=10$ y \eqref{eq:ahr-mom} permite $N\ge12$. El rango de estabilidad exigido es $N\ge2m+4=14$. Deben cumplirse además $5<r_2(L)$ y el umbral de Hecke, de modo que $N=14$ no es en sí una elección garantizada para el ensamblaje completo.

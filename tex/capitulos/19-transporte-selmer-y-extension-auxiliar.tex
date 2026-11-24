@@ -1,0 +1,448 @@
+\section{Transporte hacia Selmer, condiciones locales y extensión auxiliar}
+\label{sec:transporte-selmer}
+\fuente{A93, Proposición 9.4, (9.13), (9.19)--(9.20), pp.~69--74; cotejo localizado de \texttt{SSha}, \texttt{SLayer} y \texttt{SFinal} en el espejo Lean fijado en \texttt{7cbf7a0c}.}
+
+La Nota 18 obtuvo una cota uniforme en la altura de una capa ciclotómica para los caracteres equivariantes de su grupo de clases. Todavía es necesario trasladarla al núcleo global de localización. Una vez realizado este paso, se debe imponer mediante una extensión auxiliar la desigualdad entre el grado homológico y el número de lugares complejos, junto con la condición sobre las raíces de la unidad. Finalmente se deben incluir los invariantes locales que aparecen en la dualidad.
+
+Desarrollamos esos tres pasos. Para el transporte utilizamos una vía propia por restricción a capas finitas, compatible con el enunciado de \texttt{SSha}; la prueba del código utiliza la restricción a la torre infinita y una extensión posterior de caracteres. La teoría clásica de cuerpos de clases, la teoría local no ramificada, la fórmula de la diferente y la dualidad de Poitou--Tate se reciben como teoremas. La estimación homológica previa no se sustituye por ninguno de ellos.
+
+\subsection{El módulo, los lugares y los dos grupos}
+
+Sea $L$ un cuerpo de números totalmente imaginario, $n=[L:\Q]$, $r=r_2(L)=n/2$, y sea $\ell$ un primo. Supondremos que $L$ contiene $\mu_\ell$ si $\ell$ es impar y $\mu_4$ si $\ell=2$. Fijamos un entero $E\ge1$. Denotamos por $S_L$ el conjunto de lugares finitos por encima de $\ell$ y por $G_{L,S_L}$ el grupo de Galois de la extensión maximal de $L$ no ramificada fuera de $S_L$ y de los lugares infinitos. Puesto que $L$ es totalmente imaginario, no hay lugares reales que requieran modificar la dualidad.
+
+Con el carácter ciclotómico $\chi=\chi_\ell$, definimos el módulo discreto
+\begin{equation}
+ A=\Q_\ell/\Z_\ell(-E),\qquad g\cdot x=\chi(g)^{-E}x.
+ \label{eq:ts-modulo}
+\end{equation}
+El núcleo de localización que se quiere acotar es
+\begin{equation}
+ \operatorname{Sha}_{\ell,E}(L)=\ker\left(H^1(G_{L,S_L},A)\longrightarrow
+ \prod_{v\in S_L}H^1(L_v,A)\right).
+ \label{eq:ts-sha}
+\end{equation}
+Escribimos $s_{\ell,E}(L)$ para su longitud, inicialmente en $\N\cup\{\infty\}$. La notación no designa aquí el Selmer finito de Bloch--Kato; la condición local es la anulación de la clase en toda la cohomología de grado uno de cada lugar indicado. Es la convención de A93, (9.1), y de la Nota 8.
+
+La segunda cantidad es $W_\ell(L,E)=\operatorname{length}_{\Z_\ell}H^2(G_{L,S_L},\Z_\ell(E+1))$. El objetivo no es identificarla sin más con $s_{\ell,E}(L)$, sino demostrar una cota que incluya la corrección local.
+
+\subsection{Profundidad ciclotómica exacta}
+
+Sea $c$ el mayor entero tal que $\mu_{\ell^c}\subset L$. Existe porque el grado de $\Q(\mu_{\ell^j})$ crece con $j$. Tenemos $c\ge1$ y, para $\ell=2$, $c\ge2$. Para $\nu\ge c$ fijamos dentro de una clausura algebraica
+\begin{equation}
+ F_\nu=L(\mu_{\ell^\nu}),\qquad Q=\ell^\nu,\qquad
+ \kappa=1+\ell^c,\qquad a=\kappa^E,\qquad d=\ell^{\nu-c}.
+ \label{eq:ts-capa}
+\end{equation}
+La Nota 18 distinguió el signo del operador torcido: sobre divisores y clases se emplea $\gamma^{-1}-a$. El signo de $A$ es coherente con ese operador, como se comprobará directamente.
+
+\begin{lema}[Imagen del carácter ciclotómico]
+\label{lem:ts-imagen}
+La imagen de $\chi$ sobre $G_{L,S_L}$ es $1+\ell^c\Z_\ell$. Sobre $G_{F_\nu,S_{F_\nu}}$ es $1+\ell^\nu\Z_\ell$. La extensión $F_\nu/L$ es cíclica de grado $d$ y tiene un generador $\gamma_\nu$ que actúa sobre una raíz primitiva $\zeta$ de orden $Q$ por $\gamma_\nu(\zeta)=\zeta^\kappa$.
+\end{lema}
+\begin{proof}
+La imagen es cerrada, por compacidad del grupo de Galois, y está contenida en $1+\ell^c\Z_\ell$. El logaritmo $\ell$-ádico identifica este grupo con $\ell^c\Z_\ell$ bajo las condiciones sobre $c$; las series de logaritmo y exponencial son inversas en esa profundidad. Sus subgrupos cerrados son el trivial y los $\ell^j\Z_\ell$ con $j\ge c$: un subgrupo no trivial contiene un elemento de valoración mínima, y los múltiplos enteros de ese elemento son densos en el ideal que genera. Si la imagen fuese propia, estaría contenida en $1+\ell^{c+1}\Z_\ell$, lo que haría que todas las raíces de orden $\ell^{c+1}$ estuvieran en $L$. Esto contradice la maximalidad de $c$.
+
+La adjunción de raíces de orden potencia de $\ell$ es no ramificada fuera de $\ell$ (se usa la separabilidad residual de $X^{\ell^j}-1$ en las otras características y Hensel, como en la Nota 18). Por ello la imagen no cambia al pasar al cociente $G_{L,S_L}$. El subgrupo que fija $F_\nu$ es el núcleo de la reducción de $\chi$ módulo $Q$, y su imagen es exactamente $1+\ell^\nu\Z_\ell$. El cociente tiene orden $d$. Por el cálculo de valoraciones de la Nota 18, $v_\ell(\kappa^i-1)=c+v_\ell(i)$ para $i\ge1$; por tanto la clase de $\kappa$ módulo $Q$ tiene orden $d$ y genera el cociente. Para $\nu=c$, la extensión es trivial y el generador es la identidad.
+\end{proof}
+
+En particular, $c$ es una propiedad del cuerpo y no una profundidad que se pueda fijar arbitrariamente. El resultado identifica también el grupo de Galois de cada capa con el cociente correspondiente del grupo maximal no ramificado fuera de $\ell$: las extensiones de $F_\nu$ no ramificadas fuera de esos lugares, junto con sus conjugadas sobre $L$, permanecen no ramificadas fuera de $\ell$.
+
+\subsection{Cálculo de los invariantes de una capa}
+
+\begin{proposicion}[Invariantes exactos]
+\label{prop:ts-invariantes}
+Pongamos $v_E=v_\ell(E)$. Si $H_\nu=G_{F_\nu,S_{F_\nu}}\subset G_{L,S_L}$, entonces
+\begin{equation}
+ A^{H_\nu}=A[\ell^{\nu+v_E}].
+ \label{eq:ts-invariantes}
+\end{equation}
+En particular, su orden es $\ell^{\nu+v_E}$ y es cíclico.
+\end{proposicion}
+\begin{proof}
+Por el Lema~\ref{lem:ts-imagen}, las potencias enteras de $1+\ell^\nu$ son densas en la imagen de $H_\nu$. Un elemento de $A$ es fijo si y solo si lo fija ese generador topológico, puesto que su estabilizador es cerrado. Esto equivale a que lo anule $(1+\ell^\nu)^{-E}-1$. La valoración de este número es $\nu+v_E$, por la fórmula de la Nota 18 aplicada a $1+\ell^\nu$; cambiar el exponente positivo por el negativo no altera la valoración, pues el factor adicional es una unidad. El grupo de elementos de $\Q_\ell/\Z_\ell$ anulados por $\ell^j$ es $\ell^{-j}\Z_\ell/\Z_\ell\simeq\Z/\ell^j$. De aquí resulta la afirmación.
+\end{proof}
+
+Obsérvese que el módulo completo $A$ no se vuelve trivial en una capa finita. Sólo se trivializan los elementos de orden acotado. Además, el subgrupo de invariantes puede ser mayor que $A[Q]$ si $\ell$ divide $E$. Conservar esa diferencia es indispensable para calcular el núcleo de la restricción.
+
+\subsection{La cohomología cíclica que controla la restricción}
+
+\begin{lema}[Cohomología de grado uno de un grupo cíclico]
+\label{lem:ts-ciclica}
+Sea $C_d=\langle\tau\rangle$ un grupo cíclico finito que actúa sobre un grupo abeliano $M$. Si $\mathcal N=1+\tau+\cdots+\tau^{d-1}$, se tiene
+\begin{equation}
+ H^1(C_d,M)\simeq\ker\mathcal N/(\tau-1)M.
+ \label{eq:ts-ciclica}
+\end{equation}
+\end{lema}
+\begin{proof}
+Para un cociclo $z$, su valor $x=z(\tau)$ determina $z(\tau^j)=\sum_{i=0}^{j-1}\tau^i x$ por inducción. La relación $\tau^d=1$ impone $\mathcal N x=0$. Recíprocamente, esta condición permite definir el cociclo mediante la misma fórmula para los representantes $0\le j<d$: al sumar dos exponentes que sobrepasan $d$, la suma de un bloque de longitud $d$ se anula. Los cobordes $z(\tau)=\tau m-m$ son exactamente la imagen de $\tau-1$. El cociente da la fórmula, incluso si $d=1$.
+\end{proof}
+
+\begin{proposicion}[Anulación del núcleo ciclotómico]
+\label{prop:ts-nucleo}
+Para toda $\nu\ge c$,
+\begin{equation}
+ H^1(\operatorname{Gal}(F_\nu/L),A^{H_\nu})=0.
+ \label{eq:ts-nucleo}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+El generador $\gamma_\nu$ actúa en $M=A^{H_\nu}$ por el escalar $u=\kappa^{-E}$ (se elige un levantamiento de imagen ciclotómica $\kappa$). Por el lema de valoraciones de la Nota 18,
+\begin{equation}
+ v_\ell(u-1)=c+v_E,\qquad v_\ell(u^d-1)=\nu+v_E.
+ \label{eq:ts-val}
+\end{equation}
+La norma $\mathcal N$ sobre $M$ es la multiplicación por el entero $\ell$-ádico $(u^d-1)/(u-1)$, de valoración $\nu-c$. Como $M=A[\ell^{\nu+v_E}]$, tenemos
+\begin{equation}
+ \ker\mathcal N=A[\ell^{\nu-c}]=(u-1)M.
+ \label{eq:ts-igualdad}
+\end{equation}
+La primera igualdad sigue de la valoración de $\mathcal N$; la segunda, de la multiplicación por $\ell^{c+v_E}$ en el grupo cíclico de orden $\ell^{\nu+v_E}$. Si $\nu=c$, ambos grupos son cero y la norma vale uno. Aplicar el Lema~\ref{lem:ts-ciclica} concluye.
+\end{proof}
+
+La norma del lema es una norma de operadores de cohomología cíclica. No debe confundirse con la norma ponderada de elementos de $F_\nu^\times$ utilizada en la Nota 18, aunque ambas se calculen mediante identidades geométricas.
+
+\subsection{Restricción inyectiva y monotonía de Selmer}
+
+\begin{teorema}[Inyección en las capas finitas]
+\label{thm:ts-restriccion}
+La restricción de cohomología continua
+\begin{equation}
+ H^1(G_{L,S_L},A)\longrightarrow H^1(G_{F_\nu,S_{F_\nu}},A)
+ \label{eq:ts-res}
+\end{equation}
+es inyectiva para toda $\nu\ge c$. Restringe a una inyección de los núcleos de localización; en particular,
+\begin{equation}
+ s_{\ell,E}(L)\le s_{\ell,E}(F_\nu).
+ \label{eq:ts-mono}
+\end{equation}
+La comparación de longitudes se entiende también cuando alguna longitud es infinita.
+\end{teorema}
+\begin{proof}
+Damos el argumento de inflación--restricción en grado uno. Si un cociclo $z:G_{L,S_L}\to A$ se vuelve un coborde en $H_\nu$, restamos de $z$ el coborde global dado por el mismo elemento de $A$. El cociclo resultante $z'$ se anula en $H_\nu$. Para $g\in G_{L,S_L}$ y $h\in H_\nu$, se tiene $z'(gh)=z'(g)$. Como $H_\nu$ es normal, también $z'(hg)=z'(g)$ al escribir $hg=g(g^{-1}hg)$; pero la fórmula de cociclo da $z'(hg)=h\cdot z'(g)$. Así $z'(g)$ pertenece a $A^{H_\nu}$ y $z'$ desciende a un cociclo del cociente $\operatorname{Gal}(F_\nu/L)$ con esos coeficientes. Por la Proposición~\ref{prop:ts-nucleo}, es un coborde. Su inflación es igualmente un coborde, de donde la inyectividad.
+
+La restricción conmuta con la localización a cada lugar por encima de $\ell$. Una clase que se anula en $L_v$ se anula en $F_{\nu,w}$ para cada $w\mid v$. La inyección global induce, por tanto, la inyección entre los dos núcleos. La monotonía de la longitud se aplica a un submódulo, sin presuponer finitud.
+\end{proof}
+
+La prueba utiliza la profundidad exacta de las dos imágenes ciclotómicas y el hecho de que $E$ no es cero. La restricción para una extensión arbitraria de grado divisible por $\ell$ no es necesariamente inyectiva. Tampoco se ha invocado la invertibilidad del grado $d$, que es precisamente una potencia de $\ell$.
+
+\subsection{Un cociclo de orden finito en una capa suficientemente alta}
+
+Un cociclo continuo $z:G_{L,S_L}\to A$ tiene imagen finita: el dominio es compacto y el codominio discreto. Por tanto, existe $j$ tal que todos sus valores pertenecen a $A[\ell^j]$. No afirmamos que el cociclo inicial tome valores en $A[Q]$ para una altura predeterminada; elegimos la altura después del cociclo, o después de una familia finita de ellos.
+
+\begin{proposicion}[Realización por un homomorfismo localmente trivial]
+\label{prop:ts-realizacion}
+Sea $\xi\in\operatorname{Sha}_{\ell,E}(L)$. Existe $\nu_0\ge c$ tal que, para toda $\nu\ge\nu_0$, la restricción de un cociclo que representa $\xi$ a $H_\nu$ es un homomorfismo continuo
+\begin{equation}
+ z_\nu:H_\nu\longrightarrow A[Q]
+ \label{eq:ts-znu}
+\end{equation}
+que se anula en todos los grupos de descomposición de $F_\nu$ por encima de $\ell$. Si $g$ levanta $\gamma_\nu$ y $\chi(g)=\kappa$, entonces
+\begin{equation}
+ z_\nu(g^{-1}hg)=a\,z_\nu(h)\qquad(h\in H_\nu).
+ \label{eq:ts-equiv}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Elijamos un cociclo continuo $z$ que represente $\xi$, y $j$ tal que sus valores estén en $A[\ell^j]$. Por cada uno de los finitos lugares $v\in S_L$, la condición local de $\xi$ permite elegir $t_v\in A$ con $z(h)=h\cdot t_v-t_v$ sobre la imagen de un grupo de Galois local de $L_v$. Aumentamos $j$ para que todos los $t_v$ pertenezcan también a $A[\ell^j]$. Tomamos $\nu_0=\max(c,j)$.
+
+Para $\nu\ge\nu_0$, $H_\nu$ actúa trivialmente en $A[\ell^j]$ por la Proposición~\ref{prop:ts-invariantes}. La fórmula de cociclo restringida a $H_\nu$ es la de un homomorfismo. En el grupo de descomposición correspondiente a la elección de $v$ se anula porque $h\cdot t_v=t_v$.
+
+Para justificar las otras elecciones y el carácter torcido, calculemos para $g\in G_{L,S_L}$ y $h\in H_\nu$:
+\begin{equation}
+ z(ghg^{-1})=g\cdot z(h)+(1-ghg^{-1})\cdot z(g).
+ \label{eq:ts-conj}
+\end{equation}
+La identidad se obtiene de $z(g^{-1})=-g^{-1}\cdot z(g)$ y dos aplicaciones de la fórmula de cociclo. El segundo término es cero porque $ghg^{-1}\in H_\nu$ y $z(g)\in A[\ell^j]$. En particular, la anulación sobre un grupo de descomposición implica la anulación sobre todos sus conjugados. Sustituir $g$ por $g^{-1}$ y usar $\chi(g)=\kappa$ da \eqref{eq:ts-equiv}. El levantamiento existe por el Lema~\ref{lem:ts-imagen}. Finalmente $A[\ell^j]\subset A[Q]$, como se requería.
+\end{proof}
+
+Esta demostración conserva explícitamente los testigos locales de la trivialidad. La reducción de los valores de un cociclo a un módulo finito no asegura por sí sola que la clase local sea un coborde con coeficientes en ese módulo; por ello se eligen primero los $t_v$ y después la capa. En la capa elegida la restricción se anula literalmente, no sólo como clase.
+
+\subsection{Reciprocidad y signo de los caracteres de clase}
+
+Utilizamos el teorema clásico de cuerpos de clases en su forma de Hilbert: el cociente abeliano maximal no ramificado en todos los primos finitos de un cuerpo totalmente imaginario $F$ es finito y la aplicación de Artin lo identifica con $\operatorname{Cl}(F)$. Fijamos la convención de Frobenius aritmético para Artin. Esta identificación es natural con respecto a los automorfismos del cuerpo; en particular conjugación por un levantamiento de $\gamma$ corresponde a la acción de $\gamma$ sobre los ideales. Cambiar simultáneamente a Frobenius geométrico no cambia la condición de equivariancia.
+
+\begin{proposicion}[Del homomorfismo a un carácter equivarante]
+\label{prop:ts-artin}
+En la situación de la Proposición~\ref{prop:ts-realizacion}, $z_\nu$ determina un carácter
+\begin{equation}
+ \varphi_\nu\in X_\nu=\{\varphi:\operatorname{Cl}(F_\nu)\to\Z/Q\text{ hom.}:\
+ \varphi(\gamma_\nu^{-1}D)=a\varphi(D)\}.
+ \label{eq:ts-x}
+\end{equation}
+Dicho carácter, junto con la elección de la identificación $A[Q]\simeq\Z/Q$, determina el homomorfismo restringido. Si dos de estas realizaciones en una misma capa tienen el mismo carácter, las clases originales de Selmer son iguales.
+\end{proposicion}
+\begin{proof}
+Fuera de $\ell$, $H_\nu$ ya es un grupo de Galois no ramificado, por su definición. Por encima de $\ell$ el homomorfismo se anula sobre los grupos de descomposición, y en particular sobre la inercia. Como el objetivo es abeliano, el homomorfismo factoriza a través del grupo de Galois del cuerpo de clases de Hilbert de $F_\nu$. La condición de descomposición es incluso más fuerte que la no ramificación necesaria para esta factorización: no la sustituimos por una condición local más débil en la definición de Selmer.
+
+Identificamos $A[Q]$ aditivamente con $\Z/Q$ mediante $m\bmod Q\mapsto m/Q\bmod\Z_\ell$. La reciprocidad define $\varphi_\nu$ de forma única; su naturalidad y \eqref{eq:ts-equiv} dan el signo $\gamma_\nu^{-1}$ y el escalar $a=\kappa^E$. La aplicación de Artin es sobreyectiva, por lo que la igualdad de caracteres implica la igualdad de los dos homomorfismos restringidos. En particular, sus clases cohomológicas coinciden. La inyectividad de \eqref{eq:ts-res} implica entonces la igualdad de las clases originales.
+\end{proof}
+
+No se ha construido un isomorfismo entre $X_\nu$ y $\operatorname{Sha}_{\ell,E}(L)[Q]$. El grupo de caracteres puede incluir elementos que no provienen de una clase global con las condiciones locales exigidas. La realización anterior depende de representantes y de la elección de la altura. Basta una inyección de conjuntos finitos y no es necesaria una identificación de sistemas de transición.
+
+\subsection{Un mismo nivel para una familia finita}
+
+\begin{teorema}[Transporte uniforme a Selmer]
+\label{thm:ts-ssha}
+Supongamos que existe un entero $B\ge1$ tal que $\#X_\nu\le B$ para toda capa $\nu\ge c$ de \eqref{eq:ts-capa}. Entonces $\operatorname{Sha}_{\ell,E}(L)$ es finito y existe $s\in\N$ tal que
+\begin{equation}
+ s=s_{\ell,E}(L),\qquad
+ \#\operatorname{Sha}_{\ell,E}(L)=\ell^s\le B.
+ \label{eq:ts-ssha}
+\end{equation}
+\end{teorema}
+\begin{proof}
+Sea $T$ un subconjunto finito de clases distintas en $\operatorname{Sha}_{\ell,E}(L)$. Si es vacío no hay nada que probar. Para cada $\xi\in T$, elegimos un cociclo y los testigos locales de la Proposición~\ref{prop:ts-realizacion}. Sea $\nu$ el máximo de sus alturas necesarias y de $c$. Todos admiten entonces, en esa misma capa, la realización de la Proposición~\ref{prop:ts-artin}; empleamos la misma identificación $A[Q]\simeq\Z/Q$ y el mismo generador de Galois. La última afirmación de aquella proposición muestra que la aplicación $T\to X_\nu$ es inyectiva. Así $\#T\le B$.
+
+Si el núcleo de localización tuviese más de $B$ elementos, podríamos escoger $B+1$ elementos distintos, contradiciendo la cota. Es, por tanto, finito. Como es un grupo abeliano $\ell$-primario (cada cociclo tiene valores de orden acotado), su orden es $\ell^s$ y su longitud sobre $\Z_\ell$ es $s$: los factores simples son $\Z/\ell$. Aplicando el mismo conteo al grupo entero obtenemos \eqref{eq:ts-ssha}.
+\end{proof}
+
+Este es el contenido de la entrada \texttt{SSha} que utiliza la Nota 15. La prueba formal cotejada obtiene el control mediante la torre infinita; nuestra vía finita utiliza la Proposición~\ref{prop:ts-nucleo}, que elimina el núcleo de la restricción ya en cada capa. Ambas requieren la hipótesis $E\ge1$. La cota $B$ es uniforme; una cota que creciera con $\nu$ no permitiría la conclusión.
+
+\subsection{Aplicación de la comparación de la Nota 18}
+
+Supongamos de momento que $2E+1<\ell^c$ y $2E+1<r$. Sea
+\begin{equation}
+ N=4E+6,\quad B_E=2E+(2E+1)(c+2E+1),\quad
+ g_L=2n+\lfloor\log_2 h_L\rfloor+2,
+ \label{eq:ts-param}
+\end{equation}
+donde $h_L=\#\operatorname{Cl}(L)$ y $T_{N,j}(L)$ es el orden de la torsión integral de $H_j(\operatorname{GL}_N(\mathcal O_L),\Z)$. Recibimos de las Notas 15, 17 y 18, bajo las entradas de evaluación y rango allí indicadas, el resultado para cada capa:
+\begin{equation}
+ \#X_\nu\le T_{N,2E+1}(L)T_{N,2E}(L)
+ \ell^{(B_E+v_E)g_L+c+v_E}.
+ \label{eq:ts-clases}
+\end{equation}
+La Nota 18 justificó la comparación aritmética que interviene en esta cota. La producción del conteo de evaluaciones sigue dependiendo de las entradas homológicas y de las familias de evaluación de la Nota 17. Por el Teorema~\ref{thm:ts-ssha} el mismo miembro derecho acota $\ell^{s_{\ell,E}(L)}$. El refinamiento del exponente de separación de la Nota 18 también se transporta si se verifican sus hipótesis.
+
+El resultado tiene aún dos desigualdades de rango y raíces que pueden fallar en un cuerpo pequeño. La siguiente construcción las impone usando solamente una capa de la torre ya estudiada, de modo que la inyección de Selmer se conserva.
+
+\subsection{Una extensión auxiliar de grado controlado}
+
+\begin{proposicion}[Elección explícita de la capa auxiliar]
+\label{prop:ts-extension}
+Sea $m$ el menor entero no negativo tal que $\ell^m\ge4E+4$ y pongamos
+\begin{equation}
+ L'=F_{c+m},\quad d'=\ell^m,\quad c'=c+m,\quad n'=[L':\Q]=d'n.
+ \label{eq:ts-aux}
+\end{equation}
+Entonces $L'$ es totalmente imaginario, contiene $\mu_{\ell^{c'}}$ pero no $\mu_{\ell^{c'+1}}$, y
+\begin{align}
+ 2E+1&<\ell^{c'}, & 2E+1&<r_2(L'),\label{eq:ts-rango}\\
+ d'&\le(n+1)(4E+4), & \ell^{c'}&\le2n'.\label{eq:ts-grado}
+\end{align}
+Además $s_{\ell,E}(L)\le s_{\ell,E}(L')$.
+\end{proposicion}
+\begin{proof}
+El Lema~\ref{lem:ts-imagen} da tanto el grado como la profundidad exacta $c'$: la imagen ciclotómica en $L'$ es $1+\ell^{c'}\Z_\ell$. Como $L$ es totalmente imaginario, también lo es $L'$, con $r_2(L')=n'/2=d'n/2\ge d'$. Por la elección de $m$, $d'\ge4E+4>2E+1$; también $\ell^{c'}\ge d'$. Esto demuestra \eqref{eq:ts-rango}.
+
+Como $4E+4>1$, se tiene $m\ge1$. Su minimalidad implica $\ell^{m-1}<4E+4$ y de aquí $d'<\ell(4E+4)$. Para $\ell$ impar, $\Q(\mu_\ell)\subset L$ da $\ell-1\le n$; para $\ell=2$ también $\ell\le n+1$. Obtenemos la primera cota de \eqref{eq:ts-grado}. Por otra parte, $\Q(\mu_{\ell^{c'}})\subset L'$ implica $\ell^{c'}(1-1/\ell)=\phi(\ell^{c'})\le n'$, y por ello $\ell^{c'}\le2n'$. La última desigualdad de longitudes es el Teorema~\ref{thm:ts-restriccion}, aplicado a $\nu=c+m$.
+\end{proof}
+
+La extensión se elige antes de contar las capas de $L'$. Su grado depende de $E$, $\ell$ y del grado original, no de la altura posterior $\nu$. El mecanismo de comparación no es la restricción-corestricción dividiendo por $d'$: aquí esa división no sería integral.
+
+\subsection{El discriminante de una extensión ciclotómica}
+
+\begin{lema}[Cota por la diferente]
+\label{lem:ts-discriminante}
+Sea $K'/K$ una extensión de cuerpos de números generada por una raíz primitiva $\zeta$ de orden $w\ge1$. Escribamos $D_K=|\operatorname{disc}K|$ y $D_{K'}=|\operatorname{disc}K'|$. Entonces
+\begin{equation}
+ D_{K'}\le D_K^{[K':K]}w^{[K':\Q]}.
+ \label{eq:ts-disc}
+\end{equation}
+\end{lema}
+\begin{proof}
+Sea $f$ el polinomio mínimo de $\zeta$ sobre $K$. Sus coeficientes son enteros sobre $\mathcal O_K$ y pertenecen a $K$, luego están en $\mathcal O_K$ porque este anillo es íntegramente cerrado. La división por el polinomio mónico $f$ da $X^w-1=f(X)g(X)$ con $g\in\mathcal O_K[X]$. Derivando y evaluando en $\zeta$ obtenemos
+\begin{equation}
+ w=\zeta f'(\zeta)g(\zeta).
+ \label{eq:ts-derivada}
+\end{equation}
+Por la fórmula clásica de la diferente, $f'(\zeta)\in\mathfrak D_{K'/K}$. Esta inclusión no requiere que $\mathcal O_{K'}=\mathcal O_K[\zeta]$: localmente la codiferente del orden monógeno es $f'(\zeta)^{-1}\mathcal O_K[\zeta]$; la codiferente del anillo maximal está contenida en ella. Esto implica la inclusión citada al usar la inversa de la diferente. La ecuación \eqref{eq:ts-derivada} muestra $w\mathcal O_{K'}\subset\mathfrak D_{K'/K}$. En consecuencia la norma absoluta de la diferente divide $w^{[K':\Q]}$. La fórmula de discriminantes en una torre, $D_{K'}=D_K^{[K':K]}N_{K'/\Q}(\mathfrak D_{K'/K})$, prueba \eqref{eq:ts-disc}.
+\end{proof}
+
+Con $K=L$, $K'=L'$ y $w=\ell^{c'}$, resulta
+\begin{equation}
+ D'=|\operatorname{disc}L'|\le D^{d'}(\ell^{c'})^{n'},\qquad D=|\operatorname{disc}L|.
+ \label{eq:ts-discaux}
+\end{equation}
+La potencia $w^{n'}$ es una reserva para la ramificación. No se puede suprimir tomando simplemente el discriminante de $L$ en la estimación de torsión del cuerpo auxiliar. Las ecuaciones \eqref{eq:ts-rango}, \eqref{eq:ts-grado}, \eqref{eq:ts-discaux} y \eqref{eq:ts-mono} reconstruyen la entrada \texttt{SLayer} de A93.
+
+\subsection{El dual de Tate y el término que no se puede omitir}
+
+Sea $T=\Z_\ell(E+1)$, con la topología compacta usual. Su dual de Tate es
+\begin{equation}
+ T^*(1)=\operatorname{Hom}_{\Z_\ell}(T,\Q_\ell/\Z_\ell)(1)
+       =\Q_\ell/\Z_\ell(-E)=A.
+ \label{eq:ts-dual}
+\end{equation}
+El giro adicional por $1$ procede del emparejamiento de Tate. No se debe reemplazar $T$ por $\Z_\ell(E)$ sin cambiar el problema.
+
+\begin{proposicion}[Corrección de dualidad]
+\label{prop:ts-dualidad}
+Bajo la dualidad clásica de Poitou--Tate y las comparaciones entre coeficientes compactos y discretos, para $L$ totalmente imaginario, si $\operatorname{Sha}_{\ell,E}(L)$ es finito, entonces
+\begin{equation}
+ W_\ell(L,E)=s_{\ell,E}(L)+\sum_{v\in S_L}\operatorname{length} A^{G_{L_v}}
+                                  -\operatorname{length} A^{G_{L,S_L}},
+ \label{eq:ts-correccion}
+\end{equation}
+si los invariantes locales son finitos. En particular, $H^2(G_{L,S_L},T)$ es finito.
+\end{proposicion}
+\begin{proof}
+La parte pertinente de la sucesión de Poitou--Tate, escrita con el dual de Pontryagin $(\ )^\vee$, es
+\[
+ \begin{gathered}
+ H^0(G_{L,S_L},A)\longrightarrow\bigoplus_{v\in S_L}H^0(L_v,A)
+ \longrightarrow H^2(G_{L,S_L},T)^\vee\\
+ \longrightarrow H^1(G_{L,S_L},A)\longrightarrow
+ \bigoplus_{v\in S_L}H^1(L_v,A).
+ \end{gathered}
+\]
+Aquí se recibe el teorema de dualidad en su forma límite, con la finitud local clásica y la exactitud correspondiente; no se infiere de la dualidad para un solo cociente finito sin pasar a límites. El conjunto $S_L$ no es vacío. La primera flecha es inyectiva, porque un invariante global se localiza como el mismo elemento del módulo en cada lugar. Por exactitud, el cociente de los invariantes locales por los globales se inyecta en $H^2(G_{L,S_L},T)^\vee$ y su conúcleo es exactamente $\operatorname{Sha}_{\ell,E}(L)$. Los dos extremos son finitos por hipótesis; por tanto, el término intermedio es finito. La dualidad de Pontryagin conserva el orden de los grupos finitos y recupera el grupo compacto. La aditividad de longitud da \eqref{eq:ts-correccion}.
+\end{proof}
+
+No se necesita que los invariantes locales coincidan con los invariantes de un grupo global. La desigualdad que se utilizará es la que se obtiene descartando únicamente la resta global. La longitud de cada invariante local será controlada por el grado local.
+
+\subsection{Control de los invariantes locales, incluido el primo dos}
+
+\begin{proposicion}[Corrección local uniforme]
+\label{prop:ts-local}
+Para $v\in S_L$, sea $n_v=[L_v:\Q_\ell]$. Entonces
+\begin{equation}
+ \operatorname{length} A^{G_{L_v}}\le 2+\lfloor\log_\ell n_v\rfloor+v_E.
+ \label{eq:ts-local}
+\end{equation}
+Por consiguiente, si $s_{\ell,E}(L)$ es finito,
+\begin{equation}
+ 0\le W_\ell(L,E)-s_{\ell,E}(L)
+ \le n(2+\lfloor\log_\ell n\rfloor+v_E).
+ \label{eq:ts-localtotal}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+El carácter ciclotómico local sobre $G_{\Q_\ell}$ tiene imagen $\Z_\ell^\times$: las extensiones ciclotómicas de $\Q_\ell$ tienen sus grados completos, como se sigue de la irreducibilidad local del polinomio ciclotómico de orden potencia de $\ell$ (tras la traslación de la variable por uno se aplica Eisenstein). La imagen $U$ de $G_{L_v}$ tiene índice $h\le n_v$: la aplicación a cocientes de conjuntos de clases laterales es sobreyectiva, pues el índice de $G_{L_v}$ en $G_{\Q_\ell}$ es $n_v$. Como $\Z_\ell^\times$ es abeliano, todo elemento elevado a $h$ pertenece a $U$.
+
+En particular, $(1+\ell^2)^h\in U$. Un elemento fijo de $A$ está anulado por
+$ (1+\ell^2)^{-hE}-1$, cuya valoración es $2+v_\ell(h)+v_E$ por el cálculo de la Nota 18. La profundidad dos permite emplear exactamente el mismo argumento cuando $\ell=2$. El grupo de elementos de $A$ anulados por ese escalar tiene longitud $2+v_\ell(h)+v_E$. Puesto que $\ell^{v_\ell(h)}\le h\le n_v$, resulta \eqref{eq:ts-local}.
+
+Hay a lo sumo $n$ lugares sobre $\ell$, y cada $n_v\le n$ (de hecho $\sum_v n_v=n$). La Proposición~\ref{prop:ts-dualidad} da \eqref{eq:ts-localtotal}, incluyendo la finitud de $W_\ell(L,E)$. La desigualdad inferior es la longitud de un cociente de invariantes locales, no una afirmación de signo sobre una diferencia arbitraria.
+\end{proof}
+
+A93, (9.20), utiliza $E$ en lugar de $v_E$. Puesto que $v_E\le E$ para $E\ge1$, nuestra cota implica la suya. Esta pequeña mejora no es necesaria para el exponente global. El lema \texttt{sf\_nu} de \texttt{SFinal.lean} conserva primero la valoración de $E$ y la del índice, antes de pasar a la forma gruesa.
+
+\subsection{Cerrar la deducción cuantitativa de la capa fija}
+
+\begin{teorema}[Cota de la capa fija tras el transporte]
+\label{thm:ts-lemmaK}
+Supongamos que las entradas homológicas y de evaluación de las Notas 15 y 17 producen la cota \eqref{eq:ts-clases} en todo cuerpo y capa requeridos, y que la cota integral de torsión de la Nota 16 está disponible con exponente absoluto $C_T\ge1$:
+\begin{equation}
+ \log T_{4E+6,j}(K)\le
+ \exp\bigl((2E[K:\Q])^{C_T}\log(2|\operatorname{disc}K|)\bigr),
+ \quad j=2E,2E+1.
+ \label{eq:ts-tors}
+\end{equation}
+Bajo las entradas clásicas de reciprocidad y dualidad anteriores, para todo $L$ y $E$ de \eqref{eq:ts-modulo} se tiene finitud y
+\begin{equation}
+ \log\#H^2(G_{L,S_L},\Z_\ell(E+1))
+ \le\exp\bigl((2En)^{C_K}\log(2D)\bigr),\qquad
+ C_K=\max(5C_T+9,29)+2.
+ \label{eq:ts-final}
+\end{equation}
+En particular, con $C_T=20$ de la Nota 16 puede tomarse $C_K=111$, bajo esas entradas restantes.
+\end{teorema}
+\begin{proof}
+Elegimos $L'$ por la Proposición~\ref{prop:ts-extension}; esta elección impone los dos umbrales de \eqref{eq:ts-rango}, de modo que \eqref{eq:ts-clases} se aplica a todas sus capas. El Teorema~\ref{thm:ts-ssha} y la inyección de la Proposición~\ref{prop:ts-extension} dan la cota finita
+\[
+ \begin{aligned}
+ s_{\ell,E}(L)\log\ell&\le s_{\ell,E}(L')\log\ell\\
+ &\le\log T_{4E+6,2E+1}(L')+\log T_{4E+6,2E}(L')\\
+ &\quad+\bigl((B'_E+v_E)g_{L'}+c'+v_E\bigr)\log\ell,
+ \end{aligned}
+\]
+con $B'_E=2E+(2E+1)(c'+2E+1)$. El miembro derecho es independiente de la altura de las capas de $L'$. Sólo queda controlar la dependencia de los datos del cuerpo auxiliar. Repetimos los presupuestos de la Nota 15 para explicitar que ahora sus entradas aritméticas se han construido.
+
+Pongamos $u=2En\ge4$ (pues $L$ es totalmente imaginario y $n\ge2$), $Y=\log(2D)>1/2$ y $Y'=\log(2D')$. Por \eqref{eq:ts-grado}, $d'\le8u$, $n'\le4u^2$, $2En'\le u^5$ y $\ell^{c'}\le u^5$. La última se sigue de $2n'\le8u^2\le u^5$. Por \eqref{eq:ts-discaux},
+\[
+ \begin{aligned}
+ Y'&\le Y+d'\log D+n'\log(\ell^{c'})\\
+ &\le(1+8u)Y+20u^2\log u\\
+ &\le64u^3Y\le u^9Y.
+ \end{aligned}
+\]
+En la penúltima desigualdad usamos $\log u\le u$ y $Y>1/2$; en la última $u^6\ge64$. Así cada logaritmo de torsión en \eqref{eq:ts-tors}, para $K=L'$, es a lo sumo $\exp(u^{5C_T+9}Y)$.
+
+La cota de clases de la Nota 15, obtenida por Minkowski y conteo de ideales, da $\log h_{L'}\le2(n')^2Y'\le32u^{13}Y$. Como $1/\log2<2$, resulta
+\[
+ g_{L'}\le8u^2+2+64u^{13}Y\le81u^{13}Y\le u^{20}Y.
+\]
+Además $c'\log\ell\le5\log u$, $\log\ell\le5\log u$ y $v_E\log\ell\le\log E\le\log u$. Dado $2E\le u$ y $2E+1\le2u$,
+\[
+ \begin{aligned}
+ (B'_E+v_E)\log\ell&\le(20u^2+15u+1)\log u\le u^8,\\
+ (c'+v_E)\log\ell&\le6\log u\le u^4.
+ \end{aligned}
+\]
+Por tanto el resto de clases es $\le u^{28}Y+u^4\le u^{29}Y$. El último paso utiliza $u^{28}(u-1)Y\ge u^4$. Obtenemos
+\begin{equation}
+ s_{\ell,E}(L)\log\ell\le2\exp(u^{5C_T+9}Y)+u^{29}Y.
+ \label{eq:ts-sha-bound}
+\end{equation}
+
+Por la Proposición~\ref{prop:ts-local}, la longitud de $H^2$ es finita. Multiplicar \eqref{eq:ts-localtotal} por $\log\ell$ da una corrección a lo sumo $n(2\log\ell+\log n+\log E)$. Como $\ell\le n+1\le u$ y $n\le u/2$, la corrección es $\le2u\log u\le u^4Y$. Sumándola a \eqref{eq:ts-sha-bound} y poniendo $b_0=\max(5C_T+9,29)$, $P=u^{b_0}Y$, obtenemos $W_\ell(L,E)\log\ell\le2e^P+2P$. Tenemos $P\ge1$ y $u\ge4$, de modo que
+\[
+ 2e^P+2P\le4e^P\le e^{4P}\le\exp(u^{b_0+2}Y).
+\]
+La identidad entre cardinalidad y longitud para módulos finitos sobre $\Z_\ell$ concluye \eqref{eq:ts-final}. Sustituir $20$ en la fórmula da $\max(109,29)+2=111$.
+\end{proof}
+
+La constante se fija antes de variar los campos y las capas. No se afirma que $111$ sea el menor exponente posible ni que coincida con la constante construida por el código: \texttt{sNum} realiza otra absorción, y \texttt{sFinal} la incrementa al introducir los invariantes locales. Nuestra deducción conserva el presupuesto ya demostrado en la Nota 15.
+
+\subsection{Cotejo localizado y balance de dependencias}
+
+El enunciado \texttt{SSha} de \texttt{LemmaKOfSteps.lean} cuantifica sobre todas las capas con la raíz y el generador especificados. En \texttt{OrderOfOneAddPrimePowZmodPrimePow.lean}, \texttt{LayEx\_holds} construye esas capas, \texttt{ClInj\_holds} traduce los caracteres equivariantes de clase a \texttt{EqHom} conservando el inverso de Galois, y \texttt{ShaAsm\_holds} elige una altura común para conjuntos finitos de caracteres obtenidos por restricción a la torre infinita. \texttt{sSha} ensambla las tres pruebas. La vía finita de esta nota reemplaza ese mecanismo de restricción por el cálculo explícito del grupo cíclico de cohomología; no se atribuye al código la demostración de \eqref{eq:ts-nucleo}.
+
+En \texttt{SLayerCut.lean}, \texttt{goal\_of} elige $m=\lceil\log_\ell(4E+4)\rceil$, \texttt{disc\_cyc} usa el ideal diferente, y \texttt{sha\_le} compara longitudes mediante conúcleos de endomorfismos en la torre. \texttt{FinSLayer.lean} expone este resultado bajo el nombre \texttt{SLayer}. Nuestra prueba de monotonía se hace en el propio $H^1$, por la inyección finita. \texttt{SFinal.lean} utiliza \texttt{sf\_card}, \texttt{sf\_nu}, \texttt{sf\_loc} y \texttt{sFinal}; conserva como argumentos las entradas de Poitou--Tate, finitud y dualidad local. \texttt{LemmaKOfLitN.lean} las recibe explícitamente en \texttt{lemmaK}. No hemos ejecutado Lean ni auditado las dependencias transitivas de esos resultados.
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}p{.31\textwidth}Y@{}}
+\toprule
+Entrada de la Nota 15 & Desarrollo en las Notas 16--24\\\midrule
+Torsión en todos los primos & Nota 16: deducción desde retracto de Ash y bases acotadas.\\
+Rango filtrado y estabilidad & Nota~\ref{sec:rango-homologico-ciclos}: deducción; proveedores en Notas~\ref{sec:detectores-reales}--\ref{sec:estabilidad-integral}.\\
+Ciclos y evaluación & Nota~\ref{sec:rango-homologico-ciclos}: realización; Nota~\ref{sec:evaluaciones-finitas}: evaluaciones normalizadas.\\
+Clases y unidades & Nota 18: comparación demostrada desde los resultados clásicos especificados.\\
+Transporte a Selmer & Teorema~\ref{thm:ts-ssha}: deducción desde reciprocidad y la cota uniforme de clases.\\
+Extensión auxiliar & Proposición~\ref{prop:ts-extension} y Lema~\ref{lem:ts-discriminante}: deducción ciclotómica.\\
+Dualidad y absorción & Proposiciones~\ref{prop:ts-dualidad}--\ref{prop:ts-local} y Teorema~\ref{thm:ts-lemmaK}, desde dualidad clásica y entradas anteriores.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+El cierre es el de las deducciones de capa fija bajo las entradas indicadas. Las Notas~\ref{sec:evaluaciones-finitas}--\ref{sec:estabilidad-integral} desarrollan los proveedores homológicos. Siguen separados los controles de generadores en familias variables de la Nota 14 y la comparación integral theta de las Notas 12--13. La cota de capa fija por sí sola no produce la ventana común de sumas aritméticas.
+
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}[Un torcido divisible por el primo]
+Sea $\ell=3$, $c=1$, $\nu=3$ y $E=3$. Calcular el orden de $M=A^{H_\nu}$, las valoraciones de $u-1$ y de la norma cíclica, y el grupo $H^1(\operatorname{Gal}(F_\nu/L),M)$.
+\end{ejercicio}
+\paragraph{Solución.} Tenemos $v_E=1$, $d=9$, $M=A[3^4]$ de orden 81. El escalar $u=4^{-3}$ tiene $v_3(u-1)=2$. El de la norma tiene valoración $\nu-c=2$. Tanto el núcleo de la norma como la imagen de $u-1$ son $A[9]$, de orden nueve. Su cociente es cero. Si hubiéramos reemplazado $M$ por $A[27]$, la imagen tendría orden tres y el núcleo nueve; ese cálculo incorrecto produciría una obstrucción espuria.
+
+\begin{ejercicio}[El signo del torcido]
+Para $\ell=5$, $c=1$, $\nu=2$, $E=1$, calcular el escalar que relaciona $\varphi(\gamma^{-1}D)$ con $\varphi(D)$ y el que relaciona $\varphi(\gamma D)$ con $\varphi(D)$.
+\end{ejercicio}
+\paragraph{Solución.} $Q=25$ y $\kappa=6$. Sobre $A[Q]$ el levantamiento de $\gamma$ actúa por $6^{-1}\equiv21\pmod{25}$. La ecuación de cociclo y la reciprocidad dan $\varphi(\gamma D)=21\varphi(D)$ y $\varphi(\gamma^{-1}D)=6\varphi(D)$. Son condiciones equivalentes, pero intercambiar el signo sin invertir el escalar cambia la condición de equivariancia.
+
+\begin{ejercicio}[Elección de una capa auxiliar diádica]
+Tomar $L=\Q(i)$, $\ell=2$, $E=1$. Determinar $c$, $m$, $d'$, $n'$, $r_2(L')$ y $\ell^{c'}$. Comprobar los umbrales y las cotas de \eqref{eq:ts-grado}.
+\end{ejercicio}
+\paragraph{Solución.} $c=2$, porque $L$ contiene las raíces cuartas y no las octavas. El menor $m$ con $2^m\ge8$ es $3$. Así $L'=\Q(\mu_{32})$, $c'=5$, $d'=8$, $n'=16$, $r_2(L')=8$ y $\ell^{c'}=32$. Se cumplen $3<8$, $3<32$, $8\le(2+1)8=24$ y $32\le2\cdot16=32$. El discriminante está acotado por $4^8\,32^{16}$; la estimación admite la ramificación adicional y no exige que el grado auxiliar sea primo con dos.
+
+\begin{ejercicio}[No basta una restricción arbitraria]
+Considerar el grupo cíclico $C_\ell$ actuando trivialmente sobre $A=\Q_\ell/\Z_\ell$. Calcular $H^1(C_\ell,A)$ y explicar la diferencia con la Proposición~\ref{prop:ts-nucleo}.
+\end{ejercicio}
+\paragraph{Solución.} Con la acción trivial, $\tau-1=0$ y $\mathcal N=\ell$. El grupo de cohomología es $A[\ell]\simeq\Z/\ell$, que no es cero. Una clase de este tipo se anula al restringirla al subgrupo trivial. En el cálculo ciclotómico con $E\ge1$, la imagen de $u-1$ coincide exactamente con el núcleo de la norma. El torcido no trivial y la profundidad precisa de los invariantes son lo que elimina esa obstrucción.
+
+\begin{ejercicio}[La corrección local y el orden de $H^2$]
+Supongamos $\ell=3$, $s_{3,E}(L)=4$, dos lugares sobre $3$ con invariantes locales de longitudes $2$ y $3$, e invariantes globales de longitud $2$. Calcular $W_3(L,E)$ y el orden del grupo de segundo grado bajo la sucesión de dualidad de la nota.
+\end{ejercicio}
+\paragraph{Solución.} Por \eqref{eq:ts-correccion}, $W_3=4+2+3-2=7$. El orden es $3^7=2187$, mientras que el núcleo de localización tiene orden $3^4=81$. El cociente de invariantes locales por los globales tiene longitud tres y orden 27. La finitud de Selmer es necesaria en el argumento, pero su orden no es por sí solo el de $H^2$.
+
+\paragraph{Continuidad.} El Teorema~\ref{thm:ev-theta} desarrolla las evaluaciones normalizadas usadas aquí, y la Proposición~\ref{prop:ehi-bodd} ensambla el rango impar. La constante $C_K=111$ pertenece a esta ruta de deducción y conserva sus hipótesis clásicas; no es una certificación de la constante que construye Lean.

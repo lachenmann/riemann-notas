@@ -1,10 +1,14 @@
 \documentclass[11pt,a4paper]{article}
 \input{tex/preambulo}
+\usepackage{needspace}
+\makeatletter
+\pretocmd{\l@section}{\Needspace{4\baselineskip}}{}{\PackageError{notas}{No se pudo ajustar el indice}{}}
+\makeatother
 
 \title{\textbf{Hipótesis de Riemann}\\[0.35em]
   \Large Notas de estudio}
 \author{Alevi Peña}
-\date{23 de noviembre de 2026}
+\date{24 de noviembre de 2026}
 
 \begin{document}
 \maketitle
@@ -59,7 +63,17 @@ La Nota~\ref{sec:torsion-integral} desarrolla la cota de torsión
 en todos los primos mediante determinantes, una cubierta de
 congruencia y el descenso integral de índice finito.
 
+Las Notas~\ref{sec:rango-homologico-ciclos}--\ref{sec:estabilidad-integral}
+reconstruyen los proveedores de la estimación de capa fija: ciclos,
+clases y unidades, transporte a Selmer, evaluaciones, rango, Hecke,
+alturas y estabilidad. Conservan las entradas clásicas y los límites
+del cotejo; no certifican la propuesta de demostración.
+
+\clearpage
+\begingroup
+\small
 \tableofcontents
+\endgroup
 \clearpage
 
 \setcounter{section}{-1}
@@ -93,10 +107,25 @@ congruencia y el descenso integral de índice finito.
 \clearpage
 \input{tex/capitulos/14-finitud-y-control-uniforme}
 \clearpage
-\addtocontents{toc}{\protect\newpage}
 \input{tex/capitulos/15-cota-cuantitativa-de-la-capa-fija}
 \clearpage
 \input{tex/capitulos/16-torsion-integral-complejos-y-determinantes}
+\clearpage
+\input{tex/capitulos/17-rango-homologico-estabilidad-y-ciclos}
+\clearpage
+\input{tex/capitulos/18-clases-unidades-y-cancelacion}
+\clearpage
+\input{tex/capitulos/19-transporte-selmer-y-extension-auxiliar}
+\clearpage
+\input{tex/capitulos/20-cohomologia-finita-y-evaluaciones-normalizadas}
+\clearpage
+\input{tex/capitulos/21-detectores-reales-y-separacion-por-pesos}
+\clearpage
+\input{tex/capitulos/22-sobreyectividad-y-operadores-de-hecke}
+\clearpage
+\input{tex/capitulos/23-alturas-particiones-y-reduccion-aritmetica}
+\clearpage
+\input{tex/capitulos/24-estabilidad-homologica-integral}
 \clearpage
 \input{tex/referencias}
 \end{document}

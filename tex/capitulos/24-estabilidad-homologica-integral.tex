@@ -1,0 +1,465 @@
+\section{Estabilidad homológica integral sobre dominios de Dedekind}
+\label{sec:estabilidad-integral}
+\fuente{A93, Proposición 9.4, p.~68; van der Kallen, 1980; Randal-Williams y Wahl, §5.3; espejo Lean fijado en \texttt{7cbf7a0c}, cadena \texttt{KStability}, \texttt{SStab}, \texttt{BStarOdd}, \texttt{BOdd}.}
+
+Las Notas 17 y 21--23 necesitan la estabilidad de la homología integral de los grupos lineales. En el argumento de rango se emplea su cambio a coeficientes reales; en la cuenta de caracteres se necesita, además, conservar la torsión. En esta nota desarrollamos el mecanismo que da el umbral $N\ge 2m+4$ y reintegramos ambas consecuencias. No utilizaremos la validez de la hipótesis de Riemann, ni una fórmula de rango de la teoría $K$ racional, para justificar la estabilidad.
+
+La entrada topológica clásica será la conectividad del complejo ordenado de sucesiones unimodulares de van der Kallen. Se enuncia con precisión en el §24.3. A partir de ella se demuestra la exactitud del complejo de pares escindidos, mediante eliminación de prefijos y un doble complejo, y después la estabilidad por el argumento de Quillen. Como control independiente, el Teorema 5.11 de Randal-Williams y Wahl da directamente el mismo rango de isomorfismos. No se pretende demostrar desde sus primeros principios la conectividad unimodular de van der Kallen, el lema de Shapiro, el teorema de Steinitz ni la teoría general de sucesiones espectrales. Este límite no constituye una nueva hipótesis de la propuesta de Riemann: son resultados matemáticos clásicos identificados.
+
+\subsection{Rango estable de Bass y el resultado buscado}
+
+Sea $R$ un dominio de Dedekind (se incluye el caso de un cuerpo si se adopta esa convención). Escribimos $G_n=\operatorname{GL}_n(R)$, con $G_0=\{1\}$. Una columna $(a_1,\ldots,a_{n+1})$ es unimodular si sus entradas generan el ideal unidad. La condición $\operatorname{sr}(R)\le s$ que utilizamos significa que, si $n\ge s$ y la columna es unimodular, existen $t_1,\ldots,t_n\in R$ tales que
+\begin{equation}
+ (a_1+t_1a_{n+1},\ldots,a_n+t_na_{n+1})\quad\text{es unimodular}.
+ \label{eq:ehi-sr}
+\end{equation}
+La convención coincide con \texttt{StableRangeLe R s}: el número $s$ se refiere a la longitud \emph{después} de acortar la columna.
+
+\begin{proposicion}[Rango estable de un dominio de Dedekind]
+\label{prop:ehi-sr}
+Se cumple $\operatorname{sr}(R)\le2$.
+\end{proposicion}
+\begin{proof}
+Una columna es unimodular si y solo si no está contenida en ningún ideal maximal. Sea $n\ge2$ y supongamos que $(a_1,\ldots,a_n,b)$ es unimodular. Si todos los $a_i$ son nulos, $b$ es una unidad y basta tomar $t_i=1$.
+
+En otro caso elegimos $j$ con $a_j\ne0$ y $k\ne j$. Solo un número finito de maximales contiene $a_j$: en un dominio de Dedekind no corporal son los divisores primos del ideal principal $(a_j)$; si $a_j$ es unidad no hay ninguno. Por el teorema chino del resto elegimos $t\in R$ con
+\[
+ t\equiv\begin{cases}1\pmod{\mathfrak p},&a_k\in\mathfrak p,\\
+ 0\pmod{\mathfrak p},&a_k\notin\mathfrak p,
+ \end{cases}\quad(\mathfrak p\ni a_j).
+\]
+Sustituimos solo $a_k$ por $a_k+tb$. Si todas las nuevas entradas pertenecieran a un maximal $\mathfrak p$, entonces $a_j\in\mathfrak p$. Si $a_k\notin\mathfrak p$, la congruencia $t\equiv0$ produce una contradicción. Si $a_k\in\mathfrak p$, la congruencia $t\equiv1$ fuerza $b\in\mathfrak p$. Todas las entradas originales pertenecerían entonces a $\mathfrak p$, otra contradicción. Se obtiene \eqref{eq:ehi-sr}.
+\end{proof}
+
+En particular no se necesita que $R$ sea principal o euclidiano. Esta precisión es importante: los anillos de enteros de las capas ciclotómicas auxiliares no tienen por qué ser principales. La prueba corresponde a \texttt{dedekindSR}, que realiza el mismo argumento mediante un indicador de congruencias.
+
+\subsection{Pares escindidos y acción del grupo lineal}
+
+Un par $(v,f)$ consta de $v\in R^N$ y $f\in (R^N)^*=\operatorname{Hom}_R(R^N,R)$, con $f(v)=1$. Una sucesión escindida de longitud $p$ es
+\begin{equation}
+ \sigma=((v_1,f_1),\ldots,(v_p,f_p)),\qquad f_i(v_j)=\delta_{ij}.
+ \label{eq:ehi-pairs}
+\end{equation}
+El conjunto de tales sucesiones se denota $X_N(p)$. Se incluye $X_N(0)=\{()\}$. Las sucesiones se mantienen ordenadas; no se identifican las permutaciones por su signo. El grupo $G_N$ actúa por $g(v,f)=(gv,f\circ g^{-1})$, preservando \eqref{eq:ehi-pairs}. Para una sucesión, sean $V:R^p\to R^N$ y $F:R^N\to R^p$ los mapas con columnas $v_i$ y filas $f_i$. Tenemos $FV=1$ y
+\begin{equation}
+ R^N=V(R^p)\oplus\ker F.
+ \label{eq:ehi-split}
+\end{equation}
+
+\begin{lema}[Complementos y estabilizadores]
+\label{lem:ehi-stab}
+Toda sucesión de longitud $p\le N$ pertenece a la órbita de la sucesión estándar de los últimos $p$ pares coordenados. Su estabilizador puntual es la copia de $G_{N-p}$ que actúa en las primeras $N-p$ coordenadas.
+\end{lema}
+\begin{proof}
+El módulo $P=\ker F$ de \eqref{eq:ehi-split} es proyectivo de rango $N-p$ y establemente libre. Si su rango es positivo, la clasificación de Steinitz sobre un dominio de Dedekind da $P\cong R^{N-p-1}\oplus I$ para un ideal invertible $I$. La clase del determinante de $P$ es trivial por \eqref{eq:ehi-split}, de modo que $I\cong R$ y $P$ es libre. Si su rango es cero, $P=0$. Una base de $P$ seguida de los $v_i$ produce el cambio de base requerido. En la sucesión estándar, fijar los vectores obliga a fijar las últimas columnas; fijar los funcionales obliga a fijar las últimas filas. La matriz es precisamente $\operatorname{diag}(h,I_p)$, con $h\in G_{N-p}$. No queda un bloque triangular libre.
+\end{proof}
+
+La elección de ambos datos, vector y funcional, evita que el estabilizador contenga un radical unipotente. Este es el motivo algebraico de emplear pares escindidos y no solo columnas unimodulares.
+
+\subsection{Complejos ordenados y la entrada clásica unimodular}
+
+Dada una familia $Y$ de listas cerrada bajo eliminación de entradas, escribimos $C_p(Y)=\Z[Y(p)]$ para el grupo libre con base sus listas de longitud $p$. El borde disminuye la longitud:
+\begin{equation}
+ \partial[y_1,\ldots,y_p]=\sum_{i=1}^{p}(-1)^{i-1}
+ [y_1,\ldots,\widehat y_i,\ldots,y_p],\quad \partial C_0=0.
+ \label{eq:ehi-boundary}
+\end{equation}
+Si la lista tiene longitud uno, su borde es la lista vacía. Cada par de eliminaciones aparece en $\partial^2$ con signos contrarios, por lo que $\partial^2=0$. Diremos que $C(Y)$ es exacto en longitud $p$ si $\ker\partial_p=\operatorname{im}\partial_{p+1}$. Para $p=0$ equivale a que la familia no vacía de vértices aumente sobre la lista vacía. En términos de un complejo semisimplicial de vértices ordenados, la longitud $p$ corresponde al grado simplicial $p-1$, no al grado $p$.
+
+Una sucesión unimodular de longitud $p$ consta de columnas $(v_1,\ldots,v_p)$ para las que el mapa $R^p\to R^N$ tiene inversa a izquierda. Denotamos su familia por $U_N$; equivalentemente es la proyección de $X_N$ que olvida los funcionales.
+
+\paragraph{Entrada clásica (van der Kallen).} Si $\operatorname{sr}(R)\le s$ y $N\ge s$, el complejo ordenado de sucesiones unimodulares tiene homología reducida nula hasta dimensión $N-s-1$. En la convención \eqref{eq:ehi-boundary}, esto proporciona
+\begin{equation}
+ C(U_N)\ \text{exacto en longitud }q\quad(q+s\le N).
+ \label{eq:ehi-uni}
+\end{equation}
+Es la consecuencia homológica del Teorema 2.6(i) de van der Kallen (1980), identificado en la prueba del Lema 5.10 de Randal-Williams y Wahl. En particular, no se está afirmando que el espacio sea contráctil en todos los grados. El espejo Lean desarrolla su propio proveedor \texttt{unimodularSeqComplex\_exactAt\_of\_add\_stableRank\_le}; aquí conservamos el teorema clásico como entrada bibliográfica y reconstruimos los pasos siguientes sin asumir la estabilidad que queremos deducir.
+
+\subsection{Concatenación y eliminación de prefijos}
+
+Si la concatenación de listas es admisible, se extiende bilinealmente a las cadenas. Para una lista fija $\tau$ de longitud $r$ y una cadena $c$ de listas que pueden seguirla, la identidad de signos es
+\begin{equation}
+ \partial(\tau*c)=(\partial\tau)*c+(-1)^r\tau*\partial c.
+ \label{eq:ehi-concat}
+\end{equation}
+Se obtiene separando las caras que borran una entrada de $\tau$ de las que borran una entrada de $c$. La fórmula incluye la lista vacía, y no requiere antisimetrizar las listas.
+
+\begin{lema}[Eliminar entradas fuera de un conjunto]
+\label{lem:ehi-prefix}
+Sea $Y$ una familia de listas cerrada bajo eliminación y $A$ un conjunto de entradas permitidas. Supongamos que, para cada lista admisible $\tau$ de longitud $1\le r\le p$ cuya última entrada no pertenece a $A$, el complejo de las listas $\eta$ formadas por entradas de $A$ tales que $\tau*\eta\in Y$ es exacto en longitud $p-r$. Entonces cada ciclo $c\in C_p(Y)$ es homólogo a un ciclo compuesto solo por entradas de $A$. Si además el complejo restringido a $A$ es exacto en longitud $p$, $C(Y)$ es exacto en esa longitud.
+\end{lema}
+\begin{proof}
+En cada lista que aparece en $c$ y contiene entradas prohibidas tomamos el prefijo hasta la última entrada prohibida, incluida esta. Sea $r$ la máxima longitud de tales prefijos. Si no los hay, hemos terminado. Agrupamos los términos cuyo prefijo tiene longitud $r$ y valor $\tau$ como $\tau*c_\tau$. Todas las listas de $c_\tau$ son permitidas y pueden concatenarse a $\tau$.
+
+En $\partial c$ solo las caras que eliminan una entrada del sufijo de un término con prefijo de longitud $r$ pueden conservar un prefijo prohibido de esa longitud. Las otras caras disminuyen su longitud. El coeficiente de los términos con prefijo $\tau$ es, por \eqref{eq:ehi-concat}, $(-1)^r\partial c_\tau$; la descomposición por prefijos es única. Como $\partial c=0$, se tiene $\partial c_\tau=0$. Si $r=p$, la misma conclusión es automática en longitud cero. Por hipótesis existe $b_\tau$ en el enlace permitido, de longitud $p-r+1$, con $\partial b_\tau=c_\tau$. Restamos de $c$ el borde de $\sum_\tau(-1)^r\tau*b_\tau$. Desaparecen exactamente los términos con prefijo prohibido de longitud máxima; los restantes tienen prefijo más corto. La nueva cadena es un ciclo homólogo. La iteración termina después de a lo sumo $p$ reducciones. Si el ciclo resultante es frontera en el complejo permitido, el ciclo original también lo es.
+\end{proof}
+
+Esta es una operación integral: los coeficientes que se introducen son $\pm1$ y los coeficientes de cadenas de relleno enteras. No se divide por la longitud de una lista ni por el orden de un grupo de permutaciones.
+
+\subsection{Enlaces de pares y restricciones ortogonales}
+
+Si $\gamma$ es una sucesión escindida, su enlace completo está formado por las listas que pueden añadirse a ella. Sus vectores están en el complemento de \eqref{eq:ehi-split}; sus funcionales se anulan en el sumando generado por $\gamma$. Al restringir los funcionales al complemento y extenderlos por cero se identifica el enlace con $X_{N-\operatorname{long}(\gamma)}$. Esta identificación respeta el orden y las caras.
+
+Fijemos ahora una sucesión unimodular $w=(u_1,\ldots,u_b)$ y elijamos funcionales $\alpha_j$ con $\alpha_j(u_i)=\delta_{ji}$. La familia $Y_w$ consta de las sucesiones escindidas cuyos funcionales anulan todos los $u_i$. Llamaremos permitidos a los pares $(v,f)$ para los que también $\alpha_j(v)=0$ para todo $j$.
+
+\begin{lema}[Descripción del enlace restringido]
+\label{lem:ehi-link}
+Sea $\tau\in Y_w$ de longitud $r$. Las listas de pares permitidos que pueden seguir a $\tau$ dentro de $Y_w$ forman un complejo isomorfo a $X_{N-b-r}$.
+\end{lema}
+\begin{proof}
+Escribamos $\tau=((v_i,f_i))_{i=1}^r$. Por definición $f_i(u_j)=0$. Reemplacemos $\alpha_j$ por
+\[
+ \alpha'_j=\alpha_j-\sum_{i=1}^r\alpha_j(v_i)f_i.
+\]
+Así $\alpha'_j(v_i)=0$ y $\alpha'_j(u_h)=\delta_{jh}$. La lista $\rho$ que concatena $\tau$ y los pares $(u_j,\alpha'_j)$ es escindida. Para un nuevo par $(v,f)$, ser ortogonal a $\rho$ significa que $f_i(v)=0$, $\alpha'_j(v)=0$, $f(v_i)=0$ y $f(u_j)=0$. En presencia de $f_i(v)=0$, la condición $\alpha'_j(v)=0$ equivale a $\alpha_j(v)=0$. Por tanto la familia indicada es exactamente el enlace de $\rho$, de longitud $r+b$. Aplicamos la descripción del complemento libre. La existencia de $\rho$ garantiza $r+b\le N$.
+\end{proof}
+
+\subsection{Dos consecuencias para ciclos con funcionales restringidos}
+
+Para preparar una inducción sobre $N$, supongamos probada la exactitud de $C(X_M)$ en longitud $a$ si $2a+s+1\le M$, para todos los $M<N$. Trabajaremos con $s\ge2$ y $\operatorname{sr}(R)\le s$.
+
+\begin{lema}[Exactitud del complejo restringido]
+\label{lem:ehi-orth}
+Si $b\ge1$ y $2a+b+s+1\le N$, entonces $C(Y_w)$ es exacto en longitud $a$.
+\end{lema}
+\begin{proof}
+Para los prefijos prohibidos de longitud $r\ge1$, el Lema~\ref{lem:ehi-link} identifica el enlace permitido con $X_{N-b-r}$. El rango de la hipótesis inductiva se satisface porque
+\[
+ 2(a-r)+s+1\le N-b-r.
+\]
+Asimismo el complejo de listas enteramente permitidas es $X_{N-b}$ (tomamos el prefijo vacío), exacto en longitud $a$ por la misma inducción. Como $b\ge1$, todos los tamaños invocados son estrictamente menores que $N$. El Lema~\ref{lem:ehi-prefix} concluye.
+\end{proof}
+
+\begin{lema}[Un solo vector y relleno en el complejo ambiente]
+\label{lem:ehi-one}
+Si $u$ es unimodular, $2p+s+1\le N$ y $c\in C_p(Y_{(u)})$ es ciclo, existe $b'\in C_{p+1}(X_N)$ con $\partial b'=c$.
+\end{lema}
+\begin{proof}
+Elegimos $\alpha(u)=1$ y aplicamos la eliminación de prefijos con $b=1$. Para todo prefijo de longitud $r\ge1$ se cumple
+\[
+ 2(p-r)+s+1\le N-1-r,
+\]
+pues $2p+s+1\le N$ y $r\ge1$. Se obtienen los rellenos de los enlaces por inducción. No hace falta exactitud en longitud $p$ del complejo $X_{N-1}$, que podría faltar justo en el extremo del rango. Después de eliminar los prefijos prohibidos, todas las entradas del nuevo ciclo $c'$ son compatibles con $(u,\alpha)$. Anteponer ese par da una cadena del ambiente y \eqref{eq:ehi-concat} muestra que su borde es $c'$: el otro término contiene $\partial c'=0$. Sumando los rellenos usados al eliminar prefijos se obtiene $b'$.
+\end{proof}
+
+El ahorro de una unidad en esta última desigualdad es relevante. La última operación es un cono en el complejo ambiente, no una afirmación injustificada de exactitud del complejo restringido en su grado frontera.
+
+\subsection{Un doble complejo auxiliar y el argumento en zigzag}
+
+Sea $D_{a,b}$ el grupo libre sobre pares $(\sigma,w)$, donde $\sigma$ es escindida de longitud $a$, $w$ unimodular de longitud $b$ y cada funcional de $\sigma$ anula los vectores de $w$. Definimos $h$ eliminando entradas de $\sigma$ y $v$ eliminando entradas de $w$, con los signos de \eqref{eq:ehi-boundary}. Entonces
+\begin{equation}
+ h^2=v^2=0,\qquad hv=vh.
+ \label{eq:ehi-comm}
+\end{equation}
+Aquí los dos bordes conmutan porque actúan sobre listas distintas. Para formar un diferencial total anticomutante se pondría un signo $(-1)^a$ en el vertical; en el zigzag utilizaremos directamente los bordes conmutantes.
+
+\begin{lema}[Zigzag de relleno]
+\label{lem:ehi-zig}
+Supongamos exactitud vertical en todos los puntos $(a,b)$ con $a+b=p$ y exactitud horizontal en los puntos $(a,b)$ con $a+b=p+1$, $b\ge2$. Si $c\in D_{p,0}$ satisface $hc=0$, existe $z\in D_{p,1}$ con $hz=0$ y $vz=c$.
+\end{lema}
+\begin{proof}
+Probamos por inducción sobre $a$ la afirmación más general: para $a+b=p$ y $c\in D_{a,b}$ con $hc=vc=0$, existe $y'\in D_{a,b+1}$ con $vy'=c$ y $hy'=0$. La exactitud vertical da $y$ con $vy=c$. Si $a=0$, ya $hy=0$. Si $a\ge1$, la cadena $hy\in D_{a-1,b+1}$ satisface ambos bordes nulos por \eqref{eq:ehi-comm}. Por inducción hay $z'\in D_{a-1,b+2}$ con $vz'=hy$ y $hz'=0$. Este punto tiene suma $p+1$ y segunda coordenada al menos dos; la exactitud horizontal da $u\in D_{a,b+2}$ con $hu=z'$. Entonces $y'=y-vu$ verifica
+\[
+ vy'=c,\qquad hy'=hy-vhu=hy-vz'=0.
+\]
+En $D_{p,0}$ el borde vertical es automáticamente cero, y esto da el resultado.
+\end{proof}
+
+\begin{teorema}[Exactitud integral de sucesiones escindidas]
+\label{thm:ehi-acyclic}
+Para un dominio de Dedekind, $s\ge2$ con $\operatorname{sr}(R)\le s$, se cumple
+\begin{equation}
+ \ker(\partial:C_p(X_N)\to C_{p-1}(X_N))
+ =\operatorname{im}(\partial:C_{p+1}(X_N)\to C_p(X_N))
+ \quad\text{si }2p+s+1\le N.
+ \label{eq:ehi-exact}
+\end{equation}
+En longitud cero se interpreta $\partial:C_0\to0$.
+\end{teorema}
+\begin{proof}
+Inducimos fuertemente sobre $N$. En tamaños en que no hay $p$ con $2p+s+1\le N$ la afirmación es vacía. Fijemos un $p$ admisible y un ciclo $c\in C_p(X_N)=D_{p,0}$.
+
+Para una sucesión escindida fija $\sigma$ de longitud $a$, las listas verticales son las sucesiones unimodulares del complemento libre $\ker F_\sigma\cong R^{N-a}$. Una lista de vectores en este complemento es unimodular en el ambiente si y solo si lo es dentro del complemento: se restringe una inversa a izquierda o se extiende por la proyección. El borde vertical no cambia $\sigma$. Por \eqref{eq:ehi-uni} el complejo de esa fibra es exacto en longitud $b$ si $b+s\le N-a$. Esto se cumple si $a+b=p$.
+
+Para una lista unimodular fija $w$ de longitud $b\ge2$, las listas horizontales son $Y_w$. Si $a+b=p+1$, tenemos
+\[
+ 2a+b+s+1=2p+s+3-b\le2p+s+1\le N.
+\]
+El Lema~\ref{lem:ehi-orth} da exactitud horizontal en longitud $a$. Las fibras son sumandos directos libres y las cadenas tienen soporte finito, por lo que podemos rellenar cada fibra por separado y sumar. El Lema~\ref{lem:ehi-zig} produce $z\in D_{p,1}$ con $hz=0$ y $vz=c$.
+
+Escribimos $z=\sum_u z_u\otimes[u]$, con finitos vectores unimodulares $u$. Como $h$ no modifica $u$, cada $z_u$ es un ciclo de $C_p(Y_{(u)})$. Por el Lema~\ref{lem:ehi-one}, cada uno tiene un relleno $b_u$ en $C_{p+1}(X_N)$. La eliminación vertical de la única entrada da $c=\sum_u z_u$, luego $\partial\sum_u b_u=c$. Se cierra la inducción. La inclusión inversa en \eqref{eq:ehi-exact} se sigue de $\partial^2=0$.
+\end{proof}
+
+El teorema reproduce la lógica de \texttt{splitAcyclic\_step}: primero exactitud vertical, después exactitud de los enlaces horizontales, zigzag y finalmente cono. El único resultado de conectividad recibido en esta reconstrucción es el de sucesiones unimodulares, que no es el resultado de estabilidad de $G_N$.
+
+\subsection{El doble complejo de homología de grupos}
+
+Fijemos $N=n+1$. Sea $P_\bullet\to\Z$ la resolución libre del módulo trivial derecho sobre $\Z[G_N]$, por ejemplo la resolución bar. Los $C_p(X_N)$ son módulos izquierdos de permutación. Formamos el doble complejo de primer cuadrante
+\begin{equation}
+ B_{p,q}=P_q\otimes_{\Z[G_N]} C_p(X_N).
+ \label{eq:ehi-double}
+\end{equation}
+Su diferencial total tiene los signos habituales. El grupo $C_0(X_N)$ es $\Z$ con acción trivial. Como cada $P_q$ es libre, al tensorizar por $P_q$ se conserva la exactitud horizontal de \eqref{eq:ehi-exact}. Si $C(X_N)$ es exacto en longitudes $0\le p\le d$, el complejo total de \eqref{eq:ehi-double} tiene homología nula en grados totales hasta $d$: al tomar primero homología horizontal, todos los términos de esos grados son cero y la filtración de cada grado total es finita.
+
+Tomar primero la homología vertical proporciona una sucesión espectral homológica
+\begin{equation}
+ E^1_{p,q}=H_q(G_N;C_p(X_N))\Longrightarrow H_{p+q}(\operatorname{Tot}B).
+ \label{eq:ehi-ss}
+\end{equation}
+El diferencial $d^r$ tiene bidegrado $(-r,r-1)$. No se trata aquí de una sucesión espectral con columna de índice $-1$: el desplazamiento por la longitud sitúa la columna aumentada en $p=0$. Esta convención coincide con la página de \texttt{splitSeq\_firstPage\_iso\_and\_differential}.
+
+\subsection{La primera página: Shapiro y alternación de caras}
+
+Por el Lema~\ref{lem:ehi-stab} hay una identificación de módulos de permutación $C_p(X_N)\cong\Z[G_N/G_{N-p}]$ para $0\le p\le N$. El lema de Shapiro, con coeficientes enteros, da
+\begin{equation}
+ E^1_{p,q}\cong H_q(G_{N-p};\Z).
+ \label{eq:ehi-shapiro}
+\end{equation}
+Para cada $p$, definimos $s_{p,q}:H_q(G_{N-p-1};\Z)\to H_q(G_{N-p};\Z)$ por la estabilización ordinaria. Se escribe de esta forma porque $s_{p,q}$ corresponde al diferencial de la columna $p+1$ a la columna $p$.
+
+\begin{lema}[Patrón de la primera diferencial]
+\label{lem:ehi-d1}
+Con las identificaciones \eqref{eq:ehi-shapiro}, se tiene
+\begin{equation}
+ d^1_{p+1,q}=\begin{cases}s_{p,q},&p\ \text{par},\\0,&p\ \text{impar}.\end{cases}
+ \label{eq:ehi-d1}
+\end{equation}
+\end{lema}
+\begin{proof}
+Las $p+1$ caras de la lista estándar de longitud $p+1$ se identifican con la lista estándar de longitud $p$ permutando las últimas $p+1$ coordenadas. La permutación deja fijas las primeras $N-p-1$ coordenadas, donde actúa el estabilizador de la lista original. Por naturalidad del lema de Shapiro, cada cara induce la inclusión del estabilizador pequeño en el grande, que es la estabilización estándar. Los cambios de identificación por conjugación interna actúan trivialmente sobre la homología de grupos con coeficientes triviales. La suma de las caras es por tanto $\sum_{j=0}^p(-1)^j s_{p,q}$, igual a $s_{p,q}$ para $p$ par y cero para $p$ impar.
+\end{proof}
+
+En las columnas donde están definidas las inclusiones vecinas, la segunda página tiene la forma
+\begin{equation}
+ E^2_{p,q}\cong\begin{cases}
+ \operatorname{coker}(s_{p,q}), & p\ \text{par},\\
+ \ker(s_{p-1,q}), & p\ \text{impar}.
+ \end{cases}
+ \label{eq:ehi-e2}
+\end{equation}
+En particular $E^2_{0,m}$ es el conúcleo y $E^2_{1,m}$ el núcleo de la estabilización que nos interesa. La columna de longitud cero no es el grupo trivial: su homología vertical es la de $G_N$.
+
+\subsection{Inducción de Quillen: sobreyectividad e inyectividad}
+
+\begin{teorema}[Rangos integralmente suficientes]
+\label{thm:ehi-stability}
+Sea $R$ un dominio de Dedekind y $s\ge2$ tal que $\operatorname{sr}(R)\le s$. La estabilización $H_m(G_n;\Z)\to H_m(G_{n+1};\Z)$ es sobreyectiva si $n\ge2m+s+1$ e inyectiva si $n\ge2m+s+2$. En particular, para $s=2$, es un isomorfismo si $n\ge2m+4$.
+\end{teorema}
+\begin{proof}
+Probamos las dos afirmaciones simultáneamente por inducción fuerte sobre $m$. Para $m=0$, la homología con coeficientes triviales es $\Z$ y la inclusión induce la identidad. Sean válidas ambas afirmaciones en los grados $q<m$.
+
+Primero $n\ge2m+s+1$ y $N=n+1$. Por el Teorema~\ref{thm:ehi-acyclic}, la exactitud horizontal llega al menos hasta longitud $m$. Por tanto la homología total de \eqref{eq:ehi-double} se anula en grado $m$. El término $E^2_{0,m}$ no tiene diferenciales salientes a partir de la segunda página. Las posibles diferenciales entrantes tienen fuentes $(p,q)$ con $p\ge2$, $q=m+1-p\ge0$. En particular $q<m$. Si $p$ es par, por \eqref{eq:ehi-e2} su término se anula si $s_{p,q}$ es sobreyectiva. Su tamaño de partida es $N-p-1=n-p$, y
+\begin{equation}
+ n-p-(2q+s+1)\ge p-2\ge0.
+ \label{eq:ehi-surj-even}
+\end{equation}
+Si $p$ es impar ($p\ge3$), necesitamos inyectividad de $s_{p-1,q}$, cuyo tamaño de partida es $N-p=n+1-p$. En este caso
+\begin{equation}
+ n+1-p-(2q+s+2)\ge p-2\ge0.
+ \label{eq:ehi-surj-odd}
+\end{equation}
+Las dos anulaciones siguen de la hipótesis inductiva. Todas las columnas empleadas, incluidas las vecinas, tienen índices no mayores que $m+2\le N$. Un término nulo en $E^2$ continúa nulo en las páginas posteriores. Así no entra ninguna diferencial no nula en $E^2_{0,m}$. Este término es igual a su sucesivo subcociente $E^\infty_{0,m}=0$, lo que prueba sobreyectividad.
+
+\paragraph{Inyectividad.} Con la misma hipótesis inductiva, sin asumir inyectividad en grado $m$, supongamos $n\ge2m+s+2$. Entonces $N=n+1\ge2(m+1)+s+1$, por lo que la exactitud horizontal llega a longitud $m+1$ y la homología total en ese grado es nula.
+
+El término $E^2_{1,m}$ es el núcleo de la estabilización: el diferencial procedente de la columna 2 es cero por \eqref{eq:ehi-d1}. Tampoco tiene diferenciales salientes a partir de la página 2, porque $1-r<0$. Para una diferencial entrante tenemos $p\ge3$, $q=m+2-p\ge0$. De nuevo $q<m$. Si $p$ es impar, necesitamos que $s_{p-1,q}$ sea inyectiva y
+\begin{equation}
+ n+1-p-(2q+s+2)\ge p-3\ge0.
+ \label{eq:ehi-inj-odd}
+\end{equation}
+Si $p$ es par ($p\ge4$), necesitamos que $s_{p,q}$ sea sobreyectiva y
+\begin{equation}
+ n-p-(2q+s+1)\ge p-3\ge0.
+ \label{eq:ehi-inj-even}
+\end{equation}
+La hipótesis inductiva anula esos términos en $E^2$. Las columnas involucradas son a lo sumo $m+3\le N$. Por consiguiente $E^2_{1,m}=E^\infty_{1,m}=0$ y la estabilización es inyectiva. Las dos afirmaciones inductivas quedan probadas.
+\end{proof}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}p{.31\textwidth}Y@{}}
+\toprule
+Objetivo & Presupuesto que lo garantiza\\\midrule
+Sobreyectividad & Exactitud hasta longitud $m$; diagonal entrante $p+q=m+1$.\\
+Inyectividad & Exactitud hasta longitud $m+1$; diagonal entrante $p+q=m+2$.\\
+Isomorfismo para $\mathcal O_L$ & $s=2$, por tanto $n\ge2m+4$.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+\smallskip\noindent En un argumento alternativo se puede invocar directamente el Teorema 5.11 de Randal-Williams y Wahl (2017), con el sistema constante $\Z$ de grado cero. Su rango de isomorfismo exige $2m+\operatorname{sr}(R)+2\le n$, exactamente suficiente para nuestro uso. Su rango de sobreyectividad es incluso algo mejor que el utilizado aquí. La diferencia no afecta la cuenta de torsión ni el presupuesto del tamaño de referencia. La demostración precedente se ajusta al rango conservador del espejo, sin afirmar que sea óptimo.
+
+\subsection{Estabilización de más de una coordenada}
+
+Para $n\le N$ escribimos $\iota_{n,N}(g)=\operatorname{diag}(g,I_{N-n})$. La identidad $\iota_{n,M}=\iota_{N,M}\circ\iota_{n,N}$ sigue de la suma directa de identidades, por lo que la identidad correspondiente vale en homología.
+
+\begin{proposicion}[Estabilidad en todos los tamaños posteriores]
+\label{prop:ehi-iter}
+Si $N\ge n\ge2m+4$, entonces
+\begin{equation}
+ H_m(G_n;\Z)\xrightarrow{(\iota_{n,N})_*}H_m(G_N;\Z)
+ \label{eq:ehi-iter}
+\end{equation}
+es un isomorfismo. Lo mismo sucede con los subgrupos de torsión, y, para toda extensión plana de coeficientes $A$ sobre $\Z$, con $H_m(-;A)$.
+\end{proposicion}
+\begin{proof}
+El mapa es una composición finita de estabilizaciones de una coordenada, todas en el rango del Teorema~\ref{thm:ehi-stability}; si $N=n$ es la identidad. Un isomorfismo de grupos abelianos lleva la torsión en la torsión, y su inverso verifica la inclusión recíproca. Si $A$ es plano, tensorizar los complejos bar conserva ciclos, fronteras y sus cocientes, de modo que $H_m(G;A)\cong A\otimes_\Z H_m(G;\Z)$ naturalmente. Tensorizar el isomorfismo produce otro isomorfismo.
+\end{proof}
+
+El mismo tamaño $n=2m+4$ es suficiente para la homología integral en grado $m-1$ (cuando $m\ge1$). Es esencial no trasladar directamente por planitud a $\Z/Q\Z$, que no es plano sobre $\Z$ si $Q>1$. Por la sucesión universal de coeficientes, la estabilidad integral en ambos grados sí implica estabilidad con estos coeficientes, pero la cuenta del capítulo anterior necesita conservar el término de torsión y no descartarlo.
+
+\subsection{La entrada SStab sobre cadenas reales}
+
+\begin{proposicion}[Transporte de ciclos y fronteras]
+\label{prop:ehi-real}
+Sea $N\ge n\ge2m+4$ y sea $s_\#$ el mapa bar inducido por $\iota_{n,N}$. Para coeficientes reales se cumplen las siguientes afirmaciones:
+\begin{enumerate}
+\item Si $z\in Z_m(G_n;\R)$ y $s_\# z\in B_m(G_N;\R)$, entonces $z\in B_m(G_n;\R)$.
+\item Para cada $z'\in Z_m(G_N;\R)$ existe $z\in Z_m(G_n;\R)$ tal que $s_\#z-z'\in B_m(G_N;\R)$.
+\end{enumerate}
+\end{proposicion}
+\begin{proof}
+El mapa de cadenas conserva bordes y ciclos. Como $\R$ es un $\Z$-módulo plano, la Proposición~\ref{prop:ehi-iter} proporciona el isomorfismo sobre homología real. Si la imagen de $[z]$ es cero, su inyectividad implica $[z]=0$. Para $[z']$ se toma su preimagen y se elige un representante cíclico $z$. La diferencia de representantes es una frontera. Estas dos afirmaciones son exactamente el contenido de \texttt{SStab}.
+\end{proof}
+
+No se exige que un ciclo de tamaño $N$ sea literalmente la imagen de una cadena en tamaño $n$. Solo se necesita que su clase de homología lo sea. Tampoco se afirma que un representante integral de una clase real exista con coeficientes enteros: el isomorfismo de cambio de base identifica el espacio real generado por ellos.
+
+\subsection{Finitud homológica en un tamaño de referencia}
+
+La entrada \texttt{SFin} de la Nota 22 es distinta de la estabilidad. Afirma que en cada tamaño existe una familia finita de ciclos reales cuyas clases generan toda la homología real. No exige una base de cadenas de soporte uniformemente acotado. Se puede justificar cualitativamente por el teorema clásico de Borel--Serre, independiente de la estimación cuantitativa de torsión.
+
+\begin{proposicion}[Finitud de la generación y existencia de representantes]
+\label{prop:ehi-fin}
+Para un cuerpo de números $L$, $H_j(\operatorname{GL}_n(\mathcal O_L);\Z)$ es un grupo abeliano finitamente generado para cada $n,j$. En particular su torsión es finita y la entrada \texttt{SFin} se cumple.
+\end{proposicion}
+\begin{proof}
+La acción de $\operatorname{GL}_n(\mathcal O_L)$ sobre el retículo $\mathcal O_L^n$ lo realiza como grupo aritmético de la restricción de escalares de $\operatorname{GL}_n$ a $\Q$. Usamos el resultado clásico de que un grupo aritmético tiene un subgrupo sin torsión de índice finito cuyo espacio clasificante admite un modelo de CW finito. Se puede escoger normal, tomando la intersección finita de sus conjugados; el modelo de CW finito pasa a un recubrimiento de índice finito. Denotemos ese subgrupo por $\Gamma'$ y el cociente finito por $F$.
+
+La homología integral de $\Gamma'$ es finitamente generada en todos los grados por su complejo celular finito. En la sucesión espectral de Hochschild--Serre de la extensión $1\to\Gamma'\to G_n\to F\to1$, cada término $H_i(F;H_j(\Gamma';\Z))$ es finitamente generado: el complejo bar de $F$ en cada grado tiene un número finito de generadores sobre $\Z[F]$ y los coeficientes son finitamente generados sobre $\Z$. Subgrupos, cocientes y extensiones finitas en el sentido de una filtración de longitud finita preservan la generación finita sobre $\Z$. Se concluye que $H_m(G_n;\Z)$ es finitamente generado.
+
+Por cambio de base plano, $H_m(G_n;\R)$ es de dimensión finita. Elegimos una base y un ciclo real por cada vector de ella. Cada ciclo real difiere de una combinación lineal finita de esos representantes por una frontera, exactamente la afirmación de \texttt{SFin}. No se ha obtenido de este argumento una cota explícita del orden de torsión.
+\end{proof}
+
+El espejo construye la misma entrada cualitativa en \texttt{FiniteIndexCase/SFinOf.lean} desde generación finita integral y el puente de cambio de base. Para la cota cuantitativa de la Nota 15 sigue siendo necesario conservar la estimación independiente de la Nota 16.
+
+\subsection{Cierre lógico de la sobreyectividad y el rango impar}
+
+Fijemos un cuerpo totalmente imaginario $L$, $r=r_2(L)$, $m=k+1$ y $k$ par, con $m<r$. Usamos las entradas ya desarrolladas en las Notas 21--23: descomposición de formas por pesos, los representantes de Whitney, contracción y promedio de Hecke, altura, partición y momentos. La Proposición~\ref{prop:ehi-fin} suministra la finitud de la homología en el tamaño de referencia; la estimación cuantitativa de la Nota 16 es necesaria para la cuenta posterior. La Proposición~\ref{prop:ehi-real} proporciona ahora la entrada estable de la Nota 22. Fijados $L,m$ y el tamaño inicial $n_0$, elegimos el umbral de Hecke $N_0$ y luego
+\begin{equation}
+ N\ge\max\{n_0,3,2m+2,2m+4,N_0\}.
+ \label{eq:ehi-threshold}
+\end{equation}
+La elección es anterior a la del cociclo: el exponente uno de la Nota 23 permite integrar el cuadrado de un representante cuyo crecimiento es $h_N^m$. La conclusión de la Nota 22 es la entrada de sobreyectividad \texttt{SSurj}: todo cociclo de grado $m$ en ese tamaño tiene los mismos valores sobre ciclos que la integración de una forma invariante por el grupo arquimediano.
+
+\begin{proposicion}[Rango de la homología filtrada]
+\label{prop:ehi-bodd}
+Bajo los resultados desarrollados en las Notas 21--23, para $n\ge2m+4$, $m=k+1<r$, $k$ par y $b\ge1$, sea $J_{n,b}$ la imagen del operador $z_k$ de la Nota 17, definido por
+\begin{equation}
+ z_0(x)=x,\qquad z_{t+1}(x)=(\psi_b)_*z_t(x)-b^{t+2}(\iota)_*z_t(x).
+ \label{eq:ehi-zseq}
+\end{equation}
+Aquí $z_t(x)\in H_m(G_{b^tn};\Z)$, $\psi_b$ repite $b$ bloques y $\iota$ estabiliza al mismo tamaño. Se cumple
+\begin{equation}
+ \operatorname{rank}_\Z J_{n,b}\le r_2(L).
+ \label{eq:ehi-bodd}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Sea $C$ el espacio real de ciclos generado por los representantes filtrados de longitud $m$ en tamaño $b^kn$. Por el cambio de base de la Nota 21, sus clases contienen la imagen real de $J_{n,b}$. Una familia de evaluaciones de peso $j$ es estable y al repetir $b$ bloques se multiplica por $b^j$. Iterando \eqref{eq:ehi-zseq}, su valor en un ciclo filtrado se multiplica por
+\begin{equation}
+ \prod_{t=0}^{k-1}(b^j-b^{t+2}).
+ \label{eq:ehi-product}
+\end{equation}
+Si $2\le j\le k+1=m$, el factor $t=j-2$ es cero; luego todo peso superior a uno se anula en $C$. Esta afirmación incluye $b=1$ (y el producto vacío si $k=0$).
+
+Las evaluaciones de peso uno de la Nota 21 son a lo sumo una por lugar complejo; sean $T:C\to\R^r$ su aplicación conjunta y $\pi:C\to H_m(G_{b^kn};\R)$ la aplicación de clase. Si $T(y)=0$ y $\pi(y)\ne0$, la Proposición~\ref{prop:ehi-real} conserva la clase no nula al estabilizar a un tamaño $N$ que cumple \eqref{eq:ehi-threshold}, tomando $n_0=b^kn$. Por separación algebraica de la homología real hay un cociclo no nulo sobre la clase. La sobreyectividad de la Nota 22 lo representa por una forma invariante. La descomposición de la Nota 21 en evaluaciones de pesos $1,\ldots,m$ da valor cero: los términos de peso uno se anulan por $T(y)=0$ y los otros por \eqref{eq:ehi-product}, usando estabilidad de las evaluaciones. Contradicción. Por tanto $\ker T\subseteq\ker\pi$ y $\pi$ factoriza por $T(C)$. Resulta $\dim_\R\pi(C)\le r$. Como $\R$ es plana y la dimensión de $\R\otimes_\Z J_{n,b}$ es el rango entero de $J_{n,b}$, se deduce \eqref{eq:ehi-bodd}.
+\end{proof}
+
+Esta deducción cierra la dependencia de estabilidad que quedaba abierta en la reconstrucción de \texttt{BOdd}. Su alcance es el de las premisas ya desarrolladas; no es una auditoría independiente de su validez global. La condición $m<r_2(L)$ no desaparece: se garantiza en la capa auxiliar de la Nota 19. En el espejo hay dos copias del filtro, una en \texttt{PositivityTheory.KB} y otra en \texttt{UpperTheory.V.ZK}. El archivo \texttt{TorsionIntegers/Bridge.lean} demuestra por inducción la igualdad de los tamaños y recurrencias y transporta el rango; \texttt{BOdd.lean} expone esa conclusión como \texttt{bOdd}.
+
+\subsection{Reinserción en la cuenta de la capa fija}
+
+En la notación aritmética $E\ge1$ de A93, $k=2E$, $m=k+1=2E+1$. Se fija el tamaño
+\begin{equation}
+ n_*=2m+4=4E+6.
+ \label{eq:ehi-nstar}
+\end{equation}
+Para un conjunto finito de valores de evaluaciones primitivas reducidas de la Nota 17, trasladamos todos los ciclos a un tamaño común $n\ge n_*$, elegido además mayor o igual que todos sus tamaños originales. Su filtro vive en $b^kn\ge n_*$. Por la Proposición~\ref{prop:ehi-iter}, la torsión en grado $m$ de ese tamaño es la de $G_{n_*}$; la de grado $m-1$ en tamaño $n$ también coincide con la de $G_{n_*}$. Se requiere que estas torsiones sean finitas, tal como se controla en la Nota 16.
+
+\begin{lema}[Cuenta de una imagen de exponente finito]
+\label{lem:ehi-count}
+Sea $H$ un grupo abeliano con torsión finita, $J\subset H$ de rango a lo sumo $r$, y $f:H\to B$ un homomorfismo con $QB=0$, $Q\ge1$. Entonces $\# f(J)\le Q^r\#H_{\rm tors}$.
+\end{lema}
+\begin{proof}
+El núcleo de $J\to J\otimes_\Z\Q$ es su torsión. Para cada subgrupo finitamente generado $J_0\subset J$, el teorema de estructura da $J_0\cong\Z^{d_0}\oplus T_0$ con $d_0\le r$ y $T_0\subset H_{\rm tors}$. Su imagen tiene cardinal a lo sumo $Q^{d_0}\#T_0$. Si $f(J)$ contuviera más de $Q^r\#H_{\rm tors}$ elementos, se podrían elegir preimágenes de esa cantidad más uno de sus elementos, generando un $J_0$ que contradiría la cota. Así se obtiene la afirmación sin suponer que $J$ es libre ni finitamente generado.
+\end{proof}
+
+La parte de coeficientes finitos se obtiene mediante el Bockstein. La sucesión de complejos asociada a $0\to\Z\xrightarrow{Q}\Z\to\Z/Q\Z\to0$ da
+\begin{equation}
+ 0\to H_m(G_n;\Z)/QH_m(G_n;\Z)
+ \to H_m(G_n;\Z/Q\Z)
+ \xrightarrow{\beta}H_{m-1}(G_n;\Z)[Q]\to0.
+ \label{eq:ehi-bock}
+\end{equation}
+El último término tiene cardinal a lo sumo $\# H_{m-1}(G_{n_*};\Z)_{\rm tors}$. No se afirma que el Bockstein sea nulo. En cada fibra, dos clases difieren por una clase levantable a coeficientes enteros; la diferencia de evaluaciones multiplicadas por $b^k$ queda en la imagen de la evaluación del filtro, como se desarrolló en la Nota 17. La identidad que se utiliza allí es $\prod_{t=0}^{k-1}(b-b^{t+2})=b^k\prod_{i=1}^{k}(1-b^i)$: para $b=\ell$ primo el segundo producto es una unidad módulo $Q=\ell^\nu$. El Lema~\ref{lem:ehi-count} y \eqref{eq:ehi-bodd} acotan las imágenes de las fibras. De este modo recuperamos el presupuesto de \texttt{SUpper} para cada conjunto finito $S$ de los valores considerados:
+\begin{equation}
+ \#S\le Q^{r_2(L)} T_{m}(n_*,L)T_{m-1}(n_*,L),
+ \label{eq:ehi-upper}
+\end{equation}
+con $T_i(n,L)=\#H_i(\operatorname{GL}_n(\mathcal O_L);\Z)_{\rm tors}$. Esta es exactamente la potencia de altura que cancela la contribución de unidades en la Nota 18. No se ha introducido un nuevo factor dependiente de $\nu$ al cerrar la estabilidad.
+
+\subsection{Estado de la reconstrucción y alcance de la auditoría}
+
+El teorema de estabilidad queda justificado por una ruta clásica independiente y por la reconstrucción del rango desde conectividad unimodular. Para el ensamblaje, el resultado \texttt{kStability\_main} realiza inducción fuerte en el grado, utilizando dos lemas de escalera de complejos. Nuestra presentación emplea la sucesión espectral de primer cuadrante, equivalente en finalidad a esos lemas. \texttt{BaseChangeBijective.lean} itera la estabilización y transporta el inverso por extensión de escalares. \texttt{SStabOf.lean} aplica esa biyección a las cadenas reales. \texttt{FinalOdd.lean} suministra la sobreyectividad y la separación por pesos, y \texttt{TorsionIntegers/Bridge.lean} identifica los filtros; \texttt{SUpperOf.lean} usa \texttt{BOdd} y \texttt{TorsStab} para el control de las fibras de Bockstein. Se trata de cotejos localizados con una revisión fijada, no de una ejecución de Lean ni de un control de todas las dependencias transitivas.
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}p{.30\textwidth}Y@{}}
+\toprule
+Componente & Alcance en la edición candidata\\\midrule
+Estabilidad integral & Teorema~\ref{thm:ehi-stability}, desde conectividad clásica; control bibliográfico directo.\\
+Estabilidad real & Proposición~\ref{prop:ehi-real}.\\
+\texttt{SSurj} & Ensamblaje de las Notas 22--23, con estabilidad ahora suministrada.\\
+\texttt{BOdd} & Proposición~\ref{prop:ehi-bodd}, desde las entradas de los borradores anteriores.\\
+\texttt{SUpper} & Transporte de torsión, rango y Bockstein; preservado el presupuesto de \eqref{eq:ehi-upper}.\\
+\texttt{LemmaK} & Teorema~\ref{thm:ts-lemmaK}, con $C_T=20$ y $C_K=111$ bajo las entradas declaradas; auditoría localizada, no certificación global.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+La auditoría acumulada de las Notas 17--24 comprobó la concordancia de índices, los presupuestos de torsión y las absorciones, y revisó los mecanismos de realización integral, clases y unidades, Selmer y sobreyectividad. Las hipótesis de los enunciados condicionales permanecen explícitas, con referencias a sus desarrollos posteriores. El exponente $C_K=111$ conserva la ruta del cuaderno. No se ha ejecutado Lean ni comprobado la totalidad de la clausura transitiva de los resultados importados; no se afirma un cierre de GRH. Los controles de la familia theta integral y de las torres variables siguen siendo tareas distintas. La publicación requiere además compilar y revisar el manuscrito completo.
+
+\subsection{Referencias precisas}
+
+\paragraph{Estabilidad clásica.} W. van der Kallen, \emph{Homology stability for linear groups}, Inventiones Mathematicae 60 (1980), 269--295, Teorema 2.6(i). O. Randal-Williams y N. Wahl, \emph{Homological stability for automorphism groups}, Advances in Mathematics 318 (2017), 534--626, §5.3, Proposición 5.9, Lema 5.10 y Teorema 5.11 (paginación del manuscrito: 50--52). Texto: \url{https://web.math.ku.dk/~wahl/Autstability.pdf}. El rango se usa con coeficientes constantes; no se necesita la teoría de coeficientes torcidos de ese artículo. La formulación de la conectividad unimodular es la que identifica el Lema 5.10 en su demostración.
+
+\paragraph{Finitud aritmética.} A. Borel y J.-P. Serre, \emph{Corners and arithmetic groups}, Commentarii Mathematici Helvetici 48 (1973), 436--491. Para la formulación de finitud de grupos aritméticos utilizada aquí, véase también \emph{Finiteness properties of automorphism spaces of manifolds with finite fundamental group}, Teorema 1.3, \url{https://doi.org/10.1007/s00208-023-02594-x}. Se usa únicamente la existencia de un subgrupo de índice finito con espacio clasificante finito; la deducción de la generación finita se desarrolla en la Proposición~\ref{prop:ehi-fin}.
+
+\paragraph{Espejo formal.} Repositorio \url{https://github.com/CocoSgt/riemann-hypothesis-lean}, revisión \texttt{7cbf7a0c32fca1badf05931879a37c3f8a2b03b4}. El archivo de cotejo del paquete registra rutas y huellas Git de los resultados consultados. La revisión local del cuaderno no debe confundirse con una certificación de los teoremas formales, ni una declaración con nombre \texttt{Published} debe confundirse por sí sola con una referencia bibliográfica independiente.
+
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}[Acortar una columna]
+En $R=\Z$, verificar la unimodularidad de $(6,10,15)$ y construir una columna unimodular de longitud dos cambiando solo la segunda entrada, según la prueba de la Proposición~\ref{prop:ehi-sr}.
+\end{ejercicio}
+\paragraph{Solución.} El máximo común divisor de los tres enteros es uno. Tomamos $a_j=6$, $a_k=10$. Se pide $t\equiv1\pmod2$ y $t\equiv0\pmod3$, así que $t=3$ sirve. La nueva columna es $(6,55)$, cuyo máximo común divisor es uno.
+
+\begin{ejercicio}[Por qué son necesarios los funcionales]
+En $R^3$, describir el estabilizador de $e_3$ y compararlo con el del par $(e_3,e_3^*)$.
+\end{ejercicio}
+\paragraph{Solución.} Fijar $e_3$ exige que la tercera columna sea $(0,0,1)^T$. La matriz tiene la forma $\left(\begin{smallmatrix}A&0\\ c&1\end{smallmatrix}\right)$, donde $A\in G_2$ y $c$ es una fila arbitraria. Fijar también $e_3^*$ obliga a que la última fila sea $(0,0,1)$; entonces $c=0$ y el estabilizador es $G_2$.
+
+\begin{ejercicio}[Aumento de una lista]
+En el complejo de pares escindidos, tomar dos pares compatibles $a,b$ y calcular $\partial[a,b]$ y $\partial^2[a,b]$. ¿Es $[a,b]+[b,a]$ automáticamente cero como cadena?
+\end{ejercicio}
+\paragraph{Solución.} Se tiene $\partial[a,b]=[b]-[a]$, y ambos vértices tienen por borde la lista vacía, por lo que $\partial^2=0$. Las listas son generadores distintos del grupo libre; su suma no es cero como cadena. Sí es un ciclo, porque los dos bordes se cancelan. Esta distinción es esencial en la suma de caras de Quillen.
+
+\clearpage
+\begin{ejercicio}[Las diagonales de la inducción]
+Para $m=3$, $s=2$ y $n=10$, identificar los términos que pueden entrar en $E^2_{1,3}$ y las estabilizaciones inferiores que permiten anularlos.
+\end{ejercicio}
+\paragraph{Solución.} Tenemos $p+q=5$, $p\ge3$, así que los puntos son $(3,2),(4,1),(5,0)$. Los puntos impares son núcleos; el primero usa inyectividad en grado 2 desde tamaño $n+1-3=8$, exactamente $2\cdot2+2+2=8$. El segundo usa sobreyectividad en grado 1 desde $n-4=6\ge5$; el último usa inyectividad en grado cero. Los tres términos son cero. El grupo total en grado 4 se anula y así el núcleo en grado 3 es cero.
+
+\begin{ejercicio}[El rango requerido en A93]
+Para $E=4$ y un primo $\ell=3$, determinar $k$, $m$, $n_*$ y el menor número de lugares complejos admisible. ¿En qué tamaño vive el filtro si se comienza en $n_*$?
+\end{ejercicio}
+\paragraph{Solución.} $k=8$, $m=9$, $n_*=22$. Se exige $r_2(L)>9$, es decir, al menos 10. El tamaño final es $3^8\cdot22=144342$; pese a su magnitud, los subgrupos de torsión en grados 9 y 8 que interesan se transportan desde el tamaño 22. No se estima la torsión de nuevo en cada tamaño de la torre matricial.
+
+\paragraph{Continuidad.} La reconstrucción de la capa fija se ha ensamblado en las Notas 15--24 con los alcances especificados. La tarea editorial inmediata es verificar la compilación conjunta con las notas publicadas y sus referencias. La tarea matemática ulterior es la comparación integral de la familia theta y el control uniforme de las torres variables.

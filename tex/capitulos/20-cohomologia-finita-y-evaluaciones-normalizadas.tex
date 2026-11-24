@@ -1,0 +1,502 @@
+\section{Cohomología de grupos finitos y evaluaciones normalizadas}
+\label{sec:evaluaciones-finitas}
+\fuente{A93, Proposición 9.4, (9.12) y (9.16), pp.~68--71; cotejo de \texttt{SZc}, \texttt{SPrismMul}, \texttt{SCoc}, \texttt{STrans}, \texttt{SThetaOf} y \texttt{SPhi} en el espejo Lean fijado en \texttt{7cbf7a0c}.}
+
+La construcción de los ciclos aritméticos de la Nota 17 requiere evaluaciones que no solo se anulen sobre fronteras, sino que sean aditivas respecto de las representaciones. Si se fija un cuerpo finito y una forma lineal en las cadenas de su grupo multiplicativo, esa forma no determina de manera inmediata una evaluación en el grupo lineal de cualquier dimensión. El paso que falta es la construcción de una transferencia compatible con las sumas directas.
+
+El desarrollo se divide en dos partes. Primero se construye un cociclo sobre el grupo multiplicativo mediante una elevación entera de un logaritmo discreto. Después se transfiere este cociclo a grupos lineales mediante las rectas de un espacio proyectivo. La normalización por el determinante se demuestra por un argumento de matrices elementales y se verifica también directamente mediante la transferencia. Reconstruimos además la identidad multiplicativa del prisma que la Nota 17 utilizaba como entrada. Estos resultados no suponen un cálculo de toda la cohomología de un grupo lineal finito.
+
+\subsection{Coeficientes, grado y enunciado que se debe obtener}
+
+Sea $\mathbb F$ un cuerpo finito de cardinal $s$, $K=\mathbb F^\times$ y $Q\ge2$ un entero. Supongamos que existe $\zeta\in K$ de orden exactamente $Q$. Tomamos $A=\Z/Q\Z$, $C_Q=\Z/Q\Z$ como grupo aditivo, y fijamos $E\ge1$. Un homomorfismo $v:K\to(A,+)$ será llamado carácter aditivo de $K$; se satisface $v(uv')=v(u)+v(v')$. No se exige que $v(\zeta)$ sea una unidad.
+
+Como $K$ es cíclico de orden $s-1$, se cumple
+\begin{equation}
+ Q\mid s-1,\qquad s=1\quad\text{en }A.
+ \label{eq:ev-coef}
+\end{equation}
+La segunda igualdad, y no solamente que $Q$ sea primo con la característica de $\mathbb F$, será la razón de la aditividad.
+
+Para un grupo $G$, se usa el complejo bar inhomogéneo no normalizado $C_m(G,A)$, con símbolos $[g_1|\cdots|g_m]$ y frontera de la Nota 15. En grado cero hay un único símbolo vacío. Una representación $\rho:G\to\operatorname{GL}(V)$, con $V$ un espacio vectorial finito-dimensional sobre $\mathbb F$, induce un mapa de cadenas $\rho_*$. Denotamos por $Z_m$ y $B_m$ los ciclos y las fronteras.
+
+En esta nota el parámetro $E$ es el torcido aritmético de A93. En \texttt{HasVal.lean} se escribe un índice interno $e=E-1$: \texttt{zc q e} tiene grado $2e+2=2E$, y el prisma tiene grado $2e+3=2E+1$. Esto concuerda con la Nota 17, incluido $E=1$.
+
+Se busca una familia de formas $A$-lineales
+\begin{equation}
+ \theta_V:C_{2E+1}(\operatorname{GL}(V),A)\longrightarrow A
+ \label{eq:ev-familia}
+\end{equation}
+que se anulen en fronteras, sean invariantes por isomorfismos lineales y, para toda pareja de representaciones de un mismo grupo y todo ciclo $z$, satisfagan
+\begin{equation}
+ \theta_{V\oplus W}((\rho\oplus\sigma)_*z)
+ =\theta_V(\rho_*z)+\theta_W(\sigma_*z).
+ \label{eq:ev-aditividad-objetivo}
+\end{equation}
+La normalización requerida es $\theta_V(P_g(c_{E,x}^{V}))=x^Ev(\det g)$, donde se definirán explícitamente el ciclo $c_{E,x}^V$ y el prisma. El entero $x$ puede reducirse módulo $Q$; la fórmula es independiente de su representante.
+
+\subsection{El ciclo de un grupo cíclico}
+
+En la notación aditiva de $C_Q$, el símbolo $1$ significa la clase de uno, no el elemento neutro, que se escribe $0$. Definimos
+\begin{equation}
+ c_E=\sum_{j_1,\ldots,j_E\in C_Q}
+       [j_1|1|\cdots|j_E|1]\in C_{2E}(C_Q,A).
+ \label{eq:ev-ciclo}
+\end{equation}
+
+\begin{lema}[Ciclo cíclico de grado par]
+\label{lem:ev-ciclo}
+Se cumple $\partial c_E=0$ para todo $E\ge1$.
+\end{lema}
+\begin{proof}
+La primera cara, que suprime $j_1$, es independiente de $j_1$; su suma tiene un factor $Q$ y se anula en $A$. Numeremos las caras restantes de $1$ a $2E$. Para cada $h$ entre $1$ y $E-1$, la cara $2h-1$ que suma $j_h+1$ y la cara $2h$ que suma $1+j_{h+1}$ tienen signos opuestos. Al sumar sobre los índices, sus cadenas coinciden: la traslación $j_h\mapsto j_h+1$, $j_{h+1}\mapsto j_{h+1}-1$ lleva las cadenas de la primera cara a las de la segunda. Para $h=E$ la última pareja suma $j_E+1$ o elimina la última entrada $1$; la traslación de $j_E$ da igualmente una biyección. Quedan así canceladas todas las caras.
+\end{proof}
+
+Para $x\in\Z$ escribimos $\chi_x:C_Q\to K$, $j\mapsto\zeta^{xj}$. Es un homomorfismo porque $\zeta^Q=1$. Si $\iota_V:K\to\operatorname{GL}(V)$ envía una unidad a la homotecia de esa razón, ponemos
+\begin{equation}
+ c_{E,x}=(\chi_x)_*c_E,\qquad
+ c_{E,x}^{V}=(\iota_V)_*c_{E,x}.
+ \label{eq:ev-escalar}
+\end{equation}
+Ambas cadenas son ciclos, por naturalidad de la frontera. No se requiere que $x$ sea primo con $Q$ ni que $\chi_x$ sea inyectivo.
+
+\subsection{El prisma y la identidad de dos inserciones}
+
+Para un elemento $g$ de un grupo $G$, sea $f_g(a)=g^{-1}ag$. En el complejo bar, el prisma de la Nota 15 es
+\begin{equation}
+ P_g[a_1|\cdots|a_m]=\sum_{i=0}^m(-1)^i
+ [a_1|\cdots|a_i|g|f_g(a_{i+1})|\cdots|f_g(a_m)].
+ \label{eq:ev-prisma}
+\end{equation}
+Cumple $\partial P_g+P_g\partial=(f_g)_*-1$, y es natural respecto de homomorfismos. Si las entradas de un ciclo $z$ conmutan con $g$, entonces $P_gz$ es un ciclo. Esto se aplica a $c_{E,x}^V$, pues sus entradas son escalares.
+
+\begin{proposicion}[Prisma multiplicativo]
+\label{prop:ev-doble}
+Para todo ciclo $z\in C_m(G,A)$ y cualesquiera $g,h\in G$,
+\begin{equation}
+ P_{gh}z-P_gz-P_h(f_g)_*z\in B_{m+1}(G,A).
+ \label{eq:ev-doble}
+\end{equation}
+No se supone que cada prisma individual sea ciclo.
+\end{proposicion}
+\begin{proof}
+Para un símbolo $a=[a_1|\cdots|a_m]$ construimos la cadena de dos inserciones
+\begin{equation}
+ \begin{aligned}
+ D_{g,h}a=\sum_{0\le i\le j\le m}(-1)^{i+j}
+ &[a_1|\cdots|a_i|g|f_g(a_{i+1})|\cdots|f_g(a_j)\\
+ &\qquad|h|f_{gh}(a_{j+1})|\cdots|f_{gh}(a_m)].
+ \end{aligned}
+ \label{eq:ev-doble-forma}
+\end{equation}
+La frontera de esta suma satisface
+\begin{equation}
+ \partial D_{g,h}-D_{g,h}\partial=P_g+P_h(f_g)_*-P_{gh}.
+ \label{eq:ev-doble-frontera}
+\end{equation}
+Para comprobar los signos, se agrupan las caras de cada término según su posición. Las caras que suprimen una entrada exterior o multiplican dos entradas del mismo bloque producen $D_{g,h}\partial$: al mover una cara del símbolo original a través de cero, una o dos inserciones, el signo de la cara y el de los índices de inserción cambian en conjunto por un factor $+1$. Más explícitamente, para una cara original de índice $k$ que precede a ambos cortes, los nuevos cortes son $i-1,j-1$ y el índice de cara es $k$; entre ambos cortes son $i,j-1$ y la cara tiene índice $k+1$; después de ambos son $i,j$ y la cara tiene índice $k+2$. En los tres casos la paridad total coincide con la de $D_{g,h}\partial$.
+
+Las caras que cruzan una inserción cancelan entre cortes consecutivos, pues $a g=g f_g(a)$ y $f_g(a)h=h f_{gh}(a)$. Restan tres tipos. Si $i=0$ y se suprime $g$, el signo es $(-1)^j$ y queda $P_h(f_g)_*$. Si $j=m$ y se suprime $h$, el signo es $(-1)^{i+m+m+2}=(-1)^i$ y queda $P_g$. Cuando $i=j$, la cara que multiplica $g$ y $h$ tiene índice $i+1$, por lo que su signo es $(-1)^{2i+i+1}=-(-1)^i$ y queda $-P_{gh}$. Esto demuestra \eqref{eq:ev-doble-frontera}, también en los casos de bloques vacíos. Si $\partial z=0$, la expresión de \eqref{eq:ev-doble} es $-\partial D_{g,h}z$.
+\end{proof}
+
+La fórmula es una deducción en el complejo no normalizado; no se descartan símbolos con entradas iguales a la identidad. Cubre precisamente el uso de \texttt{SPrismMul} en el pegado de la Nota 17. La prueba formal de ese archivo utiliza un complejo homogéneo y la composición de homotopías; la fórmula anterior ofrece una comprobación inhomogénea propia.
+
+\subsection{Un cociclo a partir de un logaritmo discreto}
+
+Fijemos un generador $\omega$ de $K$, y escribamos $M=s-1=Qr$, con $r\ge1$. Existe un entero $d$ primo con $Q$ tal que $\zeta=\omega^{rd}$. Elijamos un entero $b$ con $bd\equiv1\pmod Q$. Para cada $a\in K$, sea $j(a)\in\{0,\ldots,M-1\}$ el exponente de $\omega$ que lo representa. La función entera $L(a)=b j(a)$ verifica
+\begin{equation}
+ L(aa')\equiv L(a)+L(a')\pmod M,\qquad
+ L(\zeta^x)\equiv rx\pmod M.
+ \label{eq:ev-log}
+\end{equation}
+La elección de $b$ no tiene por qué dar una unidad módulo $M$: basta su congruencia módulo $Q$.
+
+\begin{lema}[Cociclo entero de acarreo]
+\label{lem:ev-carry}
+La función
+\begin{equation}
+ U(a,a')=\frac{L(a)+L(a')-L(aa')}{M}\in\Z,
+ \qquad u(a,a')=U(a,a')\pmod Q
+ \label{eq:ev-carry}
+\end{equation}
+es simétrica y $u$ es un cociclo de grado dos con coeficientes triviales en $A$.
+\end{lema}
+\begin{proof}
+La primera congruencia de \eqref{eq:ev-log} garantiza la integridad de $U$. La conmutatividad de $K$ da la simetría. Al multiplicar por $M$, la expresión
+\[
+ U(b',c)-U(ab',c)+U(a,b'c)-U(a,b')
+\]
+se convierte en una suma telescópica de valores de $L$, que se anula en $\Z$. Como $M\ne0$, la expresión es cero. Reducir módulo $Q$ da la identidad de cociclo de $u$.
+\end{proof}
+
+La división en \eqref{eq:ev-carry} se efectúa en $\Z$, antes de reducir. No tendría sentido dividir por $M$ en $A$, pues allí $M=0$. Es la razón por la que un logaritmo discreto con valores solamente en $A$ no basta para este cálculo.
+
+\begin{proposicion}[Valor exacto en el ciclo escalar]
+\label{prop:ev-suma}
+Para todo entero $x$ se tiene
+\begin{equation}
+ \sum_{j\in C_Q}u(\zeta^{xj},\zeta^x)=x\quad\text{en }A.
+ \label{eq:ev-suma}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Sea $a=\zeta^x$. La traslación $j\mapsto j+1$ permuta $C_Q$ aun cuando $a$ no tenga orden $Q$. La definición de $U$ da
+\[
+ M\sum_{j\in C_Q}U(a^j,a)
+ =\sum_{j\in C_Q}\bigl(L(a^j)+L(a)-L(a^{j+1})\bigr)=Q L(a).
+\]
+Como $M=Qr$, la suma entera es $L(a)/r$. La segunda congruencia de \eqref{eq:ev-log} asegura que $L(a)=rx+M t$ para algún $t\in\Z$. Así $L(a)/r=x+Qt$. Reducir prueba la fórmula.
+\end{proof}
+
+En particular, la construcción no exige $v(\zeta)=1$. El factor $x$ procede de $u$, y el carácter $v$ aparecerá en un factor separado, aplicado al elemento que se inserta en el prisma.
+
+\subsection{Producto de copa y funcional de grado impar}
+
+Identificamos una cocadena de grado $m$ con una función $K^m\to A$, extendida linealmente al complejo bar. Su coborde es $\delta f(z)=f(\partial z)$. Con coeficientes triviales, para cocadenas $f$ de grado $p$ y $h$ de grado $q$, el producto de copa es
+\[
+ (f\smile h)(a_1,\ldots,a_{p+q})
+ = f(a_1,\ldots,a_p)h(a_{p+1},\ldots,a_{p+q}).
+\]
+Cumple $\delta(f\smile h)=\delta f\smile h+(-1)^p f\smile\delta h$. En efecto, al expandir el coborde, las caras hasta el corte pertenecen a la primera expresión y las restantes a la segunda; los dos términos adicionales, correspondientes a la cara final del primer bloque y la inicial del segundo, tienen signos $(-1)^{p+1}$ y $(-1)^p$ y se cancelan. Esta verificación también vale en el complejo no normalizado.
+
+\begin{proposicion}[Cociclo escalar de grado $2E+1$]
+\label{prop:ev-cochain}
+La forma lineal $t:C_{2E+1}(K,A)\to A$ dada por
+\begin{equation}
+ t[a_1|\cdots|a_{2E+1}]
+   =\left(\prod_{i=1}^E u(a_{2i-1},a_{2i})\right)v(a_{2E+1})
+ \label{eq:ev-cochain}
+\end{equation}
+se anula sobre las fronteras.
+\end{proposicion}
+\begin{proof}
+El Lema~\ref{lem:ev-carry} dice que $\delta u=0$. El carácter aditivo $v$ satisface $v(b')-v(ab')+v(a)=0$, es decir, $\delta v=0$. Por la regla de Leibniz para el coborde, $t=u^{\smile E}\smile v$ es un cociclo. Por definición de $\delta$, esto equivale a $t(B_{2E+1}(K,A))=0$.
+\end{proof}
+
+\begin{lema}[Inserción en un grupo abeliano]
+\label{lem:ev-insercion}
+Para $g\in K$ y un símbolo $a=[a_1|\cdots|a_{2E}]$ se cumple
+\begin{equation}
+ t(P_ga)=\left(\prod_{i=1}^E u(a_{2i-1},a_{2i})\right)v(g).
+ \label{eq:ev-insercion}
+\end{equation}
+\end{lema}
+\begin{proof}
+Como $K$ es abeliano, el prisma se reduce a insertar $g$ en todas las posiciones con signos alternados. Para $0\le j<E$, las inserciones en las posiciones $2j$ y $2j+1$ tienen los mismos factores excepto que uno contiene $u(g,a_{2j+1})$ y el otro $u(a_{2j+1},g)$. Son iguales por simetría y los signos son opuestos. La única posición sin pareja es $2E$, que tiene signo positivo y pone $g$ en el argumento de $v$. Se obtiene \eqref{eq:ev-insercion}.
+\end{proof}
+
+\begin{teorema}[Normalización en dimensión uno]
+\label{thm:ev-escalar}
+Para el cociclo \eqref{eq:ev-cochain}, todo $x\in\Z$ y todo $g\in K$,
+\begin{equation}
+ t(P_g c_{E,x})=x^Ev(g).
+ \label{eq:ev-escalar-valor}
+\end{equation}
+\end{teorema}
+\begin{proof}
+Aplicar \eqref{eq:ev-insercion} a cada símbolo de \eqref{eq:ev-ciclo} después de $\chi_x$ da
+\[
+ t(P_g c_{E,x})
+ =\sum_{j_1,\ldots,j_E\in C_Q}
+     \prod_{i=1}^E u(\zeta^{xj_i},\zeta^x)\,v(g).
+\]
+Los índices son independientes. Por distributividad, el producto de $E$ sumas iguales se convierte en $\bigl(\sum_{j\in C_Q}u(\zeta^{xj},\zeta^x)\bigr)^Ev(g)$. La Proposición~\ref{prop:ev-suma} concluye.
+\end{proof}
+
+Hasta aquí se ha construido \texttt{SCoc} con el cambio de índice $E=e+1$. No se ha supuesto una descripción del anillo de cohomología de $K$, aunque el cálculo es compatible con la resolución periódica de los grupos cíclicos.
+
+\subsection{Transferencia sobre un conjunto finito}
+
+Sea $G$ un grupo, $X$ un conjunto finito con acción por la derecha, escrita $x\cdot g$, y sea $J$ un grupo. Supongamos que una función $\lambda:G\times X\to J$ verifica
+\begin{equation}
+ \lambda(1,x)=1,\qquad
+ \lambda(gh,x)=\lambda(g,x)\lambda(h,x\cdot g).
+ \label{eq:ev-accion}
+\end{equation}
+En un símbolo $[g_1|\cdots|g_m]$ ponemos $x_0=x$, $x_i=x_{i-1}\cdot g_i$ y $\lambda_i=\lambda(g_i,x_{i-1})$. Definimos la transferencia
+\begin{equation}
+ T_{X,\lambda}[g_1|\cdots|g_m]
+ =\sum_{x\in X}[\lambda_1|\cdots|\lambda_m].
+ \label{eq:ev-transferencia}
+\end{equation}
+En grado cero envía el símbolo vacío a $\#X$ veces el símbolo vacío. Las cadenas se toman sobre cualquier anillo conmutativo $A$.
+
+\begin{lema}[La transferencia es un mapa de complejos]
+\label{lem:ev-transferencia}
+Se cumple $\partial T_{X,\lambda}=T_{X,\lambda}\partial$.
+\end{lema}
+\begin{proof}
+La cara interna que combina $g_i,g_{i+1}$ combina en la transferencia $\lambda_i,\lambda_{i+1}$. Por \eqref{eq:ev-accion} su producto es $\lambda(g_i g_{i+1},x_{i-1})$, y las entradas siguientes se calculan desde el mismo punto de $X$. La última cara elimina la última entrada en ambos lados. La primera cara cambia el punto inicial de $x$ a $x\cdot g_1$; al sumar sobre $X$, ese cambio no altera la suma porque la acción de $g_1$ es una permutación. Por tanto coinciden las caras, con sus respectivos signos, y la igualdad se extiende linealmente.
+\end{proof}
+
+\begin{proposicion}[Cambio de coordenadas de un cociclo]
+\label{prop:ev-cambio}
+Supongamos que $\lambda'$ se obtiene de $\lambda$ mediante una función $b:X\to J$,
+\begin{equation}
+ \lambda'(g,x)=b(x)^{-1}\lambda(g,x)b(x\cdot g).
+ \label{eq:ev-cambio}
+\end{equation}
+Entonces $T_{X,\lambda'}-T_{X,\lambda}$ envía ciclos a fronteras.
+\end{proposicion}
+\begin{proof}
+Para cada símbolo $z=[g_1|\cdots|g_m]$ se define $H(z)$ sumando sobre $x\in X$ y $0\le i\le m$ los términos
+\[
+ (-1)^i[\lambda_1|\cdots|\lambda_i|b(x_i)|
+          \lambda'_{i+1}|\cdots|\lambda'_m].
+\]
+La identidad $\lambda_i b(x_i)=b(x_{i-1})\lambda'_i$ cancela las caras que cruzan la inserción entre dos sumandos consecutivos. Las caras estrictamente antes y después de la inserción cancelan con $H\partial$; en la primera cara se reindexa $x\mapsto x\cdot g_1$. Las dos caras extremas restantes son la primera cara del corte $i=0$, que da $T_{X,\lambda'}$, y la última del corte $i=m$, que da $-T_{X,\lambda}$. De aquí
+\begin{equation}
+ \partial H+H\partial=T_{X,\lambda'}-T_{X,\lambda}.
+ \label{eq:ev-homotopia}
+\end{equation}
+Para un ciclo $z$, la diferencia es $\partial H(z)$.
+\end{proof}
+
+El cambio de coordenadas no produce necesariamente igualdad de las cadenas transferidas. La igualdad requerida es la de sus valores bajo una evaluación que anula fronteras. Esta distinción permite escoger coordenadas diferentes en la demostración de aditividad.
+
+\subsection{Compatibilidad con proyecciones de conjuntos finitos}
+
+\begin{proposicion}[Transferencia y multiplicidad de las fibras]
+\label{prop:ev-fibras}
+Sean $X,Y$ dos conjuntos finitos con acciones por la derecha de $G$, $p:X\to Y$ una aplicación equivariante y $\lambda_X(g,x)=\lambda_Y(g,p(x))$. Supongamos que $\#p^{-1}(y)=1$ como elemento de $A$ para todo $y\in Y$. Entonces
+\begin{equation}
+ T_{X,\lambda_X}=T_{Y,\lambda_Y}.
+ \label{eq:ev-fibras}
+\end{equation}
+Además, la transferencia de una unión disjunta de conjuntos invariantes es la suma de las transferencias de sus partes.
+\end{proposicion}
+\begin{proof}
+En \eqref{eq:ev-transferencia} el símbolo asociado a $x$ depende solamente de $p(x)$: por equivariancia todos los puntos sucesivos tienen proyecciones iguales a las que se calculan desde $p(x)$, y las funciones $\lambda$ coinciden en cada paso. Agrupar los sumandos por las fibras de $p$ multiplica el símbolo de $y$ por $\#p^{-1}(y)=1$ en $A$. La afirmación sobre la unión disjunta es la partición de la suma que define $T$.
+\end{proof}
+
+La hipótesis de cardinalidad es una igualdad en el anillo de coeficientes. No exige que $p$ sea una biyección de conjuntos. También se puede efectuar la transferencia después de restringir una acción y su cociclo por un homomorfismo $G'\to G$: la fórmula sobre símbolos muestra que equivale a aplicar primero el mapa de cadenas de ese homomorfismo.
+
+\subsection{El espacio proyectivo como conjunto de transferencia}
+
+Para un espacio vectorial $V$ de dimensión finita sobre $\mathbb F$, sea $\mathbb P(V)$ el conjunto de rectas de $V$. Si $V=0$, este conjunto es vacío. Para cada recta $L$ elijamos un representante $s_L\ne0$. Dada una representación $\rho:G\to\operatorname{GL}(V)$, definimos la acción derecha y el cociclo por
+\begin{equation}
+ L\cdot g=\rho(g)^{-1}L,\qquad
+ \rho(g)s_{L\cdot g}=\lambda_\rho(g,L)s_L.
+ \label{eq:ev-rectas}
+\end{equation}
+El coeficiente $\lambda_\rho(g,L)$ pertenece a $K$ y está determinado de manera única porque los dos vectores no nulos pertenecen a $L$.
+
+La inversa de $\rho(g)$ es necesaria para que la acción sea por la derecha. Aplicando primero $\rho(h)$ al representante de $(L\cdot g)\cdot h$ y después $\rho(g)$, se verifica \eqref{eq:ev-accion}. Si se cambia $s_L$ por $b(L)s_L$, la nueva función $\lambda$ verifica \eqref{eq:ev-cambio}. La Proposición~\ref{prop:ev-cambio} controla exactamente esta dependencia de las coordenadas.
+
+Sea ahora $t:C_m(K,A)\to A$ una forma lineal que se anula en fronteras, con $m>0$. Para la representación identidad de $\operatorname{GL}(V)$, definimos
+\begin{equation}
+ \theta_V=t\circ T_{\mathbb P(V),\lambda_{\mathrm{id}}}.
+ \label{eq:ev-def-theta}
+\end{equation}
+Por el Lema~\ref{lem:ev-transferencia}, $\theta_V$ anula las fronteras. La restricción de la acción por $\rho$ da para todo símbolo, y por linealidad para toda cadena,
+\begin{equation}
+ \theta_V(\rho_*z)=t(T_{\mathbb P(V),\lambda_\rho}z),
+ \label{eq:ev-eval-rho}
+\end{equation}
+si se utilizan las mismas coordenadas. En ciclos se puede usar cualquier elección de representantes.
+
+\begin{proposicion}[Isomorfismos y dimensión uno]
+\label{prop:ev-iso}
+Si $f:V\simeq W$ es un isomorfismo lineal y $f_*$ el mapa de cadenas por conjugación $g\mapsto f g f^{-1}$, entonces $\theta_W(f_*z)=\theta_V(z)$ para ciclos $z$. Para $V=\mathbb F$ y la representación escalar $\iota_{\mathbb F}$, se tiene $\theta_{\mathbb F}((\iota_{\mathbb F})_*z)=t(z)$.
+\end{proposicion}
+\begin{proof}
+La aplicación $L\mapsto f(L)$ es una biyección equivariante. Si en $W$ se elige el representante $f(s_L)$, los cociclos coinciden por \eqref{eq:ev-rectas}. La Proposición~\ref{prop:ev-fibras} y la independencia sobre ciclos permiten volver a la elección original. En dimensión uno hay una sola recta, $\mathbb F$, y para la homotecia de razón $a$ se tiene $\lambda(a,\mathbb F)=a$. Por tanto la transferencia es la identidad en las cadenas de $K$ y el resultado sigue de \eqref{eq:ev-def-theta}.
+\end{proof}
+
+\subsection{Aditividad sobre sumas directas}
+
+Sean $\rho:G\to\operatorname{GL}(V)$ y $\sigma:G\to\operatorname{GL}(W)$. Existe una aplicación
+\begin{equation}
+ p:\mathbb P(V\oplus W)\longrightarrow\mathbb P(V)\sqcup\mathbb P(W),
+ \qquad [(a,b)]\longmapsto
+ \begin{cases}[a],& a\ne0,\\{}[b],&a=0.
+ \end{cases}
+ \label{eq:ev-proyeccion}
+\end{equation}
+La segunda rama es válida porque $(a,b)\ne0$. La aplicación respeta la multiplicación por escalares no nulos y es equivariante bajo las acciones derechas de las representaciones.
+
+\begin{lema}[Fibras y representantes]
+\label{lem:ev-fibproj}
+Sobre una recta $L\in\mathbb P(V)$, la fibra de $p$ tiene cardinal $s^{\dim W}$. Sobre una recta $L\in\mathbb P(W)$, tiene cardinal uno. Es posible escoger representantes de forma que el cociclo de $\rho\oplus\sigma$ sea el cociclo de la unión disjunta transportado por $p$.
+\end{lema}
+\begin{proof}
+Para $L\in\mathbb P(V)$ fijamos $a=s_L$. Cada recta en la fibra tiene un único representante $(a,b)$ con $b\in W$: basta multiplicar por el escalar que normaliza la primera coordenada, y ese escalar es único. Esto da una biyección con $W$. Para $L\in\mathbb P(W)$ la única recta de la fibra es $0\oplus L$, con representante $(0,s_L)$.
+
+Con esos representantes, para una recta $D$ que proyecta sobre $L\in\mathbb P(V)$, la primera coordenada de $(\rho(g)\oplus\sigma(g))s_{D\cdot g}$ es $\rho(g)s_{L\cdot g}=\lambda_\rho(g,L)s_L$. Como el vector total pertenece a $D$, el cociente escalar está determinado ya por esa primera coordenada no nula. Por ello $\lambda_{\rho\oplus\sigma}(g,D)=\lambda_\rho(g,L)$. En la otra rama, la segunda coordenada da la igualdad con $\lambda_\sigma$.
+\end{proof}
+
+\begin{teorema}[Transferencia aditiva]
+\label{thm:ev-transfer-adit}
+Si $s=1$ en el anillo de coeficientes $A$, la familia \eqref{eq:ev-def-theta} satisface \eqref{eq:ev-aditividad-objetivo} en todo grado $m>0$, con cualquier forma $t$ que anule fronteras.
+\end{teorema}
+\begin{proof}
+Por el Lema~\ref{lem:ev-fibproj}, las cardinalidades de las fibras son $s^{\dim W}$ y uno; ambas valen uno en $A$. Las coordenadas escogidas hacen compatibles los cociclos, de modo que \eqref{eq:ev-fibras} identifica la transferencia del espacio proyectivo de la suma directa con la suma de las transferencias de sus dos partes. Aplicar $t$ produce la igualdad buscada para esas coordenadas. Como $z$ es un ciclo, la Proposición~\ref{prop:ev-cambio} permite recuperar las coordenadas arbitrarias de \eqref{eq:ev-def-theta}. Los casos de dimensión cero están incluidos: la transferencia sobre el conjunto vacío es cero.
+\end{proof}
+
+Esta es la construcción de \texttt{STrans}. La condición \eqref{eq:ev-coef} verifica su hipótesis para $A=\Z/Q\Z$. En particular, la aditividad no se obtiene sumando arbitrariamente los valores de una cocadena en las entradas de una matriz. Se debe a la estructura del conjunto de rectas y al conteo exacto de sus fibras.
+
+\subsection{Del prisma a un carácter del grupo lineal}
+
+Fijemos $E,x,v$ y el cociclo $t$ de \eqref{eq:ev-cochain}. Para cada $V$ definimos
+\begin{equation}
+ F_{V,x}:\operatorname{GL}(V)\to A,\qquad
+ F_{V,x}(g)=\theta_V(P_g c_{E,x}^V).
+ \label{eq:ev-FV}
+\end{equation}
+\begin{proposicion}[Propiedades del carácter de prisma]
+\label{prop:ev-caracter}
+$F_{V,x}$ es un homomorfismo aditivo, invariante por isomorfismos de espacios vectoriales y compatible con la suma directa de automorfismos. En dimensión uno se cumple $F_{\mathbb F,x}(a)=x^Ev(a)$.
+\end{proposicion}
+\begin{proof}
+Cada prisma es un ciclo, por centralidad de las homotecias. Como $(f_g)_*c_{E,x}^V=c_{E,x}^V$, la Proposición~\ref{prop:ev-doble} y la anulación de fronteras dan $F_{V,x}(gh)=F_{V,x}(g)+F_{V,x}(h)$. La naturalidad del prisma y la Proposición~\ref{prop:ev-iso} dan la invariancia bajo isomorfismos.
+
+Para la aditividad, se usa el grupo $\operatorname{GL}(V)\times\operatorname{GL}(W)$ con el ciclo obtenido al aplicar $P_{(g,h)}$ al ciclo escalar diagonal, imagen de $c_E$ por $j\mapsto(\zeta^{xj}\operatorname{id}_V,\zeta^{xj}\operatorname{id}_W)$. Es un ciclo porque las entradas escalares conmutan con $(g,h)$. Las proyecciones y la representación por bloques llevan este ciclo a los tres prismas de la igualdad. Aplicar el Teorema~\ref{thm:ev-transfer-adit} da $F_{V\oplus W,x}(g\oplus h)=F_{V,x}(g)+F_{W,x}(h)$. Finalmente, \eqref{eq:ev-escalar-valor} y la Proposición~\ref{prop:ev-iso} dan el valor en dimensión uno.
+\end{proof}
+
+\subsection{Por qué interviene el determinante}
+
+\begin{lema}[Factorización de caracteres aditivos]
+\label{lem:ev-det}
+Sea $k$ un cuerpo con más de dos elementos y $D$ un grupo abeliano, en notación aditiva. Todo homomorfismo $F:\operatorname{GL}_n(k)\to D$ se anula en las transvecciones $T_{ij}(a)=I+aE_{ij}$, $i\ne j$. Si además su valor en las matrices diagonales es $F(\operatorname{diag}(a_1,\ldots,a_n))=\sum_i w(a_i)$ para un homomorfismo $w:k^\times\to D$, entonces $F(g)=w(\det g)$.
+\end{lema}
+\begin{proof}
+Sea $\eta\in k^\times$, $\eta\ne1$, y sea $D_i$ la matriz diagonal con $\eta$ en la entrada $i$ y uno en las demás. Se tiene
+\begin{equation}
+ [D_i,T_{ij}(a/(\eta-1))]=T_{ij}(a),
+ \label{eq:ev-transveccion}
+\end{equation}
+con la convención $[u,w]=uwu^{-1}w^{-1}$. En efecto, conjugar por $D_i$ multiplica el parámetro de la transvección por $\eta$, y los parámetros se suman al multiplicar transvecciones con los mismos índices. Un homomorfismo hacia un grupo abeliano anula conmutadores; esto prueba la primera afirmación.
+
+Las matrices diagonales invertibles y las transvecciones generan $\operatorname{GL}_n(k)$, por eliminación gaussiana: las operaciones de añadir múltiplos de filas y de escalarlas bastan junto con los intercambios. Un intercambio de dos filas se obtiene también de esas operaciones; en el bloque de dos coordenadas, $T_{12}(1)T_{21}(-1)T_{12}(1)$ es $\left(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right)$, y escalar la segunda fila por $-1$ da el intercambio. Esto funciona también en característica dos. Los dos homomorfismos $F$ y $w\circ\det$ coinciden en cada tipo de generador y por tanto en todo el grupo. Para $n=1$ la hipótesis diagonal ya es la conclusión; para $n=0$ el grupo es trivial.
+\end{proof}
+
+\begin{teorema}[Existencia de evaluaciones normalizadas]
+\label{thm:ev-theta}
+Sea $\mathbb F$ un cuerpo finito que contiene una raíz primitiva $\zeta$ de orden $Q\ge2$, sea $E\ge1$ y sea $v:\mathbb F^\times\to\Z/Q\Z$ cualquier carácter aditivo. Existe una familia \eqref{eq:ev-familia} que anula fronteras, respeta isomorfismos, satisface \eqref{eq:ev-aditividad-objetivo} y, para todo $V$, $g\in\operatorname{GL}(V)$ y $x\in\Z$, verifica
+\begin{equation}
+ \boxed{\theta_V(P_g c_{E,x}^V)=x^E v(\det g).}
+ \label{eq:ev-normalizacion}
+\end{equation}
+La familia se construye fijando $\mathbb F,Q,\zeta,E,v$; no depende de $x$ ni de $g$.
+\end{teorema}
+\begin{proof}
+Usamos $t$ de \eqref{eq:ev-cochain} en \eqref{eq:ev-def-theta}. Las propiedades de la familia ya se han probado. Por la Proposición~\ref{prop:ev-caracter}, al descomponer una matriz diagonal en automorfismos de rectas, se obtiene la suma de los valores $x^Ev(a_i)$. Como $Q\ge2$, se tiene $s\ge3$ y podemos aplicar el Lema~\ref{lem:ev-det} con $w(a)=x^Ev(a)$. La igualdad resultante es \eqref{eq:ev-normalizacion}, primero en $\mathbb F^n$ y después en todo $V$ mediante un isomorfismo. La construcción de $t$ no utiliza $x,g$; el mismo $t$ y las mismas coordenadas proyectivas sirven para todos esos valores.
+\end{proof}
+
+En la interfaz Lean, el caso $Q=1$ se permite mediante \texttt{NeZero q}; el anillo de coeficientes es entonces trivial, todas las evaluaciones son cero y la normalización es automática. El argumento de transvecciones no se aplica sin más al campo de dos elementos, pero éste no contiene una raíz de orden $Q\ge2$. Por ello no surge una excepción para las aplicaciones.
+
+\subsection{Comprobación directa por la transferencia de rectas}
+
+Hay una segunda forma de comprobar \eqref{eq:ev-normalizacion} que permite ver el determinante dentro de la fórmula de transferencia. Se mantienen las coordenadas de \eqref{eq:ev-rectas} para la representación identidad.
+
+\begin{proposicion}[Producto de las razones proyectivas]
+\label{prop:ev-producto}
+Para todo $g\in\operatorname{GL}(V)$,
+\begin{equation}
+ \prod_{L\in\mathbb P(V)}\lambda(g,L)=\det g\quad\text{en }K.
+ \label{eq:ev-producto}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Llamemos $d_V(g)$ al producto del miembro izquierdo. La identidad \eqref{eq:ev-accion} y la permutación $L\mapsto L\cdot g$ muestran que $d_V(gh)=d_V(g)d_V(h)$. Los factores de un cambio de coordenadas \eqref{eq:ev-cambio} cancelan en el producto. En consecuencia $d_V$ es independiente de representantes y es invariante por isomorfismos de espacios.
+
+En la suma directa, el Lema~\ref{lem:ev-fibproj} da
+\[
+ d_{V\oplus W}(g\oplus h)=d_V(g)^{s^{\dim W}}d_W(h)=d_V(g)d_W(h).
+\]
+La segunda igualdad es ahora una identidad exacta en $K$, pues $s\equiv1\pmod{s-1}$ y el orden de $K$ es $s-1$. En dimensión uno, $d_{\mathbb F}(a)=a$. Por tanto $d_V$ coincide con el determinante en matrices diagonales. Como homomorfismo hacia un grupo abeliano, anula las transvecciones por \eqref{eq:ev-transveccion}, leído multiplicativamente. La generación del Lema~\ref{lem:ev-det} da la igualdad. Si $s=2$, ambos lados pertenecen al grupo trivial y la afirmación es inmediata.
+\end{proof}
+
+Para una homotecia de razón $a$, la acción sobre las rectas es trivial y $\lambda(a,L)=a$. En el prisma de $g$ aplicado a un símbolo de homotecias, antes de insertar $g$ la recta inicial no cambia; después cambia una vez por $g^{-1}$, y las demás entradas vuelven a ser escalares. Por \eqref{eq:ev-transferencia} y centralidad,
+\begin{equation}
+ T_{\mathbb P(V),\lambda}(P_gc_{E,x}^V)
+ =\sum_{L\in\mathbb P(V)}P_{\lambda(g,L)}c_{E,x}.
+ \label{eq:ev-directa}
+\end{equation}
+El signo de cada inserción es el mismo en ambos miembros. Aplicar $t$ y usar \eqref{eq:ev-escalar-valor} da $x^E\sum_L v(\lambda(g,L))=x^E v(\det g)$ por \eqref{eq:ev-producto}. Este cálculo es una comprobación directa de la normalización de la familia construida, independiente de la utilización del prisma multiplicativo para demostrar la Proposición~\ref{prop:ev-caracter}. No afirma que una familia arbitraria tenga necesariamente la forma \eqref{eq:ev-def-theta}.
+
+\subsection{Reducciones y familias primitivas}
+
+Sea $R$ un anillo conmutativo y $r:R\to\mathbb F$ un homomorfismo unitario. La reducción de matrices define $\operatorname{red}_n:\operatorname{GL}_n(R)\to\operatorname{GL}_n(\mathbb F)$, puesto que la imagen de una matriz inversa es una inversa. Para $A=\Z/Q\Z$ y $m=2E+1$ definimos
+\begin{equation}
+ \Phi_n=\theta_{\mathbb F^n}\circ(\operatorname{red}_n)_*.
+ \label{eq:ev-phi}
+\end{equation}
+La estabilización $\mathrm{st}_{n,n'}$ agrega un bloque identidad de tamaño $n'-n$. La operación $\Psi_d$ coloca $d$ copias de una matriz en la diagonal, con $d\ge0$; para $d=0$ se obtiene el grupo trivial.
+
+\begin{teorema}[Primitividad después de reducir]
+\label{thm:ev-primitividad}
+Las formas \eqref{eq:ev-phi} anulan las fronteras, y para todo ciclo $z$ y $n'\ge n$ se cumplen
+\begin{equation}
+ \Phi_{n'}((\mathrm{st}_{n,n'})_*z)=\Phi_n(z),\qquad
+ \Phi_{dn}((\Psi_d)_*z)=d\,\Phi_n(z).
+ \label{eq:ev-phi-identidades}
+\end{equation}
+\end{teorema}
+\begin{proof}
+La reducción es un mapa de complejos, de modo que conserva fronteras. Para la primera identidad, la representación reducida de la estabilización es la suma directa de la representación original y una representación trivial. Una representación trivial factoriza por el grupo de un elemento. Su complejo bar tiene un generador en cada grado, con frontera multiplicación por $\sum_{i=0}^m(-1)^i$, que vale cero si $m$ es impar y uno si $m$ es par y positivo. Por tanto su homología en grados positivos es cero. La imagen del ciclo por esa representación es una frontera, que la evaluación anula. La aditividad da la primera igualdad. Para la segunda identidad, la representación reducida es suma directa de $d$ copias de la original; aplicar sucesivamente la aditividad da el factor $d$; para $d=0$, la imagen del ciclo es una frontera en el grupo trivial. Las igualdades valen para ciclos, sin exigir que se tenga aditividad sobre todas las cadenas.
+\end{proof}
+
+Ésta es la propiedad \texttt{IsPrimFam} que \texttt{SPhi} construye y que la Nota 15 utiliza en su conteo. No se necesita que $r$ sea sobreyectivo para este lema algebraico. La sobreyectividad y las otras condiciones sobre las reducciones aparecen en la realización aritmética y en el teorema de detección, donde se conservan.
+
+\subsection{Reunir evaluaciones y conservar la pérdida de filtrado}
+
+Sea una familia, eventualmente infinita, de reducciones y de caracteres aditivos para las que los coeficientes son el mismo $A$. El producto de las formas $\Phi_{n,\alpha}$ tiene destino en el $A$-módulo $B=\prod_\alpha A$. Cada identidad de \eqref{eq:ev-phi-identidades} vale coordenada a coordenada, por lo que el producto sigue siendo primitivo. No se suma sobre todas las reducciones; se toma un producto, que no plantea un problema de convergencia.
+
+Recordemos el filtrado de la Nota 15. En homología integral, después de reducir, las formas inducen $\varphi_n$; para $Q=\ell^\nu$ y $k=2E$, la recurrencia $z_0=z$, $z_{j+1}=\Psi_\ell z_j-\ell^{j+2}\mathrm{st}(z_j)$ satisface
+\begin{equation}
+ \varphi_{\ell^j n}(z_j)=\ell^j\prod_{i=1}^j(1-\ell^i)\varphi_n(z).
+ \label{eq:ev-filtrado}
+\end{equation}
+En efecto, la multiplicación en el paso $j$ es $\ell-\ell^{j+2}=\ell(1-\ell^{j+1})$, por \eqref{eq:ev-phi-identidades}. Todos los factores $1-\ell^i$ son unidades en $A$, también para $\ell=2$. Tras $2E$ pasos se ha perdido la potencia $\ell^{2E}$, que es la que debe mantenerse en el conteo de fibras. La existencia de $\theta$ no elimina esa pérdida ni demuestra el rango de la imagen filtrada.
+
+Para la detección de las Notas 15 y 17, en cada cuerpo residual que contiene una raíz primitiva de orden $Q$ se puede elegir $v$ con núcleo $K^Q$. Basta tomar un generador $\omega$ del grupo cíclico $K$ y enviar $\omega^j$ a $j\pmod Q$; está bien definido porque $Q\mid s-1$. El teorema de normalización se aplica a ese $v$, independientemente del valor que tome en la raíz $\zeta$.
+
+\subsection{Cotejo y continuidad de las notas}
+
+La referencia A93, p.~69, requiere una familia sobre cada cuerpo finito que contiene la raíz primitiva, invariante por isomorfismos y aditiva sobre ciclos. La construcción de la presente nota proporciona precisamente esos datos. En la ecuación (9.16) de A93 y en la Nota 17 se puede usar el Teorema~\ref{thm:ev-theta} para justificar la existencia de la evaluación; el Teorema~\ref{thm:ev-primitividad} justifica además su uso en (9.12). La Proposición~\ref{prop:ev-doble} elimina la entrada del prisma multiplicativo recibida en el pegado de la Nota 17.
+
+En el espejo Lean, \texttt{HasVal.lean} define las cadenas y fija el grado de \texttt{zc}, \texttt{IsAdd} y \texttt{HasVal}. \texttt{FirstFace.lean} demuestra que el ciclo base tiene frontera cero. \texttt{FProd.lean} construye el logaritmo entero, el cociclo de acarreo, su producto de copa y la evaluación por inserción. \texttt{STrans.lean} realiza la transferencia proyectiva, prueba la independencia de las coordenadas mediante un producto semidirecto y un prisma, y utiliza el conteo de fibras para obtener la aditividad. Nuestra prueba de independencia usa directamente la homotopía \eqref{eq:ev-homotopia}.
+
+\texttt{SThetaOf.lean} obtiene el carácter de prisma y su factorización por el determinante. La comprobación directa \eqref{eq:ev-directa} es un desarrollo propio de esta nota, no una transcripción de una declaración de ese archivo. \texttt{PiRepApply.lean} verifica la primitividad de las reducciones. \texttt{SPrismMul.lean} utiliza una construcción homogénea y homotopías de traslación para demostrar la identidad que aquí se prueba con dos inserciones. No se ha ejecutado Lean ni se han recorrido todas sus dependencias transitivas.
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}p{.28\textwidth}Y@{}}
+\toprule
+Interfaz & Aportación de la Nota 20\\\midrule
+\texttt{SZc}, \texttt{SPrismMul} & Ciclo par y frontera explícita de dos inserciones.\\
+\texttt{SCoc} & Cociclo entero de acarreo, producto de copa y valor escalar exacto.\\
+\texttt{STrans} & Transferencia por rectas, independencia de coordenadas y aditividad.\\
+\texttt{STheta}, \texttt{SThetaOf} & Existencia de evaluaciones normalizadas; factorización por el determinante.\\
+\texttt{SPhi} & Estabilización y repetición diagonal tras la reducción.\\
+\texttt{BOdd}, estabilidad & Entradas distintas: Notas~\ref{sec:detectores-reales}--\ref{sec:estabilidad-integral}.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+Las evaluaciones de esta nota suministran las familias de la Nota~\ref{sec:rango-homologico-ciclos}. Las Notas~\ref{sec:detectores-reales}--\ref{sec:estabilidad-integral} desarrollan los detectores, la sobreyectividad y la estabilidad integral; el Teorema~\ref{thm:ts-lemmaK} conserva las entradas aritméticas y geométricas de la deducción cuantitativa. La comparación integral theta y la uniformidad de generadores al variar las bases permanecen como tareas separadas.
+
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}[Una raíz cuyo carácter se anula]
+Tomar $\mathbb F=\mathbf F_{17}$, $Q=4$, un generador $\omega$ de $\mathbb F^\times$ y $\zeta=\omega^4$. Sea $v(\omega^j)=j\pmod4$. Calcular $v(\zeta)$ y $\sum_{j\in C_4}u(\zeta^{3j},\zeta^3)$ si se usa $L(\omega^j)=j$ para $0\le j<16$. Evaluar $t(P_{\omega^2}c_{2,3})$.
+\end{ejercicio}
+\paragraph{Solución.} Se tiene $v(\zeta)=4=0$ en $A$. Los exponentes de $\zeta^{3j}$, para $j=0,1,2,3$, son $0,12,8,4$. Al añadir $12$, los acarreos módulo $16$ son $0,1,1,1$. Su suma vale tres. Por \eqref{eq:ev-escalar-valor}, el valor pedido es $3^2\cdot2=18\equiv2\pmod4$. La anulación de $v(\zeta)$ no afecta el cálculo del cociclo de acarreo.
+
+\begin{ejercicio}[Fibras de una suma directa]
+Sea $\mathbb F=\mathbf F_5$, $V=W=\mathbb F$ y $Q=4$. Describir las fibras de \eqref{eq:ev-proyeccion} y comprobar el conteo de líneas. ¿Qué se puede afirmar de la misma transferencia con coeficientes enteros?
+\end{ejercicio}
+\paragraph{Solución.} Las rectas de $\mathbb F^2$ son $[(1,b)]$ para los cinco valores de $b$ y $[(0,1)]$. Las primeras cinco se proyectan sobre la única recta de $V$, y la última sobre la de $W$. El total es seis y las multiplicidades valen $5\equiv1$ y $1$ módulo cuatro. Con coeficientes enteros la primera multiplicidad es cinco, no uno: para las coordenadas compatibles, la transferencia es $5T_V+T_W$. La igualdad aditiva no se deduce de ese conteo en $\Z$.
+
+\begin{ejercicio}[Transvecciones y pesos no invertibles]
+Trabajar sobre $\mathbf F_7$, con $Q=6$, un generador $\omega$, $v(\omega^j)=j\pmod6$, $E=2$ y $x=2$. Evaluar los prismas normalizados de $T_{12}(1)$ y de $\operatorname{diag}(\omega,\omega^2)$.
+\end{ejercicio}
+\paragraph{Solución.} El determinante de la transvección es uno; su valor es cero. El segundo determinante es $\omega^3$, de carácter tres. La evaluación es $2^2\cdot3=12\equiv0\pmod6$. El peso $x$ no es una unidad módulo seis y no se ha dividido por él en ninguna etapa.
+
+\begin{ejercicio}[Dos inserciones en grado uno]
+Para un símbolo $[a]$, escribir $D_{g,h}[a]$ y comprobar \eqref{eq:ev-doble-frontera}.
+\end{ejercicio}
+\paragraph{Solución.} Escribamos $a_1=g^{-1}ag$ y $a_2=(gh)^{-1}a(gh)$. La suma es $[g|h|a_2]-[g|a_1|h]+[a|g|h]$. Al aplicar la frontera, las caras interiores cancelan mediante $ga_1=ag$ y $ha_2=a_1h$; los dos términos $[g|h]$ también cancelan. Quedan $[h|a_2]-[a_1|h]-[gh|a_2]+[a|gh]+[g|a_1]-[a|g]$, que son $P_h[a_1]-P_{gh}[a]+P_g[a]$. Como $\partial[a]=0$, esto verifica la identidad en este grado.
+
+\begin{ejercicio}[No suprimir la potencia del filtrado]
+Sea $Q=9$, $\ell=3$ y $E=1$. Si $\varphi_n(z)=1$ en $\Z/9\Z$, calcular los valores de los dos primeros pasos de \eqref{eq:ev-filtrado}. ¿Puede deducirse de la evaluación final el valor inicial?
+\end{ejercicio}
+\paragraph{Solución.} En el primer paso se multiplica por $3(1-3)=-6\equiv3\pmod9$, y en el segundo por $3(1-9)=-24\equiv3\pmod9$. El valor final es cero. Los factores $1-3$ y $1-9$ son unidades, pero la potencia $3^2$ no lo es. Por ello la evaluación del filtrado no recupera el valor inicial en general. Lo que se usa en el conteo es precisamente la imagen multiplicada por $\ell^{2E}$, no la imagen sin filtrar.

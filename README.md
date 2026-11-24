@@ -6,13 +6,15 @@ Cuaderno de estudio en español, iniciado por Alevi Peña, sobre dos exposicione
 
 El manuscrito editable está en LaTeX. Cada tramo distingue las demostraciones desarrolladas en el cuaderno, los resultados recibidos como entradas externas y las cuestiones pendientes. La preparación utiliza asistencia de IA para los borradores, el cotejo localizado y la edición; el alcance de las comprobaciones queda registrado de forma explícita.
 
-**Actualización, 23 de noviembre de 2026:** se incorpora la **Nota 16, «Torsión integral, complejos y determinantes»**, en [tex/capitulos/16-torsion-integral-complejos-y-determinantes.tex](tex/capitulos/16-torsion-integral-complejos-y-determinantes.tex). El cuaderno contiene **dieciséis notas**. La entrega desarrolla la cota de Gabber, el descenso integral por índice finito y la construcción de un complejo libre para el subgrupo de congruencia de nivel tres. Desde el retracto de Ash y el teorema clásico de bases acotadas demuestra la estimación de torsión de todos los primos con $C_T=20$. La fórmula de la Nota 15 permite entonces $C_K=111$, bajo sus restantes entradas. Contiene doce resultados con prueba y cinco ejercicios resueltos. Los controles y sus alcances se detallan en el [estado del estudio](ESTADO.md#compilación-y-composición).
+**Actualización, 24 de noviembre de 2026:** edición consolidada de **24 notas en 303 páginas**. Las Notas 17–24 desarrollan la realización de ciclos, el conteo de clases y unidades, el transporte a Selmer, las evaluaciones finitas, el rango homológico impar, Hecke, alturas y estabilidad integral. Se conserva la deducción $C_K=111$ bajo las entradas clásicas y matemáticas explicitadas. La auditoría es localizada: no se ha ejecutado Lean ni comprobado su clausura transitiva; no se certifica GRH. Persisten las tareas de comparación integral theta y uniformidad de generadores y torres variables.
+
+**Historial, 23 de noviembre de 2026:** se incorpora la **Nota 16, «Torsión integral, complejos y determinantes»**, en [tex/capitulos/16-torsion-integral-complejos-y-determinantes.tex](tex/capitulos/16-torsion-integral-complejos-y-determinantes.tex). El cuaderno contiene **dieciséis notas**. La entrega desarrolla la cota de Gabber, el descenso integral por índice finito y la construcción de un complejo libre para el subgrupo de congruencia de nivel tres. Desde el retracto de Ash y el teorema clásico de bases acotadas demuestra la estimación de torsión de todos los primos con $C_T=20$. La fórmula de la Nota 15 permite entonces $C_K=111$, bajo sus restantes entradas. Contiene doce resultados con prueba y cinco ejercicios resueltos. Los controles y sus alcances se detallan en el [estado del estudio](ESTADO.md#compilación-y-composición).
 
 **A sigue designando el ejemplar de 55 páginas y B, el de 73 páginas.** A93 y B76 se identifican por separado. La revisión de la Nota 12 cotejó A93, §9, pp. 61–62, y B73/B76, §§5.1–5.2, pp. 53–55/54–56. Demuestra que la clase residual del modelo se anula al pasar al módulo divisible con la acción levantada de los mismos caracteres y añade la comparación condicional con un mapa de núcleo controlado. Se conservan los nueve manifiestos Lean anteriores; la Nota 12 no añadió lecturas ni ejecución de Lean.
 
 ## Empezar a leer
 
-El documento principal es `main.tex`. La [introducción y fundamentos](tex/capitulos/00-introduccion.tex) abre la sección 0, seguida de la guía de lectura; después se encuentran las dieciséis notas desarrolladas:
+El documento principal es `main.tex`. La [introducción y fundamentos](tex/capitulos/00-introduccion.tex) abre la sección 0, seguida de la guía de lectura; después se encuentran las veinticuatro notas desarrolladas:
 
 | Archivo | Contenido |
 | --- | --- |
@@ -34,9 +36,19 @@ El documento principal es `main.tex`. La [introducción y fundamentos](tex/capit
 | [tex/capitulos/14-finitud-y-control-uniforme.tex](tex/capitulos/14-finitud-y-control-uniforme.tex) | Finitud clásica y presupuesto exacto, corrección local acotada, menores y torsión, compacidad, crecimiento por capas y suma factorial de torcidos; diez resultados y cinco ejercicios resueltos. |
 | [tex/capitulos/15-cota-cuantitativa-de-la-capa-fija.tex](tex/capitulos/15-cota-cuantitativa-de-la-capa-fija.tex) | Bockstein, conteo homológico, caracteres de clases, interpolación integral, detección y cancelación; cota cuantitativa condicionada, catorce resultados y cinco ejercicios resueltos. |
 | [tex/capitulos/16-torsion-integral-complejos-y-determinantes.tex](tex/capitulos/16-torsion-integral-complejos-y-determinantes.tex) | Saturación y Gabber, descenso integral, congruencia de nivel tres, coordenadas y celdas, cota de torsión en todos los primos y precisión sobre el umbral de Soulé; doce resultados y cinco ejercicios resueltos. |
+| [tex/capitulos/17-rango-homologico-estabilidad-y-ciclos.tex](tex/capitulos/17-rango-homologico-estabilidad-y-ciclos.tex) | Rango homológico filtrado, estabilidad integral y realización de ciclos. |
+| [tex/capitulos/18-clases-unidades-y-cancelacion.tex](tex/capitulos/18-clases-unidades-y-cancelacion.tex) | Grupos de clases, unidades y cancelación de la altura. |
+| [tex/capitulos/19-transporte-selmer-y-extension-auxiliar.tex](tex/capitulos/19-transporte-selmer-y-extension-auxiliar.tex) | Transporte hacia Selmer, condiciones locales y extensión auxiliar. |
+| [tex/capitulos/20-cohomologia-finita-y-evaluaciones-normalizadas.tex](tex/capitulos/20-cohomologia-finita-y-evaluaciones-normalizadas.tex) | Cohomología de grupos finitos y evaluaciones normalizadas. |
+| [tex/capitulos/21-detectores-reales-y-separacion-por-pesos.tex](tex/capitulos/21-detectores-reales-y-separacion-por-pesos.tex) | Detectores reales de homología impar y separación por pesos. |
+| [tex/capitulos/22-sobreyectividad-y-operadores-de-hecke.tex](tex/capitulos/22-sobreyectividad-y-operadores-de-hecke.tex) | Sobreyectividad de formas invariantes y operadores de Hecke. |
+| [tex/capitulos/23-alturas-particiones-y-reduccion-aritmetica.tex](tex/capitulos/23-alturas-particiones-y-reduccion-aritmetica.tex) | Alturas, particiones de la unidad y reducción aritmética. |
+| [tex/capitulos/24-estabilidad-homologica-integral.tex](tex/capitulos/24-estabilidad-homologica-integral.tex) | Estabilidad homológica integral sobre dominios de Dedekind. |
 | `tex/referencias.tex` | Referencias A/A93/B/B76/C, código consultado, bibliografía clásica —incluidos Ribet, Weibel, Milne y el alcance de las cotas de Soulé— y estado matemático de esta entrega. |
 
-La copia de lectura revisada contiene **200 páginas**, con la **Nota 16 en las pp. 184–194** y las fuentes y el estado en las **pp. 195–200**, y se conserva en [pdf/notas-hipotesis-riemann.pdf](pdf/notas-hipotesis-riemann.pdf). La compilación no presenta advertencias ni referencias pendientes; se conservan los números y las páginas de las **582 etiquetas anteriores** y se añaden 36, para un total de 618. Las Notas 1–15 mantienen su paginación. Las comprobaciones de composición, su alcance y el siguiente desarrollo están en [ESTADO.md](ESTADO.md).
+La copia de lectura contiene **303 páginas**. Las Notas 17–24 ocupan las pp. 199–297; fuentes y estado, las pp. 298–303. Se conservan los números de las 618 etiquetas anteriores y se añaden 340 (958 en total). Las etiquetas anteriores avanzan cuatro páginas. La copia de lectura es el [PDF integrado](pdf/notas-hipotesis-riemann.pdf). El estado y el registro delimitan la revisión realizada.
+
+**Historial:** la edición de la Nota 16 contenía 200 páginas.
 
 ## Contribuir
 
@@ -46,7 +58,7 @@ Indica el archivo, la proposición o ecuación afectada, el razonamiento y la fu
 
 ## Compilar
 
-Se necesita una instalación de TeX Live o equivalente que incluya pdfLaTeX, `latexmk` y los paquetes declarados en `tex/preambulo.tex`. La bibliografía está incorporada en el documento y no requiere Biber.
+Se necesita una instalación de TeX Live o equivalente que incluya pdfLaTeX, `latexmk` y los paquetes declarados en `tex/preambulo.tex` y `main.tex`. La bibliografía está incorporada en el documento y no requiere Biber.
 
 Desde la raíz del proyecto:
 
@@ -92,6 +104,6 @@ Las referencias A/A93/B/B76/C utilizan las páginas impresas y los números de s
 
 ## Continuar el trabajo
 
-El siguiente bloque se centrará en el **rango de la imagen homológica, la estabilidad integral y la realización de los ciclos** de A93, conservando los mapas y normalizaciones que usa la cancelación de la altura. La Nota 16 ya desarrolla la entrada de torsión de la Nota 15 desde las dos entradas geométricas clásicas. Permanecen las comparaciones de clases, unidades y Selmer, la extensión auxiliar, la generación común en bases variables y la comparación theta con su filtración, multiplicidades y núcleos. Las preguntas se concretan en [ESTADO.md](ESTADO.md).
+El siguiente bloque estudiará la comparación integral de la familia theta: filtración del defecto, graduados, multiplicidades y torcidos, comparación de ideales y control de núcleos y errores. Queda además la uniformidad de generadores y las cotas de torres variables. Las Notas 17–24 reconstruyen los proveedores de la cota de capa fija, con las hipótesis indicadas; la auditoría localizada no acredita todas sus premisas.
 
 Las instrucciones de edición del proyecto están en [AGENTS.md](AGENTS.md).

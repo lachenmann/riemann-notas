@@ -51155,5 +51155,1141 @@
       "pages": 76
     },
     "vault_readback_verified_at_utc": "2026-11-23T19:07:21.499495+00:00"
+  },
+  "integracion_notas_17_24_20261124": {
+    "fecha": "2026-11-24",
+    "base": "8e763183f77f37aec6179ca1b50c59fef385fdee",
+    "estado": "edicion_consolidada_lista_para_publicacion",
+    "notas": [
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "paginas": 303,
+    "paginas_notas": {
+      "17": [
+        199,
+        210
+      ],
+      "18": [
+        211,
+        220
+      ],
+      "19": [
+        221,
+        231
+      ],
+      "20": [
+        232,
+        243
+      ],
+      "21": [
+        244,
+        253
+      ],
+      "22": [
+        254,
+        267
+      ],
+      "23": [
+        268,
+        284
+      ],
+      "24": [
+        285,
+        297
+      ]
+    },
+    "sha256_pdf": "cb598ea2334175e5837131c1c154b2dddd681c9417f6e5a522120c54476a6a3a",
+    "etiquetas_anteriores": 618,
+    "etiquetas_nuevas": 340,
+    "etiquetas_total": 958,
+    "numeracion_anterior_conservada": true,
+    "desplazamiento_paginas_etiquetas_anteriores": 4,
+    "enlaces_total": 1811,
+    "destinos_internos_fuera_de_rango": 0,
+    "folios_incorrectos": 0,
+    "comparacion_composicion": {
+      "pages": 303,
+      "dpi": 96,
+      "clip": "cuerpo y cabecera, y < 786 pt; excluye folio",
+      "identical": {
+        "15": [
+          [
+            "base16-recompilada",
+            11
+          ]
+        ],
+        "17": [
+          [
+            "base16-recompilada",
+            13
+          ]
+        ],
+        "18": [
+          [
+            "base16-recompilada",
+            14
+          ]
+        ],
+        "21": [
+          [
+            "base16-recompilada",
+            17
+          ]
+        ],
+        "30": [
+          [
+            "base16-recompilada",
+            26
+          ]
+        ],
+        "31": [
+          [
+            "base16-recompilada",
+            27
+          ]
+        ],
+        "32": [
+          [
+            "base16-recompilada",
+            28
+          ]
+        ],
+        "34": [
+          [
+            "base16-recompilada",
+            30
+          ]
+        ],
+        "35": [
+          [
+            "base16-recompilada",
+            31
+          ]
+        ],
+        "37": [
+          [
+            "base16-recompilada",
+            33
+          ]
+        ],
+        "42": [
+          [
+            "base16-recompilada",
+            38
+          ]
+        ],
+        "44": [
+          [
+            "base16-recompilada",
+            40
+          ]
+        ],
+        "48": [
+          [
+            "base16-recompilada",
+            44
+          ]
+        ],
+        "53": [
+          [
+            "base16-recompilada",
+            49
+          ]
+        ],
+        "54": [
+          [
+            "base16-recompilada",
+            50
+          ]
+        ],
+        "55": [
+          [
+            "base16-recompilada",
+            51
+          ]
+        ],
+        "56": [
+          [
+            "base16-recompilada",
+            52
+          ]
+        ],
+        "57": [
+          [
+            "base16-recompilada",
+            53
+          ]
+        ],
+        "58": [
+          [
+            "base16-recompilada",
+            54
+          ]
+        ],
+        "59": [
+          [
+            "base16-recompilada",
+            55
+          ]
+        ],
+        "60": [
+          [
+            "base16-recompilada",
+            56
+          ]
+        ],
+        "63": [
+          [
+            "base16-recompilada",
+            59
+          ]
+        ],
+        "64": [
+          [
+            "base16-recompilada",
+            60
+          ]
+        ],
+        "65": [
+          [
+            "base16-recompilada",
+            61
+          ]
+        ],
+        "66": [
+          [
+            "base16-recompilada",
+            62
+          ]
+        ],
+        "68": [
+          [
+            "base16-recompilada",
+            64
+          ]
+        ],
+        "70": [
+          [
+            "base16-recompilada",
+            66
+          ]
+        ],
+        "71": [
+          [
+            "base16-recompilada",
+            67
+          ]
+        ],
+        "72": [
+          [
+            "base16-recompilada",
+            68
+          ]
+        ],
+        "75": [
+          [
+            "base16-recompilada",
+            71
+          ]
+        ],
+        "76": [
+          [
+            "base16-recompilada",
+            72
+          ]
+        ],
+        "77": [
+          [
+            "base16-recompilada",
+            73
+          ]
+        ],
+        "78": [
+          [
+            "base16-recompilada",
+            74
+          ]
+        ],
+        "79": [
+          [
+            "base16-recompilada",
+            75
+          ]
+        ],
+        "80": [
+          [
+            "base16-recompilada",
+            76
+          ]
+        ],
+        "81": [
+          [
+            "base16-recompilada",
+            77
+          ]
+        ],
+        "82": [
+          [
+            "base16-recompilada",
+            78
+          ]
+        ],
+        "83": [
+          [
+            "base16-recompilada",
+            79
+          ]
+        ],
+        "84": [
+          [
+            "base16-recompilada",
+            80
+          ]
+        ],
+        "85": [
+          [
+            "base16-recompilada",
+            81
+          ]
+        ],
+        "88": [
+          [
+            "base16-recompilada",
+            84
+          ]
+        ],
+        "90": [
+          [
+            "base16-recompilada",
+            86
+          ]
+        ],
+        "91": [
+          [
+            "base16-recompilada",
+            87
+          ]
+        ],
+        "93": [
+          [
+            "base16-recompilada",
+            89
+          ]
+        ],
+        "94": [
+          [
+            "base16-recompilada",
+            90
+          ]
+        ],
+        "97": [
+          [
+            "base16-recompilada",
+            93
+          ]
+        ],
+        "98": [
+          [
+            "base16-recompilada",
+            94
+          ]
+        ],
+        "100": [
+          [
+            "base16-recompilada",
+            96
+          ]
+        ],
+        "107": [
+          [
+            "base16-recompilada",
+            103
+          ]
+        ],
+        "109": [
+          [
+            "base16-recompilada",
+            105
+          ]
+        ],
+        "110": [
+          [
+            "base16-recompilada",
+            106
+          ]
+        ],
+        "113": [
+          [
+            "base16-recompilada",
+            109
+          ]
+        ],
+        "119": [
+          [
+            "base16-recompilada",
+            115
+          ]
+        ],
+        "124": [
+          [
+            "base16-recompilada",
+            120
+          ]
+        ],
+        "125": [
+          [
+            "base16-recompilada",
+            121
+          ]
+        ],
+        "127": [
+          [
+            "base16-recompilada",
+            123
+          ]
+        ],
+        "129": [
+          [
+            "base16-recompilada",
+            125
+          ]
+        ],
+        "132": [
+          [
+            "base16-recompilada",
+            128
+          ]
+        ],
+        "133": [
+          [
+            "base16-recompilada",
+            129
+          ]
+        ],
+        "134": [
+          [
+            "base16-recompilada",
+            130
+          ]
+        ],
+        "135": [
+          [
+            "base16-recompilada",
+            131
+          ]
+        ],
+        "136": [
+          [
+            "base16-recompilada",
+            132
+          ]
+        ],
+        "138": [
+          [
+            "base16-recompilada",
+            134
+          ]
+        ],
+        "140": [
+          [
+            "base16-recompilada",
+            136
+          ]
+        ],
+        "142": [
+          [
+            "base16-recompilada",
+            138
+          ]
+        ],
+        "143": [
+          [
+            "base16-recompilada",
+            139
+          ]
+        ],
+        "148": [
+          [
+            "base16-recompilada",
+            144
+          ]
+        ],
+        "150": [
+          [
+            "base16-recompilada",
+            146
+          ]
+        ],
+        "151": [
+          [
+            "base16-recompilada",
+            147
+          ]
+        ],
+        "155": [
+          [
+            "base16-recompilada",
+            151
+          ]
+        ],
+        "156": [
+          [
+            "base16-recompilada",
+            152
+          ]
+        ],
+        "157": [
+          [
+            "base16-recompilada",
+            153
+          ]
+        ],
+        "158": [
+          [
+            "base16-recompilada",
+            154
+          ]
+        ],
+        "159": [
+          [
+            "base16-recompilada",
+            155
+          ]
+        ],
+        "160": [
+          [
+            "base16-recompilada",
+            156
+          ]
+        ],
+        "164": [
+          [
+            "base16-recompilada",
+            160
+          ]
+        ],
+        "165": [
+          [
+            "base16-recompilada",
+            161
+          ]
+        ],
+        "166": [
+          [
+            "base16-recompilada",
+            162
+          ]
+        ],
+        "167": [
+          [
+            "base16-recompilada",
+            163
+          ]
+        ],
+        "170": [
+          [
+            "base16-recompilada",
+            166
+          ]
+        ],
+        "172": [
+          [
+            "base16-recompilada",
+            168
+          ]
+        ],
+        "175": [
+          [
+            "base16-recompilada",
+            171
+          ]
+        ],
+        "176": [
+          [
+            "base16-recompilada",
+            172
+          ]
+        ],
+        "179": [
+          [
+            "base16-recompilada",
+            175
+          ]
+        ],
+        "180": [
+          [
+            "base16-recompilada",
+            176
+          ]
+        ],
+        "188": [
+          [
+            "base16-recompilada",
+            184
+          ]
+        ],
+        "191": [
+          [
+            "base16-recompilada",
+            187
+          ]
+        ],
+        "193": [
+          [
+            "base16-recompilada",
+            189
+          ]
+        ],
+        "194": [
+          [
+            "base16-recompilada",
+            190
+          ]
+        ],
+        "195": [
+          [
+            "base16-recompilada",
+            191
+          ]
+        ],
+        "196": [
+          [
+            "base16-recompilada",
+            192
+          ]
+        ],
+        "200": [
+          [
+            "revisado17-24",
+            3
+          ]
+        ],
+        "201": [
+          [
+            "revisado17-24",
+            4
+          ]
+        ],
+        "202": [
+          [
+            "revisado17-24",
+            5
+          ]
+        ],
+        "203": [
+          [
+            "revisado17-24",
+            6
+          ]
+        ],
+        "206": [
+          [
+            "revisado17-24",
+            9
+          ]
+        ],
+        "208": [
+          [
+            "revisado17-24",
+            11
+          ]
+        ],
+        "209": [
+          [
+            "revisado17-24",
+            12
+          ]
+        ],
+        "211": [
+          [
+            "revisado17-24",
+            14
+          ]
+        ],
+        "212": [
+          [
+            "revisado17-24",
+            15
+          ]
+        ],
+        "221": [
+          [
+            "revisado17-24",
+            24
+          ]
+        ],
+        "222": [
+          [
+            "revisado17-24",
+            25
+          ]
+        ],
+        "224": [
+          [
+            "revisado17-24",
+            27
+          ]
+        ],
+        "225": [
+          [
+            "revisado17-24",
+            28
+          ]
+        ],
+        "226": [
+          [
+            "revisado17-24",
+            29
+          ]
+        ],
+        "229": [
+          [
+            "revisado17-24",
+            32
+          ]
+        ],
+        "231": [
+          [
+            "revisado17-24",
+            34
+          ]
+        ],
+        "232": [
+          [
+            "revisado17-24",
+            35
+          ]
+        ],
+        "238": [
+          [
+            "revisado17-24",
+            41
+          ]
+        ],
+        "239": [
+          [
+            "revisado17-24",
+            42
+          ]
+        ],
+        "244": [
+          [
+            "revisado17-24",
+            47
+          ]
+        ],
+        "245": [
+          [
+            "revisado17-24",
+            48
+          ]
+        ],
+        "247": [
+          [
+            "revisado17-24",
+            50
+          ]
+        ],
+        "249": [
+          [
+            "revisado17-24",
+            52
+          ]
+        ],
+        "250": [
+          [
+            "revisado17-24",
+            53
+          ]
+        ],
+        "251": [
+          [
+            "revisado17-24",
+            54
+          ]
+        ],
+        "254": [
+          [
+            "revisado17-24",
+            57
+          ]
+        ],
+        "255": [
+          [
+            "revisado17-24",
+            58
+          ]
+        ],
+        "257": [
+          [
+            "revisado17-24",
+            60
+          ]
+        ],
+        "258": [
+          [
+            "revisado17-24",
+            61
+          ]
+        ],
+        "260": [
+          [
+            "revisado17-24",
+            63
+          ]
+        ],
+        "263": [
+          [
+            "revisado17-24",
+            66
+          ]
+        ],
+        "264": [
+          [
+            "revisado17-24",
+            67
+          ]
+        ],
+        "265": [
+          [
+            "revisado17-24",
+            68
+          ]
+        ],
+        "266": [
+          [
+            "revisado17-24",
+            69
+          ]
+        ],
+        "268": [
+          [
+            "revisado17-24",
+            71
+          ]
+        ],
+        "269": [
+          [
+            "revisado17-24",
+            72
+          ]
+        ],
+        "270": [
+          [
+            "revisado17-24",
+            73
+          ]
+        ],
+        "271": [
+          [
+            "revisado17-24",
+            74
+          ]
+        ],
+        "274": [
+          [
+            "revisado17-24",
+            77
+          ]
+        ],
+        "275": [
+          [
+            "revisado17-24",
+            78
+          ]
+        ],
+        "276": [
+          [
+            "revisado17-24",
+            79
+          ]
+        ],
+        "277": [
+          [
+            "revisado17-24",
+            80
+          ]
+        ],
+        "280": [
+          [
+            "revisado17-24",
+            83
+          ]
+        ],
+        "281": [
+          [
+            "revisado17-24",
+            84
+          ]
+        ],
+        "282": [
+          [
+            "revisado17-24",
+            85
+          ]
+        ],
+        "283": [
+          [
+            "revisado17-24",
+            86
+          ]
+        ],
+        "287": [
+          [
+            "revisado17-24",
+            90
+          ]
+        ],
+        "288": [
+          [
+            "revisado17-24",
+            91
+          ]
+        ],
+        "289": [
+          [
+            "revisado17-24",
+            92
+          ]
+        ],
+        "290": [
+          [
+            "revisado17-24",
+            93
+          ]
+        ],
+        "291": [
+          [
+            "revisado17-24",
+            94
+          ]
+        ],
+        "294": [
+          [
+            "revisado17-24",
+            97
+          ]
+        ],
+        "295": [
+          [
+            "revisado17-24",
+            98
+          ]
+        ],
+        "298": [
+          [
+            "base16-recompilada",
+            195
+          ]
+        ],
+        "299": [
+          [
+            "base16-recompilada",
+            196
+          ]
+        ],
+        "300": [
+          [
+            "base16-recompilada",
+            197
+          ]
+        ],
+        "301": [
+          [
+            "base16-recompilada",
+            198
+          ]
+        ],
+        "302": [
+          [
+            "base16-recompilada",
+            199
+          ]
+        ]
+      },
+      "changed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        16,
+        19,
+        20,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        33,
+        36,
+        38,
+        39,
+        40,
+        41,
+        43,
+        45,
+        46,
+        47,
+        49,
+        50,
+        51,
+        52,
+        61,
+        62,
+        67,
+        69,
+        73,
+        74,
+        86,
+        87,
+        89,
+        92,
+        95,
+        96,
+        99,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        108,
+        111,
+        112,
+        114,
+        115,
+        116,
+        117,
+        118,
+        120,
+        121,
+        122,
+        123,
+        126,
+        128,
+        130,
+        131,
+        137,
+        139,
+        141,
+        144,
+        145,
+        146,
+        147,
+        149,
+        152,
+        153,
+        154,
+        161,
+        162,
+        163,
+        168,
+        169,
+        171,
+        173,
+        174,
+        177,
+        178,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        189,
+        190,
+        192,
+        197,
+        198,
+        199,
+        204,
+        205,
+        207,
+        210,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        223,
+        227,
+        228,
+        230,
+        233,
+        234,
+        235,
+        236,
+        237,
+        240,
+        241,
+        242,
+        243,
+        246,
+        248,
+        252,
+        253,
+        256,
+        259,
+        261,
+        262,
+        267,
+        272,
+        273,
+        278,
+        279,
+        284,
+        285,
+        286,
+        292,
+        293,
+        296,
+        297,
+        303
+      ]
+    },
+    "archivos_capitulos": {
+      "tex/capitulos/17-rango-homologico-estabilidad-y-ciclos.tex": "1f847c8874ee6651a188fdfd2a089afcd070e8fe7fbe0a4854fc50ea10236840",
+      "tex/capitulos/18-clases-unidades-y-cancelacion.tex": "c18e5bcdb75373addfbe37ebce5f0341e396fd39482ee9cc50475e91779bc28e",
+      "tex/capitulos/19-transporte-selmer-y-extension-auxiliar.tex": "69af3a4aeee5a25109f99cd1d0648a7f543e186373fb923126b0dee6f14e20fb",
+      "tex/capitulos/20-cohomologia-finita-y-evaluaciones-normalizadas.tex": "ac29793fd635fd25f167001e7f866d007a47f191c746db7dcb331582de167f8a",
+      "tex/capitulos/21-detectores-reales-y-separacion-por-pesos.tex": "c5c14decdd5e9ead2f2412a0cef2ccf0b7fc041248fea618b262748630032446",
+      "tex/capitulos/22-sobreyectividad-y-operadores-de-hecke.tex": "3397995e894d40fe227ebaf61f4c37ba0c5919d8c46a2ca76009268aa20ddb5e",
+      "tex/capitulos/23-alturas-particiones-y-reduccion-aritmetica.tex": "08d2f58be3b96f82a1eaa3126d037a2203d1601d3a9868adafc78b9ce89a1af9",
+      "tex/capitulos/24-estabilidad-homologica-integral.tex": "8eb13ec9060767f6f171d030b86af9708258b91726efccd2108a4d5aea503af1"
+    },
+    "alcance": "Auditoría localizada; entradas clásicas y matemáticas explícitas; no se certifica GRH. La revisión visual de composición usa hojas de contacto, no relectura matemática exhaustiva.",
+    "lean_ejecutado": false,
+    "clausura_auditada": false,
+    "publicacion_remota_verificada_en_esta_etapa": false,
+    "revision_composicion": {
+      "hojas_contacto_inspeccionadas": 19,
+      "paginas_inspeccionadas_en_contactos": 250,
+      "paginas_trasladadas_por_identidad_rgb": 53,
+      "inspeccion_a_tamano_real_exhaustiva": false
+    }
   }
 }

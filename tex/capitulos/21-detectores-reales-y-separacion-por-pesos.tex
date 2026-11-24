@@ -1,0 +1,353 @@
+\section{Detectores reales de homología impar y separación por pesos}
+\label{sec:detectores-reales}
+\fuente{A93, Proposición 9.4, pp.~67--68; revisión fijada \texttt{7cbf7a0c} del espejo Lean, en particular \texttt{SBStarOdd}, \texttt{SWtOdd}, \texttt{SSurj}, \texttt{RankSpanLe} y \texttt{FinalOdd.lean}.}
+
+Las Notas 15 y 17 emplean una estimación de rango que no concierne a toda la homología impar de un grupo lineal. Se refiere a la imagen de un operador construido mediante estabilizaciones y sumas de bloques. Para acotar su rango hay que comprender qué clases de cohomología pueden distinguir los ciclos de esa imagen. En este bloque construimos las evaluaciones invariantes a partir de productos de trazas, calculamos sus pesos y explicamos por qué en grado impar queda a lo sumo una dirección de peso uno por cada lugar complejo. La detección de todas las clases mediante formas invariantes se separa explícitamente del cálculo de esas formas: es el contenido de la entrada de sobreyectividad \texttt{SSurj}.
+
+\subsection{El objeto que se quiere acotar}
+
+Sea $L$ un cuerpo de números totalmente imaginario, $R=\mathcal O_L$, $r=r_2(L)$ y $G_n=\operatorname{GL}_n(R)$. Escribimos $k=2E$ con $E\ge1$ y $m=k+1=2E+1$. Sea $b\ge1$ un entero, no necesariamente primo. Partimos de $n\ge2m+4$ y distinguimos las dos aplicaciones
+\begin{equation}
+ s:G_n\longrightarrow G_{bn},\quad g\longmapsto\operatorname{diag}(g,I),
+ \qquad p_b:G_n\longrightarrow G_{bn},\quad g\longmapsto g^{\oplus b}.
+ \label{eq:dr-mapas}
+\end{equation}
+Se usa la misma letra para mapas de cadenas y de homología cuando el dominio fija la interpretación. En el nivel $n_j=b^jn$, definimos
+\begin{equation}
+ z_0=x,\qquad z_{j+1}= (p_b)_* z_j-b^{j+2}s_*z_j,
+ \qquad J_k=\langle z_k(x):x\in H_m(G_n,\Z)\rangle_{\Z}.
+ \label{eq:dr-filtro}
+\end{equation}
+En la aplicación $b=\ell$ y $n=4E+6$. El grupo $J_k$ se encuentra en la homología integral de $G_{b^kn}$. Su rango significa $\dim_{\Q}(\Q\otimes_{\Z} J_k)$. La cota que se estudia es $\operatorname{rank}_{\Z}J_k\le r$ si $m<r$. No se pretende deducir que el grupo ambiente tenga ese mismo rango, ni que $J_k$ carezca de torsión.
+
+En el complejo bar real $C_m(G_n,\R)$, la misma recurrencia define un operador lineal sobre cadenas. Lo denotamos $Z_j(c)$ para distinguirlo de la clase $z_j(x)$. La frontera conmuta con ambos mapas, por lo que la recurrencia conserva ciclos y fronteras. El producto de operadores no exige una identificación integral de todos los grupos de homología.
+
+\subsection{El espacio de formas invariantes}
+
+Fijemos una inmersión compleja $\sigma_w:L\hookrightarrow\C$ por cada lugar $w$. El grupo real que interviene es
+\[
+ \mathcal G_n=\prod_{w=1}^r\operatorname{GL}_n(\C),\qquad
+ \mathcal P_n=\prod_{w=1}^r\operatorname{Herm}_n^+(\C).
+\]
+Aquí $\operatorname{Herm}_n^+$ es el cono abierto de matrices hermíticas definidas positivas. La acción es $g\cdot H=(g_wH_wg_w^*)_w$. Su punto base es $o=(I_n)_w$. El cono es convexo, la acción es transitiva (por la raíz cuadrada positiva de $H$) y el estabilizador de $o$ es $\prod_w U(n)$. La inmersión de $G_n$ en $\mathcal G_n$ se obtiene aplicando las $\sigma_w$ a los coeficientes.
+
+\begin{proposicion}[Extensión invariante y cerradura]
+\label{prop:dr-ext}
+Las formas diferenciales reales invariantes de grado $d$ en $\mathcal P_n$ corresponden biyectivamente a las formas alternadas reales de grado $d$ sobre $T_o\mathcal P_n=\prod_w\operatorname{Herm}_n(\C)$ invariantes por el estabilizador. Toda forma así obtenida es suave y cerrada.
+\end{proposicion}
+\begin{proof}
+Si $A$ es una forma alternada en $o$ invariante por el estabilizador, definimos su extensión por
+\begin{equation}
+ \omega_H(Y_1,\ldots,Y_d)=A\bigl((H_w^{-1/2}Y_{1,w}H_w^{-1/2})_w,\ldots,
+ (H_w^{-1/2}Y_{d,w}H_w^{-1/2})_w\bigr).
+ \label{eq:dr-extension}
+\end{equation}
+La independencia de la elección de un elemento que transporte $o$ a $H$ es consecuencia de la invariancia por el estabilizador. La raíz cuadrada positiva y la inversión son suaves en el cono, de modo que la forma es suave. Toda forma invariante queda determinada por su valor en $o$.
+
+Para probar la cerradura, consideremos $S(H)=H^{-1}$ componente a componente. Se tiene $S(g\cdot H)=(g^*)^{-1}\cdot S(H)$. Por tanto $S^*\omega$ es invariante, y como $S(o)=o$ y $dS_o=-1$, su valor en $o$ es $(-1)^d\omega_o$. Por unicidad, $S^*\omega=(-1)^d\omega$. La diferencial exterior $d\omega$ también es invariante. En $o$ la naturalidad de la diferencial exterior da $(-1)^d(d\omega)_o=(-1)^{d+1}(d\omega)_o$. Sobre $\R$ esto implica $(d\omega)_o=0$. La invariancia y transitividad implican $d\omega=0$ en todo el cono.
+\end{proof}
+
+Este argumento de simetría prueba la cerradura de las extensiones invariantes sin necesidad de fórmulas coordenadas para sus derivadas. No establece que cualquier clase de cohomología aritmética tenga un representante invariante. Esa es otra afirmación.
+
+\subsection{De los tensores a las permutaciones}
+
+La clasificación que necesitamos puede deducirse de un cálculo de conmutantes en el rango $N\ge m$. Para evitar confundir la dimensión matricial con el grado de la forma, en este apartado escribimos $U=\C^N$ y $a$ para el número de argumentos asignados a un lugar.
+
+\begin{lema}[Conmutante en el rango de tensores independientes]
+\label{lem:dr-conmutante}
+Si $0\le a\le N$, todo endomorfismo complejo de $U^{\otimes a}$ que conmuta con $g^{\otimes a}$ para todo $g\in\operatorname{GL}(U)$ es una combinación lineal de los operadores que permutan los $a$ factores.
+\end{lema}
+\begin{proof}
+Para $a=0$ el espacio es $\C$. Supongamos $a\ge1$. Sea $T$ un endomorfismo del conmutante. Al aplicar una matriz diagonal a $u=e_1\otimes\cdots\otimes e_a$, se obtiene el carácter $t_1\cdots t_a$. Así $T(u)$ pertenece al espacio de peso correspondiente, engendrado exactamente por los tensores $e_{\pi(1)}\otimes\cdots\otimes e_{\pi(a)}$, con $\pi\in S_a$. Existe una combinación $P$ de permutaciones tal que $T(u)=P(u)$. Ambos operadores conmutan con $g^{\otimes a}$. Toda familia linealmente independiente $(v_1,\ldots,v_a)$ es la imagen de $(e_1,\ldots,e_a)$ bajo algún $g$ invertible. Por ello $T$ y $P$ coinciden en $v_1\otimes\cdots\otimes v_a$ para todas esas familias. Las familias independientes forman un abierto denso (el conjunto de rango máximo, no vacío). Por continuidad coinciden en todos los tensores puros, que generan $U^{\otimes a}$.
+\end{proof}
+
+\begin{proposicion}[Invariantes de matrices]
+\label{prop:dr-fft}
+En el mismo rango, toda forma compleja multilineal en $a$ matrices de $M_N(\C)$ invariante por conjugación simultánea es combinación lineal de productos de trazas
+\begin{equation}
+ T_\pi(X_1,\ldots,X_a)=\prod_{(i_1\cdots i_j)\,\text{ciclo de }\pi}
+       \operatorname{tr}(X_{i_1}\cdots X_{i_j}),\qquad \pi\in S_a.
+ \label{eq:dr-trazas}
+\end{equation}
+Es suficiente exigir invariancia por conjugación unitaria en una forma real sobre matrices hermíticas, y después extenderla por multilinealidad compleja.
+\end{proposicion}
+\begin{proof}
+La identificación $\operatorname{End}(U^{\otimes a})\simeq M_N(\C)^{\otimes a}$ y la pareja bilineal no degenerada $(T,X)\mapsto\operatorname{tr}(TX)$ identifican las formas multilineales con endomorfismos. La invariancia equivale a que el endomorfismo conmute con $g^{\otimes a}$. Por el Lema~\ref{lem:dr-conmutante} basta evaluar una permutación de factores. Al desarrollar la traza en una base tensorial, cada índice se contrae con el índice siguiente de su ciclo; las sumas de ciclos disjuntos son independientes. Se obtiene \eqref{eq:dr-trazas}, con la permutación o su inversa según la convención para la acción tensorial; ambas recorren $S_a$.
+
+Para el segundo aserto, cada matriz compleja se escribe de forma única $H+iK$ con $H,K$ hermíticas. La extensión compleja de la forma es unitaria-invariante. Diferenciando las conjugaciones por $\exp(tA)$ con $A$ antihermítica se obtiene la invariancia infinitesimal. Como las matrices antihermíticas generan $M_N(\C)$ por combinación lineal compleja, el conmutante tensorial conmuta también con la acción infinitesimal de toda matriz compleja. Por tanto conmuta con $\exp(A)^{\otimes a}$. Toda matriz compleja invertible es producto de exponenciales (por ejemplo, mediante la descomposición polar), de modo que se cumple la invariancia requerida.
+\end{proof}
+
+La prueba anterior es suficiente en la etapa de separación, donde $N\ge n\ge2m+4$. El enunciado formal de \texttt{FFT} del desarrollo es más general; no se reclama aquí una prueba de su versión en dimensiones menores que el grado. Las familias de trazas que construimos sí se definen en toda dimensión.
+
+\subsection{Varios lugares y alternación}
+
+Un patrón de grado $m$ consiste en una permutación $\pi\in S_m$ y una función $w:\{1,\ldots,m\}\to\{1,\ldots,r\}$ constante en cada ciclo de $\pi$. Definimos
+\begin{equation}
+ T_{\pi,w}(Y)=\prod_{C=(i_1\cdots i_j)}
+ \operatorname{tr}(Y_{i_1,w(i_1)}\cdots Y_{i_j,w(i_j)}),\qquad
+ \operatorname{Alt}T(Y)=\sum_{\rho\in S_m}\operatorname{sgn}(\rho)T(Y_{\rho(1)},\ldots,Y_{\rho(m)}).
+ \label{eq:dr-alt}
+\end{equation}
+Usamos alternación sin dividir por $m!$. El número de ciclos de $\pi$, incluidos los puntos fijos, es $j(\pi)$ y pertenece a $\{1,\ldots,m\}$. Las formas reales en $o$ asociadas al patrón son $\operatorname{Re}\operatorname{Alt}T_{\pi,w}$ y $\operatorname{Im}\operatorname{Alt}T_{\pi,w}$; si el patrón no tiene $w$ constante en cada ciclo, se le puede asignar el valor cero.
+
+\begin{proposicion}[Generación por patrones]
+\label{prop:dr-patrones}
+Si $N\ge m$, toda forma alternada real de grado $m$ en $T_o\mathcal P_N$ invariante por $\prod_w U(N)$ es combinación lineal real de las dos formas de cada patrón.
+\end{proposicion}
+\begin{proof}
+Extendemos complejamente la forma y la desarrollamos usando la suma directa de los espacios de matrices asignados a los lugares. Cada sumando corresponde a asignar a cada argumento un lugar $w(i)$. La forma multilineal resultante es invariante por cada factor unitario por separado. Para cada lugar aplicamos la Proposición~\ref{prop:dr-fft} con tantos argumentos como le correspondan. La invariancia independiente permite tomar productos: en un producto tensorial finito, la invariancia bajo una acción en un solo factor equivale a estar en el subespacio de invariantes de ese factor tensorizado con los restantes (se comprueba desarrollando en una base de los restantes). Se obtienen productos de trazas con ciclos que no mezclan lugares. Como la forma original es alternada, al aplicar la alternación y dividir por $m!$ se recupera la forma. Tomando la parte real de la expresión compleja se obtiene una combinación real de partes reales e imaginarias.
+\end{proof}
+
+\subsection{Los pesos proceden del número de ciclos}
+
+En los conos positivos, estabilizar significa $H\mapsto\operatorname{diag}(H,I_{N-n})$ y la repetición de $b$ bloques significa $H\mapsto H^{\oplus b}$ en cada lugar. Son aplicaciones afines en el espacio hermítico y equivariantes por los homomorfismos de \eqref{eq:dr-mapas}. En el espacio tangente, la estabilización agrega un bloque cero.
+
+\begin{proposicion}[Peso de una contracción]
+\label{prop:dr-peso}
+Sea $\omega_{\pi,w,n}$ la extensión invariante de una de las dos partes reales de \eqref{eq:dr-alt} en dimensión $n$. Para $N\ge n$ y $b\ge1$ se cumple
+\begin{equation}
+ s^*\omega_{\pi,w,N}=\omega_{\pi,w,n},\qquad
+ p_b^*\omega_{\pi,w,bn}=b^{j(\pi)}\omega_{\pi,w,n}.
+ \label{eq:dr-peso}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+En el punto base, cada traza de un producto de matrices rellenadas con ceros conserva su valor. Para matrices repetidas en $b$ bloques, el producto se repite en los mismos bloques, y su traza se multiplica por $b$. Como hay una traza por ciclo, el producto se multiplica por $b^{j(\pi)}$. La alternación y las partes real e imaginaria son lineales, por lo que conservan ese factor. Las aplicaciones de conos son equivariantes, así que las formas obtenidas por pullback son invariantes. La Proposición~\ref{prop:dr-ext} permite extender las igualdades desde el punto base a todo el cono.
+\end{proof}
+
+No se requiere que la forma asociada a cada patrón sea no nula. La clasificación garantiza una expresión con los pesos indicados, aunque pueda haber dependencias entre patrones.
+
+\subsection{Una sola dirección de peso uno en grado impar}
+
+Un patrón de peso uno tiene un solo ciclo, por lo que todos los argumentos corresponden al mismo lugar. Las permutaciones que son ciclos de longitud $m$ están conjugadas entre sí. La alternación convierte un cambio de numeración de los argumentos en el signo de esa permutación. Por tanto, para cada lugar basta la traza de la palabra $(1,2,\ldots,m)$.
+
+\begin{lema}[Paridad de la traza alternada]
+\label{lem:dr-paridad}
+Para matrices hermíticas $Y_1,\ldots,Y_m$, sea
+\[
+ F_m(Y)=\operatorname{Alt}\operatorname{tr}(Y_1\cdots Y_m).
+\]
+Si $m$ es par, $F_m=0$. Si $m=2E+1$, se cumple
+\begin{equation}
+ \overline{F_m(Y)}=(-1)^{m(m-1)/2}F_m(Y)=(-1)^E F_m(Y).
+ \label{eq:dr-paridad}
+\end{equation}
+En grado impar solo puede sobrevivir una de las partes real e imaginaria.
+\end{lema}
+\begin{proof}
+La traza de un producto es invariante bajo rotación cíclica de sus factores. Un ciclo de longitud par tiene signo $-1$, por lo que en ese caso la alternación es igual a su opuesto y se anula. Para la segunda afirmación, la conjugación de la traza de un producto de hermíticas invierte el orden de los factores: $(Y_1\cdots Y_m)^*=Y_m\cdots Y_1$. La reversión tiene $m(m-1)/2$ inversiones. Cambiar la variable de sumación de la alternación por esa reversión produce \eqref{eq:dr-paridad}. Para $m=2E+1$, el exponente tiene paridad $E$. Si $E$ es par, la expresión es real; si es impar, puramente imaginaria.
+\end{proof}
+
+\begin{proposicion}[Familia de peso uno]
+\label{prop:dr-uno}
+En grado impar $m=2E+1$, todas las formas invariantes construidas a partir de patrones con un ciclo están, en toda dimensión, en el espacio generado por las $r$ formas $\omega_{w,n}$, donde
+\begin{equation}
+ (\omega_{w,n})_o(Y)=\operatorname{Re}F_m(Y_{1,w},\ldots,Y_{m,w})
+             +\operatorname{Im}F_m(Y_{1,w},\ldots,Y_{m,w}).
+ \label{eq:dr-uno}
+\end{equation}
+Cada una satisface \eqref{eq:dr-peso} con peso uno.
+\end{proposicion}
+\begin{proof}
+El cambio de numeración reduce cualquier ciclo al ciclo estándar y multiplica la alternación por un signo. El Lema~\ref{lem:dr-paridad} anula una de las dos partes, de modo que la suma de las dos partes coincide con la parte que puede sobrevivir. La Proposición~\ref{prop:dr-peso} proporciona el peso. La construcción se hace en cualquier dimensión y no presupone la independencia de las $r$ formas.
+\end{proof}
+
+En particular, no se deben contar dos detectores reales por cada lugar complejo. El signo de la reversión reduce a uno ese presupuesto. Esto explica el $r_2$ de la estimación de rango.
+
+\subsection{Evaluaciones por integración sobre simples}
+
+Sea $G$ un grupo que actúa afínmente en un abierto convexo $P$ de un espacio vectorial real de dimensión finita. Si $\omega$ es una forma suave cerrada de grado $m$ invariante bajo $G$, definimos, para un punto $o\in P$,
+\begin{equation}
+ \mathcal E_{\omega,o}[g_1|\cdots|g_m]
+ =\int_{[o,g_1o,g_1g_2o,\ldots,g_1\cdots g_mo]}\omega.
+ \label{eq:dr-eval}
+\end{equation}
+El simple está parametrizado por la aplicación afín desde el simple estándar con el orden de vértices escrito, aunque pueda ser degenerado. La convexidad garantiza que esté contenido en $P$. La fórmula se extiende linealmente a todas las cadenas finitas reales.
+
+\begin{proposicion}[Fronteras y naturalidad de las evaluaciones]
+\label{prop:dr-eval}
+La forma lineal \eqref{eq:dr-eval} se anula sobre fronteras. Su valor sobre ciclos es independiente de $o$. Si $f:P\to P'$ es afín y equivariante respecto de un homomorfismo $G\to G'$, entonces la evaluación de $\omega'$ sobre las cadenas transportadas desde $o$ coincide con la evaluación de $f^*\omega'$ desde $o$, tomando $o'=f(o)$.
+\end{proposicion}
+\begin{proof}
+Para la primera afirmación, las caras de un simple de grado $m+1$ son los simples de los términos de la frontera bar. La primera cara requiere actuar por $g_1^{-1}$ para volver al punto base; la invariancia de $\omega$ conserva su integral. Las demás caras corresponden a multiplicar dos entradas consecutivas o suprimir la última. La fórmula de Stokes da la integral de $d\omega=0$ y, por tanto, anulación sobre fronteras.
+
+Para la independencia del punto base, triangulamos el prisma entre las dos aplicaciones de simples dadas por los vértices $g_0o,\ldots,g_mo$ y $g_0o',\ldots,g_mo'$. Las caras laterales se cancelan sobre un ciclo, por la misma identidad de prisma usada en la Nota 20; la invariancia permite pasar a cadenas bar. La diferencia de las integrales es la integral de $d\omega$ sobre el prisma, que vale cero. Finalmente, una aplicación afín envía el simple parametrizado al simple de los vértices transportados, por lo que el cambio de variables para el pullback da la naturalidad, incluso si $f$ no es inyectiva.
+\end{proof}
+
+El argumento utiliza Stokes en un simple afín compacto; no necesita la finitud de volumen del cociente aritmético. Esto es distinto de la construcción de representantes invariantes de clases arbitrarias.
+
+\subsection{Sistemas de evaluaciones con peso}
+
+Escribimos $A_{\pi,w,n}$ para la evaluación de la parte real o imaginaria de un patrón sobre $C_m(G_n,\R)$, y $\tau_{w,n}$ para la evaluación de $\omega_{w,n}$ de \eqref{eq:dr-uno}. Las aplicaciones de conos de \eqref{eq:dr-peso} llevan el punto base al punto base, de modo que la naturalidad es aplicable a cada cadena.
+
+\begin{teorema}[Descomposición por pesos de las evaluaciones invariantes]
+\label{thm:dr-wt}
+Para $N\ge m=2E+1$, toda forma invariante $\omega$ de grado $m$ sobre $\mathcal P_N$ tiene una evaluación de la forma
+\begin{equation}
+ \mathcal E_{\omega,o}(z)=\sum_{w=1}^r c_w\tau_{w,N}(z)
+               +\sum_{j=2}^m a_{j,N}(z),
+ \label{eq:dr-decomp}
+\end{equation}
+donde los $c_w\in\R$ y los sistemas $(a_{j,n})_n$ pueden depender de $\omega$ y $N$. Las familias $\tau_{w,n}$ son fijas para $L,m$. Cada sistema de peso $j$ se anula en fronteras y satisface
+\begin{equation}
+ a_{j,N'}(s_*z)=a_{j,n}(z),\qquad
+ a_{j,bn}((p_b)_*z)=b^j a_{j,n}(z)
+ \label{eq:dr-wsys}
+\end{equation}
+para toda estabilización $n\le N'$ y toda repetición $b\ge1$. Las mismas reglas valen para las $\tau_w$ con $j=1$.
+\end{teorema}
+\begin{proof}
+Por la Proposición~\ref{prop:dr-patrones}, expresamos $\omega_o$ en dimensión $N$ como combinación lineal de patrones. Por la Proposición~\ref{prop:dr-ext}, la misma expresión vale para las extensiones invariantes. Agrupamos los patrones por su número de ciclos. Los de peso uno se reducen a las formas de la Proposición~\ref{prop:dr-uno}. Para cada peso superior usamos los mismos coeficientes de la expresión original en toda dimensión; así definimos el sistema $a_{j,n}$. No se afirma que esos coeficientes sean únicos, ni que describan una forma originalmente especificada en otra dimensión. La integración es lineal. Las Proposiciones~\ref{prop:dr-peso} y \ref{prop:dr-eval} prueban \eqref{eq:dr-wsys} y la anulación en fronteras.
+\end{proof}
+
+La forma de \eqref{eq:dr-decomp} reconstruye el contenido de \texttt{SWtOdd} en el rango necesario para \texttt{BOdd}, no todo su enunciado en rango pequeño. Los sistemas de peso uno se eligen antes de conocer el cociclo a detectar, el tamaño final o el operador de filtrado. Si se eligieran nuevos detectores para cada ciclo, no se obtendría una única aplicación lineal de rango acotado.
+
+\subsection{El filtro anula los pesos superiores}
+
+\begin{lema}[Acción del filtro en un sistema de peso]
+\label{lem:dr-filtro}
+Para un sistema $a_j$ que verifica \eqref{eq:dr-wsys}, la recurrencia \eqref{eq:dr-filtro} sobre cadenas da
+\begin{equation}
+ a_{j,b^tn}(Z_t(c))=\prod_{i=0}^{t-1}(b^j-b^{i+2})\,a_{j,n}(c).
+ \label{eq:dr-filtro-peso}
+\end{equation}
+En particular, para $t=k=m-1$ se anulan todos los pesos $2,\ldots,m$; el factor de peso uno es $b^k\prod_{u=1}^k(1-b^u)$.
+\end{lema}
+\begin{proof}
+La fórmula vale para $t=0$ con producto vacío. Al aplicar el sistema al paso siguiente, la repetición aporta $b^j$ y la estabilización no altera la evaluación. El factor nuevo es $b^j-b^{t+2}$. La inducción da \eqref{eq:dr-filtro-peso}. Si $2\le j\le m$, el índice $i=j-2$ está en $\{0,\ldots,k-1\}$ y el factor correspondiente es cero. Para $j=1$ factorizamos $b$ en cada término.
+\end{proof}
+
+Para $b=1$ y $k\ge1$ el operador de cadenas ya es cero. No hace falta dividir por el factor de peso uno. Para $b>1$ el factor es distinto de cero sobre $\R$. Cuando $b=\ell$ y los coeficientes son $\Z/\ell^\nu\Z$, el producto $\prod(1-\ell^u)$ es invertible, pero el factor $\ell^k$ no se puede cancelar. En la Nota 15 se conserva precisamente esa pérdida.
+
+\subsection{Ciclos reales y rango integral}
+
+\begin{lema}[Cambio de coeficientes en homología]
+\label{lem:dr-flat}
+Para el complejo bar integral de cualquier grupo $G$, existe un isomorfismo natural
+\begin{equation}
+ \R\otimes_\Z H_m(G,\Z)\simeq H_m(G,\R).
+ \label{eq:dr-flat}
+\end{equation}
+Además, si $J\subseteq H_m(G,\Z)$, su rango entero es la dimensión real de la imagen de $\R\otimes J$ en $H_m(G,\R)$.
+\end{lema}
+\begin{proof}
+El grupo aditivo $\R$ es libre de torsión y, sobre el dominio principal $\Z$, los módulos libres de torsión son planos. Se puede ver esta última propiedad expresando cada módulo libre de torsión como unión dirigida de sus submódulos finitamente generados, libres, y usando la exactitud de los límites directos. Tensorizar las sucesiones exactas de ciclos, fronteras y homología proporciona \eqref{eq:dr-flat}; la construcción conmuta con mapas de cadenas. La inclusión de $J$ se conserva por planitud. Finalmente, $\R\otimes_\Z J\simeq\R\otimes_\Q(\Q\otimes_\Z J)$ y una base racional se convierte en base real al extender escalares. Esto prueba la igualdad de dimensiones aun si el grupo integral no es finitamente generado.
+\end{proof}
+
+\begin{lema}[Cociclos que separan]
+\label{lem:dr-sep}
+Todo ciclo real $z$ que no es frontera admite un cociclo real de grado $m$ cuya evaluación sobre $z$ es distinta de cero.
+\end{lema}
+\begin{proof}
+La clase de $z$ en $H_m(G,\R)$ no es cero. Extendemos esa clase a una base y tomamos una forma lineal que valga uno en ella y cero en los restantes elementos. Componemos con el cociente de ciclos por fronteras y extendemos la forma lineal desde los ciclos a todas las cadenas de grado $m$. Se anula sobre las fronteras, por lo que es un cociclo. En la versión homogénea del complejo, la forma correspondiente sobre $(g_0,\ldots,g_m)$ se obtiene evaluando las entradas $g_0^{-1}g_1,\ldots,g_{m-1}^{-1}g_m$. Es invariante por traslación simultánea y su diferencial de cocadenas es cero.
+\end{proof}
+
+\subsection{La entrada de sobreyectividad y el rango estable}
+
+Para cerrar la detección no basta que las formas invariantes estén clasificadas. Precisamos dos entradas homológicas separadas, en el alcance de \texttt{SStab} y \texttt{SSurj}:
+
+\begin{enumerate}
+\item Estabilidad real: para $M\ge2m+4$ y $N\ge M$, la estabilización induce una inyección en $H_m(G_M,\R)$ (el tipo formal ofrece también sobreyectividad).
+\item Sobreyectividad por formas invariantes: si $L$ es totalmente imaginario y $m<r$, para todo $M$ existe $N\ge M$ tal que cada cociclo real homogéneo invariante de grado $m$ en $G_N$ tiene los mismos valores sobre ciclos que la evaluación de una forma $\mathcal G_N$-invariante sobre $\mathcal P_N$.
+\end{enumerate}
+
+La segunda es una afirmación sobre todas las clases de cohomología en algún rango posterior, no solamente sobre las evaluaciones ya construidas. El orden de cuantificadores es decisivo: se elige $N$ antes del cociclo. Para la deducción de rango que sigue basta la inyección real de la primera entrada; el conteo de torsión de la Nota 15 usa además estabilidad integral.
+
+\begin{teorema}[Deducción de la cota impar filtrada]
+\label{thm:dr-rango}
+Supongamos las dos entradas anteriores para $m=2E+1<r$ y $n\ge2m+4$. Entonces
+\begin{equation}
+ \operatorname{rank}_{\Z}\langle z_{2E}(x):x\in H_{2E+1}(G_n,\Z)\rangle\le r_2(L).
+ \label{eq:dr-rango}
+\end{equation}
+\end{teorema}
+\begin{proof}
+Sea $M=b^kn$. Denotemos por $C$ el subespacio real de ciclos de $G_M$ generado por los $Z_k(c)$, donde $c$ recorre los ciclos reales de $G_n$. Sean $\pi:C\to H_m(G_M,\R)$ el paso a la clase de homología y $T:C\to\R^r$ el mapa de evaluaciones $T(y)=(\tau_{w,M}(y))_w$.
+
+Por el Lema~\ref{lem:dr-filtro}, todos los sistemas de pesos $2$ a $m$ se anulan en $C$. Demostraremos que
+\begin{equation}
+ \ker T\subseteq\ker\pi.
+ \label{eq:dr-kernel}
+\end{equation}
+Si $T(y)=0$ y $\pi(y)\ne0$, elijamos el tamaño $N\ge M$ dado por la segunda entrada. La estabilidad real garantiza que el ciclo estabilizado $s_*y$ no es frontera. Por el Lema~\ref{lem:dr-sep}, hay un cociclo cuyo valor en $s_*y$ no es cero. La segunda entrada lo representa por una forma invariante $\omega$ en el sentido de las evaluaciones sobre ciclos. Como $N\ge2m+4\ge m$, podemos usar el Teorema~\ref{thm:dr-wt}. Todos sus términos de peso uno se anulan en $s_*y$ por la hipótesis $T(y)=0$ y estabilidad de los sistemas; los de peso superior también se anulan por \eqref{eq:dr-wsys} y el filtro. La evaluación de $\omega$ es cero, contradicción. Así queda probada \eqref{eq:dr-kernel}.
+
+La aplicación $T(y)\mapsto\pi(y)$ está bien definida sobre $T(C)$ y es lineal y sobreyectiva hacia $\pi(C)$. De aquí $\dim\pi(C)\le\dim T(C)\le r$. Por el Lema~\ref{lem:dr-flat}, la imagen real de $J_k$ está contenida en $\pi(C)$: cada generador integral admite un ciclo representante y la recurrencia es natural por cambio de coeficientes. Se deduce \eqref{eq:dr-rango}.
+\end{proof}
+
+Como las evaluaciones se anulan sobre fronteras, se tiene también $\ker\pi\subseteq\ker T$. La inclusión necesaria para el rango es la inversa, obtenida mediante sobreyectividad. La igualdad de núcleos no obliga a que los $r$ detectores sean linealmente independientes ni a que se alcance la cota.
+
+\subsection{Cómo se ensambla el resultado en el código}
+
+En el espejo fijado, \texttt{SBStarOdd.lean} define \texttt{SWtOdd}, \texttt{BStarOdd} y el ensamblaje condicionado \texttt{SBStarOdd}. \texttt{SBStar.lean} fija los pesos, el operador y la sobreyectividad. \texttt{RankSpanLe.lean} demuestra la deducción de rango por factorización. \texttt{SBStarOddOf.lean} usa el espacio de cadenas filtradas, la estabilidad y separación, y aplica la descomposición de formas en el tamaño posterior para probar \eqref{eq:dr-kernel}.
+
+En \texttt{OddWeightCycles/Weights.lean}, \texttt{wOneOdd} reduce un ciclo único al ciclo de rotación estándar y utiliza la reversión y su signo. \texttt{AevApply.lean} agrupa las contribuciones de los patrones y prueba su compatibilidad con las fronteras, la estabilización y la repetición. La construcción de este bloque coincide con ese mecanismo; la prueba del conmutante en $N\ge m$ y la cerradura por inversión constituyen una presentación propia más restringida. No se han cotejado transitivamente todos los resultados de teoría de invariantes y de integración importados por esos módulos.
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}p{.29\textwidth}Y@{}}
+\toprule
+Componente & Alcance de la reconstrucción\\\midrule
+\texttt{SBridge}, \texttt{SSep} & Cambio de coeficientes y separación algebraica demostrados.\\
+\texttt{SWtOdd} & Descomposición por trazas en $N\ge m$, familias universales de pesos y una dirección real por lugar.\\
+\texttt{SBStarOdd} & Deducción completa de rango desde estabilidad real y sobreyectividad.\\
+\texttt{SStab} & Estabilidad justificada en Nota~\ref{sec:estabilidad-integral}; el transporte integral de torsión se distingue del rango real.\\
+\texttt{SSurj} & Ensamblaje del Teorema~\ref{thm:sh-surj} con las Notas~\ref{sec:alturas-reduccion}--\ref{sec:estabilidad-integral}.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+El archivo \texttt{FinalOdd.lean} no se limita a recibir \texttt{SSurj} como hipótesis del teorema final \texttt{bStarOdd}: lo suministra mediante \texttt{sSurj\_of}, que se ensambla desde \texttt{SPrime}, \texttt{SHecke}, \texttt{SHt}, \texttt{SPU}, \texttt{SMom}, \texttt{SWhit}, \texttt{SCen}, \texttt{SGap}, \texttt{SLoc}, \texttt{SMean} y \texttt{SInv}. Se han leído los tipos y el enlace de ensamblaje, no todas las pruebas que producen esas entradas. El cuaderno desarrolla esa reconstrucción en las Notas~\ref{sec:sobreyectividad-hecke}--\ref{sec:estabilidad-integral}; ello no equivale a ejecutar el kernel del espejo.
+
+\clearpage
+\subsection{El promedio y la contracción de Hecke: principio abstracto}
+
+La sobreyectividad puede entenderse mediante el siguiente principio abstracto. Sirve de guía de lectura, pero no se atribuye a él por sí solo la prueba de \texttt{SSurj}.
+
+\begin{proposicion}[Separación por promedio y contracción]
+\label{prop:dr-promedio}
+Sea $\mathcal H$ un espacio de Hilbert real, $P$ una proyección ortogonal y $U$ un operador lineal con $UP=P$ y $\|U(1-P)h\|\le\eta\|(1-P)h\|$, donde $0\le\eta<1$. Entonces
+\begin{equation}
+ \|U^t h-Ph\|\le\eta^t\|(1-P)h\|
+ \label{eq:dr-contraccion}
+\end{equation}
+si $U$ preserva $\ker P$. En particular, para cada funcional continuo $\lambda$ invariante por $U$ se cumple $\lambda(h)=\lambda(Ph)$.
+\end{proposicion}
+\begin{proof}
+Como $UP=P$ y $U$ preserva $\ker P$, se tiene $U^t h-Ph=U^t(1-P)h$. La contracción iterada sobre $\ker P$ da \eqref{eq:dr-contraccion}. Si $\lambda U=\lambda$, su continuidad implica $\lambda(h)=\lambda(U^t h)\to\lambda(Ph)$.
+\end{proof}
+
+La interfaz del código no afirma literalmente que todas las evaluaciones sean invariantes por Hecke. \texttt{SHecke} tiene una conclusión diferente: en un rango suficientemente grande, un cociclo cuyos valores sobre todos los ciclos bajo iteraciones de Hecke decrecen como $(3/5)^t$ debe tener valores iniciales nulos. \texttt{SGap} aporta una contracción $L^2$ con esa razón; \texttt{SLoc} controla las evaluaciones por normas $L^2$ y \texttt{SMean} produce una forma invariante por promedio. El desarrollo siguiente debe comprobar los mapas precisos entre cociclos, formas y operador de Hecke, la integrabilidad y el efecto de sustraer el promedio. La Proposición~\ref{prop:dr-promedio} solo ilustra por qué una contracción puede eliminar el componente de media cero.
+
+En la interfaz concreta se puede aislar la siguiente deducción condicional. Sea $c_0$ la diferencia entre un cociclo y el cociclo obtenido por integración de la forma promedio. Supongamos que sus iteraciones por Hecke se representan, sobre ciclos, por formas de media cero $\omega_t$ cuya norma $L^2$ a lo sumo $C_0(3/5)^t$. Si para cada ciclo fijo $z$ la estimación local es $|\langle c_t,z\rangle|\le C_z\|\omega_t\|_{L^2}$, entonces $|\langle c_t,z\rangle|\le C_zC_0(3/5)^t$. Una vez comprobadas las hipótesis de \texttt{SHecke} para este mismo $c_0$, se obtiene $\langle c_0,z\rangle=0$ para todos los ciclos. El promedio da entonces los mismos valores que el cociclo inicial. El mecanismo no requiere intercambiar una suma infinita de ciclos con un límite: cada cadena tiene soporte finito y la constante $C_z$ puede depender de ella. Falta construir estos representantes y verificar que las iteraciones de cociclos son las inducidas por las formas correspondientes.
+
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}[Reversión en grados impares]
+Determinar qué parte de la traza alternada puede sobrevivir para $m=3,5,7,9$.
+\end{ejercicio}
+\paragraph{Solución.} El signo de la reversión es $(-1)^{m(m-1)/2}$. Para $m=3,7$ es negativo: solo la parte imaginaria puede ser no nula. Para $m=5,9$ es positivo: solo la parte real. No se afirma que la parte superviviente sea no nula en cualquier dimensión.
+
+\clearpage
+\begin{ejercicio}[Una traza impar no nula]
+En $M_2(\C)$ consideremos las matrices hermíticas
+\[
+ X=\begin{pmatrix}0&1\\1&0\end{pmatrix},\quad Y=\begin{pmatrix}0&-i\\i&0\end{pmatrix},\quad Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
+\]
+Calcular $\operatorname{Alt}\operatorname{tr}(XYZ)$ y su peso al repetir tres bloques.
+\end{ejercicio}
+\paragraph{Solución.} $XY=iZ$, $XYZ=iI$, y la traza vale $2i$. Las tres matrices anticonmutan dos a dos, así que al alternar los seis órdenes cada sumando firmado vale $2i$. El resultado es $12i$, puramente imaginario. Como el patrón tiene un solo ciclo, repetir tres bloques da $36i$ y no $3^3\cdot12i$.
+
+\begin{ejercicio}[Peso de un producto]
+En grado cinco, considerar el producto de la traza de una palabra de longitud tres y dos trazas de longitud uno, seguido de alternación. ¿Qué sucede al aplicar el filtro con $b=2$, $k=4$?
+\end{ejercicio}
+\paragraph{Solución.} El patrón tiene tres ciclos, por lo que su peso es tres. La repetición en dos bloques multiplica la evaluación por $2^3=8$. El factor $i=1$ del producto de \eqref{eq:dr-filtro-peso} es $2^3-2^3=0$, de modo que el filtro anula la evaluación. La alternación podría ya haber anulado el patrón, lo que no afecta el argumento.
+
+\begin{ejercicio}[La necesidad de sobreyectividad]
+Sean $C=\R^3$, $T(x,y,z)=x$ y $\pi=1_C$. ¿Basta saber que $T$ está bien definida sobre clases de homología para acotar $\dim\pi(C)$ por uno?
+\end{ejercicio}
+\paragraph{Solución.} No. Se cumple $\ker\pi=0\subseteq\ker T$, pero $(0,1,0)$ está en $\ker T$ y no en $\ker\pi$. La inclusión que permite factorizar $\pi$ a través de $T$ es precisamente la inversa. La dimensión de $\pi(C)$ es tres. En el argumento homológico, la sobreyectividad y la separación descartan esas clases invisibles.
+
+\begin{ejercicio}[Un presupuesto de contracción]
+En $\mathcal H=\R^2$ sea $P(x,y)=(x,0)$ y $U(x,y)=(x,3y/5)$. Para $h=(2,5)$, hallar $U^t h-Ph$. ¿Qué funcionales lineales son invariantes por $U$?
+\end{ejercicio}
+\paragraph{Solución.} Se tiene $U^th-Ph=(0,5(3/5)^t)$. Un funcional $\lambda(x,y)=ax+by$ satisface $\lambda U=\lambda$ si y solo si $(3/5)b=b$, es decir, $b=0$. La evaluación de la parte de media cero desaparece. Para aplicar la analogía al grupo aritmético hay que probar las hipótesis correspondientes a \texttt{SHecke}, \texttt{SGap} y \texttt{SLoc}, no suponer que la evaluación es literalmente invariante.
+
+\paragraph{Continuidad.} La Nota~\ref{sec:sobreyectividad-hecke} desarrolla los representantes de Whitney, el promedio, las estimaciones de Hecke y su aplicación a los cociclos. La Nota~\ref{sec:alturas-reduccion} suministra altura, partición y momentos; la Nota~\ref{sec:estabilidad-integral} justifica el transporte estable y ensambla el rango. Se mantienen separados los controles de la familia theta y las torres variables.

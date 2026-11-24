@@ -1,0 +1,472 @@
+\section{Sobreyectividad de formas invariantes y operadores de Hecke}
+\label{sec:sobreyectividad-hecke}
+\fuente{A93, Proposición 9.4, pp.~67--68; espejo Lean fijado en \texttt{7cbf7a0c}, interfaces \texttt{SSurj}, \texttt{SWhit}, \texttt{SCen}, \texttt{SMean}, \texttt{SLoc}, \texttt{SGap} y \texttt{SHecke}.}
+
+La Nota 21 reduce la cota de rango de la homología impar filtrada a la separación por formas invariantes. Aquí reconstruimos el mecanismo que hace posible esa separación. No basta promediar una forma diferencial: hay que probar que la parte que se sustrae tiene valores nulos en todos los ciclos. El argumento utiliza dos estimaciones en sentidos opuestos. La parte de media cero se contrae analíticamente con razón $3/5$; en cambio, los valores de cohomología estabilizada no pueden decrecer más rápidamente que $(4/5)^t$ si no son nulos.
+
+Desarrollaremos el representante de Whitney desde una partición de la unidad controlada, la invariancia central, el promedio, la cota local, la contracción y la comparación de clases laterales. Recibiremos como entradas explícitas la construcción cuantitativa de la partición, la integrabilidad de momentos de altura y la estabilidad homológica. Usamos también resultados clásicos identificados en el texto: el teorema de unidades de Dirichlet, Chebotarev (en el cuerpo de clases de Hilbert), la sucesión espectral de Hochschild--Serre, la teoría de Haar y Stokes. No se atribuye a este bloque una prueba independiente de esos teoremas.
+
+\subsection{La afirmación de sobreyectividad y sus espacios}
+
+Sea $L$ totalmente imaginario, $R=\mathcal O_L$, $r=r_2(L)$ y $m=k+1\ge1$. Escribimos
+\[
+ \Gamma_n=\operatorname{GL}_n(R),\quad K_n=\operatorname{GL}_n(L),\quad
+ G_n=\prod_{w=1}^{r}\operatorname{GL}_n(\C),\quad
+ S_n=\prod_{w=1}^{r}\operatorname{SL}_n(\C).
+\]
+La imagen de $\operatorname{SL}_n(R)$ en $S_n$ se denota por $\Lambda_n$. Sean $X_n=\prod_w\operatorname{Herm}_n^+(\C)$ y $o=(I_n)_w$. En esta nota utilizaremos la acción del código
+\begin{equation}
+ A(g)H=((g_w^{-1})^*H_wg_w^{-1})_w.
+ \label{eq:sh-accion}
+\end{equation}
+Es una acción izquierda lineal sobre el espacio real ambiente. Se relaciona con la convención $H\mapsto gHg^*$ de la Nota 21 mediante inversión en el cono. Las evaluaciones cohomológicas se transportan por esta equivalencia: se compara la imagen de cada simple por inversión con el simple afín de los vértices invertidos mediante la homotopía rectilínea, compatible con las caras y equivariante. Stokes da la igualdad sobre ciclos para formas cerradas. No se supone que la inversión lleve un simple afín a otro simple afín.
+
+Para una $m$-forma $\omega$, denotamos por $I\omega$ su integral sobre el simple afín orientado de $m+1$ vértices. Escribimos
+\begin{equation}
+ f_\omega(g)=\omega_{A(g)o}\circ A(g)^{\otimes m},\qquad
+ \langle\omega,z\rangle=\operatorname{ev}_{\Gamma_n}(I\omega,o,z).
+ \label{eq:sh-marco}
+\end{equation}
+La primera expresión es la forma trasladada al punto base, no una función escalar. En la segunda, cada símbolo bar $[g_1|\cdots|g_m]$ se evalúa sobre los vértices $o,g_1o,\ldots,g_1\cdots g_mo$. El ciclo $z$ tiene soporte finito.
+
+El objetivo \texttt{SSurj} dice: si $m<r$, para todo $n_0$ existe $N\ge n_0$ tal que todo cociclo homogéneo real $c$ de grado $m$ en $\Gamma_N$ admite una forma $G_N$-invariante $\bar\omega$ con los mismos valores sobre todos los ciclos. El tamaño $N$ se elige antes de $c$.
+
+\subsection{Cociclos homogéneos y cambio de vértices}
+
+Un cociclo homogéneo es una función $c(g_0,\ldots,g_m)$ invariante por traslación izquierda simultánea y con $\delta c=0$, donde $\delta$ es la suma alternada que omite un vértice. El complejo homogéneo libre, con frontera por omisión, se identifica tras tomar coinvariantes con el bar inhomogéneo mediante cocientes sucesivos de vértices.
+
+\begin{lema}[Prisma entre dos mapas de vértices]
+\label{lem:sh-prisma}
+Sean $a,b:Y\to X$ dos mapas equivariantes para un grupo $\Gamma$. En las cadenas de tuplas, sus mapas inducidos son homotópicos. Si $c$ es un cociclo homogéneo de $X$, ambos pullbacks tienen los mismos valores sobre ciclos de $Y$.
+\end{lema}
+\begin{proof}
+Sobre una tupla $[y_0,\ldots,y_j]$ definimos
+\begin{equation}
+ P[y_0,\ldots,y_j]=\sum_{i=0}^{j}(-1)^i
+ [ay_0,\ldots,ay_i,by_i,\ldots,by_j].
+ \label{eq:sh-prisma}
+\end{equation}
+Al omitir vértices anteriores o posteriores al vértice doble se recuperan los términos de $-P\partial$. Las caras adyacentes al vértice doble se cancelan entre sumandos consecutivos. Los extremos dan $b_*-a_*$. Así $\partial P+P\partial=b_*-a_*$. El operador es equivariante y desciende a coinvariantes. Evaluar un cociclo sobre la identidad y un ciclo da la afirmación.
+\end{proof}
+
+La misma fórmula permite emplear vértices distintos para cada etiqueta, y no solo cambiar un punto base común. Las formas con $\delta I\omega=0$ satisfacen este principio. Para las formas suaves cerradas, Stokes en un simple contenido en el cono convexo da precisamente $\delta I\omega=0$.
+
+\subsection{La entrada de altura y el orden de sus cuantificadores}
+
+Recibimos una altura $h_n:G_n\to(0,\infty)$ continua, invariante por $\Gamma_n$ a izquierda, acotada inferiormente por una constante positiva, y moderada por la derecha: para cada compacto $C\subset G_n$ existe $M_C$ tal que $h_n(gc)\le M_Ch_n(g)$ si $c\in C$. Esta es \texttt{SHt}. La partición de la unidad \texttt{SPU} debe proporcionar un entero $a\ge0$, dependiente del cuerpo pero independiente de $n$, y, para cada $n\ge1$, funciones suaves $\lambda_\gamma$ en $X_n$, indexadas por $\gamma\in\Gamma_n$, con las propiedades siguientes:
+
+\begin{enumerate}
+\item Son no negativas, localmente finitas, suman uno y se permutan por la acción de $\Gamma_n$. Son invariantes por las homotecias comunes de todas las componentes del cono.
+\item El número de funciones no nulas en cada punto está uniformemente acotado para $n$ fijo. Los pares de etiquetas con soportes simultáneos tienen un conjunto finito de diferencias $\gamma^{-1}\gamma'$. Basta que estas propiedades se cumplan para las funciones y derivadas que intervienen en la expresión de Whitney.
+\item Para cada $n$ hay una constante $D_n$ tal que las diferenciales trasladadas al punto base satisfacen $\|d\lambda_\gamma|_{A(g)o}\circ A(g)\|\le D_nh_n(g)^a$.
+\end{enumerate}
+
+La entrada \texttt{SMom} exige para cada entero $A\ge0$ un umbral $N_1(A)$ tal que para $n\ge N_1(A)$ haya un dominio fundamental $D$ de $\Lambda_n$ en $S_n$, de volumen positivo y finito, con
+\begin{equation}
+ \int_D h_n(s)^A\,d\mu(s)<\infty.
+ \label{eq:sh-momento}
+\end{equation}
+Aquí $S_n$ se incluye en $G_n$. Se fija $a$ antes del umbral de momentos. Si se permitiera que $a$ creciese arbitrariamente con $n$, el enunciado de momentos para cada exponente fijo no proporcionaría el tamaño requerido. En este bloque se reciben estas entradas; se desarrollan sus consecuencias y se señala al final la tarea de reducción que falta.
+
+\subsection{El representante de Whitney}
+
+\begin{lema}[Alternación sin cambiar la clase]
+\label{lem:sh-alt}
+Todo cociclo homogéneo real admite un representante alternado de su misma clase.
+\end{lema}
+\begin{proof}
+En la resolución homogénea aumentada, la alternación de las tuplas, dividida por $(j+1)!$ en grado $j$, es una aplicación de cadenas que respeta el aumento. La identidad y la alternación son $\Gamma$-equivariantes. La resolución es libre sobre $\R[\Gamma]$ (la acción simultánea sobre tuplas es libre) y exacta, pues insertar un vértice fijo contrae el complejo aumentado. Las dos aplicaciones son homotópicas: por inducción sobre el grado se levanta la diferencia, una vez restada la homotopía del grado anterior, mediante la sobreyección de la frontera sobre los ciclos; la libertad permite hacerlo equivariantemente. Dualizar muestra que alternar el cociclo no cambia su clase.
+\end{proof}
+
+\begin{proposicion}[Representación y crecimiento]
+\label{prop:sh-whitney}
+Bajo la entrada de partición, un cociclo homogéneo $c$ de grado $m$ en $\Gamma_n$ admite una forma suave cerrada, $\Gamma_n$-invariante e invariante por homotecias comunes, con los mismos valores sobre ciclos y con
+\begin{equation}
+ \|f_\omega(g)\|\le C_c h_n(g)^{am}.
+ \label{eq:sh-whitney-cota}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Alternemos $c$ mediante el Lema~\ref{lem:sh-alt}. La forma de Whitney es
+\begin{equation}
+ \omega=\sum_{\gamma_0,\ldots,\gamma_m}
+ c(\gamma_0,\ldots,\gamma_m)\lambda_{\gamma_0}
+ d\lambda_{\gamma_1}\wedge\cdots\wedge d\lambda_{\gamma_m}.
+ \label{eq:sh-whitney}
+\end{equation}
+La suma es localmente finita. Equivarianza, invariancia de $c$ y homogeneidad de la partición prueban las dos invariancias. La diferencial exterior es cero: al usar la identidad de cociclo para expresar $c(\gamma_0,\ldots,\gamma_m)$ como suma alternada con un índice auxiliar $\eta$, cada término de $d\omega$ se anula porque $\sum_\gamma d\lambda_\gamma=0$. Concretamente, se inserta $\sum_\eta\lambda_\eta=1$; en la identidad $\delta c(\eta,\gamma_0,\ldots,\gamma_m)=0$ cada término restante omite uno de los índices diferenciados, y la suma sobre ese índice es cero.
+
+Para verificar la clase, consideremos el simple abstracto de distribuciones finitamente soportadas en $\Gamma_n$. La misma fórmula con coordenadas baricéntricas $t_\gamma$ define una forma cerrada allí, en cada simple finito. Sobre el simple orientado $(\gamma_0,\ldots,\gamma_m)$ su integral vale $c(\gamma_0,\ldots,\gamma_m)$: cada una de las $(m+1)!$ permutaciones aporta el mismo signo tras alternar $c$ y las diferenciales; la integral de cada coordenada baricéntrica es $1/(m+1)!$. En presencia de vértices repetidos el pullback tiene rango menor y ambos valores son cero.
+
+El mapa $p\mapsto(\lambda_\gamma(p))_\gamma$ lleva el cono a ese simple abstracto. Sobre cada simple afín de vértices $\gamma_i o$, comparemos su composición con el mapa baricéntrico que lleva cada vértice a la masa puntual $\delta_{\gamma_i}$. La homotopía rectilínea entre ambos mapas se realiza en un simple finito, por compacidad y finitud local, es compatible con las caras y es equivariante. Stokes sobre el prisma de esa homotopía muestra que la diferencia de las integrales es un coborde; por el Lema~\ref{lem:sh-prisma}, los valores sobre ciclos coinciden. Esta es una demostración propia del paso de Whitney; no se identifican literalmente sus fórmulas de homotopía con las del archivo formal.
+
+Si $\lambda_\gamma(p)=0$, su diferencial también es nula, por no negatividad y suavidad en un abierto. El número de sumandos efectivos se acota por una potencia del solapamiento. Al trasladar todas las etiquetas por $\gamma_0^{-1}$, la invariancia de $c$ y la finitud de diferencias dan una cota para sus valores en esos sumandos. La norma de un producto exterior de $m$ diferenciales se acota por una constante de grado $m$ por el producto de sus normas. La suma de las primeras coordenadas es uno. Esto prueba \eqref{eq:sh-whitney-cota}; $C_c$ puede depender del cociclo y de $n$.
+\end{proof}
+
+\subsection{Invariancia por el centro completo}
+
+\begin{proposicion}[Promedio central]
+\label{prop:sh-centro}
+La forma del resultado anterior puede reemplazarse por una forma cerrada $\omega'$ con los mismos valores en todos los ciclos e invariante por todos los escalares de $G_n$. Conserva una cota $\|f_{\omega'}(g)\|\le C'_c h_n(g)^{am}$.
+\end{proposicion}
+\begin{proof}
+Los escalares actúan por las homotecias independientes de las componentes de $X_n$; sus fases actúan trivialmente. El grupo efectivo de escalas es $\R^r$ en coordenadas logarítmicas. Por Dirichlet, los logaritmos de los valores absolutos de las unidades de $R$ forman un retículo de rango $r-1$ en el hiperplano de suma cero. La forma ya es invariante bajo la diagonal real (homotecia común) y bajo ese retículo, porque las unidades escalares pertenecen a $\Gamma_n$. El cociente por ambos es un toro compacto. Promediamos los pullbacks de $\omega$ sobre ese toro con Haar de masa uno. La media es suave, cerrada e invariante por todos los escalares; la invariancia por $\Gamma_n$ se conserva porque los escalares son centrales.
+
+Para cada escalar, la acción lleva un simple afín a un simple afín y conmuta con $\Gamma_n$. Por el Lema~\ref{lem:sh-prisma} cambia el cociclo por un coborde. Así la media conserva las evaluaciones; el intercambio de integral y suma es finito sobre cada cadena. Se elige un compacto de representantes del toro. La moderación a derecha de $h_n$ y \eqref{eq:sh-whitney-cota} acotan uniformemente el pullback en ese compacto, pues $f_{a^*\omega}(g)=f_\omega(ag)=f_\omega(ga)$ para un escalar $a$. El exponente sigue siendo $am$.
+\end{proof}
+
+\subsection{El promedio en el marco de referencia}
+
+\begin{proposicion}[Integrabilidad y forma promedio]
+\label{prop:sh-media}
+Supongamos \eqref{eq:sh-momento} con $A=2am$ para un tamaño $N$. Entonces existe una forma $G_N$-invariante $\bar\omega$ cuyo marco es constante e igual a
+\begin{equation}
+ M=\frac{1}{\mu(D)}\int_D f_{\omega'}(s)\,d\mu(s).
+ \label{eq:sh-media}
+\end{equation}
+La diferencia $\omega_0=\omega'-\bar\omega$ es cerrada y sus coordenadas en el marco tienen media cero y son cuadrado-integrables.
+\end{proposicion}
+\begin{proof}
+La cota de crecimiento y el momento $2am$ dan $f_{\omega'}\in L^2(D)$. El volumen finito da integrabilidad $L^1$ por Cauchy--Schwarz. La integral de valores tensoriales es ordinaria en un espacio de dimensión finita. El marco es invariante por traslación izquierda de $\Lambda_N$ y por escalares de $G_N$.
+
+El estabilizador de $o$ es $U=\prod_w U(N)$. Si $u\in U$, se tiene $f_{\omega'}(su)=f_{\omega'}(s)\circ A(u)^{\otimes m}$. Todo $u$ se puede reemplazar, para su acción sobre el cono, por un elemento de $U\cap S_N$: basta dividir cada componente por una raíz $N$-ésima de su determinante, de módulo uno. La medida cociente sobre $\Lambda_N\backslash S_N$ es invariante a derecha. Integrar la identidad demuestra que $M$ es invariante por $U$. La extensión invariante de $M$ al cono, construida en la Nota 21, es $\bar\omega$; está cerrada y su marco vale $M$. Por sustracción, cada coordenada de $f_{\omega_0}$ tiene integral cero. La constante $M$ es cuadrado-integrable sobre un espacio de volumen finito y, por tanto, también lo es la diferencia.
+\end{proof}
+
+\subsection{El operador de Hecke y sus dos realizaciones}
+
+Tomemos un elemento primo $\pi\in R$ con $q=\#(R/\pi R)\ge25$. Existe uno: por Chebotarev en el cuerpo de clases de Hilbert hay ideales primos principales fuera de todo conjunto finito. Escribimos $d_n=\operatorname{diag}(\pi,1,\ldots,1)$ y
+\begin{equation}
+ H_n=\Gamma_n\cap d_n^{-1}\Gamma_n d_n,\quad
+ i_n=[\Gamma_n:H_n],\quad
+ T_nF=\frac{1}{i_n}\sum_{H_nc\in H_n\backslash\Gamma_n}(d_nc)^*F.
+ \label{eq:sh-hecke}
+\end{equation}
+El pullback de un cociclo homogéneo por $d_nc$ significa multiplicar todos sus argumentos a izquierda; el de una forma es el pullback por $A(d_nc)$.
+
+\begin{lema}[Compatibilidad con ciclos]
+\label{lem:sh-hecke}
+La definición \eqref{eq:sh-hecke} conserva invariancia aritmética, conmuta con el coborde y con la integración sobre simples, y conserva la cerradura. En marcos se cumple
+\begin{equation}
+ f_{T_n\omega}(g)=\frac{1}{i_n}\sum_{H_nc} f_\omega(d_ncg).
+ \label{eq:sh-marco-hecke}
+\end{equation}
+\end{lema}
+\begin{proof}
+Si $c'=hc$ con $h\in H_n$, entonces $d_n h d_n^{-1}\in\Gamma_n$; la invariancia hace iguales los sumandos. La multiplicación a derecha por $\Gamma_n$ permuta las clases laterales, de modo que la media es invariante. Omitir un vértice conmuta con la traslación simultánea. La acción $A(d_nc)$ es lineal y lleva el simple afín a aquel con los vértices trasladados; cambio de variables en la parametrización del simple da $I(T_n\omega)=T_n(I\omega)$. La diferencial exterior conmuta con pullbacks. Por último, $A(d_ncg)=A(d_nc)A(g)$ y la regla de composición de pullbacks dan \eqref{eq:sh-marco-hecke}. Los escalares centrales conmutan con los traslados, así que su invariancia también se conserva.
+\end{proof}
+
+\subsection{Una cota local para la evaluación}
+
+Una integral sobre un simple fijo no está acotada por la norma $L^2$ ambiente para una forma arbitraria: se puede concentrar la forma cerca del simple. La condición de cociclo permite promediar los vértices de manera independiente. Este detalle es el que evita una aplicación ilegítima de Cauchy--Schwarz a una subvariedad de medida cero.
+
+\begin{proposicion}[Evaluación local por norma cuadrática]
+\label{prop:sh-local}
+Supongamos que $\Lambda_N$ es discreto y tiene un dominio fundamental de volumen finito en $S_N$. Para cada ciclo real $z$ existe $C_z$ tal que, para toda forma continua $\eta$ con $\delta I\eta=0$, invariante por $\Gamma_N$ y por escalares, y con marco cuadrado-integrable,
+\begin{equation}
+ |\langle\eta,z\rangle|\le C_z
+ \left(\int_D\|f_\eta(s)\|^2\,d\mu(s)\right)^{1/2}.
+ \label{eq:sh-local}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Escojamos una bola cerrada $B$ de radio positivo alrededor de $o$ contenida en $X_N$, con medida de Lebesgue normalizada. Para cada símbolo bar con vértices $g_j o$ reemplazamos los vértices por $A(g_j)b_j$, donde los $b_j\in B$ se integran independientemente. La media de las evaluaciones es un cociclo homogéneo y tiene la misma clase que el original: usemos el prisma entre vértices fijos y variables, integrando sobre las variables. En cada cara la variable omitida integra a uno, y la invariancia aritmética permite trasladar el prisma. Todas las integrales de este paso existen, por continuidad sobre compactos. Así la evaluación del ciclo no cambia.
+
+Para una tupla fija, pongamos $A_j=A(g_j)$. Los simples variables permanecen en el compacto convexo $K=\operatorname{conv}(\bigcup_j A_j B)\subset X_N$. Sus vectores tangentes en la parametrización baricéntrica están uniformemente acotados, luego la integral absoluta se acota por una constante por la integral de $\|\eta_{\sum t_j A_jb_j}\|$ en los parámetros del simple. En cada punto baricéntrico $t$ hay un índice $j$ con $t_j\ge1/(m+1)$. Fijados los demás $b_i$, el cambio de variable $b_j\mapsto\sum_i t_iA_ib_i$ tiene jacobiano absoluto $t_j^d|\det A_j|$, donde $d$ es la dimensión real del ambiente. Su inverso está uniformemente acotado en esa región. Dividir el dominio de parámetros según el primer índice máximo da una cota por $C\int_K\|\eta_H\|\,dH$. La independencia de los vértices es esencial: la suma de los $A_j$ no tiene por qué ser invertible.
+
+En el compacto $K$ normalizamos cada $H_w$ por su determinante positivo, obteniendo un compacto del cono de determinante uno. La descomposición suave $H_w=t_w H_w^0$ ($t_w>0$, $\det H_w^0=1$) tiene jacobianos acotados sobre el compacto. Por invariancia escalar y por una sección suave de $S_N\to S_N/(U\cap S_N)$ mediante raíces cuadradas positivas, la norma de $\eta_H$ se acota por una constante por la norma de su marco sobre un compacto $K'$ de $S_N$. Más precisamente, integrar sobre las fibras compactas $U\cap S_N$ y usar que Haar en coordenadas locales de la sección tiene densidad positiva y suave da
+\[
+ \int_K\|\eta_H\|\,dH\le C'\int_{K'}\|f_\eta(s)\|\,d\mu(s).
+\]
+La comparación de normas de los pullbacks es uniforme porque todas las matrices y sus inversas varían en compactos.
+
+Si $s,\gamma s\in K'$ con $\gamma\in\Lambda_N$, entonces $\gamma\in K'(K')^{-1}$. La intersección de este compacto con el subgrupo discreto cerrado es finita. Por ello el solapamiento de $K'$ sobre el cociente es uniformemente finito (si dos puntos de una fibra pertenecen a $K'$, su cociente pertenece a ese conjunto). Desplegando la integral en un dominio fundamental, se obtiene $\int_{K'}\|f_\eta\|\le M_{K'}\int_D\|f_\eta\|$. Cauchy--Schwarz en $D$ da la raíz de la integral cuadrática multiplicada por $\mu(D)^{1/2}$. Sumamos sobre el soporte finito del ciclo, ponderando por el valor absoluto de cada coeficiente. La constante resultante depende de $z,N,D$ y de la bola, no de $\eta$.
+\end{proof}
+
+\subsection{Una estimación de diseño finito}
+
+\begin{lema}[Correlación entre puntos y bloques]
+\label{lem:sh-diseno}
+Sea $K$ un grupo finito que actúa dos-transitivamente en un conjunto de $v\ge2$ puntos. Sea $B$ un bloque de $s\ge1$ puntos y considérese su órbita de bloques. Si $a$ es una función real en los puntos de media cero, la media de sus valores en un bloque aleatorio, $a_B$, satisface
+\begin{equation}
+ \mathbb E a_B^2=\frac{v-s}{s(v-1)}\mathbb E a^2
+ \le s^{-1}\mathbb E a^2.
+ \label{eq:sh-diseno}
+\end{equation}
+Para una función $b$ de los bloques, la correlación de $a$ y $b$ sobre las incidencias uniformes se acota por $s^{-1/2}(\mathbb E a^2\mathbb E b^2)^{1/2}$.
+\end{lema}
+\begin{proof}
+La probabilidad de que un punto fijo pertenezca al bloque es $s/v$. Para dos puntos distintos, la probabilidad de pertenencia simultánea es $s(s-1)/(v(v-1))$, por dos-transitividad y conteo de pares. Al desarrollar el cuadrado de la suma de $a$ en el bloque, se usa $\sum_{x\ne y}a(x)a(y)=-\sum_x a(x)^2$. Dividir por $s^2$ da \eqref{eq:sh-diseno}. Las incidencias son uniformes porque todos los bloques tienen $s$ puntos y todos los puntos la misma multiplicidad. Condicionar respecto del bloque y aplicar Cauchy--Schwarz da la correlación.
+\end{proof}
+
+Esta demostración se aplica también a cosets de un grupo infinito $K$ cuando las dos acciones se reducen a un cociente finito común. Si $E$ es estabilizador de un punto y $E'$ actúa sobre su órbita $B$, entonces $s=[E':E\cap E']$. Se puede contar bloques con multiplicidades, usando cosets de $E'$ en lugar de la órbita de subconjuntos: la distribución de $B$ no cambia. Si $s\ge25$, el factor de correlación es $1/5$.
+
+\subsection{Tres subespacios de un espacio de Hilbert}
+
+\begin{proposicion}[Ángulo de intersecciones]
+\label{prop:sh-angulos}
+Sean $W_1,W_2,W_3$ subespacios cerrados de un espacio de Hilbert real. Supongamos que, para cada par, la correlación entre un vector de $W_i$ ortogonal a $W_i\cap W_j$ y un vector de $W_j$ es a lo sumo $1/5$ por el producto de sus normas, en valor absoluto. Con $W=W_1\cap W_2\cap W_3$, si $v\in W_1\cap W_2$ es ortogonal a $W$ y $w\in W_1\cap W_3$, entonces
+\begin{equation}
+ |\langle v,w\rangle|\le\frac25\|v\|\|w\|.
+ \label{eq:sh-angulos}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Sean $P_i$ las proyecciones ortogonales sobre $W_i$ y $Q_i=1-P_i$. Para un par, podemos sustraer la proyección sobre la intersección, que no afecta a $Q_i,Q_j$. Para $x$ así ortogonal a la intersección, pongamos $s=\|P_i x\|^2+\|P_jx\|^2$. La hipótesis da $\|P_i x+P_jx\|^2\le(6/5)s$, mientras que $s=\langle x,P_i x+P_jx\rangle$. Cauchy--Schwarz implica $s\le(6/5)\|x\|^2$ (el caso $s=0$ es inmediato). Entonces
+\[
+ \langle(Q_i+Q_j)x,x\rangle\ge(4/5)\|x\|^2.
+\]
+Al desarrollar $\|(Q_i+Q_j)x-(4/5)x\|^2\ge0$ se deduce $\|(Q_i+Q_j)x\|^2\ge(4/5)(\|Q_i x\|^2+\|Q_jx\|^2)$. Como ambos lados no dependen de la componente en la intersección, vale para todo $x$.
+
+Sea $D_0=Q_1+Q_2+Q_3$, positivo y autoadjunto. Sumando las tres cotas y restando las normas cuadradas una vez, se obtiene
+\begin{equation}
+ \|D_0x\|^2\ge\frac35\langle D_0x,x\rangle.
+ \label{eq:sh-cierre}
+\end{equation}
+Por Cauchy--Schwarz para la forma positiva $\langle D_0x,y\rangle$,
+$\|D_0x\|^4\le\langle D_0x,x\rangle\langle D_0(D_0x),D_0x\rangle$. Junto con \eqref{eq:sh-cierre}, esto implica $\langle D_0y,y\rangle\ge(3/5)\|y\|^2$ sobre la imagen de $D_0$, y por continuidad en su cierre, que es $W^\perp$ pues $\ker D_0=W$.
+
+Sustraemos de $w$ su proyección sobre $W$, sin cambiar el producto interior con $v$ ni aumentar la norma. Si ambos vectores son no nulos, normalizamos a norma uno y cambiamos el signo de $w$ para que $t=\langle v,w\rangle\ge0$. Aplicamos la última cota a $v+w\in W^\perp$. Como $Q_1(v+w)=0$, $Q_2v=Q_3w=0$, y $\|P_2w\|,\|P_3v\|\ge t$, obtenemos
+\[
+ \tfrac35(2+2t)\le\|Q_2w\|^2+\|Q_3v\|^2\le 2-2t^2.
+\]
+Dividir por $2(1+t)>0$ da $t\le2/5$. Deshacer la normalización prueba el enunciado.
+\end{proof}
+
+\subsection{La geometría aritmética de la contracción}
+
+Escribamos $\mathbb F=R/\pi R$. En $L^N$ consideremos los retículos
+\[
+ M_j=R^N+\pi^{-1}Re_1+\cdots+\pi^{-1}Re_j,
+ \qquad 0\le j\le2,
+\]
+con $M_0=R^N$. Sea $K_j^1\subset\operatorname{SL}_N(L)$ el estabilizador de $M_j$. Este es el conjugado de $\operatorname{SL}_N(R)$ por $\operatorname{diag}(\pi^{-1},\ldots,\pi^{-1},1,\ldots,1)$ (los primeros $j$ lugares). Para distinguirlos de los grupos lineales racionales de la primera sección se conserva el superíndice $1$. Supongamos $N\ge3$.
+
+\begin{lema}[Retículos intermedios y densidad]
+\label{lem:sh-reticulos}
+Pongamos $B_0=K_0^1\cap K_1^1\cap K_2^1$ y $E_{ij}=K_i^1\cap K_j^1$. Los índices de $B_0$ en los tres grupos son finitos. Los cocientes $K_0^1/E_{01}$, $K_1^1/E_{12}$ y $K_2^1/E_{12}$ son conjuntos de una acción dos-transitiva. Además
+\begin{equation}
+ [E_{02}:B_0]\ge q+1,\qquad [E_{01}:B_0]\ge q+1.
+ \label{eq:sh-indices-triple}
+\end{equation}
+El grupo generado por $K_0^1$ y $K_1^1$ tiene imagen densa en $S_N$.
+\end{lema}
+\begin{proof}
+La reducción $\operatorname{SL}_N(R)\to\operatorname{SL}_N(\mathbb F)$ es sobreyectiva: sobre un cuerpo las transvecciones generan el grupo especial lineal y cada parámetro admite un levantamiento a $R$. Vale la misma afirmación para la reducción en una base de cada $M_j$. La congruencia de nivel $\pi^2$ en cualquiera de esos retículos estabiliza los otros dos, porque $\pi M_i\subseteq M_j\subseteq\pi^{-1}M_i$ para todos los pares; aplicar la condición a la matriz y a su inversa prueba la igualdad de retículos. Esto da finitud de los índices.
+
+En la reducción de $M_0$, estabilizar $M_1$ equivale a estabilizar una recta y estabilizar $M_2$ equivale a estabilizar un plano. En la reducción de $M_1$, estabilizar $M_2$ equivale también a estabilizar una recta. En la reducción de $M_2$, estabilizar $M_1$ equivale a estabilizar un hiperplano. Los grupos especiales lineales sobre $\mathbb F$ actúan dos-transitivamente en rectas y en hiperplanos: dos rectas distintas generan un plano y pueden llevarse a otras dos mediante una base; ajustar un factor de la base permite imponer determinante uno sin alterar las rectas. El caso dual da los hiperplanos. El grupo que estabiliza el plano en la reducción de $M_0$ actúa transitivamente en sus $q+1$ rectas. El estabilizador de la recta actúa transitivamente en los planos que la contienen, cuyo número es $(q^{N-1}-1)/(q-1)\ge q+1$. Los estabilizadores de estas acciones son las intersecciones triples; esto demuestra \eqref{eq:sh-indices-triple}.
+
+Para la densidad, $K_0^1$ contiene las transvecciones con parámetros en $R$, y $K_1^1$ contiene $1+\pi^{-1}aE_{1j}$ ($j>1$, $a\in R$). Conjugación por matrices de permutación con signos de determinante uno y la relación
+\[
+ [1+xE_{ij},1+yE_{jh}]=1+xyE_{ih}\quad(i,j,h\text{ distintos})
+\]
+producen todas las transvecciones con parámetros en $R[1/\pi]$, por inducción sobre el denominador. Este anillo es denso en $L\otimes_\Q\R\simeq\C^r$: la suma de los logaritmos de $|\sigma_w\pi|$ es positiva. Por el retículo logarítmico de Dirichlet, para algún entero $t>0$ y una unidad $u$ se tiene $|\sigma_w(u\pi^t)|>1$ para todos los $w$ (se aproxima el vector de media cero por un punto del retículo con error acotado). Los retículos $(u\pi^t)^{-j}R$ tienen una base cuyos vectores tienden a cero en el espacio real, y sus dominios fundamentales tienen diámetro tendente a cero. Por tanto su unión es densa. Las transvecciones con parámetros en $\C^r$ generan $S_N$, componente a componente, de donde resulta la densidad.
+\end{proof}
+
+\begin{teorema}[Contracción del Hecke escalar]
+\label{thm:sh-gap}
+Bajo la existencia de un dominio fundamental de volumen positivo y finito, para $N\ge3$, el operador $T_N$ sobre funciones escalares continuas, invariantes a izquierda por $\Gamma_N$ y por todos los escalares, conserva la media cero y satisface
+\begin{equation}
+ \|T_N f\|_{L^2(D)}\le\frac25\|f\|_{L^2(D)}\le\frac35\|f\|_{L^2(D)}.
+ \label{eq:sh-gap}
+\end{equation}
+Aquí $f$ tiene media cero y es cuadrado-integrable en $D\subset S_N$.
+\end{teorema}
+\begin{proof}
+Normalicemos la imagen compleja de $d_N$ mediante escalares, obteniendo $d'\in S_N$. La función $w(s)=f(d's)$ es invariante por $K_1^1$ y tiene la misma integral y norma sobre el dominio conjugado $D_1=(d')^{-1}D$. El dominio $D_0=D$ corresponde a $K_0^1$; se elige análogamente $D_2$ para $K_2^1$. Los volúmenes son iguales por invariancia de Haar. La reducción anterior implica que las clases laterales de Hecke para $\Gamma_N$ pueden representarse en $\operatorname{SL}_N(R)$: ambas acciones en las rectas de la reducción son transitivas y tienen el mismo estabilizador por intersección. Como $f$ es invariante por escalares, el operador $T_N f$ sobre $S_N$ es el promedio de $w$ sobre $E_{01}\backslash K_0^1$; lo llamamos $v$.
+
+Trabajemos en el espacio de Hilbert $L^2(B_0\backslash S_N)$ con medida inducida por Haar (se puede usar cualquier dominio fundamental de $B_0$). Denotamos por $W_1,W_2,W_3$ los subespacios de funciones invariantes casi por doquier por $E_{01},E_{02},E_{12}$, respectivamente. Son cerrados: promediar las clases laterales sobre $B_0$ es una proyección ortogonal a las funciones invariantes por cada grupo intermedio, por invariancia de Haar y despliegue de dominios. Del mismo modo $v$ es la proyección de $w$ a las funciones invariantes por $K_0^1$, y por eso $\langle v,w\rangle=\|v\|^2$. Se tiene $v\in W_1\cap W_2$ y $w\in W_1\cap W_3$. El promedio conserva la media cero.
+
+Comprobemos los tres ángulos. Para $E,E'\subset K$ dos de esos grupos intermedios en uno de los $K_j^1$, el promedio sobre $K$ es la proyección sobre su espacio invariante. Por el Lema~\ref{lem:sh-diseno}, si un vector invariante por $E$ tiene promedio cero sobre $K$, su correlación con un vector invariante por $E'$ se acota por $1/5$ por el producto de las normas. En efecto, se aplica el cálculo finito a los valores de las funciones en cada fibra de $B_0\backslash K$, después se integra sobre el dominio de $K$ y se aplica Cauchy--Schwarz. El paso al cociente finito común se justifica por la congruencia de nivel $\pi^2$. Para cada par elegimos $K$ y $E$ con acción dos-transitiva según el Lema~\ref{lem:sh-reticulos}; el índice de $B_0$ en $E'$ es al menos $q+1\ge25$. En particular, si un vector está en ambos subespacios, sustraer su promedio por $K$ y aplicar la cota a sí mismo muestra que la intersección es precisamente el espacio invariante por $K$. Así se cumplen las hipótesis de la Proposición~\ref{prop:sh-angulos}.
+
+La intersección triple consiste en las constantes. En efecto, $E_{01}$ es maximal en $K_0^1$ por la dos-transitividad (un estabilizador de punto de una acción primitiva es maximal); $E_{02}$ contiene un elemento fuera de $E_{01}$ por \eqref{eq:sh-indices-triple}. Por tanto ambos generan $K_0^1$. De igual modo $E_{12}$ y $E_{01}$ generan $K_1^1$. Por densidad, las funciones invariantes casi por doquier por todos los tres grupos intermedios son constantes casi por doquier. Para justificar el paso de densidad, los representantes son localmente $L^2$ por solapamiento finito de compactos. Las traslaciones son continuas en $L^2$ local (por aproximación por funciones continuas de soporte compacto), así que la invariancia casi por doquier se extiende a cada elemento de $S_N$. Fubini aplicado a $f(gs)=f(s)$ y cambio de variable en Haar implican que $f$ tiene el mismo valor en casi todo par de puntos. No se toma una intersección no numerable de conjuntos de medida plena.
+
+Como $v$ tiene media cero, es ortogonal a esa intersección triple. Por \eqref{eq:sh-angulos}, $\|v\|^2\le(2/5)\|v\|\|w\|$. Si $v\ne0$ dividimos por su norma. Para volver a los dominios $D_0,D_1$, ambas normas cuadradas se dividen por el mismo índice: el volumen de $B_0\backslash S_N$ es $[K_i^1:B_0]\mu(D_i)$ y los volúmenes de $D_i$ son iguales. Así se obtiene \eqref{eq:sh-gap}. Continuidad y las invariancias del nuevo promedio se obtienen de la suma finita en \eqref{eq:sh-hecke}; también queda verificada su integrabilidad cuadrática.
+\end{proof}
+
+El código de \texttt{SGapOfParts.lean} obtiene primero la constante $2/5$ y la debilita a $3/5$. La demostración anterior reconstruye el mecanismo con retículos, diseños de incidencia y el cálculo de Hilbert, suponiendo la existencia del dominio de volumen finito. No requiere un teorema automorfo de cotas de parámetros de Satake para esta contracción.
+
+\subsection{Homología de bloques afines}
+
+El otro lado del argumento utiliza homología, no estimaciones de normas sobre formas. El grupo afín de bloques es
+\[
+ P=U\rtimes\Gamma_n,\qquad U=\operatorname{Mat}_{n\times h}(R)_{\rm ad},
+ \qquad (B,g)\longmapsto\begin{pmatrix}g&B\\0&I_h\end{pmatrix}.
+\]
+La proyección $p:P\to\Gamma_n$ se escinde por la inclusión diagonal $s$. La acción sobre $U$ es multiplicación izquierda por $g$.
+
+\begin{lema}[Una unidad que separa los pesos]
+\label{lem:sh-unidad}
+Si $1\le m<r$, existe una unidad $u\in R^\times$ tal que ningún producto de entre una y $m$ inmersiones complejas de $u$, con repeticiones permitidas, es igual a uno.
+\end{lema}
+\begin{proof}
+Para cada vector de multiplicidades $a=(a_w)\in\N^r$ con $1\le\sum a_w\le m$, la ecuación $\sum_w a_w\log|\sigma_wu|=0$ define un hiperplano propio en el espacio de suma cero: $a$ no puede ser constante porque su suma positiva es menor que $r$. Hay un número finito de hiperplanos. Un retículo de rango completo no está contenido en su unión: en una base del retículo, el producto de las formas lineales no nulas es un polinomio no nulo, y un polinomio no nulo no se anula en todos los puntos enteros (inducción sobre el número de variables). Dirichlet proporciona así $u$ fuera de la unión. Si un producto complejo de inmersiones fuese uno, tomar valores absolutos daría una de las ecuaciones excluidas, contando juntas las dos inmersiones de cada lugar.
+\end{proof}
+
+\begin{proposicion}[Invisibilidad homológica del bloque superior]
+\label{prop:sh-afin}
+Si $m<r$, el mapa $p_*:H_m(P,\R)\to H_m(\Gamma_n,\R)$ es un isomorfismo, con inversa $s_*$. En particular, si una representación de un grupo $H$ en $\Gamma_{n+h}$ tiene bloques $(g(h'),B(h');0,I_h)$, induce en homología de grado $m$ el mismo mapa que su parte diagonal.
+\end{proposicion}
+\begin{proof}
+El grupo aditivo $U$ es libre abeliano de rango finito, y $H_j(U,\R)=\bigwedge^j(U\otimes_\Z\R)$, por la resolución de un toro. El escalar central $uI_n\in\Gamma_n$ actúa en este espacio con valores propios, después de complejificar, que son productos de $j$ inmersiones de $u$. Por el Lema~\ref{lem:sh-unidad}, para $1\le j\le m$ la diferencia entre esta acción y la identidad es un automorfismo. Es un automorfismo de $\Gamma_n$-módulos porque el escalar es central.
+
+En homología de un grupo con coeficientes, un elemento central actúa trivialmente por su acción sobre el módulo: es el caso central de la identidad de homotopía para la conjugación interior con acción simultánea sobre los coeficientes. Se obtiene con el prisma de inserción del elemento en la resolución bar, llevando el coeficiente mediante dicho elemento (equivalentemente, por naturalidad de los funtores derivados de coinvariantes y la resolución bar). Por ello el automorfismo $uI_n-1$ induce a la vez cero y un automorfismo en $H_i(\Gamma_n,H_j(U,\R))$, de modo que este grupo es cero para $1\le j\le m$ y todo $i$.
+
+La sucesión espectral homológica de Hochschild--Serre para $1\to U\to P\to\Gamma_n\to1$ tiene esos grupos como segunda página. En grado total $m$ solo queda la fila $j=0$. No hay diferenciales entrantes a esa fila desde grados verticales negativos; los salientes tienen grado total $m-1$ y vertical positivo, por tanto cero. La aplicación de borde es $p_*$, y es un isomorfismo. Su inversa es $s_*$ porque $ps=1$. Toda representación de la forma indicada factoriza por $P$, así que la igualdad de los mapas inducidos sigue de $s_*p_*=1$.
+\end{proof}
+
+Esta es una reconstrucción por Hochschild--Serre de la entrada \texttt{SAff}. El código la obtiene mediante polinomios de operadores y cociclos; se coteja su afirmación de homología, no se reproduce literalmente esa prueba. El argumento requiere $m<r$ y coeficientes reales. No da un isomorfismo integral para el grupo afín.
+
+\subsection{Transferencia y clases laterales pequeñas}
+
+\begin{lema}[Transferencia sobre un conjunto finito de cosets]
+\label{lem:sh-transferencia}
+Sea $X$ un conjunto finito con acción derecha de un grupo $\Gamma$. Supongamos que $F_x$ son cociclos homogéneos en tuplas de $\Gamma$, con $F_{xg}(y)=F_x(gy)$, y que cada $F_x$ tiene evaluación nula sobre ciclos del estabilizador de $x$. Entonces el cociclo invariante $\sum_x F_x$ tiene evaluación nula sobre ciclos de $\Gamma$.
+\end{lema}
+\begin{proof}
+Trabajemos órbita por órbita. Si $x_0$ tiene estabilizador $H$, la restricción de $F_{x_0}$ a tuplas de $H$ es un coborde: en el complejo bar real, un funcional que se anula sobre ciclos factoriza por la frontera y se extiende linealmente a las cadenas del grado inferior. En tuplas de $\Gamma$ el cociclo $F_{x_0}$ es $H$-invariante. Hay una retracción $H$-equivariante $\Gamma\to H$ (elegir representantes de las clases $H\backslash\Gamma$, incluyendo la unidad). Por el Lema~\ref{lem:sh-prisma}, el pullback de el coborde desde $H$ y $F_{x_0}$ son cohomólogos en tuplas de $\Gamma$. Por tanto $F_{x_0}=\delta E$ con $E$ $H$-invariante. Al trasladar y sumar $E$ sobre $H\backslash\Gamma$ se obtiene un primitivo invariante por $\Gamma$ cuya coborde es la suma de los $F_x$ de esa órbita. Sumamos sobre todas las órbitas.
+\end{proof}
+
+Como consecuencia, el operador de Hecke induce un operador bien definido en cohomología real de $\Gamma_n$: un cociclo de $K_n$ invariante por $\Gamma_n$ que evalúa cero en ciclos de $\Gamma_n$ es un coborde en el complejo de tuplas de $K_n$ invariante por $\Gamma_n$. Se demuestra con la misma retracción equivarante $K_n\to\Gamma_n$ y el prisma. Promediar el primitivo por $H_n\backslash\Gamma_n$ conserva la invariancia y conmuta con el coborde. Esta es la propiedad de núcleo de \texttt{PHeckeKer}.
+
+\begin{proposicion}[Identidad de restricción de Hecke]
+\label{prop:sh-restriccion}
+Sean $n\ge1$, $N=n+h$ con $h\ge1$, y $m<r$. Denotemos por $s$ la estabilización diagonal. Para un cociclo $F$ sobre $K_N$ invariante por $\Gamma_N$ y un ciclo $z$ de $\Gamma_n$,
+\begin{equation}
+ \langle T_N F,s_*z\rangle=(1-\epsilon_N)\langle F,s_*z\rangle
+   +\epsilon_N\langle T_n(s^*F),z\rangle,
+ \qquad \epsilon_N=i_n/i_N.
+ \label{eq:sh-restriccion}
+\end{equation}
+Además, $i_n=(q^n-1)/(q-1)$.
+\end{proposicion}
+\begin{proof}
+El subgrupo $H_N$ de \eqref{eq:sh-hecke} es el estabilizador de la recta $\mathbb F e_1$ bajo reducción módulo $\pi$: las entradas inferiores de la primera columna deben ser divisibles por $\pi$. Las clases $H_N c$ se identifican con las rectas $\mathbb F c^{-1}e_1$. La reducción del grupo especial lineal es sobreyectiva, por lo que todas las rectas aparecen; esto da la fórmula para $i_N$ y para $i_n$. Las clases provenientes de la estabilización corresponden exactamente a las rectas del primer bloque de dimensión $n$. Son $i_n$ y su suma da el segundo término de \eqref{eq:sh-restriccion}.
+
+Consideremos una clase restante, con representante $c$, y el estabilizador $H$ de dicha clase bajo la acción derecha de $\Gamma_n$. El vector $v=c^{-1}e_1$ tiene alguna coordenada $v_j$ en el segundo bloque no nula módulo $\pi$. Elegimos $u,s_0\in R$ con $uv_j+\pi s_0=1$, y ponemos
+\begin{equation}
+ y=\frac{u}{\pi}v+s_0e_j,\qquad B=I_N+(y-e_j)e_j^{\mathsf T}.
+ \label{eq:sh-afin-conjug}
+\end{equation}
+Entonces $y_j=1/\pi$, $\det B=y_j=1/\pi$ y $\gamma=d_NcB\in\Gamma_N$. Para ver la integridad, $d_Ncy=ue_1+s_0d_Nce_j$, que es integral; las demás columnas ya lo eran. El determinante de $\gamma$ es $\det c\in R^\times$, y por la adjunta su inversa es integral.
+
+Para $a\in H$, escribamos $S=s(a)$. Se tiene $d_NcSc^{-1}d_N^{-1}\in\Gamma_N$ por la definición del estabilizador. Conjugando por $\gamma$, resulta $B^{-1}SB\in\Gamma_N$. Como $e_j$ está en el segundo bloque, $Se_j=e_j$ y $e_j^{\mathsf T}S=e_j^{\mathsf T}$. Multiplicar las matrices da
+\begin{equation}
+ B^{-1}SB=S+(S-I)y e_j^{\mathsf T}.
+ \label{eq:sh-bloque-conjug}
+\end{equation}
+En efecto, al multiplicar el miembro derecho por $B$ a izquierda se obtiene $SB$, usando que la coordenada $j$ de $(S-I)y$ es cero. La última matriz tiene los bloques de la Proposición~\ref{prop:sh-afin}, con la misma parte diagonal que $S$.
+
+El cociclo $F$ trasladado por $d_Nc$ sobre tuplas del estabilizador $H$ tiene la misma evaluación que el cociclo obtenido mediante $a\mapsto B^{-1}s(a)B$: se usa $d_Nc\,s(a)=\gamma(B^{-1}s(a)B)B^{-1}$, la invariancia por $\gamma$ y el prisma para cambiar el punto base de $B^{-1}$ a $1$. Por la Proposición~\ref{prop:sh-afin}, sobre ciclos de $H$ esa evaluación coincide con la obtenida por $s$. Luego las diferencias entre las evaluaciones de las clases restantes y la evaluación de $F$ en el primer bloque se anulan sobre los ciclos de sus respectivos estabilizadores. El Lema~\ref{lem:sh-transferencia}, aplicado al conjunto finito de clases restantes, muestra que su suma se anula sobre ciclos de $\Gamma_n$. Hay $i_N-i_n$ clases restantes; dividir por $i_N$ da el primer término de \eqref{eq:sh-restriccion} y concluye la prueba.
+\end{proof}
+
+La identidad es sobre ciclos; no identifica punto a punto los cociclos de todas las clases laterales restantes. Se distingue este paso de la contracción analítica de \eqref{eq:sh-gap}. El argumento corresponde a \texttt{PKey}, con el bloque afín de \texttt{Affine.lean} y el conteo por transferencia de \texttt{KeyGenAlt.lean}.
+
+\subsection{La cota inferior sobre la cohomología estabilizada}
+
+Recibimos estabilidad homológica real para $n\ge2m+4$ y finitud de la dimensión de $H_m(\Gamma_n,\R)$. La finitud puede obtenerse de una cubierta de índice finito con complejo celular finito, como la de la Nota 16, mediante transferencia sobre $\R$. La estabilidad integral, que implica la real por cambio de coeficientes, se justifica en la Nota~\ref{sec:estabilidad-integral}.
+
+\begin{teorema}[El decrecimiento excesivo fuerza la anulación]
+\label{thm:sh-hecke}
+Bajo esas entradas, si $m<r$, existe $N_0$ tal que para todo $N\ge N_0$ y todo cociclo $F$ como en la Proposición~\ref{prop:sh-restriccion}, la condición
+\begin{equation}
+ \forall z\text{ ciclo}\quad\exists C_z\quad\forall t\ge0,
+       |\langle T_N^tF,z\rangle|\le C_z(3/5)^t
+ \label{eq:sh-decrece}
+\end{equation}
+implica que $\langle F,z\rangle=0$ para todos los ciclos.
+\end{teorema}
+\begin{proof}
+Fijemos $n=2m+4$ y ciclos $z_1,\ldots,z_d$ cuyas clases forman una base de $H_m(\Gamma_n,\R)$. Si $d=0$, la estabilidad prueba la conclusión. En otro caso, sea $P(F)$ el vector de sus evaluaciones y $Q(F)$ el de las evaluaciones de $T_nF$. Por la propiedad de núcleo después del Lema~\ref{lem:sh-transferencia}, $\ker P\subseteq\ker Q$. Así $Q$ factoriza linealmente por $P$; como la imagen de $P$ es de dimensión finita, existe $K\ge0$ con $\|Q(F)\|\le K\|P(F)\|$. Este $K$ se fija en el tamaño $n$ antes de elegir $N$ o $F$.
+
+Como $i_N\ge N$ y crece sin cota, podemos elegir $N_0\ge n+1$ tal que para $N\ge N_0$,
+\[
+ \epsilon_N(1+K)\le1/5.
+\]
+Sea $x_t$ el vector de evaluaciones de $T_N^tF$ sobre los ciclos estabilizados $s_*z_j$. Sea $y_t$ el vector $Q(s^*T_N^tF)$; entonces $\|y_t\|\le K\|x_t\|$. La identidad \eqref{eq:sh-restriccion} da
+\begin{equation}
+ x_{t+1}=(1-\epsilon_N)x_t+\epsilon_Ny_t,
+ \qquad \|x_{t+1}\|\ge\tfrac45\|x_t\|.
+ \label{eq:sh-inferior}
+\end{equation}
+La última desigualdad es la triangular inversa y la elección de $\epsilon_N$. Por inducción $\|x_t\|\ge(4/5)^t\|x_0\|$. En cambio \eqref{eq:sh-decrece} da, al reunir la familia finita de constantes, $\|x_t\|\le C(3/5)^t$. Dividiendo por $(4/5)^t$ obtenemos $\|x_0\|\le C(3/4)^t$ para todo $t$, y por tanto $x_0=0$. La estabilidad real garantiza que los ciclos estabilizados generan la homología en tamaño $N$, así que $F$ se anula sobre todos los ciclos.
+\end{proof}
+
+El resultado no supone que el operador de Hecke sea la identidad sobre cohomología. La pequeña proporción $\epsilon_N$ permite que el operador sea una perturbación de la identidad en el espacio finito de valores. La prueba explica los tres factores distintos: $2/5$ de la geometría de incidencia, $3/5$ del presupuesto analítico recibido por el ensamblaje y $4/5$ de la cota inferior de cohomología.
+
+\subsection{Ensamblaje de la sobreyectividad}
+
+\begin{teorema}[Sobreyectividad bajo las entradas de altura y estabilidad]
+\label{thm:sh-surj}
+Supongamos $m<r$, la entrada de altura y partición uniforme, la de momentos, y la estabilidad homológica real descritas antes. Entonces se cumple \texttt{SSurj}: para todo $n_0$ existe $N\ge n_0$ tal que todo cociclo homogéneo real de grado $m$ de $\Gamma_N$ se representa sobre los ciclos por una forma $G_N$-invariante.
+\end{teorema}
+\begin{proof}
+Elegimos $\pi$ de norma al menos 25, el exponente $a$ de la partición, y los umbrales $N_0$ del Teorema~\ref{thm:sh-hecke} y $N_1(2am)$ de momentos. Fijamos
+\begin{equation}
+ N=\max(n_0,3,N_0,N_1(2am)).
+ \label{eq:sh-umbral}
+\end{equation}
+Esta elección no depende del cociclo. Dados $c$, $\omega'$, $\bar\omega$ y $\omega_0=\omega'-\bar\omega$ como en las Proposiciones~\ref{prop:sh-whitney}--\ref{prop:sh-media}, cada coordenada escalar del marco de $\omega_0$ satisface el Teorema~\ref{thm:sh-gap}. El Lema~\ref{lem:sh-hecke} permite iterar el mismo operador en las formas y en sus cociclos.
+
+Para explicitar el paso de las coordenadas al tensor completo, sea $u_1,\ldots,u_d$ una base del espacio real de matrices hermíticas del cono. Sobre el espacio de $m$-formas alternadas existe $C_*>0$ con
+\[
+ \|A\|^2\le C_*\sum_{i_1,\ldots,i_m}|A(u_{i_1},\ldots,u_{i_m})|^2.
+\]
+La aplicación de coordenadas es inyectiva y el inverso sobre su imagen es continuo en dimensión finita; de ahí la cota. El Teorema~\ref{thm:sh-gap} aplicado a cada coordenada y \eqref{eq:sh-marco-hecke} dan una constante $C_0$ finita, independiente de $t$, tal que
+\begin{equation}
+ \|f_{T_N^t\omega_0}\|_{L^2(D)}\le C_0(3/5)^t.
+ \label{eq:sh-forma-decrece}
+\end{equation}
+La cerradura y las invariancias se conservan en todas las iteraciones, por lo que la Proposición~\ref{prop:sh-local} aplica con la misma constante $C_z$ para cada ciclo fijo. De \eqref{eq:sh-forma-decrece} resulta la condición \eqref{eq:sh-decrece} para el cociclo en $K_N$ que integra $\omega_0$ sobre los vértices $A(y_j)o$. El Teorema~\ref{thm:sh-hecke} muestra que $\langle\omega_0,z\rangle=0$ para todo ciclo. Por consiguiente,
+\[
+ \langle c,z\rangle=\langle\omega',z\rangle=\langle\bar\omega,z\rangle.
+\]
+La forma $\bar\omega$ es invariante por todo $G_N$. Esto concluye la sobreyectividad dentro del alcance de las entradas declaradas.
+\end{proof}
+
+\subsection{Alcance exacto del cotejo}
+
+El archivo \texttt{LemForm.lean} fija el exponente $a(k+1)$ y el máximo de cuatro umbrales; usa el momento $2a(k+1)$, sustrae la forma promedio y aplica \texttt{lem\_bound} y \texttt{SHecke}. El archivo \texttt{LemBound.lean} produce la cota sobre coordenadas y conserva una constante por ciclo. El desarrollo precedente reconstruye esa deducción, además de la cota local y las estimaciones geométricas de la contracción. La comparación de clases laterales sigue el mecanismo de \texttt{PKey} y la perturbación de \texttt{HeckeDoubleCosets/Assemble.lean}. La prueba afín usa Hochschild--Serre como resultado clásico en vez de los polinomios de cociclos del código. Se conservan los mismos dominios y el rango $m<r$.
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}p{.27\textwidth}Y@{}}
+\toprule
+Entrada & Alcance actual del cuaderno\\\midrule
+\texttt{SPrime}, \texttt{SEv} & Existencia por Chebotarev, cambio de vértices y evaluación por Stokes.\\
+\texttt{SWhit}, \texttt{SCen} & Representante y promedio central desarrollados desde una partición controlada.\\
+\texttt{SMean}, \texttt{SLoc} & Promedio y cota local desarrollados desde volumen finito y momentos.\\
+\texttt{SGap} & Contracción desarrollada mediante retículos, diseño y ángulos, con dominio de volumen finito.\\
+\texttt{SAff}, \texttt{SHecke} & Bloques afines, transferencia y cota inferior desarrollados; se usa estabilidad real.\\
+\texttt{SHt}, \texttt{SPU}, \texttt{SMom} & Construcción común desarrollada en Nota~\ref{sec:alturas-reduccion}.\\
+\texttt{SStab} & Rango integral $N\ge2m+4$ justificado en Nota~\ref{sec:estabilidad-integral}.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+La Nota~\ref{sec:detectores-reales} deduce el rango filtrado a partir de la sobreyectividad. Los proveedores de altura, reducción y estabilidad se desarrollan en las Notas~\ref{sec:alturas-reduccion}--\ref{sec:estabilidad-integral}. El hecho de que \texttt{FinalOdd.lean} suministre \texttt{sSurj\_of} y \texttt{sStab} mediante otros archivos no convierte una lectura parcial de sus proveedores en una verificación completa. Se conserva el alcance de las entradas clásicas y de la auditoría matemática localizada.
+
+\clearpage
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}[Whitney en grado uno]
+Sea $c(a,b)=f(b)-f(a)$ un cociclo de diferencias. Calcular la forma de Whitney de \eqref{eq:sh-whitney}.
+\end{ejercicio}
+\paragraph{Solución.} Se tiene $\omega=\sum_{a,b}(f(b)-f(a))\lambda_a d\lambda_b=d(\sum_b f(b)\lambda_b)$ porque $\sum_a\lambda_a=1$ y $\sum_b d\lambda_b=0$. La forma es exacta en el cono. Esto no basta para concluir que sea exacta en el cociente: el primitivo debe ser invariante. Si las diferencias vienen de un cociclo no trivial del grupo, el primitivo puede cambiar por una constante al actuar una etiqueta.
+
+\begin{ejercicio}[Diseño de rectas y planos]
+En $\mathbb F_5^3$, los puntos del plano proyectivo son las rectas vectoriales y los bloques son los planos vectoriales. Calcular el coeficiente exacto de \eqref{eq:sh-diseno}.
+\end{ejercicio}
+\paragraph{Solución.} Hay $v=(5^3-1)/(5-1)=31$ puntos y cada bloque tiene $s=(5^2-1)/(5-1)=6$. La razón cuadrática es $(31-6)/(6(31-1))=5/36$. La correlación máxima dada por el cálculo es $\sqrt5/6$; el presupuesto $1/5$ exige $s\ge25$ y no se deduce para este ejemplo.
+
+\begin{ejercicio}[El orden de elección de la dimensión]
+Si la partición en tamaño $N$ necesitara el exponente $a_N=N$, mientras que el único umbral disponible de momentos fuera $N_1(A)=A+1$, ¿garantizaría esto un tamaño válido para $m=3$?
+\end{ejercicio}
+\paragraph{Solución.} No. Habría que cumplir $N\ge N_1(2a_Nm)=6N+1$, imposible. La uniformidad de $a$ antes de aumentar $N$ es sustantiva y no puede reemplazarse por la existencia de una partición en cada tamaño.
+
+\begin{ejercicio}[Perturbación de Hecke]
+Tomar $q=29$, $n=2$, $N=4$ y $K=10$ en el cálculo de $\epsilon_N$. Comprobar la condición cuantitativa de \eqref{eq:sh-inferior} como ejercicio algebraico, sin imponer todavía el rango de estabilidad.
+\end{ejercicio}
+\paragraph{Solución.} $i_2=30$ e $i_4=(29+1)(29^2+1)=30\cdot842$. Por ello $\epsilon_4=1/842$ y $\epsilon_4(1+K)=11/842<1/5$. El cálculo da incluso la cota inferior $831/842$. La elección de estos tamaños no verifica por sí sola las hipótesis de estabilidad ni $m<r$.
+
+\begin{ejercicio}[La importancia de promediar independientemente]
+Sean $A_0=1$ y $A_1=-1$ como automorfismos del espacio real $\R$. Comparar las aplicaciones $x\mapsto(A_0x+A_1x)/2$ y $(x_0,x_1)\mapsto(A_0x_0+A_1x_1)/2$.
+\end{ejercicio}
+\paragraph{Solución.} La primera es constante cero y no admite cambio de variable invertible. En la segunda, fijado $x_1$, la dependencia respecto de $x_0$ tiene jacobiano $1/2$. Este modelo lineal ilustra por qué la cota local usa un producto de medidas en los vértices, no un único desplazamiento común. En el cono positivo los mapas concretos conservan el cono, pero no debe suponerse invertibilidad de una suma de acciones lineales.

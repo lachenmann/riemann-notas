@@ -1,0 +1,436 @@
+\section{Rango homológico filtrado, estabilidad integral y realización de ciclos}
+\label{sec:rango-homologico-ciclos}
+\fuente{A93, Proposición 9.4, pp.~67--74, en especial (9.8)--(9.16) y el Lema 9.6. Cotejo localizado del espejo Lean fijado en la revisión \texttt{7cbf7a0c}.}
+
+En la Nota 15, la potencia $Q^{r_2}$, con $Q=\ell^\nu$, desaparecía al comparar dos conteos. La Nota 16 acota los órdenes de torsión que sobreviven a esa cancelación. Falta explicar por qué el rango que interviene en el primer conteo es $r_2$, por qué sus dos órdenes de torsión pueden medirse en un solo tamaño matricial y cómo una relación entre divisores produce una evaluación sobre un ciclo. Estas tres preguntas tienen respuestas distintas. La primera utiliza una separación de clases homológicas y sus pesos; la segunda exige estabilidad integral; la tercera combina álgebra de ideales, homotopías de cadenas y reducción a cuerpos finitos.
+
+En esta nota desarrollamos las deducciones lineales y las construcciones integrales de retículos y prismas. Las entradas profundas de separación, descomposición de evaluaciones, estabilidad homológica y existencia de las familias de evaluación se indican en el punto donde se utilizan. La realización por bloques se desarrolla mediante un cambio semilineal de coordenadas y la clasificación de Steinitz. El cotejo de declaraciones Lean no equivale a una nueva ejecución del comprobador ni a una reconstrucción de toda su clausura de dependencias.
+
+\subsection{Índices: el torcido y el grado de la cadena}
+
+Sea $L$ un cuerpo totalmente imaginario, $R=\mathcal O_L$, $r_2=r_2(L)$ y $E\ge1$ el entero que determina el torcido de Tate $-E$ en Selmer. Escribimos
+\begin{equation}
+ k=2E,\qquad m=k+1=2E+1,\qquad N_0=2m+4=4E+6.
+ \label{eq:rh-indices}
+\end{equation}
+En A93 se usa $e=E$. En los archivos \texttt{HasVal.lean} y \texttt{LemmaKOfSteps.lean}, el parámetro interno de \texttt{zc}, \texttt{HasVal}, \texttt{SClass} y \texttt{SFew} es $j=E-1$. El argumento de \texttt{BOdd} y \texttt{SUpper}, en cambio, es $k$. Por tanto
+\begin{equation}
+ 2j+2=2E,\quad 2j+3=2E+1,\quad 4j+10=4E+6.
+ \label{eq:rh-diccionario}
+\end{equation}
+Esta sustitución es necesaria: el ciclo base es de grado par $2E$, el prisma eleva el grado a $2E+1$ y el conteo requiere la torsión en ambos grados. El archivo \texttt{NumThree.lean}, en \texttt{sNum}, elige explícitamente $j=E-1$ antes de aplicar \texttt{SFew}. Así $E=1$ corresponde a $j=0$, no queda excluido por el cambio de índices. La hipótesis de rango es $2E+1<r_2$ y la de separación de pesos aritméticos será $2E+1<\ell^c$; ninguna es una consecuencia automática de $E\ge1$.
+
+\subsection{El filtro no es un proyector integral}
+
+Para $b\ge1$, la repetición por bloques $g\mapsto\operatorname{diag}(g,\dots,g)$ induce un mapa $\Psi_b$ sobre homología. La estabilización $g\mapsto\operatorname{diag}(g,I)$ induce otro mapa, denotado $s$. A partir de $x\in H_m(\operatorname{GL}_N(R),\Z)$ definimos
+\begin{equation}
+ z_0(x)=x,\qquad z_{t+1}(x)=\Psi_bz_t(x)-b^{t+2}s z_t(x).
+ \label{eq:rh-filtro}
+\end{equation}
+El término $z_t$ vive en tamaño $b^tN$. Ambos sumandos de la diferencia viven en tamaño $b^{t+1}N$; por ello no se resta entre grupos distintos. El filtro termina en $z_k$. Denotamos por $J_{N,b}$ la imagen de este homomorfismo en $H_m(\operatorname{GL}_{b^kN}(R),\Z)$. La imagen ya es un subgrupo, pues toda la sucesión es aditiva. La formulación de \texttt{BOdd} usa el submódulo engendrado por esa imagen.
+
+\begin{proposicion}[Eliminación de pesos]
+\label{prop:rh-pesos}
+Sea $A$ un cuerpo de característica cero. Supongamos que una familia de funcionales $a_{w,N}$ sobre homología con coeficientes en $A$ satisface, para los tamaños considerados,
+\[
+ a_{w,bN}(sx)=a_{w,N}(x),\qquad
+ a_{w,bN}(\Psi_bx)=b^w a_{w,N}(x).
+\]
+Entonces
+\begin{equation}
+ a_{w,b^tN}(z_t(x))=
+ \prod_{i=0}^{t-1}(b^w-b^{i+2})\,a_{w,N}(x).
+ \label{eq:rh-producto-pesos}
+\end{equation}
+En particular, para $t=k$, el funcional se anula en la imagen filtrada si $2\le w\le k+1$.
+\end{proposicion}
+\begin{proof}
+El caso $t=0$ usa el producto vacío, igual a uno. Aplicar $a_{w,b^{t+1}N}$ a la diferencia \eqref{eq:rh-filtro} multiplica el valor anterior por $b^w-b^{t+2}$. Esto prueba la fórmula por inducción. Si $2\le w\le k+1$, el factor correspondiente a $i=w-2$ vale cero.
+\end{proof}
+
+El filtro elimina las evaluaciones de pesos superiores indicadas. Para peso uno, el producto es $b^k\prod_{i=1}^k(1-b^i)$. Cuando $b=\ell$ sus factores $1-\ell^i$ son unidades módulo $Q=\ell^\nu$, aunque $\ell^k$ no tiene por qué serlo. El mismo cálculo vale para evaluaciones en módulos sobre $\Z/Q$. De aquí procede exactamente la pérdida $\ell^k$ de la Nota 15. El caso $b=1$ también satisface la fórmula: para $k\ge1$ la imagen filtrada es cero. No hemos construido un idempotente ni dividido por el producto de factores.
+
+\subsection{Separar clases con un número finito de funcionales}
+
+\begin{lema}[Factorización por los valores]
+\label{lem:rh-factorizacion}
+Sean $C,H$ espacios vectoriales sobre un cuerpo $A$, $\pi:C\to H$ lineal y $T:C\to A^r$ lineal. Si $\ker T\subseteq\ker\pi$, entonces $\dim_A\pi(C)\le r$.
+\end{lema}
+\begin{proof}
+En $T(C)$ definimos $u(Tz)=\pi(z)$. Si $Tz=Tz'$, la hipótesis aplicada a $z-z'$ da $\pi(z)=\pi(z')$. El mapa $u$ está bien definido, es lineal y tiene imagen $\pi(C)$. Por tanto $\dim\pi(C)\le\dim T(C)\le r$.
+\end{proof}
+
+La dirección de inclusión de núcleos importa. Que los funcionales desaparezcan en las fronteras permite definirlos en homología, pero no garantiza que detecten sus clases. Para acotar la dimensión necesitamos, sobre el subespacio filtrado, la implicación inversa: si todos los valores son cero, la clase es cero.
+
+\begin{proposicion}[Criterio de rango filtrado]
+\label{prop:rh-rango}
+Sea $k$ par, $m=k+1$, $N\ge2m+4$ y $k+1<r_2$. Recibamos las siguientes entradas sobre las cadenas reales y la homología en esos tamaños.
+\begin{enumerate}
+\item La homología real identifica $H_m(\operatorname{GL}_n(R),\Z)\otimes_\Z\R$ con las clases de ciclos reales. La estabilización es inyectiva en homología real en los tamaños estables.
+\item Existen $r_2$ evaluaciones $\tau_v$, una por lugar infinito, compatibles con la estabilización.
+\item Toda clase real no nula en tamaño estable, después de una estabilización admisible, es detectada por un funcional que, sobre ciclos, se escribe
+\begin{equation}
+ \sum_{v\mid\infty}c_v\tau_v +\sum_{w=2}^{k+1} a_w,
+ \label{eq:rh-descomp}
+\end{equation}
+ donde cada $a_w$ tiene peso $w$ en el sentido de la Proposición~\ref{prop:rh-pesos}. Los funcionales de la descomposición son compatibles con estabilización.
+\end{enumerate}
+Entonces $\operatorname{rank}_{\Z}J_{N,b}\le r_2$.
+\end{proposicion}
+\begin{proof}
+Consideremos el espacio $C$ engendrado sobre $\R$ por los ciclos filtrados en tamaño $b^kN$, y el mapa $\pi$ que toma sus clases. Por la primera entrada, el rango entero de $J_{N,b}$ coincide con la dimensión real de su imagen extendida; tensorizar con $\R$ es exacto, pues $\R$ es plano sobre $\Z$. La imagen está contenida en $\pi(C)$.
+
+Sea $T:C\to\R^{r_2}$ el mapa de evaluaciones $\tau_v$. Supongamos $Tz=0$ y $\pi(z)\ne0$. Por inyectividad estable, la clase sigue siendo no nula tras el aumento de tamaño que proporciona la tercera entrada. Cada $\tau_v$ continúa dando cero por compatibilidad. Cada $a_w$ se anula en los generadores de $C$ por \eqref{eq:rh-producto-pesos}, y por linealidad en todo $C$. Por tanto el funcional detector de \eqref{eq:rh-descomp} da cero, una contradicción. Así $\ker T\subseteq\ker\pi$. El Lema~\ref{lem:rh-factorizacion} da la cota buscada.
+\end{proof}
+
+Este es el mecanismo de rango localizado en \texttt{sBStarOdd\_of}. No afirma que toda la homología impar tenga rango $r_2$. La descomposición de los detectores, su existencia y el transporte estable son las entradas no reconstruidas por este argumento. La descomposición se desarrolla en la Nota~\ref{sec:detectores-reales}, la sobreyectividad en las Notas~\ref{sec:sobreyectividad-hecke}--\ref{sec:alturas-reduccion} y la estabilidad en la Nota~\ref{sec:estabilidad-integral}. La homología real solo controla el rango: no registra la torsión integral. No se sustituye aquí la demostración específica por una invocación genérica al cálculo de la teoría $K$ racional.
+
+\subsection{Por qué necesitamos estabilidad integral}
+
+Escribamos $H_j(n)=H_j(\operatorname{GL}_n(R),\Z)$ y $T_{n,j}(L)=\#H_j(n)_{\mathrm{tors}}$ cuando su torsión es finita. La entrada de estabilidad de A93, p.~68, afirma que $s:H_j(n_0)\to H_j(n)$ es un isomorfismo si $n\ge n_0\ge2j+4$. Usaremos precisamente esta versión, con coeficientes enteros; el Teorema~\ref{thm:ehi-stability} y la Proposición~\ref{prop:ehi-iter} justifican e iteran el isomorfismo.
+
+\begin{proposicion}[Transporte de los dos órdenes]
+\label{prop:rh-torsion-estable}
+Supongamos la estabilidad integral anterior. Para todo $N\ge N_0=2(k+1)+4$ y todo $b\ge1$, se tiene
+\begin{equation}
+ T_{N,k}(L)=T_{N_0,k}(L),\qquad
+ T_{b^kN,k+1}(L)=T_{N_0,k+1}(L),
+ \label{eq:rh-ordenes}
+\end{equation}
+ siempre que los órdenes en tamaño $N_0$ sean finitos.
+\end{proposicion}
+\begin{proof}
+Para el grado $k$ se cumple $N_0\ge2k+4$, y para $k+1$ se cumple la igualdad $N_0=2(k+1)+4$. Además $b^kN\ge N_0$. Un isomorfismo de grupos abelianos restringe a un isomorfismo de sus subgrupos de torsión: preserva las relaciones $ax=0$ y su inversa también. Se obtienen ambas igualdades.
+\end{proof}
+
+Un isomorfismo racional no basta: la inclusión $\Z\to\Z\oplus\Z/\ell^a$, $x\mapsto(x,0)$, se vuelve un isomorfismo sobre $\Q$, pero el grupo de llegada tiene torsión de orden $\ell^a$. Incluso el índice de una imagen libre puede ser arbitrario. La Nota 16 suministra una cota para la torsión en el tamaño $N_0$; para utilizarla en la Nota 15 necesitamos el transporte \eqref{eq:rh-ordenes} o una estimación alternativa igualmente uniforme.
+
+\subsection{La cuenta homológica recuperada}
+
+Consideremos las familias primitivas de la Nota 15, con valores en un $\Z/Q$-módulo $B$. Sobre ciclos, la estabilización conserva su evaluación $\Phi_N$ y la repetición por $\ell$ bloques la multiplica por $\ell$. Las fronteras tienen evaluación cero.
+
+\begin{teorema}[Cota de valores filtrados]
+\label{thm:rh-valores}
+Bajo las entradas de la Proposición~\ref{prop:rh-rango} y la estabilidad integral, para $k=2E$ con $k+1<r_2$ y $Q=\ell^\nu$, todo conjunto finito $S$ de valores $\ell^k\Phi_n(y)$, donde $y$ es un ciclo reducido en grado $k+1$ y $n$ puede variar, satisface
+\begin{equation}
+ \#S\le Q^{r_2}T_{N_0,k}(L)T_{N_0,k+1}(L).
+ \label{eq:rh-conteo}
+\end{equation}
+\end{teorema}
+\begin{proof}
+Elegimos un representante por cada valor y estabilizamos todos al mismo tamaño $N\ge N_0$. El Bockstein toma valores en $H_k(N)[Q]$, de cardinalidad a lo sumo $T_{N_0,k}$. La diferencia de dos ciclos de la misma fibra admite un levantamiento a un ciclo integral por la sucesión exacta de la Nota 15. Sobre la homología integral, el filtro multiplica la evaluación por $\ell^k$ veces una unidad módulo $Q$; por tanto cada valor de la diferencia multiplicada por $\ell^k$ se obtiene evaluando un elemento de $J_{N,\ell}$. El rango de este subgrupo es a lo sumo $r_2$ y su torsión está contenida en la de $H_{k+1}(\ell^kN)$. El conteo por generadores de un subconjunto finito de la Nota 15 acota las diferencias en una fibra por $Q^{r_2}T_{N_0,k+1}$. Multiplicar por el número de fibras prueba \eqref{eq:rh-conteo}.
+\end{proof}
+
+Así se recupera el exponente exacto de la altura. No se requiere que $B$ sea finito; puede ser el producto de todas las evaluaciones de reducción. Tampoco se necesita estabilizar simultáneamente una familia infinita de ciclos: el tamaño común se elige para el conjunto finito que se cuenta.
+
+\subsection{El ciclo par y la relación de sus imágenes}
+
+Sea $A=\Z/Q\Z$ y $C_Q=\Z/Q\Z$ considerado como grupo aditivo. En el complejo bar de grado $2E$ ponemos
+\begin{equation}
+ c_E=\sum_{j_1,\dots,j_E\in C_Q}
+ [j_1|1|\cdots|j_E|1].
+ \label{eq:rh-ciclo-par}
+\end{equation}
+La frontera se anula: la primera cara tiene un factor $Q$ al sumar $j_1$; las caras que fusionan $j_i$ con el $1$ siguiente y las que fusionan dicho $1$ con $j_{i+1}$ se cancelan tras trasladar los índices libres; la última fusión y la última cara se cancelan por la misma traslación. La comprobación usa $Q=0$ en $A$.
+
+\begin{lema}[Una relación con coeficiente invertible]
+\label{lem:rh-relacion}
+Sean $Q=\ell^\nu$ con $\nu\ge1$, $M=2E+1$ y $d_t:C_Q\to C_Q^2$, $u\mapsto(u,tu)$, para $0\le t\le M$. Existen $n_t\in A$, con algún $n_{t_0}\in A^\times$, y una cadena $w$ de grado $2E+1$ de $C_Q^2$ tales que
+\begin{equation}
+ \partial w=\sum_{t=0}^{M} n_t(d_t)_*c_E.
+ \label{eq:rh-relacion}
+\end{equation}
+\end{lema}
+\begin{proof}
+La resolución periódica de un grupo cíclico tiene un módulo libre de rango uno sobre su anillo de grupo en cada grado, con diferenciales alternando $g-1$ y $1+g+\cdots+g^{Q-1}$. Es exacta: el núcleo de $g-1$ está generado por la norma y el núcleo de la norma consta de las combinaciones con suma de coeficientes cero, que son múltiplos de $g-1$. El producto tensorial sobre $\Z$ de dos resoluciones aumentadas da una resolución para $C_Q^2$; la exactitud de las aumentadas como complejos de grupos abelianos se conserva porque son escindidas sobre $\Z$. Al aplicar coeficientes triviales $A$, las diferenciales son cero. En grado $2E$ quedan $2E+1=M$ sumandos. Por tanto $H_{2E}(C_Q^2,A)\simeq A^M$.
+
+Tenemos $M+1$ clases en un módulo generado por $M$ elementos. Levantemos sus coordenadas a $\Z^M$. Una dependencia lineal racional no trivial entre los levantamientos puede multiplicarse por un denominador común y luego dividirse por la potencia común máxima de $\ell$. Sigue siendo una dependencia entera, con al menos un coeficiente primo con $\ell$. Reducir módulo $Q$ da una relación homológica con coeficiente invertible. Como cada término es ciclo, la relación es una frontera, lo cual produce $w$.
+\end{proof}
+
+No sería válido dividir por $\ell$ una relación que solo se conoce módulo $Q$. La división se realiza antes de reducir, en una relación exacta de los levantamientos enteros.
+
+\subsection{El operador de distribución y la ecuación de ideales}
+
+Fijemos una extensión cíclica $F/L$ de grado $d=\ell^{\nu-c}$, un generador $\gamma$ con $\gamma(\zeta)=\zeta^\kappa$, donde $\zeta$ es una raíz primitiva de orden $Q$, $\kappa=1+\ell^c$, $c\ge1$ ($c\ge2$ si $\ell=2$) y $\nu\ge c$. Sea $a=\kappa^E$. Suponemos $M=2E+1<\ell^c$. En el grupo aditivo de divisores finitos de $F$, $\gamma^{-1}D$ tiene coeficiente $D(\gamma P)$ en la prima $P$. La relación que queremos realizar es
+\begin{equation}
+ \operatorname{div}(\alpha)=(\gamma^{-1}-a)D.
+ \label{eq:rh-divisor}
+\end{equation}
+Definamos $P_M(T)=\prod_{i=0}^{M-1}(T-\kappa^i)$ y $P_E^*(T)=P_M(T)/(T-a)$. Para un polinomio entero $P(T)=\sum_i p_iT^i$ y $\beta\in F^\times$, ponemos
+\[
+ P(\gamma^{-1})\cdot\beta=\prod_i\gamma^{-i}(\beta)^{p_i}.
+\]
+Esta es una acción multiplicativa: aplicar un polinomio y después otro corresponde al producto de los polinomios. La notación de acción sobre divisores es aditiva.
+
+\begin{lema}[Divisor del elemento interpolado]
+\label{lem:rh-beta}
+Si $\beta=P_E^*(\gamma^{-1})\cdot\alpha$, entonces
+\begin{equation}
+ \operatorname{div}(\beta)=P_M(\gamma^{-1})D.
+ \label{eq:rh-beta-div}
+\end{equation}
+\end{lema}
+\begin{proof}
+La aplicación divisor es un homomorfismo equivariante: $\operatorname{div}(\gamma^{-i}\alpha)=\gamma^{-i}\operatorname{div}(\alpha)$. Aplicar $P_E^*(\gamma^{-1})$ a \eqref{eq:rh-divisor} da el resultado porque $P_E^*(T)(T-a)=P_M(T)$.
+\end{proof}
+
+Por el lema de distribución de la Nota 15 (A93, Lema 9.6) existe una función entera $\eta$ sobre $C_Q^2$ cuyas imágenes por $f_t(x,y)=x+ty$ son cero para $t\ne t_0$ y, para $t=t_0$, iguales a $\sum_i p_i\delta_{\kappa^i}$, con $p_i$ los coeficientes de $P_M$. Para construir los retículos con un mismo divisor en cada fibra hay que distinguir las potencias de $\gamma$ que aparecen en el divisor del elemento $\beta$ y las potencias de $\kappa$ que identifican las fibras. Ambas están relacionadas por la acción sobre $\zeta$. En particular, la fibra de $1$ no es en general la única fibra de $\eta$ con suma distinta de cero. Los bloques sobre $L$, no los bloques escalares sobre $F$ tomados aisladamente, son los que permiten combinar estas potencias mediante el transporte semilineal. El siguiente lema identifica la condición de determinantes que deben satisfacer esos bloques.
+
+\subsection{Realización de un determinante por retículos}
+
+Para un divisor finito $D$ de un cuerpo $F$, sea $I(D)=\prod_P P^{D(P)}$ el ideal fraccionario correspondiente. Entonces $I(D+D')=I(D)I(D')$ y $I(\operatorname{div}(\beta))=\beta\mathcal O_F$.
+
+\begin{proposicion}[Mapa portador con determinante prescrito]
+\label{prop:rh-portador}
+Sean $I_1,\dots,I_h$ y $J_1,\dots,J_h$ ideales fraccionarios no nulos de un dominio de Dedekind $S$ con cuerpo de fracciones $F$, $h\ge1$. Supongamos
+\begin{equation}
+ \prod_{i=1}^h J_i=\beta\prod_{i=1}^h I_i,\qquad \beta\in F^\times.
+ \label{eq:rh-determinante-ideal}
+\end{equation}
+Entonces existe $g\in\operatorname{GL}_h(F)$ con
+$g(\bigoplus I_i)=\bigoplus J_i$ y $\det g=\beta$. Recibimos la clasificación de Steinitz de los módulos proyectivos finitamente generados sobre un dominio de Dedekind.
+\end{proposicion}
+\begin{proof}
+Por la clasificación, un módulo directo de $h$ ideales es isomorfo a $S^{h-1}\oplus\prod_i I_i$. La condición \eqref{eq:rh-determinante-ideal} hace isomorfos los dos ideales producto, luego existe un isomorfismo $S$-lineal de los dos retículos. Extender escalares a $F$ produce $g_0\in\operatorname{GL}_h(F)$. Al aplicar $\bigwedge^h$ se obtiene $(\det g_0)\prod_i I_i=\prod_i J_i=\beta\prod_i I_i$. Como el ideal producto es invertible, $u=\beta/(\det g_0)\in S^\times$. La matriz diagonal $\operatorname{diag}(u,1,\dots,1)$ preserva $\bigoplus J_i$ y tiene determinante $u$. Componerla con $g_0$ produce $g$.
+\end{proof}
+
+Para un bloque de dimensión cero, la única automorfía tiene determinante uno. Esta excepción explica la alternativa \texttt{Nonempty J} o $\beta=1$ en \texttt{SStein}. La prueba exige igualdad de ideales y no meramente igualdad de sus clases: esta última permite construir un isomorfismo pero no fijar arbitrariamente el determinante sin comprobar su ideal principal.
+
+\subsection{Pegado de prismas en un estabilizador}
+
+El obstáculo al usar los mapas portadores es que no todos preservan por separado el retículo inicial. El ciclo se construye en su estabilizador, y para ello las comparaciones entre portadores deben ser compatibles.
+
+\begin{proposicion}[Pegado por una relación de cadenas]
+\label{prop:rh-prismas}
+Sean $G$ un grupo, $H\le G$, $\rho:U\to G$ un homomorfismo, $d_t:C_Q\to U$ y $g_t\in G$. Supongamos
+\[
+ \rho(U)\subset H,\quad g_{t_0}^{-1}\rho(U)g_{t_0}\subset H,
+ \quad h_t=g_t^{-1}g_{t_0}\in H,
+\]
+ y que $g_t$ conmuta con $\rho(d_t(C_Q))$. Sean $c_E$ y $w$ como en el Lema~\ref{lem:rh-relacion}, ahora con $U=C_Q^2$. Entonces existe un ciclo de grado $2E+1$ en $H$ cuya imagen en $H_{2E+1}(G,A)$ coincide con
+\begin{equation}
+ \left[\sum_t n_t P_{g_t}(\rho d_t)_*c_E\right].
+ \label{eq:rh-prismas}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Usamos el prisma $P_g$ de la Nota 15, con $\partial P_g+P_g\partial=(\operatorname{conj}_{g^{-1}})_*-1$. Pongamos $c_t=(\rho d_t)_*c_E$ y $W=\rho_*w$; son cadenas de $H$ y $\partial W=\sum_t n_tc_t$. Cada $P_{g_t}c_t$ es ciclo por la conmutación supuesta. El prisma multiplicativo, aplicado a un ciclo, satisface módulo fronteras
+\[
+ P_{g_t h_t}c_t\equiv P_{g_t}c_t+P_{h_t}(\operatorname{conj}_{g_t^{-1}})_*c_t
+ =P_{g_t}c_t+P_{h_t}c_t.
+\]
+Esta identidad se obtiene insertando dos elementos consecutivamente en el complejo bar; las caras interiores cancelan, y la cara que multiplica los dos elementos produce el prisma de su producto. Se usa aquí esa identidad, demostrada en la Proposición~\ref{prop:ev-doble} de la Nota~\ref{sec:evaluaciones-finitas} y formalizada como \texttt{SPrismMul}; no se supone que los dos prismas individuales sean ciclos en ausencia de conmutación.
+
+Como $g_th_t=g_{t_0}$, sumando y usando $\partial W=\sum n_tc_t$ se obtiene módulo fronteras
+\[
+ \sum_t n_tP_{g_t}c_t\equiv
+ P_{g_{t_0}}\partial W-\sum_t n_tP_{h_t}c_t
+ \equiv (\operatorname{conj}_{g_{t_0}^{-1}})_*W-W-\sum_t n_tP_{h_t}c_t.
+\]
+La última cadena, llamémosla $Y$, está en $H$ por las tres hipótesis de pertenencia. Su frontera es cero: la diferencia de las fronteras de las dos primeras cadenas es $\sum_t n_t((\operatorname{conj}_{g_{t_0}^{-1}})_*c_t-c_t)$, y $\partial P_{h_t}c_t=(\operatorname{conj}_{h_t^{-1}})_*c_t-c_t$; ambos conjugados coinciden por la conmutación con $g_t$. La igualdad de clases en $G$ se sigue de las congruencias anteriores.
+\end{proof}
+
+Esta construcción explica por qué una suma de prismas sobre matrices racionales puede ser representada por un ciclo integral: la cadena corregida utiliza solo elementos del estabilizador. No basta que cada $g_t$ tenga una matriz con denominadores acotados. Deben existir los tres vínculos con $H$ y la conmutación en cada bloque. Cuando los $g_t$ llevan un mismo retículo $P$ al mismo retículo $P'$ y $\rho(U)$ preserva ambos, $g_t^{-1}g_{t_0}$ y los conjugados exigidos preservan $P$, lo que da precisamente esos vínculos.
+
+\subsection{Del módulo proyectivo al grupo lineal integral}
+
+\begin{proposicion}[Complemento fijo y extensión de automorfías]
+\label{prop:rh-complemento}
+Sea $P$ un módulo proyectivo finitamente generado sobre $R$. Existe un $R$-módulo $P'$ y un isomorfismo $P\oplus P'\simeq R^N$ para algún $N$. Toda elección de estos datos define un homomorfismo
+\begin{equation}
+ \operatorname{Aut}_R(P)\longrightarrow\operatorname{GL}_N(R),
+ \qquad h\longmapsto h\oplus 1_{P'},
+ \label{eq:rh-complemento}
+\end{equation}
+ escrito en esa identificación. Si $\theta$ es una evaluación que se anula en fronteras y es aditiva por suma de representaciones sobre ciclos de grado positivo, el complemento trivial no contribuye al valor del ciclo después de cualquier cambio de escalares donde $\theta$ esté definida y sea compatible con isomorfismos.
+\end{proposicion}
+\begin{proof}
+La generación finita da una sobreyección $R^N\twoheadrightarrow P$ y la proyectividad permite escindirla. Tomando $P'$ igual al núcleo se obtiene la descomposición. Extender por la identidad respeta composición. Después del cambio de escalares, la representación sobre el complemento factoriza por el grupo trivial. Su homología de grado positivo es cero: la resolución bar del grupo trivial tiene un generador en cada grado y diferenciales alternando identidad y cero. Por tanto la imagen de un ciclo positivo en ese grupo es frontera y también lo es su imagen bajo la representación trivial. La aditividad y anulación de fronteras dan la afirmación.
+\end{proof}
+
+En la aplicación, $P$ está formado por copias de $\mathcal O_F$ con retículos de ideales. Es un módulo proyectivo finitamente generado sobre $\mathcal O_L$: es finito y sin torsión sobre un dominio de Dedekind. No es preciso afirmar que $P$ tenga una base sobre $\mathcal O_L$. El complemento se fija antes de variar las reducciones, de modo que se obtiene un único ciclo y no una colección incompatible de matrices elegidas para cada primo.
+
+\subsection{Reducción y evaluaciones primitivas}
+
+Sea $r:\mathcal O_F\to\mathbb F$ una reducción a cuerpo finito cuya restricción a $R$ es sobreyectiva. Se excluyen los divisores de un elemento no nulo que reúna denominadores, soporte de los ideales y los primos donde la descomposición requerida no es válida. La exclusión debe justificarse en la construcción, no elegirse después de fijar una pareja de valores que se pretende distinguir. Recibimos la familia $\theta_V$ de A93, p.~69, que anula fronteras, respeta isomorfismos y es aditiva sobre sumas directas de representaciones, con la normalización de prisma
+\begin{equation}
+ \theta_V\big(P_g(\chi_x)_*c_E\big)
+ =x^E v(\det g),
+ \qquad \chi_x(u)=r(\zeta)^{xu}1_V.
+ \label{eq:rh-normalizacion}
+\end{equation}
+Aquí $v:\mathbb F^\times\to A$ es un homomorfismo (notación aditiva en $A$) y $r(\zeta)$ tiene orden $Q$. El elemento escalar conmuta con $g$ y por ello el prisma de un ciclo es ciclo. La construcción de tales evaluaciones en todos los cuerpos requeridos, no solo de un funcional cualquiera sobre el grupo cíclico, es el contenido del Teorema~\ref{thm:ev-theta}; se conserva como hipótesis explícita del presente ensamblaje.
+
+\begin{lema}[Aditividad implica primitividad]
+\label{lem:rh-primitiva}
+Si $\theta$ tiene las propiedades anteriores, las composiciones $\Phi_N=\theta_{\mathbb F^N}\circ r_*$ forman una familia primitiva en el sentido del Teorema~\ref{thm:rh-valores}.
+\end{lema}
+\begin{proof}
+Las fronteras se conservan bajo un homomorfismo de grupos y $\theta$ las anula. La estabilización añade una representación trivial, cuya contribución es cero por el argumento de la Proposición~\ref{prop:rh-complemento}. La repetición por $b$ bloques añade $b$ copias de una representación; la aditividad iterada da $b\Phi_N$. Las identificaciones matriciales son isomorfismos, de modo que no modifican los valores.
+\end{proof}
+
+\subsection{La identidad de la norma ponderada}
+
+Sea $N_a(\alpha)=\prod_{j=0}^{d-1}\gamma^j(\alpha)^{a^j}$, con $d=\ell^{\nu-c}$. Por el orden de $\gamma$ y su acción sobre la raíz primitiva se cumple $\kappa^d\equiv1\pmod Q$, luego $a^d\equiv1\pmod Q$. El siguiente cálculo se puede hacer en cualquier grupo multiplicativo donde la acción cíclica y las evaluaciones estén definidas. En el caso de reducciones de elementos de $F^\times$ hay que excluir los primos donde alguna fracción no sea una unidad.
+
+\begin{lema}[Traslación de la norma]
+\label{lem:rh-norma}
+Para $v_r$ la composición de la reducción de unidades con $v$, sea
+\[
+ W(\delta)=\sum_{j=0}^{d-1}a^j v_r(\gamma^j\delta)\in A.
+\]
+En un subgrupo estable bajo $\gamma$ donde esas reducciones existen, se tiene $W(\gamma^{-1}\delta)=aW(\delta)$. En particular, con $\beta$ como en el Lema~\ref{lem:rh-beta},
+\begin{equation}
+ W(\beta)=D_E\,v_r(N_a(\alpha)),\qquad
+ D_E=\prod_{\substack{0\le i<M\\i\ne E}}(a-\kappa^i).
+ \label{eq:rh-norma}
+\end{equation}
+\end{lema}
+\begin{proof}
+En $W(\gamma^{-1}\delta)$ reindexamos $j-1$ módulo $d$. El coeficiente nuevo es $a^{j'+1}$; para $j'=d-1$ se sustituye $a^d$ por uno en $A$, que es legítimo. Por tanto se obtiene $aW(\delta)$. Como $W$ es un homomorfismo a un grupo aditivo, aplicar el polinomio $P_E^*(\gamma^{-1})$ equivale a multiplicar su valor por $P_E^*(a)=D_E$. Finalmente $W(\alpha)=v_r(N_a(\alpha))$ por la definición de $v_r$.
+\end{proof}
+
+La orientación inversa de $\gamma$ en la relación de divisores es decisiva. Con $\gamma$ en vez de $\gamma^{-1}$, el peso sería $a^{-1}$ módulo $Q$ y el mismo interpolador no estaría justificado. La fórmula \eqref{eq:rh-norma} explica la aparición de $D_E$ sin suponer que sea invertible. Su valoración exacta, calculada en la Nota 15, es $2Ec+2v_\ell(E!)$.
+
+\subsection{Los portadores: agrupar una órbita de pesos}
+
+Haremos explícita la realización de los determinantes por bloques. Se usa la distribución $\eta$ ya obtenida, la relación homológica con coeficiente unidad y el Lema~\ref{lem:rh-beta}. Sea $J=C_Q^2$, $V=F^J$ visto como espacio sobre $L$, y pongamos
+\begin{equation}
+ P=\bigoplus_{x\in J}\mathcal O_F,\qquad
+ P'=\bigoplus_{x\in J} I(\eta(x)D).
+ \label{eq:rh-reticulos}
+\end{equation}
+Los dos retículos son invariantes por la representación $\rho:C_Q^2\to\operatorname{GL}_L(V)$ que en la coordenada $x=(x_1,x_2)$ multiplica por $\zeta^{u x_1+v x_2}$ para $(u,v)\in C_Q^2$. Sobre la recta $d_t(C_Q)$, el peso en esa coordenada es $f_t(x)=x_1+tx_2$.
+
+Para $t\ne t_0$, el producto de los ideales de $P'$ en la fibra $f_t^{-1}(s)$ es
+\[
+ \prod_{x:f_t(x)=s} I(\eta(x)D)
+ = I\left(\sum_{x:f_t(x)=s}\eta(x)D\right)=\mathcal O_F.
+\]
+Cada fibra es no vacía porque $f_t$ es sobreyectiva. La Proposición~\ref{prop:rh-portador} proporciona en ella un mapa $F$-lineal de determinante uno. La suma directa de estos mapas lleva $P$ a $P'$ y conmuta con $\rho d_t$, que es escalar en cada fibra. Para $t_0$ esta construcción por fibras individuales no funciona: los coeficientes $p_i$ no tienen por qué ser cero ni los ideales $I(p_iD)$ principales. Debemos reunir las fibras en la órbita de $1$.
+
+\begin{proposicion}[Portador semilineal en la órbita distinguida]
+\label{prop:rh-orbita}
+En las condiciones anteriores, existe un mapa $g_{t_0}\in\operatorname{GL}_L(V)$ que lleva $P$ a $P'$, conmuta con $\rho d_{t_0}$ y, tras un cambio $L$-lineal de coordenadas, es una suma de mapas $F$-lineales. El mapa de la órbita distinguida tiene determinante $\beta=P_E^*(\gamma^{-1})\cdot\alpha$ sobre $F$; los demás tienen determinante uno.
+\end{proposicion}
+\begin{proof}
+La acción de $\gamma$ sobre $\zeta$ tiene orden $d$, pues $\kappa$ tiene orden $\ell^{\nu-c}$ módulo $Q$ (la fórmula de valoración de la Nota 15 lo prueba, también en $\ell=2$ con $c\ge2$). La órbita de $1$ bajo multiplicación por $\kappa$ es $\mathcal U=\{\kappa^j:0\le j<d\}$; todos sus elementos son distintos módulo $Q$. Para cada $x$ con $f_{t_0}(x)=\kappa^j$, cambiamos su coordenada por $\gamma^{-j}$. Este mapa $B$ es $L$-lineal porque $\gamma$ fija $L$. En las demás coordenadas ponemos $B=1$. En la unión de las fibras de $\mathcal U$ la representación conjugada por $B$ es escalar de peso uno: $\gamma^{-j}(\zeta^{\kappa^j u})=\zeta^u$. Además $B(P)=P$ y el nuevo ideal de la coordenada $x$ es $\gamma^{-j}I(\eta(x)D)$.
+
+El divisor del producto de estos ideales transformados es
+\[
+ \sum_{j=0}^{d-1}\gamma^{-j}
+       \sum_{x:f_{t_0}(x)=\kappa^j}\eta(x)D
+ =\sum_{i=0}^{M}p_i\gamma^{-i}D
+ =\operatorname{div}(\beta).
+\]
+En la primera igualdad de la derecha usamos que la imagen de $\eta$ es $\sum_i p_i\delta_{\kappa^i}$: si varios $i$ dan la misma potencia módulo $Q$, sus coeficientes se suman y $\gamma^{-i}$ coincide para ellos. No se presupone $M<d$. La segunda igualdad es \eqref{eq:rh-beta-div}. Aplicamos ahora Steinitz al bloque completo para obtener un mapa $F$-lineal de determinante $\beta$ que lleva su parte de $P$ a la de $B(P')$. En cada fibra exterior a $\mathcal U$ el producto de los ideales es trivial; allí elegimos un portador de determinante uno como antes. La suma directa $h$ de estos portadores conmuta con la representación conjugada: es $F$-lineal en los bloques escalares. Definimos $g_{t_0}=B^{-1}hB$. Lleva $P$ a $P'$ y conmuta con $\rho d_{t_0}$. La afirmación sobre los determinantes se refiere a $h$, no al determinante sobre $L$ de $g_{t_0}$.
+\end{proof}
+
+Este procedimiento realiza por mapas $L$-lineales una relación que podría no ser realizable por mapas $F$-lineales en las fibras originales. El cambio semilineal es lo que reúne los ideales $\gamma^{-j}I(\eta(x)D)$ y produce un determinante principal.
+
+\subsection{Elegir un único conjunto de primos excluidos}
+
+Todos los portadores se han elegido antes de las reducciones. Como $P$ y $P'$ son retículos del mismo espacio y tienen soporte finito, existe un entero racional positivo $b$ tal que $P[1/b]=P'[1/b]$. Podemos multiplicar $b$ por $\ell$, por los primos racionales bajo las primas de ramificación relativa y por los que dividen numeradores o denominadores de $\beta$, $\alpha$ y sus conjugados. El conjunto es finito. Los portadores, sus inversos y $B$ son automorfías de $P[1/b]$; $B$ ya preserva $P$. Tomemos
+\[
+ G=\operatorname{Aut}_{R[1/b]}(P[1/b]),\qquad
+ H=\operatorname{Aut}_R(P)\subset G.
+\]
+La representación $\rho$ toma valores en $H$. Como $P'$ también es estable por $\rho$ y todos los $g_t$ llevan $P$ a $P'$, se cumple $g_{t_0}^{-1}\rho(U)g_{t_0}\subset H$ y $g_t^{-1}g_{t_0}\in H$. Con la conmutación por bloques, están verificadas las hipótesis de la Proposición~\ref{prop:rh-prismas}.
+
+\begin{proposicion}[Reducción de los bloques]
+\label{prop:rh-reduccion}
+Sea $r:\mathcal O_F\to\mathbb F$ una reducción sobre un cuerpo finito tal que $r|_R$ es sobreyectiva y $r(b)\ne0$. Recibamos la descripción clásica de las fibras de una extensión no ramificada de cuerpos de números y la normalización \eqref{eq:rh-normalizacion}. Entonces las evaluaciones del prisma de $g_t$ en el grupo ambiente reducido son cero si $t\ne t_0$, y para $t=t_0$ valen
+\begin{equation}
+ \sum_{j=0}^{d-1}a^j v_r(\gamma^j\beta)=W(\beta).
+ \label{eq:rh-bloques}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+La sobreyectividad de $r|_R$ implica que el grado residual relativo en la prima elegida es uno. Fuera de la ramificación, como $F/L$ es de Galois, esa prima de $R$ se descompone completamente: todos los índices de ramificación y grados residuales son uno. La descomposición de la fibra mediante el teorema chino del resto da
+\[
+ \mathcal O_F\otimes_R\mathbb F\simeq
+ \prod_{\sigma\in\operatorname{Gal}(F/L)}\mathbb F,
+ \qquad a'\otimes z\longmapsto (r(\sigma a')z)_\sigma.
+\]
+El denominador $b$ es invertible en $\mathbb F$, así que la reducción de $P[1/b]$ coincide con la de $P$ y define una representación de $G$ cuyo valor en $H$ es la reducción natural. Por la descomposición anterior, cada portador $F$-lineal sobre una fibra de peso $s$ se convierte en $d$ bloques, con pesos $\kappa^j s$ y determinantes $r(\gamma^j\det g)$.
+
+Para $t\ne t_0$ todos los determinantes son uno. Por naturalidad del prisma y la aditividad de $\theta$, la evaluación es la suma de los valores \eqref{eq:rh-normalizacion} de estos bloques, todos cero porque $v(1)=0$. Para $t=t_0$ conjugamos primero por $B$; este es un isomorfismo $R[1/b]$-lineal y se reduce a un isomorfismo, de manera que la evaluación no cambia. Por la Proposición~\ref{prop:rh-orbita}, en el bloque distinguido la representación tiene peso uno sobre $F$ y el determinante es $\beta$. En las restantes fibras los determinantes son uno. Tras descomponer la fibra de $F$, los pesos distinguidos son $\kappa^j$ y los determinantes $r(\gamma^j\beta)$. La normalización da $(\kappa^j)^E v_r(\gamma^j\beta)=a^j v_r(\gamma^j\beta)$; al sumar se obtiene \eqref{eq:rh-bloques}. Todas las fracciones de la fórmula se reducen como unidades por la elección de $b$.
+\end{proof}
+
+El argumento admite reducciones de grado absoluto superior a uno cuando la restricción a $R$ sigue siendo sobreyectiva. La condición más estrecha de grado absoluto uno, usada en la Nota 15 para detección mediante Chebotarev, garantiza esa sobreyectividad. La elección de $b$ no exige que el primo detector tenga tamaño acotado.
+
+\subsection{Ensamblaje de la especialización}
+
+\begin{teorema}[Especialización de la relación de divisores]
+\label{thm:rh-especializa}
+En las condiciones de \eqref{eq:rh-divisor}, con $2E+1<\ell^c$, recibamos la clasificación de Steinitz, la descripción de fibras no ramificadas, la identidad multiplicativa del prisma y la familia normalizada de evaluaciones de \eqref{eq:rh-normalizacion}. Entonces existe un tamaño $N$, un ciclo $y_\alpha\in C_{2E+1}(\operatorname{GL}_N(R),A)$ y un entero no nulo $b$, elegidos antes de la reducción, tales que para toda reducción admisible $r$ con $r(b)\ne0$ y toda evaluación normalizada correspondiente,
+\begin{equation}
+ \theta_{\mathbb F^N}(r_*y_\alpha)=D_E v_r(N_a(\alpha)).
+ \label{eq:rh-especializacion}
+\end{equation}
+\end{teorema}
+\begin{proof}
+Las construcciones anteriores verifican las condiciones de pegado de prismas. La Proposición~\ref{prop:rh-prismas} da un ciclo $Y$ en $H$ que representa la suma de prismas en el ambiente. Adjuntemos un complemento fijo y transportemos $n_{t_0}^{-1}Y$ a $\operatorname{GL}_N(R)$ mediante \eqref{eq:rh-complemento}. La multiplicación por la unidad inversa tiene lugar en $A$, no en $\Z$. Así queda construido $y_\alpha$ independientemente de la reducción.
+
+Para una reducción admisible, la Proposición~\ref{prop:rh-complemento} identifica su evaluación con la de $n_{t_0}^{-1}Y$ en la representación ambiente reducida. La evaluación anula fronteras, por lo que podemos usar la suma de prismas \eqref{eq:rh-prismas}. Por la Proposición~\ref{prop:rh-reduccion}, los sumandos para $t\ne t_0$ desaparecen y el restante da $n_{t_0}^{-1}n_{t_0}W(\beta)=W(\beta)$. El Lema~\ref{lem:rh-norma} concluye \eqref{eq:rh-especializacion}.
+\end{proof}
+
+El teorema reconstruye el mecanismo de A93, (9.16), mediante un argumento propio de portadores semilineales. En el archivo \texttt{CJoin.lean} las compatibilidades se obtienen mediante las entradas de \texttt{CJoin}, entre ellas \texttt{hGtEq}, \texttt{hGtNe}, \texttt{hLatLoc}, \texttt{hMu}, \texttt{hInt} y \texttt{hVal}. El teorema \texttt{sClassOf} suministra dichas entradas mediante declaraciones importadas. Hemos leído el ensamblaje y sus tipos, no las pruebas transitivas de todos sus campos. El desarrollo anterior no se presenta como una transcripción exacta de esas pruebas; sí verifica las compatibilidades de nuestra propia realización. La existencia de las evaluaciones normalizadas para todos los cuerpos finitos necesarios se desarrolla en la Nota~\ref{sec:evaluaciones-finitas}.
+
+\subsection{La cancelación de la altura no cambia}
+
+La identidad \eqref{eq:rh-especializacion} tiene exactamente el grado y el coeficiente exigidos por la Nota 15. Aplicando la familia primitiva del Lema~\ref{lem:rh-primitiva}, el Teorema~\ref{thm:rh-valores} y la detección de potencias globales de la Nota 15, se obtiene la cota para todo conjunto finito separado de relaciones
+\[
+ \#S\le Q^{r_2}T_{4E+6,2E}(L)T_{4E+6,2E+1}(L).
+\]
+La separación conserva el exponente grueso $B_E=2E+(2E+1)(c+2E+1)$ que recibe la comparación de clases y unidades. Si esa comparación da
+\[
+ \#X_\nu\,Q^{r_2}\le
+ B\,\ell^{(B_E+v_\ell(E))g_L+c+v_\ell(E)},
+\]
+ donde $B$ es una cota común para todos los conjuntos separados, sustituir por la cota homológica elimina $Q^{r_2}$. Este paso no mejora ni reconstruye el exponente del núcleo aritmético. La uniformidad posterior exige además la extensión auxiliar, el paso a Selmer y el control de las longitudes en las torres variables.
+
+\subsection{Cotejo localizado y frontera de la reconstrucción}
+
+En la revisión fijada del espejo, \texttt{BOdd} es una proposición sobre el rango del submódulo engendrado por $z_k(x)$ para todos los $x$. \texttt{bOdd\_zk} identifica dos definiciones de $z_k$ mediante igualdad heterogénea al variar el tamaño y aplica \texttt{bStarOdd}. \texttt{FinalOdd.lean} reúne estabilidad, separación, detectores y pesos; \texttt{SBStarOddOf.lean} contiene la inclusión de núcleos que desarrollamos en la Proposición~\ref{prop:rh-rango}. \texttt{SUpperOf.lean} usa por separado \texttt{torsStab}, \texttt{bock}, \texttt{zVal} y el conteo por fibras. \texttt{HasVal.lean} fija las convenciones de prisma, acción inversa en divisores, norma ponderada y grado. \texttt{CJoin.lean} escala el ciclo por el inverso del coeficiente unidad y usa el transporte de retículos antes de reducir; \texttt{sClassOf} reúne sus proveedores. \texttt{NumThree.lean} hace el cambio $E=j+1$ y cancela el factor de altura antes de la estimación numérica.
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}p{.29\textwidth}Y@{}}
+\toprule
+Paso & Alcance de esta nota\\\midrule
+Rango de $J_{N,b}$ & Deducción por inclusión de núcleos; proveedores en las Notas~\ref{sec:detectores-reales}--\ref{sec:estabilidad-integral}.\\
+Estabilidad & Transporte de torsión; rango integral justificado en Nota~\ref{sec:estabilidad-integral}.\\
+Retículos y prismas & Determinante prescrito, pegado y complemento; identidad multiplicativa en Nota~\ref{sec:evaluaciones-finitas}.\\
+Evaluaciones y reducción & Primitividad, fibras clásicas y norma; familias normalizadas en Nota~\ref{sec:evaluaciones-finitas}.\\
+Comparación aritmética & Comparación de clases y unidades en Nota~\ref{sec:clases-unidades}; transporte a Selmer en Nota~\ref{sec:transporte-selmer}.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}[Filtrar cuatro pesos]
+Sea $k=4$, $b=3$. Calcular el factor de \eqref{eq:rh-producto-pesos} para $w=1$ y explicar qué ocurre con $w=2,3,4,5$. ¿Es el factor de peso uno una unidad módulo $3^8$?
+\end{ejercicio}
+\paragraph{Solución.} Para $w=1$ el factor es $3^4(1-3)(1-9)(1-27)(1-81)=3^4\cdot2\cdot8\cdot26\cdot80$. Su valoración $3$-ádica es cuatro. Los otros cuatro pesos tienen un factor cero. El factor de peso uno no es unidad módulo $3^8$, pero el producto de los cuatro paréntesis sí lo es. Multiplicar por su inverso recupera $3^4$ veces el valor original, no el valor original.
+
+\begin{ejercicio}[Una dirección incorrecta]
+Sean $C=\Q^3$, $\pi=1_C$, $T(x,y,z)=x$. Verificar $\ker\pi\subseteq\ker T$ y explicar por qué esta inclusión no acota $\dim\pi(C)$ por uno.
+\end{ejercicio}
+\paragraph{Solución.} $\ker\pi=0$ está contenido en todo subespacio, pero $\ker T$ tiene dimensión dos y no está contenido en $\ker\pi$. El mapa de valores no distingue todas las clases. La imagen de $\pi$ tiene dimensión tres. El Lema~\ref{lem:rh-factorizacion} exige la inclusión inversa.
+
+\begin{ejercicio}[Una relación de divisores]
+Sea $E=1$, $M=3$, $\kappa=10$ y $\operatorname{div}\alpha=(\gamma^{-1}-10)D$. Escribir $\beta$ y calcular $D_1$.
+\end{ejercicio}
+\paragraph{Solución.} $P_1^*(T)=(T-1)(T-100)=T^2-101T+100$. Por tanto $\beta=\gamma^{-2}(\alpha)\,\gamma^{-1}(\alpha)^{-101}\alpha^{100}$. Su divisor es $(\gamma^{-1}-1)(\gamma^{-1}-100)(\gamma^{-1}-10)D$. El factor de evaluación vale $(10-1)(10-100)=-810$; $v_3(-810)=4$. El signo no altera la valoración, pero sí forma parte de la identidad de evaluación.
+
+\begin{ejercicio}[Un determinante que no se puede prescribir]
+En $\Z^2$ tomemos los retículos $P=\Z\oplus 2\Z$ y $P'=3\Z\oplus\Z$. ¿Puede un automorfismo racional llevar $P$ a $P'$ con determinante $1$? Dar uno con el determinante correcto.
+\end{ejercicio}
+\paragraph{Solución.} La igualdad de ideales determinantes exige $(\det g)2\Z=3\Z$, de modo que $\det g=\pm3/2$. No puede valer uno. La matriz diagonal $\operatorname{diag}(3,1/2)$ realiza el determinante positivo requerido. Aunque los dos retículos son isomorfos como módulos abstractos, no se puede ignorar su realización dentro de $\Q^2$.
+
+\begin{ejercicio}[El primer torcido]
+Para $E=1$, determinar el parámetro interno de \texttt{zc}, el grado par, el grado del prisma y el tamaño estable. ¿Qué hipótesis de rango subsiste?
+\end{ejercicio}
+\paragraph{Solución.} $j=0$, el ciclo base tiene grado $2$, el prisma grado $3$ y $N_0=10$. Se necesitan $3<r_2$ y $3<\ell^c$ para aplicar las dos entradas correspondientes. No se pueden deducir de la mera existencia de una raíz de orden $\ell$ en $L$. La extensión auxiliar de la Nota 15 es precisamente una entrada que permite imponer esas desigualdades.
+
+\paragraph{Continuidad.} Las Notas~\ref{sec:clases-unidades} y~\ref{sec:transporte-selmer} desarrollan la comparación aritmética y la extensión auxiliar. Las Notas~\ref{sec:evaluaciones-finitas}--\ref{sec:estabilidad-integral} desarrollan los proveedores homológicos. Las hipótesis locales de este capítulo se conservan para que cada deducción sea verificable por separado; el ensamblaje no constituye una certificación de GRH.

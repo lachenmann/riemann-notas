@@ -1,0 +1,439 @@
+\section{Grupos de clases, unidades y cancelación de la altura}
+\label{sec:clases-unidades}
+\fuente{A93, Proposición 9.4, en particular (9.13)--(9.19), pp.~69--72. Cotejo localizado con \texttt{SCount} y \texttt{sCount} del espejo Lean fijado en \texttt{7cbf7a0c}.}
+
+La Nota 15 dedujo la cota de la capa fija desde varias entradas. La Nota 16 desarrolló la estimación de los dos órdenes de torsión homológica. La Nota 17 estudió el rango filtrado, el transporte integral de torsión y la realización de ciclos. El propósito de esta nota es reconstruir la comparación de clases y unidades que convierte el conteo de evaluaciones en una estimación independiente de la altura de la torre.
+
+El factor que permite esa independencia no se obtiene estimando por separado el número de clases de cada cuerpo de la torre. Aparece como el índice exacto de un operador sobre las unidades libres del cuerpo superior. Un segundo argumento, de descenso por Hilbert 90, controla el número de generadores de un grupo auxiliar mediante datos del cuerpo inferior. Los dos argumentos deben utilizar el mismo operador torcido.
+
+\subsection{Datos de la capa y convenciones}
+
+Fijemos un cuerpo de números totalmente imaginario $L$, de grado $n=[L:\Q]$, con $r=r_2(L)=n/2$, un primo $\ell$ y un entero $E\ge1$. Sean $\nu\ge c\ge1$, con $c\ge2$ si $\ell=2$, y
+\begin{equation}
+ Q=\ell^\nu,\quad d=\ell^{\nu-c},\quad
+ \kappa=1+\ell^c,\quad a=\kappa^E,\quad v=v_\ell(E).
+ \label{eq:cu-datos}
+\end{equation}
+Sea $F/L$ cíclica de grado $d$, con generador $\gamma$ y una raíz primitiva $\zeta$ de orden $Q$ tal que $\gamma(\zeta)=\zeta^\kappa$. La capa trivial $\nu=c$ está permitida. Usamos $E$ para el torcido aritmético de Selmer, de modo que $e=E$ en A93 y el parámetro interno de los ciclos de Lean es $E-1$. Reservamos $b\ge0$ para una pérdida de separación, sin fijarla todavía en el valor grueso de A93.
+
+Escribimos $I=\operatorname{Div}(F)$ para el grupo libre abeliano sobre los primos finitos de $F$, y $C=\operatorname{Cl}(F)$ para el grupo de clases de ideales. La acción de $\gamma^{-1}$ sobre $I$ envía el divisor primo $P$ a $\gamma^{-1}P$. Por tanto la coordenada en $P$ de $\gamma^{-1}D$ es $D(\gamma P)$. El operador que nos interesa es
+\begin{equation}
+ \delta=\gamma^{-1}-a.
+ \label{eq:cu-delta}
+\end{equation}
+En un grupo multiplicativo escribiremos $\delta(x)=\gamma^{-1}(x)x^{-a}$. En un grupo aditivo, $\delta(x)=\gamma^{-1}x-ax$. Esta convención concuerda con la relación $\operatorname{div}\alpha=\delta D$ de las Notas 15 y 17, y con \texttt{DivDel} y \texttt{EqHom} del código.
+
+\begin{lema}[Valoraciones de la capa]
+\label{lem:cu-lte}
+Se tienen las igualdades
+\begin{equation}
+ v_\ell(a-1)=c+v,\qquad v_\ell(a^d-1)=\nu+v.
+ \label{eq:cu-lte}
+\end{equation}
+Además, $F=L(\zeta)$ y $F/L$ es no ramificada en los primos que no dividen $\ell$.
+\end{lema}
+\begin{proof}
+Si $u$ es primo con $\ell$, en el desarrollo de $(1+\ell^c)^u-1$ el primer término tiene valoración $c$ y los restantes tienen valoración mayor. Elevar a la potencia $\ell$ un número $1+z$ con $v_\ell(z)\ge c$ aumenta la valoración de la diferencia con uno exactamente en una unidad: el término $\ell z$ es de menor valoración estricta que los restantes. Para $\ell=2$ se usa $c\ge2$. Descomponiendo cualquier exponente positivo como $\ell^j u$ obtenemos $v_\ell(\kappa^m-1)=c+v_\ell(m)$, de donde resultan las dos igualdades.
+
+Si $0<i<d$, entonces $v_\ell(\kappa^i-1)<\nu$. Así ningún $\gamma^i$ no trivial fija $\zeta$. Por la correspondencia de Galois, $L(\zeta)=F$, incluso cuando $d=1$. Para un primo de $L$ de característica residual distinta de $\ell$, el polinomio $X^Q-1$ tiene reducción separable. Sus raíces residuales aparecen en una extensión finita del cuerpo residual, y Hensel las levanta en la extensión local no ramificada correspondiente. Por ello la adjunción de $\zeta$ no ramifica ese primo. Usamos aquí la teoría clásica de extensiones locales no ramificadas y el lema de Hensel.
+\end{proof}
+
+La hipótesis diádica no es ornamental. Por ejemplo, para $\kappa=3$ se tiene $v_2(3^2-1)=3$, no $1+v_2(2)=2$.
+
+\subsection{El cociente torcido de clases}
+
+\begin{proposicion}[Caracteres del cociente correcto]
+\label{prop:cu-clases}
+Definamos $C_a=C/\delta C$. Entonces los caracteres de clase con la condición de A93 son exactamente
+\begin{equation}
+ X_\nu=\operatorname{Hom}(C_a,\Z/Q),
+ \qquad \#X_\nu\le \ell^{v_\ell(\#C_a)}.
+ \label{eq:cu-x}
+\end{equation}
+En particular, $X_\nu$ es finito.
+\end{proposicion}
+\begin{proof}
+Un carácter de $C$ satisface $\varphi(\gamma^{-1}D)=a\varphi(D)$ si y solo si anula $\delta C$. Equivalentemente, su levantamiento a $I$ anula los divisores principales y $\delta I$. Por la propiedad universal del cociente, es un homomorfismo de $C_a$. El teorema clásico de finitud del grupo de clases garantiza que $C_a$ es finito. Si su parte $\ell$-primaria es $\bigoplus_i\Z/\ell^{m_i}$, entonces $\#X_\nu=\ell^{\sum_i\min(\nu,m_i)}$, porque cada carácter de un sumando cíclico queda determinado por la imagen de un generador. Esto implica la cota.
+\end{proof}
+
+El cociente $C_a$ no es el grupo de clases entero, ni la parte de un carácter racional de su representación. La definición utiliza el operador integral, incluyendo los primos que dividen el grado de la extensión. Tampoco identificamos $X_\nu$ con un subgrupo de Selmer del cuerpo inferior: ese transporte pertenece a otro paso.
+
+\subsection{Eliminar las raíces de la unidad antes de contar}
+
+Sea $\mu(F)$ el grupo finito de raíces de la unidad de $F$. Introducimos notación aditiva para los grupos
+\begin{equation}
+ Y=F^\times/\mu(F),\qquad
+ U_0=\mathcal O_F^\times/\mu(F).
+ \label{eq:cu-y}
+\end{equation}
+El grupo $Y$ es libre de torsión: si una potencia no nula de un elemento de $F^\times$ es raíz de la unidad, el propio elemento lo es. No necesitamos afirmar que $Y$ sea finitamente generado. La aplicación de divisor desciende a $Y$, y se tiene la sucesión exacta equivarante
+\begin{equation}
+ 0\longrightarrow U_0\longrightarrow Y
+ \xrightarrow{\operatorname{div}} I
+ \longrightarrow C\longrightarrow0.
+ \label{eq:cu-div}
+\end{equation}
+El cociente $U_0$ es libre abeliano de rango $r_2(F)-1$ por el teorema de las unidades de Dirichlet. Tanto la acción de $\gamma^{-1}$ como $\delta$ conmutan con $\operatorname{div}$.
+
+\begin{lema}[Inyectividad integral del operador]
+\label{lem:cu-iny}
+Si $M$ es un grupo abeliano libre de torsión y $g^d=1$, entonces $g-a$ es inyectivo para $a\ge2$.
+\end{lema}
+\begin{proof}
+De $gx=ax$ se deduce $g^dx=a^dx$. Por consiguiente $(a^d-1)x=0$. Como $a^d-1$ es no nulo y $M$ no tiene torsión, $x=0$.
+\end{proof}
+
+Aplicaremos el lema a $I$, $Y$ y $U_0$. En particular, para cada $y$ cuyo divisor pertenece a $\delta I$ hay un único $D$ tal que $\operatorname{div}y=\delta D$. Este hecho permite definir mapas sin escoger una solución entre varias.
+
+\subsection{El grupo intermedio y su sucesión exacta}
+
+Definimos el grupo de relaciones y su cociente por las relaciones triviales:
+\begin{equation}
+ U=\{y\in Y:\operatorname{div}y\in\delta I\},\qquad
+ W=U/\delta Y,\qquad U_a=U_0/\delta U_0.
+ \label{eq:cu-w}
+\end{equation}
+Al escribir estos grupos antes de eliminar la torsión de $F^\times$, el denominador de $W$ es la suma de la imagen de $\delta$ y $\mu(F)$ en notación aditiva. Es la definición \texttt{Dat.W} de \texttt{TwoLe.lean}; $U_a$ es \texttt{Dat.EQ} y $C_a$ es \texttt{Dat.ClQ}.
+
+\begin{proposicion}[Clases y unidades en una misma cuenta]
+\label{prop:cu-exacta}
+Hay una sucesión exacta
+\begin{equation}
+ 0\longrightarrow U_a\longrightarrow W
+ \xrightarrow{\pi}\ker(\delta:C\to C)\longrightarrow0.
+ \label{eq:cu-exacta}
+\end{equation}
+Si $U_a$ es finito, también $W$ lo es, y
+\begin{equation}
+ \#W=\#U_a\,\#C_a.
+ \label{eq:cu-cardw}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Dado $y\in U$, sea $D_y$ la única solución de $\operatorname{div}y=\delta D_y$. Si $y$ cambia por $\delta z$, el divisor $D_y$ cambia por $\operatorname{div}z$, cuya clase es cero. Por tanto $\pi([y])=[D_y]\in C$ está bien definido y es aditivo. Su imagen está en $\ker\delta$ porque $\delta D_y$ es principal. Recíprocamente, si $\delta[D]=0$, entonces $\delta D$ es principal, de modo que existe $y$ con $\operatorname{div}y=\delta D$. Este $y$ pertenece a $U$ y prueba la sobreyectividad.
+
+Si $\pi([y])=0$, tenemos $D_y=\operatorname{div}z$ para algún $z\in Y$. De aquí $\operatorname{div}(y-\delta z)=0$, de modo que $y-\delta z\in U_0$. Así el núcleo es la imagen de $U_0$. Su núcleo al pasar a $W$ es precisamente $\delta U_0$: si $u=\delta z$ es una unidad, $0=\delta\operatorname{div}z$ implica $\operatorname{div}z=0$ por el Lema~\ref{lem:cu-iny}. Esto prueba la exactitud.
+
+Para un endomorfismo de un grupo finito $C$, $\#\ker\delta=\#C/\#\operatorname{im}\delta=\#C_a$. La multiplicación de órdenes en la sucesión exacta concluye \eqref{eq:cu-cardw}.
+\end{proof}
+
+Esta identidad no requiere que la sucesión se escinda. En particular, no permite sumar directamente los rangos de torsión de sus extremos sin un argumento adicional.
+
+\subsection{El determinante de las unidades y el origen de la altura}
+
+\begin{teorema}[Índice exacto de las unidades torcidas]
+\label{thm:cu-unidades}
+El grupo $U_a$ es finito y satisface
+\begin{equation}
+ \#U_a=\frac{(a^d-1)^r}{a-1}.
+ \label{eq:cu-unitdet}
+\end{equation}
+Por tanto
+\begin{equation}
+ v_\ell(\#U_a)=r(\nu+v)-c-v.
+ \label{eq:cu-unitval}
+\end{equation}
+\end{teorema}
+\begin{proof}
+Cada lugar infinito complejo de $L$ tiene exactamente $d$ lugares complejos encima en $F$. Para verlo, fijemos uno de los dos embeddings complejos de $L$ que representan ese lugar. Hay $d$ prolongaciones a $F$ y cada lugar de $F$ sobre él contiene exactamente una de ellas: su conjugada restringe al otro embedding de $L$, que es distinto porque $L$ es totalmente imaginario. La acción de $\gamma^{-1}$ permuta las prolongaciones en un ciclo de longitud $d$. Por ello, en el espacio real de funciones sobre los lugares infinitos de $F$, el operador $g=\gamma^{-1}$ es una permutación con $r$ ciclos de longitud $d$.
+
+Consideremos la aplicación logarítmica de Dirichlet, con coordenadas $\log|\sigma(u)|$ en los lugares complejos. Su imagen de $U_0$ es un retículo de rango completo en el hiperplano $H$ donde la suma de las coordenadas es cero; la aplicación es equivarante y tiene núcleo trivial después de eliminar $\mu(F)$. El espacio ambiente se descompone como $H\oplus\R\mathbf{1}$, siendo $\mathbf{1}$ el vector constante. Sobre cada ciclo de longitud $d$, el polinomio característico de $g$ es $T^d-1$, de modo que el determinante absoluto de $g-a$ en el ambiente es $(a^d-1)^r$. Sobre la recta constante su determinante es $1-a$. Por tanto
+\[
+ |\det((g-a)|_H)|=\frac{(a^d-1)^r}{a-1}.
+\]
+El determinante no es cero. El índice de un endomorfismo inyectivo de un retículo libre de rango completo es el valor absoluto de su determinante, como se comprueba con una base integral y la forma normal de Smith. Aplicando esto al retículo logarítmico se obtiene \eqref{eq:cu-unitdet}. El regulador no interviene, porque se compara el retículo consigo mismo bajo el operador. Finalmente se aplica \eqref{eq:cu-lte}.
+\end{proof}
+
+En particular, $W$ es finito por la Proposición~\ref{prop:cu-exacta}. La división por $a-1$ corresponde a la eliminación de la única recta constante, no de una recta por cada lugar de $L$. Ésta es una diferencia importante: quitar $r$ rectas produciría un factor incorrecto de $(a-1)^r$.
+
+\subsection{La norma ponderada y su núcleo}
+
+Sobre $Y$ escribimos $g=\gamma^{-1}$ y definimos la norma ponderada como operador aditivo:
+\begin{equation}
+ N_a=\sum_{j=0}^{d-1} a^j g^{d-j}.
+ \label{eq:cu-norma}
+\end{equation}
+Como $g^d=1$, $g^{d-j}=\gamma^j$. En $F^\times$ corresponde exactamente al producto $\prod_{j=0}^{d-1}\gamma^j(\alpha)^{a^j}$ de A93. Para $d>1$ y $a>1$ es un operador distinto de la norma ordinaria, que corresponde a $a=1$.
+
+\begin{lema}[Identidad telescópica]
+\label{lem:cu-tele}
+Se cumple
+\begin{equation}
+ \delta N_a=N_a\delta=(1-a^d)g.
+ \label{eq:cu-tele}
+\end{equation}
+\end{lema}
+\begin{proof}
+Al multiplicar por $g-a$, obtenemos la suma de las diferencias
+$a^jg^{d-j+1}-a^{j+1}g^{d-j}$, para $0\le j<d$. Todos los términos internos se cancelan; permanecen $g^{d+1}-a^dg=(1-a^d)g$. La conmutación se debe a que ambos operadores son polinomios en $g$.
+\end{proof}
+
+Escribamos $a^d-1=Q\,h$ con $h=\ell^v m_0$ y $\ell\nmid m_0$, lo cual es posible por el Lema~\ref{lem:cu-lte}.
+
+\begin{proposicion}[Anulador del núcleo de la norma reducida]
+\label{prop:cu-ker}
+Para cada entero $b\ge0$ existe un homomorfismo
+\begin{equation}
+ f_b:W\longrightarrow Y/QY,\qquad
+ [y]\longmapsto [\ell^bN_a y],
+ \label{eq:cu-fb}
+\end{equation}
+y su núcleo está anulado por $m_0\ell^{b+v}$. En particular, su parte $\ell$-primaria está aniquilada por $\ell^{b+v}$.
+\end{proposicion}
+\begin{proof}
+Por \eqref{eq:cu-tele}, cambiar $y$ por $y+\delta z$ modifica $\ell^bN_a y$ por $-Qh\ell^b gz$, que es cero módulo $QY$. Esto prueba que el mapa está bien definido.
+
+Si $f_b([y])=0$, escribimos $\ell^bN_a y=Qz$ en $Y$. Aplicamos $\delta$ y usamos \eqref{eq:cu-tele}:
+\[
+ -Qh\ell^b gy=Q\delta z.
+\]
+Como $Y$ no tiene torsión, se puede cancelar $Q$ en esta igualdad integral. Aplicando $g^{-1}$ y usando su conmutación con $\delta$, obtenemos $h\ell^b y=-\delta g^{-1}z\in\delta Y$. Así $h\ell^b[y]=0$ en $W$. Sobre un grupo $\ell$-primario finito, multiplicar por $m_0$ es un automorfismo. Se concluye la afirmación.
+\end{proof}
+
+La cancelación de $Q$ se ha hecho en $Y$, donde es inyectiva, no en $Y/QY$ ni en $W$. Ésta es la razón de trabajar desde el comienzo con el cociente por raíces de la unidad. En la formulación del código, la misma cancelación se realiza módulo la torsión mediante \texttt{kerF}.
+
+\subsection{El conteo por separación controla la imagen}
+
+Supongamos que $B$ acota la cardinalidad de todo conjunto finito $S\subset F^\times$ cuyos elementos admiten una relación $\operatorname{div}\alpha=\delta D$ y satisfacen
+\begin{equation}
+ N_a(\alpha)^{\ell^b}\,N_a(\alpha')^{-\ell^b}
+ \in(F^\times)^Q\quad\Longrightarrow\quad\alpha=\alpha'.
+ \label{eq:cu-few}
+\end{equation}
+Aquí usamos notación multiplicativa para los valores de la norma. Esta es la hipótesis de \texttt{Few}, con exponente de separación $\ell^b$.
+
+\begin{proposicion}[De la separación al orden de la imagen]
+\label{prop:cu-im}
+Bajo la hipótesis precedente, $\#\operatorname{im}f_b\le B$.
+\end{proposicion}
+\begin{proof}
+La imagen es finita porque $W$ lo es. Para cada uno de sus elementos elegimos una clase $[y]\in W$ y un representante $\alpha\in F^\times$ de $y\in U$. La pertenencia a $U$ garantiza una relación de divisores. Si dos representantes elegidos satisfacen el antecedente de \eqref{eq:cu-few}, las imágenes de sus normas ponderadas coinciden en $Y/QY$. Esto significa que representan el mismo elemento de $\operatorname{im}f_b$, y habíamos elegido uno por elemento. Los representantes forman, pues, un conjunto separado de cardinalidad $\#\operatorname{im}f_b$; se aplica la hipótesis.
+\end{proof}
+
+El cociente de destino es $F^\times/((F^\times)^Q\mu(F))$, más pequeño que el cociente por potencias $Q$-ésimas. La separación en este cociente más pequeño implica la separación que exige \eqref{eq:cu-few}. No se necesita la implicación inversa.
+
+\subsection{Reducir el número de generadores al cuerpo inferior}
+
+El anulador del núcleo no basta por sí solo para acotar su orden: un grupo puede estar anulado por $\ell$ y tener dimensión arbitraria sobre $\mathbf F_\ell$. Necesitamos un control de $W[\ell]$ independiente del cuerpo superior. Definimos
+\begin{equation}
+ S_{\mathrm{inv}}=\{\bar y\in Y/\ell Y:
+ (g-1)y\in\ell Y,\ \operatorname{div}y\in\ell I\}.
+ \label{eq:cu-sinv}
+\end{equation}
+Las dos condiciones son independientes del representante. En términos multiplicativos, una clase es invariante bajo $\gamma$ módulo potencias $\ell$-ésimas y raíces de la unidad, y todas las valoraciones finitas de un representante son múltiplos de $\ell$.
+
+\begin{proposicion}[Inyección de la torsión elemental]
+\label{prop:cu-inj}
+Si $a\equiv1\pmod\ell$, hay una inyección $W[\ell]\hookrightarrow S_{\mathrm{inv}}$.
+\end{proposicion}
+\begin{proof}
+Si $[u]\in W[\ell]$, tenemos $\ell u=\delta y$ para algún $y\in Y$. El elemento $y$ es único para cada representante $u$, por el Lema~\ref{lem:cu-iny}. Cambiar $u$ por $u+\delta z$ cambia $y$ por $y+\ell z$, de modo que la clase $\bar y$ módulo $\ell Y$ está bien definida.
+
+La igualdad $\delta y=\ell u$ y la congruencia $a\equiv1\pmod\ell$ implican $(g-1)y\in\ell Y$. Escribamos $\operatorname{div}u=\delta D$. Al aplicar $\operatorname{div}$ a la igualdad inicial obtenemos
+$\delta\operatorname{div}y=\ell\delta D$. La inyectividad de $\delta$ en $I$ da $\operatorname{div}y=\ell D$. Por tanto $\bar y\in S_{\mathrm{inv}}$.
+
+Si $\bar y=0$, entonces $y=\ell z$, y $\ell u=\ell\delta z$. La ausencia de torsión en $Y$ implica $u=\delta z$, luego $[u]=0$. El mapa es aditivo y tiene núcleo trivial.
+\end{proof}
+
+En nuestro caso $a=\kappa^E\equiv1\pmod\ell$. Así la inyección es aplicable para todo $E\ge1$, incluso si $\ell$ divide $E$.
+
+\subsection{Una cota elemental en el cuerpo base}
+
+Para distinguir este grupo de la cohomología de Selmer con torcido negativo, usaremos la notación $S_L$ para el conjunto de clases de $L^\times/(L^\times)^\ell$ representables por $x$ con $\ell\mid\operatorname{ord}_{\mathfrak p}(x)$ en todo primo finito $\mathfrak p\nmid\ell$. Sea $S_0$ el subgrupo que impone esa divisibilidad en todos los primos. Escribamos $h_L=\#\operatorname{Cl}(L)$ y $s_\ell(L)$ para el número de primos de $L$ sobre $\ell$.
+
+\begin{proposicion}[Clases de potencias con ramificación limitada]
+\label{prop:cu-sl}
+El grupo $S_L$ es finito y
+\begin{equation}
+ \#S_L\le\ell^{r+s_\ell(L)+\lfloor\log_2h_L\rfloor}
+ \le\ell^{2n+\lfloor\log_2h_L\rfloor}.
+ \label{eq:cu-sl}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+El mapa $S_L\to(\Z/\ell)^{s_\ell(L)}$ formado por las valoraciones en los primos sobre $\ell$ tiene núcleo $S_0$. Si $[x]\in S_0$, el divisor de $x$ es $\ell D$ para un único divisor $D$. La clase de $D$ es un elemento de $\operatorname{Cl}(L)[\ell]$ y no depende de $x$ módulo potencias $\ell$-ésimas. Toda clase aniquilada por $\ell$ surge así: si $\ell[D]=0$, el divisor $\ell D$ es principal. El núcleo consta de las clases de unidades. Se obtiene la sucesión exacta
+\begin{equation}
+ 1\longrightarrow \mathcal O_L^\times/(\mathcal O_L^\times)^\ell
+ \longrightarrow S_0\longrightarrow\operatorname{Cl}(L)[\ell]
+ \longrightarrow1.
+ \label{eq:cu-sl-exacta}
+\end{equation}
+La primera flecha es inyectiva: si una unidad es una potencia $\ell$-ésima en $L^\times$, su raíz tiene divisor cero y es una unidad. Por Dirichlet, el grupo de unidades es la suma de un grupo cíclico finito y un grupo libre de rango $r-1$. El cociente por potencias tiene a lo sumo $\ell^r$ elementos. Si $\#\operatorname{Cl}(L)[\ell]=\ell^t$, entonces $2^t\le\ell^t\le h_L$, por lo que $t\le\lfloor\log_2h_L\rfloor$. Esto prueba la primera cota. Finalmente, $s_\ell(L)\le n$ y $r\le n$, lo que da la segunda.
+\end{proof}
+
+El nombre \texttt{SelL} en Lean se refiere a este cociente elemental con divisibilidad de valoraciones fuera de $\ell$. No presupone que sea el Selmer de la representación de Tate de la Nota 15. No identificaremos ambos grupos sin establecer los mapas de comparación.
+
+\subsection{Descenso de invariantes: dos datos finitos}
+
+\begin{lema}[Descenso por Hilbert 90]
+\label{lem:cu-h90}
+Supongamos $\beta,w\in F^\times$, $\gamma(\beta)=\beta w^\ell$ y $\operatorname{Norm}_{F/L}(w)=1$. Entonces existe $z\in F^\times$ tal que $\beta=xz^\ell$ con $x\in L^\times$.
+\end{lema}
+\begin{proof}
+Por el teorema 90 de Hilbert en su forma multiplicativa para una extensión cíclica, la condición de norma uno proporciona $z$ con $w=\gamma(z)/z$. De aquí $\gamma(\beta/z^\ell)=\beta/z^\ell$, y el cociente pertenece al cuerpo fijo $L$.
+
+Para recordar el mecanismo de Hilbert 90, definimos $b_0=1$ y $b_i=\prod_{j=0}^{i-1}\gamma^j(w^{-1})$ para $1\le i\le d$. La hipótesis de norma da $b_d=1$. La suma $z=\sum_{i=0}^{d-1}b_i\gamma^i(t)$ satisface $\gamma(z)=wz$ para todo $t\in F$. Por la independencia lineal de los automorfismos distintos de un cuerpo, la suma no es idénticamente nula como función de $t$ (su primer coeficiente es uno). Elegimos $t$ para el cual $z\ne0$. Esto también cubre la extensión trivial.
+\end{proof}
+
+\begin{teorema}[Conteo de los invariantes de la capa]
+\label{thm:cu-inv}
+Bajo los datos de \eqref{eq:cu-datos}, se tiene
+\begin{equation}
+ \#S_{\mathrm{inv}}\le\ell^2\#S_L.
+ \label{eq:cu-inv}
+\end{equation}
+En particular, $S_{\mathrm{inv}}$ es finito, aunque no se conozca a priori una cota para el número de clases del cuerpo superior.
+\end{teorema}
+\begin{proof}
+Fijemos un generador $\rho$ del grupo cíclico $\mu(F)$. Cada clase de $S_{\mathrm{inv}}$ tiene un representante $\alpha\in F^\times$ con todas sus valoraciones divisibles por $\ell$. Por la invariancia bajo $g=\gamma^{-1}$, también bajo $\gamma$, existe $w\in F^\times$ y un entero $j$ tal que $\gamma(\alpha)=\alpha w^\ell\rho^j$. Descomponiendo $j=\ell q+t$ y absorbiendo $\rho^q$ en $w$, podemos elegir
+\begin{equation}
+ \gamma(\alpha)=\alpha w^\ell\rho^t,
+ \qquad 0\le t<\ell.
+ \label{eq:cu-tag}
+\end{equation}
+Tomar normas ordinarias y cancelar $\operatorname{Norm}_{F/L}(\alpha)$ da
+\begin{equation}
+ \operatorname{Norm}_{F/L}(w)^\ell
+ =\operatorname{Norm}_{F/L}(\rho)^{-t}.
+ \label{eq:cu-tagnorm}
+\end{equation}
+Para cada $t$ hay a lo sumo $\ell$ valores posibles de la norma de $w$ en $L^\times$, porque satisfacen un polinomio de grado $\ell$. Por tanto existen a lo sumo $\ell^2$ pares de datos $(t,\operatorname{Norm}_{F/L}w)$. Elegimos para cada clase un par realizable. No se necesita que el par sea intrínseco a la clase.
+
+Dentro de una fibra de ese par, fijemos un representante $\alpha_0$ y un testigo $w_0$. Para cualquier otro representante $\alpha$, las dos igualdades \eqref{eq:cu-tag} dan
+\[
+ \gamma(\alpha/\alpha_0)=(\alpha/\alpha_0)(w/w_0)^\ell,
+ \qquad\operatorname{Norm}_{F/L}(w/w_0)=1.
+\]
+El Lema~\ref{lem:cu-h90} permite escribir $\alpha/\alpha_0=xz^\ell$ con $x\in L^\times$. Las valoraciones de $x$ en todos los primos de $F$ son múltiplos de $\ell$, pues las de $\alpha$, $\alpha_0$ y $z^\ell$ lo son. Para $\mathfrak p\nmid\ell$ y $P\mid\mathfrak p$, el Lema~\ref{lem:cu-lte} asegura que el índice de ramificación es uno; por tanto $\operatorname{ord}_{P}(x)=\operatorname{ord}_{\mathfrak p}(x)$. Así $[x]\in S_L$.
+
+La aplicación natural de $L^\times/(L^\times)^\ell$ a $F^\times/((F^\times)^\ell\mu(F))$ está bien definida, pero no tiene que ser inyectiva. Cada fibra de los pares anteriores está contenida en una traslación de la imagen de $S_L$, y tiene a lo sumo $\#S_L$ elementos. Multiplicar por el número de pares concluye la prueba. El mismo argumento, aplicado a subconjuntos finitos, demuestra primero la finitud si no se desea presuponerla.
+\end{proof}
+
+Las dos potencias de $\ell$ corresponden a dos elecciones diferentes: un exponente residual de raíz de la unidad y una raíz de un polinomio para la norma ordinaria. Si se omitiera la primera etiqueta, las raíces de la unidad no necesariamente se cancelarían al dividir dos relaciones. Si se omitiera la segunda, Hilbert 90 no se podría aplicar.
+
+\subsection{Un número uniforme de generadores}
+
+\begin{proposicion}[Presupuesto del núcleo]
+\label{prop:cu-gen}
+Sea
+\begin{equation}
+ g_L=2n+\lfloor\log_2h_L\rfloor+2.
+ \label{eq:cu-gen}
+\end{equation}
+Entonces $\#W[\ell]\le\ell^{g_L}$. Además, para todo $b\ge0$,
+\begin{equation}
+ \ell^{v_\ell(\#W)}\le
+ \#\operatorname{im}f_b\,\ell^{(b+v)g_L}.
+ \label{eq:cu-wbound}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+La inyección de la Proposición~\ref{prop:cu-inj}, el Teorema~\ref{thm:cu-inv} y la segunda cota de \eqref{eq:cu-sl} dan la primera afirmación. Para la segunda, descomponemos la parte $\ell$-primaria de $W$ como $\bigoplus_{i=1}^t\Z/\ell^{m_i}$, con $m_i\ge1$. Se tiene $t\le g_L$ por la cota de $W[\ell]$. Su subgrupo de elementos anulados por $\ell^{b+v}$ tiene orden
+$\ell^{\sum_i\min(m_i,b+v)}\le\ell^{(b+v)g_L}$. Por la Proposición~\ref{prop:cu-ker}, la parte $\ell$-primaria de $\ker f_b$ está contenida en ese subgrupo. El orden de $W$ es el producto de los órdenes de su núcleo e imagen. Tomar partes $\ell$-primarias da \eqref{eq:cu-wbound} (el orden de la imagen ya es una potencia de $\ell$, pues es un grupo finito de exponente divisor de $Q$).
+\end{proof}
+
+La prueba da también la cota algo más fina $g_L'=r+s_\ell(L)+\lfloor\log_2h_L\rfloor+2$. Conservamos $g_L$ al reproducir A93 y su interfaz Lean. Ambas cantidades dependen únicamente de $L$ y del primo, no de $\nu$. El número de clases de $F$ aparece en un grupo intermedio finito, pero no en el presupuesto de generadores.
+
+\subsection{La comparación aritmética completa}
+
+\begin{teorema}[Comparación de clases y unidades]
+\label{thm:cu-comparacion}
+Supongamos los datos de \eqref{eq:cu-datos} y que $B$ acota todo conjunto finito separado en el sentido de \eqref{eq:cu-few}. Entonces
+\begin{equation}
+ \#X_\nu\,Q^r\le
+ B\,\ell^{(b+v)g_L+c+v}.
+ \label{eq:cu-comparacion}
+\end{equation}
+De hecho, la misma prueba conserva el factor adicional $\ell^{rv}$ en el miembro izquierdo.
+\end{teorema}
+\begin{proof}
+Por \eqref{eq:cu-cardw}, $v_\ell(\#W)=v_\ell(\#C_a)+v_\ell(\#U_a)$. Las Proposiciones~\ref{prop:cu-clases} y \ref{prop:cu-im}, el Teorema~\ref{thm:cu-unidades} y la Proposición~\ref{prop:cu-gen} implican
+\begin{align*}
+ \#X_\nu\,\ell^{r(\nu+v)}
+ &\le \ell^{v_\ell(\#C_a)+v_\ell(\#U_a)+c+v}\\
+ &=\ell^{v_\ell(\#W)+c+v}\\
+ &\le B\,\ell^{(b+v)g_L+c+v}.
+\end{align*}
+Finalmente, $\ell^{r(\nu+v)}=Q^r\ell^{rv}$ y $\ell^{rv}\ge1$. Eliminar ese factor adicional da \eqref{eq:cu-comparacion}.
+\end{proof}
+
+Este teorema reconstruye la comparación de A93, (9.19), desde los teoremas clásicos identificados. En particular, no la recibe como una hipótesis aritmética indivisa. El caso de A93 corresponde a $b=B_E=2E+(2E+1)(c+2E+1)$. No hemos empleado el supuesto $2E+1<\ell^c$ ni $2E+1<r$: tales restricciones intervienen en la producción homológica del número $B$, no en esta comparación.
+
+\subsection{Cancelar la altura y conservar la pérdida exacta}
+
+En las Notas 15 y 17 la entrada homológica y la realización de ciclos proporcionan, bajo sus respectivas hipótesis, una cota común
+\begin{equation}
+ B=Q^r T_{4E+6,2E}(L)T_{4E+6,2E+1}(L),
+ \label{eq:cu-B}
+\end{equation}
+para los conjuntos separados con $b=B_E$. Aquí $T_{N,j}(L)$ es el orden de la torsión integral de $H_j(\operatorname{GL}_N(\mathcal O_L),\Z)$. Sustituyendo \eqref{eq:cu-B} en \eqref{eq:cu-comparacion} y cancelando el entero positivo $Q^r$ se obtiene
+\begin{equation}
+ \#X_\nu\le T_{4E+6,2E}(L)T_{4E+6,2E+1}(L)
+ \ell^{(B_E+v)g_L+c+v}.
+ \label{eq:cu-final}
+\end{equation}
+Es la forma de A93, (9.13). Ninguno de los factores del miembro derecho depende de $\nu$. El uso de $r$ en ambos conteos es esencial: una cota homológica con un exponente $r+1$ dejaría un factor $Q$ después de la cancelación.
+
+\paragraph{Un refinamiento que ahora puede justificarse.}
+La Nota 15 calculó la valoración exacta del interpolador
+$D_E=\prod_{0\le j<2E+1,\ j\ne E}(\kappa^E-\kappa^j)$. El Lema~\ref{lem:cu-lte}, aplicado a las diferencias de exponentes, da
+\begin{equation}
+ v_\ell(D_E)=2Ec+2v_\ell(E!),\qquad
+ b_{\mathrm{ex}}=2E+2Ec+2v_\ell(E!).
+ \label{eq:cu-bexacto}
+\end{equation}
+La segunda cantidad incluye el factor homológico $\ell^{2E}$. Si la evaluación de la Nota 17 produce $D_E v_r(N_a(\alpha))$ y se dispone de las mismas familias de reducción y detección de potencias, la separación se demuestra también para $b=b_{\mathrm{ex}}$. En efecto, de la igualdad de valores multiplicados por $\ell^{2E}$ se deduce la anulación del valor de la norma elevada a $\ell^{b_{\mathrm{ex}}}$, pues $\ell^{2E}D_E$ difiere de esa potencia por una unidad $\ell$-ádica. La detección global de la Nota 15 conserva entonces el mismo $B$.
+
+La comparación que acabamos de demostrar vale para cualquier $b\ge0$. Por ello sí permite, bajo esas mismas hipótesis de evaluación y detección, reemplazar $B_E$ por $b_{\mathrm{ex}}$ en \eqref{eq:cu-final}. Esto completa el argumento adicional que la Nota 15 había dejado pendiente al advertir que no bastaba optimizar el interpolador. No se atribuye esta mejora numérica al enunciado literal de \texttt{SFew}, que conserva el exponente grueso. Tampoco se altera el exponente global $C_K=111$ de las Notas 15--16, cuya deducción utiliza la forma gruesa y las entradas homológicas desarrolladas posteriormente en las Notas~\ref{sec:evaluaciones-finitas}--\ref{sec:estabilidad-integral}.
+
+\subsection{Cotejo con el ensamblaje Lean}
+
+En la revisión fijada, \texttt{LemmaKOfSteps.lean} formula \texttt{SCount} para todo $b$. La prueba \texttt{sCount} se encuentra en \texttt{SelmerOrderCounts.lean}. La siguiente tabla distingue las declaraciones cotejadas y los pasos reconstruidos. Las rutas corresponden al directorio \texttt{ClassCounting/} y su subdirectorio \texttt{SelmerOrderCounts/}.
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}p{.34\textwidth}Y@{}}
+\toprule
+Declaración o archivo & Correspondencia matemática en la nota\\\midrule
+\texttt{TwoLe.lean}: \texttt{Dat.W}, \texttt{EQ}, \texttt{ClQ} & Operador torcido y cociente por raíces de la unidad; \eqref{eq:cu-w}.\\
+\texttt{cardW}, \texttt{eqHomLe} & Sucesión exacta y caracteres del cociente torcido.\\
+\texttt{cardEQ} & Determinante de la permutación de lugares infinitos y recta constante.\\
+\texttt{kerF}, \texttt{pCount} & Identidad telescópica, anulador del núcleo y orden de su parte primaria.\\
+\texttt{selInj}, \texttt{selLCard}, \texttt{selInvLe} & Inyección, clases de potencias en la base y descenso por dos etiquetas.\\
+\texttt{sCount} & Ensamblaje de las partes primarias y comparación \eqref{eq:cu-comparacion}.\\\bottomrule
+\end{tabularx}
+\end{center}
+
+La presentación de esta nota elimina primero toda la torsión de $F^\times$. El código la conserva en los submódulos de denominadores y demuestra directamente las identidades módulo esa torsión. Son dos formas equivalentes de los cocientes estudiados; el texto no se presenta como transcripción literal del código. Para el determinante se ha usado la acción sobre los lugares infinitos y Dirichlet; para el descenso se ha reconstruido la cuenta desde Hilbert 90, la teoría local no ramificada, la finitud de clases y la descripción de las unidades. No se ha ejecutado Lean ni revisado toda la clausura transitiva de sus importaciones.
+
+\subsection{Enlace con los demás componentes}
+
+La comparación de clases y unidades está demostrada aquí desde los resultados clásicos indicados. La aplicación uniforme de \eqref{eq:cu-final} utiliza la realización de ciclos de la Nota~\ref{sec:rango-homologico-ciclos}, las evaluaciones de la Nota~\ref{sec:evaluaciones-finitas} y los proveedores del rango y la estabilidad de las Notas~\ref{sec:detectores-reales}--\ref{sec:estabilidad-integral}.
+
+La Nota~\ref{sec:transporte-selmer} desarrolla el paso de la cota uniforme de $X_\nu$ a la longitud del núcleo de localización, y la extensión auxiliar que impone las dos restricciones de rango y raíces. No identifica $X_\nu$ con $\operatorname{Sha}_{\ell,E}(L)[\ell^\nu]$ por la sola finitud de ambos grupos. Los controles de generadores en torres variables y la comparación integral theta son tareas distintas de la capa fija.
+
+\subsection{Ejercicios con soluciones}
+
+\begin{ejercicio}[Cociente torcido frente a la clase entera]
+Sea $C=\Z/27$, $g=1$, $a=4$ y $Q=9$. Calcular $C_a$, $\ker\delta$ y $\#X_\nu$.
+\end{ejercicio}
+\paragraph{Solución.} El operador $\delta=-3$ tiene imagen $3C$ de orden nueve y núcleo de orden tres. El cociente $C_a\simeq\Z/3$ tiene tres caracteres en $\Z/9$. Aunque $C$ tiene 27 elementos, sólo tres caracteres satisfacen la condición torcida. Esto verifica la igualdad de órdenes del núcleo y conúcleo, no una igualdad entre sus realizaciones.
+
+\begin{ejercicio}[El determinante y la única recta constante]
+Supongamos $r=2$, $d=3$ y $a=4$. Calcular $\#U_a$ y su valoración $3$-ádica. ¿Qué se obtendría si se eliminara una recta constante por cada ciclo?
+\end{ejercicio}
+\paragraph{Solución.} La fórmula exacta da $(4^3-1)^2/(4-1)=63^2/3=1323=3^3\cdot7^2$. Eliminar dos rectas daría $63^2/3^2=441$, de valoración dos. El hiperplano logarítmico tiene codimensión uno, no dos.
+
+\begin{ejercicio}[Valorar el núcleo sin depender de la altura]
+Tomar $\ell=3$, $c=1$, $\nu=3$, $E=3$ y $b=5$. Calcular $v_3(a^d-1)$ y el exponente que anula la parte $3$-primaria del núcleo de $f_b$.
+\end{ejercicio}
+\paragraph{Solución.} Se tiene $\kappa=4$, $a=64$, $d=9$, $Q=27$ y $v=1$. Por \eqref{eq:cu-lte}, $v_3(a^d-1)=4$. Al dividir por $Q$ queda exactamente una potencia de tres. La parte primaria del núcleo está aniquilada por $3^{5+1}=3^6$, no por $3^{5+3+1}$. La altura se canceló en la identidad integral de la norma antes del conteo de generadores.
+
+\begin{ejercicio}[La pérdida de separación exacta]
+Sean $\ell=3$, $c=2$ y $E=3$. Comparar $b_{\mathrm{ex}}$ y $B_E$, y sus consecuencias en la comparación de clases bajo las hipótesis homológicas.
+\end{ejercicio}
+\paragraph{Solución.} Se tiene $v_3(E!)=1$ y $v=1$. La fórmula \eqref{eq:cu-bexacto} da $b_{\mathrm{ex}}=6+12+2=20$. En cambio, $B_E=6+7(2+7)=69$. El exponente adicional en \eqref{eq:cu-final} pasa de $70g_L+3$ a $21g_L+3$ cuando se ha justificado la separación con el interpolador exacto. Sin las familias de evaluación requeridas, este cálculo no produce por sí solo $B$.
+
+\begin{ejercicio}[Una capa sin crecimiento]
+Supongamos $\nu=c$, de modo que $F=L$. Identificar $N_a$ y $\delta$, y comprobar el índice de las unidades. Explicar por qué la prueba no requiere $d>1$.
+\end{ejercicio}
+\paragraph{Solución.} Se tiene $d=1$, $g=N_a=1$ y $\delta=1-a$. El índice en el retículo de rango $r-1$ es $(a-1)^{r-1}$, como en \eqref{eq:cu-unitdet}. Su valoración es $(r-1)(c+v)=r(\nu+v)-c-v$. El descenso se reduce a $F=L$; las hipótesis permanecen válidas.

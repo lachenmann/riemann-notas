@@ -392,3 +392,10 @@ La Proposición 11.10 del cuaderno refuerza la conclusión eventual del pegado a
 - **Sorensen**, *A Patching Lemma*, en *Shimura Varieties* (2020), pp. 297–305. [DOI y ficha editorial](https://doi.org/10.1017/9781108649711.012). Antecedente del descenso por extensiones y familias con descomposición prescrita; no se identifica literalmente su formulación clásica con el enunciado abstracto de A93.
 
 Consultados el 23 de noviembre de 2026. La geometría de Shimura, la no anulación theta uniforme, las comparaciones de periodos, el cambio de base y las leyes locales especializadas conservan su carácter de entradas. El modelo integral de congruencias, retículos y condiciones de Selmer se desarrolla después en la Nota 12; la construcción aritmética del mapa y sus controles siguen pendientes. Los ocho manifiestos previos y las revisiones C/A93 permanecen íntegros; este cotejo no incorporó B76.
+
+
+## Notas 17–24: proveedores de la cota de capa fija
+
+Se conserva el ejemplar A93, SHA-256 `295153115a035f909faee55ea26e2fbdd9471e4f1d89439a16480bbd74011dfb`, §9, pp. 67–74, en particular (9.7), (9.12), (9.13), (9.16), (9.18)–(9.20). El cotejo localizado utiliza el mismo espejo `CocoSgt/riemann-hypothesis-lean@7cbf7a0c32fca1badf05931879a37c3f8a2b03b4`. Las referencias de cada nota identifican las interfaces, hipótesis y archivos examinados. Las Notas 22–24 distinguen las reconstrucciones expositivas de las rutas Lean; la Nota 24 recibe resultados clásicos de estabilidad y finitud homológica, con sus referencias precisas en §24.17. No se ha ejecutado Lean ni auditado toda la clausura transitiva.
+
+Se conserva la constante explícita del cuaderno $C_K=111$ bajo las entradas identificadas; no se atribuye ese exponente a una certificación formal de GRH.

@@ -1,5 +1,32 @@
 # Estado del cuaderno
 
+## Edición consolidada, 24 de noviembre de 2026
+
+Base: `8e763183f77f37aec6179ca1b50c59fef385fdee`. Se integran las ocho notas revisadas 17–24. Las Notas 17–24 desarrollan la realización de ciclos, el conteo de clases y unidades, el transporte a Selmer, las evaluaciones finitas, el rango homológico impar, Hecke, alturas y estabilidad integral. Se conserva la deducción $C_K=111$ bajo las entradas clásicas y matemáticas explicitadas. La auditoría es localizada: no se ha ejecutado Lean ni comprobado su clausura transitiva; no se certifica GRH. Persisten las tareas de comparación integral theta y uniformidad de generadores y torres variables.
+
+- Compilación completa: 303 páginas A4; sin referencias pendientes ni advertencias de composición.
+- Se conservan las 618 etiquetas anteriores con sus números; se incorporan 340. Las páginas de las etiquetas anteriores avanzan cuatro unidades.
+- Comparación de cuerpos y cabeceras a 96 ppp, sin folios: 53 páginas coinciden con el bloque revisado, 96 con la recompilación de la base en el mismo entorno. Las 154 restantes y las 96 páginas de la base recompilada se inspeccionaron mediante hojas de contacto (250 páginas de la edición integrada). Las 53 páginas idénticas al bloque revisado conservan la inspección anterior por igualdad de píxeles. No se afirma identidad de píxeles con la edición publicada anterior ni inspección a tamaño real de cada página. Los 303 folios (portada sin folio) y destinos internos se comprobaron por separado.
+- SHA-256 del PDF integrado: `cb598ea2334175e5837131c1c154b2dddd681c9417f6e5a522120c54476a6a3a`.
+- Se conservan los originales y las huellas de auditoría. No se ejecutó Lean. La incorporación a la bóveda no es automática.
+
+| Nota | Páginas | Contenido |
+| --- | --- | --- |
+| 17 | 199–210 | Rango homológico filtrado, estabilidad integral y realización de ciclos |
+| 18 | 211–220 | Grupos de clases, unidades y cancelación de la altura |
+| 19 | 221–231 | Transporte hacia Selmer, condiciones locales y extensión auxiliar |
+| 20 | 232–243 | Cohomología de grupos finitos y evaluaciones normalizadas |
+| 21 | 244–253 | Detectores reales de homología impar y separación por pesos |
+| 22 | 254–267 | Sobreyectividad de formas invariantes y operadores de Hecke |
+| 23 | 268–284 | Alturas, particiones de la unidad y reducción aritmética |
+| 24 | 285–297 | Estabilidad homológica integral sobre dominios de Dedekind |
+
+### Siguiente desarrollo registrado tras la Nota 16
+
+Comparación integral theta y control de sus graduados, núcleos y errores; uniformidad en bases variables y cotas de torre. La conclusión de la capa fija conserva las entradas clásicas y el alcance de la auditoría.
+
+## Historial hasta la Nota 16
+
 23 de noviembre de 2026.
 
 ## Desarrollo matemático alcanzado
@@ -222,7 +249,7 @@ El repositorio es público desde el 22 de noviembre de 2026. La entrada presenta
 
 B conserva el ejemplar de 73 páginas del 21 de noviembre de 2026. B76 identifica por separado el de 76 páginas del 22 de noviembre. [fuentes/README.md](fuentes/README.md#b76-cotejo-localizado-para-la-nota-12) registra el cotejo de §§5.1–5.2 usado en la Nota 12 y su correspondencia con B73. Las citas anteriores permanecen ligadas a B73; la comparación íntegra entre versiones sigue pendiente.
 
-## Siguiente desarrollo
+## Siguiente desarrollo registrado tras la Nota 16
 
 Desarrollar el **rango de la imagen homológica filtrada, la estabilidad integral y la realización de los ciclos** de A93, con los mapas y normalizaciones que requiere la cancelación de la altura. La Nota 16 ya proporciona la entrada integral de torsión con $C_T=20$ desde el retracto de Ash y el teorema clásico de bases acotadas. En la Nota 15 se puede usar $C_K=111$ bajo las restantes entradas: las comparaciones de clases, unidades y Selmer, la extensión auxiliar y los controles uniformes. Permanecen la elección de un mismo número de generadores antes de los primos auxiliares y la construcción aritmética completa de la familia.
 
