@@ -52291,5 +52291,3081 @@
       "paginas_trasladadas_por_identidad_rgb": 53,
       "inspeccion_a_tamano_real_exhaustiva": false
     }
+  },
+  "lean_source_review_theta_integral": {
+    "proyecto": "Riemann explicado — Nota 25",
+    "fecha_utc": "2026-11-24",
+    "alcance": "Cotejo textual de un tramo concreto de comparación integral, sus presupuestos cohomológicos y el ensamblaje hacia LinkN.",
+    "exclusiones": [
+      "No se ejecutó Lean.",
+      "No se auditó la clausura transitiva de importaciones ni los axiomas del espejo.",
+      "No se certifica una demostración de RH o GRH.",
+      "No se descargó ni cotejó B76 en este tramo."
+    ],
+    "fuente_pdf": {
+      "id": "A93",
+      "url": "https://www.ulam.ai/research/rh-long.pdf",
+      "bytes": 1130005,
+      "sha256": "295153115a035f909faee55ea26e2fbdd9471e4f1d89439a16480bbd74011dfb",
+      "paginas": 93,
+      "revision": {
+        "tipo": "selectiva",
+        "paginas": [
+          60,
+          61,
+          62,
+          63,
+          88
+        ],
+        "contenido": "(8.16)–(8.18), explicación congruencia/extensión y frontera de la construcción específica, cuantificadores de familia de Prop. 11.2. La URL es mutable; la identidad exacta queda fijada por SHA256."
+      },
+      "revision_coordinacion": {
+        "tipo": "selectiva",
+        "paginas": [
+          17,
+          18,
+          60,
+          61,
+          62,
+          63,
+          64
+        ],
+        "contenido": "Normalizaciones de la comparación aritmética, fórmulas (8.16)–(8.18) y mecanismo de congruencias y extensiones."
+      }
+    },
+    "espejo_lean": {
+      "repositorio": "https://github.com/CocoSgt/riemann-hypothesis-lean",
+      "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+      "archivos": [
+        {
+          "archivo": "Development/AbelianVarietyTheory/Definitions/NonGaloisDescent/BoundAtTwoAndThreeForFamily.lean",
+          "bytes": 4579,
+          "sha256": "6b83cc632a3b8fb2e0ae85b8fd8cf84de7ff1d04a7f66062cee41391177fd9d4",
+          "lineas": 67,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Definitions/NonGaloisDescent/BoundAtTwoAndThreeForFamily.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Definitions/NonGaloisDescent/BoundAtTwoAndThreeForFamily.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                67
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Development/AbelianVarietyTheory/Definitions/NonGaloisDescent/BoundAtTwoThreeFamily.lean",
+          "bytes": 8212,
+          "sha256": "c58947263891511aaf19f9bbbae73f56ae2fdd450817f4d9027e98febbfbfb7b",
+          "lineas": 147,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Definitions/NonGaloisDescent/BoundAtTwoThreeFamily.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Definitions/NonGaloisDescent/BoundAtTwoThreeFamily.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                147
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Development/AbelianVarietyTheory/Definitions/NonGaloisDescent/GaloisSideTwistedSelmerAuxiliaryPrimes.lean",
+          "bytes": 10798,
+          "sha256": "2b1cf8c071fe1e6b80e5f34d5d100542332b1761740b1970f5a1c3d64c72469c",
+          "lineas": 145,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Definitions/NonGaloisDescent/GaloisSideTwistedSelmerAuxiliaryPrimes.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Definitions/NonGaloisDescent/GaloisSideTwistedSelmerAuxiliaryPrimes.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Development/AbelianVarietyTheory/Proofs/InertiaEigenvalues/LinkNAlongFamilyOfLocalBounds.lean",
+          "bytes": 1216,
+          "sha256": "fdc009b943e0a1034d90789404f309688e7f7bde75f7a8e5347d866a5b95b246",
+          "lineas": 19,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/InertiaEigenvalues/LinkNAlongFamilyOfLocalBounds.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/InertiaEigenvalues/LinkNAlongFamilyOfLocalBounds.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                19
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Development/AbelianVarietyTheory/Proofs/InertiaEigenvalues/LinkNAlongFamilyOfLocalBoundsStatement.lean",
+          "bytes": 825,
+          "sha256": "eb68f39b492becd3e33b6222bc644c408dd90be10c7918a9585b69dc4f2ff5b3",
+          "lineas": 8,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/InertiaEigenvalues/LinkNAlongFamilyOfLocalBoundsStatement.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/InertiaEigenvalues/LinkNAlongFamilyOfLocalBoundsStatement.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DegreeCountCohomology/CcAt.lean",
+          "bytes": 2859,
+          "sha256": "e2aa1a6e1d95ded98034837a08183077a95c3bc80e5f96b1c1f36beb2c088ab6",
+          "lineas": 53,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DegreeCountCohomology/CcAt.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PatchingModules/DegreeCountCohomology/CcAt.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Development/AutomorphicArithmetic/CharacterBoxes/DivinNOfHypV.lean",
+          "bytes": 6424,
+          "sha256": "cefdce360890e26405199ef8db01d6b0c7e044c4ebebeb6bbcfd23de6148bde0",
+          "lineas": 134,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/DivinNOfHypV.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/DivinNOfHypV.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/HeckeGaloisCriteria/LinkNOfGd.lean",
+          "bytes": 5711,
+          "sha256": "a16761133533d53f76cc50f8de704921ee544eb04336a92bce4fde7994a597cc",
+          "lineas": 95,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/HeckeGaloisCriteria/LinkNOfGd.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/HeckeGaloisCriteria/LinkNOfGd.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                95
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/At23OfAll.lean",
+          "bytes": 2978,
+          "sha256": "dd8358fe7eae54e8029e7f0a990c3b8b3ad91c6fd31684581dbba64984770244",
+          "lineas": 28,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/At23OfAll.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/At23OfAll.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/BoundAtTwoThreeFamilyFon.lean",
+          "bytes": 2482,
+          "sha256": "d7727aefd6cd01b68813e86b763e7393ae4712c97bb99df132264602e46f6fe5",
+          "lineas": 34,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/BoundAtTwoThreeFamilyFon.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/BoundAtTwoThreeFamilyFon.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                34
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/FamilyBoundAtTwoThreeOfLocalBounds.lean",
+          "bytes": 4157,
+          "sha256": "bb526e3f9817925c50e480cd6dc73ac0e31c8618b3e55ba2b52c7784be1eca0e",
+          "lineas": 56,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/FamilyBoundAtTwoThreeOfLocalBounds.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/FamilyBoundAtTwoThreeOfLocalBounds.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                56
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/GaloisPreconditions.lean",
+          "bytes": 1770,
+          "sha256": "57a1cc4e86ea83718bc0590b0a7377278504c1461fb41a64233e3a8408fffcf5",
+          "lineas": 34,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/GaloisPreconditions.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/GaloisPreconditions.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                34
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/ImportsFurtherTailStatement.lean",
+          "bytes": 1286,
+          "sha256": "da2b771a86bf32201f618deb2291ce8399e00a8806cd7403d9f1e73eb5504baf",
+          "lineas": 13,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/ImportsFurtherTailStatement.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/ImportsFurtherTailStatement.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                13
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/LinkNFam.lean",
+          "bytes": 9297,
+          "sha256": "bf49ec0e3809178eae0cde620bab3b8c0fd07a0fea5210a928f4519e310665fd",
+          "lineas": 89,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/LinkNFam.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/LinkNFam.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                89
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/NormChoiceFacts.lean",
+          "bytes": 2819,
+          "sha256": "fe16ad49b75a76f38c25086817ea0ccaba9306368926c2d3b7b0e604a1994b7c",
+          "lineas": 43,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/NormChoiceFacts.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/NormChoiceFacts.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                43
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/AdmissibleDesigns/BlockTwistedCyclotomic.lean",
+          "bytes": 4111,
+          "sha256": "2353cdffa9aacad1675f696d568726e961dc787a419dc9fddcc90e3f7539eb3f",
+          "lineas": 79,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/BlockTwistedCyclotomic.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/BlockTwistedCyclotomic.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                79
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/AdmissibleDesigns/CocZeroOfUnr.lean",
+          "bytes": 17292,
+          "sha256": "ae9c8c6350bba6bc044a5dc21bcb38a053da72787c61fe381e69e17ffac52dd4",
+          "lineas": 324,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/CocZeroOfUnr.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/CocZeroOfUnr.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/AdmissibleDesigns/H1MapMemLcH1.lean",
+          "bytes": 13177,
+          "sha256": "365a87c4f3c1d59e57278a2b8fbe71ab9240c24e5f0e421dea8ba109b67f9e62",
+          "lineas": 254,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/H1MapMemLcH1.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/H1MapMemLcH1.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/AdmissibleDesigns/HigherColumnInvariantsBound.lean",
+          "bytes": 29847,
+          "sha256": "77f3257eeae23d29a90ff17a19df9aa958fbcd3c54ad62333c6c5dd593ce03ba",
+          "lineas": 559,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/HigherColumnInvariantsBound.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/HigherColumnInvariantsBound.lean",
+          "revision": {
+            "tipo": "selectiva",
+            "rangos": [
+              [
+                123,
+                123
+              ],
+              [
+                323,
+                345
+              ],
+              [
+                435,
+                480
+              ],
+              [
+                512,
+                530
+              ]
+            ],
+            "nota": "ShaN, normalización por e_O, qU_ShaN y uso final de SelmerLengthInequality; consulta selectiva de hipótesis auxiliares."
+          }
+        },
+        {
+          "archivo": "Formalism/AdmissibleDesigns/NormalizedRingData.lean",
+          "bytes": 4294,
+          "sha256": "1988564d616c30eaf09a5ac592f0a86ae7ec0074a0681ac34a0a7380eda0b3ff",
+          "lineas": 64,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/NormalizedRingData.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/NormalizedRingData.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                64
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/AdmissibleDesigns/RealDisplayAllK.lean",
+          "bytes": 15474,
+          "sha256": "d1fec24a341d34d3b9e185a456035c77f837c872cf4937f2a7f8ab37fa5be4a0",
+          "lineas": 191,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/RealDisplayAllK.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/RealDisplayAllK.lean",
+          "revision": {
+            "tipo": "selectiva",
+            "rangos": [
+              [
+                125,
+                191
+              ]
+            ],
+            "nota": "Hipótesis locales finales, fórmula de la longitud y valoración de delta; examen adicional selectivo de definiciones iniciales sin pretensión de lectura completa."
+          }
+        },
+        {
+          "archivo": "Formalism/AdmissibleDesigns/RealDisplayAllKOf.lean",
+          "bytes": 13322,
+          "sha256": "32fe7217eda1d1343875e6db523cad8469d00bd3cbdc0cc5c7c67ac09c7f8e60",
+          "lineas": 178,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/RealDisplayAllKOf.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/RealDisplayAllKOf.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/AdmissibleDesigns/SelmerInequalityOfInputs.lean",
+          "bytes": 20456,
+          "sha256": "f9826320c5c77e5384d4356697dafedfdd31adb0ef65978212f8586b10a8343f",
+          "lineas": 241,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/SelmerInequalityOfInputs.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/SelmerInequalityOfInputs.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                241
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/AdmissibleDesigns/SelmerInequalityOpen.lean",
+          "bytes": 10660,
+          "sha256": "84450e9d661e3fa777678d937995eecb37ca70323da52e22d0b62fb1e0a642f9",
+          "lineas": 151,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/SelmerInequalityOpen.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/SelmerInequalityOpen.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/AdmissibleDesigns/SelmerMatchFinal.lean",
+          "bytes": 1997,
+          "sha256": "dc160142fd8ad71ce9b498fd3e20c3ba368e923fa2de808105b5891d795468eb",
+          "lineas": 32,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/SelmerMatchFinal.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/SelmerMatchFinal.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                32
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/CharacterColumnKernelPairSetVariant.lean",
+          "bytes": 7367,
+          "sha256": "c1a2d139b044caf9b1bf54aadde4833d727ef4f8b3ba83e82c641fdc3f6819de",
+          "lineas": 118,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/CharacterColumnKernelPairSetVariant.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/CharacterColumnKernelPairSetVariant.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/BlockRhoFull.lean",
+          "bytes": 6336,
+          "sha256": "dad9a6422c20648ee1d77a2b25c4165ba009402bdabd113082ddf18788bd1dff",
+          "lineas": 123,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/BlockRhoFull.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/BlockRhoFull.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                123
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/CharacterColumnKernelLengthBound.lean",
+          "bytes": 5767,
+          "sha256": "2b88aab17b6144ca626eb9c27246ddd5dcd01016af13836d387819d10ea6a407",
+          "lineas": 119,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/CharacterColumnKernelLengthBound.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/CharacterColumnKernelLengthBound.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                119
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/CharacterColumnKernelsOfBlockChiCOfBlockChiOne.lean",
+          "bytes": 18504,
+          "sha256": "58036c3ab054cb2ba8f743dc723a5204da35c59f91d70c293b9dcf6afaea2277",
+          "lineas": 286,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/CharacterColumnKernelsOfBlockChiCOfBlockChiOne.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/CharacterColumnKernelsOfBlockChiCOfBlockChiOne.lean",
+          "revision": {
+            "tipo": "selectiva",
+            "rangos": [
+              [
+                1,
+                170
+              ]
+            ],
+            "nota": "Cuenta collectAlt completa, bloque automorfo y comienzo de bloques escalares."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/ColKer.lean",
+          "bytes": 11301,
+          "sha256": "46a372a74490cd04c32188c8856d3ef38a7c7eac184318c1f9620ad911edfcd8",
+          "lineas": 214,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/ColKer.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/ColKer.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/ColKerChiOne.lean",
+          "bytes": 8987,
+          "sha256": "1b422cc71d8e2aece1998fa02407544de1ac3e08d303e4b469486373947598f7",
+          "lineas": 163,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/ColKerChiOne.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/ColKerChiOne.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/DetTri.lean",
+          "bytes": 1455,
+          "sha256": "c24ed8c6f713d45708d7574e75f8c8ea755c32c6e86154d018919107eaf7ca94",
+          "lineas": 43,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/DetTri.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/DetTri.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/GenFin.lean",
+          "bytes": 8413,
+          "sha256": "b1317bfc602ef07ffb5eab1ac9a97715e8727b53aa369dfcbcae0bfd91c1376f",
+          "lineas": 177,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GenFin.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GenFin.lean",
+          "revision": {
+            "tipo": "selectiva",
+            "rangos": [
+              [
+                29,
+                138
+              ],
+              [
+                172,
+                177
+              ]
+            ],
+            "nota": "Prueba genericFin y declaración/ensamblaje kerHomRect."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalColumn.lean",
+          "bytes": 966,
+          "sha256": "d6bfe0b8b7b2dccbfe534b11fdb1fb4bbd269bc25cc74e27d680b1a6101fecfa",
+          "lineas": 22,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalColumn.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalColumn.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                22
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalConcreteOf.lean",
+          "bytes": 7556,
+          "sha256": "d0731fe1aec5927f07ec3fd20001a0191e7fb037c93cb1f2ccb6491aae0aa9c4",
+          "lineas": 170,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalConcreteOf.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalConcreteOf.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                170
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalModuleOf.lean",
+          "bytes": 2117,
+          "sha256": "cfcc8972b51242491037ff04f6dd9bddcd74761ff03d10b78b363c4be5583424",
+          "lineas": 45,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalModuleOf.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalModuleOf.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                45
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/LengthEqKerAddRange.lean",
+          "bytes": 10330,
+          "sha256": "2e16f1290fdb45590226fcfd1a534a8d94c8eacad72f84bd228514efd0545520",
+          "lineas": 208,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/LengthEqKerAddRange.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/LengthEqKerAddRange.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/LengthQuotSmulRangeFree.lean",
+          "bytes": 32070,
+          "sha256": "cbf5cab7ae2eff0d2b73e5bed5d827f7639f2f4fb69d53e658406c0c5aabcd67",
+          "lineas": 688,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/LengthQuotSmulRangeFree.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/LengthQuotSmulRangeFree.lean",
+          "revision": {
+            "tipo": "selectiva",
+            "rangos": [
+              [
+                170,
+                295
+              ],
+              [
+                325,
+                488
+              ],
+              [
+                530,
+                662
+              ]
+            ],
+            "nota": "Paso de longitud, inducción core, ideal y congBound/Good; no se leyó todo el desarrollo previo de longitudes de potencias."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/SumIteLe.lean",
+          "bytes": 3188,
+          "sha256": "2e837420fced83cc49477b0d621b1139576d7c0002222d3ca03ab37c4732eebc",
+          "lineas": 67,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/SumIteLe.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/SumIteLe.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                67
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/VccSpan.lean",
+          "bytes": 1240,
+          "sha256": "af938a0ea661ab0288b19467c671ab6ab102dac6ec33e8f544e5fbeac49c4eaa",
+          "lineas": 38,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/VccSpan.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/VccSpan.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                38
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/StatBlockRhoCount.lean",
+          "bytes": 4633,
+          "sha256": "16899a76460c1edc9b68c10c9e2cb03e1a52d59ea7d342e57fba2d5a76eb1b58",
+          "lineas": 73,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatBlockRhoCount.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatBlockRhoCount.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/StatGlobalModule.lean",
+          "bytes": 7653,
+          "sha256": "70bd922f437c430782c7ccb493656069df4369f68dfa263d49dd359794804af3",
+          "lineas": 110,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatGlobalModule.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatGlobalModule.lean",
+          "revision": {
+            "tipo": "selectiva",
+            "rangos": [
+              [
+                1,
+                85
+              ]
+            ],
+            "nota": "ColFreeJ, colRelJ, ColNNJ y condiciones de no anulación racional."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/Statement.lean",
+          "bytes": 7176,
+          "sha256": "1a456d9c950939c1b287eaa4b4efac33c31dee7956280fdc91b4940f516a1a50",
+          "lineas": 154,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/Statement.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/Statement.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/StatementColKer.lean",
+          "bytes": 5764,
+          "sha256": "b7f81bba117a6489ceb2872d45db56df8331a3814e6b6419c0b5bbd057ca434e",
+          "lineas": 92,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementColKer.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementColKer.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/StatementG.lean",
+          "bytes": 4354,
+          "sha256": "1c47c209c5a618b7b7046876603ed2b0fdfe29e4d19369eeea918dad3ec9bfca",
+          "lineas": 74,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementG.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementG.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/StatementGC.lean",
+          "bytes": 4303,
+          "sha256": "54443c42e79af3ae287791601ed173665ee9c5c3c9cbb2bcc4088bd4754af5b3",
+          "lineas": 68,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementGC.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementGC.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/StatementMF.lean",
+          "bytes": 11804,
+          "sha256": "046a476dde2aecd76571cc973cc7cd8efe24929335e890cc20f7c923536a9be8",
+          "lineas": 215,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementMF.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementMF.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/StatementN.lean",
+          "bytes": 11592,
+          "sha256": "c6469915c3ea292c2ebe12a8c34abf8bad6935435984d65e6dd8096d01cc2574",
+          "lineas": 201,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementN.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementN.lean",
+          "revision": {
+            "tipo": "selectiva",
+            "rangos": [
+              [
+                13,
+                79
+              ],
+              [
+                95,
+                201
+              ]
+            ],
+            "nota": "Ideal de congruencias, comparación por determinantes y declaraciones CongMod/CongBound/Good."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/StatementPsi.lean",
+          "bytes": 7156,
+          "sha256": "fe9a1e293f2b85cccd14991a8fa4bf79ac7afc3201a61fafa5afabc784530a99",
+          "lineas": 136,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementPsi.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementPsi.lean",
+          "revision": {
+            "tipo": "selectiva",
+            "rangos": [
+              [
+                1,
+                136
+              ]
+            ],
+            "nota": "Definición de ycoc, colPsi, núcleo y todas las hipótesis de StatCobColumn y BlockRhoFull₂; lectura en tramos."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/StatementRho.lean",
+          "bytes": 5037,
+          "sha256": "bed0a34f94aa09772491379d23830edb416b0613a0836cc0c652cc70f95dad76",
+          "lineas": 96,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementRho.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementRho.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/CharacterColumnKernels/StatementX.lean",
+          "bytes": 4656,
+          "sha256": "25f52b53d9a819060215b3396d983f5164c31c6b6d60682ec35e830b9e1f2390",
+          "lineas": 95,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementX.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementX.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/SharpRestriction/GlobalTheoremInputs.lean",
+          "bytes": 8939,
+          "sha256": "4d51ccc0586441a159ad6d09ebc0a46b3c462e3c5b296d5a5bd7613266e17bfb",
+          "lineas": 168,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/GlobalTheoremInputs.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/GlobalTheoremInputs.lean",
+          "revision": {
+            "tipo": "selectiva",
+            "rangos": [
+              [
+                1,
+                120
+              ]
+            ],
+            "nota": "Definiciones LinkN, etaSum, vvTerm y cuantificadores de familia."
+          }
+        },
+        {
+          "archivo": "Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean",
+          "bytes": 71611,
+          "sha256": "aeb3839d2468c0e89fbf509a1b971bf983a09ccc1e3ccf99d89dc8ee78a9edc8",
+          "lineas": 1423,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean",
+          "revision": {
+            "tipo": "selectiva",
+            "rangos": [
+              [
+                1,
+                90
+              ],
+              [
+                170,
+                235
+              ]
+            ],
+            "nota": "lenUnit, ccAt, finitud de Selmer y definiciones de retículas, etaLoc, vcc y multiplicidad."
+          }
+        },
+        {
+          "archivo": "Formalism/WachLatticeTwists/CoprimeLiftBounds/SelmerInjColumnPlace.lean",
+          "bytes": 4089,
+          "sha256": "c6796e7dffe6ac11fa80ea230b56b543a5f7fe3f0d25494c19c65c3b895c7d1b",
+          "lineas": 68,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/CoprimeLiftBounds/SelmerInjColumnPlace.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/CoprimeLiftBounds/SelmerInjColumnPlace.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                68
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/WachLatticeTwists/RamifiedBlockRings/ChainFromPrimitiveData.lean",
+          "bytes": 11525,
+          "sha256": "58d81c485d4beb948d905f81903a433c9d933a5724c9ec600c37cc0246ad0ab3",
+          "lineas": 184,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/ChainFromPrimitiveData.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/ChainFromPrimitiveData.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/WachLatticeTwists/RamifiedBlockRings/LemmaFiveThreeAnyResidueField.lean",
+          "bytes": 5980,
+          "sha256": "ccc74ec0c85bd2901d5f610a43bf2f4ff4f2959db8928fc3d83b61471949d4e9",
+          "lineas": 89,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/LemmaFiveThreeAnyResidueField.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/LemmaFiveThreeAnyResidueField.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                89
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/WachLatticeTwists/RamifiedBlockRings/LocalToDisplayFree.lean",
+          "bytes": 16290,
+          "sha256": "6337491629ac7990649f7bbce2eb4612ce6a1c2a65cb41e31796e3554d373d83",
+          "lineas": 216,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/LocalToDisplayFree.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/LocalToDisplayFree.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                216
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/CompositeOfChainHolds.lean",
+          "bytes": 6199,
+          "sha256": "6458f2911f65698c3a493fd88efb0c8213b50ff57402d07bfc4c53744575ce3a",
+          "lineas": 89,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/CompositeOfChainHolds.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/CompositeOfChainHolds.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                89
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/LemmaFiveThreeExtensionOfModule.lean",
+          "bytes": 4511,
+          "sha256": "3abc5a34848d096912a824a42b543053bb1b87ff14aeab9e416193e34054256c",
+          "lineas": 81,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/LemmaFiveThreeExtensionOfModule.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/LemmaFiveThreeExtensionOfModule.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                81
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/LengthBoundViaSplitting.lean",
+          "bytes": 12182,
+          "sha256": "a85f0234f29485674408076bde95e14a68bc35b27f31463ea7cc93d2fd7b6080",
+          "lineas": 163,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/LengthBoundViaSplitting.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/LengthBoundViaSplitting.lean",
+          "revision": {
+            "tipo": "completa",
+            "rangos": [
+              [
+                1,
+                163
+              ]
+            ],
+            "nota": "Lectura textual completa del archivo en este tramo; sin ejecución de Lean ni auditoría transitiva de importaciones."
+          }
+        },
+        {
+          "archivo": "Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/RingDataObjects.lean",
+          "bytes": 4220,
+          "sha256": "78b929fba94ef1882d05681e91a0f0019665349f34bdb1fa2298fb3275815d13",
+          "lineas": 92,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/RingDataObjects.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/RingDataObjects.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/RingObjectsExist.lean",
+          "bytes": 741,
+          "sha256": "9704f784c50af5db51769ed903c3914b0115e41bc196aab2cfc96cd21fbe186c",
+          "lineas": 12,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/RingObjectsExist.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/RingObjectsExist.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/TopLengthBoundViaSplitting.lean",
+          "bytes": 12170,
+          "sha256": "13369e9f11a920de76cad8c24bbc1a428411016b0020e36e7fe19bf2952a4b94",
+          "lineas": 174,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/TopLengthBoundViaSplitting.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/TopLengthBoundViaSplitting.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        },
+        {
+          "archivo": "Formalism/WachLatticeTwists/RamifiedBlockRings/Statement.lean",
+          "bytes": 8599,
+          "sha256": "68baa015e60deb493a1b941f636291c619ad57399cc699df37915efc9b615e3b",
+          "lineas": 146,
+          "commit": "7cbf7a0c32fca1badf05931879a37c3f8a2b03b4",
+          "url_inmutable": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/Statement.lean",
+          "url_raw_inmutable": "https://raw.githubusercontent.com/CocoSgt/riemann-hypothesis-lean/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/Statement.lean",
+          "revision": {
+            "tipo": "descargado_sin_cotejo_sustantivo_registrado",
+            "rangos": [],
+            "nota": "La presencia del archivo no se usa como evidencia de lectura ni de validación."
+          }
+        }
+      ]
+    },
+    "conclusiones": [
+      {
+        "id": "C01",
+        "conclusion": "El ideal integral es ker(T→O^(X\\Z)); su ideal evaluado c_Z(pi) define longitud(O/c_Z(pi)). Formalism.NG.vcc es esta longitud integral, mientras NData.vcc usa longitud normalizada por e_O.",
+        "fuentes": [
+          {
+            "archivo": "Formalism/CharacterColumnKernels/StatementN.lean",
+            "lineas": [
+              13,
+              20
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementN.lean#L13-L20"
+          },
+          {
+            "archivo": "Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean",
+            "lineas": [
+              25,
+              33
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean#L25-L33"
+          },
+          {
+            "archivo": "Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean",
+            "lineas": [
+              224,
+              225
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean#L224-L225"
+          }
+        ]
+      },
+      {
+        "id": "C02",
+        "conclusion": "El descenso T′→c_Z utiliza una expansión en b_a con coeficientes de T y la independencia de b_a en cada fibra fuera de Z. No resulta de una extensión arbitraria de anillos.",
+        "fuentes": [
+          {
+            "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/VccSpan.lean",
+            "lineas": [
+              7,
+              34
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/VccSpan.lean#L7-L34"
+          }
+        ]
+      },
+      {
+        "id": "C03",
+        "conclusion": "genericFin construye simultáneamente una compresión cuadrada C con nu(det((CP)_c))=length ker(P_c) para todos los bloques de longitud finita. Requiere sobreyectividad de cada representación de bloque y #k>g·sum_c d_c; no requiere sobreyectividad hacia el producto de los bloques.",
+        "fuentes": [
+          {
+            "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/GenFin.lean",
+            "lineas": [
+              29,
+              138
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GenFin.lean#L29-L138"
+          }
+        ]
+      },
+      {
+        "id": "C04",
+        "conclusion": "GlobalConcreteOf y GlobalModuleOf comparan v_Z(pi) con sum_c length Hom_A(N,(K/O)^(d_c)): presentación finita, no anulación de Hom(N,V_x′) fuera de Z, determinantes pertenecientes a T′, representación integral especializada con bandera y descenso. No construyen una filtración del cociente O/c_Z(pi) con graduados Selmer.",
+        "fuentes": [
+          {
+            "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalConcreteOf.lean",
+            "lineas": [
+              75,
+              168
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalConcreteOf.lean#L75-L168"
+          },
+          {
+            "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalModuleOf.lean",
+            "lineas": [
+              14,
+              43
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalModuleOf.lean#L14-L43"
+          }
+        ]
+      },
+      {
+        "id": "C05",
+        "conclusion": "La retirada de la restricción residual utiliza bigResidueExt junto con moduleBc y stageC: se transportan los datos de anillos, especializaciones, módulo y longitudes. La nota conserva la realización compatible del cambio de coeficientes como entrada citada.",
+        "fuentes": [
+          {
+            "archivo": "Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/LemmaFiveThreeExtensionOfModule.lean",
+            "lineas": [
+              47,
+              79
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/LemmaFiveThreeExtensionOfModule.lean#L47-L79"
+          },
+          {
+            "archivo": "Formalism/WachLatticeTwists/RamifiedBlockRings/LemmaFiveThreeAnyResidueField.lean",
+            "lineas": [
+              1,
+              89
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/LemmaFiveThreeAnyResidueField.lean#L1-L89"
+          }
+        ]
+      },
+      {
+        "id": "C06",
+        "conclusion": "La aplicación usa el módulo explícito ColNNJ. Sus homomorfismos producen cociclos por y(g)=(chi(g)^(-1)r(g)-1)E. La relación local incluye delta por dentro del representante de cociclo. Para pasar a cohomología hay que controlar condiciones locales y dos núcleos.",
+        "fuentes": [
+          {
+            "archivo": "Formalism/CharacterColumnKernels/StatGlobalModule.lean",
+            "lineas": [
+              10,
+              33
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatGlobalModule.lean#L10-L33"
+          },
+          {
+            "archivo": "Formalism/CharacterColumnKernels/StatementPsi.lean",
+            "lineas": [
+              45,
+              79
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementPsi.lean#L45-L79"
+          },
+          {
+            "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/BlockRhoFull.lean",
+            "lineas": [
+              11,
+              49
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/BlockRhoFull.lean#L11-L49"
+          }
+        ]
+      },
+      {
+        "id": "C07",
+        "conclusion": "cobColumn prueba delta_O²v=0 si Psi(phi)=dv, con E=sum t_g r(g), E²=delta E, E M=0 y acciones escalares iguales a delta_O para delta y sum t_g chi(g). Esta pérdida explica parte de los términos de valoración de delta.",
+        "fuentes": [
+          {
+            "archivo": "Formalism/CharacterColumnKernels/StatementPsi.lean",
+            "lineas": [
+              81,
+              93
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementPsi.lean#L81-L93"
+          },
+          {
+            "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/BlockRhoFull.lean",
+            "lineas": [
+              51,
+              111
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/BlockRhoFull.lean#L51-L111"
+          }
+        ]
+      },
+      {
+        "id": "C08",
+        "conclusion": "collectAlt separa bloque 0 automorfo de rango N, bloque 1 trivial/clases y bloques c≥2 de torcido -(c-1). La suma Selmer tiene multiplicidad uno por e=1,...,t-1. Los coeficientes t de los errores uniformes no deben aplicarse otra vez a la suma Selmer.",
+        "fuentes": [
+          {
+            "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/CharacterColumnKernelsOfBlockChiCOfBlockChiOne.lean",
+            "lineas": [
+              33,
+              99
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/CharacterColumnKernelsOfBlockChiCOfBlockChiOne.lean#L33-L99"
+          },
+          {
+            "archivo": "Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/LengthBoundViaSplitting.lean",
+            "lineas": [
+              143,
+              161
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/LengthBoundViaSplitting.lean#L143-L161"
+          },
+          {
+            "archivo": "Formalism/AdmissibleDesigns/SelmerMatchFinal.lean",
+            "lineas": [
+              1,
+              32
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/SelmerMatchFinal.lean#L1-L32"
+          }
+        ]
+      },
+      {
+        "id": "C09",
+        "conclusion": "La valoración exacta del separador de t-1 factores es e_O·sum_(1≤a<t)(s0+v_l(a))=e_O((t-1)s0+v_l((t-1)!)); se permite la cota e_O(t s0+v_l(t!)). Se requiere s0≥1, y s0≥2 para l=2.",
+        "fuentes": [
+          {
+            "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/CharacterColumnKernelLengthBound.lean",
+            "lineas": [
+              1,
+              119
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/CharacterColumnKernelLengthBound.lean#L1-L119"
+          },
+          {
+            "archivo": "Formalism/AdmissibleDesigns/RealDisplayAllK.lean",
+            "lineas": [
+              181,
+              189
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/RealDisplayAllK.lean#L181-L189"
+          }
+        ]
+      },
+      {
+        "id": "C10",
+        "conclusion": "Con Selmer finito, qU_ShaN cancela exactamente e_O tras normalizar. El índice de ramificación de coeficientes no es una multiplicidad adicional de Selmer. La finitud es imprescindible antes de convertir longitudes extendidas a naturales.",
+        "fuentes": [
+          {
+            "archivo": "Formalism/AdmissibleDesigns/HigherColumnInvariantsBound.lean",
+            "lineas": [
+              331,
+              338
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/HigherColumnInvariantsBound.lean#L331-L338"
+          },
+          {
+            "archivo": "Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean",
+            "lineas": [
+              32,
+              33
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean#L32-L33"
+          }
+        ]
+      },
+      {
+        "id": "C11",
+        "conclusion": "MtUp/MtLow es el cociente de proyección e intersección de la retícula y, bajo la descomposición racional, es isomorfo a CongMod. congBound/Good controla su longitud por sum_pi dim(V_pi)·v_Z(pi), más dim(V_pi)·nu(a) al recortar. El productor usa inducción en subespacios y un minimizador de valoración por carácter; no impone cuerpo residual grande.",
+        "fuentes": [
+          {
+            "archivo": "Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean",
+            "lineas": [
+              205,
+              227
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean#L205-L227"
+          },
+          {
+            "archivo": "Formalism/CharacterColumnKernels/StatementN.lean",
+            "lineas": [
+              131,
+              171
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatementN.lean#L131-L171"
+          },
+          {
+            "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/LengthQuotSmulRangeFree.lean",
+            "lineas": [
+              351,
+              482
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/LengthQuotSmulRangeFree.lean#L351-L482"
+          },
+          {
+            "archivo": "Formalism/CharacterColumnKernels/IdempotentNormalForms/LengthQuotSmulRangeFree.lean",
+            "lineas": [
+              559,
+              637
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/LengthQuotSmulRangeFree.lean#L559-L637"
+          }
+        ]
+      },
+      {
+        "id": "C12",
+        "conclusion": "LinkN exige la misma familia y datos compatibles de corte bueno, normalización, condiciones locales, primos 2 y 3, cotas de multiplicidad y sumabilidad. LinkNFam conecta ConclF con LinkN y LinkNOfGd vuelve del corte bueno a la familia original. Las declaraciones no se reducen a una hipótesis aislada de finitud.",
+        "fuentes": [
+          {
+            "archivo": "Formalism/SharpRestriction/GlobalTheoremInputs.lean",
+            "lineas": [
+              23,
+              45
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/GlobalTheoremInputs.lean#L23-L45"
+          },
+          {
+            "archivo": "Development/AbelianVarietyTheory/Proofs/InertiaEigenvalues/LinkNAlongFamilyOfLocalBounds.lean",
+            "lineas": [
+              1,
+              19
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AbelianVarietyTheory/Proofs/InertiaEigenvalues/LinkNAlongFamilyOfLocalBounds.lean#L1-L19"
+          },
+          {
+            "archivo": "Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/LinkNFam.lean",
+            "lineas": [
+              1,
+              89
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/ThetaCorrespondence/ThetaPairLifts/ThirdPlaceSeries/LinkNFam.lean#L1-L89"
+          },
+          {
+            "archivo": "Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/HeckeGaloisCriteria/LinkNOfGd.lean",
+            "lineas": [
+              1,
+              95
+            ],
+            "url": "https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/Foundations/GaloisRepresentations/HeckeGaloisCriteria/LinkNOfGd.lean#L1-L95"
+          }
+        ]
+      }
+    ],
+    "resumen_alcance": {
+      "completa": 27,
+      "descargado_sin_cotejo_sustantivo_registrado": 27,
+      "selectiva": 10
+    },
+    "bibliografia_algebraica": [
+      "https://stacks.math.columbia.edu/tag/07ZA",
+      "https://stacks.math.columbia.edu/tag/00J3"
+    ]
+  },
+  "nota_25_20261124": {
+    "fecha": "2026-11-24",
+    "estado": "PREPARADO_PARA_INTEGRACION",
+    "base_publicada_verificada": {
+      "commit": "6fdbf39a2a106b32fa33f6745944d979bbcce711",
+      "repositorio": "lachenmann/riemann-notas",
+      "archivos_cotejados": 38,
+      "pdf_paginas": 303,
+      "pdf_sha256": "cb598ea2334175e5837131c1c154b2dddd681c9417f6e5a522120c54476a6a3a",
+      "fuentes_zip_sha256": "a8cb9b3bafa5df1db7c63dfbc13dea4c25be15b4d922ebd047ffabe15b703fdf"
+    },
+    "archivo": "tex/capitulos/25-comparacion-integral-theta-y-defecto-aritmetico.tex",
+    "titulo": "Comparación integral theta y filtración del defecto aritmético",
+    "apartados": 22,
+    "resultados_con_demostracion": [
+      {
+        "tipo": "proposicion",
+        "titulo": "Dos descripciones del mismo defecto"
+      },
+      {
+        "tipo": "proposicion",
+        "titulo": "Graduados de la filtración de intersecciones"
+      },
+      {
+        "tipo": "lema",
+        "titulo": "Denominador exacto y coste de rango"
+      },
+      {
+        "tipo": "teorema",
+        "titulo": "Comparación bilateral de ideales"
+      },
+      {
+        "tipo": "proposicion",
+        "titulo": "Cota del defecto por congruencias de todas las parejas"
+      },
+      {
+        "tipo": "teorema",
+        "titulo": "Cota condicionada por parejas"
+      },
+      {
+        "tipo": "proposicion",
+        "titulo": "El coste de un conjunto retenido"
+      },
+      {
+        "tipo": "lema",
+        "titulo": "Descenso al ideal de congruencias"
+      },
+      {
+        "tipo": "lema",
+        "titulo": "Compresión simultánea"
+      },
+      {
+        "tipo": "proposicion",
+        "titulo": "Comparación por presentación y bloques"
+      },
+      {
+        "tipo": "lema",
+        "titulo": "Control del vector que produce un coborde"
+      },
+      {
+        "tipo": "proposicion",
+        "titulo": "La pérdida exacta de imponer una condición local"
+      },
+      {
+        "tipo": "proposicion",
+        "titulo": "Compatibilidad de cohomología, localización y escalares"
+      },
+      {
+        "tipo": "lema",
+        "titulo": "Valoración exacta del separador ciclotómico"
+      },
+      {
+        "tipo": "lema",
+        "titulo": "Presupuesto ponderado"
+      }
+    ],
+    "numero_resultados": 15,
+    "ecuaciones_numeradas": 45,
+    "ejercicios_resueltos": 6,
+    "tex_sha256": "4dd7b12f217fcf0c3ccdc73c80c79e5662b6f7a9d2d17201be9e8f748681e522",
+    "pdf": {
+      "archivo": "pdf/notas-hipotesis-riemann.pdf",
+      "paginas": 320,
+      "paginas_nota": [
+        298,
+        314
+      ],
+      "paginas_fuentes_estado": [
+        315,
+        320
+      ],
+      "sha256": "0af324b4216daff844da03401039064865e9216f14e27a29689679cb70baf807",
+      "bytes": 2255491,
+      "igual_a_compilacion_revisada": true
+    },
+    "separata": {
+      "paginas": 17,
+      "folios_conservados": [
+        298,
+        314
+      ],
+      "sha256": "92da35c5292bb25843d76e2fb9dd82b4129f638f354dc1737cf7b2047389380f",
+      "referencias_externas": "La numeración remite al cuaderno completo; se omiten enlaces internos hacia páginas no incluidas."
+    },
+    "markdown": {
+      "archivo_entregado": "26-Comparacion-integral-theta-y-defecto-aritmetico.md",
+      "sha256": "aff8d32cd16e81889419856ab2bdf27a7bf14e3ff901929a0a1d0f04f303da2b",
+      "validacion": {
+        "source": "/workspace/scratch/717fa27a1052/edicion25/tex/capitulos/25-comparacion-integral-theta-y-defecto-aritmetico.tex",
+        "source_sha256": "4dd7b12f217fcf0c3ccdc73c80c79e5662b6f7a9d2d17201be9e8f748681e522",
+        "aux": "/workspace/scratch/717fa27a1052/edicion25/build/main.aux",
+        "output": "/workspace/scratch/717fa27a1052/output/26-Comparacion-integral-theta-y-defecto-aritmetico.md",
+        "source_environments": {
+          "equation": 45,
+          "proposicion": 7,
+          "proof": 15,
+          "lema": 6,
+          "teorema": 2,
+          "enumerate": 1,
+          "gathered": 1,
+          "aligned": 2,
+          "split": 1,
+          "ejercicio": 6
+        },
+        "subsections": 22,
+        "results": 15,
+        "proofs": 15,
+        "exercises": 6,
+        "solutions": 6,
+        "numbered_equations": 45,
+        "math_counts": {
+          "equation": 45,
+          "display": 23,
+          "inline": 658
+        },
+        "labels_preserved": 68,
+        "references_resolved": 59,
+        "links_internal": 52,
+        "output_bytes": 64972,
+        "output_sha256": "aff8d32cd16e81889419856ab2bdf27a7bf14e3ff901929a0a1d0f04f303da2b",
+        "pandoc_warnings": "",
+        "unresolved_macros_or_references": false,
+        "katex_validation": {
+          "version": "0.16.47",
+          "formulas": 726,
+          "errors": 0,
+          "warnings": 0
+        }
+      },
+      "sincronizacion_automatica": false,
+      "revision_visual_obsidian": false
+    },
+    "verificacion_composicion": {
+      "pdf_sha256": "0af324b4216daff844da03401039064865e9216f14e27a29689679cb70baf807",
+      "pages": 320,
+      "base_pages": 303,
+      "pixel_dpi": 96,
+      "identical_page_pairs": [
+        {
+          "old": 1,
+          "new": 1
+        },
+        {
+          "old": 2,
+          "new": 2
+        },
+        {
+          "old": 3,
+          "new": 3
+        },
+        {
+          "old": 4,
+          "new": 4
+        },
+        {
+          "old": 5,
+          "new": 5
+        },
+        {
+          "old": 6,
+          "new": 6
+        },
+        {
+          "old": 7,
+          "new": 7
+        },
+        {
+          "old": 8,
+          "new": 8
+        },
+        {
+          "old": 9,
+          "new": 9
+        },
+        {
+          "old": 10,
+          "new": 10
+        },
+        {
+          "old": 11,
+          "new": 11
+        },
+        {
+          "old": 13,
+          "new": 13
+        },
+        {
+          "old": 14,
+          "new": 14
+        },
+        {
+          "old": 15,
+          "new": 15
+        },
+        {
+          "old": 16,
+          "new": 16
+        },
+        {
+          "old": 17,
+          "new": 17
+        },
+        {
+          "old": 18,
+          "new": 18
+        },
+        {
+          "old": 19,
+          "new": 19
+        },
+        {
+          "old": 20,
+          "new": 20
+        },
+        {
+          "old": 21,
+          "new": 21
+        },
+        {
+          "old": 22,
+          "new": 22
+        },
+        {
+          "old": 23,
+          "new": 23
+        },
+        {
+          "old": 24,
+          "new": 24
+        },
+        {
+          "old": 26,
+          "new": 26
+        },
+        {
+          "old": 27,
+          "new": 27
+        },
+        {
+          "old": 28,
+          "new": 28
+        },
+        {
+          "old": 29,
+          "new": 29
+        },
+        {
+          "old": 30,
+          "new": 30
+        },
+        {
+          "old": 31,
+          "new": 31
+        },
+        {
+          "old": 32,
+          "new": 32
+        },
+        {
+          "old": 33,
+          "new": 33
+        },
+        {
+          "old": 34,
+          "new": 34
+        },
+        {
+          "old": 35,
+          "new": 35
+        },
+        {
+          "old": 36,
+          "new": 36
+        },
+        {
+          "old": 37,
+          "new": 37
+        },
+        {
+          "old": 38,
+          "new": 38
+        },
+        {
+          "old": 39,
+          "new": 39
+        },
+        {
+          "old": 40,
+          "new": 40
+        },
+        {
+          "old": 41,
+          "new": 41
+        },
+        {
+          "old": 42,
+          "new": 42
+        },
+        {
+          "old": 43,
+          "new": 43
+        },
+        {
+          "old": 44,
+          "new": 44
+        },
+        {
+          "old": 45,
+          "new": 45
+        },
+        {
+          "old": 46,
+          "new": 46
+        },
+        {
+          "old": 47,
+          "new": 47
+        },
+        {
+          "old": 48,
+          "new": 48
+        },
+        {
+          "old": 49,
+          "new": 49
+        },
+        {
+          "old": 50,
+          "new": 50
+        },
+        {
+          "old": 51,
+          "new": 51
+        },
+        {
+          "old": 52,
+          "new": 52
+        },
+        {
+          "old": 53,
+          "new": 53
+        },
+        {
+          "old": 54,
+          "new": 54
+        },
+        {
+          "old": 55,
+          "new": 55
+        },
+        {
+          "old": 56,
+          "new": 56
+        },
+        {
+          "old": 57,
+          "new": 57
+        },
+        {
+          "old": 58,
+          "new": 58
+        },
+        {
+          "old": 59,
+          "new": 59
+        },
+        {
+          "old": 60,
+          "new": 60
+        },
+        {
+          "old": 61,
+          "new": 61
+        },
+        {
+          "old": 62,
+          "new": 62
+        },
+        {
+          "old": 63,
+          "new": 63
+        },
+        {
+          "old": 64,
+          "new": 64
+        },
+        {
+          "old": 65,
+          "new": 65
+        },
+        {
+          "old": 66,
+          "new": 66
+        },
+        {
+          "old": 67,
+          "new": 67
+        },
+        {
+          "old": 68,
+          "new": 68
+        },
+        {
+          "old": 69,
+          "new": 69
+        },
+        {
+          "old": 70,
+          "new": 70
+        },
+        {
+          "old": 71,
+          "new": 71
+        },
+        {
+          "old": 72,
+          "new": 72
+        },
+        {
+          "old": 73,
+          "new": 73
+        },
+        {
+          "old": 74,
+          "new": 74
+        },
+        {
+          "old": 75,
+          "new": 75
+        },
+        {
+          "old": 76,
+          "new": 76
+        },
+        {
+          "old": 77,
+          "new": 77
+        },
+        {
+          "old": 78,
+          "new": 78
+        },
+        {
+          "old": 79,
+          "new": 79
+        },
+        {
+          "old": 80,
+          "new": 80
+        },
+        {
+          "old": 81,
+          "new": 81
+        },
+        {
+          "old": 82,
+          "new": 82
+        },
+        {
+          "old": 83,
+          "new": 83
+        },
+        {
+          "old": 84,
+          "new": 84
+        },
+        {
+          "old": 85,
+          "new": 85
+        },
+        {
+          "old": 86,
+          "new": 86
+        },
+        {
+          "old": 87,
+          "new": 87
+        },
+        {
+          "old": 88,
+          "new": 88
+        },
+        {
+          "old": 89,
+          "new": 89
+        },
+        {
+          "old": 90,
+          "new": 90
+        },
+        {
+          "old": 91,
+          "new": 91
+        },
+        {
+          "old": 92,
+          "new": 92
+        },
+        {
+          "old": 93,
+          "new": 93
+        },
+        {
+          "old": 94,
+          "new": 94
+        },
+        {
+          "old": 95,
+          "new": 95
+        },
+        {
+          "old": 96,
+          "new": 96
+        },
+        {
+          "old": 97,
+          "new": 97
+        },
+        {
+          "old": 98,
+          "new": 98
+        },
+        {
+          "old": 99,
+          "new": 99
+        },
+        {
+          "old": 100,
+          "new": 100
+        },
+        {
+          "old": 101,
+          "new": 101
+        },
+        {
+          "old": 102,
+          "new": 102
+        },
+        {
+          "old": 103,
+          "new": 103
+        },
+        {
+          "old": 104,
+          "new": 104
+        },
+        {
+          "old": 105,
+          "new": 105
+        },
+        {
+          "old": 106,
+          "new": 106
+        },
+        {
+          "old": 107,
+          "new": 107
+        },
+        {
+          "old": 108,
+          "new": 108
+        },
+        {
+          "old": 109,
+          "new": 109
+        },
+        {
+          "old": 110,
+          "new": 110
+        },
+        {
+          "old": 111,
+          "new": 111
+        },
+        {
+          "old": 112,
+          "new": 112
+        },
+        {
+          "old": 113,
+          "new": 113
+        },
+        {
+          "old": 114,
+          "new": 114
+        },
+        {
+          "old": 115,
+          "new": 115
+        },
+        {
+          "old": 116,
+          "new": 116
+        },
+        {
+          "old": 117,
+          "new": 117
+        },
+        {
+          "old": 118,
+          "new": 118
+        },
+        {
+          "old": 119,
+          "new": 119
+        },
+        {
+          "old": 120,
+          "new": 120
+        },
+        {
+          "old": 121,
+          "new": 121
+        },
+        {
+          "old": 122,
+          "new": 122
+        },
+        {
+          "old": 123,
+          "new": 123
+        },
+        {
+          "old": 124,
+          "new": 124
+        },
+        {
+          "old": 125,
+          "new": 125
+        },
+        {
+          "old": 126,
+          "new": 126
+        },
+        {
+          "old": 127,
+          "new": 127
+        },
+        {
+          "old": 128,
+          "new": 128
+        },
+        {
+          "old": 129,
+          "new": 129
+        },
+        {
+          "old": 130,
+          "new": 130
+        },
+        {
+          "old": 131,
+          "new": 131
+        },
+        {
+          "old": 132,
+          "new": 132
+        },
+        {
+          "old": 133,
+          "new": 133
+        },
+        {
+          "old": 134,
+          "new": 134
+        },
+        {
+          "old": 135,
+          "new": 135
+        },
+        {
+          "old": 136,
+          "new": 136
+        },
+        {
+          "old": 137,
+          "new": 137
+        },
+        {
+          "old": 138,
+          "new": 138
+        },
+        {
+          "old": 139,
+          "new": 139
+        },
+        {
+          "old": 140,
+          "new": 140
+        },
+        {
+          "old": 141,
+          "new": 141
+        },
+        {
+          "old": 142,
+          "new": 142
+        },
+        {
+          "old": 143,
+          "new": 143
+        },
+        {
+          "old": 144,
+          "new": 144
+        },
+        {
+          "old": 145,
+          "new": 145
+        },
+        {
+          "old": 146,
+          "new": 146
+        },
+        {
+          "old": 147,
+          "new": 147
+        },
+        {
+          "old": 148,
+          "new": 148
+        },
+        {
+          "old": 149,
+          "new": 149
+        },
+        {
+          "old": 150,
+          "new": 150
+        },
+        {
+          "old": 151,
+          "new": 151
+        },
+        {
+          "old": 152,
+          "new": 152
+        },
+        {
+          "old": 153,
+          "new": 153
+        },
+        {
+          "old": 154,
+          "new": 154
+        },
+        {
+          "old": 155,
+          "new": 155
+        },
+        {
+          "old": 156,
+          "new": 156
+        },
+        {
+          "old": 157,
+          "new": 157
+        },
+        {
+          "old": 158,
+          "new": 158
+        },
+        {
+          "old": 159,
+          "new": 159
+        },
+        {
+          "old": 160,
+          "new": 160
+        },
+        {
+          "old": 161,
+          "new": 161
+        },
+        {
+          "old": 162,
+          "new": 162
+        },
+        {
+          "old": 163,
+          "new": 163
+        },
+        {
+          "old": 164,
+          "new": 164
+        },
+        {
+          "old": 165,
+          "new": 165
+        },
+        {
+          "old": 166,
+          "new": 166
+        },
+        {
+          "old": 167,
+          "new": 167
+        },
+        {
+          "old": 168,
+          "new": 168
+        },
+        {
+          "old": 169,
+          "new": 169
+        },
+        {
+          "old": 170,
+          "new": 170
+        },
+        {
+          "old": 171,
+          "new": 171
+        },
+        {
+          "old": 172,
+          "new": 172
+        },
+        {
+          "old": 173,
+          "new": 173
+        },
+        {
+          "old": 174,
+          "new": 174
+        },
+        {
+          "old": 175,
+          "new": 175
+        },
+        {
+          "old": 176,
+          "new": 176
+        },
+        {
+          "old": 177,
+          "new": 177
+        },
+        {
+          "old": 178,
+          "new": 178
+        },
+        {
+          "old": 179,
+          "new": 179
+        },
+        {
+          "old": 180,
+          "new": 180
+        },
+        {
+          "old": 181,
+          "new": 181
+        },
+        {
+          "old": 182,
+          "new": 182
+        },
+        {
+          "old": 183,
+          "new": 183
+        },
+        {
+          "old": 184,
+          "new": 184
+        },
+        {
+          "old": 185,
+          "new": 185
+        },
+        {
+          "old": 186,
+          "new": 186
+        },
+        {
+          "old": 187,
+          "new": 187
+        },
+        {
+          "old": 188,
+          "new": 188
+        },
+        {
+          "old": 189,
+          "new": 189
+        },
+        {
+          "old": 190,
+          "new": 190
+        },
+        {
+          "old": 191,
+          "new": 191
+        },
+        {
+          "old": 192,
+          "new": 192
+        },
+        {
+          "old": 193,
+          "new": 193
+        },
+        {
+          "old": 194,
+          "new": 194
+        },
+        {
+          "old": 195,
+          "new": 195
+        },
+        {
+          "old": 196,
+          "new": 196
+        },
+        {
+          "old": 197,
+          "new": 197
+        },
+        {
+          "old": 198,
+          "new": 198
+        },
+        {
+          "old": 199,
+          "new": 199
+        },
+        {
+          "old": 200,
+          "new": 200
+        },
+        {
+          "old": 201,
+          "new": 201
+        },
+        {
+          "old": 202,
+          "new": 202
+        },
+        {
+          "old": 203,
+          "new": 203
+        },
+        {
+          "old": 204,
+          "new": 204
+        },
+        {
+          "old": 205,
+          "new": 205
+        },
+        {
+          "old": 206,
+          "new": 206
+        },
+        {
+          "old": 207,
+          "new": 207
+        },
+        {
+          "old": 208,
+          "new": 208
+        },
+        {
+          "old": 209,
+          "new": 209
+        },
+        {
+          "old": 210,
+          "new": 210
+        },
+        {
+          "old": 211,
+          "new": 211
+        },
+        {
+          "old": 212,
+          "new": 212
+        },
+        {
+          "old": 213,
+          "new": 213
+        },
+        {
+          "old": 214,
+          "new": 214
+        },
+        {
+          "old": 215,
+          "new": 215
+        },
+        {
+          "old": 216,
+          "new": 216
+        },
+        {
+          "old": 217,
+          "new": 217
+        },
+        {
+          "old": 218,
+          "new": 218
+        },
+        {
+          "old": 219,
+          "new": 219
+        },
+        {
+          "old": 220,
+          "new": 220
+        },
+        {
+          "old": 221,
+          "new": 221
+        },
+        {
+          "old": 222,
+          "new": 222
+        },
+        {
+          "old": 223,
+          "new": 223
+        },
+        {
+          "old": 224,
+          "new": 224
+        },
+        {
+          "old": 225,
+          "new": 225
+        },
+        {
+          "old": 226,
+          "new": 226
+        },
+        {
+          "old": 227,
+          "new": 227
+        },
+        {
+          "old": 228,
+          "new": 228
+        },
+        {
+          "old": 229,
+          "new": 229
+        },
+        {
+          "old": 230,
+          "new": 230
+        },
+        {
+          "old": 231,
+          "new": 231
+        },
+        {
+          "old": 232,
+          "new": 232
+        },
+        {
+          "old": 233,
+          "new": 233
+        },
+        {
+          "old": 234,
+          "new": 234
+        },
+        {
+          "old": 235,
+          "new": 235
+        },
+        {
+          "old": 236,
+          "new": 236
+        },
+        {
+          "old": 237,
+          "new": 237
+        },
+        {
+          "old": 238,
+          "new": 238
+        },
+        {
+          "old": 239,
+          "new": 239
+        },
+        {
+          "old": 240,
+          "new": 240
+        },
+        {
+          "old": 241,
+          "new": 241
+        },
+        {
+          "old": 242,
+          "new": 242
+        },
+        {
+          "old": 243,
+          "new": 243
+        },
+        {
+          "old": 244,
+          "new": 244
+        },
+        {
+          "old": 245,
+          "new": 245
+        },
+        {
+          "old": 246,
+          "new": 246
+        },
+        {
+          "old": 247,
+          "new": 247
+        },
+        {
+          "old": 248,
+          "new": 248
+        },
+        {
+          "old": 249,
+          "new": 249
+        },
+        {
+          "old": 250,
+          "new": 250
+        },
+        {
+          "old": 251,
+          "new": 251
+        },
+        {
+          "old": 252,
+          "new": 252
+        },
+        {
+          "old": 253,
+          "new": 253
+        },
+        {
+          "old": 254,
+          "new": 254
+        },
+        {
+          "old": 255,
+          "new": 255
+        },
+        {
+          "old": 256,
+          "new": 256
+        },
+        {
+          "old": 257,
+          "new": 257
+        },
+        {
+          "old": 258,
+          "new": 258
+        },
+        {
+          "old": 259,
+          "new": 259
+        },
+        {
+          "old": 260,
+          "new": 260
+        },
+        {
+          "old": 261,
+          "new": 261
+        },
+        {
+          "old": 262,
+          "new": 262
+        },
+        {
+          "old": 263,
+          "new": 263
+        },
+        {
+          "old": 264,
+          "new": 264
+        },
+        {
+          "old": 265,
+          "new": 265
+        },
+        {
+          "old": 266,
+          "new": 266
+        },
+        {
+          "old": 267,
+          "new": 267
+        },
+        {
+          "old": 268,
+          "new": 268
+        },
+        {
+          "old": 269,
+          "new": 269
+        },
+        {
+          "old": 270,
+          "new": 270
+        },
+        {
+          "old": 271,
+          "new": 271
+        },
+        {
+          "old": 272,
+          "new": 272
+        },
+        {
+          "old": 273,
+          "new": 273
+        },
+        {
+          "old": 274,
+          "new": 274
+        },
+        {
+          "old": 275,
+          "new": 275
+        },
+        {
+          "old": 276,
+          "new": 276
+        },
+        {
+          "old": 277,
+          "new": 277
+        },
+        {
+          "old": 278,
+          "new": 278
+        },
+        {
+          "old": 279,
+          "new": 279
+        },
+        {
+          "old": 280,
+          "new": 280
+        },
+        {
+          "old": 281,
+          "new": 281
+        },
+        {
+          "old": 282,
+          "new": 282
+        },
+        {
+          "old": 283,
+          "new": 283
+        },
+        {
+          "old": 284,
+          "new": 284
+        },
+        {
+          "old": 285,
+          "new": 285
+        },
+        {
+          "old": 286,
+          "new": 286
+        },
+        {
+          "old": 287,
+          "new": 287
+        },
+        {
+          "old": 288,
+          "new": 288
+        },
+        {
+          "old": 289,
+          "new": 289
+        },
+        {
+          "old": 290,
+          "new": 290
+        },
+        {
+          "old": 291,
+          "new": 291
+        },
+        {
+          "old": 292,
+          "new": 292
+        },
+        {
+          "old": 293,
+          "new": 293
+        },
+        {
+          "old": 294,
+          "new": 294
+        },
+        {
+          "old": 295,
+          "new": 295
+        },
+        {
+          "old": 296,
+          "new": 296
+        },
+        {
+          "old": 297,
+          "new": 297
+        }
+      ],
+      "changed_page_pairs": [
+        {
+          "old": 12,
+          "new": 12
+        },
+        {
+          "old": 25,
+          "new": 25
+        },
+        {
+          "old": 298,
+          "new": 315
+        },
+        {
+          "old": 299,
+          "new": 316
+        },
+        {
+          "old": 300,
+          "new": 317
+        },
+        {
+          "old": 301,
+          "new": 318
+        },
+        {
+          "old": 302,
+          "new": 319
+        },
+        {
+          "old": 303,
+          "new": 320
+        }
+      ],
+      "text_changed_pairs": [
+        {
+          "old": 12,
+          "new": 12
+        },
+        {
+          "old": 25,
+          "new": 25
+        },
+        {
+          "old": 298,
+          "new": 315
+        },
+        {
+          "old": 299,
+          "new": 316
+        },
+        {
+          "old": 300,
+          "new": 317
+        },
+        {
+          "old": 301,
+          "new": 318
+        },
+        {
+          "old": 302,
+          "new": 319
+        },
+        {
+          "old": 303,
+          "new": 320
+        }
+      ],
+      "old_labels": 958,
+      "current_labels": 1026,
+      "label_differences": [],
+      "rendered_pages": [
+        12,
+        25,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320
+      ],
+      "body_clip_pt": [
+        0,
+        0,
+        595.2760009765625,
+        786
+      ],
+      "shifted_references_body_identical": [
+        {
+          "old": 298,
+          "new": 315
+        },
+        {
+          "old": 299,
+          "new": 316
+        },
+        {
+          "old": 300,
+          "new": 317
+        },
+        {
+          "old": 302,
+          "new": 319
+        }
+      ],
+      "shifted_references_body_changed": [
+        {
+          "old": 301,
+          "new": 318
+        },
+        {
+          "old": 303,
+          "new": 320
+        }
+      ],
+      "visual_review": {
+        "pages": [
+          12,
+          25,
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305,
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320
+        ],
+        "page_count": 25,
+        "mode": "13 sheets, two pages per sheet (last one single), rendered with PyMuPDF at 96 dpi; every sheet inspected with view_image",
+        "note25_pages": [
+          298,
+          314
+        ],
+        "toc_pages": [
+          12
+        ],
+        "guide_pages": [
+          25
+        ],
+        "references_and_state_pages": [
+          315,
+          320
+        ],
+        "findings": [],
+        "layout_pass": true,
+        "scope": "Visual layout review; does not constitute a new mathematical audit or Lean execution"
+      },
+      "final_log_warnings": [],
+      "base_labels_number_and_page_unchanged": true,
+      "new_labels": 68
+    },
+    "verificacion_ejemplos": {
+      "estado": "COMPROBADO",
+      "aritmetica": "exacta",
+      "ejercicios": [
+        {
+          "ejercicio": "25.1",
+          "longitudes": [
+            2,
+            6
+          ],
+          "individual": 2
+        },
+        {
+          "ejercicio": "25.2",
+          "parejas": [
+            2,
+            2
+          ],
+          "separador": 1250,
+          "valoracion": 4
+        },
+        {
+          "ejercicio": "25.3",
+          "longitud": 7,
+          "anulador": 5,
+          "fitting": 7,
+          "normalizada": "7/3"
+        },
+        {
+          "ejercicio": "25.4",
+          "separadores": [
+            {
+              "primo": 3,
+              "a": 4,
+              "valoracion_directa": 6,
+              "valoracion_formula": 6
+            },
+            {
+              "primo": 2,
+              "a": 5,
+              "valoracion_directa": 13,
+              "valoracion_formula": 13
+            }
+          ]
+        },
+        {
+          "ejercicio": "25.5",
+          "longitud_Q": 15,
+          "cota": 15,
+          "cota_insuficiente_para_nucleo_multiplicado": 8
+        },
+        {
+          "ejercicio": "25.6",
+          "todas_las_parejas": 13,
+          "un_bloque_por_torcido": 6,
+          "eta_sin_duplicar": 18
+        }
+      ]
+    },
+    "revision_matematica": {
+      "tipo": "lectura independiente localizada de los enunciados, pruebas e hipótesis de la nueva nota",
+      "alcance": "Álgebra de defectos y de ideales, filtración retenida, compresión, descenso de determinantes, cobordes, condiciones locales, cambio de coeficientes, valoración ciclotómica y presupuesto ponderado.",
+      "proveedores_especializados": "Recibidos con las hipótesis explícitas de los archivos cotejados; no se declara una construcción uniforme completa de toda la familia."
+    },
+    "siguiente_desarrollo": [
+      "Proveedores locales uniformes del módulo de columnas y levantamientos",
+      "Comparación TieRow y núcleos de invariantes",
+      "Transporte a bases aritméticas variables",
+      "Uniformidad de generadores y errores al variar torres y ventanas"
+    ],
+    "lean_ejecutado": false,
+    "clausura_auditada": false,
+    "certificacion_grh": false,
+    "publicacion_nota25_realizada": false,
+    "markdown_incorporado_a_boveda": false
   }
+
 }

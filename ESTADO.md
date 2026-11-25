@@ -1,5 +1,22 @@
 # Estado del cuaderno
 
+## Nota 25 preparada, 24 de noviembre de 2026
+
+Base publicada verificada: `6fdbf39a2a106b32fa33f6745944d979bbcce711`. La edición de 24 notas y su PDF coinciden con los 38 blobs del repositorio recuperado. Se incorpora la **Nota 25, «Comparación integral theta y filtración del defecto aritmético»**, con 22 apartados, 15 resultados demostrados, 45 ecuaciones numeradas y seis ejercicios resueltos.
+
+La nota construye el defecto de proyección y su filtración; compara los ideales de parejas con el ideal que separa un sistema de Hecke; reconstruye la compresión simultánea y el descenso de determinantes; precisa el módulo de columnas, el coste de los cobordes y las condiciones locales. Se distinguen las multiplicidades de Hecke, un bloque por torcido negativo y los errores locales. La normalización cancela el índice de ramificación bajo la comparación de coeficientes indicada; el factor dos se reserva para la fórmula de pendientes.
+
+- PDF integrado: **320 páginas**; Nota 25, **pp. 298–314**. Compilación sin advertencias, referencias pendientes ni cajas desbordadas.
+- Las **958 etiquetas anteriores** conservan número y página; 68 nuevas, 1026 en total. Dentro de las pp. 1–297, **295 páginas** conservan todos los píxeles RGB a 96 ppp; cambian solo las pp. 12 y 25.
+- Inspección visual de las **25 páginas** nuevas o modificadas: 12, 25 y 298–320, mediante 13 láminas a 96 ppp. Las 17 páginas de la nueva nota quedaron cubiertas. La comparación de píxeles traslada el alcance de la revisión anterior; no equivale a releer matemáticamente todo el libro.
+- SHA-256 del PDF integrado: `0af324b4216daff844da03401039064865e9216f14e27a29689679cb70baf807`. La copia de lectura coincide con el resultado compilado revisado.
+- Cotejo de A93 y 37 archivos Lean: 27 completos y diez selectivos. Se registra por separado la recepción de otros 27. **No se ejecutó Lean ni se auditó su clausura transitiva.**
+- Esta entrega está preparada localmente. La **publicación de la Nota 25 no se ha realizado**; la edición remota verificada sigue siendo la de 24 notas. El paquete de integración valida la base y sus archivos antes de preparar un árbol de trabajo separado. La incorporación del Markdown al cuaderno externo es manual.
+
+### Punto de reanudación
+
+Construir los proveedores locales uniformes: levantamientos del módulo de columnas, comparación `TieRow`, núcleos de invariantes y transporte a bases variables. Conservar explícitos los errores y fijar las constantes antes de variar primos auxiliares, altura de torre y ventana. La cota de capa fija con $C_K=111$ permanece bajo sus entradas y no sustituye estas comparaciones.
+
 ## Edición consolidada, 24 de noviembre de 2026
 
 Base: `8e763183f77f37aec6179ca1b50c59fef385fdee`. Se integran las ocho notas revisadas 17–24. Las Notas 17–24 desarrollan la realización de ciclos, el conteo de clases y unidades, el transporte a Selmer, las evaluaciones finitas, el rango homológico impar, Hecke, alturas y estabilidad integral. Se conserva la deducción $C_K=111$ bajo las entradas clásicas y matemáticas explicitadas. La auditoría es localizada: no se ha ejecutado Lean ni comprobado su clausura transitiva; no se certifica GRH. Persisten las tareas de comparación integral theta y uniformidad de generadores y torres variables.
@@ -21,7 +38,7 @@ Base: `8e763183f77f37aec6179ca1b50c59fef385fdee`. Se integran las ocho notas rev
 | 23 | 268–284 | Alturas, particiones de la unidad y reducción aritmética |
 | 24 | 285–297 | Estabilidad homológica integral sobre dominios de Dedekind |
 
-### Siguiente desarrollo registrado tras la Nota 16
+### Siguiente desarrollo registrado tras la edición de 24 notas
 
 Comparación integral theta y control de sus graduados, núcleos y errores; uniformidad en bases variables y cotas de torre. La conclusión de la capa fija conserva las entradas clásicas y el alcance de la auditoría.
 

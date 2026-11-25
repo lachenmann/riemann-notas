@@ -1,0 +1,1317 @@
+\section{Comparación integral theta y filtración del defecto aritmético}
+\label{sec:theta-integral}
+
+\fuente{A93, §8, (8.16)--(8.18), pp.~60--61, y §9, pp.~62--64.
+Notas~\ref{sec:congruencias-selmer}--\ref{sec:finitud-uniforme}.
+El cotejo de código usa exclusivamente el espejo
+\texttt{CocoSgt/riemann-hypothesis-lean} en la revisión
+\texttt{7cbf7a0c32fca1badf05931879a37c3f8a2b03b4}.
+Las pruebas de retículos, ideales y normalizaciones se desarrollan aquí;
+las entradas de la comparación automorfa se identifican por separado.}
+
+Las Notas 15--24 reconstruyen la cota de una capa fija y sus
+proveedores. Para utilizar esa cota en las torres theta hay que resolver
+otro problema: relacionar una pérdida de integralidad de los retículos
+automorfos con las longitudes cohomológicas que se han estimado.
+La Proposición~\ref{prop:rs-filtracion} ya explica cómo sumar longitudes
+\emph{una vez dados} una filtración y sus mapas. Ahora construiremos
+cocientes y filtraciones concretos de retículos, completaremos la
+comparación de ideales de Hecke y precisaremos qué construcción
+adicional emplea la fuente para llegar a Selmer.
+
+El avance tiene dos niveles. En álgebra integral obtenemos resultados
+con demostración, aplicables a cualquier retículo que satisfaga sus
+hipótesis. En la familia theta localizamos los módulos, los bloques y
+los productores de la desigualdad; conservamos sus entradas de
+representaciones, condiciones locales y comparación integral.
+Una filtración algebraica disponible no se identifica automáticamente
+con la filtración cohomológica de esa familia.
+
+\subsection{El defecto de una proyección como cociente de pegado}
+
+Sea $K$ una extensión finita de $\Q_\ell$, con anillo de enteros
+$\mathcal O$, uniformizante $\varpi$ y $v_\varpi(\varpi)=1$.
+Escribimos $e_{\mathcal O}=v_\varpi(\ell)$.
+Sea $V=U\oplus W$ un espacio vectorial de dimensión finita sobre $K$,
+$p:V\to U$ la proyección y $M\subset V$ un retículo completo.
+Definimos
+\begin{equation}
+ L_U=M\cap U,\quad L_W=M\cap W,\quad
+ P_U=pM,\quad P_W=(1-p)M,\qquad
+ \Gamma(M;U,W)=\frac{M}{L_U\oplus L_W}.
+ \label{eq:ti-pegado}
+\end{equation}
+Las intersecciones y las proyecciones son retículos de los espacios
+correspondientes. Por ejemplo, multiplicar por una potencia suficiente
+de $\varpi$ cualquier base de $U$ la sitúa en $M\cap U$.
+Todos los cocientes que siguen tienen longitud finita.
+
+\begin{proposicion}[Dos descripciones del mismo defecto]
+\label{prop:ti-pegado}
+Las proyecciones inducen isomorfismos
+\begin{equation}
+ \Gamma(M;U,W)\simeq P_U/L_U\simeq P_W/L_W.
+ \label{eq:ti-pegado-iso}
+\end{equation}
+En particular, medir el defecto desde cada lado no produce dos
+pérdidas que deban sumarse.
+\end{proposicion}
+\begin{proof}
+El mapa $M\to P_U/L_U$, $m\mapsto pm+L_U$, es sobreyectivo.
+Si $pm\in L_U$, entonces $m-pm\in M\cap W=L_W$, de modo que
+su núcleo es $L_U\oplus L_W$. El primer teorema de isomorfía
+da la primera identificación. El mismo argumento con $1-p$
+da la segunda. La isomorfía entre los dos cocientes envía
+$pm+L_U$ a $(1-p)m+L_W$; cambiar el representante modifica
+ambas coordenadas solo por sus respectivos retículos.
+\end{proof}
+
+También hay una descripción constructiva. Si $\phi:P_U/L_U\to
+P_W/L_W$ es la isomorfía anterior, entonces
+\begin{equation}
+ M=\{(u,w)\in P_U\oplus P_W:
+                    \phi(u+L_U)=w+L_W\}.
+ \label{eq:ti-fibra}
+\end{equation}
+Para demostrar la inclusión no inmediata, elija $m\in M$ con
+$pm=u$. La condición de la derecha dice que
+$w-(1-p)m\in L_W$, por lo que $(u,w)\in M$.
+Así, el defecto conserva exactamente la información necesaria
+para pegar las dos proyecciones.
+
+\subsection{Una filtración explícita para varios bloques}
+
+Supongamos ahora $V=\bigoplus_{i=1}^s V_i$, con proyectores $p_i$.
+Pongamos $L_i=M\cap V_i$, $W_j=\bigoplus_{i\le j}V_i$ y
+$M_j=M\cap W_j$. El defecto de la descomposición completa es
+\begin{equation}
+ D^-(M)=M/\bigoplus_{i=1}^s L_i.
+ \label{eq:ti-defecto-total}
+\end{equation}
+El orden de los bloques se fija antes de construir la filtración.
+
+\begin{proposicion}[Graduados de la filtración de intersecciones]
+\label{prop:ti-filtracion}
+Los módulos $F_j=M_j/\bigoplus_{i\le j}L_i$ se inyectan de forma
+natural en $D^-(M)$ y forman una filtración
+$0=F_1\subseteq\cdots\subseteq F_s=D^-(M)$.
+Sus graduados son
+\begin{equation}
+ F_j/F_{j-1}\simeq Q_j:=(p_jM_j)/L_j\quad(2\le j\le s).
+ \label{eq:ti-graduados}
+\end{equation}
+Por tanto
+\begin{equation}
+ \length_{\mathcal O}D^-(M)=\sum_{j=2}^s\length_{\mathcal O}Q_j.
+ \label{eq:ti-longitud-filtracion}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+El núcleo de $M_j\to D^-(M)$ es $\bigoplus_{i\le j}L_i$,
+porque una suma de vectores de los bloques $i>j$ no pertenece
+a $W_j$ salvo que todos esos vectores sean cero.
+La proyección $M_j\to p_jM_j$ tiene núcleo $M_{j-1}$.
+Al componer con el cociente por $L_j$, el núcleo pasa a ser
+$M_{j-1}\oplus L_j$. Cocientar primero por
+$\bigoplus_{i\le j}L_i$ demuestra \eqref{eq:ti-graduados}.
+La aditividad de longitudes da \eqref{eq:ti-longitud-filtracion}.
+\end{proof}
+
+El graduado usa $p_j(M\cap W_j)$, no $p_jM$.
+Se obtiene una inyección $Q_j\hookrightarrow p_jM/L_j$,
+pero reemplazar todos los graduados por estos módulos mayores
+solo proporciona una cota. El ejemplo siguiente muestra
+por qué las distinciones son necesarias.
+
+Más precisamente, si $D^+(M)=(\bigoplus_i p_iM)/M$, la cadena
+$\bigoplus_i L_i\subseteq M\subseteq\bigoplus_i p_iM$ da
+\begin{equation}
+ 0\longrightarrow D^-(M)\longrightarrow
+ \bigoplus_i(p_iM/L_i)\longrightarrow D^+(M)\longrightarrow0.
+ \label{eq:ti-dos-defectos-exacta}
+\end{equation}
+La primera aplicación envía la clase de $m$ a las clases de sus
+proyecciones; el cociente es precisamente $D^+(M)$.
+Así, la suma de las longitudes de los defectos individuales es
+$\length D^-(M)+\length D^+(M)$, no dos veces una longitud
+común en general.
+
+Defina $M_a=\{(x_1,\ldots,x_s)\in\mathcal O^s:
+x_i\equiv x_1\pmod{\varpi^a}\}$, con $a\ge1$, $s\ge2$.
+Entonces $L_i=\varpi^a\mathcal O e_i$, $p_iM_a=\mathcal Oe_i$ y
+\begin{equation}
+ \length D^-(M_a)=a,\qquad
+ \length\left(\frac{\bigoplus_i p_iM_a}{M_a}\right)=(s-1)a.
+ \label{eq:ti-dos-defectos}
+\end{equation}
+En efecto, el primer cociente es la diagonal en
+$(\mathcal O/\varpi^a)^s$; el segundo se identifica con
+$(\mathcal O/\varpi^a)^{s-1}$ mediante
+$(x_i)\mapsto(x_2-x_1,\ldots,x_s-x_1)$.
+Para $j<s$, $M_a\cap W_j=\bigoplus_{i\le j}L_i$;
+solo el último graduado de \eqref{eq:ti-graduados} es no nulo.
+El defecto de ampliar $M$ a la suma de sus proyecciones y el
+defecto de reducirlo a la suma de sus intersecciones son distintos
+cuando hay más de dos bloques.
+
+\subsection{Aniquiladores, ideales de Fitting y rangos}
+
+Para un módulo de longitud finita $Q$, escribamos
+$Q\simeq\bigoplus_{j=1}^g\mathcal O/\varpi^{a_j}\mathcal O$,
+con $a_j\ge1$. La forma normal de Smith da
+\begin{equation}
+ \length Q=\sum_j a_j,\quad
+ \operatorname{Ann}_{\mathcal O}Q=(\varpi^{\max_j a_j}),\quad
+ \operatorname{Fitt}_{0,\mathcal O}(Q)=(\varpi^{\sum_j a_j}).
+ \label{eq:ti-fitt}
+\end{equation}
+Para $Q=0$, ambos ideales son $\mathcal O$.
+El ideal de Fitting se define por los menores máximos de una
+presentación; su independencia de la presentación y sus propiedades
+básicas figuran en Stacks, etiquetas 07Z6 y 07ZA.
+La fórmula sobre un anillo de valoración discreta también se prueba
+directamente con la presentación diagonal indicada.
+
+\begin{lema}[Denominador exacto y coste de rango]
+\label{lem:ti-ann}
+El ideal de escalares que reparan el proyector $p$ es
+\begin{equation}
+ \mathfrak a_M(p):=\{a\in\mathcal O:apM\subseteq M\}
+ =\operatorname{Ann}_{\mathcal O}\Gamma(M;U,W).
+ \label{eq:ti-ann}
+\end{equation}
+Si $\mathfrak a_M(p)=(\varpi^b)$, entonces
+\begin{equation}
+ b\le\length\Gamma(M;U,W)
+ \le\min(\dim_KU,\dim_KW)b.
+ \label{eq:ti-rango}
+\end{equation}
+La desigualdad izquierda se interpreta como $0\le0$ para el
+módulo nulo.
+\end{lema}
+\begin{proof}
+Como $apM\subseteq U$, la condición $apM\subseteq M$ equivale
+a $aP_U\subseteq L_U$. Esto prueba \eqref{eq:ti-ann}.
+El cociente $P_U/L_U$ admite a lo sumo $\dim_KU$ generadores;
+por \eqref{eq:ti-pegado-iso}, también admite a lo sumo
+$\dim_KW$. Sus factores cíclicos tienen exponentes a lo sumo
+$b$ y alguno tiene exponente $b$ cuando el módulo no es cero.
+Sumarlos prueba \eqref{eq:ti-rango}.
+\end{proof}
+
+Así, un aniquilador controla el exponente del módulo y solo
+controla su longitud después de conservar un número de generadores.
+Para $Q=(\mathcal O/\varpi^a)^g$, la longitud es $ga$ y el
+aniquilador sigue siendo $(\varpi^a)$. Reemplazar el ideal de
+Fitting por el aniquilador perdería el factor $g$.
+
+\subsection{Separar todas las parejas de sistemas de Hecke}
+
+Sea $X$ finito y $\mathbb T\subseteq\mathcal O^X$ una
+$\mathcal O$-subálgebra que contiene los escalares diagonales
+y satisface $\mathbb T\otimes_{\mathcal O}K=K^X$.
+Escribamos $\lambda_\pi:\mathbb T\to\mathcal O$ para la
+coordenada $\pi$. Para $\pi\ne\sigma$ ponemos
+\begin{equation}
+ I_{\pi\sigma}=(\lambda_\pi(T)-\lambda_\sigma(T):T\in\mathbb T),
+ \qquad
+ \mathfrak c_\pi=\{a\in\mathcal O:a e_\pi\in\mathbb T\}.
+ \label{eq:ti-ideales}
+\end{equation}
+Todos estos ideales son no nulos: la igualdad genérica permite
+multiplicar cada idempotente de coordenada por un escalar no nulo
+y obtener un elemento de $\mathbb T$.
+
+\begin{teorema}[Comparación bilateral de ideales]
+\label{thm:ti-separadores}
+Se tienen las inclusiones
+\begin{equation}
+ \prod_{\sigma\ne\pi}I_{\pi\sigma}
+ \subseteq\mathfrak c_\pi
+ \subseteq\bigcap_{\sigma\ne\pi}I_{\pi\sigma}.
+ \label{eq:ti-ideales-bilateral}
+\end{equation}
+Si $n_{\pi\sigma}=v_\varpi(I_{\pi\sigma})$ y
+$b_\pi=v_\varpi(\mathfrak c_\pi)$, entonces
+\begin{equation}
+ \max_{\sigma\ne\pi}n_{\pi\sigma}
+ \le b_\pi\le\sum_{\sigma\ne\pi}n_{\pi\sigma}.
+ \label{eq:ti-valoraciones}
+\end{equation}
+Para $X=\{\pi\}$, el producto y la intersección vacíos son
+$\mathcal O$ y las cotas son cero.
+\end{teorema}
+\begin{proof}
+Si $a e_\pi\in\mathbb T$, su diferencia de coordenadas
+$\pi,\sigma$ es $a$; por tanto $\mathfrak c_\pi\subseteq
+I_{\pi\sigma}$ para todo $\sigma\ne\pi$.
+Para la otra inclusión, observe que el conjunto de diferencias
+$\lambda_\pi(T)-\lambda_\sigma(T)$ ya es un ideal, porque
+es la imagen de una aplicación $\mathcal O$-lineal.
+Elija $T_\sigma$ cuya diferencia sea un generador
+$a_\sigma$ de $I_{\pi\sigma}$.
+El elemento $S_\sigma=T_\sigma-\lambda_\sigma(T_\sigma)1$
+pertenece a $\mathbb T$, vale cero en $\sigma$ y vale
+$a_\sigma$ en $\pi$. El producto de los $S_\sigma$ vale
+cero en toda coordenada distinta de $\pi$ y vale
+$\prod_\sigma a_\sigma$ en $\pi$.
+Luego el producto de los ideales está contenido en
+$\mathfrak c_\pi$. En un anillo de valoración discreta,
+la inclusión de ideales invierte el orden de sus valoraciones;
+la intersección tiene la valoración máxima. Se obtiene
+\eqref{eq:ti-valoraciones}.
+\end{proof}
+
+La Nota~\ref{sec:construccion-selmer} estableció la inclusión
+de la derecha para explicar por qué una sola pareja no basta.
+La inclusión de la izquierda proporciona ahora una cota superior
+cuando se controlan \emph{todas} las parejas necesarias.
+Su coste es una suma, que debe conservarse al variar la familia.
+
+Ambos extremos pueden alcanzarse. Para el orden $M_a$ de
+\eqref{eq:ti-dos-defectos}, todos los $I_{\pi\sigma}$ y todos
+los $\mathfrak c_\pi$ son $(\varpi^a)$: se alcanza el máximo.
+En cambio, considere la imagen de $\mathcal O[T]$ por evaluación
+en $0,\varpi^a,2\varpi^a$, con $\ell$ impar.
+Las diferencias entre la primera coordenada y cada una de las
+otras generan $(\varpi^a)$. Un polinomio que se anula en
+$\varpi^a$ y $2\varpi^a$ es divisible en $\mathcal O[T]$
+por $(T-\varpi^a)(T-2\varpi^a)$, mediante división por
+polinomios mónicos y cancelación en el dominio $\mathcal O$.
+Su valor en cero pertenece a $(2\varpi^{2a})$, y el producto
+de esos dos factores alcanza ese valor. Así
+$\mathfrak c_1=(\varpi^{2a})$: se alcanza la suma.
+
+\subsection{Del orden de Hecke al retículo que realmente se usa}
+
+Supongamos que $V=\bigoplus_{\pi\in X}V_\pi$, que $\mathbb T$
+actúa en $V_\pi$ por $\lambda_\pi$ y que preserva $M$.
+Escribamos $d_\pi=\dim_KV_\pi$ y
+$D_\pi=p_\pi M/(M\cap V_\pi)$.
+
+\begin{proposicion}[Cota del defecto por congruencias de todas las parejas]
+\label{prop:ti-defecto-parejas}
+Con $r_\pi=\min(d_\pi,\dim_KV-d_\pi)$ se cumple
+\begin{equation}
+ \length D_\pi\le r_\pi b_\pi
+ \le r_\pi\sum_{\sigma\ne\pi}n_{\pi\sigma}.
+ \label{eq:ti-defecto-parejas}
+\end{equation}
+No se requiere que $\mathbb T$ sea toda el álgebra de operadores
+diagonales que preservan $M$.
+\end{proposicion}
+\begin{proof}
+Si $a\in\mathfrak c_\pi$, el operador $a p_\pi$ pertenece
+a $\mathbb T$ y preserva $M$. Por \eqref{eq:ti-ann},
+$\mathfrak c_\pi\subseteq\operatorname{Ann}D_\pi$.
+El Lema~\ref{lem:ti-ann}, aplicado al bloque $V_\pi$ y su
+complemento, da la primera desigualdad; el
+Teorema~\ref{thm:ti-separadores} da la segunda.
+\end{proof}
+
+La inclusión puede ser estricta. El orden
+$\{(x,y):x\equiv y\pmod{\varpi^a}\}$ preserva
+$M=\mathcal O^2$, cuyo proyector es integral. Aquí
+$\mathfrak c_1=(\varpi^a)$ pero $D_1=0$.
+La igualdad con el aniquilador sí vale para el orden máximo
+relativo a este retículo,
+$\mathbb T_M=\{(a_\pi)\in\mathcal O^X:
+\sum_\pi a_\pi p_\pi M\subseteq M\}$,
+por la propia definición \eqref{eq:ti-ann}.
+Esto identifica una condición suficiente para pasar de una cota
+a una igualdad de denominadores.
+
+\subsection{Una consecuencia Selmer con multiplicidades visibles}
+
+El siguiente resultado combina la comparación de ideales recién
+probada con mapas aritméticos dados. No presupone que esos mapas
+existan para cualquier orden.
+
+\begin{teorema}[Cota condicionada por parejas]
+\label{thm:ti-parejas-selmer}
+En la situación de la Proposición~\ref{prop:ti-defecto-parejas},
+supongamos que, para cada $\sigma\ne\pi$, existe un homomorfismo $\mathcal O$-lineal
+$\mathcal O/I_{\pi\sigma}\to\bigoplus_e S_e^{\oplus m_{\pi\sigma e}}$
+con núcleo de longitud a lo sumo $\kappa_{\pi\sigma}$,
+donde los $S_e$ tienen longitud finita y las multiplicidades son
+enteros no negativos con soporte finito. Entonces
+\begin{equation}
+ \length D_\pi\le
+ r_\pi\left\{\sum_{\sigma\ne\pi}\kappa_{\pi\sigma}
+       +\sum_e\Bigl(\sum_{\sigma\ne\pi}m_{\pi\sigma e}\Bigr)
+                       \length S_e\right\}.
+ \label{eq:ti-parejas-selmer}
+\end{equation}
+\end{teorema}
+\begin{proof}
+La sucesión del núcleo y la imagen de cada mapa da
+\[
+ n_{\pi\sigma}\le\kappa_{\pi\sigma}+
+ \sum_e m_{\pi\sigma e}\length S_e.
+\]
+Se suman estas desigualdades y se aplica
+\eqref{eq:ti-defecto-parejas}. Todas las sumas aquí son finitas.
+\end{proof}
+
+Esta ruta da una cota concreta del proyector desde todas las
+congruencias por parejas. Puede resultar demasiado costosa para
+la aplicación theta: al sumar en $\pi$ reaparecen parejas y factores
+de rango. Una construcción por bloques que compare directamente
+un módulo de defecto puede evitar ese coste. La filtración de
+\eqref{eq:ti-graduados} proporciona graduados identificados;
+todavía hace falta construir sus mapas cohomológicos.
+
+\subsection{Signo del torcido y recuento de multiplicidades}
+
+Para una extensión de caracteres con subcarácter $\alpha$ y
+carácter cociente $\beta$, la entrada superior derecha $b(g)$
+da el cociclo $z(g)=b(g)\beta(g)^{-1}$ con acción $\alpha\beta^{-1}$,
+como se probó en la Nota~\ref{sec:construccion-selmer}.
+Si $\alpha=\nu\chi_\ell^a$ y $\beta=\nu\chi_\ell^b$, el
+carácter común $\nu$ se cancela y el torcido es $a-b$.
+Para obtener $-e$ con $e>0$ se necesita $b-a=e$.
+Invertir submódulo y cociente invierte el signo.
+
+Si los bloques tienen multiplicidades $r_a,r_b$, entonces
+\begin{equation}
+ \operatorname{Hom}_{\mathcal O}
+   (\mathcal O(\nu\chi_\ell^b)^{r_b},
+    \mathcal O(\nu\chi_\ell^a)^{r_a})
+ \simeq\mathcal O(\chi_\ell^{a-b})^{r_a r_b}.
+ \label{eq:ti-mult-hom}
+\end{equation}
+La demostración consiste en escribir un homomorfismo como matriz:
+cada una de sus $r_a r_b$ entradas se transforma por el cociente
+de caracteres. Con bases compatibles, la cohomología de esta suma
+finita se descompone en el mismo número de copias. Esto describe
+el espacio de extensiones disponible; no prueba que un defecto
+de Hecke se inyecte en él.
+
+Para pesos consecutivos $0,\ldots,t-1$ con multiplicidad uno,
+un recuento de \emph{todas} las parejas da $t-e$ copias del
+torcido $-e$. El presupuesto sería
+$\sum_{e=1}^{t-1}(t-e)\length S_e$, no
+$\sum_{e=1}^{t-1}\length S_e$.
+Además, dos bloques de rango $r$ producen $r^2$ entradas en
+\eqref{eq:ti-mult-hom}, aunque su rango total solo sea $2r$.
+Por tanto un control lineal en el rango de base requiere
+información de la construcción, y no se deduce del recuento
+de todas las parejas.
+
+Los bloques de igual peso tienen torcido cero. Los bloques con
+caracteres comunes distintos conservan el factor
+$\nu_a\nu_b^{-1}$. Ninguno puede introducirse sin más en el
+presupuesto de los torcidos estrictamente negativos.
+La organización específica de la fuente que estudiaremos después
+separa el bloque de la representación, el bloque de torcido cero
+y los bloques negativos.
+
+\subsection{El defecto que realmente compara la fuente}
+
+Conviene precisar el objeto antes de buscar una filtración. Sea $\mathcal O$ un anillo de valoración discreta, $K$ su cuerpo de fracciones, $\varpi$ un uniformizante y $\nu(\varpi)=1$. Dados un conjunto finito $X$, una subálgebra $T\subseteq\mathcal O^X$, un subconjunto $Z\subseteq X$ y $\pi\in X$, ponemos
+\begin{equation}
+ \mathfrak c_Z=\{a\in T:a(x)=0\text{ para }x\notin Z\},\qquad
+ \mathfrak c_Z(\pi)=\bigl(a(\pi):a\in\mathfrak c_Z\bigr)\subseteq\mathcal O.
+ \label{eq:ct25-ideal-real}
+\end{equation}
+El número denominado \texttt{vcc T Z pi} es
+\[
+ v_Z(\pi)=\inf_{a\in\mathfrak c_Z}\nu(a(\pi))
+          =\operatorname{length}_{\mathcal O}(\mathcal O/\mathfrak c_Z(\pi))
+          \quad\text{en }\mathbf N\cup\{\infty\}.
+\]
+La igualdad incluye el caso $\mathfrak c_Z(\pi)=0$: ambos lados son infinitos. La fuente declara primero el ínfimo y lo enlaza después con la longitud mediante \texttt{length\_ccAt}; el teorema \texttt{normalized\_ring\_data} conserva expresamente esa igualdad. Por tanto, el dato integral no se puede sustituir por el rango de $T\otimes K$.
+
+La comparación cotejada procede por una presentación finita y un determinante. Su primer receptor es una suma de módulos de homomorfismos hacia los bloques divisibles. Los grupos de Selmer aparecen al estudiar las imágenes cohomológicas de esos homomorfismos. Esta precisión permite reconstruir un tramo concreto sin suponer una inyección directa del cociente de congruencias en una suma de grupos de Selmer.
+
+\subsection{Del ideal retenido al cociente integral de la familia}
+
+Retomamos el anillo de enteros $\mathcal O$ de una extensión finita
+de $\Q_\ell$ y la descomposición $V=\bigoplus_{\pi\in X}V_\pi$.
+Sea $T\subseteq\mathcal O^X$ un orden con
+$T\otimes K=K^X$, que actúa por los escalares de cada coordenada
+y preserva el retículo $M$. Para $Z\subseteq X$ escribamos
+$V_Z=\bigoplus_{\pi\in Z}V_\pi$, $p_Z$ para su proyector y
+$d_\pi=\dim_KV_\pi$.
+
+\begin{proposicion}[El coste de un conjunto retenido]
+\label{prop:ti-retenido}
+Se tiene
+\begin{equation}
+ \length_{\mathcal O}\frac{p_ZM}{M\cap V_Z}
+ \le\sum_{\pi\in Z}d_\pi v_\varpi(\mathfrak c_Z(\pi)).
+ \label{eq:ti-retenido}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+El caso $Z=\varnothing$ es inmediato. Para cada $\pi\in Z$,
+el ideal $\mathfrak c_Z(\pi)$ es no nulo, porque $T$ contiene
+un múltiplo no nulo de cada idempotente de coordenada.
+Ordenamos $Z=\{\pi_1,\ldots,\pi_s\}$ y ponemos
+\[
+ P=p_ZM,\quad L=M\cap V_Z,\quad
+ U_j=\bigoplus_{i\le j}V_{\pi_i},\quad
+ P_j=P\cap U_j,\quad L_j=L\cap U_j.
+\]
+Los submódulos $F_j=(P_j+L)/L$ filtran $P/L$.
+El graduado $F_j/F_{j-1}$ se identifica con
+\[
+ P_j/(P_{j-1}+L_j)\simeq p_{\pi_j}P_j/p_{\pi_j}L_j.
+\]
+Para la primera igualdad, si un elemento de $P_j$ es suma
+ de uno de $P_{j-1}$ y otro de $L$, el segundo pertenece
+necesariamente a $L_j$. Para la segunda, la preimagen de
+$p_{\pi_j}L_j$ en $P_j$ es $P_{j-1}+L_j$.
+
+Elija $a_j\in\mathfrak c_Z$ cuyo valor en $\pi_j$ genere
+$\mathfrak c_Z(\pi_j)$, de valoración $n_j$.
+Como $a_j$ anula $V_{Z^c}$ y preserva $M$,
+$a_jP=a_jM\subseteq L$.
+También preserva la bandera $U_j$, pues actúa por escalares
+en cada autoespacio. Por tanto $a_jP_j\subseteq L_j$, y
+\[
+ a_j(\pi_j)\,p_{\pi_j}P_j\subseteq p_{\pi_j}L_j.
+\]
+El graduado es un cociente de un retículo de rango $d_{\pi_j}$,
+anulado por un escalar de valoración $n_j$. Su longitud
+es a lo sumo $d_{\pi_j}n_j$. La aditividad en la filtración
+prueba \eqref{eq:ti-retenido}.
+\end{proof}
+
+Esta prueba explica las multiplicidades $d_\pi$ del paso
+denominado \texttt{StatCongBound} en la fuente. El productor
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/LengthQuotSmulRangeFree.lean}{\nolinkurl{LengthQuotSmulRangeFree.lean}} utiliza la misma idea
+de intersecar con subespacios y controlar cada graduado.
+No se necesita un cuerpo residual grande para este paso;
+la compresión simultánea posterior cumple otra función.
+Para el conjunto bueno $Z_g$, las definiciones de
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean}{\nolinkurl{DataN.lean}} son, con $M$ el retículo realizado,
+\begin{equation}
+ M^{\rm up}=V_{Z_g}\cap(M+V_{Z_g^c})=p_{Z_g}M,
+ \qquad M^{\rm low}=M\cap V_{Z_g}.
+ \label{eq:ti-mtup}
+\end{equation}
+La igualdad con la proyección se obtiene escribiendo cada
+elemento como suma de sus dos componentes.
+La Proposición~\ref{prop:ti-pegado} identifica el cociente
+$M^{\rm up}/M^{\rm low}$ con el módulo
+\texttt{CongMod} de la fuente. Por tanto el defecto local
+es precisamente
+\begin{equation}
+ \eta_{\rm loc}=\frac{1}{e_{\mathcal O}}
+      \length_{\mathcal O}\frac{p_{Z_g}M}{M\cap V_{Z_g}}.
+ \label{eq:ti-etaloc}
+\end{equation}
+Las multiplicidades $d_\pi$ de Hecke sobreviven a este paso;
+son distintas de la aparición única de cada torcido negativo
+en el posterior análisis de bloques.
+
+Cuando $Z_g\subseteq Z$ se obtiene mediante un operador integral
+que actúa por un entero no nulo $A_0$ en $V_{Z_g}$ y por cero
+en $V_{Z\setminus Z_g}$, el mismo argumento aplicado a la
+composición con $a$ añade $v_\varpi(A_0)$ en cada bloque
+retenido. Se requiere que el operador conmute con la acción
+de $T$. Se llega así a la variante
+\begin{equation}
+ \length\frac{p_{Z_g}M}{M\cap V_{Z_g}}
+ \le\sum_{\pi\in Z_g}d_\pi
+       \bigl(v_\varpi(\mathfrak c_Z(\pi))+v_\varpi(A_0)\bigr).
+ \label{eq:ti-recorte}
+\end{equation}
+Fuera de $Z$, el operador $a$ ya se anula; por eso no se
+exige que el operador de recorte se anule allí.
+
+\subsection{Descenso de una función que se anula fuera del conjunto elegido}
+
+Introducimos otra subálgebra $T'\subseteq\mathcal O^{X'}$ y una aplicación $p:X'\to X$. Suponemos que existen $b_1,\ldots,b_q\in\mathcal O^{X'}$ con las dos propiedades siguientes:
+\begin{enumerate}
+\item Todo $f'\in T'$ se escribe $f'=\sum_{a=1}^q(a_a\circ p)b_a$, con $a_a\in T$.
+\item Para $x\notin Z$, si $\sum_a\lambda_ab_a(x')=0$ para todo $x'\in p^{-1}(x)$, donde $\lambda_a\in\mathcal O$, entonces todos los $\lambda_a$ son cero.
+\end{enumerate}
+No se exige aquí una elección simultánea de valores independientes para todas las fibras: se exige precisamente la independencia indicada en cada fibra fuera de $Z$.
+
+\begin{lema}[Descenso al ideal de congruencias]
+\label{lem:ct25-descenso}
+Si $f'\in T'$ se anula en $p^{-1}(X\setminus Z)$, entonces, para cada $\pi'\in X'$, se tiene
+\[
+ f'(\pi')\in\mathfrak c_Z(p(\pi')),
+ \qquad v_Z(p(\pi'))\le\nu(f'(\pi')).
+\]
+\end{lema}
+\begin{proof}
+Escribimos $f'=\sum_a(a_a\circ p)b_a$. Para $x\notin Z$, la anulación de $f'$ en toda la fibra y la segunda hipótesis dan $a_a(x)=0$ para cada $a$. Así $a_a\in\mathfrak c_Z$. Al evaluar en $\pi'$, cada sumando $a_a(p(\pi'))b_a(\pi')$ pertenece al ideal de \eqref{eq:ct25-ideal-real}. La desigualdad de valoraciones se sigue de la definición del ideal y de la desigualdad ultramétrica.
+\end{proof}
+
+Éste es el contenido de \texttt{descent} y \texttt{vccSpan} en \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/VccSpan.lean}{\nolinkurl{VccSpan.lean}}, líneas 7--34. La independencia sobre la fibra es una hipótesis efectiva; la sola existencia de una extensión de anillos no la reemplaza.
+
+\subsection{Una compresión cuadrada que conserva todas las longitudes}
+
+Sea $A$ una $\mathcal O$-álgebra, no necesariamente conmutativa. Para $c=0,\ldots,t$ damos aplicaciones sobreyectivas de $\mathcal O$-álgebras
+\[
+ \rho_c:A\longrightarrow\operatorname{Mat}_{d_c}(\mathcal O).
+\]
+Dada una matriz de relaciones $P\in\operatorname{Mat}_{m\times g}(A)$, escribimos $P_c$ para la matriz rectangular de tamaño $md_c\times gd_c$ obtenida sustituyendo cada entrada por su imagen bajo $\rho_c$. Sea
+\[
+ H_c=\ker\bigl(P_c:(K/\mathcal O)^{gd_c}\longrightarrow(K/\mathcal O)^{md_c}\bigr).
+\]
+
+\begin{lema}[Compresión simultánea]
+\label{lem:ct25-compresion}
+Supongamos que todos los $H_c$ tienen longitud finita y que el cuerpo residual $k$ satisface
+\[
+ |k|>g\sum_{c=0}^t d_c.
+\]
+Existe $C\in\operatorname{Mat}_{g\times m}(A)$ tal que, para todo $c$,
+\begin{equation}
+ \nu\det\bigl((CP)_c\bigr)
+   =\operatorname{length}_{\mathcal O}H_c.
+ \label{eq:ct25-compresion}
+\end{equation}
+\end{lema}
+\begin{proof}
+Por Smith, la finitud equivale a que $P_c$ tenga rango $gd_c$. Si sus divisores elementales son $\varpi^{a_{c,1}},\ldots,\varpi^{a_{c,gd_c}}$, entonces
+\[
+ A_c:=\operatorname{length}_{\mathcal O}H_c=\sum_r a_{c,r}.
+\]
+Todos los menores maximales de $P_c$ son divisibles por $\varpi^{A_c}$, por Smith. La fórmula de Cauchy--Binet muestra que toda matriz $B$ de tamaño $gd_c\times md_c$ satisface $\varpi^{A_c}\mid\det(BP_c)$; también demuestra esa divisibilidad coeficiente a coeficiente cuando las entradas de $B$ son polinomios. Para alguna $B$ hay igualdad de valoraciones: basta escoger las filas adecuadas tras la reducción de Smith.
+
+La sobreyectividad de cada $\rho_c$ permite levantar a $A$ las unidades matriciales de ese bloque. Colocamos esas elevaciones en todas las posiciones de una matriz $g\times m$, tomamos la colección finita obtenida para todos los bloques y la denotamos $C_1,\ldots,C_s$. Con variables $z_1,\ldots,z_s$ formamos $C(z)=\sum_r z_rC_r$. Para cada $c$, el polinomio
+\[
+ Q_c(z)=\varpi^{-A_c}\det\bigl(C(z)_cP_c\bigr)\in\mathcal O[z_1,\ldots,z_s]
+\]
+tiene reducción no nula en $k[z_1,\ldots,z_s]$: al utilizar solamente las elevaciones del bloque $c$ puede realizarse cualquier matriz $B$. Su grado es a lo sumo $gd_c$. El producto de las reducciones de los $Q_c$ es, por tanto, no nulo y tiene grado total a lo sumo $g\sum_cd_c$.
+
+Un polinomio no nulo de grado en cada variable menor que $|k|$ no se anula en todo $k^s$; esto se prueba por inducción en el número de variables y la cota de raíces de un polinomio univariado. Elegimos una evaluación no nula del producto y levantamos sus coordenadas a $\mathcal O$. La matriz resultante satisface \eqref{eq:ct25-compresion} en todos los bloques a la vez.
+\end{proof}
+
+La prueba corresponde a \texttt{genericFin}, \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GenFin.lean}{\nolinkurl{GenFin.lean}}, líneas 29--138. La sobreyectividad se utiliza por separado para cada bloque; no se ha supuesto que $A\to\prod_c\operatorname{Mat}_{d_c}(\mathcal O)$ sea sobreyectiva. La fuente también admite longitudes infinitas. Para obtener una cota finita basta el caso demostrado: si uno de los términos receptores es infinito, la desigualdad de longitudes buscada es inmediata en $\mathbf N\cup\{\infty\}$.
+
+\subsection{De los determinantes al defecto integral}
+
+Supongamos ahora que $A\subseteq\prod_{x'\in X'}\operatorname{Mat}_d(K)$ es una subálgebra noetheriana por la izquierda. Escribimos $V_{x'}=K^d$ para su módulo de evaluación. Fijamos $\pi'\in X'$ y una representación integral
+\[
+ \rho_{\pi'}:A\longrightarrow\operatorname{Mat}_d(\mathcal O)
+\]
+cuya extensión a $K$ es la evaluación en $\pi'$. Suponemos que preserva una bandera con bloques de tamaños $d_0,\ldots,d_t$ y que las representaciones de los graduados son las aplicaciones $\rho_c$ sobreyectivas del lema anterior.
+
+Se necesita además la siguiente propiedad de determinantes: para toda matriz cuadrada $\Theta\in\operatorname{Mat}_g(A)$, la función
+\[
+ x'\longmapsto\det\bigl(\Theta(x')\bigr)
+\]
+pertenece a $T'$, donde $\Theta(x')$ es la matriz de bloques de tamaño $gd$. Esta condición es parte de la estructura integral de la fuente, no una propiedad de una familia arbitraria de representaciones racionales.
+
+\begin{proposicion}[Comparación por presentación y bloques]
+\label{prop:ct25-comparacion}
+Sea $\mathcal N$ un $A$-módulo generado por $g$ elementos. Supongamos las condiciones de descenso anteriores, la propiedad de determinantes y la condición residual del Lema~\ref{lem:ct25-compresion}. Si
+\begin{equation}
+ \operatorname{Hom}_A(\mathcal N,V_{x'})\ne0
+       \quad\text{para todo }x'\text{ con }p(x')\notin Z,
+ \label{eq:ct25-noanulacion-fuera}
+\end{equation}
+entonces
+\begin{equation}
+ v_Z(p(\pi'))\le
+ \sum_{c=0}^t\operatorname{length}_{\mathcal O}
+ \operatorname{Hom}_A\bigl(\mathcal N,(K/\mathcal O)^{d_c}_{\rho_c}\bigr).
+ \label{eq:ct25-comparacion-real}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+La noetherianidad proporciona una presentación con un número finito de relaciones, dadas por una matriz $P\in\operatorname{Mat}_{m\times g}(A)$. Un homomorfismo de $\mathcal N$ a un módulo $M$ queda determinado por las imágenes de sus $g$ generadores, y las relaciones dicen exactamente que ese vector pertenece a $\ker(P:M^g\to M^m)$. En particular, los términos de la derecha de \eqref{eq:ct25-comparacion-real} son las longitudes de los $H_c$ del lema.
+
+Si alguno es infinito, no hay nada que demostrar. En caso contrario, elegimos la compresión $C$ y tomamos $f'\in T'$ representada por $\det((CP)(x'))$. Para $p(x')\notin Z$, \eqref{eq:ct25-noanulacion-fuera} produce un vector no nulo anulado por $P(x')$, y, por consiguiente, por $C(x')P(x')$. Su determinante es cero. El Lema~\ref{lem:ct25-descenso} da
+\[
+ v_Z(p(\pi'))\le\nu(f'(\pi')).
+\]
+En la especialización integral, la bandera común hace que $(CP)(\pi')$ sea triangular por bloques. Por ello
+\[
+ f'(\pi')=\prod_{c=0}^t\det((CP)_c),\qquad
+ \nu(f'(\pi'))=\sum_{c=0}^t\nu\det((CP)_c).
+\]
+Aplicamos \eqref{eq:ct25-compresion} y la identificación entre los núcleos de relaciones y los módulos de homomorfismos.
+\end{proof}
+
+La prueba se cotejó en \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalConcreteOf.lean}{\nolinkurl{GlobalConcreteOf.lean}}
+(75--170) y \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/IdempotentNormalForms/GlobalModuleOf.lean}{\nolinkurl{GlobalModuleOf.lean}} (14--43). La bandera se emplea en la factorización del determinante. No se ha construido en esta proposición una bandera del módulo $\mathcal O/\mathfrak c_Z(p(\pi'))$ cuyos graduados sean Selmer.
+
+\paragraph{Eliminación de la restricción residual.}
+La fuente elimina la condición $|k|>g\sum d_c$ mediante una extensión finita libre de anillos de valoración discreta con cuerpo residual suficientemente grande. Su testigo \texttt{bigResidueExt} conserva la valoración de los elementos de $\mathcal O$: el índice de ramificación es $1$. La entrada \texttt{moduleBc} transporta el módulo presentado, su no anulación en las especializaciones y las longitudes de los homomorfismos. La construcción \texttt{stageC} transporta simultáneamente los datos primitivos, idempotentes, separación de raíces y el ideal de congruencias. En el caso general con índice $e$, ambos lados de \eqref{eq:ct25-comparacion-real} se multiplican por $e$ y luego se cancela ese factor positivo.
+
+Estas compatibilidades se reciben del código cotejado: no se deducen simplemente de ampliar el cuerpo residual. El ensamblaje se lee en \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/LemmaFiveThreeExtensionOfModule.lean}{\nolinkurl{LemmaFiveThreeExtensionOfModule.lean}}, líneas 47--79; la declaración final es \texttt{lemma\_five\_three\_any\_residue\_field}. La nota desarrolla aquí la prueba de determinantes y conserva como entrada la realización compatible de esa extensión.
+
+\subsection{El módulo de columnas y su mapa de cociclos}
+
+La aplicación anterior utiliza un módulo concreto. Sea $T_c$ una álgebra conmutativa que actúa mediante un homomorfismo hacia el centro de $A$, y sean $r:G\to A^\times$ y $\chi:G\to T_c^\times$ homomorfismos de grupos. Ponemos
+\[
+ u_g=\chi(g)^{-1}r(g),\quad y(g)=(u_g-1)E,\quad
+ Y=\sum_{g\in G}Ay(g)\subseteq A.
+\]
+Para un conjunto finito de índices de columna $l$ se dan un subgrupo $D_l\le G$, un entero $j_l$ y operadores $K_{l,a}(g),k_{l,0}(g)\in A$. Partimos de
+\[
+ Y\oplus\bigoplus_l\bigl(Ac_l\oplus\textstyle\bigoplus_{a=1}^{j_l}As_{l,a}\oplus Ac_{l,0}\bigr)
+\]
+y formamos el cociente $\mathcal N$ por las relaciones
+\begin{equation}
+\begin{gathered}
+ Ec_l=0,\qquad (1-e_1)s_{l,a}=0,\qquad
+ (\delta-E)c_{l,0}=0,\\
+ [y(g)]+(u_g-1)c_l
+   -\delta\sum_aK_{l,a}(g)s_{l,a}
+   -\delta k_{l,0}(g)c_{l,0}=0
+       \quad(g\in D_l).
+\end{gathered}
+\label{eq:ct25-columnas}
+\end{equation}
+Aquí $\delta$ se identifica con su imagen central en $A$.
+
+La presentación se llama \texttt{ColNNJ} en \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/CharacterColumnKernels/StatGlobalModule.lean}{\nolinkurl{StatGlobalModule.lean}}, líneas 10--33.
+
+Si $M$ es un $A$-módulo, todo $\varphi:\mathcal N\to M$ produce
+\[
+ \Psi_M(\varphi)(g)=\varphi([y(g)]).
+\]
+La identidad $y(gh)=y(g)+u_gy(h)$ demuestra que $\Psi_M(\varphi)$ es un cociclo algebraico para la acción $g\cdot m=u_gm$. En el caso profinito se necesita además su continuidad; la fuente la obtiene con los datos topológicos de sus representaciones y retículos, no de esta identidad sola. Las relaciones \eqref{eq:ct25-columnas} dan, al restringir a $D_l$,
+\begin{equation}
+ [\Psi_M(\varphi)|_{D_l}]
+   =\left[\delta\left(\sum_aK_{l,a}(g)\varphi(s_{l,a})
+                       +k_{l,0}(g)\varphi(c_{l,0})\right)\right].
+ \label{eq:ct25-clase-local}
+\end{equation}
+El término $-(u_g-1)\varphi(c_l)$ desaparece al pasar a cohomología. La condición de Selmer exige todavía controlar la clase de la derecha; no basta con que el cociclo esté definido. En esa fórmula se toma la clase de la función completa, incluida la multiplicación por $\delta$. Esa función es un cociclo por la relación anterior; no se presupone que la función previa a la multiplicación también lo sea.
+
+El núcleo de $\Psi_M$ consta de los homomorfismos que se anulan
+en la imagen de $Y$: los elementos $y(g)$ generan $Y$ como
+$A$-módulo. Al pasar de cociclos a clases aparece otro núcleo.
+El siguiente cálculo reconstruye el paso denominado
+\texttt{cobColumn}.
+
+\begin{lema}[Control del vector que produce un coborde]
+\label{lem:ti-coborde}
+Supongamos $E^2=\delta E$ y una expresión finita
+$E=\sum_{g\in J}t_g r(g)$, con $t_g\in T_c$.
+Escribamos $\tau=\sum_{g\in J}t_g\chi(g)$.
+En el módulo $M$ supongamos $EM=0$ y que los escalares centrales
+$\delta$ y $\tau$ actúan ambos como $\delta_{\mathcal O}\in\mathcal O$.
+Si $\varphi:\mathcal N\to M$ es $A$-lineal y
+$\Psi_M(\varphi)(g)=(u_g-1)v$ para todo $g$, entonces
+\begin{equation}
+ \delta_{\mathcal O}^{\,2}v=0.
+ \label{eq:ti-coborde}
+\end{equation}
+\end{lema}
+\begin{proof}
+Sea $F:Y\to M$ la composición de la inclusión en la suma
+que presenta $\mathcal N$, el cociente y $\varphi$.
+El elemento $y_*:=\sum_{g\in J}t_g\chi(g)y(g)$ pertenece a $Y$ y
+\[
+ y_*=(E-\tau)E=(\delta-\tau)E.
+\]
+Los escalares de $T_c$ son centrales; usando $E^2=\delta E$
+se obtiene $\delta y_*=E y_*$.
+Por otra parte, la hipótesis de coborde da
+\[
+ F(y_*)=\sum_{g\in J}t_g\chi(g)(u_g-1)v
+       =(E-\tau)v=-\delta_{\mathcal O}v.
+\]
+La linealidad y $EM=0$ implican
+$\delta_{\mathcal O}F(y_*)=F(\delta y_*)=F(Ey_*)=0$.
+Sustituir la última igualdad prueba \eqref{eq:ti-coborde}.
+\end{proof}
+
+Si $M=(K/\mathcal O)^d$ y $\delta_{\mathcal O}\ne0$, su
+submódulo anulado por $\delta_{\mathcal O}^2$ tiene longitud
+$2d\,v_\varpi(\delta_{\mathcal O})$.
+Así se obtiene un coste finito para los vectores de coborde.
+Esto no estima por sí solo el núcleo de $\Psi_M$, que se
+controla separadamente mediante las relaciones de columnas.
+
+\subsection{Condiciones locales: restringir antes de anular}
+
+La longitud que aparece en A93, (9.1), pertenece al Selmer estricto
+de un cuerpo CM $E$, para un entero $e\ge1$:
+\begin{equation}
+ S_{\ell,e}(E)=\ker\!\left[
+ H^1(G_{E,S_\ell},\Q_\ell/\Z_\ell(-e))\longrightarrow
+ \prod_{v\mid\ell}H^1(E_v,\Q_\ell/\Z_\ell(-e))\right].
+ \label{eq:ti-selmer}
+\end{equation}
+El grupo global ya incorpora la no ramificación fuera de $\ell$
+y de los lugares infinitos. La condición en los lugares sobre
+$\ell$ es anulación de la clase, no pertenencia automática a
+cualquier condición finita de Bloch--Kato.
+Antes de comparar longitudes hay que construir el mapa hacia este
+núcleo, o medir el coste de restringirse a su preimagen.
+
+\begin{proposicion}[La pérdida exacta de imponer una condición local]
+\label{prop:ti-local}
+Sean $f:Q\to H$ y $r:H\to L$ homomorfismos de $\mathcal O$-módulos.
+Pongamos $S=\ker r$, $Q_{\rm loc}=\ker(rf)$ y $E_{\rm loc}=\operatorname{im}(rf)$,
+y fijemos enteros no negativos $\kappa,h,g$.
+Si $\length\ker f\le\kappa$, $S$ tiene longitud finita y
+$E_{\rm loc}$ está anulado por $\varpi^h$ y tiene a lo sumo
+$g$ generadores, entonces $Q$ tiene longitud finita y
+\begin{equation}
+ \length Q\le\kappa+\length S+gh.
+ \label{eq:ti-local-bound}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Hay sucesiones exactas
+\[
+ 0\to Q_{\rm loc}\to Q\to E_{\rm loc}\to0,
+ \qquad
+ 0\to\ker f\to Q_{\rm loc}\to\operatorname{im}f\cap S\to0.
+\]
+La segunda prueba que $Q_{\rm loc}$ tiene longitud a lo sumo
+$\kappa+\length S$. El módulo $E_{\rm loc}$ es cociente de
+$(\mathcal O/\varpi^h)^g$, de longitud a lo sumo $gh$.
+La primera sucesión prueba la finitud de $Q$ y la cota.
+No hemos restado longitudes infinitas.
+\end{proof}
+
+La alternativa $\varpi^h f:Q\to S$ define un mapa en todo $Q$,
+pero puede perder mucho más. Tome $Q=k^N$, $H=Q$, $f=1$ y
+$r$ la primera coordenada, donde $k=\mathcal O/\varpi$.
+Entonces $E_{\rm loc}=k$, de longitud uno, mientras que
+$\varpi f=0$ y su núcleo tiene longitud $N$.
+Restringirse a $Q_{\rm loc}$ cuesta uno; anular todas las
+restricciones mediante una multiplicación común cuesta aquí $N$.
+El número de generadores del error local no debe confundirse con
+el número de generadores del dominio del mapa multiplicado.
+
+También se deben acumular los núcleos del cambio de coeficientes.
+Para $Q\xrightarrow{f}H\xrightarrow{g}H'$ se tiene
+\[
+ 0\longrightarrow\ker f\longrightarrow\ker(gf)
+ \longrightarrow\operatorname{im}f\cap\ker g\longrightarrow0.
+\]
+La última flecha es la restricción de $f$ y es sobreyectiva
+por definición de la intersección. Esta fórmula identifica
+exactamente qué parte del núcleo de $g$ afecta al mapa dado.
+En particular, el núcleo
+$A^G/\varpi^n A^G$ del cambio
+$H^1(G,A[\varpi^n])\to H^1(G,A)$, calculado en la
+Nota~\ref{sec:construccion-selmer}, no se puede omitir.
+
+\subsection{Cambio de coeficientes y longitud normalizada}
+
+El factor $e_{\mathcal O}$ que aparece en el cotejo tiene un origen
+distinto de las multiplicidades de bloques.
+Sea $A=\Q_\ell/\Z_\ell(-e)$ y
+$A_{\mathcal O}=A\otimes_{\Z_\ell}\mathcal O$.
+La acción sobre el segundo factor es trivial.
+Como $K=\mathcal O[1/\ell]$, la planitud proporciona
+$A_{\mathcal O}\simeq K/\mathcal O(-e)$.
+
+\begin{proposicion}[Compatibilidad de cohomología, localización y escalares]
+\label{prop:ti-escalares}
+Para un grupo profinito $G$ que actúa continuamente en $A$,
+\begin{equation}
+ H^q(G,A)\otimes_{\Z_\ell}\mathcal O
+ \simeq H^q(G,A_{\mathcal O})\quad(q\ge0).
+ \label{eq:ti-cohom-base}
+\end{equation}
+Estas isomorfías conmutan con restricciones e inflación.
+Por tanto, para el mismo grupo global y las mismas condiciones
+locales cero, se tiene
+\begin{equation}
+ S_{\ell,e}(E)\otimes_{\Z_\ell}\mathcal O
+ \simeq S_{\mathcal O,e}(E),\qquad
+ \length_{\mathcal O}S_{\mathcal O,e}(E)
+ =e_{\mathcal O}\length_{\Z_\ell}S_{\ell,e}(E).
+ \label{eq:ti-length-base}
+\end{equation}
+La igualdad de longitudes admite el valor infinito.
+\end{proposicion}
+\begin{proof}
+El anillo $\mathcal O$ es un $\Z_\ell$-módulo libre de rango
+finito $d$. Elija una base. En cada grado del complejo de
+cocadenas continuas, la aplicación
+$(c\otimes b)(g_1,\ldots,g_q)=c(g_1,\ldots,g_q)\otimes b$
+identifica ambos lados con $d$ copias del mismo módulo de
+cocadenas. Una función hacia este producto finito de módulos
+discretos es continua si y solo si lo son sus coordenadas.
+Las fórmulas del diferencial y de restricción conmutan con la
+identificación. La planitud permite pasar a la cohomología y
+da \eqref{eq:ti-cohom-base}.
+
+Tensorizar con un módulo libre de rango finito conmuta también
+con productos arbitrarios: en una base solo se intercambian
+$d$ copias y el índice del producto. La localización global
+y su producto de grupos locales forman así un cuadrado
+conmutativo con isomorfías verticales. La planitud conserva
+el núcleo y prueba la primera parte de \eqref{eq:ti-length-base}.
+
+Si $S_{\ell,e}(E)$ tiene longitud finita, es suma de módulos
+$\Z_\ell/\ell^{a}\Z_\ell$; cada uno se transforma en
+$\mathcal O/\ell^a\mathcal O$, de longitud $e_{\mathcal O}a$.
+Esto prueba la igualdad. Recíprocamente, si la extensión tiene
+longitud finita, como $\Z_\ell$-módulo también tiene longitud
+finita y contiene una copia del módulo original al elegir una
+base de $\mathcal O$. Por tanto no puede convertir una longitud
+infinita en finita.
+\end{proof}
+
+La cantidad compatible con $v_\ell(\ell)=1$ es
+\begin{equation}
+ \lambda_{\mathcal O}(Q)=\frac{\length_{\mathcal O}Q}{e_{\mathcal O}}.
+ \label{eq:ti-normalizacion}
+\end{equation}
+Así, un bloque de $K/\mathcal O(-e)$ aporta una copia de la
+longitud sobre $\Z_\ell$ al dividir por $e_{\mathcal O}$.
+No aparece el grado residual en esta igualdad. El grado residual
+sí aparece en $\log N\mathfrak p$ cuando se calcula el grado
+aritmético global; son dos normalizaciones distintas.
+
+En \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/SharpRestriction/LevelLetterCocycles/DataN.lean}{\nolinkurl{DataN.lean}}, \texttt{lenUnit} usa esta división.
+El campo \texttt{NData.vcc} la incorpora también.
+En cambio, \texttt{Formalism.NG.vcc}, usado en la prueba
+por determinantes, conserva la longitud integral. La definición racional contiene
+\texttt{toNat}: interpretarla como una longitud exige antes
+la finitud y que $e_{\mathcal O}>0$.
+El cotejo de \texttt{qU\_ShaN} en
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/HigherColumnInvariantsBound.lean}{\nolinkurl{HigherColumnInvariantsBound.lean}} conserva esa
+finitud al cancelar el factor de ramificación.
+
+\subsection{El producto que separa los caracteres ciclotómicos}
+
+La construcción utiliza también un escalar que separa el
+carácter trivial de los torcidos negativos.
+Sean $t\ge1$, $u_1\in\mathcal O^\times$ y
+$a=1+\ell^{s_0}u\in\Z_\ell^\times$, con $u\in\Z_\ell^\times$.
+Supongamos $s_0\ge1$ si $\ell$ es impar y $s_0\ge2$ si
+$\ell=2$. Definimos
+\begin{equation}
+ \delta=u_1^{t-1}\prod_{r=1}^{t-1}(1-a^{-r}).
+ \label{eq:ti-delta}
+\end{equation}
+Para $t=1$, el producto vale uno.
+
+\begin{lema}[Valoración exacta del separador ciclotómico]
+\label{lem:ti-delta}
+El escalar $\delta$ es no nulo y
+\begin{equation}
+ v_\varpi(\delta)
+ =e_{\mathcal O}\bigl((t-1)s_0+v_\ell((t-1)!)\bigr)
+ \le e_{\mathcal O}(t-1)\left(s_0+\frac1{\ell-1}\right).
+ \label{eq:ti-delta-val}
+\end{equation}
+\end{lema}
+\begin{proof}
+Si $x\in\ell\Z_\ell$ y $m$ es primo con $\ell$, la expansión
+binomial muestra $v_\ell((1+x)^m-1)=v_\ell(x)$:
+el primer término tiene esa valoración y los demás tienen
+valoración mayor. Si $v_\ell(x)\ge1$ para $\ell$ impar,
+o $v_2(x)\ge2$, la misma expansión para el exponente $\ell$
+da $v_\ell((1+x)^\ell-1)=v_\ell(x)+1$.
+El término $\ell x$ es el único de menor valoración.
+Al escribir $r=\ell^k m$ e iterar, se obtiene
+$v_\ell(a^r-1)=s_0+v_\ell(r)$.
+Como $a^r$ es una unidad, esta es también la valoración de
+$1-a^{-r}$, que es finita. Sumando en $r$ y usando
+$v_\varpi=e_{\mathcal O}v_\ell$ en $\Q_\ell$ se obtiene
+la igualdad. Finalmente,
+$v_\ell(n!)=\sum_{j\ge1}\lfloor n/\ell^j\rfloor
+\le n/(\ell-1)$ demuestra la cota.
+\end{proof}
+
+La hipótesis diádica importa. Para $a=3$, $s_0=1$ y $r=2$,
+$v_2(1-3^{-2})=3$, mientras que $s_0+v_2(r)=2$.
+La fórmula no debe trasladarse a ese caso sin la corrección
+diádica correspondiente.
+En \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/RealDisplayAllKOf.lean}{\nolinkurl{RealDisplayAllKOf.lean}}, la igualdad que identifica
+el escalar de la construcción con
+$\prod_{0<r<t}(u_1-u_1\varepsilon(g_I)^{-r})$ es una hipótesis
+explícita; el cálculo de valoración no sustituye esa identificación.
+
+\subsection{El presupuesto local conserva los tres tipos de bloques}
+\label{subsec:ti-presupuesto-local}
+
+En el tramo \href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/WachLatticeTwists/RamifiedBlockRings/RamifiedBlockProofs/LengthBoundViaSplitting.lean}{\nolinkurl{LengthBoundViaSplitting.lean}} el ideal que se
+acota es $\mathfrak c_Z(\pi)$: los operadores deben anular el
+complemento de un conjunto retenido $Z$, no necesariamente todas
+las coordenadas distintas de $\pi$.
+La comparación por módulos de columnas se organiza en bloques
+$c=0,1,\ldots,t$. El bloque $0$ es el bloque de la representación
+automorfa; los bloques $c>0$ tienen rango uno.
+El bloque $1$ es trivial tras normalizar, y para $c\ge2$ la
+identificación \texttt{BlockTwistedCyclotomic} da
+\begin{equation}
+ M_c\simeq K/\mathcal O\bigl(-(c-1)\bigr)
+ \quad\text{como representación},\qquad 2\le c\le t.
+ \label{eq:ti-bloques-negativos}
+\end{equation}
+Es una isomorfía equivariante, no solo una igualdad de dimensiones.
+
+Esta indexación explica que cada $e=1,\ldots,t-1$ aparezca una
+vez en la suma de Selmer de ese tramo. No se están contando todas
+las parejas de caracteres de \eqref{eq:ti-mult-hom}.
+En cambio, el bloque trivial aporta un término de grupo de clases,
+y el bloque $0$ conserva su propia condición de Selmer y su
+contribución local de filas. Ninguno se puede ocultar en un
+Selmer negativo.
+
+Para exponer el presupuesto, escribamos $\mathcal R$, $\mathcal C$
+y $\mathcal Q$ para los conjuntos finitos de lugares de filas,
+columnas y auxiliares. Sean $n_0$ el tamaño del bloque $0$,
+$e'_w,j_w,c_B$ enteros no negativos y $d_w$ los grados locales.
+Sean $v_\delta=v_\varpi(\delta_{\mathcal O})$,
+$h_{0,w}$ las longitudes de los núcleos de las aplicaciones
+locales de columnas en el bloque $0$, y $H_0$ una cota para los
+núcleos correspondientes de los bloques superiores.
+El símbolo $v_{\zeta,w}$ representa la pérdida de la condición
+local auxiliar. Definimos el coste explícito
+\begin{equation}
+\begin{aligned}
+ \mathcal E_{\rm col}
+  &=\sum_{w\in\mathcal C}
+    \bigl[e_{\mathcal O}e'_w
+       +j_w(e_{\mathcal O}e'_w+v_\delta)
+       +2v_\delta+h_{0,w}\bigr],\\
+ \mathcal E_{\rm loc}
+  &=t e_{\mathcal O}c_B\sum_{w\in\mathcal R}(d_w+2)
+    +4(n_0+t)(|\mathcal C|+1)v_\delta\\
+  &\hspace{1.5em}+t|\mathcal C|H_0
+    +t\sum_{w\in\mathcal Q}v_{\zeta,w}.
+\end{aligned}
+\label{eq:ti-errores-explicitos}
+\end{equation}
+
+\paragraph{Desigualdad localizada en la fuente.}
+El teorema de descomposición de bloques se denomina
+\texttt{length\_bound\_via\_splitting}.
+Bajo sus hipótesis, y con este cambio de letras, concluye
+\begin{equation}
+\begin{split}
+ v_\varpi(\mathfrak c_Z(\pi))\le{}&
+ \sum_{w\in\mathcal R}L_{{\rm row},w}
+ +\mathcal E_{\rm col}+s_\rho
+ +\sum_{e=1}^{t-1}\operatorname{Sha}_{\mathcal O,e}\\
+ &+v_{h_E}+\mathcal E_{\rm loc}.
+\end{split}
+\label{eq:ti-local-display}
+\end{equation}
+Aquí $s_\rho$ acota el submódulo global del bloque $0$ que
+satisface sus condiciones locales; $v_{h_E}$ acota el bloque
+trivial. En el ensamblaje aritmético este último se toma como
+$e_{\mathcal O}v_\ell(h_E)$, con $h_E$ el número de clases.
+$\operatorname{Sha}_{\mathcal O,e}$ denota en esta fórmula una
+cota de longitud, no el grupo mismo; la comparación posterior la
+acota por $e_{\mathcal O}\length_{\Z_\ell}S_{\ell,e}(E)$.
+Esta desigualdad se recibe del tramo de la fuente leído; no
+atribuimos una prueba de todas sus entradas a la sola aditividad.
+Se interpreta inicialmente en $\N\cup\{\infty\}$.
+Su uso como presupuesto finito exige las cotas de finitud
+y la no anulación de $\delta_{\mathcal O}$ correspondientes.
+
+El módulo de filas tampoco se ha dejado sin nombre. En
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Formalism/AdmissibleDesigns/SelmerInequalityOfInputs.lean}{\nolinkurl{SelmerInequalityOfInputs.lean}},
+\texttt{rowLenS} es la longitud de
+\begin{equation}
+ F_{s,w}/(F_{s,w}\cap\operatorname{Im}_w).
+ \label{eq:ti-row}
+\end{equation}
+El submódulo $F_{s,w}$ y la imagen $\operatorname{Im}_w$ se
+construyen mediante los datos de cohomología local y sus mapas.
+La condición \texttt{TieRow} compara esa longitud con la
+cantidad de filas del presupuesto automorfo.
+Identificar un cociente concreto y construir ese enlace son
+dos obligaciones distintas.
+
+Las hipótesis que producen \eqref{eq:ti-local-display} conservan
+las relaciones de los idempotentes y del operador $E$, la
+continuidad, los levantamientos locales, la ausencia de vectores
+fijos fuera de $Z$, las cotas de invariantes, la ortogonalidad
+local y las identificaciones ciclotómicas. Las condiciones de
+no ramificación cubren los lugares que no pertenecen a las
+tres listas. El archivo de ensamblaje incluye además las
+entradas de contexto \texttt{T2.Core} y \texttt{H0.FinCore}.
+Registrar esos nombres no equivale a haber comprobado sus
+proveedores ni su clausura transitiva.
+
+\subsection{Los primos pequeños y la dependencia de las constantes}
+
+En A93, (8.16), p.~60, la comparación local en $2$ y $3$ tiene
+la forma
+\begin{equation}
+ v_{i,\pi}\le s_{i,\pi}+B_{23}+V(p)+h_E(p)+\epsilon(p),
+ \qquad B_{23}=Cfmb\log x+Cx^C L_2^2.
+ \label{eq:ti-small}
+\end{equation}
+El caso $3$ se incluye cuando no pertenece ya al conjunto
+pequeño designado en la construcción. $V(p)$ suma las longitudes
+cohomológicas relevantes en ese primo, y $h_E(p)$ y $\epsilon(p)$
+son las contribuciones de cuerpo y error prescritas.
+$L_2$ es el parámetro secundario de esa comparación local;
+no debe reemplazarse por la escala arquimediana $L$.
+
+El teorema no se enuncia para dos retículos arbitrarios
+que se vuelvan isomorfos al invertir $p$. Recibe la familia
+de representaciones compatible y los operadores que controlan
+los cociclos. El cotejo de
+\texttt{BoundAtTwoThreeFamily} y sus productores mantiene
+esas hipótesis y la finitud de las longitudes.
+El teorema de jets de A93, §7, que supone $p\ge5$, tampoco
+puede usarse en $2$ o $3$ quitando esa condición.
+
+La normalización \eqref{eq:ti-normalizacion} evita que una
+extensión del cuerpo de coeficientes introduzca un falso factor
+de ramificación en el presupuesto. No da por sí sola uniformidad
+en el cuerpo aritmético $E$, en $t$, en $|\mathcal C|$, en
+$j_w$ ni en las constantes de \eqref{eq:ti-small}.
+Para ello deben controlarse los términos de
+\eqref{eq:ti-errores-explicitos} antes de absorberlos en una
+constante común.
+
+\subsection{Suma ponderada y entrada en \texttt{LinkN}}
+
+Una vez disponibles las comparaciones locales, el paso de sus
+multiplicidades al presupuesto global es finito en cada suma
+parcial. El lema siguiente formula la comprobación numérica
+necesaria sin confundirla con la construcción de los datos.
+
+\begin{lema}[Presupuesto ponderado]
+\label{lem:ti-presupuesto}
+Para cada primo $p$, sea $I_p$ un conjunto finito y supongamos
+\[
+ d_{p,i}\le a_{p,i}+\sum_{e=1}^{t-1}m_{p,i,e}s_{p,e},
+ \qquad d_{p,i},a_{p,i},m_{p,i,e},s_{p,e},\beta_{p,i}\ge0.
+\]
+Todas estas cantidades son números reales finitos.
+Si $D_0,A,B\ge0$ son reales finitos y, para todo $p,e$ y todo conjunto finito
+$\mathcal P$ de primos,
+\begin{equation}
+\begin{aligned}
+ \sum_{i\in I_p}\beta_{p,i}m_{p,i,e}&\le D_0,\\
+ \sum_{p\in\mathcal P}\log p\sum_i\beta_{p,i}a_{p,i}&\le D_0A,\\
+ \sum_{p\in\mathcal P}\log p\sum_{e=1}^{t-1}s_{p,e}&\le B,
+\end{aligned}
+\label{eq:ti-hip-presupuesto}
+\end{equation}
+entonces
+\begin{equation}
+ \sup_{\mathcal P\text{ finito}}
+ \sum_{p\in\mathcal P}\log p\sum_i\beta_{p,i}d_{p,i}
+ \le D_0(A+B).
+ \label{eq:ti-presupuesto}
+\end{equation}
+\end{lema}
+\begin{proof}
+Multiplique la primera desigualdad del enunciado por
+$\beta_{p,i}\log p$ y sume en un conjunto finito $\mathcal P$.
+La parte $a_{p,i}$ cuesta a lo sumo $D_0A$.
+Al intercambiar las sumas finitas, el coeficiente de
+$s_{p,e}\log p$ es a lo sumo $D_0$; la parte restante cuesta
+a lo sumo $D_0B$. Tomar el supremo conserva la cota.
+\end{proof}
+
+En A93, (8.17), la cantidad de etapa se define por
+\begin{equation}
+ \eta_j=\sum_{\substack{w\in S\\\mu_w\ne\mu_0}}
+             \ell_w e_w\eta_{j,w}.
+ \label{eq:ti-eta}
+\end{equation}
+Aquí $\ell_w$ es el peso de lugar de esa notación, no el
+primo fijo usado al comienzo de la nota.
+El resultado de la comparación local y de las identidades de
+rangos es
+\begin{equation}
+ \eta_j\le D_j^0\left[
+ C\{fmbL^2+(\log x)^2N_c\}
+ +\sum_p\log p\sum_{1\le e<t}\length_{\Z_p}S_{p,e}(E)
+ \right].
+ \label{eq:ti-linkn}
+\end{equation}
+La identificación $D_j^0=D^0$ es una entrada de rango de la
+familia. El lema anterior explica la forma de esta estimación;
+no demuestra las comparaciones de multiplicidades ni identifica
+por sí solo los pesos abstractos $\beta_{p,i}$ con los pesos
+automorfos.
+
+El productor \texttt{linkN\_of\_twGood\_galoisPreconditions}
+usa las precondiciones de Galois, la compatibilidad de los
+retorcidos, los datos de recorte y la comparación de
+multiplicidades con rangos. A continuación,
+\texttt{linkN\_of\_gd} transporta el resultado de la familia
+recortada a la original y absorbe un coste adicional de grupo
+finito. En ese paso aparecen expresamente
+\texttt{MultLe} y la igualdad de rangos de
+\texttt{TwistedPlaces.adm3}.
+
+La serie de \eqref{eq:ti-linkn} debe estar controlada antes
+de utilizar la conclusión como número real finito.
+\href{https://github.com/CocoSgt/riemann-hypothesis-lean/blob/7cbf7a0c32fca1badf05931879a37c3f8a2b03b4/src/Development/AutomorphicArithmetic/CharacterBoxes/DivinNOfHypV.lean}{\nolinkurl{DivinNOfHypV.lean}} suministra precisamente la finitud
+y la sumabilidad mediante \texttt{vvRecord};
+\texttt{LinkN\_at} conserva la sumabilidad como hipótesis.
+La Nota~\ref{sec:finitud-uniforme} demuestra finitud para
+$E,t$ fijos. Las cotas uniformes que permiten variar ambos
+datos siguen requiriendo el argumento de torres y ventanas.
+
+\subsection{El factor dos aparece al pasar a pendientes}
+
+Sean $M\subseteq N$ retículos completos del mismo espacio sobre
+un cuerpo de números $K_0$, de rango $r>0$, con las mismas
+métricas arquimedianas. El cociente es finito y
+\begin{equation}
+ \mu_2(N)-\mu_2(M)
+ =\frac{2}{[K_0:\Q]r}
+      \sum_{\mathfrak p}
+       \length_{\mathcal O_{K_0,\mathfrak p}}(N_{\mathfrak p}/M_{\mathfrak p})
+                      \log N\mathfrak p.
+ \label{eq:ti-grado}
+\end{equation}
+Se trata de la pendiente duplicada del cuaderno.
+En efecto, el índice satisface
+$\log\#(N/M)=\sum_{\mathfrak p}\length(N_{\mathfrak p}/M_{\mathfrak p})
+\log N\mathfrak p$, por descomposición primaria y una
+serie de composición en cada lugar. Con métricas iguales,
+el covolumen de $M$ es ese índice por el covolumen de $N$;
+tomar el negativo del logaritmo, normalizar y duplicar prueba
+la fórmula.
+
+No hay factor dos en \eqref{eq:ti-eta} ni en
+\eqref{eq:ti-linkn}. Insertarlo allí y volver a aplicar
+\eqref{eq:ti-grado} contaría dos veces la misma normalización.
+También debe conservarse el sentido $M\subseteq N$: todas
+las longitudes de esta comparación son no negativas.
+Una cadena de inclusiones suma sus defectos; una isomorfía
+solo racional no los conserva.
+
+\subsection{Qué queda desarrollado y qué queda por construir}
+
+La nota construye los defectos de retículos y su filtración,
+prueba la comparación bilateral de ideales y explica el coste
+de los núcleos y las condiciones locales. La reconstrucción
+por presentaciones y determinantes precisa el mecanismo de la
+comparación de columnas. El cotejo identifica el tratamiento
+separado de los bloques y el presupuesto que llega a
+\texttt{LinkN}; conserva las entradas matemáticas de sus
+productores.
+
+El siguiente paso debe estudiar la producción uniforme de los
+datos locales de la familia: el módulo de columnas y sus
+levantamientos, la comparación \texttt{TieRow}, los núcleos
+de invariantes y el transporte a bases aritméticas variables.
+En particular, la cota de una capa fija con $C_K=111$ no
+acota por sí sola cada término de
+\eqref{eq:ti-errores-explicitos} en toda la familia.
+Una desigualdad uniforme exige fijar las constantes antes de
+variar los primos auxiliares, la altura de torre y la ventana.
+
+El ejemplo $Q_n=\mathcal O/\varpi^n$ muestra la limitación
+elemental: todos los módulos son finitos y tienen un generador,
+pero sus longitudes no están acotadas. A la inversa,
+$Q_n=(\mathcal O/\varpi)^n$ tiene exponente fijo y longitud
+creciente. Ni la finitud individual ni controlar solo uno
+de los dos parámetros proporciona uniformidad.
+
+No se ha ejecutado Lean, comprobado la clausura de axiomas o
+dependencias, ni certificado la propuesta completa. Este alcance
+es compatible con haber demostrado los lemas algebraicos de la
+nota: se refiere a la verificación de las entradas especializadas
+de la familia, no a una nueva hipótesis impuesta a esos lemas.
+
+\subsection{Ejercicios resueltos}
+
+\begin{ejercicio}\label{ej:ti-dosdef}
+En $\Z_5^4$, sea $M$ el retículo de coordenadas congruentes
+módulo $25$. Calcule las longitudes de $D^-(M)$, $D^+(M)$
+y de cada $p_iM/(M\cap V_i)$. Describa los graduados de la
+filtración de intersecciones en el orden $1,2,3,4$.
+\end{ejercicio}
+\paragraph{Solución del Ejercicio~\ref{ej:ti-dosdef}.}
+Las intersecciones son $25\Z_5e_i$ y las proyecciones son
+$\Z_5e_i$. Las longitudes individuales son $2$; las totales
+son $2$ y $6$, respectivamente. La sucesión
+\eqref{eq:ti-dos-defectos-exacta} da $2+6=4\cdot2$.
+Los tres primeros $F_j$ son nulos y el último es
+$\Z_5/25\Z_5$, de modo que solo el último graduado es no nulo.
+
+\begin{ejercicio}\label{ej:ti-separador}
+Sea $\mathbb T$ la imagen de $\Z_5[T]$ por evaluación en
+$0,25,50$. Calcule los ideales de congruencia de la primera
+coordenada y el denominador del proyector sobre esa coordenada
+si el retículo es $M=\mathbb T\subset\Q_5^3$.
+\end{ejercicio}
+\paragraph{Solución del Ejercicio~\ref{ej:ti-separador}.}
+Ambos ideales por parejas son $(25)=(5^2)$.
+El producto $(T-25)(T-50)$ se evalúa en $(1250,0,0)$;
+$v_5(1250)=4$. Todo polinomio que anule las otras dos
+coordenadas es divisible por ese producto, así que
+$\mathfrak c_1=(5^4)$. La primera proyección de $M$ es
+$\Z_5$ y su intersección con el eje es $5^4\Z_5$.
+El defecto es cíclico de longitud $4$ y realiza la suma
+$2+2$ del Teorema~\ref{thm:ti-separadores}.
+
+\begin{ejercicio}\label{ej:ti-fitt}
+Para $Q=\mathcal O/\varpi^2\oplus\mathcal O/\varpi^5$,
+calcule la longitud, el aniquilador y el ideal de Fitting.
+Si $e_{\mathcal O}=3$, determine la longitud normalizada.
+¿Puede suponerse que $Q$ procede por extensión de un módulo
+finito sobre $\Z_\ell$?
+\end{ejercicio}
+\paragraph{Solución del Ejercicio~\ref{ej:ti-fitt}.}
+La longitud es $7$, el aniquilador es $(\varpi^5)$ y
+el ideal de Fitting es $(\varpi^7)$. La longitud normalizada
+es $7/3$. Si $Q$ fuera una extensión de escalares como en
+\eqref{eq:ti-length-base}, su longitud sería múltiplo de $3$;
+por tanto no lo es. Dividir por el índice de ramificación es
+una normalización válida para cualquier módulo finito, pero
+identificar el resultado con una longitud sobre $\Z_\ell$
+requiere una comparación de coeficientes efectiva.
+
+\begin{ejercicio}\label{ej:ti-delta}
+Tome $\ell=3$, $a=4$, $u_1=1$ y $t=6$.
+Calcule $v_3(\delta)$ en \eqref{eq:ti-delta}.
+Compare con $\ell=2$, $a=5$ y los mismos $u_1,t$.
+\end{ejercicio}
+\paragraph{Solución del Ejercicio~\ref{ej:ti-delta}.}
+En el primer caso $s_0=1$ y
+$v_3(\delta)=5+v_3(5!)=6$.
+En el segundo $s_0=2$, se cumple la hipótesis diádica y
+$v_2(\delta)=10+v_2(5!)=13$.
+Si el cuerpo de coeficientes tiene ramificación
+$e_{\mathcal O}$, las valoraciones $v_\varpi$ se multiplican
+por ese índice; las normalizadas siguen siendo $6$ y $13$.
+
+\begin{ejercicio}\label{ej:ti-local}
+En la Proposición~\ref{prop:ti-local}, suponga
+$\kappa=2$, $\length S=7$, $h=3$ y $g=2$.
+Dé una cota para $\length Q$. Explique por qué estos datos
+no acotan por $2+6$ el núcleo del mapa multiplicado
+$\varpi^3f$.
+\end{ejercicio}
+\paragraph{Solución del Ejercicio~\ref{ej:ti-local}.}
+La cota es $2+7+2\cdot3=15$.
+El término $6$ controla la imagen local, no toda la torsión
+de $\operatorname{im}f$ que puede ser anulada al multiplicar
+por $\varpi^3$. El contraejemplo que sigue a la proposición
+muestra que esa segunda torsión puede crecer con el número
+de generadores del dominio. Para estimarla se necesita ese
+otro dato o un control directo de su submódulo anulado.
+
+El ejemplo $Q=(\mathcal O/\varpi^3)^2\oplus k^9$,
+$H=(\mathcal O/\varpi^3)^2\oplus k^7$, con $f$ que olvida
+dos coordenadas de $k=\mathcal O/\varpi$ y $r$ la proyección
+sobre $(\mathcal O/\varpi^3)^2$, realiza exactamente los datos:
+el núcleo de $f$ tiene longitud $2$, $S$ tiene longitud $7$
+y el error local tiene dos generadores y exponente $3$.
+Sin embargo $\varpi^3f=0$, por lo que su núcleo tiene longitud
+$15$, mayor que $2+6$.
+
+\begin{ejercicio}\label{ej:ti-mult}
+Considere cuatro caracteres con pesos $0,1,2,3$ y longitudes
+Selmer $s_1=2$, $s_2=3$, $s_3=1$.
+Compare el presupuesto de todas las parejas de pesos con el
+presupuesto de un bloque de cada torcido negativo. Si en un
+presupuesto global ya se ha obtenido $\eta_j=18$, ¿debe
+redefinirse como $36$ antes de aplicar la fórmula de pendiente?
+\end{ejercicio}
+\paragraph{Solución del Ejercicio~\ref{ej:ti-mult}.}
+El primer recuento da $3\cdot2+2\cdot3+1=13$;
+un bloque de cada torcido aporta $2+3+1=6$.
+La comparación específica debe justificar cuál de esos
+recuentos corresponde a sus módulos.
+El valor $\eta_j$ permanece $18$. El factor $2$ de la
+pendiente se aplica en \eqref{eq:ti-grado}, junto con la
+división por el grado del cuerpo y el rango.
