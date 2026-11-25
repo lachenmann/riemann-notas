@@ -1,0 +1,1239 @@
+\section{Levantamientos locales, filas y control uniforme}
+\label{sec:levantamientos-uniformes}
+
+\fuente{Continuación de la Nota~\ref{sec:theta-integral}.
+A93, §9, pp.~62--64, para condiciones locales, finitud y normalización.
+El cotejo de los productores locales conserva el espejo
+\texttt{CocoSgt/riemann-hypothesis-lean} en la revisión
+\texttt{7cbf7a0c32fca1badf05931879a37c3f8a2b03b4}.
+Se distinguen las pruebas desarrolladas aquí, los resultados previos
+que se aplican y las entradas de teoría de periodos recibidas.}
+
+La Nota~\ref{sec:theta-integral} construyó los cocientes integrales
+que miden el defecto de separación y dejó escrito el presupuesto
+\eqref{eq:ti-local-display}. Esta nota desarrolla los mapas locales
+que permiten alimentar ese presupuesto. El primer objetivo es
+pasar de una clase levantada a un cociclo con la igualdad exacta
+que exigen las relaciones de columnas. El segundo es identificar
+el cociente de una fila y estimar su longitud sin perder su torsión.
+El tercero es cuantificar los núcleos de invariantes y de
+restricción cuando cambian los datos aritméticos.
+
+La distinción que guía las pruebas es sencilla: disponer de un
+objeto finito para cada miembro de una familia no ofrece todavía
+una constante común. Obtendremos certificados concretos de esa
+constante: exponentes de levantamiento, valoraciones de menores,
+cortes de caracteres y grados de extensiones. La aplicación a la
+familia theta conserva las hipótesis que realizan esos certificados.
+
+En toda la nota $K/\Q_\ell$ es finita, $\mathcal O$ es su anillo
+de enteros, $\varpi$ un uniformizante y
+$e_{\mathcal O}=v_\varpi(\ell)$. La longitud puede tomar el valor
+infinito; solo escribimos
+$\lambda_{\mathcal O}(M)=\length_{\mathcal O}(M)/e_{\mathcal O}$
+como número finito después de justificar su finitud. Los cuerpos
+aritméticos se denotan por $E$ o $L$, para distinguirlos del
+cuerpo de coeficientes $K$.
+
+\subsection{Qué significa levantar una clase local con coste acotado}
+\label{subsec:pl-levantar}
+
+Sea $\mathcal O$ un anillo de valoración discreta de característica
+mixta $(0,\ell)$, con cuerpo de fracciones $K$, uniformizante
+$\varpi$ y $e_{\mathcal O}=v_\varpi(\ell)$. Para un grupo $D$ que
+actúa $\mathcal O$-linealmente en $M$, escribimos
+\[
+ \begin{gathered}
+ Z^1(D,M)=\{z:D\to M:z(gh)=z(g)+g z(h)\},\\
+ d_Mm(g)=gm-m,\qquad H^1(D,M)=Z^1(D,M)/d_MM.
+ \end{gathered}
+\]
+En esta primera construcción la cohomología es algebraica. La versión
+continua se indicará expresamente cuando intervenga la topología.
+
+Sean $p:M_1\to M_2$ $\mathcal O$-lineal y equivariante, $g=H^1(p)$ y
+$H_{f,i}\subseteq H^1(D,M_i)$ dos submódulos que fijan condiciones
+locales. Para un
+entero $e\ge0$, la afirmación
+\begin{equation}
+ \ell^e H_{f,2}\subseteq g(H_{f,1})
+ \label{eq:pl-lifto}
+\end{equation}
+acota el exponente del conúcleo local. No afirma que un representante
+arbitrario de la clase levantada se envíe exactamente en
+$\ell^e\kappa$. Para obtener esa igualdad hay que corregir un borde.
+
+\begin{proposicion}[Levantamiento exacto de cociclos]
+\label{prop:pl-cociclo-exacto}
+Supongamos que $p$ es sobreyectiva y que se cumple
+\eqref{eq:pl-lifto}. Para cada $\kappa\in Z^1(D,M_2)$ con
+$[\kappa]\in H_{f,2}$ existe $K_\kappa\in Z^1(D,M_1)$ tal que
+\[
+ [K_\kappa]\in H_{f,1},\qquad
+ p(K_\kappa(g))=\ell^e\kappa(g)\quad(g\in D).
+\]
+La corrección no aumenta el exponente $e$.
+\end{proposicion}
+\begin{proof}
+Por \eqref{eq:pl-lifto} elegimos una clase $[K_0]\in H_{f,1}$ con
+$[pK_0]=\ell^e[\kappa]$. Existe, por tanto, $v\in M_2$ tal que
+$pK_0-\ell^e\kappa=d_{M_2}v$. Elegimos $w\in M_1$ con $p(w)=v$
+y ponemos $K_\kappa=K_0-d_{M_1}w$. La equivariancia da
+$p(d_{M_1}w)=d_{M_2}v$, de modo que $pK_\kappa=\ell^e\kappa$.
+Restar un borde preserva la clase de cohomología y, por tanto, su
+pertenencia a $H_{f,1}$.
+\end{proof}
+
+Esta es la prueba de \texttt{LocLift.liftCoc}, líneas 13--36, y no
+solo una traducción de su enunciado. La sobreyectividad sobre
+\emph{los módulos integrales} permite elegir $w$ sin denominador.
+En la versión continua también se necesitan un representante $K_0$
+continuo y continuidad del mapa orbital $g\mapsto gw$; bajo esas
+hipótesis la misma corrección es continua.
+
+\subsection{Las dos evaluaciones de las columnas}
+\label{subsec:pl-columnas}
+
+Sea $A$ una $\mathcal O$-álgebra, y sea la acción de $D$ en los
+módulos considerados la multiplicación por $u(g)$. En la aplicación
+$u(g)=\chi(g)^{-1}r(g)$, con el carácter tomando valores centrales.
+Sea $P$ un $A$-módulo con un mapa $A$-lineal
+$\iota:P\to A$. Supongamos dada una evaluación sobreyectiva
+\[
+ \operatorname{ev}_{v_1}:P\longrightarrow L,
+ \qquad p\longmapsto\iota(p)v_1,
+\]
+que es equivariante para las acciones usadas. Para una familia finita
+$\kappa_a\in Z^1(D,L)$ cuyas clases satisfacen la condición local,
+\eqref{eq:pl-lifto} y la proposición anterior producen cociclos
+$z_a:D\to P$. Entonces
+\begin{equation}
+ K_a(g):=\iota(z_a(g)),\qquad
+ K_a(g)v_1=\ell^e\kappa_a(g),\qquad [z_a]\in H_{f,P}.
+ \label{eq:pl-colk}
+\end{equation}
+En particular, si la condición finita es functorial para los mapas
+$P\to V$, $p\mapsto\iota(p)s$, también la función
+$g\mapsto K_a(g)s$ satisface esa condición, para cada $s\in V$.
+Esto es lo que utilizan \texttt{colK} y \texttt{colFun}, líneas
+38--49 y 68--77 de \texttt{LocLift.lean}.
+
+La segunda evaluación tiene como objetivo el ideal
+$\delta_{\mathcal O}\mathcal O$, con acción trivial. Supongamos que
+\[
+ \operatorname{ev}_E:P\twoheadrightarrow\delta_{\mathcal O}\mathcal O,
+ \quad \iota(P)\subseteq AE,
+ \quad \iota(p)m=\operatorname{ev}_E(p)m\quad(p\in P,m\in M).
+\]
+Sea $g\mapsto\delta_{\mathcal O}u_0(g)$ un cociclo en ese ideal y
+supongamos que su clase satisface la condición local objetivo.
+Supongamos además que $\operatorname{ev}_E$ es equivariante para
+la acción trivial del objetivo y satisface \eqref{eq:pl-lifto}
+con sus condiciones locales correspondientes y el mismo exponente $e$.
+Aplicando la misma proposición obtenemos $z_0:D\to P$ y
+\begin{equation}
+ k_0(g)=\iota(z_0(g))\in AE,\qquad
+ k_0(g)m=\ell^e\delta_{\mathcal O}u_0(g)m.
+ \label{eq:pl-col-e}
+\end{equation}
+Aquí $\delta_{\mathcal O}$ forma parte del cociclo de entrada. La
+corrección de bordes no introduce una segunda potencia de
+$\delta_{\mathcal O}$.
+
+Cuando $D$ es un subgrupo de un grupo global $G$, el código define
+$K_a$ y $k_0$ en $G\setminus D$ por cero. Esa elección prolonga
+\emph{funciones}; las identidades de cociclo y las condiciones
+locales se utilizan en $D$. Sin hipótesis adicionales sobre $D$ no
+se deduce que la prolongación sea un cociclo global ni que sea
+continua. Los cociclos que sí se han construido son $z_a$ y $z_0$
+en el grupo local.
+
+\subsection{Por qué basta una suma finita de representaciones matriciales}
+\label{subsec:pl-seleccion}
+
+Para aplicar un teorema de levantamiento a $P$ hay que situar
+$K\otimes_{\mathcal O}P$ en una clase de representaciones a la que
+ese teorema se aplique. La evaluación en la familia de matrices
+ofrece una construcción concreta.
+
+\begin{lema}[Selección finita de columnas]
+\label{lem:pl-seleccion}
+Sea $V$ un espacio vectorial de dimensión finita sobre $K$, con
+acción de $D$. Supongamos dado un mapa lineal inyectivo
+\[
+ \Lambda:V\longrightarrow\prod_{x\in X}\operatorname{Mat}_d(K)
+\]
+tal que $\Lambda(gv)_x=U_x(g)\Lambda(v)_x$ para una familia de
+representaciones matriciales $U_x$. Existen
+$m\leq\dim_KV$ y pares $(x_a,b_a)$, $1\leq a\leq m$, tales que
+\[
+ j:V\hookrightarrow\bigoplus_{a=1}^m K^d,
+ \qquad j(v)_a=\Lambda(v)_{x_a}e_{b_a},
+\]
+es inyectiva y equivariante, con acción $U_{x_a}$ en el sumando $a$.
+\end{lema}
+\begin{proof}
+Las formas lineales que extraen todas las entradas de todas las
+matrices $\Lambda(v)_x$ tienen aniquilador común cero, pues
+$\Lambda$ es inyectiva. Por dualidad en dimensión finita, generan
+$V^*$. Elegimos entre ellas una base de $V^*$, con $m=\dim_KV$
+elementos (y la familia vacía si $V=0$). A cada forma seleccionada
+le corresponde una columna $(x_a,b_a)$. Si todas esas columnas
+se anulan en $v$, se anulan las formas de la base, luego $v=0$.
+La identidad de equivariancia resulta de que extraer una columna
+conmuta con la multiplicación matricial a la izquierda.
+\end{proof}
+
+La selección finita corresponde a \texttt{fin\_sel}, líneas
+593--619 de \texttt{FiniteClassesLocalEq.lean}; la extensión de la
+evaluación integral a $K\otimes P$ y la extracción de columnas
+aparecen en \texttt{embAt\_Dd}, líneas 708--776. La cota
+$m\leq\dim_KV$ se ha explicitado aquí mediante la prueba anterior;
+no se necesita una cota uniforme de $\dim_KV$ para la mera
+existencia de la inmersión. Para usar un mismo exponente en toda la
+familia se necesita, en cambio, que la hipótesis de levantamiento
+sea uniforme respecto del número de sumandos. Ese cuantificador
+está incluido en \texttt{LiftAt}: se permiten cualesquiera
+subcocientes de sumas \emph{finitas} de la familia prescrita, tanto
+en la fuente como en el objetivo.
+
+Los productores \texttt{liftCol\_eve\_Dd} y
+\texttt{liftCol\_evE\_Dd}, líneas 798--841 del mismo archivo,
+usan esa inmersión, la continuidad de la familia y la entrada
+\texttt{LiftExponentAtPlaces} para obtener \eqref{eq:pl-lifto}
+con el mismo exponente local. La operación que transporta
+\texttt{LiftF} a \texttt{LiftO}, líneas 178--237, conserva el
+exponente: la discrepancia es un borde integral que desaparece al
+pasar a cohomología. Se mantienen las hipótesis de retículos
+finitos y libres, evaluación sobreyectiva, compatibilidad de
+coeficientes y entradas locales requeridas por el productor.
+
+\subsection{El cociente de una fila, antes de estimar su longitud}
+\label{subsec:pl-cociente-fila}
+
+Ahora sí usamos cohomología continua. Sea $D$ topológico y sean
+$T_i\subset V_i$ retículos estables en representaciones de
+dimensión finita sobre $K$. Suponemos continuos los mapas
+orbitales y las inclusiones de los retículos, con las topologías
+compatibles. Sea $f:T_1\to T_2$ equivarante, extendido a un mapa
+continuo $f_K:V_1\to V_2$.
+
+Sea $Z_f^1(D,V_i)$ una condición finita sobre cociclos continuos,
+que sea un $K$-subespacio, contenga $dV_i$ y sea preservada por
+$f_K$. En el modelo de periodos leído, su definición es
+\begin{equation}
+ Z_f^1(D,V)=\{z\in Z^1_{\rm cont}(D,V):
+   \exists b\in V\otimes_{\mathbb Q_\ell}B,\quad
+   z(g)\otimes1=gb-b\text{ para todo }g\in D\}.
+ \label{eq:pl-zf}
+\end{equation}
+La acción en $V\otimes_{\mathbb Q_\ell}B$ es la acción diagonal prescrita por
+los datos de periodos. Esta definición corresponde a
+\texttt{finiteCocycles}, líneas 190--202 de
+\texttt{WeaklyAdmissibleFiltrations/}\allowbreak\texttt{Statement.lean}.
+El adjetivo ``finita'' describe una condición aritmética: por sí
+solo no afirma finitud cardinal ni longitud finita.
+
+Ponemos
+\[
+ Z_f^1(D,T_i)=\{z\in Z^1_{\rm cont}(D,T_i):z_K\in Z_f^1(D,V_i)\},
+ \qquad H_f^1(D,T_i)=\operatorname{im}(Z_f^1(D,T_i)\to H^1(D,T_i)).
+\]
+Definimos también $H_f^1(D,V_2)$ como el $K$-espacio generado por
+las clases finitas racionales, y
+\begin{equation}
+ F_s=\{\xi\in H^1(D,T_2):\xi_K\in H_f^1(D,V_2)\},\qquad
+ I=f_*H_f^1(D,T_1).
+ \label{eq:pl-fs}
+\end{equation}
+Las propiedades anteriores implican $I\subseteq F_s$.
+
+\begin{proposicion}[Presentación exacta del defecto de fila]
+\label{prop:pl-presentacion-fila}
+Con estas hipótesis, para todo cociclo integral continuo $z$,
+\[
+ [z]\in F_s\quad\Longleftrightarrow\quad z_K\in Z_f^1(D,V_2).
+\]
+Además, el mapa que toma la clase de un cociclo induce un
+isomorfismo de $\mathcal O$-módulos
+\begin{equation}
+ \frac{F_s}{I}\ \simeq
+ \frac{Z_f^1(D,T_2)}{fZ_f^1(D,T_1)+dT_2}.
+ \label{eq:pl-iso-fila}
+\end{equation}
+Por tanto, las dos presentaciones tienen exactamente la misma
+longitud, finita o infinita.
+\end{proposicion}
+\begin{proof}
+La implicación de derecha a izquierda es inmediata. Si la clase
+racional de $z$ pertenece al espacio generado por las clases
+finitas, tomamos una combinación finita de representantes finitos.
+Equivalentemente, tras despejar sus denominadores, existen
+$0\ne t\in\mathcal O$, $c\in Z_f^1(D,V_2)$ y $v\in V_2$ con
+$tz_K=c+d v$. Como $Z_f^1(D,V_2)$ es un $K$-subespacio y contiene
+$dV_2$, se sigue que $z_K=t^{-1}(c+d v)$ también pertenece a él.
+La elección del signo del borde no altera el argumento.
+
+En consecuencia, $Z_f^1(D,T_2)\to F_s$ es sobreyectiva y tiene
+núcleo $dT_2$. La preimagen de $I$ consiste exactamente en los
+cociclos $f(c)+dt$, con $c\in Z_f^1(D,T_1)$ y $t\in T_2$.
+La functorialidad y la inclusión de los bordes aseguran que esa
+suma ya está contenida en $Z_f^1(D,T_2)$. El teorema de isomorfía
+da \eqref{eq:pl-iso-fila}.
+\end{proof}
+
+Para condiciones locales arbitrarias $F_i\subseteq H^1(D,T_i)$,
+si $Z_{F_i}$ denota su preimagen en los cociclos, la fórmula que
+no presupone functorialidad es
+\[
+ \frac{F_2}{F_2\cap f_*F_1}\simeq
+ \frac{Z_{F_2}}{Z_{F_2}\cap(fZ_{F_1}+dT_2)}.
+\]
+La simplificación del denominador en \eqref{eq:pl-iso-fila}
+utiliza precisamente la inclusión $f_*F_1\subseteq F_2$.
+
+El denominador es $dT_2$, no el conjunto más grande de los bordes
+racionales que casualmente tengan valores integrales. Reemplazarlo
+por ese conjunto puede eliminar parte del defecto. En particular,
+$F_s$ puede tener torsión procedente del núcleo de
+$H^1(D,T_2)\to H^1(D,V_2)$.
+
+En el código, $\operatorname{col}(F)$ se define como la longitud
+del cociente de la derecha (formalmente se intersecta el
+denominador con el numerador). Las funciones
+\texttt{FsS}, \texttt{ImS} y \texttt{rowLenS} emplean el cociente
+de la izquierda. La prueba de \texttt{LiftMapEquivariant.mem\_FsG},
+líneas 91--134, efectúa el paso por el espacio racional;
+\texttt{im\_iff}, líneas 208--280, conserva los bordes integrales;
+y \texttt{len\_eq\_col}, líneas 282--302, identifica las longitudes.
+
+\subsection{La topología que permite comparar los dos modelos}
+\label{subsec:pl-topologia}
+
+Los grupos locales y los coeficientes de la definición de periodos
+pueden estar presentados de modo distinto a los grupos y retículos
+de la fila. Algebraicamente, una isomorfía de grupos y una
+isomorfía de anillos transportan cociclos, bordes y sus cocientes.
+La continuidad del cociclo transportado requiere una comprobación
+adicional. En \texttt{rowLenD\_eq} y \texttt{len\_eq\_col} se
+usan dos condiciones de reflexión de continuidad:
+
+\begin{enumerate}
+\item una función con valores racionales es continua si lo es su
+      transporte al modelo local de periodos;
+\item una función con valores en el retículo fuente es continua
+      si lo es su racionalización transportada.
+\end{enumerate}
+
+Estas condiciones se satisfacen, por ejemplo, cuando los cambios
+de grupo y espacio racional son homeomorfismos y el retículo
+lleva la topología inducida con la inclusión correspondiente.
+El código las retiene como las entradas \texttt{RowTop}; no deben
+suprimirse de un argumento que parta de cociclos algebraicos.
+La inclusión de los bordes racionales en \eqref{eq:pl-zf} utiliza
+también la continuidad orbital: para $dv$ se toma $v\otimes1$
+como testigo del periodo.
+
+Una isomorfía semilineal para una \emph{isomorfía de anillos}
+preserva la longitud: transporta biyectivamente las cadenas de
+submódulos, con sus inclusiones estrictas y sus factores simples.
+Por ello el transporte de \texttt{len\_eq\_col} no tiene coste
+de ramificación. El factor
+$\operatorname{length}_{\mathcal O}(\mathcal O/\ell\mathcal O)
+=e_{\mathcal O}$ que aparecerá en la cota de fila procede de su
+normalización, no de este cambio de presentación.
+
+\subsection{Cuánto cuesta el conúcleo: rango y torsión}
+\label{subsec:pl-coste}
+
+\begin{proposicion}[Cota de longitud a partir de LiftO]
+\label{prop:pl-coste}
+Sea $F_s$ un $\mathcal O$-módulo finitamente generado, $I\subseteq
+F_s$ y supongamos $\ell^e F_s\subseteq I$. Escribamos
+\[
+ F_s\simeq\mathcal O^r\oplus
+           \bigoplus_{j=1}^t\mathcal O/\varpi^{a_j}\mathcal O,
+ \qquad a_j\geq1.
+\]
+Entonces
+\begin{equation}
+\begin{aligned}
+ \operatorname{length}_{\mathcal O}(F_s/I)
+ &\leq r e e_{\mathcal O}+\sum_{j=1}^t\min(a_j,e e_{\mathcal O})
+ \\
+ &\leq r e e_{\mathcal O}
+      +\operatorname{length}_{\mathcal O}(F_{s,\mathrm{tors}}).
+\end{aligned}
+ \label{eq:pl-coste-fino}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+La inclusión $\ell^eF_s\subseteq I$ da una sobreyección
+$F_s/\ell^eF_s\twoheadrightarrow F_s/I$. Como
+$\ell^e$ es una unidad por $\varpi^{e e_{\mathcal O}}$, cada
+sumando libre contribuye $e e_{\mathcal O}$ a la longitud del
+primer cociente; cada sumando de torsión contribuye
+$\min(a_j,e e_{\mathcal O})$. La aditividad de la longitud da
+la primera desigualdad de \eqref{eq:pl-coste-fino}; la segunda
+usa $\min(a_j,e e_{\mathcal O})\le a_j$.
+\end{proof}
+
+La segunda desigualdad es el contenido de
+\texttt{TorsionLengthCounts/RowCol.rowColength}, líneas 83--143,
+aplicado por \texttt{LocLift.rowLift}, líneas 79--87. La primera
+es una precisión mediante factores invariantes que hemos probado
+aquí. Si la imagen inicial $g(H_{f,1})$ no se ha identificado aún
+como submódulo de $F_s$, se toma
+$I=F_s\cap g(H_{f,1})$; la hipótesis \texttt{LiftO} sigue dando
+$\ell^eF_s\subseteq I$.
+
+El término de torsión tiene contenido. Para
+$F_s=\mathcal O/\varpi^a\mathcal O$, $I=0$ y
+$e e_{\mathcal O}\geq a$, se cumple la hipótesis aunque
+$\operatorname{rank}_{\mathcal O}F_s=0$ y
+$\operatorname{length}_{\mathcal O}(F_s/I)=a$. Una cota que use
+solo el rango daría erróneamente cero. La eliminación de este
+término requiere una hipótesis adicional de ausencia de torsión
+o una estimación específica de ella.
+
+\subsection{De la estimación local de periodos a TieRow}
+\label{subsec:pl-tie}
+
+La presentación \eqref{eq:pl-iso-fila} permite usar una cota
+obtenida directamente en el modelo de periodos. En la revisión
+cotejada, \texttt{RowAt} exige lo siguiente para cada mapa
+sobreyectivo de retículos $F:T_1\to T_2$ de la clase considerada:
+el retículo objetivo debe identificarse con el retículo matricial
+prescrito; la representación fuente debe ser una
+\emph{subrepresentación} de una suma finita de la familia dual;
+y los mapas orbitales deben ser continuos. Su conclusión
+\texttt{ColLe} consiste en la existencia de $m,k\in\mathbb N$ con
+\begin{equation}
+ \operatorname{col}(F)=m,\qquad
+ \operatorname{length}_{\mathcal O}(\mathcal O/\ell\mathcal O)=k,
+ \qquad m\leq b\,k,
+ \label{eq:pl-colle}
+\end{equation}
+donde $b\in\mathbb Q$ es la cota normalizada de la fila. Incluye
+la finitud de las dos longitudes; no es una desigualdad obtenida
+asignando un número a una longitud infinita.
+
+Las hipótesis de retículo, acción, topología y comparación de
+condiciones locales identifican
+$\operatorname{rowLen}(n)=\operatorname{col}(F_n)$. La condición
+\texttt{SelfGood} permite usar el modelo de coeficientes del
+propio punto, para el que $k=e_{\mathcal O}$. Aplicando
+\eqref{eq:pl-colle} con $b=\operatorname{lenRow}(w_n)$ se obtiene
+\begin{equation}
+ \operatorname{rowLen}(n)<\infty,\qquad
+ \operatorname{rowLen}(n)\leq
+ e_{\mathcal O}\operatorname{lenRow}(w_n)
+ \quad(n\in\operatorname{rowsN}).
+ \label{eq:pl-tie}
+\end{equation}
+La ruta cotejada es
+\texttt{rowTie\_disp} (líneas 102--157 de
+\texttt{FiniteClassesRowEqGeneric.lean}) y
+\texttt{BKaClause.tie\_clause} (líneas 60--77).
+La igualdad de modelos es el paso que hace aplicable la cota;
+la hipótesis \texttt{LengthBoundAtPlaces} proporciona la
+estimación local que alimenta esa ruta.
+
+No se han identificado \texttt{LiftO} y \texttt{TieRow} como una
+misma entrada. Un levantamiento de exponente acotado proporciona
+la cota \eqref{eq:pl-coste-fino} si se controlan rango y torsión;
+la entrada \texttt{RowAt} proporciona directamente una cota
+normalizada para el cociente particular, con sus hipótesis de
+familia dual y retículo matricial.
+
+\subsection{Proveedor por ventanas y frontera de esta reconstrucción}
+\label{subsec:pl-ventanas}
+
+Hay un productor concreto del exponente local, aunque requiere
+entradas de teoría de periodos. El teorema
+\texttt{lifting\_condition\_of\_windows}, líneas 70--88 de
+\texttt{LiftingConditionOfWindows.lean}, trabaja para $\ell\ne2$.
+Bajo su teorema de levantamiento para todos los casos, las
+compatibilidades de Fontaine, la admisibilidad indicada, la
+continuidad de la familia, la condición no ramificada de las bases
+de columna y una ventana común de saltos $[-M,h]$, basta elegir
+\begin{equation}
+ e'_w\ \geq\ C_A\left(2+\frac{M+h}{\ell}
+                       +\log_\ell(M+h+1)\right),
+ \qquad C_A\geq0,
+ \label{eq:pl-ventana}
+\end{equation}
+para obtener \texttt{LiftExponentAtPlaces}. El cuantificador de
+la ventana abarca los lugares de columna, las extensiones de
+coeficientes declaradas buenas, los miembros de la familia y los
+encajes que indexan los saltos.
+
+La reconstrucción anterior prueba los pasos posteriores: la
+selección finita de representaciones de columnas, el transporte a
+\texttt{LiftO}, la corrección exacta de bordes, la presentación del
+cociente de filas y su coste de longitud. El teorema general de
+levantamiento, las entradas cristalinas y la identificación del
+retículo matricial objetivo siguen siendo hipótesis de los
+productores leídos. El archivo de ventanas no prueba por sí solo
+esas entradas ni el caso $\ell=2$. Por su parte,
+\texttt{RowTieInOf.rowTieIn\_of}, líneas 30--55, ensambla las
+propiedades estructurales de la fila, pero recibe expresamente
+\texttt{RowMat} y la continuidad orbital necesaria para los bordes.
+La presente lectura no sustituye esos datos por conclusiones.
+
+\begin{proposicion}[Una elección común para los exponentes de columna]
+\label{prop:lu-ventana-comun}
+Supongamos que las hipótesis del productor anterior se realizan
+para cada miembro de una familia, con $C_*,W_*\ge0$,
+$\ell\ge3$, $C_A\le C_*$ y
+$0\le M+h\le W_*$. Entonces puede elegirse en todas sus columnas
+el mismo exponente entero
+\begin{equation}
+ E_*:=\left\lceil C_*\left(2+\frac{W_*}{3}
+                       +\log_3(W_*+1)\right)\right\rceil.
+ \label{eq:lu-exponente-comun}
+\end{equation}
+Esta elección no exige acotar el número de sumandos finitos
+admitidos por \texttt{LiftAt}.
+\end{proposicion}
+\begin{proof}
+Para $W\ge0$ y $\ell\ge3$ se tiene
+$W/\ell\le W/3$ y
+$\log_\ell(W+1)\le\log_3(W+1)$. Ambas funciones del lado derecho
+son crecientes en $W$. Como $C_A\ge0$, sustituir $W$ por $W_*$
+y $C_A$ por $C_*$ hace que \eqref{eq:pl-ventana} se cumpla con
+$e'_w=E_*$. El productor cuantifica sobre todas las sumas finitas
+de la clase prescrita, de modo que no introduce un factor por
+su número de sumandos.
+\end{proof}
+
+La proposición fija una elección posible de $e'_w$; no deduce
+que cualquier elección mayor ya esté acotada por $E_*$. Tampoco
+construye la ventana común, ni incorpora el primo $2$, ni da un
+exponente para la familia dual de las filas. Estas son entradas
+distintas que deben verificarse en su lugar.
+
+\subsection{Núcleos de columnas e invariantes de la acción torcida}
+\label{subsec:lu-h0-fuente}
+
+Para una representación con acción $r$ y un carácter $\chi$, el
+operador de columna tiene la fórmula
+\begin{equation}
+ D_M(m)(g)=\chi(g)^{-1}r(g)m-m.
+ \label{eq:lu-d-columna}
+\end{equation}
+Por definición, $\ker D_M=M^{D,u}$, donde la acción torcida es
+$u(g)=\chi(g)^{-1}r(g)$. En el código cotejado, \texttt{colD}
+actúa en un espacio racional y su núcleo se mide por dimensión;
+\texttt{colDO} actúa en el módulo divisible correspondiente y su
+núcleo se mide por longitud. Una dimensión racional finita no
+proporciona por sí sola una longitud torsionaria finita.
+
+El archivo \texttt{KernelLengthHigherColumns.lean} prueba dos
+comparaciones. Para el bloque $0$, la aplicación \texttt{toKOG}
+es inyectiva y equivarante bajo \texttt{RingDef} y \texttt{NormAt}
+(líneas 93--135). Restringirla a los invariantes da
+\begin{equation}
+ h_{0,w}\le\length_{\mathcal O}H^0(E_w,W_{K/\mathcal O}).
+ \label{eq:lu-h0-bloque}
+\end{equation}
+La prueba usa las entradas de las matrices, la identificación de
+coeficientes y la acción; una igualdad de rangos no la reemplaza.
+Para $c\ge2$, la equivalencia importada
+\texttt{blkTw\_of\_def} identifica el bloque con
+$K/\mathcal O(-(c-1))$. La misma monotonía da una cota por
+\begin{equation}
+ H_0:=\max_{\substack{w\in\mathcal C\\1\le e<t}}
+       \length_{\mathcal O}H^0(E_w,K/\mathcal O(-e)),
+ \label{eq:lu-h0-def}
+\end{equation}
+con máximo cero si el conjunto de índices es vacío. El bloque
+$c=1$ tiene torcido cero y queda fuera de esta fórmula.
+
+Estas comparaciones se demuestran en $\N\cup\{\infty\}$.
+La estructura \texttt{H0.FinCore}, líneas 66--72 del mismo archivo,
+recibe la finitud de los invariantes del bloque automorfo en su
+clase admisible y la finitud de los caracteres negativos en los
+lugares sobre $\ell$. No contiene una constante numérica uniforme.
+El ensamblaje \texttt{theorem\_of\_display\_and\_g2}, líneas
+185--195, utiliza esa entrada. Después se justifica la finitud
+del supremo antes de convertir longitudes a naturales y dividir
+por $e_{\mathcal O}$. La lectura localizada no afirma la ausencia
+de otros productores fuera de los archivos revisados.
+
+\subsection{Un sistema finito detecta todos los invariantes}
+\label{subsec:lu-detectores}
+
+Sea $G$ un grupo profinito y sea
+$\rho:G\to\operatorname{GL}_d(\mathcal O)$ continua. Escribimos
+$A_d=(K/\mathcal O)^d$ con la acción inducida y topología discreta.
+Esta acción es continua: todo elemento pertenece a
+$A_d[\varpi^n]$ para algún $n$, y su estabilizador contiene el
+núcleo abierto de la reducción de $\rho$ módulo $\varpi^n$.
+Toda cohomología de $A_d$ en lo que sigue usa cocadenas continuas.
+
+\begin{lema}[A lo sumo $d$ matrices para la invariancia]
+\label{lem:lu-detectores}
+Sea $R\subseteq\mathcal O^{1\times d}$ el submódulo generado por
+todas las filas de todas las matrices $\rho(g)-I_d$, con $g\in G$,
+y sea $r=\operatorname{rank}_{\mathcal O}R$. Existen $r$ filas
+originales que forman una base de $R$. En particular, pueden
+elegirse $s\le r\le d$ elementos $g_1,\ldots,g_s$ tales que,
+para la matriz apilada
+\begin{equation}
+ B=\begin{pmatrix}\rho(g_1)-I_d\\ \vdots\\\rho(g_s)-I_d\end{pmatrix},
+ \qquad A_d^G=\ker(B:A_d\to A_{sd}).
+ \label{eq:lu-detector}
+\end{equation}
+Para $r=0$ la familia es vacía y $A_d^G=A_d$.
+\end{lema}
+\begin{proof}
+El anillo $\mathcal O$ es noetheriano y $R$ es un submódulo de
+un módulo libre finito. Por tanto $R$ es libre de rango $r$.
+Las imágenes de las filas originales generan el espacio
+$R/\varpi R$, de dimensión $r$ sobre $k=\mathcal O/\varpi$.
+Elegimos $r$ de ellas cuyas imágenes sean una base. Si $R_0$
+es el submódulo que generan, entonces
+$R=R_0+\varpi R$. El módulo finitamente generado $R/R_0$
+satisface $\varpi(R/R_0)=R/R_0$; Nakayama da $R/R_0=0$.
+También se ve directamente con la clasificación de módulos
+finitamente generados sobre un anillo de valoración discreta.
+Estas $r$ filas generan $R$ y son linealmente independientes.
+
+Tómense los elementos $g_i$ de cuyas matrices proceden esas
+filas, suprimiendo repeticiones. Las filas de $B$ contienen la
+base elegida y todas pertenecen a $R$; generan exactamente $R$.
+Ser anulado por ellas equivale a ser anulado por cada
+$\rho(g)-I_d$, que es la condición de invariancia.
+\end{proof}
+
+Los $g_i$ no tienen por qué generar $G$. El lema reduce un sistema
+de ecuaciones lineales, no determina todos los cociclos del grupo
+por sus valores en esos elementos. Tampoco asegura una cota para
+las valoraciones de las filas escogidas.
+
+\begin{proposicion}[Smith y certificado de longitud]
+\label{prop:lu-smith}
+Sean $\varpi^{a_1},\ldots,\varpi^{a_r}$ los divisores elementales
+no nulos de $B$, con $0\le a_1\le\cdots\le a_r$. Existe una
+isomorfía, no necesariamente canónica,
+\begin{equation}
+ A_d^G\simeq\bigoplus_{i=1}^r\mathcal O/\varpi^{a_i}\mathcal O
+                    \ \oplus\ (K/\mathcal O)^{d-r}.
+ \label{eq:lu-smith}
+\end{equation}
+Son equivalentes la longitud finita de $A_d^G$, la igualdad $r=d$
+y la anulación de $(K^d)^G$. En ese caso,
+\begin{equation}
+ \length_{\mathcal O}A_d^G
+   =\sum_{i=1}^d a_i
+   =v_\varpi(I_d(B))
+   =\min_Jv_\varpi(\det B_J),
+ \label{eq:lu-menores}
+\end{equation}
+donde $I_d(B)$ es el ideal de los menores de tamaño $d$.
+Para $d=0$ se toma el menor vacío igual a uno.
+\end{proposicion}
+\begin{proof}
+Las operaciones invertibles que llevan $B$ a su forma de Smith
+inducen automorfismos en los módulos divisibles. El núcleo de
+multiplicar por $\varpi^{a_i}$ en $K/\mathcal O$ es
+$\varpi^{-a_i}\mathcal O/\mathcal O\simeq\mathcal O/\varpi^{a_i}$.
+Las $d-r$ coordenadas restantes no tienen restricción; esto prueba
+\eqref{eq:lu-smith}. Sobre $K$, el mismo sistema tiene núcleo de
+dimensión $d-r$, lo que prueba las equivalencias.
+
+Cuando $r=d$, la longitud es la suma de los exponentes. Las
+operaciones invertibles conservan el ideal de menores: la fórmula
+de Cauchy--Binet da una inclusión y las operaciones inversas dan
+la otra. En la diagonal, ese ideal es
+$(\varpi^{\sum_i a_i})$. La valoración de un ideal finitamente
+generado sobre $\mathcal O$ es el mínimo de las valoraciones de
+sus generadores. De aquí resulta \eqref{eq:lu-menores}.
+\end{proof}
+
+La fórmula proporciona un certificado numérico: una cota
+$\lambda_{\mathcal O}(A_d^G)\le C$ equivale a la existencia de
+un menor de tamaño $d$ formado por filas de los operadores
+$\rho(g)-I_d$ cuya valoración sea a lo sumo $e_{\mathcal O}C$.
+En efecto, las filas originales generan $R$, por lo que sus
+menores generan el mismo ideal de determinantes; en un anillo
+local alguno realiza la valoración mínima. Si $r<d$, el módulo
+contiene una parte divisible no nula y no existe tal certificado
+de longitud finita. El ideal de menores y su independencia de
+presentación son también el mecanismo de Fitting de la
+Nota~\ref{sec:theta-integral}; véase Stacks, etiqueta 07Z6.
+
+Puede ser imposible detectar los invariantes con una sola matriz.
+Para $G=C_2\times C_2$ sobre $\mathcal O=\Z_2$, tome
+\begin{equation}
+ \rho(a)=\operatorname{diag}(1,-1,-1),\qquad
+ \rho(b)=\operatorname{diag}(-1,1,-1).
+ \label{eq:lu-klein}
+\end{equation}
+Cada elemento de $G$ tiene un vector fijo racional no nulo;
+por tanto $\det(\rho(g)-I_3)=0$ para todo $g$. Sin embargo, las
+filas conjuntas generan $2\Z_2^3$, y los invariantes de
+$(\Q_2/\Z_2)^3$ son $(\Z/2\Z)^3$, de longitud tres.
+
+\subsection{Cuánto se pierde al pasar de coeficientes finitos a divisibles}
+\label{subsec:lu-bockstein}
+
+\begin{proposicion}[Longitud exacta del núcleo de coeficientes]
+\label{prop:lu-bockstein}
+Con la notación de \eqref{eq:lu-smith}, para $n\ge0$ se tiene
+\begin{equation}
+ \ker\!\left[H^1(G,A_d[\varpi^n])\to H^1(G,A_d)\right]
+       \simeq A_d^G/\varpi^n A_d^G,
+ \label{eq:lu-bockstein}
+\end{equation}
+y este núcleo tiene longitud finita igual a
+\begin{equation}
+ \sum_{i=1}^r\min(n,a_i)\le rn\le dn.
+ \label{eq:lu-bockstein-longitud}
+\end{equation}
+La afirmación sigue siendo válida si $A_d^G$ tiene longitud infinita.
+\end{proposicion}
+\begin{proof}
+Dado $b\in A_d^G$, elegimos $a\in A_d$ con $\varpi^n a=b$.
+El cociclo $g\mapsto ga-a$ es continuo y toma valores en
+$A_d[\varpi^n]$. Otra preimagen difiere de $a$ en un elemento
+de ese submódulo, de modo que define la misma clase.
+La clase es cero precisamente cuando existe
+$c\in A_d[\varpi^n]$ con $ga-a=gc-c$ para todo $g$; esto
+equivale a $a-c\in A_d^G$, y luego a
+$b\in\varpi^n A_d^G$. Recíprocamente, todo cociclo del núcleo
+es un borde $ga-a$ con valores en $A_d[\varpi^n]$, de donde
+$\varpi^n a\in A_d^G$. Queda probado \eqref{eq:lu-bockstein}.
+
+En \eqref{eq:lu-smith}, cada sumando divisible coincide con su
+múltiplo por $\varpi^n$, y no aporta al cociente. Cada sumando
+finito aporta longitud $\min(n,a_i)$. La suma da la fórmula
+y, al tener $r$ sumandos, las dos desigualdades.
+\end{proof}
+
+Para un nivel $\ell^q$ se toma $n=e_{\mathcal O}q$, y así
+\begin{equation}
+ \lambda_{\mathcal O}\ker\!\left[
+ H^1(G,A_d[\ell^q])\to H^1(G,A_d)\right]\le dq.
+ \label{eq:lu-bockstein-normalizado}
+\end{equation}
+La sucesión de la Nota~\ref{sec:construccion-selmer} queda ahora
+acompañada de una medida exacta, incluso con invariantes infinitos.
+Para una representación fija, al crecer $n$ la longitud se
+estabiliza en $\sum_i a_i$; no se estabiliza necesariamente en
+la longitud de todos los invariantes.
+
+Las extensiones integrales importan. Tome $K=\Q_\ell$ y
+$\mathcal O=\Z_\ell$. Para $G=\Z_\ell$ y $N\ge1$,
+considere la representación continua
+\begin{equation}
+ \rho_N(x)=\begin{pmatrix}1&\ell^N x\\0&1\end{pmatrix}.
+ \label{eq:lu-unipotente}
+\end{equation}
+Sus invariantes divisibles son
+$(\Q_\ell/\Z_\ell)\oplus(\Z_\ell/\ell^N)$; por tanto la
+longitud del núcleo al nivel $\ell^q$ es $\min(q,N)$.
+La semisimplificación es trivial de rango dos, cuyos invariantes
+son completamente divisibles y cuyo núcleo es cero.
+Conocer solo los caracteres de la semisimplificación pierde
+justamente la parte finita que mide \eqref{eq:lu-bockstein}.
+
+\subsection{Una cota explícita para la ventana de torcidos negativos}
+\label{subsec:lu-h0-caracteres}
+
+Volvamos al cuerpo de números $E$, con $n_E=[E:\Q]$, y supongamos
+que $\mathcal C$ es un conjunto finito de lugares sobre $\ell$.
+Para $w\mid\ell$, sea $\epsilon_w=e(E_w/\Q_\ell)$. El
+Lema~\ref{lem:fu-invariantes} ya demuestra, para $e\ge1$,
+\begin{equation}
+ a_{\ell,e}(E_w):=\length_{\Z_\ell}
+ H^0(E_w,\Q_\ell/\Z_\ell(-e))
+ \le s_\ell+v_\ell(\epsilon_w)+v_\ell(e),\qquad
+ s_\ell=\begin{cases}1,&\ell\ne2,\\2,&\ell=2.\end{cases}
+ \label{eq:lu-ciclotomica-previa}
+\end{equation}
+Aplicamos ese resultado al supremo concreto de la construcción.
+
+\begin{proposicion}[Control del supremo de invariantes negativos]
+\label{prop:lu-h0}
+Para $t\ge2$, el número $H_0$ de \eqref{eq:lu-h0-def} es finito y
+\begin{equation}
+ \frac{H_0}{e_{\mathcal O}}
+ \le s_\ell+\max_{w\in\mathcal C}v_\ell(\epsilon_w)
+                 +\lfloor\log_\ell(t-1)\rfloor
+ \le s_\ell+\lfloor\log_\ell n_E\rfloor
+                 +\lfloor\log_\ell(t-1)\rfloor.
+ \label{eq:lu-h0-cota}
+\end{equation}
+La primera expresión se usa para $\mathcal C\ne\varnothing$;
+si $\mathcal C=\varnothing$ o $t\le1$, entonces $H_0=0$.
+Además, $H_0=0$ si $\ell>(t-1)n_E+1$.
+\end{proposicion}
+\begin{proof}
+La comparación de coeficientes de la
+Proposición~\ref{prop:ti-escalares}, en grado cero, da
+\[
+ \length_{\mathcal O}H^0(E_w,K/\mathcal O(-e))
+       =e_{\mathcal O}a_{\ell,e}(E_w).
+\]
+En el intervalo $1\le e<t$, el máximo de $v_\ell(e)$ es
+$\lfloor\log_\ell(t-1)\rfloor$: ninguna potencia mayor cabe en
+el intervalo y la potencia correspondiente sí cabe. Por otra
+parte $\epsilon_w\le[E_w:\Q_\ell]\le n_E$, de modo que
+$v_\ell(\epsilon_w)\le\lfloor\log_\ell n_E\rfloor$.
+Tomar el máximo finito en \eqref{eq:lu-ciclotomica-previa} prueba
+la finitud y la cota.
+
+Si $\ell>(t-1)n_E+1$ y el conjunto de índices es no vacío,
+entonces $\ell$ es impar. La condición de soporte del
+Lema~\ref{lem:fu-invariantes} exige
+$\ell-1\mid e\epsilon_w$ para un invariante no nulo.
+Pero $0<e\epsilon_w\le(t-1)n_E<\ell-1$, lo que es imposible.
+\end{proof}
+
+Con $n_E\le N_*$ y $2\le t\le T_*$, la cantidad
+\[
+ B_{\chi,*}:=2+\lfloor\log_2N_*\rfloor
+                    +\lfloor\log_2(T_*-1)\rfloor
+\]
+acota $H_0/e_{\mathcal O}$ para todos los primos, y los primos
+que pueden contribuir satisfacen
+$\ell\le(T_*-1)N_*+1$. Son conclusiones uniformes para este
+proveedor de caracteres. Si el grado o el corte crecen, esas
+mismas fórmulas muestran su dependencia. No controlan el bloque
+trivial, el bloque automorfo ni los demás términos de Selmer.
+
+Cuando la imagen ciclotómica local es exactamente
+$1+\ell^b\Z_\ell$, con $b\ge1$ si $\ell$ es impar y $b\ge2$
+si $\ell=2$, el cálculo de la
+Proposición~\ref{prop:ts-invariantes} da
+\begin{equation}
+ \sum_{e=1}^{t-1}a_{\ell,e}(E_w)
+       =(t-1)b+v_\ell((t-1)!).
+ \label{eq:lu-suma-caracteres}
+\end{equation}
+Es una información más fina que el máximo. Sin embargo, no
+permite sustituir sin prueba el término $t|\mathcal C|H_0$ de
+\eqref{eq:ti-errores-explicitos} por esa suma: tal sustitución
+requiere rehacer la comparación que produjo el factor $t$.
+
+\subsection{Subcocientes divisibles con exponente acotado}
+\label{subsec:lu-subcocientes}
+
+\begin{lema}[Exponente y corango controlan la longitud]
+\label{lem:lu-subcocientes}
+Sean $C\subseteq B\subseteq(K/\mathcal O)^D$ submódulos y
+$Q=B/C$. Si $\varpi^hQ=0$, con $h\ge0$, entonces $Q$ tiene
+longitud finita y
+\begin{equation}
+ \length_{\mathcal O}Q\le Dh.
+ \label{eq:lu-subcocientes}
+\end{equation}
+No se supone que $B$, $C$ o $Q$ sean finitamente generados.
+\end{lema}
+\begin{proof}
+Tomemos cualquier submódulo finitamente generado $Q_0$ de $Q$.
+Levantamos sus generadores a elementos $b_1,\ldots,b_m$ de $B$
+y ponemos $R=\sum_i\mathcal O b_i$. Cada $b_i$ es torsión;
+por tanto un mismo $\varpi^N$ anula $R$, que queda contenido en
+$(K/\mathcal O)^D[\varpi^N]\simeq(\mathcal O/\varpi^N)^D$.
+Así, $R$ tiene longitud finita.
+
+Por Smith, el número mínimo de generadores de $R$ es
+$\dim_k R[\varpi]$. Como $R[\varpi]$ se incluye en $k^D$, ese
+número es a lo sumo $D$. Su imagen $Q_0$ tiene, en consecuencia,
+a lo sumo $D$ generadores, y la hipótesis de exponente da una
+sobreyección $(\mathcal O/\varpi^h)^D\twoheadrightarrow Q_0$.
+De aquí $\length Q_0\le Dh$.
+
+Todas las longitudes de submódulos finitamente generados de $Q$
+son enteros entre cero y $Dh$. Elija uno de longitud máxima.
+Si un elemento de $Q$ quedara fuera, añadirlo produciría un
+submódulo finitamente generado estrictamente mayor, y la
+aditividad de longitudes daría una longitud mayor. Esto es
+imposible. El submódulo elegido es $Q$ entero, lo que prueba
+su finitud y \eqref{eq:lu-subcocientes}.
+\end{proof}
+
+La prueba evita inferir finitud a partir del exponente solamente:
+$(\mathcal O/\varpi)^{(\N)}$ tiene exponente $\varpi$ y longitud
+infinita. El control del módulo ambiente es la otra hipótesis
+esencial. Si el ambiente ya es
+$M=\bigoplus_i\mathcal O/\varpi^{a_i}$, la cota se afina a
+$\sum_i\min(h,a_i)$: $Q$ es cociente de $B/\varpi^hB$,
+cuya longitud es $\length B[\varpi^h]$, y
+$B[\varpi^h]\subseteq M[\varpi^h]$.
+
+\subsection{Cambio de base aritmética con pérdida explícita}
+\label{subsec:lu-restriccion}
+
+\begin{teorema}[Núcleo de restricción a un subgrupo normal abierto]
+\label{thm:lu-restriccion}
+Sea $H\triangleleft G$ abierto, sea $\Gamma=G/H$ de orden $n$,
+y supongamos que $\Gamma$ puede generarse por $s$ elementos.
+Para $A_d$ como antes, sin exigir finitud de $A_d^H$, se tiene
+\begin{equation}
+ \length_{\mathcal O}\ker\!\left[
+ H^1(G,A_d)\xrightarrow{\operatorname{res}}H^1(H,A_d)\right]
+       \le d s e_{\mathcal O}v_\ell(n).
+ \label{eq:lu-restriccion}
+\end{equation}
+En particular, el núcleo es finito y la restricción es inyectiva
+si $\ell\nmid n$.
+\end{teorema}
+\begin{proof}
+Pongamos $M=A_d^H$. Primero identificamos el núcleo con
+$H^1(\Gamma,M)$. Una clase cuya restricción es cero admite,
+tras restar un coborde, un cociclo $z$ que se anula en $H$.
+La identidad de cociclo muestra $z(gh)=z(g)$ para $h\in H$.
+Además $hg=g(g^{-1}hg)$ y la normalidad dan
+$hz(g)=z(hg)=z(g)$, por lo que los valores pertenecen a $M$.
+Así $z$ desciende a $\Gamma$. A la inversa se puede inflar todo
+cociclo de $\Gamma$. Si su inflación es un borde $ga-a$, el
+hecho de que se anule en $H$ implica $a\in M$; era ya un borde
+de $\Gamma$ con valores en $M$. Los cociclos descendidos son
+continuos porque $\Gamma$ es finito y $H$ abierto.
+
+Un cociclo de $\Gamma$ queda determinado por sus valores en los
+$s$ generadores: se usan sucesivamente
+$z(uv)=z(u)+uz(v)$ y $z(u^{-1})=-u^{-1}z(u)$.
+Se obtiene una inyección
+\[
+ Z^1(\Gamma,M)\hookrightarrow M^s\subseteq(K/\mathcal O)^{ds}.
+\]
+Por tanto $H^1(\Gamma,M)$ es un subcociente de ese módulo.
+Para cada cociclo $z$, sea $b=\sum_{\gamma\in\Gamma}z(\gamma)$.
+La permutación $\gamma\mapsto g\gamma$ da
+$b=nz(g)+gb$, es decir $nz(g)=b-gb$. El entero $n$ anula todas
+las clases. En $\mathcal O$ es una unidad por
+$\varpi^{e_{\mathcal O}v_\ell(n)}$. El
+Lema~\ref{lem:lu-subcocientes}, con $D=ds$, termina la prueba.
+\end{proof}
+
+Puede tomarse $s\le\lfloor\log_2 n\rfloor$: al añadir un
+generador exterior, el orden del subgrupo generado se multiplica
+al menos por dos. Si $n=1$, se toma $s=0$ y el núcleo es cero.
+Para una extensión galoisiana de cuerpos aritméticos $L/E$, la
+normalización conserva la dependencia en su grado:
+\begin{equation}
+ \lambda_{\mathcal O}(\ker\operatorname{res}_{L/E})
+       \le d s v_\ell([L:E]).
+ \label{eq:lu-restriccion-normalizada}
+\end{equation}
+El factor $e_{\mathcal O}$ desaparece; el grado aritmético
+permanece. La inyectividad especial de las capas ciclotómicas
+negativas demostrada en la Nota~\ref{sec:transporte-selmer}
+es más fuerte en esa situación y se conserva.
+
+La dependencia puede ser efectiva. Para $G=\Z_\ell$,
+$H=\ell^a\Z_\ell$ y coeficientes triviales
+$A=\Q_\ell/\Z_\ell$, la restricción es la multiplicación por
+$\ell^a$ al identificar un homomorfismo continuo con su valor
+en un generador. Todo elemento de $A$ tiene orden finito, así
+que efectivamente determina un homomorfismo continuo. El núcleo
+tiene longitud $a$ y alcanza \eqref{eq:lu-restriccion-normalizada}
+con $d=s=1$.
+
+\subsection{Qué condiciones permiten transportar Selmer}
+\label{subsec:lu-selmer}
+
+Sea $L/E$ una extensión finita galoisiana y sea $S$ un conjunto
+finito de lugares que contiene los de ramificación de la
+extensión y de la representación, los lugares sobre $\ell$ y
+los infinitos. Se utiliza el mismo problema de ramificación
+para $G_{E,S}$ y $G_{L,S_L}$. Si el problema inicial solo permitía
+ramificación sobre $\ell$, ampliar $S$ cambia el grupo global
+y necesita una comparación adicional.
+
+Dadas condiciones locales $F_v\subseteq H^1(E_v,A_d)$ y
+$F_w\subseteq H^1(L_w,A_d)$, definimos
+\[
+ S_F(E)=\ker\!\left[H^1(G_{E,S},A_d)\to
+             \prod_{v\in S}H^1(E_v,A_d)/F_v\right],
+\]
+y análogamente $S_F(L)$. Los mapas de localización se fijan con
+encajes compatibles y las identificaciones por conjugación
+necesarias.
+
+\begin{proposicion}[Transporte de longitud con condiciones locales]
+\label{prop:lu-selmer}
+Supongamos, para todo $w\mid v$, que
+\begin{equation}
+ \operatorname{res}_{L_w/E_v}(F_v)\subseteq F_w.
+ \label{eq:lu-compatibilidad-local}
+\end{equation}
+Si $S_F(L)$ tiene longitud finita y $\operatorname{Gal}(L/E)$
+admite $s$ generadores, entonces $S_F(E)$ tiene longitud finita y
+\begin{equation}
+ \lambda_{\mathcal O}S_F(E)
+ \le\lambda_{\mathcal O}S_F(L)+d s v_\ell([L:E]).
+ \label{eq:lu-selmer}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Las restricciones global y local forman un cuadrado conmutativo
+para cada $w\mid v$. La hipótesis
+\eqref{eq:lu-compatibilidad-local} hace que la restricción global
+lleve $S_F(E)$ a $S_F(L)$. Su núcleo se incluye en el núcleo de
+restricción de toda la cohomología, cuya longitud acota el
+Teorema~\ref{thm:lu-restriccion}. La imagen es un submódulo de
+$S_F(L)$. La sucesión exacta de núcleo e imagen demuestra la
+finitud del dominio y, por aditividad, la desigualdad.
+\end{proof}
+
+Para condiciones locales cero, la inclusión requerida es
+automática. Para condiciones de periodos debe demostrarse su
+functorialidad bajo la extensión utilizada; no basta que ambos
+submódulos reciban el nombre de ``condición finita''.
+Si se comparan en un mismo cuerpo condiciones
+$F_v\subseteq F'_v$, la localización induce una inyección
+\begin{equation}
+ S_{F'}(E)/S_F(E)\hookrightarrow\bigoplus_{v\in S}F'_v/F_v.
+ \label{eq:lu-cambio-condicion}
+\end{equation}
+El núcleo es exactamente $S_F(E)$, por definición. Así se puede
+sumar el coste de relajar las condiciones cuando esos cocientes
+son finitos; no se afirma sobreyectividad sobre la suma local.
+
+Tampoco se deduce sobreyectividad de una restricción de índice
+primo con $\ell$. Para $\ell$ impar, tome
+$G=\Z_\ell\rtimes C_2$, con acción por inversión, y coeficientes
+triviales $A=\Q_\ell/\Z_\ell$. Todo homomorfismo $G\to A$
+se anula en $C_2$ y debe ser igual a su negativo en $\Z_\ell$;
+como $2$ es una unidad, es cero. Pero
+$H^1(\Z_\ell,A)=A$. La restricción tiene núcleo cero y
+conúcleo infinito. La cota anterior solo usa su núcleo.
+
+\subsection{Insertar los controles en el presupuesto de la Nota 25}
+\label{subsec:lu-presupuesto}
+
+Escribamos
+\[
+ D_\delta=\frac{v_\delta}{e_{\mathcal O}},\qquad
+ B_0=\max_{w\in\mathcal C}\frac{h_{0,w}}{e_{\mathcal O}},\qquad
+ B_\chi=\frac{H_0}{e_{\mathcal O}}.
+\]
+El máximo vacío es cero. La Nota~\ref{sec:theta-integral}
+conserva por separado las filas, el bloque automorfo, los Selmer
+negativos y el grupo de clases. Ahora podemos nombrar un
+certificado para cada error local.
+
+\begin{proposicion}[Presupuesto uniforme a partir de datos acotados]
+\label{prop:lu-presupuesto}
+Considérese una familia para la que se cumplen las hipótesis de
+\eqref{eq:ti-local-display}. Supongamos que, antes de elegir
+sus miembros, se han fijado cotas no negativas
+\begin{equation}
+\begin{gathered}
+ |\mathcal C|\le C_*,\quad j_w\le J_*,\quad e'_w\le E_*,\quad
+ D_\delta\le D_*,\quad B_0\le B_{0,*},\quad B_\chi\le B_{\chi,*},\\
+ t\le T_*,\quad n_0\le N_{0,*},\quad c_B\le C_{B,*},\quad
+ \sum_{w\in\mathcal R}(d_w+2)\le R_*,\quad
+ \sum_{w\in\mathcal Q}\frac{v_{\zeta,w}}{e_{\mathcal O}}\le Z_*.
+\end{gathered}
+\label{eq:lu-datos-uniformes}
+\end{equation}
+Entonces los errores de \eqref{eq:ti-errores-explicitos}
+satisfacen simultáneamente
+\begin{equation}
+\begin{aligned}
+ \frac{\mathcal E_{\rm col}}{e_{\mathcal O}}
+  &\le C_*\bigl[(1+J_*)E_*+(J_*+2)D_*+B_{0,*}\bigr],\\
+ \frac{\mathcal E_{\rm loc}}{e_{\mathcal O}}
+  &\le T_*C_{B,*}R_*+4(N_{0,*}+T_*)(C_*+1)D_*\\
+  &\hspace{1.5em}+T_*C_*B_{\chi,*}+T_*Z_*.
+\end{aligned}
+\label{eq:lu-presupuesto-uniforme}
+\end{equation}
+\end{proposicion}
+\begin{proof}
+Después de dividir la primera igualdad de
+\eqref{eq:ti-errores-explicitos} por $e_{\mathcal O}$, cada
+sumando es
+$(1+j_w)e'_w+(j_w+2)D_\delta+h_{0,w}/e_{\mathcal O}$.
+Todos los factores son no negativos. Sustituirlos por sus cotas
+y usar $|\mathcal C|\le C_*$ da la primera desigualdad.
+La misma sustitución, término a término en la segunda igualdad,
+da la segunda. No se ha cambiado la multiplicidad de ningún
+bloque ni se ha absorbido un coste sin exhibir su dependencia.
+\end{proof}
+
+Hay avances efectivos dentro de estas hipótesis. Para columnas
+con las ventanas y entradas de periodos indicadas, la
+Proposición~\ref{prop:lu-ventana-comun} construye $E_*$.
+Para los caracteres negativos, la
+Proposición~\ref{prop:lu-h0} construye $B_{\chi,*}$ a partir
+del grado y del corte. Para el bloque automorfo, una
+identificación integral equivariante con $A_d$ y menores de
+valoración normalizada acotada proporcionan $B_{0,*}$ mediante
+\eqref{eq:lu-h0-bloque} y \eqref{eq:lu-menores}.
+El Teorema~\ref{thm:lu-restriccion} acota el coste de transportar
+los grupos globales a una base galoisiana de grado controlado.
+
+Las filas conservan su cota propia. Si se construye un
+levantamiento en esa clase, con rangos $r_w$, exponentes $a_w$
+y torsiones $T_w$, \eqref{eq:pl-coste-fino} da
+\[
+ \frac{L_{{\rm row},w}}{e_{\mathcal O}}
+       \le r_w a_w+\frac{\length T_w}{e_{\mathcal O}}.
+\]
+La otra ruta es la comparación de periodos
+\eqref{eq:pl-colle}--\eqref{eq:pl-tie}. Ninguna permite reutilizar
+sin prueba un exponente calculado solo para las columnas.
+Los términos globales $s_\rho$, los Selmer negativos y el grupo
+de clases de \eqref{eq:ti-local-display} mantienen sus propias
+cotas. Una cota uniforme por primo tampoco demuestra por sí
+sola una suma ponderada sobre todos los primos; ese paso sigue
+exigiendo las hipótesis del Lema~\ref{lem:ti-presupuesto}.
+
+\subsection{Ejercicios resueltos}
+
+\begin{ejercicio}[Corregir el representante sin pagar otro exponente]
+\label{ex:lu-1}
+Sea $D$ un grupo, $p:M_1\twoheadrightarrow M_2$ equivarante,
+y sean $K_0,\kappa$ cociclos con
+$pK_0-\ell^e\kappa=dv$. Elija $w$ con $p(w)=v$.
+Compruebe la corrección, su signo y la composición de dos
+levantamientos de exponentes $e_1,e_2$.
+\end{ejercicio}
+\paragraph{Solución.}
+Se toma $K=K_0-dw$, pues $p(dw)=dv$; con el signo positivo
+quedaría $2dv$ en la diferencia. La clase de $K$ es la de $K_0$.
+Si $M_1\to M_2\to M_3$ son sobreyecciones compatibles con las
+condiciones locales, se levanta primero
+$\ell^{e_2}\kappa$ a $K_2$ en $M_2$ y luego
+$\ell^{e_1}K_2$ a $K_1$ en $M_1$. La composición envía
+$K_1$ a $\ell^{e_1+e_2}\kappa$. Los exponentes se suman;
+no se multiplican. Para una lista finita de cociclos se repite
+la construcción con el mismo exponente: el número de cociclos
+puede costar longitud después, pero no añade exponente aquí.
+
+\begin{ejercicio}[El coste de torsión de una fila]
+\label{ex:lu-2}
+Sea $e_{\mathcal O}=2$,
+$F=\mathcal O^2\oplus\mathcal O/\varpi^5$ e $I=\ell^2F$.
+Calcule $\length(F/I)$ y compárela con la cota por rango y
+torsión de \eqref{eq:pl-coste-fino}.
+\end{ejercicio}
+\paragraph{Solución.}
+$\ell^2$ es una unidad por $\varpi^4$. Los dos sumandos libres
+aportan $4+4$, y el sumando de torsión aporta $\min(5,4)=4$.
+La longitud exacta es $12$. La cota que conserva toda la torsión
+da $2\cdot2\cdot2+5=13$. Usar solo el rango daría $8$ y
+fallaría. Las longitudes normalizadas exacta y superior son
+respectivamente $6$ y $13/2$.
+
+\begin{ejercicio}[Menores y pérdida al nivel finito]
+\label{ex:lu-3}
+Suponga que las filas de un sistema de invariancia generan el
+mismo submódulo que
+\[
+ B=\begin{pmatrix}\varpi^2&0\\0&\varpi^5\\
+                       \varpi^3&\varpi^6\end{pmatrix}.
+\]
+Calcule la longitud de los invariantes y la del núcleo de
+\eqref{eq:lu-bockstein} para $n=3$. Explique qué sucede en el
+ejemplo de Klein \eqref{eq:lu-klein} para un primo impar.
+\end{ejercicio}
+\paragraph{Solución.}
+La tercera fila es $\varpi$ veces la suma de las dos primeras.
+El ideal de entradas es $(\varpi^2)$ y el de menores de tamaño
+dos es $(\varpi^7)$; por tanto los exponentes de Smith son
+$2$ y $5$. Los invariantes tienen longitud $7$, y el núcleo
+finito tiene longitud $\min(3,2)+\min(3,5)=5$.
+En el ejemplo de Klein, las filas conjuntas generan
+$2\mathcal O^3$. Si $\ell$ es impar, $2$ es una unidad y los
+invariantes divisibles son cero, aunque cada matriz individual
+siga siendo singular sobre $K$.
+
+\begin{ejercicio}[La semisimplificación no conserva el núcleo]
+\label{ex:lu-4}
+Para \eqref{eq:lu-unipotente}, calcule los invariantes y la
+pérdida al nivel $\ell^q$ cuando $N=4$, $q=6$. Compare con la
+representación trivial de rango dos.
+\end{ejercicio}
+\paragraph{Solución.}
+Un par $(u,v)$ es fijo si y solo si $\ell^4v=0$; basta probarlo
+en $x=1$ y entonces vale para todo $x\in\Z_\ell$.
+Así $u$ es arbitrario en $\Q_\ell/\Z_\ell$ y $v$ pertenece
+a su subgrupo de orden $\ell^4$. La parte divisible se anula
+en el cociente por $\ell^6$, mientras la parte finita aporta
+longitud $4$. En la representación trivial ambos sumandos son
+divisibles y la pérdida es cero. Las dos representaciones tienen
+la misma semisimplificación racional.
+
+\begin{ejercicio}[Un núcleo de restricción que alcanza la cota]
+\label{ex:lu-5}
+Tome coeficientes triviales $A=\Q_\ell/\Z_\ell$,
+$G=\Z_\ell$ y $H=\ell^3\Z_\ell$. Calcule el núcleo de
+restricción y explique por qué no se necesita que $A^H$ sea finito.
+\end{ejercicio}
+\paragraph{Solución.}
+Un cociclo es un homomorfismo continuo, determinado por su valor
+en $1$. Al restringir, el generador elegido de $H$ es $\ell^3$,
+por lo que el mapa es $a\mapsto\ell^3a$ en $A$. El núcleo es
+$A[\ell^3]\simeq\Z/\ell^3$, de longitud $3$.
+El cociente $G/H$ es cíclico de orden $\ell^3$, y
+$d=s=e_{\mathcal O}=1$; la cota es exactamente $3$.
+Aunque $A^H=A$ sea infinito, sus cociclos sobre el cociente finito
+producen un subcociente de corango uno anulado por $\ell^3$.
+Es precisamente el caso cubierto por el lema de subcocientes.
+
+\begin{ejercicio}[Un máximo ciclotómico y una ventana de columnas]
+\label{ex:lu-6}
+Sea $L=\Q_3(\mu_3)$, cuya imagen ciclotómica es $1+3\Z_3$,
+y tome $t=6$. Calcule las cinco longitudes de invariantes
+negativos, su máximo y su suma. Por separado, sobre una base local
+no ramificada, suponga que las hipótesis del productor de columnas
+se cumplen con $C_A=2$ y $M+h\le12$. ¿Qué exponente común
+proporciona \eqref{eq:lu-exponente-comun}?
+\end{ejercicio}
+\paragraph{Solución.}
+Para $e=1,2,3,4,5$, las longitudes son
+$1+v_3(e)$, es decir $1,1,2,1,1$. Su máximo es $2$ y su suma
+es $6=5+v_3(5!)$. Como $[L:\Q_3]=2$, la cota local por grado
+también da $1+\lfloor\log_3 2\rfloor+\lfloor\log_3 5\rfloor=2$.
+En la segunda aplicación, el exponente de columnas puede elegirse como
+\[
+ E_*=\left\lceil2\bigl(2+12/3+\log_3 13\bigr)\right\rceil=17.
+\]
+El cuerpo $L$ del primer cálculo es ramificado y no se utiliza
+como base del productor de la segunda aplicación.
+El máximo $2$ mide
+invariantes de caracteres; $17$ es un exponente permitido por
+el productor de periodos bajo sus hipótesis. Ninguno determina
+por sí solo la longitud de una fila ni una constante para toda
+la torre.
+
+\subsection{Alcance alcanzado y siguiente construcción}
+\label{subsec:lu-frontera}
+
+La nota desarrolla trece resultados con demostración y seis
+ejercicios resueltos. La corrección de cociclos y la selección
+finita permiten construir las funciones de columnas desde la
+entrada de levantamiento. La presentación de filas conserva los
+bordes integrales, la topología y la torsión. Los invariantes
+reciben un certificado por menores; el paso de coeficientes y el
+cambio de base aritmética reciben cotas de núcleo demostradas.
+El supremo de caracteres negativos queda acotado por grado y
+corte, con soporte primo explícito cuando ambos están acotados.
+
+La concordancia exacta, los hashes y los rangos leídos se conservan
+en \texttt{fuentes/README.md} y \texttt{REGISTRO.json}. La lectura
+de las entradas \texttt{LiftTheoremAllCases},
+\texttt{LengthBoundAtPlaces} y \texttt{H0.FinCore} se distingue
+de una prueba de todos sus productores. No se ejecutó Lean ni
+se inspeccionó su clausura transitiva. A93, pp.~62--64, conserva
+la misma exigencia de construir los mapas, condiciones locales
+y multiplicidades antes de sumar longitudes; esta etapa no
+constituye una certificación global de la propuesta.
+
+El siguiente desarrollo concreto es realizar esos certificados
+en la familia theta variable: una ventana de saltos compatible
+con sus bases locales, el retículo matricial y las condiciones
+de periodos de las filas, y menores de valoración controlada en
+el bloque automorfo. Deben acompañarse de cotas para los
+separadores, los generadores, los grados y las pérdidas auxiliares.
+El presupuesto \eqref{eq:lu-presupuesto-uniforme} indica dónde
+entra cada una y qué dependencia permanece cuando crece la torre.

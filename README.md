@@ -6,7 +6,7 @@ Cuaderno de estudio en español, iniciado por Alevi Peña, sobre dos exposicione
 
 El manuscrito editable está en LaTeX. Cada tramo distingue las demostraciones desarrolladas en el cuaderno, los resultados recibidos como entradas externas y las cuestiones pendientes. La preparación utiliza asistencia de IA para los borradores, el cotejo localizado y la edición; el alcance de las comprobaciones queda registrado de forma explícita.
 
-**Actualización, 24 de noviembre de 2026:** edición preparada de **25 notas en 320 páginas**. La Nota 25, «Comparación integral theta y filtración del defecto aritmético», construye los cocientes de retículos, compara los ideales de Hecke y reconstruye la comparación por presentaciones y determinantes. Contiene quince resultados con prueba y seis ejercicios resueltos. El cotejo de los productores de la familia conserva sus entradas locales y de uniformidad. Se mantiene la deducción $C_K=111$ bajo las hipótesis ya explicitadas. No se ejecutó Lean ni se auditó su clausura transitiva; el cuaderno no certifica GRH.
+**Actualización, 24 de noviembre de 2026:** edición preparada de **26 notas en 336 páginas**. La Nota 26, «Levantamientos locales, filas y control uniforme», desarrolla los levantamientos exactos de cociclos, la comparación de filas con torsión, los invariantes por menores y los núcleos del cambio de coeficientes y de base aritmética. Contiene trece resultados demostrados y seis ejercicios resueltos. Proporciona cotas explícitas para los caracteres negativos y conserva las hipótesis de periodos y del bloque automorfo. La base publicada es la edición de 25 notas, commit `e9251948cf0e4fb8bd1e87654afecddaaf849d3a`. No se ejecutó Lean ni se auditó su clausura transitiva; el cuaderno no certifica GRH.
 
 **Historial, 23 de noviembre de 2026:** se incorpora la **Nota 16, «Torsión integral, complejos y determinantes»**, en [tex/capitulos/16-torsion-integral-complejos-y-determinantes.tex](tex/capitulos/16-torsion-integral-complejos-y-determinantes.tex). El cuaderno contiene **dieciséis notas**. La entrega desarrolla la cota de Gabber, el descenso integral por índice finito y la construcción de un complejo libre para el subgrupo de congruencia de nivel tres. Desde el retracto de Ash y el teorema clásico de bases acotadas demuestra la estimación de torsión de todos los primos con $C_T=20$. La fórmula de la Nota 15 permite entonces $C_K=111$, bajo sus restantes entradas. Contiene doce resultados con prueba y cinco ejercicios resueltos. Los controles y sus alcances se detallan en el [estado del estudio](ESTADO.md#compilación-y-composición).
 
@@ -14,7 +14,7 @@ El manuscrito editable está en LaTeX. Cada tramo distingue las demostraciones d
 
 ## Empezar a leer
 
-El documento principal es `main.tex`. La [introducción y fundamentos](tex/capitulos/00-introduccion.tex) abre la sección 0, seguida de la guía de lectura; después se encuentran las veinticinco notas desarrolladas:
+El documento principal es `main.tex`. La [introducción y fundamentos](tex/capitulos/00-introduccion.tex) abre la sección 0, seguida de la guía de lectura; después se encuentran las veintiséis notas desarrolladas:
 
 | Archivo | Contenido |
 | --- | --- |
@@ -45,9 +45,10 @@ El documento principal es `main.tex`. La [introducción y fundamentos](tex/capit
 | [tex/capitulos/23-alturas-particiones-y-reduccion-aritmetica.tex](tex/capitulos/23-alturas-particiones-y-reduccion-aritmetica.tex) | Alturas, particiones de la unidad y reducción aritmética. |
 | [tex/capitulos/24-estabilidad-homologica-integral.tex](tex/capitulos/24-estabilidad-homologica-integral.tex) | Estabilidad homológica integral sobre dominios de Dedekind. |
 | [tex/capitulos/25-comparacion-integral-theta-y-defecto-aritmetico.tex](tex/capitulos/25-comparacion-integral-theta-y-defecto-aritmetico.tex) | Defectos de proyección, filtración, ideales de Hecke, compresión de presentaciones, módulos de columnas, condiciones locales y normalización del presupuesto theta. |
+| [tex/capitulos/26-levantamientos-locales-filas-y-control-uniforme.tex](tex/capitulos/26-levantamientos-locales-filas-y-control-uniforme.tex) | Levantamientos exactos, presentación de filas, torsión, invariantes y Bockstein, restricción aritmética y presupuesto uniforme. |
 | `tex/referencias.tex` | Referencias A/A93/B/B76/C, código consultado, bibliografía clásica —incluidos Ribet, Weibel, Milne y el alcance de las cotas de Soulé— y estado matemático de esta entrega. |
 
-La copia de lectura contiene **320 páginas**. Las Notas 1–24 conservan su paginación; la Nota 25 ocupa las **pp. 298–314**, y las fuentes y el estado, las pp. 315–320. Se conservan exactamente los números y las páginas de las **958 etiquetas anteriores** y se añaden 68, para un total de 1026. La copia de lectura es el [PDF integrado](pdf/notas-hipotesis-riemann.pdf). El estado y el registro delimitan las comprobaciones.
+La copia de lectura contiene **336 páginas**. La Nota 26 ocupa las **pp. 316–330** y las fuentes y el estado, las pp. 331–336. El índice crece una página: las 1026 etiquetas anteriores conservan sus números y avanzan una página. Se incorporan 70 etiquetas, para un total de 1096. La copia de lectura es el [PDF integrado](pdf/notas-hipotesis-riemann.pdf). El estado y el registro delimitan los controles automáticos y la inspección visual.
 
 **Historial:** la edición de la Nota 16 contenía 200 páginas.
 
@@ -103,10 +104,12 @@ Para la Nota 16 se realizó una búsqueda exploratoria de `ExponentLe` en GitHub
 
 La **Nota 25** añade un [cotejo de la comparación integral theta](fuentes/README.md#nota-25-comparación-integral-theta): 27 archivos Lean leídos completos y diez selectivamente, en la misma revisión fijada. El inventario distingue otros 27 archivos descargados sin cotejo sustantivo registrado. Las pruebas de retículos, ideales y presentación se exponen en la nota; la producción uniforme de los datos locales conserva sus entradas. Se registran los hashes, localizadores e hipótesis en `REGISTRO.json`.
 
+La **Nota 26** añade el [cotejo de levantamientos locales, filas e invariantes](fuentes/README.md#nota-26-levantamientos-locales-filas-y-control-uniforme): 23 archivos únicos, con 15 lecturas completas, siete selectivas y una de cabecera e inventario; 4206 líneas registradas sin duplicarlas. Las pruebas de invariantes, núcleos y restricción se desarrollan en la nota. Se conservan las hipótesis cristalinas, la condición no ramificada del productor de columnas y la entrada independiente de filas.
+
 Las referencias A/A93/B/B76/C utilizan las páginas impresas y los números de sección, resultado o ecuación de esos ejemplares. Este cuaderno es material de estudio propio; el cotejo local de algunos pasos no constituye una auditoría completa del desarrollo Lean.
 
 ## Continuar el trabajo
 
-El siguiente bloque debe construir y controlar uniformemente los datos locales de la familia theta: módulos de columnas y levantamientos, la comparación `TieRow`, núcleos de invariantes y transporte a bases aritméticas variables. La Nota 25 proporciona el mecanismo integral y conserva el presupuesto de errores. La elección uniforme de generadores y las cotas de torres variables siguen siendo necesarias antes de variar los primos auxiliares, la altura de torre y la ventana. La cota de capa fija $C_K=111$ no controla por sí sola todos esos términos.
+El siguiente bloque debe realizar los certificados de la Nota 26 en la familia theta variable: una ventana compatible de saltos y bases locales, los retículos matriciales y las condiciones de periodos de las filas, y menores de valoración controlada en el bloque automorfo. Debe mantener las cotas de separadores, generadores, grados y pérdidas auxiliares al variar la torre. La Nota 26 ya demuestra las consecuencias algebraicas y cohomológicas de esos datos; su realización uniforme sigue siendo el paso especializado pendiente. La cota de capa fija $C_K=111$ conserva su alcance y sus hipótesis.
 
 Las instrucciones de edición del proyecto están en [AGENTS.md](AGENTS.md).

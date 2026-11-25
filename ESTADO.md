@@ -1,5 +1,24 @@
 # Estado del cuaderno
 
+## Nota 26 preparada, 24 de noviembre de 2026
+
+La publicación de la Nota 25 quedó confirmada en `e9251948cf0e4fb8bd1e87654afecddaaf849d3a`, con PDF de 320 páginas y SHA-256 `0af324b4216daff844da03401039064865e9216f14e27a29689679cb70baf807`. Se verificaron los 39 archivos de esa base. Esta entrega incorpora la **Nota 26, «Levantamientos locales, filas y control uniforme»**, con 18 apartados, 13 resultados demostrados, 33 ecuaciones numeradas y seis ejercicios resueltos.
+
+La nota construye levantamientos exactos y una presentación del defecto de fila que conserva bordes integrales y torsión. Calcula los invariantes por Smith y el núcleo del paso de coeficientes finitos a divisibles. Demuestra una cota de restricción a una base aritmética de grado controlado sin presuponer finitud de los invariantes. Aplica la cota ciclotómica previa al supremo de columnas negativas y escribe los certificados necesarios para un presupuesto uniforme.
+
+- PDF integrado: **336 páginas**; Nota 26, **pp. 316–330**. Compilación sin advertencias, referencias pendientes ni cajas desbordadas.
+- Las **1026 etiquetas anteriores** conservan sus números y avanzan una página al crecer el índice. Se añaden **70**, para un total de **1096**.
+- Comparación RGB a 96 ppp: **303 cuerpos de página y cabeceras** coinciden con la edición 25 publicada, excluidos los folios. Se verificaron todos los folios por separado. Se inspeccionaron visualmente las **33 páginas nuevas o modificadas** mediante las hojas de contacto registradas. Esta comparación no equivale a releer todo el libro.
+- SHA-256 del PDF: `67f0bcd58e3e3b48bf14c890ee659142c8a60a156d105f75de941aab1c472045`. La copia de lectura coincide con el resultado compilado y revisado.
+- Cotejo de **23 archivos Lean únicos**: 15 completos, siete selectivos y uno de cabecera/inventario, con 4206 líneas registradas. **No se ejecutó Lean ni se auditó la clausura transitiva.** Se releyeron las pp. 62–64 del ejemplar A93 fijado; no se hizo una nueva revisión de B76.
+- Situación al preparar el paquete: **Nota 26 preparada para publicación**, sobre la base publicada de 25 notas. El publicador comprueba la base y los nueve archivos antes de trabajar en una copia aislada. La incorporación del Markdown al cuaderno externo es manual.
+
+### Punto de reanudación
+
+Realizar los certificados en la familia theta variable: ventanas y bases locales compatibles, retículo matricial y condiciones de periodos de las filas, y menores uniformes para el bloque automorfo. Controlar separadores, generadores, grados y pérdidas auxiliares antes de variar la torre. La cota de capa fija $C_K=111$ conserva sus hipótesis. No se certifica GRH.
+
+Los apartados siguientes conservan el estado histórico de preparación de cada entrega. La publicación de la Nota 25 se confirma arriba; su entrada anterior describe el momento previo a esa publicación.
+
 ## Nota 25 preparada, 24 de noviembre de 2026
 
 Base publicada verificada: `6fdbf39a2a106b32fa33f6745944d979bbcce711`. La edición de 24 notas y su PDF coinciden con los 38 blobs del repositorio recuperado. Se incorpora la **Nota 25, «Comparación integral theta y filtración del defecto aritmético»**, con 22 apartados, 15 resultados demostrados, 45 ecuaciones numeradas y seis ejercicios resueltos.

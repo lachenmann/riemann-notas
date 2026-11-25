@@ -126,6 +126,13 @@ caracteres de la adjunta no se identifican entre sí.
 La ampliación de la Proposición~\ref{prop:gal-todos} es propia
 del cuaderno y no se declara verificada en Lean.
 
+El cotejo de la Nota~\ref{sec:levantamientos-uniformes} documenta
+23 archivos únicos: 15 leídos completos, siete selectivamente
+y uno solo en su cabecera e inventario. Los 4206 renglones
+registrados conservan los productores de levantamientos,
+la comparación de filas y los núcleos de invariantes, con
+sus hipótesis. No incluye ejecución de Lean.
+
 \bibitem[CH]{chenevier-harris}
 Gaëtan Chenevier y Michael Harris.
 \emph{Construction of automorphic Galois representations, II}.
@@ -382,6 +389,10 @@ al variar los primos auxiliares se identifica por separado.
 
 \end{thebibliography}
 
+% Compactar solo el estado final para evitar una hoja con cuatro líneas.
+\begingroup
+\setlength{\parskip}{0.40em}
+\linespread{0.97}\selectfont
 \subsection*{Estado de la entrega}
 
 La introducción define los objetos analíticos y aritméticos necesarios
@@ -522,3 +533,17 @@ ramificación. Su lectura localizada de Lean no incluye ejecución.
 La producción uniforme de los datos locales, la identificación
 de filas y el control en bases variables siguen siendo tareas
 adicionales, delimitadas en esa nota.
+
+La Nota~\ref{sec:levantamientos-uniformes} desarrolla trece resultados
+con demostración y seis ejercicios resueltos. Construye cociclos
+locales exactos, presenta el cociente de filas y conserva su torsión.
+Calcula invariantes mediante Smith, el núcleo del paso a coeficientes
+divisibles y el coste de restricción a una base de grado controlado.
+Aplica la cota ciclotómica de la Nota~\ref{sec:finitud-uniforme}
+al supremo de columnas negativas. Las ventanas de periodos, el
+retículo matricial y los menores uniformes del bloque automorfo
+conservan sus hipótesis especializadas. El cotejo de productores
+locales se documenta con la misma revisión de [L], sin ejecución
+de Lean ni auditoría de todas sus dependencias.
+\par
+\endgroup
